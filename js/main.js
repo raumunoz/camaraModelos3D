@@ -31,7 +31,13 @@ var createScene = function () {
         videoTexture.vScale = -1;
         myVideo = videoTexture;
         videoMaterial.diffuseTexture = myVideo;
-        console.log("Enumerado",navigator.mediaDevices.enumerateDevices());
+        console.log("Enumerado",navigator.mediaDevices.enumerateDevices().then((dispositivos)=>{
+            dispositivos.forEach(dispositivo => {
+                console.log(" "+dispositivo.label);
+                alert(dispositivo.label);
+                
+            });
+        }));
         
     }, { maxWidth: 512, maxHeight: 512 });
 
