@@ -25,13 +25,15 @@ var createScene = function () {
     plane1.rotation.z = Math.PI;
     plane1.position.y = 1;*/
     navigator.mediaDevices.enumerateDevices().then((dispositivos) => {
+        console.log("DISPOSITIVOS",dispositivos);
         dispositivos.forEach(dispositivo => {
             console.log(" " + dispositivo.label);
             
             if (dispositivo.label == "camera 0, facing back") {
                 mobil = true;
-                idCamara="2";
-                alert("MOBIL");
+
+                idCamara=dispositivo.deviceId;
+                alert("MOBIL"+idCamara);
             }
         });
     });
@@ -47,7 +49,7 @@ var createScene = function () {
         videoMaterial.diffuseTexture = myVideo;
         
         
-    }, { maxWidth: 512, maxHeight: 512 });
+    }, { maxWidth: 512, maxHeight: 512,deviceId:idCamara });
 
     // When there is a video stream (!=undefined),
     // check if it's ready          (readyState == 4),
@@ -106,3 +108,6 @@ function captura(){
 //0
 //1//camera 1, facing front
 //2//camera 0, facing back
+//aXlWUJgoECy+26tHwc9nrSIoYGaRZ01i41O4MAkMo/w=
+//eVdXDg4cnlyDd7Xqc+hclgMYzOyYnwjwETWzzQCfNCw=
+//4F1BGYWAC1Vw+0qjTbVq/u7Q+QiCKIhkSebkGT0pa7M=
