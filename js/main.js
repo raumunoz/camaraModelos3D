@@ -31,6 +31,8 @@ var createScene = function () {
         videoTexture.vScale = -1;
         myVideo = videoTexture;
         videoMaterial.diffuseTexture = myVideo;
+        console.log("Enumerado",navigator.mediaDevices.enumerateDevices());
+        
     }, { maxWidth: 512, maxHeight: 512 });
 
     // When there is a video stream (!=undefined),
