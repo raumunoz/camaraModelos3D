@@ -8,7 +8,9 @@ var myVideo;
 var background;
 var light;
 var engine;
-var camera
+var camera;
+var mobil = false;
+var idCamara="0";
 var createScene = function () {
     // Our Webcam stream (a DOM <video>)
     var isAssigned = false; // Is the Webcam stream assigned to material?
@@ -22,6 +24,17 @@ var createScene = function () {
     /*var plane1 = BABYLON.Mesh.CreatePlane("plane1", 2, scene);
     plane1.rotation.z = Math.PI;
     plane1.position.y = 1;*/
+    navigator.mediaDevices.enumerateDevices().then((dispositivos) => {
+        dispositivos.forEach(dispositivo => {
+            console.log(" " + dispositivo.label);
+            
+            if (dispositivo.label == "camera 0, facing back") {
+                mobil = true;
+                idCamara="2";
+                alert("MOBIL");
+            }
+        });
+    });
     videoMaterial = new BABYLON.StandardMaterial("texture1", scene);
     videoMaterial.emissiveColor = new BABYLON.Color3(1, 1, 1)
     // Create our video texture
@@ -30,14 +43,9 @@ var createScene = function () {
         videoTexture.uScale = 1;
         videoTexture.vScale = -1;
         myVideo = videoTexture;
+        deviceId="2";
         videoMaterial.diffuseTexture = myVideo;
-        console.log("Enumerado",navigator.mediaDevices.enumerateDevices().then((dispositivos)=>{
-            dispositivos.forEach(dispositivo => {
-                console.log(" "+dispositivo.label);
-                alert(dispositivo.label);
-                
-            });
-        }));
+        
         
     }, { maxWidth: 512, maxHeight: 512 });
 
@@ -95,3 +103,6 @@ window.addEventListener("resize", function () {
 function captura(){
     BABYLON.Tools.CreateScreenshot(engine, camera, 1600);
 }
+//0
+//1//camera 1, facing front
+//2//camera 0, facing back
