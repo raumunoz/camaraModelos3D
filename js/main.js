@@ -25,17 +25,20 @@ var createScene = function () {
     plane1.rotation.z = Math.PI;
     plane1.position.y = 1;*/
     navigator.mediaDevices.enumerateDevices().then((dispositivos) => {
-        console.log("DISPOSITIVOS",dispositivos);
-        dispositivos.forEach(dispositivo => {
+        idCamara=dispositivos[2].deviceId;
+        console.log("idCamara",idCamara);
+        /*dispositivos.forEach(dispositivo => {
             console.log(" " + dispositivo.label);
             
             if (dispositivo.label == "camera 0, facing back") {
                 mobil = true;
                 idCamara=dispositivo.deviceId;
-                alert("MOBIL"+idCamara);
+                
             }
-        });
-    }).then(camara());
+          
+        });*/
+        camara(idCamara);
+    });
     videoMaterial = new BABYLON.StandardMaterial("texture1", scene);
     videoMaterial.emissiveColor = new BABYLON.Color3(1, 1, 1)
     // Create our video texture
@@ -94,14 +97,14 @@ window.addEventListener("resize", function () {
 function captura(){
     BABYLON.Tools.CreateScreenshot(engine, camera, 1600);
 }
-function camara(){
+function camara(id){
     BABYLON.VideoTexture.CreateFromWebCam(scene, function (videoTexture) {
         //para voltear la textura del video 
-        videoTexture.uScale = 1;
-        videoTexture.vScale = -1;
+        //videoTexture.uScale = 1;
+        //videoTexture.vScale = -1;
         myVideo = videoTexture;
         videoMaterial.diffuseTexture = myVideo;
-    }, { deviceId:idCamara });
+    }, { deviceId:id });
 }
 //0
 //1//camera 1, facing front
