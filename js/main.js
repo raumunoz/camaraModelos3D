@@ -25,7 +25,7 @@ var createScene = function () {
     plane1.rotation.z = Math.PI;
     plane1.position.y = 1;*/
     navigator.mediaDevices.enumerateDevices().then((dispositivos) => {
-        idCamara=dispositivos[2].deviceId;
+        
         console.log("idCamara",idCamara);
         /*dispositivos.forEach(dispositivo => {
             console.log(" " + dispositivo.label);
@@ -37,6 +37,14 @@ var createScene = function () {
             }
           
         });*/
+        if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+            // Take the user to a different screen here.
+            idCamara=dispositivos[2].deviceId;
+            alert("camara MObil");
+        }else
+            {
+                idCamara=dispositivos[0].deviceId;
+            }
         camara(idCamara);
     });
     videoMaterial = new BABYLON.StandardMaterial("texture1", scene);
@@ -100,8 +108,8 @@ function captura(){
 function camara(id){
     BABYLON.VideoTexture.CreateFromWebCam(scene, function (videoTexture) {
         //para voltear la textura del video 
-        //videoTexture.uScale = 1;
-        //videoTexture.vScale = -1;
+        videoTexture.uScale = 1;
+        videoTexture.vScale = -1;
         myVideo = videoTexture;
         videoMaterial.diffuseTexture = myVideo;
     }, { deviceId:id });
