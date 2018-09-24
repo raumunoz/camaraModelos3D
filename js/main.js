@@ -50,9 +50,14 @@ zoom=camera.zoomOnFactor;
     /*var plane1 = BABYLON.Mesh.CreatePlane("plane1", 2, scene);
     plane1.rotation.z = Math.PI;
     plane1.position.y = 1;*/
-    navigator.mediaDevices.enumerateDevices().then((dispositivos) => {
-        
-        console.log("idCamara",idCamara);
+    navigator.mediaDevices.enumerateDevices().then(function (dispositivos) {
+        dispositivos.forEach(device => {
+           console.log(device.kind + ": " + device.label +
+           " id = " + device.deviceId);
+           if(device.kind=="videoinput"){
+               alert(device.label);
+           }
+       });
         /*dispositivos.forEach(dispositivo => {
             console.log(" " + dispositivo.label);
             
