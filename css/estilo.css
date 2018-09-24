@@ -8,8 +8,18 @@ body {
 		canvas {
 			background-color:#F5F2F0;
             width: 100%; 
-            height: 600px;
-		}
+            height: 100%;
+            /*height: 600px;*/
+        }
+        
+  .dg.main{
+    position: absolute;
+    z-index: 10;
+    top: 5%;
+  }
+  .dg ul{
+      display: grid;
+  }
         .item1 { grid-area: header;
             background-color: #c6aa2e !important;
             color: #f0f0f0;
@@ -39,6 +49,17 @@ height: 25%; }
   grid-gap: 10px;
   padding: 10px;
 }
+.btn {
+    border-radius: 5px;
+    padding: 15px 25px;
+    font-size: 22px;
+    text-decoration: none;
+    margin: 20px;
+    color: #fff;
+    position: relative;
+    display: inline-block;
+  }
+
 .grid-container > div {
   background-color: rgba(255, 255, 255, 0.8);
   text-align: center;
@@ -52,20 +73,42 @@ height: 25%; }
         display: grid;
         grid-template-areas:
           'header header header header header header'
-          'menu menu menu menu menu menu'
-          'menu menu menu menu menu menu'
-          'main main main main main main'
-          'main main main main main main'
-          'main main main main main main'
-          'main main main main main main'
+          'menu main main main main main'
+          'menu main main main main main'
           'accion accion accion accion accion accion'
           'footer footer footer footer footer footer';
-        grid-gap: 10px;
-        padding: 10px;
       }
-      .item4{
-        height: 25%;
+      .item2{
+          font-size: 12px;
       }
+      .btn{
+          margin: 0;
+          padding: 0;
+      }
+      .modulos{
+        background-color:white;
+        padding-top: 0px;
+    }
+    .acciones{
+        font-size: 12px;
+    }
+    
+		canvas {
+			background-color:#F5F2F0;
+            width: 100%; 
+            height: 300px;
+        }
+        .grid-container > div {
+            background-color: rgba(255, 255, 255, 0.8);
+            text-align: center;
+            padding: 0;
+            font-size: 12px;
+          }
+          .dg.main{
+            position: absolute;
+            z-index: 10;
+            top: 17%;
+          }
 } 
 .materiales{
     background-color:whitesmoke;
@@ -148,16 +191,6 @@ span{
     font-family: 'Questrial', sans-serif;
 color: #777;
 }
-.btn {
-    border-radius: 5px;
-    padding: 15px 25px;
-    font-size: 22px;
-    text-decoration: none;
-    margin: 20px;
-    color: #fff;
-    position: relative;
-    display: inline-block;
-  }
   
   .btn:active {
     transform: translate(0px, 5px);
@@ -210,17 +243,9 @@ float: left;
   .green{color: green;}
   .grey{background-color:grey;}
  
-  .dg.main{
-    position: absolute;
-    z-index: 10;
-    top: 5%;
-  }
   #btnAplicar{
       visibility: hidden;
   }
   #btnCancelar{
     visibility: hidden;
 }
-  .dg ul{
-      display: grid;
-  }
