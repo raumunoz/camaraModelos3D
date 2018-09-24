@@ -11,6 +11,7 @@ var engine;
 var camera;
 var mobil = false;
 var idCamara="0";
+let zoom;
 var createScene = function () {
     // Our Webcam stream (a DOM <video>)
     var isAssigned = false; // Is the Webcam stream assigned to material?
@@ -18,9 +19,15 @@ var createScene = function () {
     var scene = new BABYLON.Scene(engine);
 
     camera = new BABYLON.ArcRotateCamera("Camera", -Math.PI / 2, Math.PI / 4, 4, BABYLON.Vector3.Zero(), scene);
-    camera.attachControl(canvas, true);
+    camera.attachControl(canvas, true,false,true);
+    //camera.pinchDeltaPercentage=100;
+    //camera.pinchDeltaPercentage;
 
-
+console.log("deltaPercentage",camera.pinchDeltaPercentage);
+console.log("pinchPrecision",camera.pinchPrecision);
+console.log("pinchToPanMaxDistance",camera.pinchToPanMaxDistance);
+console.log("zoom",camera.zoomOnFactor);
+zoom=camera.zoomOnFactor;
     /*var plane1 = BABYLON.Mesh.CreatePlane("plane1", 2, scene);
     plane1.rotation.z = Math.PI;
     plane1.position.y = 1;*/
@@ -40,7 +47,7 @@ var createScene = function () {
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
             // Take the user to a different screen here.
             idCamara=dispositivos[2].deviceId;
-            alert("camara MObil");
+            //alert("camara MObil");
         }else
             {
                 idCamara=dispositivos[0].deviceId;
@@ -48,7 +55,9 @@ var createScene = function () {
         camara(idCamara);
     });
     videoMaterial = new BABYLON.StandardMaterial("texture1", scene);
-    videoMaterial.emissiveColor = new BABYLON.Color3(1, 1, 1)
+    videoMaterial.emissiveColor = new BABYLON.Color3(1, 1, 1);
+    videoMaterial.backFaceCulling=false;
+    console("material",videoMaterial.sideOrientation);
     // Create our video texture
     
     // When there is a video stream (!=undefined),
@@ -74,11 +83,13 @@ var createScene = function () {
     // Add and manipulate meshes in the scene
     BABYLON.SceneLoader.Append("./", "esquinaCasual.gltf", scene, function (scene) {
         // Create a default arc rotate camera and light.
-        scene.createDefaultCameraOrLight(true, true, true);
+       // scene.createDefaultCameraOrLight(true, true, true);
 
         // The default camera looks at the back of the asset.
         // Rotate the camera by 180 degrees to the front of the asset.
-        scene.activeCamera.alpha += Math.PI;
+       // scene.activeCamera.alpha += Math.PI;
+       camara.target=scene.meshes[5];
+       //scene.meshes[1]
     });
     return scene;
 };
@@ -108,8 +119,8 @@ function captura(){
 function camara(id){
     BABYLON.VideoTexture.CreateFromWebCam(scene, function (videoTexture) {
         //para voltear la textura del video 
-        videoTexture.uScale = 1;
-        videoTexture.vScale = -1;
+        //videoTexture.uScale = 1;
+        //videoTexture.vScale = -1;
         myVideo = videoTexture;
         videoMaterial.diffuseTexture = myVideo;
     }, { deviceId:id });
