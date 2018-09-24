@@ -150,7 +150,11 @@ function camara(id){
         //videoTexture.vScale = -1;
         myVideo = videoTexture;
        // videoMaterial.diffuseTexture = myVideo;
+<<<<<<< Updated upstream
     }, { deviceId:"2" });
+=======
+    }, { deviceId:id });
+>>>>>>> Stashed changes
 }
 //0
 //1//camera 1, facing front
