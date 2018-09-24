@@ -12,12 +12,33 @@ var camera;
 var mobil = false;
 var idCamara="0";
 let zoom;
+
+var ellipse1;
 var createScene = function () {
     // Our Webcam stream (a DOM <video>)
     var isAssigned = false; // Is the Webcam stream assigned to material?
     engine = new BABYLON.Engine(canvas, true, { preserveDrawingBuffer: true, stencil: true });    
     var scene = new BABYLON.Scene(engine);
+    var advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI");
+     ellipse1 = new BABYLON.GUI.Ellipse();
 
+    ellipse1.width = "100px"
+    ellipse1.height = "100px";
+    ellipse1.color = "Orange";
+    ellipse1.thickness = 4;
+    ellipse1.background = "green";
+    ellipse1.verticalAlignment=1;
+    ellipse1.onPointerUpObservable.add(function() {
+        
+        
+        captura(()=>{
+            ellipse1.isVisible=false;
+            alert("gente");
+        });
+    });
+    //alert();
+    
+    advancedTexture.addControl(ellipse1); 
     camera = new BABYLON.ArcRotateCamera("Camera", -Math.PI / 2, Math.PI / 4, 4, BABYLON.Vector3.Zero(), scene);
     camera.attachControl(canvas, true,false,true);
     //camera.pinchDeltaPercentage=100;
@@ -47,7 +68,7 @@ zoom=camera.zoomOnFactor;
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
             // Take the user to a different screen here.
             idCamara=dispositivos[2].deviceId;
-            //alert("camara MObil");
+            alert("camara MObil");
         }else
             {
                 idCamara=dispositivos[0].deviceId;
@@ -57,24 +78,29 @@ zoom=camera.zoomOnFactor;
     videoMaterial = new BABYLON.StandardMaterial("texture1", scene);
     videoMaterial.emissiveColor = new BABYLON.Color3(1, 1, 1);
     videoMaterial.backFaceCulling=false;
-    console("material",videoMaterial.sideOrientation);
+    console.log("material",videoMaterial.sideOrientation);
     // Create our video texture
     
     // When there is a video stream (!=undefined),
     // check if it's ready          (readyState == 4),
     // before applying videoMaterial to avoid the Chrome console warning.
     // [.Offscreen-For-WebGL-0xa957edd000]RENDER WARNING: there is no texture bound to the unit 0
+    
     scene.onBeforeRenderObservable.add(function () {
         if (myVideo !== undefined && isAssigned == false) {
             if (myVideo.video.readyState == 4) {
                 //plane1.material = videoMaterial;
                 //donut.material=videoMaterial;
                 isAssigned = true;
+                
                 background.texture = myVideo;
-
+                background.texture.wAng=Math.PI;
+                
             }
         }
     });
+    
+    
    // var light1 = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(1, 1, 0), scene);
 
     var light2 = new BABYLON.PointLight("light2", new BABYLON.Vector3(0, 1, -1), scene);
@@ -114,6 +140,7 @@ window.addEventListener("resize", function () {
 });
 
 function captura(){
+    
     BABYLON.Tools.CreateScreenshot(engine, camera, 1600);
 }
 function camara(id){
@@ -122,8 +149,8 @@ function camara(id){
         //videoTexture.uScale = 1;
         //videoTexture.vScale = -1;
         myVideo = videoTexture;
-        videoMaterial.diffuseTexture = myVideo;
-    }, { deviceId:id });
+       // videoMaterial.diffuseTexture = myVideo;
+    }, { deviceId:"2" });
 }
 //0
 //1//camera 1, facing front
