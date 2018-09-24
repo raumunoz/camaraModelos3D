@@ -29,8 +29,6 @@ var createScene = function () {
     ellipse1.background = "green";
     ellipse1.verticalAlignment=1;
     ellipse1.onPointerUpObservable.add(function() {
-        
-        
         captura(()=>{
             ellipse1.isVisible=false;
             alert("gente");
@@ -95,7 +93,7 @@ zoom=camera.zoomOnFactor;
                 
                 background.texture = myVideo;
                 background.texture.wAng=Math.PI;
-                
+
             }
         }
     });
@@ -141,20 +139,19 @@ window.addEventListener("resize", function () {
 
 function captura(){
     
-    BABYLON.Tools.CreateScreenshot(engine, camera, 1600);
+    BABYLON.Tools.CreateScreenshot(engine, camera, 1600,()=>{
+        ellipse1.isVisible=false;    
+    });
+    
 }
-function camara(id){
+function camara(idCamara){
     BABYLON.VideoTexture.CreateFromWebCam(scene, function (videoTexture) {
         //para voltear la textura del video 
         //videoTexture.uScale = 1;
         //videoTexture.vScale = -1;
         myVideo = videoTexture;
        // videoMaterial.diffuseTexture = myVideo;
-<<<<<<< Updated upstream
-    }, { deviceId:"2" });
-=======
-    }, { deviceId:id });
->>>>>>> Stashed changes
+    }, { deviceId:idCamara});
 }
 //0
 //1//camera 1, facing front
