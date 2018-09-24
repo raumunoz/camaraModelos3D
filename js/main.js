@@ -24,15 +24,12 @@ var createScene = function () {
 
     ellipse1.width = "100px"
     ellipse1.height = "100px";
-    ellipse1.color = "Orange";
+    ellipse1.color = "black";
     ellipse1.thickness = 4;
-    ellipse1.background = "green";
+    ellipse1.background = "white";
     ellipse1.verticalAlignment=1;
     ellipse1.onPointerUpObservable.add(function() {
-        captura(()=>{
-            ellipse1.isVisible=false;
-            alert("gente");
-        });
+        captura();
     });
     //alert();
     
@@ -55,7 +52,7 @@ zoom=camera.zoomOnFactor;
            console.log(device.kind + ": " + device.label +
            " id = " + device.deviceId);
            if(device.kind=="videoinput"){
-               alert(device.label);
+               //alert(device.label);
            }
        });
         /*dispositivos.forEach(dispositivo => {
@@ -71,7 +68,7 @@ zoom=camera.zoomOnFactor;
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
             // Take the user to a different screen here.
             idCamara=dispositivos[2].deviceId;
-            alert("camara MObil");
+           // alert("camara MObil");
         }else
             {
                 idCamara=dispositivos[0].deviceId;
@@ -97,19 +94,21 @@ zoom=camera.zoomOnFactor;
                 isAssigned = true;
                 
                 background.texture = myVideo;
-                background.texture.wAng=Math.PI;
+                background.texture.uAng=Math.PI;
 
             }
         }
     });
-    
-    
+    /*
+    var light = new BABYLON.HemisphericLight("HemiLight", new BABYLON.Vector3(0, 1, 0), scene);
+    light.groundColor = new BABYLON.Color3(0, 1, 0);*/
    // var light1 = new BABYLON.HemisphericLight("light1", new BABYLON.Vector3(1, 1, 0), scene);
 
-    var light2 = new BABYLON.PointLight("light2", new BABYLON.Vector3(0, 1, -1), scene);
+    //var light2 = new BABYLON.PointLight("light2", new BABYLON.Vector3(0, 1, -1), scene);
     //var light = new BABYLON.SpotLight("spotLight", new BABYLON.Vector3(-5, 5, 0), new BABYLON.Vector3(0, -1, 0), Math.PI / 3, 2, scene);
-     light = new BABYLON.HemisphericLight("hemiLight", new BABYLON.Vector3(-5, 5, 0), scene);
+    // light = new BABYLON.HemisphericLight("hemiLight", new BABYLON.Vector3(-5, 5, 0), scene);
     // Add and manipulate meshes in the scene
+    var light = new BABYLON.HemisphericLight("hemiLight", new BABYLON.Vector3(-1, 1, 0), scene);
     BABYLON.SceneLoader.Append("./", "esquinaCasual.gltf", scene, function (scene) {
         // Create a default arc rotate camera and light.
        // scene.createDefaultCameraOrLight(true, true, true);
@@ -143,10 +142,17 @@ window.addEventListener("resize", function () {
 });
 
 function captura(){
+    ellipse1.isVisible=false;
+    setTimeout(function(){ 
+        BABYLON.Tools.CreateScreenshot(engine, camera, {precision: 1});
+ }, 500).then(
+     setTimeout(()=>{
+        //alert("acabó Time out");
+        ellipse1.isVisible=true;
+     },4000)
+ );
+
     
-    BABYLON.Tools.CreateScreenshot(engine, camera, 1600,()=>{
-        ellipse1.isVisible=false;    
-    });
     
 }
 function camara(idCamara){
