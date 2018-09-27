@@ -380,19 +380,20 @@ function cargarModelo(padre, modelo, hijos) {
         });
         if (padre.name == 'padreCentro') {
             //alert("Padre centro");
+            
             ultimoClickeado = "primer";
         }
-            meshDebug = izquierda;
-            meshDebug1 = derecha;
-            meshDebug2 = frente;
-            createButon3D(meshDebug1, 'derecha');
-            createButon3D(meshDebug, 'izquierda');
-            createButon3D(meshDebug2, 'frente');
-            activarBotonesAplicar(true);
-            esconderTodosBotones(false);
-            //resaltarMueble(padreActual, true);
-            
-        
+        meshDebug = izquierda;
+        meshDebug1 = derecha;
+        meshDebug2 = frente;
+        createButon3D(meshDebug1, 'derecha');
+        createButon3D(meshDebug, 'izquierda');
+        createButon3D(meshDebug2, 'frente');
+        activarBotonesAplicar(true);
+        esconderTodosBotones(false);
+        //resaltarMueble(padreActual, true);
+
+
         container.meshes.push(padreActual);
         //newMeshes.meshes[0].parent = padre;
         //se asigna un padre a el padre acutual
@@ -534,6 +535,18 @@ function resaltarMueble(padreActual, bool) {
 
         children.forEach(hijo => {
             hl.addMesh(hijo, BABYLON.Color3.Green());
+            if (hijo.name == "derecha") {
+                btnDerecho.dispose();
+              createButon3D(hijo,"derecha");
+            }
+            if (hijo.name == "frente") {
+                btnFrente.dispose();
+                createButon3D(hijo,"frente");
+            }
+            if (hijo.name == "izquierda") {
+                btnIzquierdo.dispose();
+                createButon3D(hijo,"izquierda");
+            }
         });
     } else {
         hl.removeMesh(padreActual);
@@ -683,7 +696,7 @@ function actualizarMueble() {
         removerModelo(padreActual);
         //cargarModelo(meshDebug1, modeloActual(texturaActual, moduloActual));
         if (hijosDerecha || hijosFrente || hijosIzquierda) {
-            cargarModelo(padreTemp, modeloActual(texturaActual, moduloActual),{ hijosDerecha, hijosFrente, hijosIzquierda });
+            cargarModelo(padreTemp, modeloActual(texturaActual, moduloActual), { hijosDerecha, hijosFrente, hijosIzquierda });
 
         } else {
             console.log("no hay hijos");
@@ -706,4 +719,7 @@ function esconderTodosBotones(bool) {
         esconderMesh(btnIzquierdo, false);
         esconderMesh(btnFrente, false);
     }
+}
+function cambiarBotonesDePadre(mueble) {
+    console.log("padre a asignar hijo")
 }
