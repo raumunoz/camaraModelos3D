@@ -720,6 +720,25 @@ function esconderTodosBotones(bool) {
         esconderMesh(btnFrente, false);
     }
 }
-function cambiarBotonesDePadre(mueble) {
-    console.log("padre a asignar hijo")
+function cambiarFondo(){
+
+    
+    var opc = Math.floor((Math.random() * 4) + 1);
+    switch (opc) {
+        case 1:
+        background.texture=new BABYLON.Texture("models/textures/sala.jpg", escena);
+        break;
+        case 2:
+        background.texture=new BABYLON.Texture("models/textures/sala1.jpg", escena);
+        break;
+        case 3:
+        background.texture=new BABYLON.Texture("models/textures/sala2.jpg", escena);
+        break;
+        case 4:
+        background.texture=new BABYLON.Texture("models/textures/sala3.jpg", escena);
+        break;
+    
+        default:
+            break;
+    }
 }
