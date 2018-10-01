@@ -138,7 +138,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
 
     escena = createScene();
-    background = new BABYLON.Layer("back", "fondo.jpg", escena);
+    background = new BABYLON.Layer("back", "assets/imagenes/fondos/fondo.jpg", escena);
     background.isBackground = true;
     background.texture.level = 0;
 
@@ -349,7 +349,7 @@ function cargarModelo(padre, modelo, hijos) {
     }
 
     engine.displayLoadingUI();
-    BABYLON.SceneLoader.LoadAssetContainer("./", modelo, escena, function (newMeshes) {
+    BABYLON.SceneLoader.LoadAssetContainer("assets/modelos/", modelo, escena, function (newMeshes) {
         meshesAcargar = newMeshes;
         //console.log("padre a guardar", newMeshes.meshes[0]);
         padreAnterior = padreActual;
@@ -726,16 +726,16 @@ function cambiarFondo(){
     var opc = Math.floor((Math.random() * 4) + 1);
     switch (opc) {
         case 1:
-        background.texture=new BABYLON.Texture("models/textures/sala.jpg", escena);
+        background.texture=new BABYLON.Texture("assets/imagenes/fondos/sala.jpg", escena);
         break;
         case 2:
-        background.texture=new BABYLON.Texture("models/textures/sala1.jpg", escena);
+        background.texture=new BABYLON.Texture("assets/imagenes/fondos/sala1.jpg", escena);
         break;
         case 3:
-        background.texture=new BABYLON.Texture("models/textures/sala2.jpg", escena);
+        background.texture=new BABYLON.Texture("assets/imagenes/fondos/sala2.jpg", escena);
         break;
         case 4:
-        background.texture=new BABYLON.Texture("models/textures/sala3.jpg", escena);
+        background.texture=new BABYLON.Texture("assets/imagenes/fondos/sala3.jpg", escena);
         break;
     
         default:
