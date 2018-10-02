@@ -2,12 +2,35 @@ let padreBorrar;
 let hijosBorrar;
 var container;
 var padreCentro;
+
 var assetContainers = [];
-let modelos = {
+/*let modelos = {
     taburetes: ['tabureteContempo.gltf', 'tabureteCasual.gltf', 'tabureteTrendy.gltf'],
     brazos: ['BrazoContempo.gltf', 'brazoCasual.gltf', 'brazoTrendy.gltf'],
     esquinas: ['esquinaContempo.gltf', 'esquinaCasual.gltf', 'esquinaTrendy.gltf'],
     completos: ['completoContempo.gltf', 'completoCasual.gltf', 'completoTrendy.gltf']
+}*/
+let modelos = {
+    taburetes: [
+        { nombre: "tabureteContempo.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 } },
+        { nombre: "tabureteCasual.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 } },
+        { nombre: "tabureteTrendy.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 } }
+    ],
+    brazos: [
+        { nombre: "BrazoContempo.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 } },
+        { nombre: "brazoCasual.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 } },
+        { nombre: "brazoTrendy.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 } }
+    ],
+    esquinas: [
+        { nombre: "esquinaContempo.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 } },
+        { nombre: "esquinaCasual.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 } },
+        { nombre: "esquinaTrendy.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 } }
+    ],
+    completos: [
+        { nombre: "completoContempo.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 } },
+        { nombre: "completoCasual.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 } },
+        { nombre: "completoTrendy.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 } }
+    ]
 }
 let btnRotar;
 let muebleSelecionado = false;
@@ -45,6 +68,11 @@ var engine;
 let cargando;
 
 let meshesAcargar;
+var dimensionesTotales = {
+    x:50,
+    y:50,
+    z:50
+};
 window.addEventListener('DOMContentLoaded', function () {
     cargando = false;
     texturaActual = texturas[1];
@@ -347,7 +375,7 @@ function cargarModelo(padre, modelo, hijos) {
     if (!modelo) {
         modelo = "BrazoContempo.gltf";
     }
-
+    
     engine.displayLoadingUI();
     BABYLON.SceneLoader.LoadAssetContainer("assets/modelos/", modelo, escena, function (newMeshes) {
         meshesAcargar = newMeshes;
@@ -380,7 +408,7 @@ function cargarModelo(padre, modelo, hijos) {
         });
         if (padre.name == 'padreCentro') {
             //alert("Padre centro");
-            
+
             ultimoClickeado = "primer";
         }
         meshDebug = izquierda;
@@ -437,6 +465,7 @@ function cargarModelo(padre, modelo, hijos) {
         container.addAllToScene();
     }, onSuccess = () => {
         engine.hideLoadingUI();
+        actualizarDimensiones(modelo);
 
     }, onProgress = () => {
         //console.log("progress")
@@ -537,15 +566,15 @@ function resaltarMueble(padreActual, bool) {
             hl.addMesh(hijo, BABYLON.Color3.Green());
             if (hijo.name == "derecha") {
                 btnDerecho.dispose();
-              createButon3D(hijo,"derecha");
+                createButon3D(hijo, "derecha");
             }
             if (hijo.name == "frente") {
                 btnFrente.dispose();
-                createButon3D(hijo,"frente");
+                createButon3D(hijo, "frente");
             }
             if (hijo.name == "izquierda") {
                 btnIzquierdo.dispose();
-                createButon3D(hijo,"izquierda");
+                createButon3D(hijo, "izquierda");
             }
         });
     } else {
@@ -606,23 +635,23 @@ function modeloActual(text, moduA) {
     // console.log("modulo indice", indiceModulo);
     switch (indiceModulo) {
         case 0:
-            selecionado = modelos.taburetes[indiceTextura];
+            selecionado = modelos.taburetes[indiceTextura].nombre;
             //console.log('modulo', selecionado);
             break;
         case 1:
-            selecionado = modelos.brazos[indiceTextura];
+            selecionado = modelos.brazos[indiceTextura].nombre;
             // console.log('modulo', selecionado);
             break;
         case 2:
-            selecionado = modelos.esquinas[indiceTextura];
+            selecionado = modelos.esquinas[indiceTextura].nombre;
             // console.log('modulo', selecionado);
             break;
         case 3:
-            selecionado = modelos.completos[indiceTextura];
+            selecionado = modelos.completos[indiceTextura].nombre;
             // console.log('modulo', selecionado);
             break;
         default:
-            selecionado = modelos.taburetes[indiceTextura];
+            selecionado = modelos.taburetes[indiceTextura].nombre;
             //console.log('modulo', selecionado);
             break;
     }
@@ -720,25 +749,49 @@ function esconderTodosBotones(bool) {
         esconderMesh(btnFrente, false);
     }
 }
-function cambiarFondo(){
+function cambiarFondo() {
 
-    
+
     var opc = Math.floor((Math.random() * 4) + 1);
     switch (opc) {
         case 1:
-        background.texture=new BABYLON.Texture("assets/imagenes/fondos/sala.jpg", escena);
-        break;
+            background.texture = new BABYLON.Texture("assets/imagenes/fondos/sala.jpg", escena);
+            break;
         case 2:
-        background.texture=new BABYLON.Texture("assets/imagenes/fondos/sala1.jpg", escena);
-        break;
+            background.texture = new BABYLON.Texture("assets/imagenes/fondos/sala1.jpg", escena);
+            break;
         case 3:
-        background.texture=new BABYLON.Texture("assets/imagenes/fondos/sala2.jpg", escena);
-        break;
+            background.texture = new BABYLON.Texture("assets/imagenes/fondos/sala2.jpg", escena);
+            break;
         case 4:
-        background.texture=new BABYLON.Texture("assets/imagenes/fondos/sala3.jpg", escena);
-        break;
-    
+            background.texture = new BABYLON.Texture("assets/imagenes/fondos/sala3.jpg", escena);
+            break;
+
         default:
             break;
     }
+}
+
+function actualizarDimensiones(modelo) {
+    let iniciales = modelo.substring(0, 3);
+    console.log("iniciales", iniciales);
+    switch (iniciales) {
+        case 'tab':
+            let taburete = modelos.taburetes.find(x => x.nombre === modelo);
+            sumarDimensionesTotales(taburete);
+            break;
+        case 'bra':
+            let brazo = modelos.brazos.find(x => x.nombre === modelo);
+            sumarDimensionesTotales(brazo);
+            break;
+        case 'esq':
+            let esquina = modelos.esquinas.find(x => x.nombre === modelo);
+            sumarDimensionesTotales(esquina)
+            break;
+    }
+}
+function sumarDimensionesTotales(modelo) {
+    dimensionesTotales.x += modelo.dimensiones.largo;
+    dimensionesTotales.y += modelo.dimensiones.ancho;
+    dimensionesTotales.z += modelo.dimensiones.alto;
 }
