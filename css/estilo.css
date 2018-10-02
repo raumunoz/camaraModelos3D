@@ -25,13 +25,19 @@ height: 80%;
 .item4 { grid-area: footer;
 height: 25%; }
 .acciones{grid-area:accion;}
+.botones-confimarcion{
+    grid-area:comf;
+}
+.botones-herramientas{
+    grid-area:erra;
+}
 .grid-container {
 display: grid;
 grid-template-areas:
 'header header header header header header'
 'menu main main main main main'
-'menu main main main main main'
-'menu main main main main main'
+'erra main main main main main'
+'comf main main main main main'
 'accion main main main main main'
 'accion main main main main main'
 'accion main main main main main'
@@ -53,11 +59,11 @@ display: grid;
 grid-template-areas:
   'header header header header header header'
   'menu menu menu menu menu menu'
-  'menu menu menu menu menu menu'
   'main main main main main main'
   'main main main main main main'
   'main main main main main main'
   'main main main main main main'
+  'erra erra erra comf comf comf'minmax(100px, auto)
   'accion accion accion accion accion accion'
   'footer footer footer footer footer footer';
 grid-gap: 10px;
