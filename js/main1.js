@@ -154,6 +154,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
             // sphere.position.x = value;
         });
+        
         var perfFolder = gui.addFolder("Dimensiones");
          perfLi = document.createElement("li");
          perfLi1 = document.createElement("li");
@@ -173,7 +174,7 @@ window.addEventListener('DOMContentLoaded', function () {
         perfFolder.__ul.appendChild(perfLi2);
         var customContainer = document.getElementById('main');
         customContainer.appendChild(gui.domElement);
-
+        f2.open();
         // compared click for sphere
 
         engine.runRenderLoop(function () {
@@ -814,7 +815,10 @@ function sumarDimensionesTotales(modelo) {
     dimensionesTotales.x += modelo.dimensiones.largo;
     dimensionesTotales.y += modelo.dimensiones.ancho;
     dimensionesTotales.z += modelo.dimensiones.alto;
-    perfLi.innerHTML=`largo: `+dimensionesTotales.x;
-    perfLi1.innerHTML=`ancho: `+dimensionesTotales.y;
-    perfLi2.innerHTML=`alto: `+dimensionesTotales.z;
+    perfLi.innerHTML=`largo: `+dimensionesTotales.x+` m`;
+    perfLi1.innerHTML=`ancho: `+dimensionesTotales.y+` m`;
+    perfLi2.innerHTML=`alto: `+dimensionesTotales.z+` m`;
+}
+function activarCamara(){
+    cargarCamara(escena,camara);
 }

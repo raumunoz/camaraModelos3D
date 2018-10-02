@@ -21,7 +21,6 @@ var createScene = function () {
     var scene = new BABYLON.Scene(engine);
     var advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI");
      ellipse1 = new BABYLON.GUI.Ellipse();
-
     ellipse1.width = "100px"
     ellipse1.height = "100px";
     ellipse1.color = "black";
@@ -109,7 +108,7 @@ zoom=camera.zoomOnFactor;
     // light = new BABYLON.HemisphericLight("hemiLight", new BABYLON.Vector3(-5, 5, 0), scene);
     // Add and manipulate meshes in the scene
     var light = new BABYLON.HemisphericLight("hemiLight", new BABYLON.Vector3(-1, 1, 0), scene);
-    BABYLON.SceneLoader.Append("./", "esquinaCasual.gltf", scene, function (scene) {
+    BABYLON.SceneLoader.Append("assets/modelos/", "esquinaCasual.gltf", scene, function (scene) {
         // Create a default arc rotate camera and light.
        // scene.createDefaultCameraOrLight(true, true, true);
 
