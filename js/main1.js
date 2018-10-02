@@ -1,3 +1,6 @@
+let perfLi;
+let perfLi1;
+let perfLi2;
 let padreBorrar;
 let hijosBorrar;
 var container;
@@ -69,10 +72,11 @@ let cargando;
 
 let meshesAcargar;
 var dimensionesTotales = {
-    x:50,
-    y:50,
-    z:50
+    x: 50,
+    y: 50,
+    z: 50
 };
+
 window.addEventListener('DOMContentLoaded', function () {
     cargando = false;
     texturaActual = texturas[1];
@@ -150,7 +154,23 @@ window.addEventListener('DOMContentLoaded', function () {
 
             // sphere.position.x = value;
         });
-
+        var perfFolder = gui.addFolder("Dimensiones");
+         perfLi = document.createElement("li");
+         perfLi1 = document.createElement("li");
+         perfLi2 = document.createElement("li");
+        //stats.domElement.style.position = "static";
+        var textnode = document.createTextNode("largo :"+ dimensionesTotales.x);
+        var textnode1 = document.createTextNode("Ancho :"+ dimensionesTotales.x);
+        var textnode2 = document.createTextNode("Alto :"+ dimensionesTotales.x);
+        perfLi.appendChild(textnode);
+        perfLi1.appendChild(textnode1);
+        perfLi2.appendChild(textnode2);
+        perfLi.classList.add("gui-Dimensiones");
+        perfLi.classList.add("gui-Dimensiones");
+        perfLi.classList.add("gui-Dimensiones");
+        perfFolder.__ul.appendChild(perfLi);
+        perfFolder.__ul.appendChild(perfLi1);
+        perfFolder.__ul.appendChild(perfLi2);
         var customContainer = document.getElementById('main');
         customContainer.appendChild(gui.domElement);
 
@@ -375,7 +395,7 @@ function cargarModelo(padre, modelo, hijos) {
     if (!modelo) {
         modelo = "BrazoContempo.gltf";
     }
-    
+
     engine.displayLoadingUI();
     BABYLON.SceneLoader.LoadAssetContainer("assets/modelos/", modelo, escena, function (newMeshes) {
         meshesAcargar = newMeshes;
@@ -794,4 +814,7 @@ function sumarDimensionesTotales(modelo) {
     dimensionesTotales.x += modelo.dimensiones.largo;
     dimensionesTotales.y += modelo.dimensiones.ancho;
     dimensionesTotales.z += modelo.dimensiones.alto;
+    perfLi.innerHTML=`largo: `+dimensionesTotales.x;
+    perfLi1.innerHTML=`ancho: `+dimensionesTotales.y;
+    perfLi2.innerHTML=`alto: `+dimensionesTotales.z;
 }
