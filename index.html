@@ -10,7 +10,6 @@
     <link rel="stylesheet" type="text/css" media="screen" href="css/navbar.css" />
 
     <script src="js/camara.js"></script>
-    <script src="js/main1.js"></script>
     <link href="https://fonts.googleapis.com/css?family=Dancing+Script|EB+Garamond|Questrial" rel="stylesheet">
 </head>
 
@@ -38,10 +37,10 @@
     <main>
         <div class="grid-container">
             <div class="item1" href="#" id="head">
-
+                
                 ¡Compra hoy y obtén hasta -20% de descuento!
             </div>
-
+            
             <div class="item2">
                 <div class="nombreProducto">
                     <h3 id="nombre">Nombre</h3>
@@ -76,12 +75,24 @@
                         </li>
                     </ul>
                 </div>
-               
+                
             </div>
+            
             <div class="botones-confimarcion">
-                <button class="btn green" id="btnAplicar" onclick="aplicar()">✓</button>
-                <button class="btn red" id="btnCancelar" onclick="cancelar()">X</button>
-                <button class="btn green" id="btnRotar" onclick="rotarSelecionado()">o</button>
+                <ul class="ulbotones">
+                    <li>
+                            <button id="btnAplicar" onclick="aplicar()">✓</button>
+                    </li>
+                    <li>
+                            <button  id="btnCancelar" onclick="cancelar()">X</button>
+                    </li>
+                    <li>
+                            <button  id="btnRotar" onclick="rotarSelecionado()">o</button>
+                    </li>
+                </ul>
+                
+                
+                
             </div>
             <div class="botones-herramientas">
                 <img src="assets/imagenes/fondo.png" alt="fondo" id="fondo" height="42" width="42" onclick="cambiarFondo()">
@@ -89,14 +100,14 @@
             </div>
             <div class="acciones">
                 <span>$123333</span>
-                <a class="btn green" onclick="actualizarMueble()">Comprar</a>
+                <a class="btn green" onclick="onFullScreenChange()">Comprar</a>
             </div>
             <div class="item3" id="main">
                 <div id="datGUI">
                     <canvas id="render">
                     </canvas>
                 </div>
-
+                
             </div>
             <footer class="item4">
                 <ul>
@@ -133,29 +144,30 @@
                     <h3 class="red">Servicio al cliente</h3>
                     <li>
                         <a href="#"></a>Opciones de envio</li>
-                    <li>
-                        <a href="#"></a>Numero de orden</li>
-                </ul>
-
-                <br>
-
-                <p>© 2018 Tiendeo Web Marketing SL | Palau de Mar , 08039 Barcelona</p>
-                <p>Aviso Legal</p>
-
-            </footer>
+                        <li>
+                            <a href="#"></a>Numero de orden</li>
+                        </ul>
+                        
+                        <br>
+                        
+                        <p>© 2018 Tiendeo Web Marketing SL | Palau de Mar , 08039 Barcelona</p>
+                        <p>Aviso Legal</p>
+                        
+                    </footer>
         </div>
     </main>
     <script src="js/dat.gui.min.js"></script>
     <script src="js/jquery-3.3.1.min.js"></script>
-     <script src="https://preview.babylonjs.com/babylon.js"></script>
+    <script src="https://preview.babylonjs.com/babylon.js"></script>
     
     
     <script src="https://preview.babylonjs.com/loaders/babylonjs.loaders.js"></script>
-
+    
     <script src="https://preview.babylonjs.com/gui/babylon.gui.min.js"></script>
-
-
+    
+    
     <script src="js/navbar.js"></script>
+    <script src="js/main1.js"></script>
 </body>
 
 </html>

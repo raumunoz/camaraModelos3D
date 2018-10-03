@@ -76,7 +76,7 @@ var dimensionesTotales = {
     y: 50,
     z: 50
 };
-
+let canvas;
 window.addEventListener('DOMContentLoaded', function () {
     cargando = false;
     texturaActual = texturas[1];
@@ -92,7 +92,9 @@ window.addEventListener('DOMContentLoaded', function () {
     btnCancelar = document.getElementById('btnCancelar');
     btnRotar = document.getElementById('btnRotar');
     // get the canvas DOM element
-    var canvas = document.getElementById('render');
+     canvas = document.getElementById('render');
+     
+     //canvas.getContext('2d');
     // load the 3D engine
     engine = new BABYLON.Engine(canvas, true, { stencil: true });
     // animation : progress indicator
@@ -101,7 +103,23 @@ window.addEventListener('DOMContentLoaded', function () {
     var createScene = function () {
         // create a FreeCamera, and set its position to (x:0, y:5, z:-10)
         //GUI
+        //Does not work
+canvas.addEventListener("mouseup", function(){
+    console.log("Mouse UP!");
+    document.body.style.overflow="auto";
+});
+//Does not work
+canvas.addEventListener("mousedown", function(){
+    console.log("Mouse DOWN!");
+    document.body.style.overflow="hidden";
+});
+//Works
+canvas.addEventListener("click", function(){
+    console.log("Mouse Click!");
+    //document.body.style.overflow="hidden";
+});
         var scene = new BABYLON.Scene(engine);
+        scene.preventDefaultOnPointerDown = false;
         scene.clearColor = new BABYLON.Color3.White();
         //esfera = BABYLON.Mesh.CreateSphere("sphere1", 16, 2, scene);
         hl = new BABYLON.HighlightLayer("hl1", scene);

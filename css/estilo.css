@@ -19,7 +19,7 @@ canvas {
 background: #d30808;  }
 .item3 { grid-area: main;
 width: 100%; 
-height: 80%;
+height: 60%;
 
 }
 .item4 { grid-area: footer;
@@ -60,10 +60,7 @@ grid-template-areas:
   'header header header header header header'
   'menu menu menu menu menu menu'
   'main main main main main main'
-  'main main main main main main'
-  'main main main main main main'
-  'main main main main main main'
-  'erra erra erra comf comf comf'minmax(100px, auto)
+  'erra erra comf comf comf comf'
   'accion accion accion accion accion accion'
   'footer footer footer footer footer footer';
 grid-gap: 10px;
@@ -72,6 +69,39 @@ padding: 10px;
 .item4{
 height: 25%;
 }
+canvas {
+    background-color:#F5F2F0;
+    width: 100%; 
+    height: 300px;
+}
+
+.botones-confimarcion * {
+    color: red;
+    width: 64px;
+
+}
+.botones-herramientas{
+    height: 75px;
+}
+.botones-confimarcion{
+    height: 75px;
+}
+.ulbotones{
+    list-style: none;
+    display: inline;
+}
+
+.btn {
+    border-radius: 5px;
+    padding: 0;
+    font-size: 8px;
+    text-decoration: none;
+    margin: 0;
+    color: #fff;
+    position: absolute;
+    display: inline-block;
+}
+/**/
 } 
 .materiales{
 background-color:whitesmoke;
