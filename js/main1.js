@@ -104,19 +104,25 @@ window.addEventListener('DOMContentLoaded', function () {
         // create a FreeCamera, and set its position to (x:0, y:5, z:-10)
         //GUI
         //Does not work
-canvas.addEventListener("mouseup", function(){
-    console.log("Mouse UP!");
+canvas.addEventListener("click", function(){
+    //alert("Terminó");
+    console.log("CLCIK");
     document.body.style.overflow="auto";
+    
+    //camara.inputs.attached.mouse.detachControl();
+    
+    
 });
 //Does not work
-canvas.addEventListener("mousedown", function(){
+canvas.addEventListener("touchmove", function(){
     console.log("Mouse DOWN!");
     document.body.style.overflow="hidden";
 });
 //Works
-canvas.addEventListener("click", function(){
+canvas.addEventListener("touchstart", function(){
     console.log("Mouse Click!");
     //document.body.style.overflow="hidden";
+    document.body.style.overflow="hidden";
 });
         var scene = new BABYLON.Scene(engine);
         scene.preventDefaultOnPointerDown = false;
@@ -132,8 +138,8 @@ canvas.addEventListener("click", function(){
         camara.upperRadiusLimit = 4;
         camara.minZ = 0.1;
         camara.setPosition(new BABYLON.Vector3(0, 0, 50));
-        camara.attachControl(canvas, true);
-
+        camara.attachControl(canvas, true,false,true);
+        //camara.inputs.addGamepad();
         camara.useBouncingBehavior = false;
 
         camara.useFramingBehavior = false;
@@ -839,4 +845,8 @@ function sumarDimensionesTotales(modelo) {
 }
 function activarCamara(){
     cargarCamara(escena,camara);
+}
+function desactivarScroll(){
+    alert("DETENER");
+    document.body.noScroll.overflow="hidden";   
 }
