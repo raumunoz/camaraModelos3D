@@ -78,6 +78,8 @@ var dimensionesTotales = {
 };
 let canvas;
 window.addEventListener('DOMContentLoaded', function () {
+    var hasTouchscreen = 'ontouchstart' in window;
+    //alert(hasTouchscreen ? 'has touchscreen' : 'doesn\'t have touchscreen');
     cargando = false;
     texturaActual = texturas[1];
     moduloActual = modulos[0];
@@ -92,9 +94,9 @@ window.addEventListener('DOMContentLoaded', function () {
     btnCancelar = document.getElementById('btnCancelar');
     btnRotar = document.getElementById('btnRotar');
     // get the canvas DOM element
-     canvas = document.getElementById('render');
-     
-     //canvas.getContext('2d');
+    canvas = document.getElementById('render');
+
+    //canvas.getContext('2d');
     // load the 3D engine
     engine = new BABYLON.Engine(canvas, true, { stencil: true });
     // animation : progress indicator
@@ -104,26 +106,31 @@ window.addEventListener('DOMContentLoaded', function () {
         // create a FreeCamera, and set its position to (x:0, y:5, z:-10)
         //GUI
         //Does not work
-canvas.addEventListener("click", function(){
-    //alert("Terminó");
-    console.log("CLCIK");
-    document.body.style.overflow="auto";
-    
-    //camara.inputs.attached.mouse.detachControl();
-    
-    
-});
-//Does not work
-canvas.addEventListener("touchmove", function(){
-    console.log("Mouse DOWN!");
-    document.body.style.overflow="hidden";
-});
-//Works
-canvas.addEventListener("touchstart", function(){
-    console.log("Mouse Click!");
-    //document.body.style.overflow="hidden";
-    document.body.style.overflow="hidden";
-});
+        canvas.addEventListener("click", function () {
+            //alert("Terminó");
+            console.log("CLCIK");
+            // document.body.style.overflow="auto";
+
+            //camara.inputs.attached.mouse.detachControl();
+
+
+        });
+        
+        canvas.addEventListener("mousemove", function () {
+            console.log("Mouse MOVE!");
+            // document.body.style.overflow="hidden";
+        });
+        //Does not work
+        canvas.addEventListener("mousedown", function () {
+            console.log("Mouse DOWN!");
+            document.body.style.overflow = "hidden";
+        });
+        //Works
+        canvas.addEventListener("mouseup", function () {
+            console.log("Mouse UP!");
+            //document.body.style.overflow="hidden";
+            document.body.style.overflow = "auto";
+        });
         var scene = new BABYLON.Scene(engine);
         scene.preventDefaultOnPointerDown = false;
         scene.clearColor = new BABYLON.Color3.White();
@@ -138,7 +145,7 @@ canvas.addEventListener("touchstart", function(){
         camara.upperRadiusLimit = 4;
         camara.minZ = 0.1;
         camara.setPosition(new BABYLON.Vector3(0, 0, 50));
-        camara.attachControl(canvas, true,false,true);
+        camara.attachControl(canvas, true, false, true);
         //camara.inputs.addGamepad();
         camara.useBouncingBehavior = false;
 
@@ -148,58 +155,13 @@ canvas.addEventListener("touchstart", function(){
         camara.beta = Math.PI * 0.1;
 
         var light = new BABYLON.HemisphericLight("hemiLight", new BABYLON.Vector3(-1, 1, 0), scene);
-        var gui = new dat.GUI({ autoPlace: false });
-        //gui.parent=scene;
-        //gui.domElement.style.margin = "0";
-        gui.domElement.id = "datGUI";
-        var options = {
-            zoom: 0.1,
-            rotaciónX: 0.1,
-            rotacionY: 0.1
-        }
 
-        gui.add(options, "zoom", 0.1, 3).onChange(function (value) {
-            //sphere.scaling = unitVec.scale(value);
-            camara.upperRadiusLimit = 4 - value;
-            //console.log("zoom", camara.upperRadiusLimit);
-            // sphere.position.x = value;
-        });
-        var f2 = gui.addFolder('Rotación');
-
-        f2.add(options, "rotaciónX", 0.1, 2).onChange(function (value) {
-            //sphere.scaling = unitVec.scale(value);
-            camara.alpha = Math.PI * value;
-            // sphere.position.x = value;
-        });
-
-        f2.add(options, "rotacionY", 0.1, 1).onChange(function (value) {
-            //sphere.scaling = unitVec.scale(value);
-            camara.beta = Math.PI * value;
-
-            // sphere.position.x = value;
-        });
-        
-        var perfFolder = gui.addFolder("Dimensiones");
-         perfLi = document.createElement("li");
-         perfLi1 = document.createElement("li");
-         perfLi2 = document.createElement("li");
-        //stats.domElement.style.position = "static";
-        var textnode = document.createTextNode("largo :"+ dimensionesTotales.x);
-        var textnode1 = document.createTextNode("Ancho :"+ dimensionesTotales.x);
-        var textnode2 = document.createTextNode("Alto :"+ dimensionesTotales.x);
-        perfLi.appendChild(textnode);
-        perfLi1.appendChild(textnode1);
-        perfLi2.appendChild(textnode2);
-        perfLi.classList.add("gui-Dimensiones");
-        perfLi.classList.add("gui-Dimensiones");
-        perfLi.classList.add("gui-Dimensiones");
-        perfFolder.__ul.appendChild(perfLi);
-        perfFolder.__ul.appendChild(perfLi1);
-        perfFolder.__ul.appendChild(perfLi2);
-        var customContainer = document.getElementById('main');
-        customContainer.appendChild(gui.domElement);
-        f2.open();
         // compared click for sphere
+        if (hasTouchscreen) {
+            console.log("TIENE touch");
+        }else{
+            crearInterfaceDatGUI();
+        }
 
         engine.runRenderLoop(function () {
             scene.render();
@@ -839,14 +801,73 @@ function sumarDimensionesTotales(modelo) {
     dimensionesTotales.x += modelo.dimensiones.largo;
     dimensionesTotales.y += modelo.dimensiones.ancho;
     dimensionesTotales.z += modelo.dimensiones.alto;
-    perfLi.innerHTML=`largo: `+dimensionesTotales.x+` m`;
-    perfLi1.innerHTML=`ancho: `+dimensionesTotales.y+` m`;
-    perfLi2.innerHTML=`alto: `+dimensionesTotales.z+` m`;
+    perfLi.innerHTML = `largo: ` + dimensionesTotales.x + ` m`;
+    perfLi1.innerHTML = `ancho: ` + dimensionesTotales.y + ` m`;
+    perfLi2.innerHTML = `alto: ` + dimensionesTotales.z + ` m`;
 }
-function activarCamara(){
-    cargarCamara(escena,camara);
+function activarCamara() {
+    cargarCamara(escena, camara);
 }
-function desactivarScroll(){
-    alert("DETENER");
-    document.body.noScroll.overflow="hidden";   
+function desactivarScroll(bool) {
+    //sconsole.log("TOCHADO");
+    //BABYLON.Tools.CreateScreenshot(engine, camara, (canvas.width,canvas.height));
+    if (bool) {
+        document.body.noScroll.overflow = "hidden";
+    } else {
+        document.body.noScroll.overflow = "auto";
+    }
+
+}
+function crearInterfaceDatGUI() {
+    var gui = new dat.GUI({ autoPlace: false });
+    //gui.parent=scene;
+    //gui.domElement.style.margin = "0";
+    gui.domElement.id = "datGUI";
+    var options = {
+        zoom: 0.1,
+        rotaciónX: 0.1,
+        rotacionY: 0.1
+    }
+
+    gui.add(options, "zoom", 0.1, 3).onChange(function (value) {
+        //sphere.scaling = unitVec.scale(value);
+        camara.upperRadiusLimit = 4 - value;
+        //console.log("zoom", camara.upperRadiusLimit);
+        // sphere.position.x = value;
+    });
+    var f2 = gui.addFolder('Rotación');
+
+    f2.add(options, "rotaciónX", 0.1, 2).onChange(function (value) {
+        //sphere.scaling = unitVec.scale(value);
+        camara.alpha = Math.PI * value;
+        // sphere.position.x = value;
+    });
+
+    f2.add(options, "rotacionY", 0.1, 1).onChange(function (value) {
+        //sphere.scaling = unitVec.scale(value);
+        camara.beta = Math.PI * value;
+
+        // sphere.position.x = value;
+    });
+
+    var perfFolder = gui.addFolder("Dimensiones");
+    perfLi = document.createElement("li");
+    perfLi1 = document.createElement("li");
+    perfLi2 = document.createElement("li");
+    //stats.domElement.style.position = "static";
+    var textnode = document.createTextNode("largo :" + dimensionesTotales.x);
+    var textnode1 = document.createTextNode("Ancho :" + dimensionesTotales.x);
+    var textnode2 = document.createTextNode("Alto :" + dimensionesTotales.x);
+    perfLi.appendChild(textnode);
+    perfLi1.appendChild(textnode1);
+    perfLi2.appendChild(textnode2);
+    perfLi.classList.add("gui-Dimensiones");
+    perfLi.classList.add("gui-Dimensiones");
+    perfLi.classList.add("gui-Dimensiones");
+    perfFolder.__ul.appendChild(perfLi);
+    perfFolder.__ul.appendChild(perfLi1);
+    perfFolder.__ul.appendChild(perfLi2);
+    var customContainer = document.getElementById('main');
+    customContainer.appendChild(gui.domElement);
+    f2.open();
 }
