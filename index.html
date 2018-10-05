@@ -38,69 +38,69 @@
     <main>
         <div class="grid-container">
             <div class="item1" href="#" id="head">
-                
+
                 ¡Compra hoy y obtén hasta -20% de descuento!
             </div>
-            
-            <div class="item2">
-                <div class="nombreProducto">
-                    <h3 id="nombre">Nombre</h3>
-                </div>
-                <div class="materiales">
-                    <span>Materiales</span>
-                    <span id="descripcionMaterial"></span>
-                    <ul class="opc-modelo">
-                        <li>
-                            <img src="assets/imagenes/IconCojinTabureteTelanegra.jpg" id="textuNegra" onclick="cambioTextura(0)">
-                        </li>
-                        <li>
-                            <img src="assets/imagenes/IconCojinTabureteTelaBlanca.jpg" id="textuBlanca" onclick="cambioTextura(1)">
-                        </li>
-                        <li>
-                            <img src="assets/imagenes/IcongrisBotones.jpg" id="textuTrendy" onclick="cambioTextura(2)">
-                        </li>
-                    </ul>
-                </div>
-                <div class="modulos">
-                    <span>Modulos</span>
-                    <span id="descripcionModulo"></span>
-                    <ul class="opc-texturas">
-                        <li>
-                            <img src="assets/imagenes/taburete.png" alt="taburete" id="modTaburete" onclick="cambioModulo(0)">
-                        </li>
-                        <li>
-                            <img src="assets/imagenes/simple.png" alt="esquina" id="modEsquina" onclick="cambioModulo(1)">
-                        </li>
-                        <li>
-                            <img src="assets/imagenes/doble.png" alt="brazo" id="modBrazo" onclick="cambioModulo(2)">
-                        </li>
-                    </ul>
-                </div>
-                
+            <!--ITEM 2-->
+
+            <div class="nombreProducto">
+                <!--<h3 id="nombre">Nombre</h3>-->
             </div>
-            
-            <div class="botones-confimarcion">
-                <ul class="ulbotones">
+            <div class="materiales">
+                <!--<span>Materiales</span>-->
+                <span id="descripcionMaterial"></span>
+                <ul class="opc-modelo">
                     <li>
-                            <button id="btnAplicar" onclick="aplicar()">✓</button>
+                        <img src="assets/imagenes/IconCojinTabureteTelanegra.jpg" id="textuNegra" onclick="cambioTextura(0)">
                     </li>
                     <li>
-                            <button  id="btnCancelar" onclick="cancelar()">X</button>
+                        <img src="assets/imagenes/IconCojinTabureteTelaBlanca.jpg" id="textuBlanca" onclick="cambioTextura(1)">
                     </li>
                     <li>
-                            <button  id="btnRotar" onclick="rotarSelecionado()">o</button>
+                        <img src="assets/imagenes/IcongrisBotones.jpg" id="textuTrendy" onclick="cambioTextura(2)">
                     </li>
                 </ul>
-                
-                
-                
+            </div>
+            <div class="modulos">
+                <!-- <span>Modulos</span>-->
+                <!--<span id="descripcionModulo"></span>-->
+                <ul class="opc-texturas">
+                    <li>
+                        <img src="assets/imagenes/taburete.png" alt="taburete" id="modTaburete" onclick="cambioModulo(0)">
+                    </li>
+                    <li>
+                        <img src="assets/imagenes/simple.png" alt="esquina" id="modEsquina" onclick="cambioModulo(1)">
+                    </li>
+                    <li>
+                        <img src="assets/imagenes/doble.png" alt="brazo" id="modBrazo" onclick="cambioModulo(2)">
+                    </li>
+                </ul>
+            </div>
+
+
+            <!--ITEM 2-->
+            <div class="botones-confimarcion">
+                <ul class="ul-botones" style="list-style-type: none;">
+                    <li>
+                        <button id="btnAplicar" onclick="aplicar()">✓</button>
+                    </li>
+                    <li>
+                        <button id="btnCancelar" onclick="cancelar()">X</button>
+                    </li>
+                    <li>
+                        <button id="btnRotar" onclick="rotarSelecionado()">o</button>
+                    </li>
+                </ul>
+
+
+
             </div>
             <div class="botones-herramientas">
-                <img src="assets/imagenes/fondo.png" alt="fondo" id="fondo" height="42" width="42" onclick="cambiarFondo()">
-                <img src="assets/imagenes/camara.png" alt="fondo" id="fondo" height="42" width="42" onclick="activarCamara()">
+                <img src="assets/imagenes/fondo.png" alt="fondo" id="fondo" height="25" width="25" onclick="cambiarFondo()">
+                <img src="assets/imagenes/camaraA.png" id="btnCamara" disabled="true" alt="fondo" id="fondo" height="25" width="25" onclick="activarCamara()">
             </div>
             <div class="acciones">
-                <span>$123333</span>
+                <!--<span>$123333</span>-->
                 <a class="btn green" onclick="crearInterfaceDatGUI()">Comprar</a>
             </div>
             <div class="item3" id="main">
@@ -108,7 +108,7 @@
                     <canvas id="render">
                     </canvas>
                 </div>
-                
+
             </div>
             <footer class="item4">
                 <ul>
@@ -145,28 +145,28 @@
                     <h3 class="red">Servicio al cliente</h3>
                     <li>
                         <a href="#"></a>Opciones de envio</li>
-                        <li>
-                            <a href="#"></a>Numero de orden</li>
-                        </ul>
-                        
-                        <br>
-                        
-                        <p>© 2018 Tiendeo Web Marketing SL | Palau de Mar , 08039 Barcelona</p>
-                        <p>Aviso Legal</p>
-                        
-                    </footer>
+                    <li>
+                        <a href="#"></a>Numero de orden</li>
+                </ul>
+
+                <br>
+
+                <p>© 2018 Tiendeo Web Marketing SL | Palau de Mar , 08039 Barcelona</p>
+                <p>Aviso Legal</p>
+
+            </footer>
         </div>
     </main>
     <script src="js/dat.gui.min.js"></script>
     <script src="js/jquery-3.3.1.min.js"></script>
     <script src="https://preview.babylonjs.com/babylon.js"></script>
-    
-    
+
+
     <script src="https://preview.babylonjs.com/loaders/babylonjs.loaders.js"></script>
-    
+
     <script src="https://preview.babylonjs.com/gui/babylon.gui.min.js"></script>
-    
-    
+
+
 
     <script src="js/main1.js"></script>
 </body>

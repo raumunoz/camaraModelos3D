@@ -5,7 +5,7 @@ let padreBorrar;
 let hijosBorrar;
 var container;
 var padreCentro;
-
+let camaraActiva;
 var assetContainers = [];
 /*let modelos = {
     taburetes: ['tabureteContempo.gltf', 'tabureteCasual.gltf', 'tabureteTrendy.gltf'],
@@ -77,10 +77,18 @@ var dimensionesTotales = {
     z: 50
 };
 let canvas;
+let btnCamara;
+let isAssigned;
 window.addEventListener('DOMContentLoaded', function () {
     var hasTouchscreen = 'ontouchstart' in window;
     //alert(hasTouchscreen ? 'has touchscreen' : 'doesn\'t have touchscreen');
     cargando = false;
+    isAssigned=false;
+    btnCamara=document.getElementById("btnCamara");
+    //btnCamara.style.opacity=0.1;
+    
+    btnCamara.style.visibility="hidden";
+
     texturaActual = texturas[1];
     moduloActual = modulos[0];
     texturaActual = texturas[1];
@@ -110,15 +118,7 @@ window.addEventListener('DOMContentLoaded', function () {
             //alert("Terminó");
             console.log("CLCIK");
             // document.body.style.overflow="auto";
-
             //camara.inputs.attached.mouse.detachControl();
-
-
-        });
-        
-        canvas.addEventListener("mousemove", function () {
-            console.log("Mouse MOVE!");
-            // document.body.style.overflow="hidden";
         });
         //Does not work
         canvas.addEventListener("mousedown", function () {
@@ -155,14 +155,12 @@ window.addEventListener('DOMContentLoaded', function () {
         camara.beta = Math.PI * 0.1;
 
         var light = new BABYLON.HemisphericLight("hemiLight", new BABYLON.Vector3(-1, 1, 0), scene);
-
         // compared click for sphere
         if (hasTouchscreen) {
             console.log("TIENE touch");
         }else{
-            crearInterfaceDatGUI();
+            //crearInterfaceDatGUI();
         }
-
         engine.runRenderLoop(function () {
             scene.render();
         });
@@ -243,12 +241,9 @@ function clika() {
     toogle = !toogle;
     //console.log("toogle", toogle);
     if (toogle) {
-
-
         container.removeAllFromScene();
         //console.log("container", container);
     } else {
-
         createButon3D(meshDebug1, true);
         createButon3D(meshDebug, false);
         container.addAllToScene();
@@ -265,7 +260,6 @@ var createLabel = function (mesh) {
     label.linkOffsetY = 30;
     advancedTexture.addControl(label);
     label.linkWithMesh(mesh);
-
     var text1 = new BABYLON.GUI.TextBlock();
     text1.text = mesh.name;
     text1.color = "white";
@@ -352,7 +346,6 @@ function createButon3D(mesh, opc) {
             ultimoClickeado = "frente";
             resaltarMueble(padreActual, false);
         });
-
     }
     if (opc === 'derecha') {
         btnDerecho = new BABYLON.GUI.Button3D(mesh, mesh.name);
@@ -553,10 +546,12 @@ function activarBotonesAplicar(bool) {
         btnCancelar.style.visibility = "visible";
         btnAplicar.style.visibility = "visible";
         btnRotar.style.visibility = "visible";
+        btnCamara.style.visibility="hidden";
     } else {
         btnAplicar.style.visibility = "hidden";
         btnCancelar.style.visibility = "hidden";
         btnRotar.style.visibility = "hidden";
+        btnCamara.style.visibility="visible";
         muebleSelecionado = false;
     }
 }
@@ -589,8 +584,6 @@ function resaltarMueble(padreActual, bool) {
         children.forEach(hijo => {
             hl.removeMesh(hijo);
         });
-
-
     }
 }
 function aplicar() {
@@ -805,9 +798,10 @@ function sumarDimensionesTotales(modelo) {
     perfLi1.innerHTML = `ancho: ` + dimensionesTotales.y + ` m`;
     perfLi2.innerHTML = `alto: ` + dimensionesTotales.z + ` m`;
 }
-function activarCamara() {
+/*function activarCamara() {
+    
     cargarCamara(escena, camara);
-}
+}*/
 function desactivarScroll(bool) {
     //sconsole.log("TOCHADO");
     //BABYLON.Tools.CreateScreenshot(engine, camara, (canvas.width,canvas.height));

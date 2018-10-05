@@ -6,12 +6,12 @@ var mobil = false;
 var videoMaterial;
 let camaraLocal;
 let scenaCamara;
-var isAssigned;
+
 function cargarCamara(escena, camera) {
-    isAssigned = false
+   
     camaraLocal = camera;
     scenaCamara = escena;
-    var advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI");
+    /*var advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI");
     ellipse1 = new BABYLON.GUI.Ellipse();
     ellipse1.width = "75px"
     ellipse1.height = "75px";
@@ -23,7 +23,8 @@ function cargarCamara(escena, camera) {
         captura();
     });
     advancedTexture.addControl(ellipse1);
-
+*/
+btnCamara.style.visibility="hidden";
     navigator.mediaDevices.enumerateDevices().then(function (dispositivos) {
         dispositivos.forEach(device => {
             console.log(device.kind + ": " + device.label +
@@ -77,7 +78,7 @@ function cargarCamara(escena, camera) {
 }
 
 function captura() {
-    ellipse1.isVisible = false;
+    /*ellipse1.isVisible = false;
     setTimeout(function () {
         escena.render();
         //BABYLON.Tools.CreateScreenshotUsingRenderTarget(engine, camara, 400);
@@ -87,7 +88,9 @@ function captura() {
             //alert("acabó Time out");
             ellipse1.isVisible = true;
         }, 4000)
-    );
+    );*/
+    escena.render();
+    BABYLON.Tools.CreateScreenshot(engine, camara, {precision: 1});
     
 };
 
@@ -99,5 +102,16 @@ function encenderCamara(idCamara) {
         //videoTexture.vScale = -1;
         myVideo = videoTexture;
         // videoMaterial.diffuseTexture = myVideo;
+        btnCamara.style.visibility="visible";
+        btnCamara.src="assets/imagenes/camaraB.png";
     }, { deviceId: idCamara });
+}
+function activarCamara() {
+    if (isAssigned === false) {
+        cargarCamara(escena, camara);    
+    } 
+    if (isAssigned===true) {
+        captura();
+    }
+    
 }
