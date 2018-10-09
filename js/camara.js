@@ -6,9 +6,10 @@ var mobil = false;
 var videoMaterial;
 let camaraLocal;
 let scenaCamara;
-
+let promesa;
+let materialVideo;
+let camaraActivada;
 function cargarCamara(escena, camera) {
-   
     camaraLocal = camera;
     scenaCamara = escena;
     /*var advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI");
@@ -24,7 +25,7 @@ function cargarCamara(escena, camera) {
     });
     advancedTexture.addControl(ellipse1);
 */
-btnCamara.style.visibility="hidden";
+    btnCamara.style.visibility = "hidden";
     navigator.mediaDevices.enumerateDevices().then(function (dispositivos) {
         dispositivos.forEach(device => {
             console.log(device.kind + ": " + device.label +
@@ -52,31 +53,27 @@ btnCamara.style.visibility="hidden";
         }
         encenderCamara(idCamara);
     });
-
     videoMaterial = new BABYLON.StandardMaterial("texture1", scenaCamara);
     videoMaterial.emissiveColor = new BABYLON.Color3(1, 1, 1);
     videoMaterial.backFaceCulling = false;
     console.log("material", videoMaterial.sideOrientation);
-
-    scenaCamara.onAfterRenderObservable.add(function () {
-        if (myVideo !== undefined && isAssigned == false) {
+    scenaCamara.onAfterCameraRenderObservable.add(function () {
+        if ((myVideo !== undefined && isAssigned == false) || (camaraActivada == !undefined)) {
             if (myVideo.video.readyState == 4) {
                 //plane1.material = videoMaterial;
                 //donut.material=videoMaterial;
                 isAssigned = true;
-
                 background.texture = myVideo;
                 background.texture.uAng = Math.PI;
-
             }
         }
+
     });
-    background = new BABYLON.Layer("back", "https://c2.staticflickr.com/4/3395/4626555052_411fd997b3_o.jpg", scenaCamara);
-    background.isBackground = true;
-    background.texture.level = 0;
+    /*  background = new BABYLON.Layer("back", "https://c2.staticflickr.com/4/3395/4626555052_411fd997b3_o.jpg", scenaCamara);
+        background.isBackground = true;
+        background.texture.level = 0;*/
 
 }
-
 function captura() {
     /*ellipse1.isVisible = false;
     setTimeout(function () {
@@ -89,29 +86,37 @@ function captura() {
             ellipse1.isVisible = true;
         }, 4000)
     );*/
+    //isAssigned=false;
     escena.render();
-    BABYLON.Tools.CreateScreenshot(engine, camara, {precision: 1});
-    
+    BABYLON.Tools.CreateScreenshot(engine, camara, { precision: 1 });
 };
-
 function encenderCamara(idCamara) {
 
-    BABYLON.VideoTexture.CreateFromWebCam(scenaCamara, function (videoTexture) {
+    materialVideo = BABYLON.VideoTexture.CreateFromWebCam(scenaCamara, function (videoTexture) {
         //para voltear la textura del video 
         //videoTexture.uScale = 1;
         //videoTexture.vScale = -1;
         myVideo = videoTexture;
         // videoMaterial.diffuseTexture = myVideo;
-        btnCamara.style.visibility="visible";
-        btnCamara.src="assets/imagenes/camaraB.png";
+        btnCamara.style.visibility = "visible";
+        btnCamara.src = "assets/imagenes/camaraB.png";
+        camaraActivada = true;
     }, { deviceId: idCamara });
 }
 function activarCamara() {
-    if (isAssigned === false) {
-        cargarCamara(escena, camara);    
-    } 
-    if (isAssigned===true) {
-        captura();
+    if (camaraActivada === false || camaraActivada == undefined) {
+        cargarCamara(escena, camara);
     }
-    
+    if (camaraActivada === true) {
+        captura();
+        btnCamara.style.visibility = "hidden";
+        background = new BABYLON.Layer("back", "assets/imagenes/fondos/fondo.jpg", escena);
+        camaraActivada = false;
+        setTimeout(function(){ 
+            btnCamara.src = "assets/imagenes/camaraA.png";
+            btnCamara.style.visibility = "visible";
+        }, 3000);
+        
+
+    }
 }
