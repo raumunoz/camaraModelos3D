@@ -79,15 +79,18 @@ var dimensionesTotales = {
 let canvas;
 let btnCamara;
 let isAssigned;
+let dimensionesText;
+let hasTouchscreen;
 window.addEventListener('DOMContentLoaded', function () {
-    var hasTouchscreen = 'ontouchstart' in window;
+    hasTouchscreen = 'ontouchstart' in window;
     //alert(hasTouchscreen ? 'has touchscreen' : 'doesn\'t have touchscreen');
     cargando = false;
-    isAssigned=false;
-    btnCamara=document.getElementById("btnCamara");
+    isAssigned = false;
+    btnCamara = document.getElementById("btnCamara");
     //btnCamara.style.opacity=0.1;
-    
-    btnCamara.style.visibility="hidden";
+
+    btnCamara.style.visibility = "hidden";
+
 
     texturaActual = texturas[1];
     moduloActual = modulos[0];
@@ -114,22 +117,23 @@ window.addEventListener('DOMContentLoaded', function () {
         // create a FreeCamera, and set its position to (x:0, y:5, z:-10)
         //GUI
         //Does not work
-        canvas.addEventListener("click", function () {
-            //alert("Terminó");
-            console.log("CLCIK");
-            // document.body.style.overflow="auto";
-            //camara.inputs.attached.mouse.detachControl();
-        });
+     
         //Does not work
         canvas.addEventListener("mousedown", function () {
-            console.log("Mouse DOWN!");
-            document.body.style.overflow = "hidden";
+           // console.log("Mouse DOWN!");
+            if (hasTouchscreen) {
+                document.body.style.overflow = "hidden";
+            }
+            
         });
         //Works
         canvas.addEventListener("mouseup", function () {
             console.log("Mouse UP!");
             //document.body.style.overflow="hidden";
-            document.body.style.overflow = "auto";
+            if (hasTouchscreen) {
+                document.body.style.overflow = "auto";    
+            }
+            
         });
         var scene = new BABYLON.Scene(engine);
         scene.preventDefaultOnPointerDown = false;
@@ -156,10 +160,12 @@ window.addEventListener('DOMContentLoaded', function () {
 
         var light = new BABYLON.HemisphericLight("hemiLight", new BABYLON.Vector3(-1, 1, 0), scene);
         // compared click for sphere
+        advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI");
         if (hasTouchscreen) {
-            console.log("TIENE touch");
-        }else{
+            crearInterfaceDatGUI();
+        } else {
             //crearInterfaceDatGUI();
+            crearInterfaceTexto();
         }
         engine.runRenderLoop(function () {
             scene.render();
@@ -546,12 +552,12 @@ function activarBotonesAplicar(bool) {
         btnCancelar.style.visibility = "visible";
         btnAplicar.style.visibility = "visible";
         btnRotar.style.visibility = "visible";
-        btnCamara.style.visibility="hidden";
+        btnCamara.style.visibility = "hidden";
     } else {
         btnAplicar.style.visibility = "hidden";
         btnCancelar.style.visibility = "hidden";
         btnRotar.style.visibility = "hidden";
-        btnCamara.style.visibility="visible";
+        btnCamara.style.visibility = "visible";
         muebleSelecionado = false;
     }
 }
@@ -794,9 +800,17 @@ function sumarDimensionesTotales(modelo) {
     dimensionesTotales.x += modelo.dimensiones.largo;
     dimensionesTotales.y += modelo.dimensiones.ancho;
     dimensionesTotales.z += modelo.dimensiones.alto;
-    perfLi.innerHTML = `largo: ` + dimensionesTotales.x + ` m`;
-    perfLi1.innerHTML = `ancho: ` + dimensionesTotales.y + ` m`;
-    perfLi2.innerHTML = `alto: ` + dimensionesTotales.z + ` m`;
+console.log("SUMMAR");
+//dimensionesText.text = (" ancho: " + dimensionesTotales.x + " alto: " + dimensionesTotales.y + " largo: " + dimensionesTotales.z);
+    if (hasTouchscreen===false) {
+        dimensionesText.text = (" ancho: " + dimensionesTotales.x + " alto: " + dimensionesTotales.y + " largo: " + dimensionesTotales.z);
+    } else {
+        perfLi.innerHTML = `largo: ` + dimensionesTotales.x + ` m`;
+        perfLi1.innerHTML = `ancho: ` + dimensionesTotales.y + ` m`;
+        perfLi2.innerHTML = `alto: ` + dimensionesTotales.z + ` m`;
+        
+    }
+   
 }
 /*function activarCamara() {
     
@@ -864,4 +878,12 @@ function crearInterfaceDatGUI() {
     var customContainer = document.getElementById('main');
     customContainer.appendChild(gui.domElement);
     f2.open();
+}
+function crearInterfaceTexto() {
+    dimensionesText = new BABYLON.GUI.TextBlock();
+    dimensionesText.text = (" ancho: " + dimensionesTotales.x + " alto: " + dimensionesTotales.y + " largo: " + dimensionesTotales.z);
+    dimensionesText.color = "black";
+    dimensionesText.fontSize = 12;
+    advancedTexture.addControl(dimensionesText);
+    dimensionesText.textVerticalAlignment = 1;
 }
