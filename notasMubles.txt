@@ -35,5 +35,5 @@ btnCamara
 	se vuelve a cambiar el icono a el original[]
 	se resetea la variable is assigned[]			
 	
-
+	
 		
