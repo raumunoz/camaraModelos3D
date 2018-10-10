@@ -17,7 +17,7 @@ let modelos = {
     taburetes: [
         { nombre: "tabureteContempo.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 } },
         { nombre: "tabureteCasual.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 } },
-        { nombre: "tabureteTrendy.gltf", \dimensiones: { largo: 1.5, ancho: 1, alto: 1 } }
+        { nombre: "tabureteTrendy.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 } }
     ],
     brazos: [
         { nombre: "BrazoContempo.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 } },
@@ -81,7 +81,7 @@ let btnCamara;
 let isAssigned;
 let dimensionesText;
 let hasTouchscreen;
-let dimensionSuperior={x:{posi:0,nega:0},y:{posi:0,nega:0},z:{posi:0,nega:0}};
+let dimensionSuperior = { x: { posi: 0, nega: 0 }, y: { posi: 0, nega: 0 }, z: { posi: 0, nega: 0 } };
 window.addEventListener('DOMContentLoaded', function () {
     hasTouchscreen = 'ontouchstart' in window;
     //alert(hasTouchscreen ? 'has touchscreen' : 'doesn\'t have touchscreen');
@@ -118,23 +118,23 @@ window.addEventListener('DOMContentLoaded', function () {
         // create a FreeCamera, and set its position to (x:0, y:5, z:-10)
         //GUI
         //Does not work
-     
+
         //Does not work
         canvas.addEventListener("mousedown", function () {
-           // console.log("Mouse DOWN!");
+            // console.log("Mouse DOWN!");
             if (hasTouchscreen) {
                 document.body.style.overflow = "hidden";
             }
-            
+
         });
         //Works
         canvas.addEventListener("mouseup", function () {
             console.log("Mouse UP!");
             //document.body.style.overflow="hidden";
             if (hasTouchscreen) {
-                document.body.style.overflow = "auto";    
+                document.body.style.overflow = "auto";
             }
-            
+
         });
         var scene = new BABYLON.Scene(engine);
         scene.preventDefaultOnPointerDown = false;
@@ -331,7 +331,8 @@ function createButon3D(mesh, opc) {
             activarBotonesAplicar(true);
             ultimoClickeado = "izquierda";
             resaltarMueble(padreActual, false);
-            compararPoicion(padreActual);
+            setTimeout(function(){ compararPoicion(padreActual); }, 1000);
+            
         });
 
     } if (opc === 'frente') {
@@ -353,7 +354,7 @@ function createButon3D(mesh, opc) {
             activarBotonesAplicar(true);
             ultimoClickeado = "frente";
             resaltarMueble(padreActual, false);
-            compararPoicion(padreActual);
+            setTimeout(function(){ compararPoicion(padreActual); }, 1000);
         });
     }
     if (opc === 'derecha') {
@@ -371,7 +372,7 @@ function createButon3D(mesh, opc) {
             activarBotonesAplicar(true);
             ultimoClickeado = "derecha";
             resaltarMueble(padreActual, false);
-            compararPoicion(padreActual);
+            setTimeout(function(){ compararPoicion(padreActual); }, 1000);
         });
 
     }
@@ -473,9 +474,9 @@ function cargarModelo(padre, modelo, hijos) {
         }*/
         //createHoloButton(padreActual);
         actualizarDimensiones(modelo);
-        
+
         container.addAllToScene();
-        
+
     }, onSuccess = () => {
         engine.hideLoadingUI();
     }, onProgress = () => {
@@ -785,7 +786,7 @@ function cambiarFondo() {
 
 function actualizarDimensiones(modelo) {
     let iniciales = modelo.substring(0, 3);
-    
+
     console.log("iniciales", iniciales);
     switch (iniciales) {
         case 'tab':
@@ -801,30 +802,30 @@ function actualizarDimensiones(modelo) {
             sumarDimensionesTotales(esquina)
             break;
     }
-    
+
 }
 function sumarDimensionesTotales(modelo) {
     //compararPoicion(padreActual.getBoundingInfo().boundingBox.centerWorld);
-    var xtotal=0;
-    var ztotal=0;
+    var xtotal = 0;
+    var ztotal = 0;
     dimensionesTotales.x += modelo.dimensiones.largo;
     dimensionesTotales.y += modelo.dimensiones.ancho;
     dimensionesTotales.z += modelo.dimensiones.alto;
 
-xtotal=((Number(dimensionSuperior.x.posi))+(Number(Math.abs(dimensionSuperior.x.nega)))).toFixed(1);
-ztotal=((Number(dimensionSuperior.z.posi))+(Number(Math.abs(dimensionSuperior.z.nega)))).toFixed(1);
-xtotal=1+Number(xtotal);
-ztotal=1+Number(ztotal);
-console.log("xtotal",xtotal);
-console.log("ztotal",ztotal);
-//dimensionesText.text = (" ancho: " + dimensionesTotales.x + " alto: " + dimensionesTotales.y + " largo: " + dimensionesTotales.z);
-    if (hasTouchscreen===false) {
-        dimensionesText.text = (" ancho: " + xtotal + "m alto: " + 0 + "m largo: " + ztotal+"m");
+    xtotal = ((Number(dimensionSuperior.x.posi)) + (Number(Math.abs(dimensionSuperior.x.nega)))).toFixed(1);
+    ztotal = ((Number(dimensionSuperior.z.posi)) + (Number(Math.abs(dimensionSuperior.z.nega)))).toFixed(1);
+    xtotal = 1 + Number(xtotal);
+    ztotal = 1 + Number(ztotal);
+    console.log("xtotal", xtotal);
+    console.log("ztotal", ztotal);
+    //dimensionesText.text = (" ancho: " + dimensionesTotales.x + " alto: " + dimensionesTotales.y + " largo: " + dimensionesTotales.z);
+    if (hasTouchscreen === false) {
+        dimensionesText.text = (" ancho: " + xtotal + "m alto: " + 0 + "m largo: " + ztotal + "m");
     } else {
         perfLi.innerHTML = `largo: ` + dimensionesTotales.x + ` m`;
         perfLi1.innerHTML = `ancho: ` + dimensionesTotales.y + ` m`;
         perfLi2.innerHTML = `alto: ` + dimensionesTotales.z + ` m`;
-        
+
     }
 }
 /*function activarCamara() {
@@ -900,37 +901,37 @@ function crearInterfaceTexto() {
     advancedTexture.addControl(dimensionesText);
     dimensionesText.textVerticalAlignment = 1;
 }
-function compararPoicion(numO){
-    let num=padreActual.getBoundingInfo().boundingBox.centerWorld;
-    console.log("cordenandasss",num);
-    if(num.x>0){
-        if (num.x>dimensionSuperior.x.posi) {
-            dimensionSuperior.x.posi=num.x;
+function compararPoicion(numO) {
+    let num = padreActual.getBoundingInfo().boundingBox.centerWorld;
+    console.log("cordenandasss", num);
+    if (num.x > 0) {
+        if (num.x > dimensionSuperior.x.posi) {
+            dimensionSuperior.x.posi = num.x;
         }
     }
-    if (num.x<0) {
-        if (num.x<dimensionSuperior.x.nega) {
-            dimensionSuperior.x.nega=num.x;
+    if (num.x < 0) {
+        if (num.x < dimensionSuperior.x.nega) {
+            dimensionSuperior.x.nega = num.x;
         }
     }
-    if(num.y>0){
-        if (num.y>dimensionSuperior.y.posi) {
-            dimensionSuperior.y.posi=num.y;
+    if (num.y > 0) {
+        if (num.y > dimensionSuperior.y.posi) {
+            dimensionSuperior.y.posi = num.y;
         }
     }
-    if (num.y<0) {
-        if (num.y<dimensionSuperior.y.nega) {
-            dimensionSuperior.y.nega=num.y;
+    if (num.y < 0) {
+        if (num.y < dimensionSuperior.y.nega) {
+            dimensionSuperior.y.nega = num.y;
         }
     }
-    if(num.z>0){
-        if (num.z>dimensionSuperior.z.posi) {
-            dimensionSuperior.z.posi=num.z;
+    if (num.z > 0) {
+        if (num.z > dimensionSuperior.z.posi) {
+            dimensionSuperior.z.posi = num.z;
         }
     }
-    if (num.z<0) {
-        if (num.z<dimensionSuperior.z.nega) {
-            dimensionSuperior.z.nega=num.z;
+    if (num.z < 0) {
+        if (num.z < dimensionSuperior.z.nega) {
+            dimensionSuperior.z.nega = num.z;
         }
     }
 }
