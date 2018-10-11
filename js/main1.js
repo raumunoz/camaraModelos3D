@@ -81,10 +81,36 @@ let btnCamara;
 let isAssigned;
 let dimensionesText;
 let hasTouchscreen;
-let dimensionSuperior = { x: { posi: 0, nega: 0 }, y: { posi: 0, nega: 0 }, z: { posi: 0, nega: 0 } };
+let dimensionSuperior = { 
+    x: { posi: 0, nega: 0 }, 
+    y: { posi: 0, nega: 0 }, 
+    z: { posi: 0, nega: 0 },
+    largo:function(){
+        return Number((this.x.posi + Math.abs(this.x.nega)).toFixed(2))+1;
+    },
+    ancho:function(){
+        return Number((this.z.posi + Math.abs(this.z.nega)).toFixed(2))+1;
+    },
+ };
+var targetProxy = new Proxy(dimensionSuperior, {
+    set: function (target, key, value) {       
+        //dimensionesText.text = (" ancho: " + xtotal + "m alto: " + 0 + "m largo: " + ztotal + "m");
+        setTimeout(function () { 
+            dimensionesText.text = ("ancho: " + dimensionSuperior.ancho() + "m alto: " + 0 + "m largo: " + dimensionSuperior.largo() + "m"); 
+        }, 1000);
+        
+        target[key] = value;     
+    }
+});
 window.addEventListener('DOMContentLoaded', function () {
     hasTouchscreen = 'ontouchstart' in window;
     //alert(hasTouchscreen ? 'has touchscreen' : 'doesn\'t have touchscreen');
+    /*dimensionSuperior.watch("x",
+        function (identificador, valorViejo, valorNuevo) {
+            console.log("objeto." + identificador + " ha cambiado de "
+                + valorViejo + " a " + valorNuevo);
+            return valorNuevo;
+        });*/
     cargando = false;
     isAssigned = false;
     btnCamara = document.getElementById("btnCamara");
@@ -331,8 +357,8 @@ function createButon3D(mesh, opc) {
             activarBotonesAplicar(true);
             ultimoClickeado = "izquierda";
             resaltarMueble(padreActual, false);
-            setTimeout(function(){ compararPoicion(padreActual); }, 1000);
-            
+            setTimeout(function () { compararPoicion(padreActual); }, 1000);
+
         });
 
     } if (opc === 'frente') {
@@ -354,7 +380,7 @@ function createButon3D(mesh, opc) {
             activarBotonesAplicar(true);
             ultimoClickeado = "frente";
             resaltarMueble(padreActual, false);
-            setTimeout(function(){ compararPoicion(padreActual); }, 1000);
+            setTimeout(function () { compararPoicion(padreActual); }, 1000);
         });
     }
     if (opc === 'derecha') {
@@ -372,7 +398,7 @@ function createButon3D(mesh, opc) {
             activarBotonesAplicar(true);
             ultimoClickeado = "derecha";
             resaltarMueble(padreActual, false);
-            setTimeout(function(){ compararPoicion(padreActual); }, 1000);
+            setTimeout(function () { compararPoicion(padreActual); }, 1000);
         });
 
     }
@@ -473,7 +499,7 @@ function cargarModelo(padre, modelo, hijos) {
                 break;
         }*/
         //createHoloButton(padreActual);
-        actualizarDimensiones(modelo);
+        //actualizarDimensiones(modelo);
 
         container.addAllToScene();
 
@@ -814,6 +840,8 @@ function sumarDimensionesTotales(modelo) {
 
     xtotal = ((Number(dimensionSuperior.x.posi)) + (Number(Math.abs(dimensionSuperior.x.nega)))).toFixed(1);
     ztotal = ((Number(dimensionSuperior.z.posi)) + (Number(Math.abs(dimensionSuperior.z.nega)))).toFixed(1);
+    //ztotal = Number(dimensionSuperior.z.posi) + Math.abs(dimensionSuperior.z.nega).toFixed(1);
+    //xtotal = Number(dimensionSuperior.x.posi) + Math.abs(dimensionSuperior.x.nega).toFixed(1);
     xtotal = 1 + Number(xtotal);
     ztotal = 1 + Number(ztotal);
     console.log("xtotal", xtotal);
@@ -895,7 +923,7 @@ function crearInterfaceDatGUI() {
 }
 function crearInterfaceTexto() {
     dimensionesText = new BABYLON.GUI.TextBlock();
-    dimensionesText.text = (" ancho: " + dimensionesTotales.x + " alto: " + dimensionesTotales.y + " largo: " + dimensionesTotales.z);
+    dimensionesText.text = (" ancho: " + 1 + " alto: " + 1 + " largo: " + 1);
     dimensionesText.color = "black";
     dimensionesText.fontSize = 12;
     advancedTexture.addControl(dimensionesText);
@@ -906,32 +934,38 @@ function compararPoicion(numO) {
     console.log("cordenandasss", num);
     if (num.x > 0) {
         if (num.x > dimensionSuperior.x.posi) {
-            dimensionSuperior.x.posi = num.x;
+            //dimensionSuperior.x.posi = num.x;
+            targetProxy.x = { posi: num.x, nega: dimensionSuperior.x.nega };
         }
     }
     if (num.x < 0) {
         if (num.x < dimensionSuperior.x.nega) {
-            dimensionSuperior.x.nega = num.x;
+            //dimensionSuperior.x.nega = num.x;
+            targetProxy.x = { posi: dimensionSuperior.x.posi, nega: num.x };
         }
     }
     if (num.y > 0) {
         if (num.y > dimensionSuperior.y.posi) {
-            dimensionSuperior.y.posi = num.y;
+            //dimensionSuperior.y.posi = num.y;
+            targetProxy.y = { posi: num.y, nega: dimensionSuperior.y.nega };
         }
     }
     if (num.y < 0) {
         if (num.y < dimensionSuperior.y.nega) {
-            dimensionSuperior.y.nega = num.y;
+            //dimensionSuperior.y.nega = num.y;
+            targetProxy.y = { posi: dimensionSuperior.y.posi, nega: num.y };
         }
     }
     if (num.z > 0) {
         if (num.z > dimensionSuperior.z.posi) {
-            dimensionSuperior.z.posi = num.z;
+            //dimensionSuperior.z.posi = num.z;
+            targetProxy.z = { posi: num.z, nega: dimensionSuperior.z.nega };
         }
     }
     if (num.z < 0) {
         if (num.z < dimensionSuperior.z.nega) {
-            dimensionSuperior.z.nega = num.z;
+            //dimensionSuperior.z.nega = num.z;
+            targetProxy.z = { posi: dimensionSuperior.z.posi, nega: num.z };
         }
     }
 }
