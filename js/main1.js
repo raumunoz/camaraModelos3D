@@ -81,25 +81,36 @@ let btnCamara;
 let isAssigned;
 let dimensionesText;
 let hasTouchscreen;
-let dimensionSuperior = { 
-    x: { posi: 0, nega: 0 }, 
-    y: { posi: 0, nega: 0 }, 
+let dimensionSuperior = {
+    x: { posi: 0, nega: 0 },
+    y: { posi: 0, nega: 0 },
     z: { posi: 0, nega: 0 },
-    largo:function(){
-        return Number((this.x.posi + Math.abs(this.x.nega)).toFixed(2))+1;
+    largo: function () {
+        return Number((this.x.posi + Math.abs(this.x.nega)).toFixed(2)) + 1;
     },
-    ancho:function(){
-        return Number((this.z.posi + Math.abs(this.z.nega)).toFixed(2))+1;
+    ancho: function () {
+        return Number((this.z.posi + Math.abs(this.z.nega)).toFixed(2)) + 1;
     },
- };
+};
 var targetProxy = new Proxy(dimensionSuperior, {
-    set: function (target, key, value) {       
+    set: function (target, key, value) {
         //dimensionesText.text = (" ancho: " + xtotal + "m alto: " + 0 + "m largo: " + ztotal + "m");
-        setTimeout(function () { 
-            dimensionesText.text = ("ancho: " + dimensionSuperior.ancho() + "m alto: " + 0 + "m largo: " + dimensionSuperior.largo() + "m"); 
-        }, 1000);
-        
-        target[key] = value;     
+
+        if (hasTouchscreen === true) {
+            setTimeout(function () {
+                dimensionesText.text = ("ancho: " + dimensionSuperior.ancho() + "m alto: " + 0 + "m largo: " + dimensionSuperior.largo() + "m");
+            }, 1000);
+        } else {
+            setTimeout(function () {
+              /*perfLi.innerHTML = `largo: ` + dimensionesTotales.x + ` m`;
+                perfLi1.innerHTML = `ancho: ` + dimensionesTotales.y + ` m`;
+                perfLi2.innerHTML = `alto: ` + dimensionesTotales.z + ` m`;*/
+                perfLi.innerHTML = `largo: ` + dimensionSuperior.largo()+ ` m`;
+                perfLi1.innerHTML = `ancho: ` + dimensionSuperior.ancho()+ ` m`;
+                perfLi2.innerHTML = `alto: ` + 1+ ` m`;
+            }, 1000);
+        }
+        target[key] = value;
     }
 });
 window.addEventListener('DOMContentLoaded', function () {
@@ -115,10 +126,7 @@ window.addEventListener('DOMContentLoaded', function () {
     isAssigned = false;
     btnCamara = document.getElementById("btnCamara");
     //btnCamara.style.opacity=0.1;
-
     btnCamara.style.visibility = "hidden";
-
-
     texturaActual = texturas[1];
     moduloActual = modulos[0];
     texturaActual = texturas[1];
@@ -188,7 +196,7 @@ window.addEventListener('DOMContentLoaded', function () {
         var light = new BABYLON.HemisphericLight("hemiLight", new BABYLON.Vector3(-1, 1, 0), scene);
         // compared click for sphere
         advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI");
-        if (hasTouchscreen) {
+        if (!hasTouchscreen) {
             crearInterfaceDatGUI();
         } else {
             //crearInterfaceDatGUI();
@@ -809,7 +817,6 @@ function cambiarFondo() {
             break;
     }
 }
-
 function actualizarDimensiones(modelo) {
     let iniciales = modelo.substring(0, 3);
 
@@ -828,7 +835,6 @@ function actualizarDimensiones(modelo) {
             sumarDimensionesTotales(esquina)
             break;
     }
-
 }
 function sumarDimensionesTotales(modelo) {
     //compararPoicion(padreActual.getBoundingInfo().boundingBox.centerWorld);
@@ -847,13 +853,12 @@ function sumarDimensionesTotales(modelo) {
     console.log("xtotal", xtotal);
     console.log("ztotal", ztotal);
     //dimensionesText.text = (" ancho: " + dimensionesTotales.x + " alto: " + dimensionesTotales.y + " largo: " + dimensionesTotales.z);
-    if (hasTouchscreen === false) {
+    if (hasTouchscreen === true) {
         dimensionesText.text = (" ancho: " + xtotal + "m alto: " + 0 + "m largo: " + ztotal + "m");
     } else {
         perfLi.innerHTML = `largo: ` + dimensionesTotales.x + ` m`;
         perfLi1.innerHTML = `ancho: ` + dimensionesTotales.y + ` m`;
         perfLi2.innerHTML = `alto: ` + dimensionesTotales.z + ` m`;
-
     }
 }
 /*function activarCamara() {
@@ -868,7 +873,6 @@ function desactivarScroll(bool) {
     } else {
         document.body.noScroll.overflow = "auto";
     }
-
 }
 function crearInterfaceDatGUI() {
     var gui = new dat.GUI({ autoPlace: false });
@@ -880,7 +884,6 @@ function crearInterfaceDatGUI() {
         rotaciónX: 0.1,
         rotacionY: 0.1
     }
-
     gui.add(options, "zoom", 0.1, 3).onChange(function (value) {
         //sphere.scaling = unitVec.scale(value);
         camara.upperRadiusLimit = 4 - value;
@@ -970,5 +973,4 @@ function compararPoicion(numO) {
     }
 }
 //mesh.getBoundingInfo().boundingBox.center is in object space
-
 //mesh.getBoundingInfo().boundingBox.centerWorld 

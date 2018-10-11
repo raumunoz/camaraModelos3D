@@ -9,11 +9,11 @@ datGui
 	mostrar el datGUI con valores predefinidos[x]
 		abrir carpetas por defecto[o]
 		poner datos por defecto[?]
-mostrar mediciones[x]
-	variable que aumente cada modelo nuevo[x]
+mostrar mediciones[´´´´´´´´´´´[****]]
+	variable que aumente cada modelo nuevo[o]
 		propiedad que tienen los objetos de dimesiones[o]
 	mostrar en el datGUI la dimensiones totales[o]	
-	mostrar en forma 3d variable de dimensiones[x]
+	mostrar en forma 3d variable de dimensiones[-]
 
 agregar la funcionalidad para la camara[o]
 	agregar boton para sacar la foto[o]
@@ -22,18 +22,18 @@ agregar la funcionalidad para la camara[o]
 	lograr que pueda sacar fotos[o]
 
 mejorar la distribucion para celular[o]
-desctivar el scroll cuando se esta manejando la camara[]
+desctivar el scroll cuando se esta manejando la camara[o]
 	detectectar caundo se da un click[o]
 	detectar cuando se antiene precionado[o]
-agregar event listener para cuando presione canvas[x]
+agregar event listener para cuando presione canvas[o]
 
 btnCamara
 	al aceptar se activa el camara[o]
 	al activar la camara se cambia el icono[o]
 	hassta que se carga la camara se vuelve a activar[o]
-	al sacar foto se  deja de usar la camara[]
-	se vuelve a cambiar el icono a el original[]
-	se resetea la variable is assigned[]			
+	al sacar foto se  deja de usar la camara[o]
+	se vuelve a cambiar el icono a el original[o]
+	se resetea la variable is assigned[o]			
 	
 	
 		
