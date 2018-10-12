@@ -34,6 +34,13 @@ btnCamara
 	al sacar foto se  deja de usar la camara[o]
 	se vuelve a cambiar el icono a el original[o]
 	se resetea la variable is assigned[o]			
-	
+
+arreglar el container
+	los modelos no deben ser hijos del modelo anterior[]
+	eliminar realmente el modelo del container al cargar[]
+	que el container esté simepre sin mas datos[]
+	que se pueda edtiar el modelo selecionano sin ser eliminado[]
+
+		
 	
 		

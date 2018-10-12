@@ -102,12 +102,12 @@ var targetProxy = new Proxy(dimensionSuperior, {
             }, 1000);
         } else {
             setTimeout(function () {
-              /*perfLi.innerHTML = `largo: ` + dimensionesTotales.x + ` m`;
-                perfLi1.innerHTML = `ancho: ` + dimensionesTotales.y + ` m`;
-                perfLi2.innerHTML = `alto: ` + dimensionesTotales.z + ` m`;*/
-                perfLi.innerHTML = `largo: ` + dimensionSuperior.largo()+ ` m`;
-                perfLi1.innerHTML = `ancho: ` + dimensionSuperior.ancho()+ ` m`;
-                perfLi2.innerHTML = `alto: ` + 1+ ` m`;
+                /*perfLi.innerHTML = `largo: ` + dimensionesTotales.x + ` m`;
+                  perfLi1.innerHTML = `ancho: ` + dimensionesTotales.y + ` m`;
+                  perfLi2.innerHTML = `alto: ` + dimensionesTotales.z + ` m`;*/
+                perfLi.innerHTML = `largo: ` + dimensionSuperior.largo() + ` m`;
+                perfLi1.innerHTML = `ancho: ` + dimensionSuperior.ancho() + ` m`;
+                perfLi2.innerHTML = `alto: ` + 1 + ` m`;
             }, 1000);
         }
         target[key] = value;
@@ -146,20 +146,16 @@ window.addEventListener('DOMContentLoaded', function () {
     // load the 3D engine
     engine = new BABYLON.Engine(canvas, true, { stencil: true });
     // animation : progress indicator
-
     // createScene function that creates and return the scene
     var createScene = function () {
         // create a FreeCamera, and set its position to (x:0, y:5, z:-10)
         //GUI
-        //Does not work
-
         //Does not work
         canvas.addEventListener("mousedown", function () {
             // console.log("Mouse DOWN!");
             if (hasTouchscreen) {
                 document.body.style.overflow = "hidden";
             }
-
         });
         //Works
         canvas.addEventListener("mouseup", function () {
@@ -168,17 +164,13 @@ window.addEventListener('DOMContentLoaded', function () {
             if (hasTouchscreen) {
                 document.body.style.overflow = "auto";
             }
-
         });
         var scene = new BABYLON.Scene(engine);
         scene.preventDefaultOnPointerDown = false;
         scene.clearColor = new BABYLON.Color3.White();
         //esfera = BABYLON.Mesh.CreateSphere("sphere1", 16, 2, scene);
         hl = new BABYLON.HighlightLayer("hl1", scene);
-
-
         camara = new BABYLON.ArcRotateCamera("Camera", 3 * Math.PI / 2, -Math.PI / 2, 200, BABYLON.Vector3.Zero(), scene);
-
         camara.upperBetaLimit = 3;
         camara.lowerRadiusLimit = 4;
         camara.upperRadiusLimit = 4;
@@ -187,12 +179,10 @@ window.addEventListener('DOMContentLoaded', function () {
         camara.attachControl(canvas, true, false, true);
         //camara.inputs.addGamepad();
         camara.useBouncingBehavior = false;
-
         camara.useFramingBehavior = false;
         camara.useAutoRotationBehavior = true;
         camara.inputs.attached.mousewheel.wheelPrecision = 40;
         camara.beta = Math.PI * 0.1;
-
         var light = new BABYLON.HemisphericLight("hemiLight", new BABYLON.Vector3(-1, 1, 0), scene);
         // compared click for sphere
         advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI");
@@ -224,6 +214,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
     manager = new BABYLON.GUI.GUI3DManager(escena);
     padreCentro = new BABYLON.Mesh("padreCentro", escena);
+    padreActual = padreCentro;
     cargarModelo(padreCentro, modeloActual(texturaActual, moduloActual, true));
 
     /*BABYLON.SceneLoader.LoadAssetContainer("./", "brazoCasual.gltf", escena, function (newMeshes) {
@@ -365,8 +356,8 @@ function createButon3D(mesh, opc) {
             activarBotonesAplicar(true);
             ultimoClickeado = "izquierda";
             resaltarMueble(padreActual, false);
+            padreActual.setParent(null);
             setTimeout(function () { compararPoicion(padreActual); }, 1000);
-
         });
 
     } if (opc === 'frente') {
@@ -376,18 +367,16 @@ function createButon3D(mesh, opc) {
         btnFrente.scaling = new BABYLON.Vector3(.4, .4, .4);
         btnFrente.position.x = -0.2
         btnFrente.mesh.rotation.y = -Math.PI / 2;
-
-
         btnFrente.content = text1;
         btnFrente.onPointerClickObservable.add(() => {
             cargarModelo(mesh, modeloActual(texturaActual, moduloActual));
             btnFrente.dispose();
             esconderMesh(btnIzquierdo, true);
             esconderMesh(btnDerecho, true);
-
             activarBotonesAplicar(true);
             ultimoClickeado = "frente";
             resaltarMueble(padreActual, false);
+            padreActual.setParent(null);
             setTimeout(function () { compararPoicion(padreActual); }, 1000);
         });
     }
@@ -406,12 +395,14 @@ function createButon3D(mesh, opc) {
             activarBotonesAplicar(true);
             ultimoClickeado = "derecha";
             resaltarMueble(padreActual, false);
+            padreActual.setParent(null);
             setTimeout(function () { compararPoicion(padreActual); }, 1000);
         });
 
     }
 }
-function cargarModelo(padre, modelo, hijos) {
+function cargarModelo(padre, modelo) {
+    //para quitar el padre pero dejar las tran
     //alert("ENTRO");
     var derecha;
     var izquierda;
@@ -420,13 +411,11 @@ function cargarModelo(padre, modelo, hijos) {
     if (!modelo) {
         modelo = "BrazoContempo.gltf";
     }
-
     engine.displayLoadingUI();
     BABYLON.SceneLoader.LoadAssetContainer("assets/modelos/", modelo, escena, function (newMeshes) {
         meshesAcargar = newMeshes;
         //console.log("padre a guardar", newMeshes.meshes[0]);
         padreAnterior = padreActual;
-
         padreActual = newMeshes.meshes[0].getChildren()[0];
         //console.log("padre actual", padreActual);
         //padreActual = newMeshes.meshes[0].parent;
@@ -434,17 +423,14 @@ function cargarModelo(padre, modelo, hijos) {
             switch (hijo.name) {
                 case 'izquierda':
                     izquierda = hijo;
-
                     //console.log("FFUE izquierda", izquierda);
                     break;
                 case 'derecha':
                     derecha = hijo;
-
                     //console.log("FFUE derecha", derecha);
                     break;
                 case 'frente':
                     frente = hijo;
-
                     //console.log("FFUE frente", frente);
                     break;
                 default:
@@ -453,7 +439,6 @@ function cargarModelo(padre, modelo, hijos) {
         });
         if (padre.name == 'padreCentro') {
             //alert("Padre centro");
-
             ultimoClickeado = "primer";
         }
         meshDebug = izquierda;
@@ -465,16 +450,13 @@ function cargarModelo(padre, modelo, hijos) {
         activarBotonesAplicar(true);
         esconderTodosBotones(false);
         //resaltarMueble(padreActual, true);
-
-
         container.meshes.push(padreActual);
         //newMeshes.meshes[0].parent = padre;
         //se asigna un padre a el padre acutual
-        //
-        //var dummy = new BABYLON.Mesh("dummy", scene);
+        //var dummy = new BABYLON.Mesh("dummy", scene)
         //var nodo= new Node("nodo",scene);
-        var nodo = new BABYLON.Mesh("nodo", escena);
-        nodo.parent = padre;
+        //var nodo = new BABYLON.Mesh("nodo", escena);
+        //nodo.parent = padre;
         padreActual.parent = padre;
         let cadenaTemp = modelo.slice(0, -5);
         // newMeshes.meshes[0].name = "padre" + cadenaTemp[0].toUpperCase() + cadenaTemp.substring(1);
@@ -508,14 +490,15 @@ function cargarModelo(padre, modelo, hijos) {
         }*/
         //createHoloButton(padreActual);
         //actualizarDimensiones(modelo);
-
+        padreActual.setParent(null);
         container.addAllToScene();
-
     }, onSuccess = () => {
         engine.hideLoadingUI();
+        //padreActual.setParent(null);
     }, onProgress = () => {
         //console.log("progress")
     });
+
 }
 function cambioTextura(opc) {
     texturaActual = texturas[opc];
@@ -525,6 +508,7 @@ function cambioTextura(opc) {
     //alert(modeloActual(texturaActual,moduloActual));
     //alert(opc);
 }
+
 function cambioModulo(opc) {
     moduloActual = modulos[opc];
     actualizarMueble();
@@ -651,7 +635,6 @@ function aplicar() {
     }
 }
 function removerModelo(padre) {
-
     hijosBorrar = padre.getChildren();
     container.meshes = container.meshes.filter((x) => {
         return hijosBorrar.indexOf(x) < 0;
@@ -663,13 +646,11 @@ function removerModelo(padre) {
 }
 function cancelar() {
     removerModelo(padreActual);
-
     //resaltarMueble(padreActual, false);
     activarBotonesAplicar(false);
     esconderMesh(btnIzquierdo, true);
     esconderMesh(btnDerecho, true);
     esconderMesh(btnFrente, true);
-
 }
 function modeloActual(text, moduA) {
 
@@ -767,15 +748,18 @@ function actualizarMueble() {
               removerModelo(padreActual);
               cargarModelo(padreCentro, modeloActual(texturaActual, moduloActual));
           }*/
+        var dummy = new BABYLON.Mesh("dummy", escena);
+        dummy.parent=padreActual;
+        dummy.setParent(null);
         padreTemp = padreActual.parent;
         removerModelo(padreActual);
         //cargarModelo(meshDebug1, modeloActual(texturaActual, moduloActual));
         if (hijosDerecha || hijosFrente || hijosIzquierda) {
-            cargarModelo(padreTemp, modeloActual(texturaActual, moduloActual), { hijosDerecha, hijosFrente, hijosIzquierda });
-
+            //cargarModelo(padreTemp, modeloActual(texturaActual, moduloActual), { hijosDerecha, hijosFrente, hijosIzquierda });
+            cargarModelo(padreActual, modeloActual(texturaActual, moduloActual), { hijosDerecha, hijosFrente, hijosIzquierda });
         } else {
             console.log("no hay hijos");
-            cargarModelo(padreTemp, modeloActual(texturaActual, moduloActual), 'no hay hijos');
+            cargarModelo(dummy, modeloActual(texturaActual, moduloActual), 'no hay hijos');
             //console.log("no hay hijos");
         }
     }
@@ -796,8 +780,6 @@ function esconderTodosBotones(bool) {
     }
 }
 function cambiarFondo() {
-
-
     var opc = Math.floor((Math.random() * 4) + 1);
     switch (opc) {
         case 1:
@@ -812,14 +794,12 @@ function cambiarFondo() {
         case 4:
             background.texture = new BABYLON.Texture("assets/imagenes/fondos/sala3.jpg", escena);
             break;
-
         default:
             break;
     }
 }
 function actualizarDimensiones(modelo) {
     let iniciales = modelo.substring(0, 3);
-
     console.log("iniciales", iniciales);
     switch (iniciales) {
         case 'tab':
@@ -861,9 +841,8 @@ function sumarDimensionesTotales(modelo) {
         perfLi2.innerHTML = `alto: ` + dimensionesTotales.z + ` m`;
     }
 }
-/*function activarCamara() {
-    
-    cargarCamara(escena, camara);
+/*function activarCamara() {   
+cargarCamara(escena, camara);
 }*/
 function desactivarScroll(bool) {
     //sconsole.log("TOCHADO");
