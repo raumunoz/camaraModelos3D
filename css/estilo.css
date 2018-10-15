@@ -89,6 +89,7 @@ canvas {
 .ul-botones{
     display: inline;
     list-style-type: none;
+
 }
 
 .btn {
@@ -245,18 +246,28 @@ margin-bottom: 0;
 .orange{color: orange;}
 .green{color: green;}
 .grey{background-color:grey;}
-
 .dg.main{
-position: absolute;
-z-index: 10;
-top: 5%;
+    position: absolute;
+    z-index: 10;
+    top: 5%;
 }
 #btnAplicar{
-visibility: hidden;
+    visibility: hidden;
+    width: 50px;
+    margin-right: 5px;
+    margin-left: 5px;
 }
 #btnCancelar{
-visibility: hidden;
+    visibility: hidden;
+    width: 50px;
+    margin-right: 5px;
+    margin-left: 5px;
+}
+#btnRotar{
+    width: 50px;
+    margin-right: 5px;
+    margin-left: 5px;
 }
 .dg ul{
-display: grid;
+    display: grid;
 }

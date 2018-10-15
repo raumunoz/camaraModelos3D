@@ -127,7 +127,7 @@ window.addEventListener('DOMContentLoaded', function () {
     isAssigned = false;
     btnCamara = document.getElementById("btnCamara");
     //btnCamara.style.opacity=0.1;
-    btnCamara.style.visibility = "hidden";
+   // btnCamara.style.visibility = "hidden";
     texturaActual = texturas[1];
     moduloActual = modulos[0];
     texturaActual = texturas[1];
@@ -575,10 +575,15 @@ function agregarBorder(val, textura) {
 function activarBotonesAplicar(bool) {
     if (bool) {
         muebleSelecionado = true;
-        btnCancelar.style.visibility = "visible";
+        if(padreAnterior.name=="padreCentro"){
+            btnCancelar.style.visibility = "hidden";
+        }else{
+            btnCancelar.style.visibility = "visible";
+        }
+        
         btnAplicar.style.visibility = "visible";
         btnRotar.style.visibility = "visible";
-        btnCamara.style.visibility = "hidden";
+        //btnCamara.style.visibility = "hidden";
 
         btnTextura.style.opacity= 1;
         btnTextura.setAttribute( "onClick", "javascript: cambioTextura(0);" );
@@ -593,12 +598,14 @@ function activarBotonesAplicar(bool) {
         btnModelo1.setAttribute( "onClick", "javascript: cambioModulo(1);" );
         btnModelo2.style.opacity= 1;
         btnModelo2.setAttribute( "onClick", "javascript: cambioModulo(2);" );
-        
+                
+        btnCamara.style.opacity = .2;
+        btnCamara.setAttribute( "onClick", "javascript: ;" );
     } else {
         btnAplicar.style.visibility = "hidden";
         btnCancelar.style.visibility = "hidden";
         btnRotar.style.visibility = "hidden";
-        btnCamara.style.visibility = "visible";
+        //btnCamara.style.visibility = "visible";
         muebleSelecionado = false;
         
         btnTextura.style.opacity= .2;
@@ -614,6 +621,10 @@ function activarBotonesAplicar(bool) {
         btnModelo1.setAttribute( "onClick", "javascript: ;" );
         btnModelo2.style.opacity= .2;
         btnModelo2.setAttribute( "onClick", "javascript: ;" );
+
+        btnCamara.style.opacity = 1;
+        btnCamara.setAttribute( "onClick", "javascript: activarCamara();" );
+
     }
 }
 function esconderMesh(mesh, bool) {
