@@ -113,6 +113,7 @@ var targetProxy = new Proxy(dimensionSuperior, {
         target[key] = value;
     }
 });
+let botonesMueble;
 window.addEventListener('DOMContentLoaded', function () {
     hasTouchscreen = 'ontouchstart' in window;
     //alert(hasTouchscreen ? 'has touchscreen' : 'doesn\'t have touchscreen');
@@ -134,6 +135,8 @@ window.addEventListener('DOMContentLoaded', function () {
     btnTextura1 = document.getElementById(texturas[1]);
     btnTextura2 = document.getElementById(texturas[2]);
     btnModelo = document.getElementById(modulos[0]);
+    btnModelo1 = document.getElementById(modulos[1]);
+    btnModelo2 = document.getElementById(modulos[2]);
     btnModelo.style.outline = "5px solid grey";
     btnTextura1.style.outline = "5px solid grey";
     btnAplicar = document.getElementById('btnAplicar');
@@ -541,8 +544,7 @@ function agregarBorder(val, textura) {
         }
     } else {
 
-        let btnModelo1 = document.getElementById(modulos[1]);
-        let btnModelo2 = document.getElementById(modulos[2]);
+        
         switch (val) {
             case 0:
                 btnModelo.style.outline = "5px solid grey";
@@ -577,12 +579,41 @@ function activarBotonesAplicar(bool) {
         btnAplicar.style.visibility = "visible";
         btnRotar.style.visibility = "visible";
         btnCamara.style.visibility = "hidden";
+
+        btnTextura.style.opacity= 1;
+        btnTextura.setAttribute( "onClick", "javascript: cambioTextura(0);" );
+        btnTextura1.style.opacity= 1;
+        btnTextura1.setAttribute( "onClick", "javascript: cambioTextura(1);" );
+        btnTextura2.style.opacity= 1;
+        btnTextura2.setAttribute( "onClick", "javascript: cambioTextura(2);" );
+
+        btnModelo.style.opacity= 1;
+        btnModelo.setAttribute( "onClick", "javascript: cambioModulo(0);" );
+        btnModelo1.style.opacity= 1;
+        btnModelo1.setAttribute( "onClick", "javascript: cambioModulo(1);" );
+        btnModelo2.style.opacity= 1;
+        btnModelo2.setAttribute( "onClick", "javascript: cambioModulo(2);" );
+        
     } else {
         btnAplicar.style.visibility = "hidden";
         btnCancelar.style.visibility = "hidden";
         btnRotar.style.visibility = "hidden";
         btnCamara.style.visibility = "visible";
         muebleSelecionado = false;
+        
+        btnTextura.style.opacity= .2;
+        btnTextura.setAttribute( "onClick", "javascript: ;" );
+        btnTextura1.style.opacity= .2;
+        btnTextura1.setAttribute( "onClick", "javascript: ;" );
+        btnTextura2.style.opacity= .2;
+        btnTextura2.setAttribute( "onClick", "javascript: ;" );
+        
+        btnModelo.style.opacity= .2;
+        btnModelo.setAttribute( "onClick", "javascript: ;" );
+        btnModelo1.style.opacity= .2;
+        btnModelo1.setAttribute( "onClick", "javascript: ;" );
+        btnModelo2.style.opacity= .2;
+        btnModelo2.setAttribute( "onClick", "javascript: ;" );
     }
 }
 function esconderMesh(mesh, bool) {
@@ -953,3 +984,7 @@ function compararPoicion(numO) {
 }
 //mesh.getBoundingInfo().boundingBox.center is in object space
 //mesh.getBoundingInfo().boundingBox.centerWorld 
+function alerta(num){
+    console.log("numero de alerta");
+    alert("alerta"+num);
+}
