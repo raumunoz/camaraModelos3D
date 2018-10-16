@@ -114,8 +114,11 @@ var targetProxy = new Proxy(dimensionSuperior, {
     }
 });
 let botonesMueble;
+let padres = [];
+let numPadre = 0;
 window.addEventListener('DOMContentLoaded', function () {
     hasTouchscreen = 'ontouchstart' in window;
+
     //alert(hasTouchscreen ? 'has touchscreen' : 'doesn\'t have touchscreen');
     /*dimensionSuperior.watch("x",
         function (identificador, valorViejo, valorNuevo) {
@@ -127,7 +130,7 @@ window.addEventListener('DOMContentLoaded', function () {
     isAssigned = false;
     btnCamara = document.getElementById("btnCamara");
     //btnCamara.style.opacity=0.1;
-   // btnCamara.style.visibility = "hidden";
+    // btnCamara.style.visibility = "hidden";
     texturaActual = texturas[1];
     moduloActual = modulos[0];
     texturaActual = texturas[1];
@@ -417,11 +420,16 @@ function cargarModelo(padre, modelo) {
     engine.displayLoadingUI();
     BABYLON.SceneLoader.LoadAssetContainer("assets/modelos/", modelo, escena, function (newMeshes) {
         meshesAcargar = newMeshes;
+
+        //rootMesh = newMeshes.createRootMesh();
         //console.log("padre a guardar", newMeshes.meshes[0]);
         padreAnterior = padreActual;
         padreActual = newMeshes.meshes[0].getChildren()[0];
+        numPadre++;
+        padreActual.name = "padre" + numPadre;
         //console.log("padre actual", padreActual);
         //padreActual = newMeshes.meshes[0].parent;
+        padres.push(padreActual);
         padreActual.getChildren().forEach(hijo => {
             switch (hijo.name) {
                 case 'izquierda':
@@ -465,7 +473,6 @@ function cargarModelo(padre, modelo) {
         // newMeshes.meshes[0].name = "padre" + cadenaTemp[0].toUpperCase() + cadenaTemp.substring(1);
         //padre.rotation.y = Math.PI;
         //console.log("escala", padre);
-
         newMeshes.meshes.forEach(mesh => {
             hl.addMesh(mesh, BABYLON.Color3.Green());
             container.meshes.push(mesh);
@@ -544,7 +551,7 @@ function agregarBorder(val, textura) {
         }
     } else {
 
-        
+
         switch (val) {
             case 0:
                 btnModelo.style.outline = "5px solid grey";
@@ -575,55 +582,55 @@ function agregarBorder(val, textura) {
 function activarBotonesAplicar(bool) {
     if (bool) {
         muebleSelecionado = true;
-        if(padreAnterior.name=="padreCentro"){
+        if (padres.length < 2) {
             btnCancelar.style.visibility = "hidden";
-        }else{
+        } else {
             btnCancelar.style.visibility = "visible";
         }
-        
+
         btnAplicar.style.visibility = "visible";
         btnRotar.style.visibility = "visible";
         //btnCamara.style.visibility = "hidden";
 
-        btnTextura.style.opacity= 1;
-        btnTextura.setAttribute( "onClick", "javascript: cambioTextura(0);" );
-        btnTextura1.style.opacity= 1;
-        btnTextura1.setAttribute( "onClick", "javascript: cambioTextura(1);" );
-        btnTextura2.style.opacity= 1;
-        btnTextura2.setAttribute( "onClick", "javascript: cambioTextura(2);" );
+        btnTextura.style.opacity = 1;
+        btnTextura.setAttribute("onClick", "javascript: cambioTextura(0);");
+        btnTextura1.style.opacity = 1;
+        btnTextura1.setAttribute("onClick", "javascript: cambioTextura(1);");
+        btnTextura2.style.opacity = 1;
+        btnTextura2.setAttribute("onClick", "javascript: cambioTextura(2);");
 
-        btnModelo.style.opacity= 1;
-        btnModelo.setAttribute( "onClick", "javascript: cambioModulo(0);" );
-        btnModelo1.style.opacity= 1;
-        btnModelo1.setAttribute( "onClick", "javascript: cambioModulo(1);" );
-        btnModelo2.style.opacity= 1;
-        btnModelo2.setAttribute( "onClick", "javascript: cambioModulo(2);" );
-                
+        btnModelo.style.opacity = 1;
+        btnModelo.setAttribute("onClick", "javascript: cambioModulo(0);");
+        btnModelo1.style.opacity = 1;
+        btnModelo1.setAttribute("onClick", "javascript: cambioModulo(1);");
+        btnModelo2.style.opacity = 1;
+        btnModelo2.setAttribute("onClick", "javascript: cambioModulo(2);");
+
         btnCamara.style.opacity = .2;
-        btnCamara.setAttribute( "onClick", "javascript: ;" );
+        btnCamara.setAttribute("onClick", "javascript: ;");
     } else {
         btnAplicar.style.visibility = "hidden";
         btnCancelar.style.visibility = "hidden";
         btnRotar.style.visibility = "hidden";
         //btnCamara.style.visibility = "visible";
         muebleSelecionado = false;
-        
-        btnTextura.style.opacity= .2;
-        btnTextura.setAttribute( "onClick", "javascript: ;" );
-        btnTextura1.style.opacity= .2;
-        btnTextura1.setAttribute( "onClick", "javascript: ;" );
-        btnTextura2.style.opacity= .2;
-        btnTextura2.setAttribute( "onClick", "javascript: ;" );
-        
-        btnModelo.style.opacity= .2;
-        btnModelo.setAttribute( "onClick", "javascript: ;" );
-        btnModelo1.style.opacity= .2;
-        btnModelo1.setAttribute( "onClick", "javascript: ;" );
-        btnModelo2.style.opacity= .2;
-        btnModelo2.setAttribute( "onClick", "javascript: ;" );
+
+        btnTextura.style.opacity = .2;
+        btnTextura.setAttribute("onClick", "javascript: ;");
+        btnTextura1.style.opacity = .2;
+        btnTextura1.setAttribute("onClick", "javascript: ;");
+        btnTextura2.style.opacity = .2;
+        btnTextura2.setAttribute("onClick", "javascript: ;");
+
+        btnModelo.style.opacity = .2;
+        btnModelo.setAttribute("onClick", "javascript: ;");
+        btnModelo1.style.opacity = .2;
+        btnModelo1.setAttribute("onClick", "javascript: ;");
+        btnModelo2.style.opacity = .2;
+        btnModelo2.setAttribute("onClick", "javascript: ;");
 
         btnCamara.style.opacity = 1;
-        btnCamara.setAttribute( "onClick", "javascript: activarCamara();" );
+        btnCamara.setAttribute("onClick", "javascript: activarCamara();");
 
     }
 }
@@ -635,7 +642,6 @@ function resaltarMueble(padreActual, bool) {
     //console.log("padre actual", padreActual.name)
     var children = padreActual.getChildren();
     if (bool === true) {
-
         children.forEach(hijo => {
             hl.addMesh(hijo, BABYLON.Color3.Green());
             if (hijo.name == "derecha") {
@@ -677,14 +683,25 @@ function aplicar() {
     }
 }
 function removerModelo(padre) {
-    hijosBorrar = padre.getChildren();
-    container.meshes = container.meshes.filter((x) => {
-        return hijosBorrar.indexOf(x) < 0;
-    });
-    hijosBorrar.forEach(hijo => {
-        hijo.dispose();
-    });
-    padre.dispose();
+    if (padres.length >= 2) {
+        hijosBorrar = padre.getChildren();
+        container.meshes = container.meshes.filter((x) => {
+            return hijosBorrar.indexOf(x) < 0;
+        });
+        hijosBorrar.forEach(hijo => {
+            hijo.dispose();
+        });
+        /*padres.forEach((padreI)=>{
+            console.log("padreS nombre",padreI.name+" padreLocal",padre.name);
+            if(padreI.name===padre.name){
+                alert("SE cumple");
+                
+            }
+        });*/
+        padres.splice(padres.indexOf(padreActual), 1);
+        padre.dispose();
+    }
+
 }
 function cancelar() {
     removerModelo(padreActual);
@@ -791,7 +808,7 @@ function actualizarMueble() {
               cargarModelo(padreCentro, modeloActual(texturaActual, moduloActual));
           }*/
         var dummy = new BABYLON.Mesh("dummy", escena);
-        dummy.parent=padreActual;
+        dummy.parent = padreActual;
         dummy.setParent(null);
         padreTemp = padreActual.parent;
         removerModelo(padreActual);
@@ -995,7 +1012,7 @@ function compararPoicion(numO) {
 }
 //mesh.getBoundingInfo().boundingBox.center is in object space
 //mesh.getBoundingInfo().boundingBox.centerWorld 
-function alerta(num){
+function alerta(num) {
     console.log("numero de alerta");
-    alert("alerta"+num);
+    alert("alerta" + num);
 }

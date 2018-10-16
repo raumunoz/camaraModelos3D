@@ -36,10 +36,10 @@ btnCamara
 	se resetea la variable is assigned[o]			
 
 arreglar el container
-	los modelos no deben ser hijos del modelo anterior[]
+	los modelos no deben ser hijos del modelo anterior[o]
 	eliminar realmente el modelo del container al cargar[]
 	que el container esté simepre sin mas datos[]
-	que se pueda edtiar el modelo selecionano sin ser eliminado[]
+	que se pueda edtiar el modelo selecionano sin ser eliminado[^]
 
 		
 	
