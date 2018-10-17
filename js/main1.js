@@ -86,10 +86,10 @@ let dimensionSuperior = {
     y: { posi: 0, nega: 0 },
     z: { posi: 0, nega: 0 },
     largo: function () {
-        return Number((this.x.posi + Math.abs(this.x.nega)).toFixed(2)) + 1;
+        return (this.x.posi + Math.abs(this.x.nega)) + 1;
     },
     ancho: function () {
-        return Number((this.z.posi + Math.abs(this.z.nega)).toFixed(2)) + 1;
+        return (this.z.posi + Math.abs(this.z.nega)) + 1;
     },
 };
 var targetProxy = new Proxy(dimensionSuperior, {
@@ -427,6 +427,7 @@ function cargarModelo(padre, modelo) {
         padreActual = newMeshes.meshes[0].getChildren()[0];
         numPadre++;
         padreActual.name = "padre" + numPadre;
+        // padreActual.esSuperior="NO";
         //console.log("padre actual", padreActual);
         //padreActual = newMeshes.meshes[0].parent;
         padres.push(padreActual);
@@ -469,7 +470,7 @@ function cargarModelo(padre, modelo) {
         //var nodo = new BABYLON.Mesh("nodo", escena);
         //nodo.parent = padre;
         padreActual.parent = padre;
-        let cadenaTemp = modelo.slice(0, -5);
+        //let cadenaTemp = modelo.slice(0, -5);
         // newMeshes.meshes[0].name = "padre" + cadenaTemp[0].toUpperCase() + cadenaTemp.substring(1);
         //padre.rotation.y = Math.PI;
         //console.log("escala", padre);
@@ -698,8 +699,15 @@ function removerModelo(padre) {
                 
             }
         });*/
+
+        actualizarAlBorrar();
         padres.splice(padres.indexOf(padreActual), 1);
         padre.dispose();
+    }
+    if (padres.length < 2) {
+        targetProxy.x = { posi: 0, nega: 0 };
+        targetProxy.y = { posi: 0, nega: 0 };
+        targetProxy.z = { posi: 0, nega: 0 };
     }
 
 }
@@ -970,43 +978,62 @@ function crearInterfaceTexto() {
     advancedTexture.addControl(dimensionesText);
     dimensionesText.textVerticalAlignment = 1;
 }
+
 function compararPoicion(numO) {
-    let num = padreActual.getBoundingInfo().boundingBox.centerWorld;
+    let num = numO.getBoundingInfo().boundingBox.centerWorld;
     console.log("cordenandasss", num);
+    var objeto = padres.filter(obj => {
+        return obj.name === numO.name;
+    });
+    console.log("OBJETO", objeto);
+
     if (num.x > 0) {
         if (num.x > dimensionSuperior.x.posi) {
             //dimensionSuperior.x.posi = num.x;
-            targetProxy.x = { posi: num.x, nega: dimensionSuperior.x.nega };
+
+            targetProxy.x = { posi: Number(num.x.toFixed(2)), nega: dimensionSuperior.x.nega };
+            objeto[0].esSuperior = "xPosi";
+            objeto[0].valorSup = targetProxy.x.posi;
         }
     }
     if (num.x < 0) {
         if (num.x < dimensionSuperior.x.nega) {
             //dimensionSuperior.x.nega = num.x;
-            targetProxy.x = { posi: dimensionSuperior.x.posi, nega: num.x };
+            targetProxy.x = { posi: dimensionSuperior.x.posi, nega: Number(num.x.toFixed(2)) };
+            objeto[0].esSuperior = "xNega";
+            objeto[0].valorSup = targetProxy.x.nega;
         }
     }
     if (num.y > 0) {
         if (num.y > dimensionSuperior.y.posi) {
             //dimensionSuperior.y.posi = num.y;
-            targetProxy.y = { posi: num.y, nega: dimensionSuperior.y.nega };
+            targetProxy.y = { posi: Number(num.y.toFixed(2)), nega: dimensionSuperior.y.nega };
+            objeto[0].esSuperior = "yPosi";
+            objeto[0].valorSup = targetProxy.y.posi;
         }
     }
     if (num.y < 0) {
         if (num.y < dimensionSuperior.y.nega) {
             //dimensionSuperior.y.nega = num.y;
-            targetProxy.y = { posi: dimensionSuperior.y.posi, nega: num.y };
+            targetProxy.y = { posi: dimensionSuperior.y.posi, nega: Number(num.y.toFixed(2)) };
+            objeto[0].esSuperior = "yNega";
+            objeto[0].valorSup = targetProxy.y.nega;
         }
     }
     if (num.z > 0) {
         if (num.z > dimensionSuperior.z.posi) {
             //dimensionSuperior.z.posi = num.z;
-            targetProxy.z = { posi: num.z, nega: dimensionSuperior.z.nega };
+            targetProxy.z = { posi: Number(num.z.toFixed(2)), nega: dimensionSuperior.z.nega };
+            objeto[0].esSuperior = "zPosi";
+            objeto[0].valorSup = targetProxy.z.posi;
         }
     }
     if (num.z < 0) {
         if (num.z < dimensionSuperior.z.nega) {
             //dimensionSuperior.z.nega = num.z;
-            targetProxy.z = { posi: dimensionSuperior.z.posi, nega: num.z };
+            targetProxy.z = { posi: dimensionSuperior.z.posi, nega: Number(num.z.toFixed(2)) };
+            objeto[0].esSuperior = "zNega";
+            objeto[0].valorSup = targetProxy.z.nega;
         }
     }
 }
@@ -1015,4 +1042,63 @@ function compararPoicion(numO) {
 function alerta(num) {
     console.log("numero de alerta");
     alert("alerta" + num);
+}
+function actualizarAlBorrar() {
+    var superiorTemp = {
+        x: { posi: 0, nega: 0 },
+        y: { posi: 0, nega: 0 },
+        z: { posi: 0, nega: 0 }
+    }
+    padres.forEach((element) => {
+        console.log("valor elemento")
+        if (element.esSuperior == "xPosi") {
+            if (element.valorSup > superiorTemp.x.posi) {
+                superiorTemp.x.posi = element.valorSup;
+                //console.log("NUEVAS mediciones",superiorTemp);
+            }
+        }
+        if (element.esSuperior == "xNega") {
+            if (element.valorSup < superiorTemp.x.nega) {
+                superiorTemp.x.nega = element.valorSup;
+                //console.log("NUEVAS mediciones",superiorTemp);
+            }
+        }
+        if (element.esSuperior == "yPosi") {
+            if (element.valorSup > superiorTemp.y.posi) {
+                superiorTemp.y.posi = element.valorSup;
+                //console.log("NUEVAS mediciones",superiorTemp);
+            }
+        }
+        if (element.esSuperior == "yNega") {
+            if (element.valorSup < superiorTemp.y.nega) {
+                superiorTemp.y.nega = element.valorSup;
+                //console.log("NUEVAS mediciones",superiorTemp);
+            }
+        }
+        if (element.esSuperior == "zPosi") {
+            if (element.valorSup > superiorTemp.z.posi) {
+                superiorTemp.z.posi = element.valorSup;
+                //console.log("NUEVAS mediciones",superiorTemp);
+            }
+        }
+        if (element.esSuperior == "zNega") {
+            if (element.valorSup < superiorTemp.z.nega) {
+                superiorTemp.z.nega = element.valorSup;
+                //console.log("NUEVAS mediciones",superiorTemp);
+            }
+        }
+    });
+
+    console.log("NUEVAS mediciones", superiorTemp);
+    targetProxy.x = { posi: superiorTemp.x.posi, nega: superiorTemp.x.nega };
+    targetProxy.y = { posi: superiorTemp.y.posi, nega: superiorTemp.y.nega };
+    targetProxy.z = { posi: superiorTemp.z.posi, nega: superiorTemp.z.nega };
+
+    /*dimensionSuperior.x.posi=superiorTemp.x.posi;
+    dimensionSuperior.x.nega=superiorTemp.x.nega;
+    dimensionSuperior.y.posi=superiorTemp.y.posi;
+    dimensionSuperior.y.nega=superiorTemp.y.nega;
+    dimensionSuperior.z.posi=superiorTemp.z.posi;
+    dimensionSuperior.z.nega=superiorTemp.z.nega;*/
+
 }
