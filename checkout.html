@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>chekout</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <!--<script src="http://sdks.shopifycdn.com/buy-button/v0.0.2/buybutton.min.js"></script>-->
+    <!--<script src="https://sdks.shopifycdn.com/js-buy-sdk/1.10.0/index.umd.min.js"></script>-->
+    <!--<script src="http://sdks.shopifycdn.com/js-buy-sdk/v1/latest/index.umd.min.js"></script>-->
+    <script src="https://sdks.shopifycdn.com/js-buy-sdk/1.10.0/index.umd.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/nuevoEstilo.css">
+  </head>
+  <body>
+    <div id="product">0</div>
+    <div id="cart">0</div>
+    <div id="total">0</div>
+    <button id="agregar" onclick="agregarAlCarrito()">agregar</button>
+    <button id="decrementar" onclick="decrementar()">disminuir</button>
+
+
+    <button id="btnCarrito" onclick="location.href='http://www.google.com'"
+      type="button">
+      carrito</button>
+    <!--<button onclick="location.href = 'www.google.com';" id="myButton" class="float-left submit-button" >checkout</button>-->
+    <div id='product-component-1cbd12eefea'></div>
+
+    <div id='product-component-464aac266e0'></div>
+    <div id="productos">
+
+      <h2>Card</h2>
+      <div class="card">
+        <img src="https://i.pinimg.com/474x/84/82/4e/84824ec2eb0a4c8ec9a9dc02c2abfed1--skype-tandem.jpg" alt="Avatar" style="width:100%">
+        <div class="container">
+          <h4><b>John Doe</b></h4> 
+          <p>Architect & Engineer</p> 
+        </div>
+      </div>
+
+    </div>
+    <!--
+    <script type="text/javascript">
+    /*<![CDATA[*/
+
+    (function () {
+      var scriptURL = 'https://sdks.shopifycdn.com/buy-button/latest/buy-button-storefront.min.js';
+      if (window.ShopifyBuy) {
+        if (window.ShopifyBuy.UI) {
+          ShopifyBuyInit();
+        } else {
+          loadScript();
+        }
+      } else {
+        loadScript();
+      }
+
+      function loadScript() {
+        var script = document.createElement('script');
+        script.async = true;
+        script.src = scriptURL;
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(script);
+        script.onload = ShopifyBuyInit;
+      }
+
+      function ShopifyBuyInit() {
+        var client = ShopifyBuy.buildClient({
+          domain: 'raurau.myshopify.com',
+          storefrontAccessToken: '0958b97ff0e7a47392e7f8328738f0d2',
+        });
+
+        ShopifyBuy.UI.onReady(client).then(function (ui) {
+          ui.createComponent('product', {
+            id: [2115612082240],
+            node: document.getElementById('product-component-464aac266e0'),
+            moneyFormat: '%24%20%7B%7Bamount%7D%7D',
+            options: {
+  "product": {
+    "variantId": "all",
+    "contents": {
+      "imgWithCarousel": false,
+      "variantTitle": false,
+      "description": false,
+      "buttonWithQuantity": false,
+      "quantity": false
+    },
+    "styles": {
+      "product": {
+        "@media (min-width: 601px)": {
+          "max-width": "calc(25% - 20px)",
+          "margin-left": "20px",
+          "margin-bottom": "50px"
+        }
+      }
+    }
+  },
+  "cart": {
+    "contents": {
+      "button": true
+    },
+    "styles": {
+      "footer": {
+        "background-color": "#ffffff"
+      }
+    }
+  },
+  "modalProduct": {
+    "contents": {
+      "img": false,
+      "imgWithCarousel": true,
+      "variantTitle": false,
+      "buttonWithQuantity": true,
+      "button": false,
+      "quantity": false
+    },
+    "styles": {
+      "product": {
+        "@media (min-width: 601px)": {
+          "max-width": "100%",
+          "margin-left": "0px",
+          "margin-bottom": "0px"
+        }
+      }
+    }
+  },
+  "productSet": {
+    "styles": {
+      "products": {
+        "@media (min-width: 601px)": {
+          "margin-left": "-20px"
+        }
+      }
+    }
+  }
+}
+          });
+        });
+      }
+    })();
+    /*]]>*/
+    </script>
+    -->
+    <script src="js/tienda3.js"></script>
+  </body>
+</html>

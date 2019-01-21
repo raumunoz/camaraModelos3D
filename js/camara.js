@@ -99,7 +99,7 @@ function encenderCamara(idCamara) {
         myVideo = videoTexture;
         // videoMaterial.diffuseTexture = myVideo;
         btnCamara.style.visibility = "visible";
-        btnCamara.src = "assets/imagenes/camaraB.png";
+        btnCamara.src = "assets/iconos/camaraB.png";
         camaraActivada = true;
     }, { deviceId: idCamara });
 }
@@ -113,7 +113,7 @@ function activarCamara() {
         background = new BABYLON.Layer("back", "assets/imagenes/fondos/fondo.jpg", escena);
         camaraActivada = false;
         setTimeout(function(){ 
-            btnCamara.src = "assets/imagenes/camaraA.png";
+            btnCamara.src = "assets/iconos/camaraA.png";
             btnCamara.style.visibility = "visible";
         }, 3000);
         

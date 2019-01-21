@@ -1,166 +1,637 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Muebles</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" type="text/css" href="css/estilo.css">
-    <link rel="stylesheet" type="text/css" media="screen" href="css/navbar.css" />
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content="" />
+	<meta property="og:image" content="" />
+	<meta property="og:url" content="" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:description" content="" />
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
 
-    <script src="js/camara.js"></script>
-    <script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
-    <link href="https://fonts.googleapis.com/css?family=Dancing+Script|EB+Garamond|Questrial" rel="stylesheet">
+	<script src="js/camara.js"></script>
+	<script src="js/tienda2.js"></script>
+	<!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"> -->
+	<!-- <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i" rel="stylesheet"> -->
+	<script src="http://sdks.shopifycdn.com/js-buy-sdk/v1/latest/index.umd.min.js"></script>
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="css/icomoon.css">
+	<!-- Bootstrap  -->
+	<link rel="stylesheet" href="css/bootstrap.css">
+
+	<!-- Flexslider  -->
+	<link rel="stylesheet" href="css/flexslider.css">
+
+	<!-- Owl Carousel  -->
+	<link rel="stylesheet" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="css/style.css">
+
+	<!-- Modernizr JS -->
+	<script src="js/modernizr-2.6.2.min.js"></script>
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+
+	<link rel="stylesheet" type="text/css" href="css/estiloMotor3D.css">
+	<script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
+	<link rel="stylesheet" href="css/font.css">
+	<link rel="stylesheet" href="css/main.css">
 </head>
 
 <body>
-    <header>
-        <h1>Mubleria</h1>
-    </header>
-    <nav id="topNav">
-        <ul>
-            <li>
-                <a href="#">Home</a>
-            </li>
-            <li>
-                <a href="#">Pedidos</a>
-            </li>
-            <li>
-                <a href="#">Contacto</a>
-            </li>
-            <li>
-                <a href="#">Galería</a>
-            </li>
-        </ul>
-    </nav>
+	<div class="social-bar">
+		<a href="https://www.facebook.com/puffino.mx/" class="icon2 icon-facebook" target="_blank"></a>
+		<a href="https://www.youtube.com/channel/UC_IQX58WKgUAJiZfj9oy6wg/featured" class="icon2 icon-youtube" target="_blank"></a>
+		<a href="https://www.instagram.com/puffinomx/" class="icon2 icon-instagram" target="_blank"></a>
+	</div>
+	<div class="fh5co-loader"></div>
 
-    <main>
-        <div class="grid-container">
-            <div class="item1" href="#" id="head">
+	<div id="page">
+		<nav class="fh5co-nav" role="navigation" style="background-color:#FF675A;">
+			<div class="container" style="margin-left:0px;">
+				<div class="row">
+					<div class="col-md-3 col-xs-2">
+						<div id="fh5co-logo"><a href="index.html"><img src="images/puff_logo.png" style="max-width:100%; height:auto;"></a></div>
+					</div>
+					<div class="col-md-6 col-xs-6 menu-1" style="margin-top:3%;">
+						<ul>
+							<li class="has-dropdown">
+								<a href="acercade.html">SOBRE PUFFINO</a>
+								<!--ul class="dropdown">
+								<li><a href="single.html">Single Shop</a></li>
+							</ul-->
+							</li>
+							<li><a href="catalogo.html">Catálogo</a></li>
+							<li class="has-dropdown">
+								<a href="envio.html">Envío y Devoluciones</a>
+								<!--ul class="dropdown">
+								<li><a href="#">Web Design</a></li>
+								<li><a href="#">eCommerce</a></li>
+								<li><a href="#">Branding</a></li>
+								<li><a href="#">API</a></li>
+							</ul-->
+							</li>
+							<li><a href="contact.html">Contacto</a></li>
+						</ul>
+					</div>
+					<div class="col-md-3 col-xs-4 text-right hidden-xs menu-2" style="margin-top:3%;">
+						<ul>
+							<li class="search">
+								<div class="input-group">
+									<input type="text" placeholder="Buscar..">
+									<span class="input-group-btn">
+										<button class="btn btn-primary" type="button"><i class="icon-search"></i></button>
+									</span>
+								</div>
+							</li>
+							<li class="shopping-cart"><a href="#" class="cart"><span><small>0</small><i class="icon-shopping-cart"></i></span></a></li>
+						</ul>
+					</div>
+				</div>
 
-                ¡Compra hoy y obtén hasta -20% de descuento!
-            </div>
-            <!--ITEM 2-->
+			</div>
+		</nav>
 
-            <div class="nombreProducto">
-                <!--<h3 id="nombre">Nombre</h3>-->
-            </div>
-            <div class="materiales">
-                <!--<span>Materiales</span>-->
-                <span id="descripcionMaterial"></span>
-                <ul class="opc-modelo" id="iconosMuebles">
-                    <li>
-                        <img src="assets/imagenes/IconCojinTabureteTelanegra.jpg" id="textuNegra" onclick="cambioTextura(0)">
-                    </li>
-                    <li>
-                        <img src="assets/imagenes/IconCojinTabureteTelaBlanca.jpg" id="textuBlanca" onclick="cambioTextura(1)">
-                    </li>
-                    <li>
-                        <img src="assets/imagenes/IcongrisBotones.jpg" id="textuTrendy" onclick="cambioTextura(2)">
-                    </li>
-                </ul>
-            </div>
-            <div class="modulos" id="iconosTexturas">
-                <!-- <span>Modulos</span>-->
-                <!--<span id="descripcionModulo"></span>-->
-                <ul class="opc-texturas">
-                    <li>
-                        <img src="assets/imagenes/taburete.png" alt="taburete" id="modTaburete" onclick="cambioModulo(0)">
-                    </li>
-                    <li>
-                        <img src="assets/imagenes/simple.png" alt="esquina" id="modEsquina" onclick="cambioModulo(1)">
-                    </li>
-                    <li>
-                        <img src="assets/imagenes/doble.png" alt="brazo" id="modBrazo" onclick="cambioModulo(2)">
-                    </li>
-                </ul>
-            </div>
+		<aside id="fh5co-hero" class="js-fullheight">
+			<div class="flexslider js-fullheight">
+				<ul class="slides">
+					<li style="background-image:url(images/1_banner_pufino.jpg);">
+						<div class="overlay-gradient"></div>
+						<div class="container">
+							<div class="col-md-6 col-md-offset-3 col-md-pull-3 js-fullheight slider-text">
+								<div class="slider-text-inner">
+									<!--div class="desc">
+		   						<span class="price">$800</span>
+		   						<h2>Alato Cabinet</h2>
+		   						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
+			   					<p><a href="single.html" class="btn btn-primary btn-outline btn-lg">Purchase Now</a></p>
+		   					</div-->
+								</div>
+							</div>
+						</div>
+					</li>
+					<li style="background-image:url(images/2_banner_pufino.jpg);">
+						<div class="container">
+							<div class="col-md-6 col-md-offset-3 col-md-pull-3 js-fullheight slider-text">
+								<div class="slider-text-inner">
+									<!--div class="desc">
+		   						<span class="price">$530</span>
+		   						<h2>The Haluz Rocking Chair</h2>
+		   						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
+			   					<p><a href="single.html" class="btn btn-primary btn-outline btn-lg">Purchase Now</a></p>
+		   					</div-->
+								</div>
+							</div>
+						</div>
+					</li>
+					<li style="background-image:url(images/3_banner_pufino.png);">
+						<div class="container">
+							<div class="col-md-6 col-md-offset-3 col-md-pull-3 js-fullheight slider-text">
+								<div class="slider-text-inner">
+									<!--div class="desc">
+		   						<span class="price">$750</span>
+		   						<h2>Alato Cabinet</h2>
+		   						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
+			   					<p><a href="single.html" class="btn btn-primary btn-outline btn-lg">Purchase Now</a></p>
+		   					</div-->
+								</div>
+							</div>
+						</div>
+					</li>
+					<li style="background-image:url(images/4_banner_pufino.jpg);">
+						<div class="container">
+							<div class="col-md-6 col-md-offset-3 col-md-pull-3 js-fullheight slider-text">
+								<div class="slider-text-inner">
+									<!--div class="desc">
+		   						<span class="price">$540</span>
+		   						<h2>The WW Chair</h2>
+		   						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove.</p>
+			   					<p><a href="single.html" class="btn btn-primary btn-outline btn-lg">Purchase Now</a></p>
+		   					</div-->
+								</div>
+							</div>
+						</div>
+					</li>
+				</ul>
+			</div>
+		</aside>
+<div class="row">
+
+<div class="col-md-12 col-lg-12">
+						<div class="desc"><br><br>
+							<center><h2 style="color:#8c2131">QUIÉNES SOMOS</h2></center>
+							<p style=" text-align:center; margin-left:5%; margin-right:5%;">Pufifno es una empresa fundada por la corporación Old Raven, creada por importantes/prestigiosos empresarios muebleros mexicanos. <br/>
+Gracias a la preferencia de nuestros clientes que nos han permitido estar en más de 100,000 hogares en México, iniciando con una excelente aceptación<br/> la apertura de venta a nivel internacional, Puffino ha logrado un crecimiento significativo poniendo en alto esta corporación mexicana con orgullo. <br/>
+Materializamos tus ideas, armonizamos y diseñamos tu espacio exclusivo basándonos en la innovación, sustentabilidad, comodidad, diseño y vanguardia.
+</p></div></h2>
+</div></div>
+
+  <div id="fh5co-product">
+			<div class="container">
+				<div class="row animate-box">
+					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+						<h2 style="color:#8c2131">Productos.</h2>
+						<p>Las fotografías mostradas en este sitio web son reales y propiedad de Puffino. Copyright 2017 León,
+							Guanajuato. Derechos reservados ©, prohibida su reproducción o uso total o parcial por cualquier medio. </p>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4 text-center animate-box">
+						<div class="product">
+							<div class="product-grid" style="background-image:url(images/productos/puffino_ANDREW_SMART_1.jpg);">
+								<div class="inner">
+									<p>
+										<a href="single.html" class="icon"><i class="icon-shopping-cart"></i></a>
+										<a href="single.html" class="icon"><i class="icon-eye"></i></a>
+									</p>
+								</div>
+							</div>
+							<div class="desc">
+								<h3><a href="single.html">PÁTZCUARO NIÑOS </a></h3>
+								<span class="price">Desde $3,499.00</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 text-center animate-box">
+						<div class="product">
+							<div class="product-grid" style="background-image:url(images/productos/puffino_ANDREW_SOFT_1.jpg);">
+								<!--span class="sale">Sale</span-->
+								<div class="inner">
+									<p>
+										<a href="single.html" class="icon"><i class="icon-shopping-cart"></i></a>
+										<a href="single.html" class="icon"><i class="icon-eye"></i></a>
+									</p>
+								</div>
+							</div>
+							<div class="desc">
+								<h3><a href="single.html">PÁTZCUARO </a></h3>
+								<span class="price">Desde $4,999.00</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 text-center animate-box">
+						<div class="product">
+							<div class="product-grid" style="background-image:url(images/productos/puffino_BOINF_TWISTER_CHICO_1.jpg);">
+								<div class="inner">
+									<p>
+										<a href="single.html" class="icon"><i class="icon-shopping-cart"></i></a>
+										<a href="single.html" class="icon"><i class="icon-eye"></i></a>
+									</p>
+								</div>
+							</div>
+							<div class="desc">
+								<h3><a href="single.html">LA PAZ CHICO </a></h3>
+								<span class="price">Desde $3,099.00</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-4 text-center animate-box">
+						<div class="product">
+							<div class="product-grid" style="background-image:url(images/productos/puffino_conejo.jpeg);">
+								<div class="inner">
+									<p>
+										<a href="single.html" class="icon"><i class="icon-shopping-cart"></i></a>
+										<a href="single.html" class="icon"><i class="icon-eye"></i></a>
+									</p>
+								</div>
+							</div>
+							<div class="desc">
+								<h3><a href="single.html">CONEJO</a></h3>
+								<span class="price">Desde $4,199.00</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 text-center animate-box">
+						<div class="product">
+							<div class="product-grid" style="background-image:url(images/productos/puffino_BONGO_FLUFFY_GRANDE_1.jpg);">
+								<div class="inner">
+									<p>
+										<a href="single.html" class="icon"><i class="icon-shopping-cart"></i></a>
+										<a href="single.html" class="icon"><i class="icon-eye"></i></a>
+									</p>
+								</div>
+							</div>
+							<div class="desc">
+								<h3><a href="single.html">OAXACA QUEEN </a></h3>
+								<span class="price">Desde $7,099.00</span>
+							</div>
+						</div>
+					</div>
+					<div class="col-md-4 text-center animate-box">
+						<div class="product">
+							<div class="product-grid" style="background-image:url(images/productos/puffino_dona01.png);">
+								<div class="inner">
+									<p>
+										<a href="single.html" class="icon"><i class="icon-shopping-cart"></i></a>
+										<a href="single.html" class="icon"><i class="icon-eye"></i></a>
+									</p>
+								</div>
+							</div>
+							<div class="desc">
+								<h3><a href="single.html">DONA </a></h3>
+								<span class="price">Desde $4,599.00</span>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!---->
+
+		<div class="motor3D">
+			<div class="grid-container">
+			<!--	
+				<div class="item1" href="#" id="head">
+					¡Compra hoy y obtén hasta -20% de descuento!
+				</div>
+			-->
+				<!--ITEM 2-->
+				<!--
+		<div class="nombreProducto">
+			<h3 id="nombre">Nombre</h3>
+			Producto
+		</div>
+	-->
+<!--TEXTURAS POR DEFECTO-->
+				
+				<div class="materiales">
+					<!--
+					<ul class="opc-modelo" id="iconosMuebles">
+						<li>
+							<img src="assets/imagenes/IconCojinTabureteTelanegra.jpg" id="textuNegra" onclick="cambioTextura(0)">
+						</li>
+						<li>
+							<img src="assets/imagenes/IconCojinTabureteTelaBlanca.jpg" id="textuBlanca" onclick="cambioTextura(1)">
+						</li>
+						<li>
+							<img src="assets/imagenes/IcongrisBotones.jpg" id="textuTrendy" onclick="cambioTextura(2)">
+						</li>
+					</ul>-->
+					<h6 id="descripcionMaterial">Material</h6>
+					<div class="btn-grid" id="btn-grid">
+						<input type="image" src="assets/texturas/chico/TP ROJOchico.jpg" class="btn-imagen-grid"/>	
+					</div>
+				</div>
+			
+				<div class="modulos" id="iconosTexturas">
+					<!-- <span>Modulos</span>-->
+					<!--<span id="descripcionModulo"></span>-->
+					<ul class="opc-modulos">
+						<li>
+							<img src="assets/imagenes/tabureteContempo.PNG" class="imgMueble" alt="taburete" id="modTaburete" onclick="cambioModulo(0)">
+						</li>
+						<li>
+							<img src="assets/imagenes/brazoContempo.png" class="imgMueble" alt="esquina" id="modEsquina" onclick="cambioModulo(1)">
+						</li>
+						<li>
+							<img src="assets/imagenes/esquinaContempo.PNG" class="imgMueble" alt="brazo" id="modBrazo" onclick="cambioModulo(2)">
+						</li>
+					</ul>
+				</div>
+			
+				<div class="pre-armado" id="iconosPrearmado">
+					<!-- <span>Modulos</span>-->
+					<!--<span id="descripcionModulo"></span>-->
+					<ul class="opc-PreArmado">
+						<li>
+							<img src="assets/iconos/PreArmado4.png" class="imgMueble" alt="taburete" id="modTaburete" onclick="borrarContainer(0)">
+						</li>
+						<li>
+							<img src="assets/iconos/PreArmado5.png" class="imgMueble" alt="esquina" id="modEsquina" onclick="borrarContainer(1)">
+						</li>
+						<li>
+							<img src="assets/iconos/PreArmado6.png" class="imgMueble" alt="brazo" id="modBrazo" onclick="borrarContainer(2)">
+						</li>
+					</ul>
+				</div>
+				<!--ITEM 2-->
+				<div class="botones-confimarcion">
+
+				</div>
+				<div class="botones-herramientas">
+					<img src="assets/iconos/fondo.png" alt="fondo" id="fondo" height="25" width="25" onclick="cambiarFondo()">
+					<img src="assets/iconos/camaraA.png" id="btnCamara" disabled="true" alt="camara" id="fondo" height="25" width="25"
+					 onclick="activarCamara()">
+					<img src="assets/iconos/rotate_90_degrees_ccw_black_18dp.png" alt="girar" id="btnRotar" height="25" width="25"
+					 onclick="rotarSelecionado()">
+					<img src="assets/iconos/check_black_18dp.png" alt="acaeptar" id="btnAplicar" height="25" width="25" onclick="aplicar()">
+					<img src="assets/iconos/remove_black_18dp.png" alt="cancelar" id="btnCancelar" height="25" width="25" onclick="cancelar()">
+				</div>
+				<div class="acciones">
+					<span>Total</span>
+					<br>
+					<span id="Precio">$1500</span>
+					<a class="btn green" onclick="captura()">Comprar</a>
+				</div>
+				<div class="item3" id="main">
+					<div id="datGUI">
+						<canvas id="render">
+						</canvas>
+					</div>
+				</div>
+
+				<div class="item4" id="item4">
+					Ancho: <span id="anchoTotal"></span> Largo: <span id="largoTotal"></span> <!--Alto: <span id="altoTotal"></span>-->
+				</div>
+			</div>
+		</div>
+
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">Cantidad</th>
+					<th scope="col">Modelo</th>
+					<th scope="col">Precio Unitario</th>
+					<th scope="col">SubTotal</th>
+				</tr>
+			</thead>
+			<tbody id="tbodyMuebles">
+			</tbody>
+		</table>
+		<!--
+		<center>
+			<p style="font-size:24px;"> Sobre <span style="color:#99dc98; font-size:36px;">Puffino</span></p>
+		</center>
+		-->
+		<div id="fh5co-services" class="fh5co-bg-section">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-6 col-sm-6 text-center">
+						<div class="feature-center animate-box" data-animate-effect="fadeIn">
+
+							<h3 style="color:#FFF">COMPROMISO SOCIAL-AMBIENTAL</h3>
+							<p style="color:#FFF; text-align : justify;">Somos una empresa enfocada al medio ambiente y responsabilidad social, trabajamos en encontrar los materiales perfectos los cuales deben contribuir a cuidar el medio ambiente. 
+Todos nuestros productos son diseñados y creados por manos llenas de talento 100% mexicano, siendo líderes en confort, durabilidad y diseño; cualidades que son insuperables en el mercado.
+
+							</p>
+<h3 style="color:#FFF">Materia prima </h3>
+<p style="color:#FFF;text-align : justify;">
+
+								Nuestros muebles están fabricados de materiales alta calidad que protegen el medio ambiente.  </p>
+<h3 style="color:#FFF">Poliuretano Espumado:</h3>
+<p style="color:#FFF;text-align : justify;">
+
+								Material de alta resilencia por lo que no se deforma y se reincorpora de forma inmediata. Además de que contamos con certificación ante CertiPUR-US lo cual brinda la seguridad de nuestra calidad. </p>
 
 
-            <!--ITEM 2-->
-            <div class="botones-confimarcion">
-                <ul class="ul-botones" style="list-style-type: none;">
-                    <li>
-                        <button id="btnAplicar" onclick="aplicar()">✓</button>
-                    </li>
-                    <li>
-                        <button id="btnCancelar" onclick="cancelar()">X</button>
-                    </li>
-                    <li>
-                        <button id="btnRotar" onclick="rotarSelecionado()">o</button>
-                    </li>
-                </ul>
+						</div>
+					</div>
+					
+					<span class="icon">
+						<center><img src="images/logo_certi_pur_medium.png"></center>
+					</span>
+                    
+                    <p style="color:#FFF;text-align : justify;">CertiPUR es un programa voluntario de ensayos, análisis y certificación de las propiedades relacionadas con el medio ambiente, la salud y la seguridad de la espuma de poliuretano empleada en materiales de acolchado y muebles tapizados.<br/><br/>
+Perla negra (Polietileno expandido): cuya estructura celular pequeña y regular, lo convierten en un excelente aislante del calor y el sonido, además de tener una excelente capacidad de absorción de golpes y ser ligero. Sus propiedades físicas tan versátiles, así como lo amigable que resulta para el medio ambiente, ya que es un componente 100% reutilizable, lo convierten en un excelente complemento para nuestra mezcla.
+</p>
+				</div>
+			</div>
+		</div>
 
 
 
-            </div>
-            <div class="botones-herramientas">
-                <img src="assets/imagenes/fondo.png" alt="fondo" id="fondo" height="25" width="25" onclick="cambiarFondo()">
-                <img src="assets/imagenes/camaraA.png" id="btnCamara" disabled="true" alt="fondo" id="fondo" height="25" width="25" onclick="activarCamara()">
-            </div>
-            <div class="acciones">
-                <!--<span>$123333</span>-->
-                <a class="btn green" onclick="captura()">Comprar</a>
-            </div>
-            <div class="item3" id="main">
-                <div id="datGUI">
-                    <canvas id="render">
-                    </canvas>
-                </div>
+		<div id="fh5co-testimonial" class="fh5co-bg-section">
+			<div class="container">
+				<div class="row animate-box">
+					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
+						<span>Testimoniales</span>
+						<h2>Clientes Felices</h2>
+					</div>
+				</div>
+				<div class="row">
+					<div class="col-md-10 col-md-offset-1">
+						<div class="row animate-box">
+							<div class="owl-carousel owl-carousel-fullwidth">
+								<div class="item">
+									<div class="testimony-slide active text-center">
+										<figure>
+											<img src="images/person1.jpg" alt="user">
+										</figure>
+										<span>Lorem Ipsum Simply </span>
+										<blockquote>
+											<p>&ldquo;Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+												the industry's standard dummy text ever since the 1500s,.&rdquo;</p>
+										</blockquote>
+									</div>
+								</div>
+								<div class="item">
+									<div class="testimony-slide active text-center">
+										<figure>
+											<img src="images/person2.jpg" alt="user">
+										</figure>
+										<span>Lorem Ipsum Simply</span>
+										<blockquote>
+											<p>&ldquo;Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+												the industry's standard dummy text ever since the 1500s,.&rdquo;</p>
+										</blockquote>
+									</div>
+								</div>
+								<div class="item">
+									<div class="testimony-slide active text-center">
+										<figure>
+											<img src="images/person3.jpg" alt="user">
+										</figure>
+										<span>Lorem Ipsum Simply</span>
+										<blockquote>
+											<p>&ldquo;Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been
+												the industry's standard dummy text ever since the 1500s.&rdquo;</p>
+										</blockquote>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-            </div>
-            <footer class="item4">
-                <ul>
-                    <h3 class="orange">Contacto</h3>
-                    <li>
-                        <a href="#">Tel: 234676534</a>
-                    </li>
-                    <li>
-                        <a href="#">Contactos</a>
-                    </li>
-                    <li>
-                        <a href="#">Preguntas frecuentes</a>
-                    </li>
-                    <li>
-                        <a href="#">Tienda mas cercana</a>
-                    </li>
-                </ul>
-                <ul>
-                    <h3 class="pink">Nosotros</h3>
-                    <li>
-                        <a href="#">Historia</a>
-                    </li>
-                    <li>
-                        <a href="#">Quines somos</a>
-                    </li>
-                    <li>
-                        <a href="#">Misión</a>
-                    </li>
-                    <li>
-                        <a href="#">Visión</a>
-                    </li>
-                </ul>
-                <ul>
-                    <h3 class="red">Servicio al cliente</h3>
-                    <li>
-                        <a href="#"></a>Opciones de envio</li>
-                    <li>
-                        <a href="#"></a>Numero de orden</li>
-                </ul>
+		<div id="fh5co-services" class="fh5co-bg-section" style="background:#00ADC1;">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-4 col-sm-4 text-center">
+						<div class="feature-center animate-box" data-animate-effect="fadeIn">
+							<span class="icon">
+								<i class="icon-paper-plane"></i>
+							</span>
+							<h3 style="color:#FFF">Envio Gratis</h3>
+							<p style="color:#FFF">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+								been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+								scrambled it to make a type specimen book. </p>
+							<p><a href="#" class="btn btn-primary btn-outline">Ver mas</a></p>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-4 text-center">
+						<div class="feature-center animate-box" data-animate-effect="fadeIn">
+							<span class="icon">
+								<i class="icon-wallet"></i>
+							</span>
+							<h3 style="color:#FFF">Prueba de Calidad</h3>
+							<p style="color:#FFF">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+								been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+								scrambled it to make a type specimen book. </p>
+							<p><a href="#" class="btn btn-primary btn-outline">Ver mas</a></p>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-4 text-center">
+						<div class="feature-center animate-box" data-animate-effect="fadeIn">
+							<span class="icon">
+								<i class="icon-credit-card"></i>
+							</span>
+							<h3 style="color:#FFF">Credito Facil</h3>
+							<p style="color:#FFF">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has
+								been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and
+								scrambled it to make a type specimen book. </p>
+							<p><a href="#" class="btn btn-primary btn-outline">Ver mas</a></p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
 
-                <br>
 
-                <p>© 2018 Tiendeo Web Marketing SL | Palau de Mar , 08039 Barcelona</p>
-                <p>Aviso Legal</p>
+	</div>
+	<footer id="fh5co-footer" role="contentinfo">
+		<div class="container">
+			<div class="row row-pb-md">
+				<div class="col-md-4 fh5co-widget">
 
-            </footer>
-        </div>
-    </main>
-    <script src="js/dat.gui.min.js"></script>
-    <script src="js/jquery-3.3.1.min.js"></script>
-    <script src="js/babylon.custom.js"></script>
-    <script src="js/main1.js"></script>
+					<p>
+						<ul class="fh5co-social-icons">
+							<li><a href="#"><i class="icon-twitter"></i></a></li>
+							<li><a href="#"><i class="icon-facebook"></i></a></li>
+							<li><a href="#"><i class="icon-linkedin"></i></a></li>
+							<li><a href="#"><i class="icon-dribbble"></i></a></li>
+						</ul>
+					</p>
+				</div>
+				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
+					<ul class="fh5co-footer-links">
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+					</ul>
+				</div>
+
+				<div class="col-md-1 col-sm-4 col-xs-6 col-md-push-1">
+					<ul class="fh5co-footer-links">
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+					</ul>
+				</div>
+
+				<div class="col-md-3 col-sm-4 col-xs-6 col-md-push-1">
+					<ul class="fh5co-footer-links">
+						<h3 style="color:#FFF;">CONTÁCTANOS</h3>
+						<li>477 274 28 38</li>
+						<li>Lunes a viernes de 9 a.m. a 4 p.m. </li>
+						<li>Correo electrónico: </li>
+						<li>denisse.martinez@budabag.com.mx</li>
+						<li>León, Gto. </li>
+
+					</ul>
+				</div>
+			</div>
+
+			<div class="row copyright">
+				<div class="col-md-12 text-center">
+
+					<p>
+
+					</p>
+				</div>
+			</div>
+
+		</div>
+	</footer>
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up" style="background-color:#8a2332;"></i></a>
+	</div>
+
+
+	<!-- jQuery -->
+	<script src="js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- Carousel -->
+	<script src="js/owl.carousel.min.js"></script>
+	<!-- countTo -->
+	<script src="js/jquery.countTo.js"></script>
+	<!-- Flexslider -->
+	<script src="js/jquery.flexslider-min.js"></script>
+	<!-- Main -->
+	<script src="js/main.js"></script>
+
+	<script src="js/dat.gui.min.js"></script>
+	<script src="js/jquery-3.3.1.min.js"></script>
+	<script src="js/babylon.custom.js"></script>
+	<script src="js/mainMotor3D.js"></script>
+	<script src="js/shopifyTienda.js"></script>
+	<script type="text/javascript" src="js/texturas.json"></script>
+	
 </body>
 
 </html>

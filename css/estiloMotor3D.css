@@ -1,0 +1,508 @@
+/*.motor3D {
+    font-family: Monospace;
+    background-color: #ffAAf0;
+    margin: 0px;
+     overflow: scroll;
+}
+*/
+
+.motor3D .modulos {
+	border-top: 1px solid #e8e8e8;
+}
+
+.motor3D .modulos {
+	grid-area: modu;
+	background: #d30808;
+}
+
+.motor3D .pre-armado {
+	grid-area: preA;
+	background: #d30808;
+}
+
+.motor3D .modulos {
+	background-color: white;
+	/*padding-top: 10px;*/
+}
+
+.modulos ul li img {
+	background-color: palevioletred;
+	margin: 15px;
+	/*padding-top: 10px;*/
+}
+
+.motor3D .dg.main {
+	position: absolute;
+	z-index: 0;
+	/*z-index: 10;*/
+	top: 42%;
+	/*top: 5%;*/
+}
+
+.motor3D .opc-modulos {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	padding: 10px 0;
+	width: 100%;
+}
+
+.motor3D .opc-PreArmado {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	padding: 10px 0;
+	width: 100%;
+}
+
+.btn-grid {
+	display: grid;
+	grid-template-columns: max-content max-content max-content max-content max-content max-content max-content max-content max-content;
+	grid-template-rows: max-content max-content max-content max-content max-content;
+	width: 245px;
+	height: 340px;
+	background-color: #f0f0f0;
+	overflow-x: auto;
+	overflow-y: hidden;
+	white-space: nowrap;
+}
+
+.btn-item-grid {
+	color: #fff;
+	font-size: 8px;
+	text-transform: uppercase;
+	display: inline-block;
+	background-color: #333537;
+	padding: 10px 10px;
+	border: 0px;
+	margin: 1px;
+	height: 50px;
+	width: 50px;
+	-webkit-transition: all 0.1s ease;
+	transition: all 0.1s ease;
+}
+
+.btn-imagen-grid {
+	color: #fff;
+	font-size: 8px;
+	text-transform: uppercase;
+	display: inline-block;
+	background-color: #333537;
+	padding: 0px 0px;
+	border: 0px;
+	margin: 1px;
+	height: 50px;
+	width: 50px;
+	-webkit-transition: all 0.1s ease;
+	transition: all 0.1s ease;
+}
+
+.btn-imagen-grid:hover {
+	background-color: #3d3f41;
+	box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+	-webkit-transform: translate3d(-1px, -2px, 0);
+	transform: translate3d(-1px, -2px, 0);
+}
+
+.btn-item-grid:hover {
+	background-color: #3d3f41;
+	box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
+	-webkit-transform: translate3d(-1px, -2px, 0);
+	transform: translate3d(-1px, -2px, 0);
+}
+
+.motor3D canvas {
+	background-color: #F5F2F0;
+	width: 103%;
+	height: 640px;
+	touch-action: none;
+	/*CANVA margin Rigth*/
+	margin-right: 1046px;
+}
+
+/*
+.motor3D .item1 { grid-area: header;
+    background-color: #c6aa2e !important;
+    color: #f0f0f0;
+    padding:0;
+}
+*/
+
+.motor3D .materiales {
+	grid-area: mate;
+	background: #d30808;
+}
+
+.item3 {
+	grid-area: main;
+	width: 100%;
+	height: 60%;
+}
+
+.motor3D .item4 {
+	grid-area: footer;
+	height: 25%;
+	background-color: red;
+	background: red;
+	width: 100%;
+	height: 100%;
+}
+
+.motor3D .acciones {
+	grid-area: accion;
+}
+
+.motor3D .botones-confimarcion {
+	grid-area: comf;
+}
+
+.motor3D .botones-herramientas {
+	grid-area: erra;
+}
+
+.motor3D .grid-container {
+	display: grid;
+	grid-template-areas: /*'header header header header header header'*/
+	'mate main main main main main'
+	'mate main main main main main'
+	'mate main main main main main' 
+	'mate main main main main main' 
+	'modu main main main main main' 
+	'preA main main main main main' 
+	'erra main main main main main' 
+	'accion main main main main main' 
+	'footer footer footer footer footer footer';
+	grid-gap: 10px;
+	padding: 10px;
+}
+
+.motor3D .grid-container>div {
+	background-color: rgba(255, 255, 255, 0.8);
+	text-align: center;
+	padding: 0;
+	font-size: 23px;
+}
+
+@media only screen and (max-width: 600px) {
+	.motor3D .grid-container {
+		display: grid;
+		grid-template-areas: /*'header header header header header header'*/
+		'mate mate mate modu modu modu' 
+		'main main main main main main' 
+		'erra erra erra preA preA preA' 
+		'accion accion accion accion accion accion' 
+		'footer footer footer footer footer footer';
+		grid-gap: 1px;
+		padding: 0px;
+	}
+	.motor3D .modulos {
+		background: #d30808;
+		/*
+		margin-right: 34px;
+		padding-top: 38px;
+		*/
+	}
+	.motor3D .item4 {
+		height: 25%;
+		background: red;
+		width: 160px;
+		height: 100%;
+	}
+	.motor3D canvas {
+		background-color: #F5F2F0;
+		width: 100%;
+		height: 460px;
+		margin-right: 0px;
+	}
+	.motor3D .botones-herramientas * {
+		height: 12;
+		width: 12;
+	}
+	.motor3D .botones-confimarcion {
+		height: 75px;
+	}
+	.motor3D .ul-botones {
+		display: inline;
+		list-style-type: none;
+	}
+	.motor3D .btn {
+		border-radius: 5px;
+		padding: 0;
+		font-size: 8px;
+		text-decoration: none;
+		margin: 0;
+		color: #fff;
+		position: absolute;
+		display: inline-block;
+	}
+	/**/
+	.btn-grid {
+		display: grid;
+		grid-template-columns: max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content;
+		grid-template-rows: max-content max-content;
+		width: 139px;
+		height: 65px;
+		background-color: #f0f0f0;
+		overflow-x: auto;
+		overflow-y: auto;
+		white-space: nowrap;
+	}
+	.btn-imagen-grid {
+		color: #fff;
+		font-size: 8px;
+		text-transform: uppercase;
+		display: inline-block;
+		background-color: #333537;
+		padding: 0px 0px;
+		border: 0px;
+		margin: 1px;
+		height: 25px;
+		width: 25px;
+		-webkit-transition: all 0.1s ease;
+		transition: all 0.1s ease;
+	}
+	.btn-imagen-grid:hover {
+		background-color: #3d3f41;
+		box-shadow: 0 5px 7px rgba(0, 0, 0, 0.3);
+		-webkit-transform: translate3d(-1px, -2px, 0);
+		transform: translate3d(-1px, -2px, 0);
+	}
+	.motor3D .dg.main {
+		position: absolute;
+		z-index: 0;
+		/*z-index: 10;*/
+		top: 0%;
+		/*top: 5%;*/
+	}
+	.motor3D .opc-modulos {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+		padding-top: 45px;
+		width: 100%;
+	}
+	.motor3D .opc-PreArmado {
+		list-style-type: none;
+		margin: 0;
+		padding: 0;
+		overflow: hidden;
+		display: flex;
+		flex-direction: row;
+		justify-content: space-evenly;
+		padding-top: 45px;
+		width: 100%;
+	}
+}
+
+.motor3D .materiales {
+	background-color: whitesmoke;
+	padding-top: 10px;
+}
+
+.motor3D .pago {
+	background-color: brown;
+}
+
+.motor3D #topNav ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	padding: 10px 0;
+}
+
+.motor3D .opc-modelo {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	display: flex;
+	flex-direction: row;
+	justify-content: space-evenly;
+	padding: 10px 0;
+}
+
+.motor3D li {
+	float: left;
+}
+
+.motor3D li a {
+	display: block;
+	color: black;
+	text-align: center;
+	padding: 16px;
+	text-decoration: none;
+}
+
+.motor3D li img {
+	width: 50%;
+	background-color: green;
+	height: auto;
+}
+
+.motor3D .materiales {
+	border-top: 1px solid #e8e8e8;
+	border-bottom: 1px solid #e8e8e8;
+}
+
+.motor3D .acciones {
+	border-top: 1px solid #e8e8e8;
+	border-bottom: 1px solid #e8e8e8;
+}
+
+.motor3D h1 {
+	font-family: 'Dancing Script', cursive;
+}
+
+.motor3D h3 {
+	font-family: 'EB Garamond', serif;
+}
+
+.motor3D span {
+	font-family: 'Questrial', sans-serif;
+	color: #777;
+}
+
+.motor3D .btn {
+	border-radius: 5px;
+	padding: 2px 2px;
+	font-size: 22px;
+	text-decoration: none;
+	margin: 5px;
+	color: #fff;
+	position: relative;
+	display: inline-block;
+}
+
+.motor3D .btn:active {
+	transform: translate(0px, 5px);
+	-webkit-transform: translate(0px, 5px);
+	box-shadow: 0px 1px 0px 0px;
+}
+
+.motor3D .blue {
+	background-color: #55acee;
+	box-shadow: 0px 5px 0px 0px #3C93D5;
+}
+
+.motor3D .blue:hover {
+	background-color: #6FC6FF;
+}
+
+.motor3D .green {
+	background-color: #2ecc71;
+	box-shadow: 0px 5px 0px 0px #15B358;
+}
+
+.motor3D .green:hover {
+	background-color: #48E68B;
+}
+
+.motor3D .red {
+	background-color: rgb(235, 37, 2);
+	;
+	box-shadow: 0px 5px 0px 0px rgb(245, 47, 12);
+	;
+}
+
+.motor3D .red:hover {
+	background-color: rgb(265, 67, 32);
+	;
+}
+
+.motor3D footer {
+	margin: auto;
+	width: 50%;
+	padding: 10px;
+	border-top: 1px solid #15B358;
+}
+
+.motor3D footer ul {
+	list-style: none;
+	display: grid;
+	float: left;
+}
+
+.motor3D footer h3 {
+	font-weight: 100;
+	margin-bottom: 0;
+}
+
+.motor3D .pink {
+	color: pink;
+}
+
+.motor3D .red {
+	color: rgb(202, 187, 187);
+}
+
+.motor3D .orange {
+	color: orange;
+}
+
+.motor3D .green {
+	color: green;
+}
+
+.motor3D .grey {
+	background-color: grey;
+}
+
+.motor3D #btnAplicar {
+	visibility: hidden;
+	width: 30px;
+	margin-right: 1px;
+	margin-left: 1px;
+}
+
+.motor3D #btnCancelar {
+	visibility: hidden;
+	width: 30px;
+	margin-right: 1px;
+	margin-left: 1px;
+}
+
+.motor3D #btnRotar {
+	width: 30px;
+	margin-right: 1px;
+	margin-left: 1px;
+}
+
+.motor3D .dg ul {
+	display: grid;
+}
+
+#item4 {
+	background-color: white;
+	font-size: medium;
+	border-style: none none solid none;
+	border-width: thin;
+	border-bottom-color: #d9d9d9;
+}
+
+div .item4 {
+	background-color: #6FC6FF;
+}
+
+/*
+div .materiales {
+    background-color: #333;
+    overflow: auto;
+    white-space: nowrap;
+}
+*/
