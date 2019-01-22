@@ -223,6 +223,55 @@ window.addEventListener('DOMContentLoaded', function () {
         var light = new BABYLON.HemisphericLight("hemiLight", new BABYLON.Vector3(-1, 1, 0), scene);
         // compared click for sphere
         advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI");
+        var grid = new BABYLON.GUI.Grid();
+        advancedTexture.addControl(grid);
+
+        grid.addColumnDefinition(20,true);
+        grid.addColumnDefinition(20,true);
+        grid.addColumnDefinition(.25);
+        grid.addColumnDefinition(20.,true);
+        grid.addRowDefinition(10,true);
+        grid.addRowDefinition(50,true);
+        grid.addRowDefinition(.25);
+        grid.addRowDefinition(50,true);
+        grid.addRowDefinition(40,true);
+
+        var addSlider = function (isVertical, isClamped, displayThumb, row, col) {
+            var panel = new BABYLON.GUI.StackPanel();
+            panel.width = "220px";
+            grid.addControl(panel, row, col);
+
+            var header = new BABYLON.GUI.TextBlock();
+            header.text = "Y-rotation: 0 deg";
+            header.height = "30px";
+            header.color = "white";
+            panel.addControl(header);
+
+            var slider = new BABYLON.GUI.Slider();
+            slider.minimum = 0;
+            slider.maximum = 2 * Math.PI;
+            slider.isThumbClamped = isClamped;
+            slider.isVertical = isVertical;
+            slider.displayThumb = displayThumb;
+            if (isVertical) {
+                slider.width = "20px";
+                slider.height = "200px";
+            } else {
+                slider.height = "20px";
+                slider.width = "200px";
+
+            }
+
+            slider.color = "red";
+            slider.onValueChangedObservable.add(function (value) {
+                header.text = "Y-rotation: " + (BABYLON.Tools.ToDegrees(value) | 0) + " deg";
+            });
+
+            slider.value = Math.PI + Math.random() * Math.PI;
+            panel.addControl(slider);
+        }
+        addSlider(false, true, true, 3, 2);
+        addSlider(true, true, true, 2, 1);
         if (!hasTouchscreen) {
             //crearInterfaceDatGUI();
         } else {
@@ -541,12 +590,12 @@ function cargarModelo(padre, modelo) {
         //actualizarDimensiones(modelo);
         padreActual.setParent(null);
         container.addAllToScene();
-        
+
     }, onSuccess = () => {
         engine.hideLoadingUI();
         //padreActual.setParent(null);
         Promise.resolve(2);
-        
+
     }, onProgress = () => {
         //console.log("progress")
         engine.displayLoadingUI();
@@ -1389,7 +1438,7 @@ function borrarContainer(i) {
     container.meshes.forEach((x) => { x.dispose() });
     cargarModelo(padreCentro, modeloActual(texturaActual, modulos[1], true));
     //cargarModelo(padreCentro, modeloActual(texturaActual, modulos[2], true));
-    setTimeout(function(){ 
+    setTimeout(function () {
         padreActual.getChildren().forEach(hijo => {
             switch (hijo.name) {
                 case 'izquierda':
