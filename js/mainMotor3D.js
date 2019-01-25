@@ -18,6 +18,8 @@ let anchoTotal;
 let largoTotal;
 let altoTotal;
 let archivosTexturas;
+
+var camera;
 /*let modelos = {
     taburetes: ['tabureteContempo.gltf', 'tabureteCasual.gltf', 'tabureteTrendy.gltf'],
     brazos: ['BrazoContempo.gltf', 'brazoCasual.gltf', 'brazoTrendy.gltf'],
@@ -207,46 +209,64 @@ window.addEventListener('DOMContentLoaded', function () {
         scene.clearColor = new BABYLON.Color3.White();
         //esfera = BABYLON.Mesh.CreateSphere("sphere1", 16, 2, scene);
         hl = new BABYLON.HighlightLayer("hl1", scene);
+        /*
         camara = new BABYLON.ArcRotateCamera("Camera", 3 * Math.PI / 2, -Math.PI / 2, 200, BABYLON.Vector3.Zero(), scene);
         camara.upperBetaLimit = 3;
         camara.lowerRadiusLimit = 4;
         camara.upperRadiusLimit = 4;
-        camara.minZ = 0.1;
-        camara.setPosition(new BABYLON.Vector3(0, 0, 50));
-        camara.attachControl(canvas, true, false, true);
+        //camara.minZ = 0.1;
+        camara.setPosition(new BABYLON.Vector3(0, 0,10));
+        //camara.attachControl(canvas, true, false, true);
+        camara.attachControl(canvas, true);
         //camara.inputs.addGamepad();
         camara.useBouncingBehavior = false;
         camara.useFramingBehavior = false;
         camara.useAutoRotationBehavior = true;
         camara.inputs.attached.mousewheel.wheelPrecision = 40;
         camara.beta = Math.PI * 0.1;
+        */
+        // Parameters: alpha, beta, radius, target position, scene
+        camera = new BABYLON.ArcRotateCamera("Camera", 0, 0, 5, new BABYLON.Vector3(0, 0, 0), scene);
+
+        // Positions the camera overwriting alpha, beta, radius
+        camera.setPosition(new BABYLON.Vector3(0, 0, 20));
+
+        // This attaches the camera to the canvas
+        camera.attachControl(canvas, true);
+//objetos
+
+
+//objetos
+
+
         var light = new BABYLON.HemisphericLight("hemiLight", new BABYLON.Vector3(-1, 1, 0), scene);
         // compared click for sphere
         advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI");
         var grid = new BABYLON.GUI.Grid();
         advancedTexture.addControl(grid);
 
-        grid.addColumnDefinition(20,true);
-        grid.addColumnDefinition(20,true);
+        grid.addColumnDefinition(20, true);
+        grid.addColumnDefinition(20, true);
         grid.addColumnDefinition(.25);
-        grid.addColumnDefinition(20.,true);
-        grid.addRowDefinition(10,true);
-        grid.addRowDefinition(50,true);
+        grid.addColumnDefinition(20., true);
+        grid.addRowDefinition(10, true);
+        grid.addRowDefinition(50, true);
         grid.addRowDefinition(.25);
-        grid.addRowDefinition(50,true);
-        grid.addRowDefinition(40,true);
+        grid.addRowDefinition(50, true);
+        grid.addRowDefinition(40, true);
 
         var addSlider = function (isVertical, isClamped, displayThumb, row, col) {
             var panel = new BABYLON.GUI.StackPanel();
+            var posicionAuxi;
             panel.width = "220px";
             grid.addControl(panel, row, col);
 
-            var header = new BABYLON.GUI.TextBlock();
-            header.text = "Y-rotation: 0 deg";
-            header.height = "30px";
-            header.color = "white";
-            panel.addControl(header);
-
+            /*        var header = new BABYLON.GUI.TextBlock();
+                      header.text = "Y-rotation: 0 deg";
+                      header.height = "30px";
+                      header.color = "white";
+                      panel.addControl(header);
+          */
             var slider = new BABYLON.GUI.Slider();
             slider.minimum = 0;
             slider.maximum = 2 * Math.PI;
@@ -254,17 +274,23 @@ window.addEventListener('DOMContentLoaded', function () {
             slider.isVertical = isVertical;
             slider.displayThumb = displayThumb;
             if (isVertical) {
-                slider.width = "20px";
+                slider.width = "15px";
                 slider.height = "200px";
+                posicionAuxi = {}
             } else {
-                slider.height = "20px";
+                slider.height = "15px";
                 slider.width = "200px";
 
             }
 
             slider.color = "red";
             slider.onValueChangedObservable.add(function (value) {
-                header.text = "Y-rotation: " + (BABYLON.Tools.ToDegrees(value) | 0) + " deg";
+                //header.text = "Y-rotation: " + (BABYLON.Tools.ToDegrees(value) | 0) + " deg";
+                console.log("vertical", slider.isVertical);
+
+                if (typeof padreActual !== "undefined") {
+                    escena.cameras[0].position.x = value;
+                }
             });
 
             slider.value = Math.PI + Math.random() * Math.PI;
