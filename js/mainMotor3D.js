@@ -18,7 +18,6 @@ let anchoTotal;
 let largoTotal;
 let altoTotal;
 let archivosTexturas;
-
 var camera;
 /*let modelos = {
     taburetes: ['tabureteContempo.gltf', 'tabureteCasual.gltf', 'tabureteTrendy.gltf'],
@@ -226,17 +225,48 @@ window.addEventListener('DOMContentLoaded', function () {
         camara.beta = Math.PI * 0.1;
         */
         // Parameters: alpha, beta, radius, target position, scene
-        camera = new BABYLON.ArcRotateCamera("Camera", 0, 0, 5, new BABYLON.Vector3(0, 0, 0), scene);
+        var camera = new BABYLON.ArcRotateCamera("Camera", 0, 0, 10, new BABYLON.Vector3(0, 0, 0), scene);
 
-        // Positions the camera overwriting alpha, beta, radius
-        camera.setPosition(new BABYLON.Vector3(0, 0, 20));
-
+        // This positions the camera
+        camera.setPosition(new BABYLON.Vector3(0, 0, -10));
+    
         // This attaches the camera to the canvas
         camera.attachControl(canvas, true);
-//objetos
+        //objetos
+        var redMat = new BABYLON.StandardMaterial("red", scene);
+        redMat.diffuseColor = new BABYLON.Color3(255, 0, 0);
+        redMat.emissiveColor = new BABYLON.Color3(255, 0, 0);
+        redMat.specularColor = new BABYLON.Color3(255, 0, 0);
+        
+        var greenMat = new BABYLON.StandardMaterial("green", scene);
+        greenMat.diffuseColor = new BABYLON.Color3(0, 255, 0);
+        greenMat.emissiveColor = new BABYLON.Color3(0, 255, 0);
+        greenMat.specularColor = new BABYLON.Color3(0, 255, 0);
+        
+        var blueMat = new BABYLON.StandardMaterial("blue", scene);
+        blueMat.diffuseColor = new BABYLON.Color3(0, 0, 255);
+        blueMat.emissiveColor = new BABYLON.Color3(0, 0, 255);
+        blueMat.specularColor = new BABYLON.Color3(0, 0, 255);
+        
+        // Shapes
+        var plane1 = new BABYLON.Mesh.CreatePlane("plane1", 3, scene, true, BABYLON.Mesh.DOUBLESIDE);
+        plane1.position.x = -3;
+        plane1.position.z = 0;
+        plane1.material = redMat;
+        
+        var plane2 = new BABYLON.Mesh.CreatePlane("plane2", 3, scene, true, BABYLON.Mesh.DOUBLESIDE);
+        plane2.position.x = 3;
+        plane2.position.z = -1.5;
+        plane2.material = greenMat;
+        
+        var plane3 = new BABYLON.Mesh.CreatePlane("plane3", 3, scene, true, BABYLON.Mesh.DOUBLESIDE);
+        plane3.position.x = 3;
+        plane3.position.z = 1.5;
+        plane3.material = blueMat;
+        
+        var ground = BABYLON.Mesh.CreateGround("ground1", 10, 10, 2, scene);
 
-
-//objetos
+        //objetos
 
 
         var light = new BABYLON.HemisphericLight("hemiLight", new BABYLON.Vector3(-1, 1, 0), scene);
@@ -1409,13 +1439,27 @@ function cargarJsonTexturas() {
 }
 
 function generarBotonesTextura() {
+    var bandera = false;
     var gridTexturas = document.getElementById("btn-grid");
+    var gridTexturas1 = document.getElementById("btn-grid1");
+    var gridTexturas2 = document.getElementById("btn-grid2");
     var texturasHTML = "";
+    var texturasHTML1 = "";
+    var texturasHTML2 = "";
     archivosTexturas.forEach((x) => {
         texturasHTML = texturasHTML + generarBotonImagen(x.chico, x.medio);
+        if (bandera == false) {
+            texturasHTML1 = texturasHTML1 + generarBotonImagen(x.chico, x.medio);
+            bandera = true;
+        } else {
+            bandera = false;
+            texturasHTML2 = texturasHTML2 + generarBotonImagen(x.chico, x.medio);
+        }
     });
     console.log(texturasHTML);
     gridTexturas.innerHTML = texturasHTML;
+    gridTexturas1.innerHTML = texturasHTML1;
+    gridTexturas2.innerHTML = texturasHTML2;
 }
 
 function generarBotonImagen(srcImagenChico, srcImagenMedio) {

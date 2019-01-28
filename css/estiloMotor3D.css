@@ -74,6 +74,28 @@
 	overflow-y: hidden;
 	white-space: nowrap;
 }
+.btn-grid1 {
+	display: grid;
+	grid-template-columns: max-content max-content max-content max-content max-content;
+	grid-template-rows: max-content max-content max-content max-content max-content;
+	width: 245px;
+	height: 340px;
+	background-color: #f0f0f0;
+	overflow-x: auto;
+	overflow-y: hidden;
+	white-space: nowrap;
+}
+.btn-grid2 {
+	display: grid;
+	grid-template-columns: max-content max-content max-content max-content max-content;
+	grid-template-rows: max-content max-content max-content max-content max-content;
+	width: 245px;
+	height: 340px;
+	background-color: #f0f0f0;
+	overflow-x: auto;
+	overflow-y: hidden;
+	white-space: nowrap;
+}
 
 .btn-item-grid {
 	color: #fff;
@@ -404,7 +426,13 @@ div .materiales {
 .acciones:nth-child(1) {
 	background: red;
 }
-
+.precios {
+	background-color: #6FC6FF;
+}
+.precios span{
+	background-color: #6FC6FF;
+	color: white;
+}
 @media only screen and (max-width: 600px) {
 	.motor3D .grid-container {
 		display: grid;
@@ -461,6 +489,28 @@ div .materiales {
 	.btn-grid {
 		display: grid;
 		grid-template-columns: max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content;
+		grid-template-rows: max-content max-content;
+		width: 139px;
+		height: 65px;
+		background-color: #f0f0f0;
+		overflow-x: auto;
+		overflow-y: auto;
+		white-space: nowrap;
+	}
+	.btn-grid1 {
+		display: grid;
+		grid-template-columns: max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content;
+		grid-template-rows: max-content max-content;
+		width: 139px;
+		height: 65px;
+		background-color: #f0f0f0;
+		overflow-x: auto;
+		overflow-y: auto;
+		white-space: nowrap;
+	}
+	.btn-grid2 {
+		display: grid;
+		grid-template-columns: max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content;
 		grid-template-rows: max-content max-content;
 		width: 139px;
 		height: 65px;
@@ -528,5 +578,5 @@ div .materiales {
 		padding-left: 7px;
 	}
 	
-
+	
 }
