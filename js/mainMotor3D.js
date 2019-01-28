@@ -233,39 +233,6 @@ window.addEventListener('DOMContentLoaded', function () {
         // This attaches the camera to the canvas
         camera.attachControl(canvas, true);
         //objetos
-        var redMat = new BABYLON.StandardMaterial("red", scene);
-        redMat.diffuseColor = new BABYLON.Color3(255, 0, 0);
-        redMat.emissiveColor = new BABYLON.Color3(255, 0, 0);
-        redMat.specularColor = new BABYLON.Color3(255, 0, 0);
-        
-        var greenMat = new BABYLON.StandardMaterial("green", scene);
-        greenMat.diffuseColor = new BABYLON.Color3(0, 255, 0);
-        greenMat.emissiveColor = new BABYLON.Color3(0, 255, 0);
-        greenMat.specularColor = new BABYLON.Color3(0, 255, 0);
-        
-        var blueMat = new BABYLON.StandardMaterial("blue", scene);
-        blueMat.diffuseColor = new BABYLON.Color3(0, 0, 255);
-        blueMat.emissiveColor = new BABYLON.Color3(0, 0, 255);
-        blueMat.specularColor = new BABYLON.Color3(0, 0, 255);
-        
-        // Shapes
-        var plane1 = new BABYLON.Mesh.CreatePlane("plane1", 3, scene, true, BABYLON.Mesh.DOUBLESIDE);
-        plane1.position.x = -3;
-        plane1.position.z = 0;
-        plane1.material = redMat;
-        
-        var plane2 = new BABYLON.Mesh.CreatePlane("plane2", 3, scene, true, BABYLON.Mesh.DOUBLESIDE);
-        plane2.position.x = 3;
-        plane2.position.z = -1.5;
-        plane2.material = greenMat;
-        
-        var plane3 = new BABYLON.Mesh.CreatePlane("plane3", 3, scene, true, BABYLON.Mesh.DOUBLESIDE);
-        plane3.position.x = 3;
-        plane3.position.z = 1.5;
-        plane3.material = blueMat;
-        
-        var ground = BABYLON.Mesh.CreateGround("ground1", 10, 10, 2, scene);
-
         //objetos
 
 
@@ -488,6 +455,8 @@ function createButon3D(mesh, opc) {
         btnIzquierdo.scaling = new BABYLON.Vector3(.4, .4, .4);
         btnIzquierdo.mesh.rotation.y = Math.PI;
         btnIzquierdo.content = text1;
+        btnIzquierdo.scaling.y=2;
+        btnIzquierdo.scaling.x=2;
         btnIzquierdo.onPointerClickObservable.add(function () {
             cargarModelo(mesh, modeloActual(texturaActual, moduloActual, true));
             btnIzquierdo.dispose();
@@ -508,6 +477,8 @@ function createButon3D(mesh, opc) {
         btnFrente.position.x = -0.2
         btnFrente.mesh.rotation.y = -Math.PI / 2;
         btnFrente.content = text1;
+        btnFrente.scaling.y=2;
+        btnFrente.scaling.x=2;
         btnFrente.onPointerClickObservable.add(() => {
             cargarModelo(mesh, modeloActual(texturaActual, moduloActual, true));
             btnFrente.dispose();
@@ -527,6 +498,8 @@ function createButon3D(mesh, opc) {
         btnDerecho.scaling = new BABYLON.Vector3(.4, .4, .4);
         btnDerecho.position.z = 0.2;
         btnDerecho.content = text1;
+        btnDerecho.scaling.x=2;
+        btnDerecho.scaling.y=2;
         btnDerecho.onPointerClickObservable.add(() => {
             cargarModelo(mesh, modeloActual(texturaActual, moduloActual, true));
             btnDerecho.dispose();
@@ -1503,30 +1476,76 @@ function nombreImagenTextura(nombreTextura) {
     return transformada[0] + " " + transformada[1];
 }
 
-function borrarContainer(i) {
+function prearmado(i) {
     console.log("es i", i);
     container.meshes.forEach((x) => { x.dispose() });
     cargarModelo(padreCentro, modeloActual(texturaActual, modulos[1], true));
     //cargarModelo(padreCentro, modeloActual(texturaActual, modulos[2], true));
     setTimeout(function () {
-        padreActual.getChildren().forEach(hijo => {
-            switch (hijo.name) {
-                case 'izquierda':
-                    cargarModelo(hijo, modeloActual(texturaActual, modulos[1], true));
-                    //console.log("FFUE izquierda", izquierda);
-                    break;
-                case 'derecha':
-                    cargarModelo(hijo, modeloActual(texturaActual, modulos[2], true));
-                    //console.log("FFUE derecha", derecha);
-                    break;
-                case 'frente':
-                    cargarModelo(hijo, modeloActual(texturaActual, modulos[0], true));
-                    //console.log("FFUE frente", frente);
-                    break;
-                default:
-                    break;
-            }
-        });
+        switch (i) {
+            case 1:
+            padreActual.getChildren().forEach(hijo => {
+                switch (hijo.name) {
+                    case 'izquierda':
+                        cargarModelo(hijo, modeloActual(texturaActual, modulos[1], true));
+                        //console.log("FFUE izquierda", izquierda);
+                        break;
+                    case 'derecha':
+                        cargarModelo(hijo, modeloActual(texturaActual, modulos[2], true));
+                        //console.log("FFUE derecha", derecha);
+                        break;
+                    case 'frente':
+                        cargarModelo(hijo, modeloActual(texturaActual, modulos[0], true));
+                        //console.log("FFUE frente", frente);
+                        break;
+                    default:
+                        break;
+                }
+            });
+            break;
+            case 2:
+            padreActual.getChildren().forEach(hijo => {
+                switch (hijo.name) {
+                    case 'izquierda':
+                        cargarModelo(hijo, modeloActual(texturaActual, modulos[1], true));
+                        //console.log("FFUE izquierda", izquierda);
+                        break;
+                    case 'derecha':
+                        cargarModelo(hijo, modeloActual(texturaActual, modulos[1], true));
+                        //console.log("FFUE derecha", derecha);
+                        break;
+                    case 'frente':
+                        cargarModelo(hijo, modeloActual(texturaActual, modulos[1], true));
+                        //console.log("FFUE frente", frente);
+                        break;
+                    default:
+                        break;
+                }
+            });
+            break;
+            case 3:
+            padreActual.getChildren().forEach(hijo => {
+                switch (hijo.name) {
+                    case 'izquierda':
+                        cargarModelo(hijo, modeloActual(texturaActual, modulos[2], true));
+                        //console.log("FFUE izquierda", izquierda);
+                        break;
+                    case 'derecha':
+                        cargarModelo(hijo, modeloActual(texturaActual, modulos[2], true));
+                        //console.log("FFUE derecha", derecha);
+                        break;
+                    case 'frente':
+                        cargarModelo(hijo, modeloActual(texturaActual, modulos[2], true));
+                        //console.log("FFUE frente", frente);
+                        break;
+                    default:
+                        break;
+                }
+            });
+            break;
+            default:
+            break;
+        }
     }, 2000);
 
 }
