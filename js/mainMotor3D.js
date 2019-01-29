@@ -234,7 +234,8 @@ window.addEventListener('DOMContentLoaded', function () {
         camera.attachControl(canvas, true);
         //objetos
         //objetos
-
+        camera.setTarget(BABYLON.Vector3.Zero());
+        camera.lockedTarget = padreCentro;
 
         var light = new BABYLON.HemisphericLight("hemiLight", new BABYLON.Vector3(-1, 1, 0), scene);
         // compared click for sphere
@@ -267,6 +268,7 @@ window.addEventListener('DOMContentLoaded', function () {
             var slider = new BABYLON.GUI.Slider();
             slider.minimum = 0;
             slider.maximum = 2 * Math.PI;
+            slider.value = 0.5;
             slider.isThumbClamped = isClamped;
             slider.isVertical = isVertical;
             slider.displayThumb = displayThumb;
@@ -283,11 +285,16 @@ window.addEventListener('DOMContentLoaded', function () {
             slider.color = "red";
             slider.onValueChangedObservable.add(function (value) {
                 //header.text = "Y-rotation: " + (BABYLON.Tools.ToDegrees(value) | 0) + " deg";
-                console.log("vertical", slider.isVertical);
+                console.log("vertical", slider.isVertical +" "+value);
 
-                if (typeof padreActual !== "undefined") {
-                    escena.cameras[0].position.x = value;
+                if (typeof padreCentro !== "undefined") {
+                    if(slider.isVertical){
+                        padreCentro.position.x=value;
+                    }else{
+                        padreCentro.position.y=value;
+                    }
                 }
+                
             });
 
             slider.value = Math.PI + Math.random() * Math.PI;
@@ -470,7 +477,7 @@ function createButon3D(mesh, opc) {
             activarBotonesAplicar(true);
             ultimoClickeado = "izquierda";
             resaltarMueble(padreActual, false);
-            padreActual.setParent(null);
+           // padreActual.setParent(null);
             setTimeout(function () { compararPoicion(padreActual); }, 1000);
         });
 
@@ -492,7 +499,7 @@ function createButon3D(mesh, opc) {
             activarBotonesAplicar(true);
             ultimoClickeado = "frente";
             resaltarMueble(padreActual, false);
-            padreActual.setParent(null);
+            //padreActual.setParent(null);
             setTimeout(function () { compararPoicion(padreActual); }, 1000);
         });
     }
@@ -513,7 +520,7 @@ function createButon3D(mesh, opc) {
             activarBotonesAplicar(true);
             ultimoClickeado = "derecha";
             resaltarMueble(padreActual, false);
-            padreActual.setParent(null);
+            //padreActual.setParent(null);
             setTimeout(function () { compararPoicion(padreActual); }, 1000);
         });
     }
@@ -547,7 +554,6 @@ function cargarModelo(padre, modelo) {
         //console.log("padre actual", padreActual);
         //padreActual = newMeshes.meshes[0].parent;
         //aumentarPrecioTotal(modeloActual(texturaActual, moduloActual, false));
-        padreActual.setParent(padreCentro);
         padres.push(padreActual);
         precioTotal = 0;
         padres.forEach((x) => precioTotal += x.precio)
@@ -555,6 +561,7 @@ function cargarModelo(padre, modelo) {
         actualizarTablaMuebles();
         //divLista.innerText = getListaMuebles(padres);
         //listaDeMuebles.push(modeloActual(texturaActual, moduloActual, true, true));
+        
         padreActual.getChildren().forEach(hijo => {
             switch (hijo.name) {
                 case 'izquierda':
@@ -625,18 +632,17 @@ function cargarModelo(padre, modelo) {
         }*/
         //createHoloButton(padreActual);
         //actualizarDimensiones(modelo);
-        padreActual.setParent(null);
+        //padreActual.setParent(null);
         container.addAllToScene();
 
     }, onSuccess = () => {
         engine.hideLoadingUI();
         //padreActual.setParent(null);
-        Promise.resolve(2);
-
     }, onProgress = () => {
         //console.log("progress")
         engine.displayLoadingUI();
     });
+    //padreActual.setParent(padreCentro);
 }
 function cambioTextura(opc) {
     texturaActual = texturas[opc];
