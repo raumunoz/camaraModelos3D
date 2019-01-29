@@ -305,7 +305,12 @@ window.addEventListener('DOMContentLoaded', function () {
             scene.render();
         });
         //scene.debugLayer.show();
+       
         //esfera = BABYLON.Mesh.CreateBox("box", 2, scene);
+        scene.onBeforeRenderObservable.add(()=>{
+                
+        })
+        
         return scene;
     }
 
@@ -531,15 +536,18 @@ function cargarModelo(padre, modelo) {
         //console.log("padre a guardar", newMeshes.meshes[0]);
         padreAnterior = padreActual;
         padreActual = newMeshes.meshes[0].getChildren()[0];
+        newMeshes.meshes[0].getChildren()[0].sparent=padreCentro;
         numPadre++;
         //modeloActual(texturaActual, moduloActual, true);
         padreActual.precio = modeloActual(texturaActual, moduloActual, false);
         padreActual.name = modeloActual(texturaActual, moduloActual, true);
+        
         //padreActual.name = "padre" + numPadre;
         // padreActual.esSuperior="NO";
         //console.log("padre actual", padreActual);
         //padreActual = newMeshes.meshes[0].parent;
         //aumentarPrecioTotal(modeloActual(texturaActual, moduloActual, false));
+        padreActual.setParent(padreCentro);
         padres.push(padreActual);
         precioTotal = 0;
         padres.forEach((x) => precioTotal += x.precio)
@@ -699,6 +707,7 @@ function agregarBorder(val, textura) {
     //console.log('modelo actual', modeloActual);
     //console.log('textura actual', texturaActual);
 }
+
 function activarBotonesAplicar(bool) {
     if (bool) {
         muebleSelecionado = true;
@@ -920,7 +929,8 @@ function modeloActual(text, moduA, nombre, completo) {
 function meshClickleable(mesh) {
     mesh.actionManager = new BABYLON.ActionManager(escena);
     mesh.actionManager.registerAction(new BABYLON.ExecuteCodeAction(BABYLON.ActionManager.OnPickUpTrigger, function () {
-        //console.log("Mesh clickeado", mesh.name);
+        console.log("Mesh clickeado", mesh.name);
+        aplicar();
         if (muebleSelecionado === false) {
             esconderMesh(btnDerecho, false);
             esconderMesh(btnIzquierdo, false);
