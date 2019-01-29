@@ -1,3 +1,4 @@
+let sliderDebug;
 let debugg = [];
 let listaTablaMuebles = [{ mueble: "Taburete casual", numero: 0 }];
 let perfLi;
@@ -18,7 +19,6 @@ let anchoTotal;
 let largoTotal;
 let altoTotal;
 let archivosTexturas;
-var camera;
 /*let modelos = {
     taburetes: ['tabureteContempo.gltf', 'tabureteCasual.gltf', 'tabureteTrendy.gltf'],
     brazos: ['BrazoContempo.gltf', 'brazoCasual.gltf', 'brazoTrendy.gltf'],
@@ -65,7 +65,7 @@ var escena;
 let base;
 var hl;
 //var esfera;
-let camara;
+let camera;
 
 let btnIzquierdo;
 let btnDerecho;
@@ -225,17 +225,17 @@ window.addEventListener('DOMContentLoaded', function () {
         camara.beta = Math.PI * 0.1;
         */
         // Parameters: alpha, beta, radius, target position, scene
-        var camera = new BABYLON.ArcRotateCamera("Camera", 0, 0, 10, new BABYLON.Vector3(0, 0, 0), scene);
+        camera = new BABYLON.ArcRotateCamera("Camera", 0, 0, 10, new BABYLON.Vector3(0, 0, 0), scene);
 
         // This positions the camera
         camera.setPosition(new BABYLON.Vector3(0, 0, -10));
-    
+
         // This attaches the camera to the canvas
         camera.attachControl(canvas, true);
         //objetos
         //objetos
         camera.setTarget(BABYLON.Vector3.Zero());
-        camera.lockedTarget = padreCentro;
+        //camera.lockedTarget = padreCentro;
 
         var light = new BABYLON.HemisphericLight("hemiLight", new BABYLON.Vector3(-1, 1, 0), scene);
         // compared click for sphere
@@ -247,13 +247,14 @@ window.addEventListener('DOMContentLoaded', function () {
         grid.addColumnDefinition(20, true);
         grid.addColumnDefinition(.25);
         grid.addColumnDefinition(20., true);
+        grid.addColumnDefinition(20., true);
         grid.addRowDefinition(10, true);
-        grid.addRowDefinition(50, true);
+        grid.addRowDefinition(20, true);
         grid.addRowDefinition(.25);
         grid.addRowDefinition(50, true);
         grid.addRowDefinition(40, true);
 
-        var addSlider = function (isVertical, isClamped, displayThumb, row, col) {
+        var addSlider = function (isVertical, isClamped, displayThumb, row, col, zoom) {
             var panel = new BABYLON.GUI.StackPanel();
             var posicionAuxi;
             panel.width = "220px";
@@ -264,44 +265,61 @@ window.addEventListener('DOMContentLoaded', function () {
                       header.height = "30px";
                       header.color = "white";
                       panel.addControl(header);
-          */
+                      */
             var slider = new BABYLON.GUI.Slider();
-            slider.minimum = 0;
-            slider.maximum = 2 * Math.PI;
-            slider.value = 0.5;
-            slider.isThumbClamped = isClamped;
-            slider.isVertical = isVertical;
-            slider.displayThumb = displayThumb;
+            if (zoom) {
+
+                slider.minimum = 30;
+                slider.maximum = 80;
+                slider.isThumbClamped = isClamped;
+                slider.isVertical = isVertical;
+                slider.displayThumb = displayThumb;
+                slider.value=80;
+            } else {
+                slider.minimum = -2 * Math.PI;
+                slider.maximum = 2 * Math.PI;
+                slider.isThumbClamped = isClamped;
+                slider.isVertical = isVertical;
+                slider.displayThumb = displayThumb;
+                slider.value = 0;
+            }
             if (isVertical) {
                 slider.width = "15px";
                 slider.height = "200px";
                 posicionAuxi = {}
+
             } else {
                 slider.height = "15px";
                 slider.width = "200px";
-
             }
+
 
             slider.color = "red";
             slider.onValueChangedObservable.add(function (value) {
                 //header.text = "Y-rotation: " + (BABYLON.Tools.ToDegrees(value) | 0) + " deg";
-                console.log("vertical", slider.isVertical +" "+value);
-
+                //console.log("vertical", slider.isVertical +" "+value);
+                console.log("value", slider.value);
                 if (typeof padreCentro !== "undefined") {
-                    if(slider.isVertical){
-                        padreCentro.position.x=value;
-                    }else{
-                        padreCentro.position.y=value;
+                    if (slider.isVertical) {
+                        padreCentro.position.y = value;
+                    } else {
+                        if (zoom) {
+                            camera.radius =90- value;
+                        } else {
+                            padreCentro.position.x = value;
+                        }
+
                     }
                 }
-                
+
             });
 
-            slider.value = Math.PI + Math.random() * Math.PI;
+            //slider.value = Math.PI + Math.random() * Math.PI;
             panel.addControl(slider);
         }
-        addSlider(false, true, true, 3, 2);
-        addSlider(true, true, true, 2, 1);
+        addSlider(false, true, true, 3, 2, false);
+        addSlider(true, true, true, 2, 1, false);
+        addSlider(false, true, true, 1, 2, true);
         if (!hasTouchscreen) {
             //crearInterfaceDatGUI();
         } else {
@@ -312,12 +330,12 @@ window.addEventListener('DOMContentLoaded', function () {
             scene.render();
         });
         //scene.debugLayer.show();
-       
+
         //esfera = BABYLON.Mesh.CreateBox("box", 2, scene);
-        scene.onBeforeRenderObservable.add(()=>{
-                
+        scene.onBeforeRenderObservable.add(() => {
+
         })
-        
+
         return scene;
     }
 
@@ -467,8 +485,8 @@ function createButon3D(mesh, opc) {
         btnIzquierdo.scaling = new BABYLON.Vector3(.4, .4, .4);
         btnIzquierdo.mesh.rotation.y = Math.PI;
         btnIzquierdo.content = text1;
-        btnIzquierdo.scaling.y=2;
-        btnIzquierdo.scaling.x=2;
+        btnIzquierdo.scaling.y = 2;
+        btnIzquierdo.scaling.x = 2;
         btnIzquierdo.onPointerClickObservable.add(function () {
             cargarModelo(mesh, modeloActual(texturaActual, moduloActual, true));
             btnIzquierdo.dispose();
@@ -477,7 +495,7 @@ function createButon3D(mesh, opc) {
             activarBotonesAplicar(true);
             ultimoClickeado = "izquierda";
             resaltarMueble(padreActual, false);
-           // padreActual.setParent(null);
+            // padreActual.setParent(null);
             setTimeout(function () { compararPoicion(padreActual); }, 1000);
         });
 
@@ -489,8 +507,8 @@ function createButon3D(mesh, opc) {
         btnFrente.position.x = -0.2
         btnFrente.mesh.rotation.y = -Math.PI / 2;
         btnFrente.content = text1;
-        btnFrente.scaling.y=2;
-        btnFrente.scaling.x=2;
+        btnFrente.scaling.y = 2;
+        btnFrente.scaling.x = 2;
         btnFrente.onPointerClickObservable.add(() => {
             cargarModelo(mesh, modeloActual(texturaActual, moduloActual, true));
             btnFrente.dispose();
@@ -510,8 +528,8 @@ function createButon3D(mesh, opc) {
         btnDerecho.scaling = new BABYLON.Vector3(.4, .4, .4);
         btnDerecho.position.z = 0.2;
         btnDerecho.content = text1;
-        btnDerecho.scaling.x=2;
-        btnDerecho.scaling.y=2;
+        btnDerecho.scaling.x = 2;
+        btnDerecho.scaling.y = 2;
         btnDerecho.onPointerClickObservable.add(() => {
             cargarModelo(mesh, modeloActual(texturaActual, moduloActual, true));
             btnDerecho.dispose();
@@ -543,12 +561,12 @@ function cargarModelo(padre, modelo) {
         //console.log("padre a guardar", newMeshes.meshes[0]);
         padreAnterior = padreActual;
         padreActual = newMeshes.meshes[0].getChildren()[0];
-        newMeshes.meshes[0].getChildren()[0].sparent=padreCentro;
+        newMeshes.meshes[0].getChildren()[0].sparent = padreCentro;
         numPadre++;
         //modeloActual(texturaActual, moduloActual, true);
         padreActual.precio = modeloActual(texturaActual, moduloActual, false);
         padreActual.name = modeloActual(texturaActual, moduloActual, true);
-        
+
         //padreActual.name = "padre" + numPadre;
         // padreActual.esSuperior="NO";
         //console.log("padre actual", padreActual);
@@ -561,7 +579,7 @@ function cargarModelo(padre, modelo) {
         actualizarTablaMuebles();
         //divLista.innerText = getListaMuebles(padres);
         //listaDeMuebles.push(modeloActual(texturaActual, moduloActual, true, true));
-        
+
         padreActual.getChildren().forEach(hijo => {
             switch (hijo.name) {
                 case 'izquierda':
@@ -1117,7 +1135,7 @@ function crearInterfaceDatGUI() {
     }
     gui.add(options, "zoom", 0.1, 3).onChange(function (value) {
         //sphere.scaling = unitVec.scale(value);
-        camara.upperRadiusLimit = 4 - value;
+        camara.upperRadiusLimit = value;
         //console.log("zoom", camara.upperRadiusLimit);
         // sphere.position.x = value;
     });
@@ -1500,67 +1518,67 @@ function prearmado(i) {
     setTimeout(function () {
         switch (i) {
             case 1:
-            padreActual.getChildren().forEach(hijo => {
-                switch (hijo.name) {
-                    case 'izquierda':
-                        cargarModelo(hijo, modeloActual(texturaActual, modulos[1], true));
-                        //console.log("FFUE izquierda", izquierda);
-                        break;
-                    case 'derecha':
-                        cargarModelo(hijo, modeloActual(texturaActual, modulos[2], true));
-                        //console.log("FFUE derecha", derecha);
-                        break;
-                    case 'frente':
-                        cargarModelo(hijo, modeloActual(texturaActual, modulos[0], true));
-                        //console.log("FFUE frente", frente);
-                        break;
-                    default:
-                        break;
-                }
-            });
-            break;
+                padreActual.getChildren().forEach(hijo => {
+                    switch (hijo.name) {
+                        case 'izquierda':
+                            cargarModelo(hijo, modeloActual(texturaActual, modulos[1], true));
+                            //console.log("FFUE izquierda", izquierda);
+                            break;
+                        case 'derecha':
+                            cargarModelo(hijo, modeloActual(texturaActual, modulos[2], true));
+                            //console.log("FFUE derecha", derecha);
+                            break;
+                        case 'frente':
+                            cargarModelo(hijo, modeloActual(texturaActual, modulos[0], true));
+                            //console.log("FFUE frente", frente);
+                            break;
+                        default:
+                            break;
+                    }
+                });
+                break;
             case 2:
-            padreActual.getChildren().forEach(hijo => {
-                switch (hijo.name) {
-                    case 'izquierda':
-                        cargarModelo(hijo, modeloActual(texturaActual, modulos[1], true));
-                        //console.log("FFUE izquierda", izquierda);
-                        break;
-                    case 'derecha':
-                        cargarModelo(hijo, modeloActual(texturaActual, modulos[1], true));
-                        //console.log("FFUE derecha", derecha);
-                        break;
-                    case 'frente':
-                        cargarModelo(hijo, modeloActual(texturaActual, modulos[1], true));
-                        //console.log("FFUE frente", frente);
-                        break;
-                    default:
-                        break;
-                }
-            });
-            break;
+                padreActual.getChildren().forEach(hijo => {
+                    switch (hijo.name) {
+                        case 'izquierda':
+                            cargarModelo(hijo, modeloActual(texturaActual, modulos[1], true));
+                            //console.log("FFUE izquierda", izquierda);
+                            break;
+                        case 'derecha':
+                            cargarModelo(hijo, modeloActual(texturaActual, modulos[1], true));
+                            //console.log("FFUE derecha", derecha);
+                            break;
+                        case 'frente':
+                            cargarModelo(hijo, modeloActual(texturaActual, modulos[1], true));
+                            //console.log("FFUE frente", frente);
+                            break;
+                        default:
+                            break;
+                    }
+                });
+                break;
             case 3:
-            padreActual.getChildren().forEach(hijo => {
-                switch (hijo.name) {
-                    case 'izquierda':
-                        cargarModelo(hijo, modeloActual(texturaActual, modulos[2], true));
-                        //console.log("FFUE izquierda", izquierda);
-                        break;
-                    case 'derecha':
-                        cargarModelo(hijo, modeloActual(texturaActual, modulos[2], true));
-                        //console.log("FFUE derecha", derecha);
-                        break;
-                    case 'frente':
-                        cargarModelo(hijo, modeloActual(texturaActual, modulos[2], true));
-                        //console.log("FFUE frente", frente);
-                        break;
-                    default:
-                        break;
-                }
-            });
-            break;
+                padreActual.getChildren().forEach(hijo => {
+                    switch (hijo.name) {
+                        case 'izquierda':
+                            cargarModelo(hijo, modeloActual(texturaActual, modulos[2], true));
+                            //console.log("FFUE izquierda", izquierda);
+                            break;
+                        case 'derecha':
+                            cargarModelo(hijo, modeloActual(texturaActual, modulos[2], true));
+                            //console.log("FFUE derecha", derecha);
+                            break;
+                        case 'frente':
+                            cargarModelo(hijo, modeloActual(texturaActual, modulos[2], true));
+                            //console.log("FFUE frente", frente);
+                            break;
+                        default:
+                            break;
+                    }
+                });
+                break;
             default:
-            break;
+                break;
         }
     }, 2000);
 
