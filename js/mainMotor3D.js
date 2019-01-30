@@ -1,4 +1,4 @@
-let sliderDebug;
+let meshClicleado=true;
 let debugg = [];
 let listaTablaMuebles = [{ mueble: "Taburete casual", numero: 0 }];
 let perfLi;
@@ -191,9 +191,20 @@ window.addEventListener('DOMContentLoaded', function () {
         largoTotal.innerText = dimensionSuperior.largo() + " m";
         canvas.addEventListener("mousedown", function () {
             // console.log("Mouse DOWN!");
+            
+            if(meshClicleado){
+                console.log("en canvas");    
+            }else{
+                
+                aplicar();
+            }
+
             if (hasTouchscreen) {
                 document.body.style.overflow = "hidden";
+                console.log("en canvas");
             }
+
+            meshClicleado=false;
         });
         //Works
         canvas.addEventListener("mouseup", function () {
@@ -954,6 +965,7 @@ function meshClickleable(mesh) {
     mesh.actionManager = new BABYLON.ActionManager(escena);
     mesh.actionManager.registerAction(new BABYLON.ExecuteCodeAction(BABYLON.ActionManager.OnPickUpTrigger, function () {
         console.log("Mesh clickeado", mesh.name);
+        meshClicleado=true;
         aplicar();
         if (muebleSelecionado === false) {
             esconderMesh(btnDerecho, false);
