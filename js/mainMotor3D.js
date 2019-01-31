@@ -1,4 +1,6 @@
-let meshClicleado=true;
+let grid;
+let meshClicleado=false;
+let buttonClicleado=false;
 let debugg = [];
 let listaTablaMuebles = [{ mueble: "Taburete casual", numero: 0 }];
 let perfLi;
@@ -19,6 +21,7 @@ let anchoTotal;
 let largoTotal;
 let altoTotal;
 let archivosTexturas;
+let sliders=[];
 /*let modelos = {
     taburetes: ['tabureteContempo.gltf', 'tabureteCasual.gltf', 'tabureteTrendy.gltf'],
     brazos: ['BrazoContempo.gltf', 'brazoCasual.gltf', 'brazoTrendy.gltf'],
@@ -192,27 +195,34 @@ window.addEventListener('DOMContentLoaded', function () {
         canvas.addEventListener("mousedown", function () {
             // console.log("Mouse DOWN!");
             
-            if(meshClicleado){
-                console.log("en canvas");    
-            }else{
-                
-                aplicar();
-            }
-
+            /*if((meshClicleado==false) ){
+                    
+                if(buttonClicleado==true){
+                   // setTimeout(function(){ aplicar(); }, 3000);
+                }else{
+                    aplicar();
+                }
+            }*/
             if (hasTouchscreen) {
                 document.body.style.overflow = "hidden";
                 console.log("en canvas");
             }
 
-            meshClicleado=false;
+            
         });
         //Works
         canvas.addEventListener("mouseup", function () {
             console.log("Mouse UP!");
-            //document.body.style.overflow="hidden";
-            if (hasTouchscreen) {
+            //document.body.style.overflow="hidden";            
+           if (hasTouchscreen) {
                 document.body.style.overflow = "auto";
             }
+            
+            if(meshClicleado || buttonClicleado){
+                meshClicleado=false;
+                buttonClicleado=false;    
+            }
+            
         });
         var scene = new BABYLON.Scene(engine);
         scene.preventDefaultOnPointerDown = false;
@@ -251,7 +261,7 @@ window.addEventListener('DOMContentLoaded', function () {
         var light = new BABYLON.HemisphericLight("hemiLight", new BABYLON.Vector3(-1, 1, 0), scene);
         // compared click for sphere
         advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI");
-        var grid = new BABYLON.GUI.Grid();
+        grid = new BABYLON.GUI.Grid();
         advancedTexture.addControl(grid);
 
         grid.addColumnDefinition(20, true);
@@ -265,76 +275,15 @@ window.addEventListener('DOMContentLoaded', function () {
         grid.addRowDefinition(50, true);
         grid.addRowDefinition(40, true);
 
-        var addSlider = function (isVertical, isClamped, displayThumb, row, col, zoom) {
-            var panel = new BABYLON.GUI.StackPanel();
-            var posicionAuxi;
-            panel.width = "220px";
-            grid.addControl(panel, row, col);
-
-            /*        var header = new BABYLON.GUI.TextBlock();
-                      header.text = "Y-rotation: 0 deg";
-                      header.height = "30px";
-                      header.color = "white";
-                      panel.addControl(header);
-                      */
-            var slider = new BABYLON.GUI.Slider();
-            if (zoom) {
-
-                slider.minimum = 30;
-                slider.maximum = 80;
-                slider.isThumbClamped = isClamped;
-                slider.isVertical = isVertical;
-                slider.displayThumb = displayThumb;
-                slider.value=80;
-            } else {
-                slider.minimum = -2 * Math.PI;
-                slider.maximum = 2 * Math.PI;
-                slider.isThumbClamped = isClamped;
-                slider.isVertical = isVertical;
-                slider.displayThumb = displayThumb;
-                slider.value = 0;
-            }
-            if (isVertical) {
-                slider.width = "15px";
-                slider.height = "200px";
-                posicionAuxi = {}
-
-            } else {
-                slider.height = "15px";
-                slider.width = "200px";
-            }
-
-
-            slider.color = "red";
-            slider.onValueChangedObservable.add(function (value) {
-                //header.text = "Y-rotation: " + (BABYLON.Tools.ToDegrees(value) | 0) + " deg";
-                //console.log("vertical", slider.isVertical +" "+value);
-                console.log("value", slider.value);
-                if (typeof padreCentro !== "undefined") {
-                    if (slider.isVertical) {
-                        padreCentro.position.y = value;
-                    } else {
-                        if (zoom) {
-                            camera.radius =90- value;
-                        } else {
-                            padreCentro.position.x = value;
-                        }
-
-                    }
-                }
-
-            });
-
-            //slider.value = Math.PI + Math.random() * Math.PI;
-            panel.addControl(slider);
-        }
-        addSlider(false, true, true, 3, 2, false);
-        addSlider(true, true, true, 2, 1, false);
-        addSlider(false, true, true, 1, 2, true);
+        
         if (!hasTouchscreen) {
             //crearInterfaceDatGUI();
+            addSlider(false, true, true, 3, 2, false);
+            addSlider(true, true, true, 2, 1, false);
+            addSlider(false, true, true, 1, 2, true);
         } else {
             //crearInterfaceDatGUI();
+
             crearInterfaceTexto();
         }
         engine.runRenderLoop(function () {
@@ -499,6 +448,8 @@ function createButon3D(mesh, opc) {
         btnIzquierdo.scaling.y = 2;
         btnIzquierdo.scaling.x = 2;
         btnIzquierdo.onPointerClickObservable.add(function () {
+            //meshClicleado=true;
+            buttonClicleado=true;
             cargarModelo(mesh, modeloActual(texturaActual, moduloActual, true));
             btnIzquierdo.dispose();
             esconderMesh(btnDerecho, true);
@@ -521,6 +472,8 @@ function createButon3D(mesh, opc) {
         btnFrente.scaling.y = 2;
         btnFrente.scaling.x = 2;
         btnFrente.onPointerClickObservable.add(() => {
+            //meshClicleado=true;
+            buttonClicleado=true;
             cargarModelo(mesh, modeloActual(texturaActual, moduloActual, true));
             btnFrente.dispose();
             esconderMesh(btnIzquierdo, true);
@@ -542,6 +495,8 @@ function createButon3D(mesh, opc) {
         btnDerecho.scaling.x = 2;
         btnDerecho.scaling.y = 2;
         btnDerecho.onPointerClickObservable.add(() => {
+            //meshClicleado=true;
+            buttonClicleado=true;
             cargarModelo(mesh, modeloActual(texturaActual, moduloActual, true));
             btnDerecho.dispose();
             esconderMesh(btnIzquierdo, true);
@@ -770,8 +725,8 @@ function activarBotonesAplicar(bool) {
         btnModelo2.style.opacity = 1;
         btnModelo2.setAttribute("onClick", "javascript: cambioModulo(2);");
 
-        btnCamara.style.opacity = .2;
-        btnCamara.setAttribute("onClick", "javascript: ;");
+        //btnCamara.style.opacity = .2;
+        //btnCamara.setAttribute("onClick", "javascript: ;");
     } else {
         btnAplicar.style.visibility = "hidden";
         btnCancelar.style.visibility = "hidden";
@@ -793,8 +748,8 @@ function activarBotonesAplicar(bool) {
         btnModelo2.style.opacity = .2;
         btnModelo2.setAttribute("onClick", "javascript: ;");
 
-        btnCamara.style.opacity = 1;
-        btnCamara.setAttribute("onClick", "javascript: activarCamara();");
+        //btnCamara.style.opacity = 1;
+        //btnCamara.setAttribute("onClick", "javascript: activarCamara();");
 
     }
 }
@@ -1594,4 +1549,67 @@ function prearmado(i) {
         }
     }, 2000);
 
+}
+function addSlider(isVertical, isClamped, displayThumb, row, col, zoom) {
+    var panel = new BABYLON.GUI.StackPanel();
+    var posicionAuxi;
+    panel.width = "220px";
+    grid.addControl(panel, row, col);
+
+    /*        var header = new BABYLON.GUI.TextBlock();
+              header.text = "Y-rotation: 0 deg";
+              header.height = "30px";
+              header.color = "white";
+              panel.addControl(header);
+              */
+    var slider = new BABYLON.GUI.Slider();
+    sliders.push(slider);
+    if (zoom) {
+        slider.minimum = 30;
+        slider.maximum = 80;
+        slider.isThumbClamped = isClamped;
+        slider.isVertical = isVertical;
+        slider.displayThumb = displayThumb;
+        slider.value=80;
+    } else {
+        slider.minimum = -2 * Math.PI;
+        slider.maximum = 2 * Math.PI;
+        slider.isThumbClamped = isClamped;
+        slider.isVertical = isVertical;
+        slider.displayThumb = displayThumb;
+        slider.value = 0;
+    }
+    if (isVertical) {
+        slider.width = "15px";
+        slider.height = "200px";
+        posicionAuxi = {}
+
+    } else {
+        slider.height = "15px";
+        slider.width = "200px";
+    }
+
+
+    slider.color = "red";
+    slider.onValueChangedObservable.add(function (value) {
+        //header.text = "Y-rotation: " + (BABYLON.Tools.ToDegrees(value) | 0) + " deg";
+        //console.log("vertical", slider.isVertical +" "+value);
+        console.log("value", slider.value);
+        if (typeof padreCentro !== "undefined") {
+            if (slider.isVertical) {
+                padreCentro.position.y = value;
+            } else {
+                if (zoom) {
+                    camera.radius =90- value;
+                } else {
+                    padreCentro.position.x = value;
+                }
+
+            }
+        }
+
+    });
+
+    //slider.value = Math.PI + Math.random() * Math.PI;
+    panel.addControl(slider);
 }

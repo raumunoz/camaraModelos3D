@@ -87,8 +87,9 @@ function captura() {
         }, 4000)
     );*/
     //isAssigned=false;
+    sliders.forEach(x=>{x.alpha=0 });
     escena.render();
-    BABYLON.Tools.CreateScreenshot(engine, camara, { precision: 1 });
+    BABYLON.Tools.CreateScreenshot(engine, camera, { precision: 1 });
 };
 function encenderCamara(idCamara) {
 
@@ -105,7 +106,7 @@ function encenderCamara(idCamara) {
 }
 function activarCamara() {
     if (camaraActivada === false || camaraActivada == undefined) {
-        cargarCamara(escena, camara);
+        cargarCamara(escena, camera);
     }
     if (camaraActivada === true) {
         captura();
