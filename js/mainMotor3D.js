@@ -1,6 +1,6 @@
 let grid;
-let meshClicleado=false;
-let buttonClicleado=false;
+let meshClicleado = false;
+let buttonClicleado = false;
 let debugg = [];
 let listaTablaMuebles = [{ mueble: "Taburete casual", numero: 0 }];
 let perfLi;
@@ -21,7 +21,7 @@ let anchoTotal;
 let largoTotal;
 let altoTotal;
 let archivosTexturas;
-let sliders=[];
+let sliders = [];
 /*let modelos = {
     taburetes: ['tabureteContempo.gltf', 'tabureteCasual.gltf', 'tabureteTrendy.gltf'],
     brazos: ['BrazoContempo.gltf', 'brazoCasual.gltf', 'brazoTrendy.gltf'],
@@ -46,6 +46,11 @@ let modelos = {
     ],
     completos: [
         { nombre: "completoContempo.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
+        { nombre: "completoCasual.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
+        { nombre: "completoTrendy.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 }
+    ],
+    puffs: [
+        { nombre: "atlixco.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
         { nombre: "completoCasual.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
         { nombre: "completoTrendy.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 }
     ]
@@ -194,7 +199,7 @@ window.addEventListener('DOMContentLoaded', function () {
         largoTotal.innerText = dimensionSuperior.largo() + " m";
         canvas.addEventListener("mousedown", function () {
             // console.log("Mouse DOWN!");
-            
+
             /*if((meshClicleado==false) ){
                     
                 if(buttonClicleado==true){
@@ -208,21 +213,21 @@ window.addEventListener('DOMContentLoaded', function () {
                 console.log("en canvas");
             }
 
-            
+
         });
         //Works
         canvas.addEventListener("mouseup", function () {
             console.log("Mouse UP!");
             //document.body.style.overflow="hidden";            
-           if (hasTouchscreen) {
+            if (hasTouchscreen) {
                 document.body.style.overflow = "auto";
             }
-            
-            if(meshClicleado || buttonClicleado){
-                meshClicleado=false;
-                buttonClicleado=false;    
+
+            if (meshClicleado || buttonClicleado) {
+                meshClicleado = false;
+                buttonClicleado = false;
             }
-            
+
         });
         var scene = new BABYLON.Scene(engine);
         scene.preventDefaultOnPointerDown = false;
@@ -275,7 +280,7 @@ window.addEventListener('DOMContentLoaded', function () {
         grid.addRowDefinition(50, true);
         grid.addRowDefinition(40, true);
 
-        
+
         if (!hasTouchscreen) {
             //crearInterfaceDatGUI();
             addSlider(false, true, true, 3, 2, false);
@@ -314,7 +319,8 @@ window.addEventListener('DOMContentLoaded', function () {
     manager = new BABYLON.GUI.GUI3DManager(escena);
     padreCentro = new BABYLON.Mesh("padreCentro", escena);
     padreActual = padreCentro;
-    cargarModelo(padreCentro, modeloActual(texturaActual, moduloActual, true));
+    cargarModelo(padreCentro, modelos.puffs[0].nombre);
+    //cargarModelo(padreCentro, modeloActual(texturaActual, moduloActual, true));
 
     /*BABYLON.SceneLoader.LoadAssetContainer("./", "brazoCasual.gltf", escena, function (newMeshes) {
 
@@ -449,7 +455,7 @@ function createButon3D(mesh, opc) {
         btnIzquierdo.scaling.x = 2;
         btnIzquierdo.onPointerClickObservable.add(function () {
             //meshClicleado=true;
-            buttonClicleado=true;
+            buttonClicleado = true;
             cargarModelo(mesh, modeloActual(texturaActual, moduloActual, true));
             btnIzquierdo.dispose();
             esconderMesh(btnDerecho, true);
@@ -473,7 +479,7 @@ function createButon3D(mesh, opc) {
         btnFrente.scaling.x = 2;
         btnFrente.onPointerClickObservable.add(() => {
             //meshClicleado=true;
-            buttonClicleado=true;
+            buttonClicleado = true;
             cargarModelo(mesh, modeloActual(texturaActual, moduloActual, true));
             btnFrente.dispose();
             esconderMesh(btnIzquierdo, true);
@@ -496,7 +502,7 @@ function createButon3D(mesh, opc) {
         btnDerecho.scaling.y = 2;
         btnDerecho.onPointerClickObservable.add(() => {
             //meshClicleado=true;
-            buttonClicleado=true;
+            buttonClicleado = true;
             cargarModelo(mesh, modeloActual(texturaActual, moduloActual, true));
             btnDerecho.dispose();
             esconderMesh(btnIzquierdo, true);
@@ -901,6 +907,17 @@ function modeloActual(text, moduA, nombre, completo) {
                 selecionado = modelos.completos[indiceTextura];
             }
             break;
+        case 4:
+            if (nombre == true /*&& completo === "undefined"*/) {
+                selecionado = modelos.completos[indiceTextura].nombre;
+                // console.log('modulo', selecionado);
+            } if (nombre == false /*&& completo === "undefined"*/) {
+                selecionado = modelos.completos[indiceTextura].precio;
+            }
+            if (completo == true) {
+                selecionado = modelos.completos[indiceTextura];
+            }
+            break;
         default:
             if (nombre == true /*&& completo === "undefined"*/) {
                 selecionado = modelos.taburetes[indiceTextura].nombre;
@@ -916,11 +933,15 @@ function modeloActual(text, moduA, nombre, completo) {
     //console.log("selecionado", selecionado);
     return selecionado;
 }
+
+function puffActual(mod){
+    return modelos.puffs[mod].nombre;
+}
 function meshClickleable(mesh) {
     mesh.actionManager = new BABYLON.ActionManager(escena);
     mesh.actionManager.registerAction(new BABYLON.ExecuteCodeAction(BABYLON.ActionManager.OnPickUpTrigger, function () {
         console.log("Mesh clickeado", mesh.name);
-        meshClicleado=true;
+        meshClicleado = true;
         aplicar();
         if (muebleSelecionado === false) {
             esconderMesh(btnDerecho, false);
@@ -1570,7 +1591,7 @@ function addSlider(isVertical, isClamped, displayThumb, row, col, zoom) {
         slider.isThumbClamped = isClamped;
         slider.isVertical = isVertical;
         slider.displayThumb = displayThumb;
-        slider.value=80;
+        slider.value = 80;
     } else {
         slider.minimum = -2 * Math.PI;
         slider.maximum = 2 * Math.PI;
@@ -1600,7 +1621,7 @@ function addSlider(isVertical, isClamped, displayThumb, row, col, zoom) {
                 padreCentro.position.y = value;
             } else {
                 if (zoom) {
-                    camera.radius =90- value;
+                    camera.radius = 90 - value;
                 } else {
                     padreCentro.position.x = value;
                 }

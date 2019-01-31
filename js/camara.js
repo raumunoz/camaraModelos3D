@@ -88,6 +88,7 @@ function captura() {
     );*/
     //isAssigned=false;
     sliders.forEach(x=>{x.alpha=0 });
+
     escena.render();
     BABYLON.Tools.CreateScreenshot(engine, camera, { precision: 1 });
 };
