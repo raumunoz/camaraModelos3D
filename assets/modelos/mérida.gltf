@@ -1,0 +1,98 @@
+{
+    "asset" : {
+        "generator" : "Khronos Blender glTF 2.0 I/O",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "Cube.026",
+            "scale" : [
+                0.1291484236717224,
+                0.1284942477941513,
+                0.11280106008052826
+            ],
+            "translation" : [
+                -0.01838970184326172,
+                0.18049085140228271,
+                -0.10797148942947388
+            ]
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Cube.026",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1
+                    },
+                    "indices" : 2
+                }
+            ]
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 282,
+            "max" : [
+                3.9447968006134033,
+                5.083117961883545,
+                5.03169059753418
+            ],
+            "min" : [
+                0,
+                -1.2227156162261963,
+                -2.5082595348358154
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 282,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5123,
+            "count" : 1593,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 3384,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 3384,
+            "byteOffset" : 3384
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 3186,
+            "byteOffset" : 6768
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 9956,
+            "uri" : "m\u00e9rida.bin"
+        }
+    ]
+}

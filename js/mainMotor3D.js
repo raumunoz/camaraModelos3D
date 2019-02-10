@@ -1,3 +1,4 @@
+let ModeloCustom;
 let grid;
 let meshClicleado = false;
 let buttonClicleado = false;
@@ -50,9 +51,37 @@ let modelos = {
         { nombre: "completoTrendy.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 }
     ],
     puffs: [
-        { nombre: "atlixco.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
-        { nombre: "completoCasual.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
-        { nombre: "completoTrendy.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 }
+        { nombre: "Atlixco.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
+        { nombre: "Atlixco_chico.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
+        { nombre: "Bernal.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
+        { nombre: "conzumel.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
+        { nombre: "Taburete_conzumel.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
+        { nombre: "Guadalajara.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
+        { nombre: "guanajuato.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
+        { nombre: "La paz.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
+        { nombre: "La Paz_chico.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
+        { nombre: "mérida.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
+        { nombre: "Oaxaca.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
+        { nombre: "Oaxaca_matrimonial.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
+        { nombre: "OaxacaMatrimonial.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
+        { nombre: "pátzcuaro.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
+        { nombre: "pátzcuaroNiño.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
+        { nombre: "puebla.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
+        { nombre: "puebla_chico.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
+        { nombre: "puertoVallarta.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
+        { nombre: "puff_conejo .gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
+        { nombre: "puff_dinosaurio.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
+        { nombre: "dona.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
+        { nombre: "jirafa.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
+        { nombre: "puffPerro.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
+        { nombre: "unicornio.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
+        { nombre: "sillon_conzumel.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
+        { nombre: "veracruz.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
+        { nombre: "veracruz_niños.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
+        { nombre: "ZacatecasChico.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
+        { nombre: "Zacatecas_grande.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
+        { nombre: "zacatecas_mediano.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
+        { nombre: "zacatlán.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 }
     ]
 }
 let btnRotar;
@@ -319,8 +348,8 @@ window.addEventListener('DOMContentLoaded', function () {
     manager = new BABYLON.GUI.GUI3DManager(escena);
     padreCentro = new BABYLON.Mesh("padreCentro", escena);
     padreActual = padreCentro;
-    cargarModelo(padreCentro, modelos.puffs[0].nombre);
-    //cargarModelo(padreCentro, modeloActual(texturaActual, moduloActual, true));
+    //cargarModelo(padreCentro, modelos.puffs[0].nombre);
+    cargarModelo(padreCentro, modeloActual(texturaActual, moduloActual, true));
 
     /*BABYLON.SceneLoader.LoadAssetContainer("./", "brazoCasual.gltf", escena, function (newMeshes) {
 
@@ -633,6 +662,31 @@ function cargarModelo(padre, modelo) {
         engine.displayLoadingUI();
     });
     //padreActual.setParent(padreCentro);
+}
+function cargarModeloCustom(padre, modelo) {
+    engine.displayLoadingUI();
+    container.meshes.forEach((x) => { x.dispose() });
+    BABYLON.SceneLoader.LoadAssetContainer("assets/modelos/", modelo, escena, function (newMeshes) {
+        meshesAcargar = newMeshes;
+        console.log("newMeshes",newMeshes);
+        padreAnterior = padreActual;
+        padreActual = newMeshes.meshes[0].getChildren()[0];
+        newMeshes.meshes[0].getChildren()[0].sparent = padreCentro;
+        numPadre++;
+        container.meshes.push(padreActual);
+
+        padreActual.parent = padre;
+        newMeshes.meshes.forEach(mesh => {
+            hl.addMesh(mesh, BABYLON.Color3.Green());
+            container.meshes.push(mesh);
+            meshClickleable(mesh);
+        });
+        container.addAllToScene();
+    }, onSuccess = () => {
+        engine.hideLoadingUI();
+    }, onProgress = () => {
+        engine.displayLoadingUI();
+    });
 }
 function cambioTextura(opc) {
     texturaActual = texturas[opc];

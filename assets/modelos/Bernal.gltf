@@ -1,0 +1,174 @@
+{
+    "asset" : {
+        "generator" : "Khronos Blender glTF 2.0 I/O",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0,
+                1
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "Cube.017",
+            "scale" : [
+                0.45217278599739075,
+                0.38594850897789,
+                0.38594850897789
+            ],
+            "translation" : [
+                0.2768956422805786,
+                1.347238540649414,
+                0.7623770236968994
+            ]
+        },
+        {
+            "mesh" : 1,
+            "name" : "Cube.021",
+            "rotation" : [
+                0.2877649664878845,
+                0.03440481051802635,
+                0.03468789532780647,
+                0.9564540982246399
+            ],
+            "scale" : [
+                0.02971259318292141,
+                0.02971259504556656,
+                0.02971259318292141
+            ],
+            "translation" : [
+                0.2748368978500366,
+                1.6900129318237305,
+                1.170316457748413
+            ]
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Cube.021",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1
+                    },
+                    "indices" : 2
+                }
+            ]
+        },
+        {
+            "name" : "Cube.024",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 3,
+                        "NORMAL" : 4
+                    },
+                    "indices" : 5
+                }
+            ]
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 129,
+            "max" : [
+                7.748603820800781e-07,
+                1.0610548257827759,
+                1.4797890186309814
+            ],
+            "min" : [
+                -1.0000003576278687,
+                -3.410259962081909,
+                -5.123540878295898
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 129,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5123,
+            "count" : 696,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5126,
+            "count" : 1186,
+            "max" : [
+                4.21748685836792,
+                1.2823710441589355,
+                0.9375
+            ],
+            "min" : [
+                -4.21748685836792,
+                -4.377928733825684,
+                -0.9375
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 1186,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 5,
+            "componentType" : 5123,
+            "count" : 7104,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 1548,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1548,
+            "byteOffset" : 1548
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1392,
+            "byteOffset" : 3096
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 14232,
+            "byteOffset" : 4488
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 14232,
+            "byteOffset" : 18720
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 14208,
+            "byteOffset" : 32952
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 47160,
+            "uri" : "Bernal.bin"
+        }
+    ]
+}
