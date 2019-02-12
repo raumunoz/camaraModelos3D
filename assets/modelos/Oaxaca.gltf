@@ -1,8 +1,178 @@
 {
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5125,
+            "count" : 1615131,
+            "max" : [
+                272491
+            ],
+            "min" : [
+                0
+            ],
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 272492,
+            "max" : [
+                2.065851926803589,
+                1.8945672512054443,
+                2.0461478233337402
+            ],
+            "min" : [
+                -2.0600523948669434,
+                -1.836211085319519,
+                -2.0250391960144043
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 272492,
+            "max" : [
+                0.999969482421875,
+                1.0,
+                0.999969482421875
+            ],
+            "min" : [
+                -0.999969482421875,
+                -1.0,
+                -1.0
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5126,
+            "count" : 272492,
+            "max" : [
+                0.7745869755744934,
+                1.0,
+                0.9557226896286011,
+                1.0
+            ],
+            "min" : [
+                -0.6981715559959412,
+                -0.9999996423721313,
+                -0.6753966212272644,
+                1.0
+            ],
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 272492,
+            "max" : [
+                0.6666666865348816,
+                1.0
+            ],
+            "min" : [
+                0.0,
+                0.0
+            ],
+            "type" : "VEC2"
+        }
+    ],
     "asset" : {
-        "generator" : "Khronos Blender glTF 2.0 I/O",
+        "generator" : "Khronos Blender glTF 2.0 exporter",
         "version" : "2.0"
     },
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 6460524,
+            "byteOffset" : 0,
+            "target" : 34963
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 3269904,
+            "byteOffset" : 6460524,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 3269904,
+            "byteOffset" : 9730428,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 4359872,
+            "byteOffset" : 13000332,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 2179936,
+            "byteOffset" : 17360204,
+            "target" : 34962
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 19540140,
+            "uri" : "Oaxaca.bin"
+        }
+    ],
+    "images" : [
+        {
+            "name" : "GAMUZA ROSA PARA\u00cdSO",
+            "uri" : "GAMUZA ROSA PARA\u00cdSO.jpg"
+        }
+    ],
+    "materials" : [
+        {
+            "name" : "base",
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 0
+                },
+                "metallicFactor" : 0.0
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Cylinder.002",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "NORMAL" : 2,
+                        "POSITION" : 1,
+                        "TANGENT" : 3,
+                        "TEXCOORD_0" : 4
+                    },
+                    "indices" : 0,
+                    "material" : 0
+                }
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "Cylinder.006",
+            "rotation" : [
+                -8.146033536604591e-08,
+                0.0,
+                -0.0,
+                1.0
+            ],
+            "translation" : [
+                0.49383094906806946,
+                0.38348591327667236,
+                1.665788173675537
+            ]
+        }
+    ],
+    "samplers" : [
+        {}
+    ],
     "scene" : 0,
     "scenes" : [
         {
@@ -12,87 +182,10 @@
             ]
         }
     ],
-    "nodes" : [
+    "textures" : [
         {
-            "mesh" : 0,
-            "name" : "Cylinder.006",
-            "scale" : [
-                0.2001556009054184,
-                0.2001556009054184,
-                0.2001556009054184
-            ],
-            "translation" : [
-                0.02296561747789383,
-                0.30099228024482727,
-                0.11888360977172852
-            ]
-        }
-    ],
-    "meshes" : [
-        {
-            "name" : "Cylinder.002",
-            "primitives" : [
-                {
-                    "attributes" : {
-                        "POSITION" : 0,
-                        "NORMAL" : 1
-                    },
-                    "indices" : 2
-                }
-            ]
-        }
-    ],
-    "accessors" : [
-        {
-            "bufferView" : 0,
-            "componentType" : 5126,
-            "count" : 1062,
-            "max" : [
-                1.5849860906600952,
-                1.4281843900680542,
-                1.5598214864730835
-            ],
-            "min" : [
-                -1.5849865674972534,
-                -1.3841936588287354,
-                -1.5372520685195923
-            ],
-            "type" : "VEC3"
-        },
-        {
-            "bufferView" : 1,
-            "componentType" : 5126,
-            "count" : 1062,
-            "type" : "VEC3"
-        },
-        {
-            "bufferView" : 2,
-            "componentType" : 5123,
-            "count" : 6225,
-            "type" : "SCALAR"
-        }
-    ],
-    "bufferViews" : [
-        {
-            "buffer" : 0,
-            "byteLength" : 12744,
-            "byteOffset" : 0
-        },
-        {
-            "buffer" : 0,
-            "byteLength" : 12744,
-            "byteOffset" : 12744
-        },
-        {
-            "buffer" : 0,
-            "byteLength" : 12450,
-            "byteOffset" : 25488
-        }
-    ],
-    "buffers" : [
-        {
-            "byteLength" : 37940,
-            "uri" : "Oaxaca.bin"
+            "sampler" : 0,
+            "source" : 0
         }
     ]
 }

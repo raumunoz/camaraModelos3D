@@ -1,0 +1,191 @@
+{
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5125,
+            "count" : 102912,
+            "max" : [
+                68607
+            ],
+            "min" : [
+                0
+            ],
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 68608,
+            "max" : [
+                2.7492430210113525,
+                3.3986780643463135,
+                1.9078645706176758
+            ],
+            "min" : [
+                -2.7492430210113525,
+                -0.6940635442733765,
+                -3.3374924659729004
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 68608,
+            "max" : [
+                0.999969482421875,
+                0.999969482421875,
+                0.999969482421875
+            ],
+            "min" : [
+                -0.999969482421875,
+                -0.999969482421875,
+                -0.999420166015625
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5126,
+            "count" : 68608,
+            "max" : [
+                1.0,
+                0.999992311000824,
+                0.9999996423721313,
+                1.0
+            ],
+            "min" : [
+                -1.0,
+                -0.9999931454658508,
+                -0.9999997019767761,
+                1.0
+            ],
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 68608,
+            "max" : [
+                1.0,
+                1.0
+            ],
+            "min" : [
+                0.0,
+                0.0
+            ],
+            "type" : "VEC2"
+        }
+    ],
+    "asset" : {
+        "generator" : "Khronos Blender glTF 2.0 exporter",
+        "version" : "2.0"
+    },
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 411648,
+            "byteOffset" : 0,
+            "target" : 34963
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 823296,
+            "byteOffset" : 411648,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 823296,
+            "byteOffset" : 1234944,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1097728,
+            "byteOffset" : 2058240,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 548864,
+            "byteOffset" : 3155968,
+            "target" : 34962
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 3704832,
+            "uri" : "veracruz.bin"
+        }
+    ],
+    "images" : [
+        {
+            "name" : "LONA VERDE ACU\u00c1TICO",
+            "uri" : "LONA VERDE ACU\u00c1TICO.jpg"
+        }
+    ],
+    "materials" : [
+        {
+            "name" : "base",
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 0
+                },
+                "metallicFactor" : 0.0
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Cube.000",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "NORMAL" : 2,
+                        "POSITION" : 1,
+                        "TANGENT" : 3,
+                        "TEXCOORD_0" : 4
+                    },
+                    "indices" : 0,
+                    "material" : 0
+                }
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "Cube.015",
+            "rotation" : [
+                -3.148255267593214e-10,
+                0.9999653100967407,
+                -3.774764323338786e-08,
+                -0.00833998154848814
+            ],
+            "scale" : [
+                0.9999999403953552,
+                1.0,
+                0.9999999403953552
+            ]
+        }
+    ],
+    "samplers" : [
+        {}
+    ],
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0
+            ]
+        }
+    ],
+    "textures" : [
+        {
+            "sampler" : 0,
+            "source" : 0
+        }
+    ]
+}

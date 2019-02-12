@@ -1,0 +1,191 @@
+{
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5123,
+            "count" : 162048,
+            "max" : [
+                38289
+            ],
+            "min" : [
+                0
+            ],
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 38290,
+            "max" : [
+                2.515899181365967,
+                3.4557626247406006,
+                2.0246152877807617
+            ],
+            "min" : [
+                -1.552154779434204,
+                -1.618100643157959,
+                -2.0090510845184326
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 38290,
+            "max" : [
+                0.999755859375,
+                0.999969482421875,
+                0.999969482421875
+            ],
+            "min" : [
+                -0.999969482421875,
+                -0.999969482421875,
+                -0.99993896484375
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5126,
+            "count" : 38290,
+            "max" : [
+                0.99991774559021,
+                0.9999799728393555,
+                0.999860405921936,
+                1.0
+            ],
+            "min" : [
+                -0.9998670220375061,
+                -0.9999933242797852,
+                -0.9999141693115234,
+                -1.0
+            ],
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 38290,
+            "max" : [
+                1.0,
+                1.0
+            ],
+            "min" : [
+                0.0,
+                0.0
+            ],
+            "type" : "VEC2"
+        }
+    ],
+    "asset" : {
+        "generator" : "Khronos Blender glTF 2.0 exporter",
+        "version" : "2.0"
+    },
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 324096,
+            "byteOffset" : 0,
+            "target" : 34963
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 459480,
+            "byteOffset" : 324096,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 459480,
+            "byteOffset" : 783576,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 612640,
+            "byteOffset" : 1243056,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 306320,
+            "byteOffset" : 1855696,
+            "target" : 34962
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 2162016,
+            "uri" : "zacatl\u00e1n.bin"
+        }
+    ],
+    "images" : [
+        {
+            "name" : "LONA AMARILLO INTENSO",
+            "uri" : "LONA AMARILLO INTENSO.jpg"
+        }
+    ],
+    "materials" : [
+        {
+            "name" : "base",
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 0
+                },
+                "metallicFactor" : 0.0
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Cylinder.000",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "NORMAL" : 2,
+                        "POSITION" : 1,
+                        "TANGENT" : 3,
+                        "TEXCOORD_0" : 4
+                    },
+                    "indices" : 0,
+                    "material" : 0
+                }
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "Cylinder.003",
+            "rotation" : [
+                -8.146033536604591e-08,
+                0.0,
+                -0.0,
+                1.0
+            ],
+            "translation" : [
+                -0.0834493413567543,
+                0.3661992847919464,
+                0.001222074031829834
+            ]
+        }
+    ],
+    "samplers" : [
+        {}
+    ],
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0
+            ]
+        }
+    ],
+    "textures" : [
+        {
+            "sampler" : 0,
+            "source" : 0
+        }
+    ]
+}

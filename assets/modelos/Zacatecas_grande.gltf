@@ -1,0 +1,191 @@
+{
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5125,
+            "count" : 404688,
+            "max" : [
+                67960
+            ],
+            "min" : [
+                0
+            ],
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 67961,
+            "max" : [
+                2.2586874961853027,
+                1.3367631435394287,
+                2.2626397609710693
+            ],
+            "min" : [
+                -2.2530150413513184,
+                -0.4932294487953186,
+                -2.2703123092651367
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 67961,
+            "max" : [
+                0.99993896484375,
+                0.999969482421875,
+                0.999969482421875
+            ],
+            "min" : [
+                -0.999969482421875,
+                -1.0,
+                -0.99981689453125
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5126,
+            "count" : 67961,
+            "max" : [
+                0.9999994039535522,
+                0.9999904632568359,
+                0.9999933838844299,
+                1.0
+            ],
+            "min" : [
+                -0.9999999403953552,
+                -0.9999876618385315,
+                -0.9999995231628418,
+                1.0
+            ],
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 67961,
+            "max" : [
+                0.9998853206634521,
+                0.9999000207171775
+            ],
+            "min" : [
+                9.997928282245994e-05,
+                9.995698928833008e-05
+            ],
+            "type" : "VEC2"
+        }
+    ],
+    "asset" : {
+        "generator" : "Khronos Blender glTF 2.0 exporter",
+        "version" : "2.0"
+    },
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 1618752,
+            "byteOffset" : 0,
+            "target" : 34963
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 815532,
+            "byteOffset" : 1618752,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 815532,
+            "byteOffset" : 2434284,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1087376,
+            "byteOffset" : 3249816,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 543688,
+            "byteOffset" : 4337192,
+            "target" : 34962
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 4880880,
+            "uri" : "Zacatecas_grande.bin"
+        }
+    ],
+    "images" : [
+        {
+            "name" : "GAMUZA CHABACANO",
+            "uri" : "GAMUZA CHABACANO.jpg"
+        }
+    ],
+    "materials" : [
+        {
+            "name" : "base",
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 0
+                },
+                "metallicFactor" : 0.0
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Circle.001",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "NORMAL" : 2,
+                        "POSITION" : 1,
+                        "TANGENT" : 3,
+                        "TEXCOORD_0" : 4
+                    },
+                    "indices" : 0,
+                    "material" : 0
+                }
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "Circle",
+            "rotation" : [
+                -8.146033536604591e-08,
+                0.0,
+                -0.0,
+                1.0
+            ],
+            "translation" : [
+                -0.010138750076293945,
+                0.1223941296339035,
+                0.008582234382629395
+            ]
+        }
+    ],
+    "samplers" : [
+        {}
+    ],
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0
+            ]
+        }
+    ],
+    "textures" : [
+        {
+            "sampler" : 0,
+            "source" : 0
+        }
+    ]
+}

@@ -1,0 +1,226 @@
+{
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5123,
+            "count" : 3042,
+            "max" : [
+                701
+            ],
+            "min" : [
+                0
+            ],
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 702,
+            "max" : [
+                0.9290547370910645,
+                3.6037142276763916,
+                0.9224080443382263
+            ],
+            "min" : [
+                -0.9357279539108276,
+                -3.565542221069336,
+                -0.9304318428039551
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 702,
+            "max" : [
+                0.999755859375,
+                0.999542236328125,
+                0.99969482421875
+            ],
+            "min" : [
+                -0.99969482421875,
+                -0.999267578125,
+                -0.999755859375
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5126,
+            "count" : 702,
+            "max" : [
+                0.9999648332595825,
+                0.8537129759788513,
+                0.9999989867210388,
+                1.0
+            ],
+            "min" : [
+                -0.9999716281890869,
+                -0.8561857342720032,
+                -0.9999997019767761,
+                1.0
+            ],
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 702,
+            "max" : [
+                1.0,
+                1.0
+            ],
+            "min" : [
+                0.0,
+                0.0
+            ],
+            "type" : "VEC2"
+        }
+    ],
+    "asset" : {
+        "generator" : "Khronos Blender glTF 2.0 exporter",
+        "version" : "2.0"
+    },
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 6084,
+            "byteOffset" : 0,
+            "target" : 34963
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 8424,
+            "byteOffset" : 6084,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 8424,
+            "byteOffset" : 14508,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 11232,
+            "byteOffset" : 22932,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 5616,
+            "byteOffset" : 34164,
+            "target" : 34962
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 39780,
+            "uri" : "almohada.bin"
+        }
+    ],
+    "images" : [
+        {
+            "name" : "stoff_0001_c",
+            "uri" : "stoff_0001_c.jpg"
+        }
+    ],
+    "materials" : [
+        {
+            "alphaMode" : "BLEND",
+            "name" : "Material",
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 0
+                }
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Cube",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "NORMAL" : 2,
+                        "POSITION" : 1,
+                        "TANGENT" : 3,
+                        "TEXCOORD_0" : 4
+                    },
+                    "indices" : 0,
+                    "material" : 0
+                }
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "name" : "Camera",
+            "rotation" : [
+                0.483536034822464,
+                0.33687159419059753,
+                -0.20870360732078552,
+                0.7804827094078064
+            ],
+            "translation" : [
+                7.481131553649902,
+                5.34366512298584,
+                6.5076398849487305
+            ]
+        },
+        {
+            "mesh" : 0,
+            "name" : "Cube",
+            "rotation" : [
+                -0.0,
+                1.0,
+                0.0,
+                0.0
+            ],
+            "scale" : [
+                -1.0,
+                -0.12860000133514404,
+                -1.0
+            ]
+        },
+        {
+            "name" : "Lamp",
+            "rotation" : [
+                0.16907575726509094,
+                0.7558802962303162,
+                -0.27217137813568115,
+                0.570947527885437
+            ],
+            "scale" : [
+                1.0,
+                1.0,
+                0.9999999403953552
+            ],
+            "translation" : [
+                -1.8372139930725098,
+                5.903861999511719,
+                -3.246971607208252
+            ]
+        }
+    ],
+    "samplers" : [
+        {}
+    ],
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                1,
+                2,
+                0
+            ]
+        }
+    ],
+    "textures" : [
+        {
+            "sampler" : 0,
+            "source" : 0
+        }
+    ]
+}
