@@ -694,6 +694,7 @@ function cargarModeloCustom(padre, modelo) {
         container.meshes.push(padreActual);
         padreActual.parent = padre;
         
+        /*
         newMeshes.meshes.forEach(mesh => {
             hl.addMesh(mesh, BABYLON.Color3.Green());
             container.meshes.push(mesh);

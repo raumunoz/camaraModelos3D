@@ -1,128 +1,234 @@
 {
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5123,
+            "count" : 5568,
+            "max" : [
+                933
+            ],
+            "min" : [
+                0
+            ],
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 934,
+            "max" : [
+                2.8785758018493652,
+                3.168712854385376,
+                2.722323179244995
+            ],
+            "min" : [
+                -2.664646863937378,
+                -1.2155125141143799,
+                -2.414829969406128
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 934,
+            "max" : [
+                0.9887996912002563,
+                0.9662770628929138,
+                0.9957274198532104
+            ],
+            "min" : [
+                -0.9967955350875854,
+                -0.999969482421875,
+                -1.0
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5123,
+            "count" : 6,
+            "max" : [
+                3
+            ],
+            "min" : [
+                0
+            ],
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 4,
+            "max" : [
+                1.0,
+                0.0,
+                1.0
+            ],
+            "min" : [
+                -1.0,
+                0.0,
+                -1.0
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 5,
+            "componentType" : 5126,
+            "count" : 4,
+            "max" : [
+                0.0,
+                1.0,
+                -0.0
+            ],
+            "min" : [
+                0.0,
+                1.0,
+                -0.0
+            ],
+            "type" : "VEC3"
+        }
+    ],
     "asset" : {
-        "generator" : "Khronos Blender glTF 2.0 I/O",
+        "generator" : "Khronos Blender glTF 2.0 exporter",
         "version" : "2.0"
     },
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 11136,
+            "byteOffset" : 0,
+            "target" : 34963
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 11208,
+            "byteOffset" : 11136,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 11208,
+            "byteOffset" : 22344,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 12,
+            "byteOffset" : 33552,
+            "target" : 34963
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 48,
+            "byteOffset" : 33564,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 48,
+            "byteOffset" : 33612,
+            "target" : 34962
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 33660,
+            "uri" : "La paz.bin"
+        }
+    ],
+    "images" : [
+        {
+            "name" : "GAMUZA ROSA FLAMINGO",
+            "uri" : "GAMUZA ROSA FLAMINGO.jpg"
+        }
+    ],
+    "materials" : [
+        {
+            "name" : "base",
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 0
+                },
+                "metallicFactor" : 0.0
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Cube.000",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "NORMAL" : 2,
+                        "POSITION" : 1
+                    },
+                    "indices" : 0,
+                    "material" : 0
+                }
+            ]
+        },
+        {
+            "name" : "Plane",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "NORMAL" : 5,
+                        "POSITION" : 4
+                    },
+                    "indices" : 3
+                }
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "Cube.000",
+            "rotation" : [
+                -8.048671418237063e-08,
+                0.15414662659168243,
+                1.2556836459509668e-08,
+                0.9880480170249939
+            ],
+            "translation" : [
+                0.5502768754959106,
+                0.31300798058509827,
+                1.542997121810913
+            ]
+        },
+        {
+            "mesh" : 1,
+            "name" : "Plane",
+            "scale" : [
+                -104.0746078491211,
+                -104.0746078491211,
+                -104.0746078491211
+            ],
+            "translation" : [
+                0.28290581703186035,
+                -1.7073190212249756,
+                -0.009705007076263428
+            ]
+        }
+    ],
+    "samplers" : [
+        {}
+    ],
     "scene" : 0,
     "scenes" : [
         {
             "name" : "Scene",
             "nodes" : [
                 0,
-                1,
-                2
+                1
             ]
         }
     ],
-    "nodes" : [
+    "textures" : [
         {
-            "name" : "Lamp",
-            "rotation" : [
-                0.16907575726509094,
-                0.7558802962303162,
-                -0.27217137813568115,
-                0.570947527885437
-            ],
-            "translation" : [
-                4.076245307922363,
-                5.903861999511719,
-                -1.0054539442062378
-            ]
-        },
-        {
-            "name" : "Camera",
-            "rotation" : [
-                0.483536034822464,
-                0.33687159419059753,
-                -0.20870360732078552,
-                0.7804827094078064
-            ],
-            "translation" : [
-                7.481131553649902,
-                5.34366512298584,
-                6.5076398849487305
-            ]
-        },
-        {
-            "mesh" : 0,
-            "name" : "Cube.000",
-            "scale" : [
-                0.5843091011047363,
-                0.5843091011047363,
-                0.5843091011047363
-            ],
-            "translation" : [
-                -0.16506028175354004,
-                0.6926759481430054,
-                0.31798553466796875
-            ]
-        }
-    ],
-    "meshes" : [
-        {
-            "name" : "Cube.006",
-            "primitives" : [
-                {
-                    "attributes" : {
-                        "POSITION" : 0,
-                        "NORMAL" : 1
-                    },
-                    "indices" : 2
-                }
-            ]
-        }
-    ],
-    "accessors" : [
-        {
-            "bufferView" : 0,
-            "componentType" : 5126,
-            "count" : 61,
-            "max" : [
-                3.8679113388061523,
-                4.6604132652282715,
-                3.5710079669952393
-            ],
-            "min" : [
-                -3.587289810180664,
-                -1.7764229774475098,
-                -3.1676535606384277
-            ],
-            "type" : "VEC3"
-        },
-        {
-            "bufferView" : 1,
-            "componentType" : 5126,
-            "count" : 61,
-            "type" : "VEC3"
-        },
-        {
-            "bufferView" : 2,
-            "componentType" : 5123,
-            "count" : 348,
-            "type" : "SCALAR"
-        }
-    ],
-    "bufferViews" : [
-        {
-            "buffer" : 0,
-            "byteLength" : 732,
-            "byteOffset" : 0
-        },
-        {
-            "buffer" : 0,
-            "byteLength" : 732,
-            "byteOffset" : 732
-        },
-        {
-            "buffer" : 0,
-            "byteLength" : 696,
-            "byteOffset" : 1464
-        }
-    ],
-    "buffers" : [
-        {
-            "byteLength" : 2160,
-            "uri" : "La paz.bin"
+            "sampler" : 0,
+            "source" : 0
         }
     ]
 }

@@ -1,61 +1,139 @@
 {
-    "asset" : {
-        "generator" : "Khronos Blender glTF 2.0 I/O",
-        "version" : "2.0"
-    },
-    "scene" : 0,
-    "scenes" : [
+    "accessors" : [
         {
-            "name" : "Scene",
-            "nodes" : [
-                0,
-                1,
-                2
-            ]
+            "bufferView" : 0,
+            "componentType" : 5123,
+            "count" : 56880,
+            "max" : [
+                10605
+            ],
+            "min" : [
+                0
+            ],
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 10606,
+            "max" : [
+                0.41146305203437805,
+                0.16942040622234344,
+                1.1409797668457031
+            ],
+            "min" : [
+                -0.41146305203437805,
+                -0.41507789492607117,
+                -0.26318347454071045
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 10606,
+            "max" : [
+                0.999969482421875,
+                0.999969482421875,
+                1.0
+            ],
+            "min" : [
+                -0.999969482421875,
+                -1.0,
+                -0.99993896484375
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5126,
+            "count" : 10606,
+            "max" : [
+                0.99599689245224,
+                0.9999985098838806,
+                0.9999998807907104,
+                1.0
+            ],
+            "min" : [
+                -1.0,
+                -1.0,
+                -0.9999788999557495,
+                1.0
+            ],
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 10606,
+            "max" : [
+                0.7067137956619263,
+                1.0
+            ],
+            "min" : [
+                0.0,
+                0.0
+            ],
+            "type" : "VEC2"
         }
     ],
-    "nodes" : [
+    "asset" : {
+        "generator" : "Khronos Blender glTF 2.0 exporter",
+        "version" : "2.0"
+    },
+    "bufferViews" : [
         {
-            "name" : "Lamp",
-            "rotation" : [
-                0.16907575726509094,
-                0.7558802962303162,
-                -0.27217137813568115,
-                0.570947527885437
-            ],
-            "translation" : [
-                4.076245307922363,
-                5.903861999511719,
-                -1.0054539442062378
-            ]
+            "buffer" : 0,
+            "byteLength" : 113760,
+            "byteOffset" : 0,
+            "target" : 34963
         },
         {
-            "name" : "Camera",
-            "rotation" : [
-                0.483536034822464,
-                0.33687159419059753,
-                -0.20870360732078552,
-                0.7804827094078064
-            ],
-            "translation" : [
-                7.481131553649902,
-                5.34366512298584,
-                6.5076398849487305
-            ]
+            "buffer" : 0,
+            "byteLength" : 127272,
+            "byteOffset" : 113760,
+            "target" : 34962
         },
         {
-            "mesh" : 0,
-            "name" : "Cube.001",
-            "scale" : [
-                0.2209465354681015,
-                0.22550328075885773,
-                0.1750813126564026
-            ],
-            "translation" : [
-                0.07327306270599365,
-                0.567402720451355,
-                -0.5759642124176025
-            ]
+            "buffer" : 0,
+            "byteLength" : 127272,
+            "byteOffset" : 241032,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 169696,
+            "byteOffset" : 368304,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 84848,
+            "byteOffset" : 538000,
+            "target" : 34962
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 622848,
+            "uri" : "guanajuato.bin"
+        }
+    ],
+    "images" : [
+        {
+            "name" : "GAMUZA FERRERO",
+            "uri" : "GAMUZA FERRERO.jpg"
+        }
+    ],
+    "materials" : [
+        {
+            "name" : "base",
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 0
+                },
+                "metallicFactor" : 0.0
+            }
         }
     ],
     "meshes" : [
@@ -64,65 +142,55 @@
             "primitives" : [
                 {
                     "attributes" : {
-                        "POSITION" : 0,
-                        "NORMAL" : 1
+                        "NORMAL" : 2,
+                        "POSITION" : 1,
+                        "TANGENT" : 3,
+                        "TEXCOORD_0" : 4
                     },
-                    "indices" : 2
+                    "indices" : 0,
+                    "material" : 0
                 }
             ]
         }
     ],
-    "accessors" : [
+    "nodes" : [
         {
-            "bufferView" : 0,
-            "componentType" : 5126,
-            "count" : 323,
-            "max" : [
-                2.27701735496521,
-                1.0264570713043213,
-                8.355609893798828
+            "mesh" : 0,
+            "name" : "Cube.001",
+            "rotation" : [
+                -2.1757243118258884e-08,
+                -0.094810850918293,
+                -2.0721573346094146e-09,
+                0.9954953193664551
             ],
-            "min" : [
-                -0.2656264305114746,
-                -2.363250970840454,
-                -1.940319538116455
+            "scale" : [
+                5.0,
+                5.0,
+                5.0
             ],
-            "type" : "VEC3"
-        },
-        {
-            "bufferView" : 1,
-            "componentType" : 5126,
-            "count" : 323,
-            "type" : "VEC3"
-        },
-        {
-            "bufferView" : 2,
-            "componentType" : 5123,
-            "count" : 1785,
-            "type" : "SCALAR"
+            "translation" : [
+                4.634878525289622e-16,
+                2.0873637199401855,
+                -2.500487804412842
+            ]
         }
     ],
-    "bufferViews" : [
+    "samplers" : [
+        {}
+    ],
+    "scene" : 0,
+    "scenes" : [
         {
-            "buffer" : 0,
-            "byteLength" : 3876,
-            "byteOffset" : 0
-        },
-        {
-            "buffer" : 0,
-            "byteLength" : 3876,
-            "byteOffset" : 3876
-        },
-        {
-            "buffer" : 0,
-            "byteLength" : 3570,
-            "byteOffset" : 7752
+            "name" : "Scene",
+            "nodes" : [
+                0
+            ]
         }
     ],
-    "buffers" : [
+    "textures" : [
         {
-            "byteLength" : 11324,
-            "uri" : "guanajuato.bin"
+            "sampler" : 0,
+            "source" : 0
         }
     ]
 }

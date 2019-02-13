@@ -1,0 +1,191 @@
+{
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5125,
+            "count" : 513792,
+            "max" : [
+                89660
+            ],
+            "min" : [
+                0
+            ],
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 89661,
+            "max" : [
+                3.1960394382476807,
+                4.087162494659424,
+                4.14332914352417
+            ],
+            "min" : [
+                -3.25679087638855,
+                -1.0342727899551392,
+                -1.4729340076446533
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 89661,
+            "max" : [
+                0.99993896484375,
+                0.999969482421875,
+                0.999969482421875
+            ],
+            "min" : [
+                -0.999969482421875,
+                -1.0,
+                -0.999969482421875
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5126,
+            "count" : 89661,
+            "max" : [
+                0.9998685717582703,
+                0.9998162388801575,
+                0.999794065952301,
+                1.0
+            ],
+            "min" : [
+                -0.9959143400192261,
+                -0.9999992847442627,
+                -0.9999866485595703,
+                1.0
+            ],
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 89661,
+            "max" : [
+                0.6667556762695312,
+                1.0
+            ],
+            "min" : [
+                0.0,
+                0.0
+            ],
+            "type" : "VEC2"
+        }
+    ],
+    "asset" : {
+        "generator" : "Khronos Blender glTF 2.0 exporter",
+        "version" : "2.0"
+    },
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 2055168,
+            "byteOffset" : 0,
+            "target" : 34963
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1075932,
+            "byteOffset" : 2055168,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1075932,
+            "byteOffset" : 3131100,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 1434576,
+            "byteOffset" : 4207032,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 717288,
+            "byteOffset" : 5641608,
+            "target" : 34962
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 6358896,
+            "uri" : "veracruz_ni\u00f1os.bin"
+        }
+    ],
+    "images" : [
+        {
+            "name" : "GAMUZA ROJO QUEMADO",
+            "uri" : "GAMUZA ROJO QUEMADO.jpg"
+        }
+    ],
+    "materials" : [
+        {
+            "name" : "base",
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 0
+                },
+                "metallicFactor" : 0.0
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Cube.001",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "NORMAL" : 2,
+                        "POSITION" : 1,
+                        "TANGENT" : 3,
+                        "TEXCOORD_0" : 4
+                    },
+                    "indices" : 0,
+                    "material" : 0
+                }
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "Cube.019",
+            "rotation" : [
+                -2.1850894427188905e-08,
+                0.02096506580710411,
+                4.582060841862301e-10,
+                0.9997802376747131
+            ],
+            "scale" : [
+                0.9999999403953552,
+                1.0,
+                0.9999999403953552
+            ]
+        }
+    ],
+    "samplers" : [
+        {}
+    ],
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0
+            ]
+        }
+    ],
+    "textures" : [
+        {
+            "sampler" : 0,
+            "source" : 0
+        }
+    ]
+}

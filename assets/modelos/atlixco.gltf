@@ -1,8 +1,183 @@
 {
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5123,
+            "count" : 32064,
+            "max" : [
+                5679
+            ],
+            "min" : [
+                0
+            ],
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 5680,
+            "max" : [
+                1.2480274438858032,
+                1.2962548732757568,
+                1.2106002569198608
+            ],
+            "min" : [
+                -1.231492280960083,
+                -1.1754392385482788,
+                -1.1901544332504272
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 5680,
+            "max" : [
+                1.0,
+                1.0,
+                1.0
+            ],
+            "min" : [
+                -1.0,
+                -0.999969482421875,
+                -1.0
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5126,
+            "count" : 5680,
+            "max" : [
+                1.0,
+                0.8830114603042603,
+                0.787336528301239,
+                1.0
+            ],
+            "min" : [
+                -1.0,
+                -0.8219461441040039,
+                -1.0,
+                1.0
+            ],
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 5680,
+            "max" : [
+                0.6666666865348816,
+                1.0
+            ],
+            "min" : [
+                0.0,
+                0.0
+            ],
+            "type" : "VEC2"
+        }
+    ],
     "asset" : {
-        "generator" : "Khronos Blender glTF 2.0 I/O",
+        "generator" : "Khronos Blender glTF 2.0 exporter",
         "version" : "2.0"
     },
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 64128,
+            "byteOffset" : 0,
+            "target" : 34963
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 68160,
+            "byteOffset" : 64128,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 68160,
+            "byteOffset" : 132288,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 90880,
+            "byteOffset" : 200448,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 45440,
+            "byteOffset" : 291328,
+            "target" : 34962
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 336768,
+            "uri" : "Atlixco.bin"
+        }
+    ],
+    "images" : [
+        {
+            "name" : "GAMUZA ROYAL BLUE",
+            "uri" : "GAMUZA ROYAL BLUE.jpg"
+        }
+    ],
+    "materials" : [
+        {
+            "name" : "base",
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 0
+                },
+                "metallicFactor" : 0.0
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Cube.009",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "NORMAL" : 2,
+                        "POSITION" : 1,
+                        "TANGENT" : 3,
+                        "TEXCOORD_0" : 4
+                    },
+                    "indices" : 0,
+                    "material" : 0
+                }
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "Cube.012",
+            "rotation" : [
+                -8.146034247147327e-08,
+                0.0,
+                -0.0,
+                1.0
+            ],
+            "scale" : [
+                0.9275989532470703,
+                0.9305358529090881,
+                0.958031952381134
+            ],
+            "translation" : [
+                -0.000929713249206543,
+                0.1960805207490921,
+                0.0029735565185546875
+            ]
+        }
+    ],
+    "samplers" : [
+        {}
+    ],
     "scene" : 0,
     "scenes" : [
         {
@@ -12,84 +187,10 @@
             ]
         }
     ],
-    "nodes" : [
+    "textures" : [
         {
-            "mesh" : 0,
-            "name" : "Cube.012"
-        }
-    ],
-    "materials" : [
-        {
-            "name" : "Material.004",
-            "pbrMetallicRoughness" : {}
-        }
-    ],
-    "meshes" : [
-        {
-            "name" : "Cube.009",
-            "primitives" : [
-                {
-                    "attributes" : {
-                        "POSITION" : 0,
-                        "NORMAL" : 1
-                    },
-                    "indices" : 2,
-                    "material" : 0
-                }
-            ]
-        }
-    ],
-    "accessors" : [
-        {
-            "bufferView" : 0,
-            "componentType" : 5126,
-            "count" : 5346,
-            "max" : [
-                2.894172191619873,
-                3.015529155731201,
-                2.899484634399414
-            ],
-            "min" : [
-                -2.8558270931243896,
-                -2.734471082687378,
-                -2.850515127182007
-            ],
-            "type" : "VEC3"
-        },
-        {
-            "bufferView" : 1,
-            "componentType" : 5126,
-            "count" : 5346,
-            "type" : "VEC3"
-        },
-        {
-            "bufferView" : 2,
-            "componentType" : 5123,
-            "count" : 32064,
-            "type" : "SCALAR"
-        }
-    ],
-    "bufferViews" : [
-        {
-            "buffer" : 0,
-            "byteLength" : 64152,
-            "byteOffset" : 0
-        },
-        {
-            "buffer" : 0,
-            "byteLength" : 64152,
-            "byteOffset" : 64152
-        },
-        {
-            "buffer" : 0,
-            "byteLength" : 64128,
-            "byteOffset" : 128304
-        }
-    ],
-    "buffers" : [
-        {
-            "byteLength" : 192432,
-            "uri" : "atlixco.bin"
+            "sampler" : 0,
+            "source" : 0
         }
     ]
 }

@@ -1,8 +1,178 @@
 {
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5123,
+            "count" : 61248,
+            "max" : [
+                11182
+            ],
+            "min" : [
+                0
+            ],
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 11183,
+            "max" : [
+                0.6000123620033264,
+                0.12391723692417145,
+                0.8501557111740112
+            ],
+            "min" : [
+                -0.5999835729598999,
+                -0.13033436238765717,
+                -0.8522849082946777
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 11183,
+            "max" : [
+                0.99981689453125,
+                0.999969482421875,
+                0.999969482421875
+            ],
+            "min" : [
+                -0.999847412109375,
+                -1.0,
+                -0.999969482421875
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5126,
+            "count" : 11183,
+            "max" : [
+                1.0,
+                0.9994048476219177,
+                0.8556294441223145,
+                1.0
+            ],
+            "min" : [
+                -0.9999939203262329,
+                -0.9999635815620422,
+                -0.8513497114181519,
+                1.0
+            ],
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 11183,
+            "max" : [
+                0.6666666865348816,
+                1.0
+            ],
+            "min" : [
+                0.0,
+                0.0
+            ],
+            "type" : "VEC2"
+        }
+    ],
     "asset" : {
-        "generator" : "Khronos Blender glTF 2.0 I/O",
+        "generator" : "Khronos Blender glTF 2.0 exporter",
         "version" : "2.0"
     },
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 122496,
+            "byteOffset" : 0,
+            "target" : 34963
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 134196,
+            "byteOffset" : 122496,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 134196,
+            "byteOffset" : 256692,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 178928,
+            "byteOffset" : 390888,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 89464,
+            "byteOffset" : 569816,
+            "target" : 34962
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 659280,
+            "uri" : "puebla.bin"
+        }
+    ],
+    "images" : [
+        {
+            "name" : "LONA VERDE ACU\u00c1TICO",
+            "uri" : "LONA VERDE ACU\u00c1TICO.jpg"
+        }
+    ],
+    "materials" : [
+        {
+            "name" : "base",
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 0
+                },
+                "metallicFactor" : 0.0
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Plane.022",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "NORMAL" : 2,
+                        "POSITION" : 1,
+                        "TANGENT" : 3,
+                        "TEXCOORD_0" : 4
+                    },
+                    "indices" : 0,
+                    "material" : 0
+                }
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "Plane.000",
+            "rotation" : [
+                3.152987559928988e-08,
+                -0.5498678088188171,
+                2.075692862035794e-08,
+                0.8352516889572144
+            ],
+            "scale" : [
+                4.999999523162842,
+                5.0,
+                4.999999523162842
+            ]
+        }
+    ],
+    "samplers" : [
+        {}
+    ],
     "scene" : 0,
     "scenes" : [
         {
@@ -12,87 +182,10 @@
             ]
         }
     ],
-    "nodes" : [
+    "textures" : [
         {
-            "mesh" : 0,
-            "name" : "Plane.000",
-            "scale" : [
-                0.5424904823303223,
-                0.2560924291610718,
-                0.7456192374229431
-            ],
-            "translation" : [
-                -0.013962745666503906,
-                0.20828700065612793,
-                0.0010701417922973633
-            ]
-        }
-    ],
-    "meshes" : [
-        {
-            "name" : "Plane.022",
-            "primitives" : [
-                {
-                    "attributes" : {
-                        "POSITION" : 0,
-                        "NORMAL" : 1
-                    },
-                    "indices" : 2
-                }
-            ]
-        }
-    ],
-    "accessors" : [
-        {
-            "bufferView" : 0,
-            "componentType" : 5126,
-            "count" : 640,
-            "max" : [
-                1.1529426574707031,
-                0.46861034631729126,
-                1.1819791793823242
-            ],
-            "min" : [
-                -1.1528851985931396,
-                -0.5102745890617371,
-                -1.1813507080078125
-            ],
-            "type" : "VEC3"
-        },
-        {
-            "bufferView" : 1,
-            "componentType" : 5126,
-            "count" : 640,
-            "type" : "VEC3"
-        },
-        {
-            "bufferView" : 2,
-            "componentType" : 5123,
-            "count" : 3828,
-            "type" : "SCALAR"
-        }
-    ],
-    "bufferViews" : [
-        {
-            "buffer" : 0,
-            "byteLength" : 7680,
-            "byteOffset" : 0
-        },
-        {
-            "buffer" : 0,
-            "byteLength" : 7680,
-            "byteOffset" : 7680
-        },
-        {
-            "buffer" : 0,
-            "byteLength" : 7656,
-            "byteOffset" : 15360
-        }
-    ],
-    "buffers" : [
-        {
-            "byteLength" : 23016,
-            "uri" : "puebla.bin"
+            "sampler" : 0,
+            "source" : 0
         }
     ]
 }

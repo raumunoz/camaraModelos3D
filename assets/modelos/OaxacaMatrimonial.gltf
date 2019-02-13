@@ -1,0 +1,191 @@
+{
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5123,
+            "count" : 62976,
+            "max" : [
+                10906
+            ],
+            "min" : [
+                0
+            ],
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 10907,
+            "max" : [
+                3.75,
+                1.4520233869552612,
+                3.750000476837158
+            ],
+            "min" : [
+                -3.750000476837158,
+                -1.7979762554168701,
+                -3.7499990463256836
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 10907,
+            "max" : [
+                0.999969482421875,
+                1.0,
+                0.999969482421875
+            ],
+            "min" : [
+                -0.999969482421875,
+                -0.999969482421875,
+                -0.999969482421875
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5126,
+            "count" : 10907,
+            "max" : [
+                0.992493212223053,
+                0.9999987483024597,
+                0.9369773864746094,
+                1.0
+            ],
+            "min" : [
+                -0.7892810106277466,
+                -0.8153837323188782,
+                -0.7893795967102051,
+                1.0
+            ],
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 10907,
+            "max" : [
+                0.6666666865348816,
+                1.0
+            ],
+            "min" : [
+                0.0,
+                0.0
+            ],
+            "type" : "VEC2"
+        }
+    ],
+    "asset" : {
+        "generator" : "Khronos Blender glTF 2.0 exporter",
+        "version" : "2.0"
+    },
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 125952,
+            "byteOffset" : 0,
+            "target" : 34963
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 130884,
+            "byteOffset" : 125952,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 130884,
+            "byteOffset" : 256836,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 174512,
+            "byteOffset" : 387720,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 87256,
+            "byteOffset" : 562232,
+            "target" : 34962
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 649488,
+            "uri" : "OaxacaMatrimonial.bin"
+        }
+    ],
+    "images" : [
+        {
+            "name" : "LONA VINO",
+            "uri" : "LONA VINO.jpg"
+        }
+    ],
+    "materials" : [
+        {
+            "name" : "base",
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 0
+                },
+                "metallicFactor" : 0.0
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Cylinder.000",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "NORMAL" : 2,
+                        "POSITION" : 1,
+                        "TANGENT" : 3,
+                        "TEXCOORD_0" : 4
+                    },
+                    "indices" : 0,
+                    "material" : 0
+                }
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "Cylinder.001",
+            "rotation" : [
+                -8.146033536604591e-08,
+                0.0,
+                -0.0,
+                1.0
+            ],
+            "translation" : [
+                0.2633422613143921,
+                0.36388784646987915,
+                -0.12892961502075195
+            ]
+        }
+    ],
+    "samplers" : [
+        {}
+    ],
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0
+            ]
+        }
+    ],
+    "textures" : [
+        {
+            "sampler" : 0,
+            "source" : 0
+        }
+    ]
+}

@@ -1,0 +1,145 @@
+{
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5123,
+            "count" : 49008,
+            "max" : [
+                8169
+            ],
+            "min" : [
+                0
+            ],
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 8170,
+            "max" : [
+                2.554640531539917,
+                1.06891930103302,
+                1.319319248199463
+            ],
+            "min" : [
+                -2.482003688812256,
+                -2.6459240913391113,
+                -4.089574337005615
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 8170,
+            "max" : [
+                0.999969482421875,
+                0.999969482421875,
+                0.999969482421875
+            ],
+            "min" : [
+                -0.9998779296875,
+                -0.999969482421875,
+                -0.999847412109375
+            ],
+            "type" : "VEC3"
+        }
+    ],
+    "asset" : {
+        "generator" : "Khronos Blender glTF 2.0 exporter",
+        "version" : "2.0"
+    },
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 98016,
+            "byteOffset" : 0,
+            "target" : 34963
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 98040,
+            "byteOffset" : 98016,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 98040,
+            "byteOffset" : 196056,
+            "target" : 34962
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 294096,
+            "uri" : "sillon_conzumel.bin"
+        }
+    ],
+    "images" : [
+        {
+            "name" : "LONA NEGRO AZABACHE",
+            "uri" : "LONA NEGRO AZABACHE.jpg"
+        }
+    ],
+    "materials" : [
+        {
+            "name" : "base",
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 0
+                },
+                "metallicFactor" : 0.0
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Cube.000",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "NORMAL" : 2,
+                        "POSITION" : 1
+                    },
+                    "indices" : 0,
+                    "material" : 0
+                }
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "Cube.009",
+            "rotation" : [
+                -2.8779922889299314e-10,
+                0.9999710321426392,
+                -3.774785994892227e-08,
+                -0.007624032907187939
+            ],
+            "translation" : [
+                -0.014665096998214722,
+                0.5426451563835144,
+                -0.0847085639834404
+            ]
+        }
+    ],
+    "samplers" : [
+        {}
+    ],
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0
+            ]
+        }
+    ],
+    "textures" : [
+        {
+            "sampler" : 0,
+            "source" : 0
+        }
+    ]
+}

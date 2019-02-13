@@ -1,0 +1,191 @@
+{
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5123,
+            "count" : 54720,
+            "max" : [
+                36479
+            ],
+            "min" : [
+                0
+            ],
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 36480,
+            "max" : [
+                2.499999761581421,
+                3.1288247108459473,
+                2.9159865379333496
+            ],
+            "min" : [
+                -2.499999761581421,
+                -0.871175229549408,
+                -1.3340129852294922
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 36480,
+            "max" : [
+                0.999969482421875,
+                1.0,
+                1.0
+            ],
+            "min" : [
+                -0.999969482421875,
+                -1.0,
+                -0.999969482421875
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5126,
+            "count" : 36480,
+            "max" : [
+                1.0,
+                1.0,
+                1.0,
+                1.0
+            ],
+            "min" : [
+                -1.0,
+                -1.0,
+                -1.0,
+                1.0
+            ],
+            "type" : "VEC4"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 36480,
+            "max" : [
+                1.0,
+                1.0
+            ],
+            "min" : [
+                0.0,
+                0.0
+            ],
+            "type" : "VEC2"
+        }
+    ],
+    "asset" : {
+        "generator" : "Khronos Blender glTF 2.0 exporter",
+        "version" : "2.0"
+    },
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 109440,
+            "byteOffset" : 0,
+            "target" : 34963
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 437760,
+            "byteOffset" : 109440,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 437760,
+            "byteOffset" : 547200,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 583680,
+            "byteOffset" : 984960,
+            "target" : 34962
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 291840,
+            "byteOffset" : 1568640,
+            "target" : 34962
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 1860480,
+            "uri" : "p\u00e1tzcuaro.bin"
+        }
+    ],
+    "images" : [
+        {
+            "name" : "GAMUZA NEGRO ",
+            "uri" : "GAMUZA NEGRO .jpg"
+        }
+    ],
+    "materials" : [
+        {
+            "name" : "Material.002",
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 0
+                },
+                "metallicFactor" : 0.0
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Cube.004",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "NORMAL" : 2,
+                        "POSITION" : 1,
+                        "TANGENT" : 3,
+                        "TEXCOORD_0" : 4
+                    },
+                    "indices" : 0,
+                    "material" : 0
+                }
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "Cube.023",
+            "rotation" : [
+                -2.1683215223333718e-08,
+                0.12538379430770874,
+                2.7403497249167685e-09,
+                0.9921083450317383
+            ],
+            "scale" : [
+                0.9999999403953552,
+                1.0,
+                0.9999999403953552
+            ]
+        }
+    ],
+    "samplers" : [
+        {}
+    ],
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0
+            ]
+        }
+    ],
+    "textures" : [
+        {
+            "sampler" : 0,
+            "source" : 0
+        }
+    ]
+}
