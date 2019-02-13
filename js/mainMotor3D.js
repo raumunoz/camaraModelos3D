@@ -50,7 +50,7 @@ let modelos = {
         { nombre: "completoCasual.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
         { nombre: "completoTrendy.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 }
     ],
-    puffs: [
+    puffino: [
         { nombre: "Atlixco.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
         { nombre: "Atlixco_chico.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
         { nombre: "Bernal.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
@@ -69,12 +69,6 @@ let modelos = {
         { nombre: "puebla.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
         { nombre: "puebla_chico.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
         { nombre: "puertoVallarta.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
-        { nombre: "puff_conejo .gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
-        { nombre: "puff_dinosaurio.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
-        { nombre: "dona.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
-        { nombre: "jirafa.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
-        { nombre: "puffPerro.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
-        { nombre: "unicornio.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
         { nombre: "sillon_conzumel.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
         { nombre: "veracruz.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
         { nombre: "veracruz_niños.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
@@ -82,6 +76,22 @@ let modelos = {
         { nombre: "Zacatecas_grande.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
         { nombre: "zacatecas_mediano.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
         { nombre: "zacatlán.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 }
+    ],
+    kids: [
+        { nombre: "puff_conejo .gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
+        { nombre: "puff_dinosaurio.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
+        { nombre: "dona.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
+        { nombre: "jirafa.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
+        { nombre: "puffPerro.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
+        { nombre: "unicornio.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
+    ],
+    yokoModular: [
+        { nombre: "puff_conejo .gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
+        { nombre: "puff_dinosaurio.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
+        { nombre: "dona.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
+        { nombre: "jirafa.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
+        { nombre: "puffPerro.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
+        { nombre: "unicornio.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
     ]
 }
 let btnRotar;
@@ -224,6 +234,7 @@ window.addEventListener('DOMContentLoaded', function () {
         //GUI
         //Does not work
         //altoTotal.innerText = 1 + " m";
+        
         anchoTotal.innerText = dimensionSuperior.ancho() + " m";
         largoTotal.innerText = dimensionSuperior.largo() + " m";
         canvas.addEventListener("mousedown", function () {
@@ -263,8 +274,24 @@ window.addEventListener('DOMContentLoaded', function () {
         scene.clearColor = new BABYLON.Color3.White();
         //esfera = BABYLON.Mesh.CreateSphere("sphere1", 16, 2, scene);
         hl = new BABYLON.HighlightLayer("hl1", scene);
-        /*
-        camara = new BABYLON.ArcRotateCamera("Camera", 3 * Math.PI / 2, -Math.PI / 2, 200, BABYLON.Vector3.Zero(), scene);
+
+        // Parameters: alpha, beta, radius, target position, scene
+        camera = new BABYLON.ArcRotateCamera("Camera", 0, 0, 10, new BABYLON.Vector3(0, 0, 0), scene);
+
+        // This positions the camera
+        camera.setPosition(new BABYLON.Vector3(0, 0, -10));
+
+        // This attaches the camera to the canvas
+        camera.attachControl(canvas, true);
+        //objetos
+        //objetos
+        camera.setTarget(BABYLON.Vector3.Zero());
+        //camera.lockedTarget = padreCentro;
+        camera.useBouncingBehavior = false;
+        camera.useFramingBehavior = false;
+        camera.useAutoRotationBehavior = true;
+        camera.inputs.attached.mousewheel.wheelPrecision = 40;
+        /*camara = new BABYLON.ArcRotateCamera("Camera", 3 * Math.PI / 2, -Math.PI / 2, 200, BABYLON.Vector3.Zero(), scene);
         camara.upperBetaLimit = 3;
         camara.lowerRadiusLimit = 4;
         camara.upperRadiusLimit = 4;
@@ -279,19 +306,6 @@ window.addEventListener('DOMContentLoaded', function () {
         camara.inputs.attached.mousewheel.wheelPrecision = 40;
         camara.beta = Math.PI * 0.1;
         */
-        // Parameters: alpha, beta, radius, target position, scene
-        camera = new BABYLON.ArcRotateCamera("Camera", 0, 0, 10, new BABYLON.Vector3(0, 0, 0), scene);
-
-        // This positions the camera
-        camera.setPosition(new BABYLON.Vector3(0, 0, -10));
-
-        // This attaches the camera to the canvas
-        camera.attachControl(canvas, true);
-        //objetos
-        //objetos
-        camera.setTarget(BABYLON.Vector3.Zero());
-        //camera.lockedTarget = padreCentro;
-
         var light = new BABYLON.HemisphericLight("hemiLight", new BABYLON.Vector3(-1, 1, 0), scene);
         // compared click for sphere
         advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI");
@@ -349,6 +363,7 @@ window.addEventListener('DOMContentLoaded', function () {
     padreCentro = new BABYLON.Mesh("padreCentro", escena);
     padreActual = padreCentro;
     //cargarModelo(padreCentro, modelos.puffs[0].nombre);
+    pantallaCarga();
     cargarModelo(padreCentro, modeloActual(texturaActual, moduloActual, true));
 
     /*BABYLON.SceneLoader.LoadAssetContainer("./", "brazoCasual.gltf", escena, function (newMeshes) {
@@ -663,31 +678,47 @@ function cargarModelo(padre, modelo) {
     });
     //padreActual.setParent(padreCentro);
 }
+
 function cargarModeloCustom(padre, modelo) {
-    engine.displayLoadingUI();
+    escena.meshes.forEach((x) => { x.dispose() });
     container.meshes.forEach((x) => { x.dispose() });
+
+    /*
     BABYLON.SceneLoader.LoadAssetContainer("assets/modelos/", modelo, escena, function (newMeshes) {
         meshesAcargar = newMeshes;
-        console.log("newMeshes",newMeshes);
+        console.log("newMeshes", newMeshes);
         padreAnterior = padreActual;
         padreActual = newMeshes.meshes[0].getChildren()[0];
-        newMeshes.meshes[0].getChildren()[0].sparent = padreCentro;
+        newMeshes.meshes[0].getChildren()[0].padreCentro.setParent(padreCentro);
         numPadre++;
         container.meshes.push(padreActual);
-
         padreActual.parent = padre;
+        
         newMeshes.meshes.forEach(mesh => {
             hl.addMesh(mesh, BABYLON.Color3.Green());
             container.meshes.push(mesh);
             meshClickleable(mesh);
         });
+        
+       console.log("cargar");
         container.addAllToScene();
     }, onSuccess = () => {
-        engine.hideLoadingUI();
+        //engine.hideLoadingUI();
+        console.log("completo");
     }, onProgress = () => {
-        engine.displayLoadingUI();
+        console.log("cargando");
+        //engine.displayLoadingUI();
+    });*/
+    BABYLON.SceneLoader.ImportMesh("", "assets/modelos/", modelo, escena, function (newMeshes, particleSystems) { 
+        //console.log(newMeshes);
+        //console.log(padre);
+        //ModeloCustom=newMeshes;
+        newMeshes[0].setParent(padre);
+        //newMeshes.meshes[0].getChildren()[0].setParent(padreCentro);
+        //engine.displayLoadingUI();
     });
 }
+
 function cambioTextura(opc) {
     texturaActual = texturas[opc];
 
@@ -843,6 +874,7 @@ function resaltarMueble(padreActual, bool) {
         });
     }
 }
+
 function aplicar() {
     resaltarMueble(padreActual, false);
     activarBotonesAplicar(false);
@@ -861,6 +893,7 @@ function aplicar() {
         esconderMesh(btnFrente, true);
     }
 }
+
 function removerModelo(padre) {
     if (padres.length >= 1) {
         hijosBorrar = padre.getChildren();
@@ -988,7 +1021,7 @@ function modeloActual(text, moduA, nombre, completo) {
     return selecionado;
 }
 
-function puffActual(mod){
+function puffActual(mod) {
     return modelos.puffs[mod].nombre;
 }
 function meshClickleable(mesh) {
@@ -1565,14 +1598,17 @@ function prearmado(i) {
                         case 'izquierda':
                             cargarModelo(hijo, modeloActual(texturaActual, modulos[1], true));
                             //console.log("FFUE izquierda", izquierda);
+                            aplicar();
                             break;
                         case 'derecha':
                             cargarModelo(hijo, modeloActual(texturaActual, modulos[2], true));
                             //console.log("FFUE derecha", derecha);
+                            aplicar();
                             break;
                         case 'frente':
                             cargarModelo(hijo, modeloActual(texturaActual, modulos[0], true));
                             //console.log("FFUE frente", frente);
+                            aplicar();
                             break;
                         default:
                             break;
