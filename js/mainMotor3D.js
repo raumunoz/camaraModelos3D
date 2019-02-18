@@ -152,6 +152,7 @@ let dimensionSuperior = {
         return (this.z.posi + Math.abs(this.z.nega)) + 1;
     },
 };
+
 var targetProxy = new Proxy(dimensionSuperior, {
     set: function (target, key, value) {
         //dimensionesText.text = (" ancho: " + xtotal + "m alto: " + 0 + "m largo: " + ztotal + "m");
@@ -184,6 +185,7 @@ var targetProxy = new Proxy(dimensionSuperior, {
         target[key] = value;
     }
 });
+
 let botonesMueble;
 let padres = [];
 let numPadre = 0;
@@ -560,7 +562,7 @@ function createButon3D(mesh, opc) {
     }
 }
 
-function cargarModelo(padre, modelo,posicion,prearmado) {
+function cargarModelo(padre, modelo, posicion, prearmado, rotacion) {
     //para quitar el padre pero dejar las tran
     //alert("ENTRO");
     var derecha;
@@ -579,12 +581,12 @@ function cargarModelo(padre, modelo,posicion,prearmado) {
         padreAnterior = padreActual;
         padreActual = newMeshes.meshes[0].getChildren()[0];
         padreActual.sparent = padreCentro;
-        
+
         if (typeof posicion !== 'undefined') {
             padreActual.position = posicion;
         }
 
-        
+
         //newMeshes.meshes[0].getChildren()[0].sparent = padreCentro;
         numPadre++;
         //modeloActual(texturaActual, moduloActual, true);
@@ -633,18 +635,27 @@ function cargarModelo(padre, modelo,posicion,prearmado) {
         createButon3D(meshDebug, 'izquierda');
         createButon3D(meshDebug2, 'frente');
         if (typeof prearmado !== 'undefined') {
-            
-           newMeshes.meshes.forEach(mesh => {
+
+            newMeshes.meshes.forEach(mesh => {
                 //hl.addMesh(mesh, BABYLON.Color3.Green());
                 container.meshes.push(mesh);
                 meshClickleable(mesh);
-                
+
             });
+            console.log("ROTACION", rotacion);
+
+            if (rotacion > 0) {
+                for (let index = 0; index < rotacion; index++) {     
+                    padreActual.rotation.y = (Math.PI / 2) + padreActual.rotation.y;
+                    console.log("ROTACION");
+                }
+            }
+
             padreActual.parent = padre;
             aplicar();
-           //console.log("TRUE");
-        }else{
-            
+            //console.log("TRUE");
+        } else {
+
             newMeshes.meshes.forEach(mesh => {
                 hl.addMesh(mesh, BABYLON.Color3.Green());
                 container.meshes.push(mesh);
@@ -666,7 +677,7 @@ function cargarModelo(padre, modelo,posicion,prearmado) {
         // newMeshes.meshes[0].name = "padre" + cadenaTemp[0].toUpperCase() + cadenaTemp.substring(1);
         //padre.rotation.y = Math.PI;
         //console.log("escala", padre);
-       
+
         /*switch (ultimoClickeado) {
             case 'izquierda':
                 createButon3D(izquierda, 'izquierda');
@@ -693,9 +704,9 @@ function cargarModelo(padre, modelo,posicion,prearmado) {
 
         container.addAllToScene();
         if (typeof prearmado !== 'undefined') {
-             aplicar();
-         }else{
-         }
+            aplicar();
+        } else {
+        }
     }, onSuccess = () => {
         engine.hideLoadingUI();
         //padreActual.setParent(null);
@@ -1626,99 +1637,116 @@ function prearmado(v, matriz) {
             [{ x: -4.75, y: 0, z: -4.75 }, { x: -4.75, y: 0, z: 0 }, { x: -4.75, y: 0, z: 4.75 }],
             [{ x: 0, y: 0, z: -4.75 }, { x: 0, y: 0, z: 0 }, { x: 0, y: 0, z: 4.75 }],
             [{ x: 4.75, y: 0, z: -4.75 }, { x: 4.75, y: 0, z: 0 }, { x: 4.75, y: 0, z: 4.75 }]
-        ]
+        ];
 
+    escena.meshes.forEach((x) => { x.dispose() });
+    container.meshes.forEach((x) => { x.dispose() });
     for (var i = 0; i < matriz.length; i++) {
         //console.log(matriz[i]);
         for (var j = 0; j < matriz.length; j++) {
-            //console.log(matriz[i][j]);
-            if (matriz[i][j] == 1) {
+            //console.lo(g(matriz[i][j]);
+            if (matriz[i][j].cor == 1) {
                 console.log(cordenada[i][j]);
-                escena.meshes.forEach((x) => { x.dispose() });
-                container.meshes.forEach((x) => { x.dispose() });
-                //cargarModeloCustom(modelos.taburetes[v].nombre,cordenada[i][j]);
-               //cargarModelo(padreCentro, modelos.puffino[0].nombre);
-               cargarModelo(padreCentro, modeloActual(texturaActual, moduloActual, true),cordenada[i][j],true);
+                //)cargarModeloCustom(modelos.taburetes[v].nombre,cordenada[i][j]);
+                //cargarModelo(padreCentro, modelos.puffino[0].nombre);
+                console.log("tipo", matriz[i][j].tipo);
+                //cargarModelo(padreCentro, modeloActual(texturaActual, moduloActual, true), cordenada[i][j], true);
+                switch (matriz[i][j].tipo) {
+                    case "taburete":
+                        cargarModelo(padreCentro, modelos.taburetes[1].nombre, cordenada[i][j], true, matriz[i][j].rotacion);
+                        break;
+                    case "esquina": 6
+                        cargarModelo(padreCentro, modelos.esquinas[1].nombre, cordenada[i][j], true, matriz[i][j].rotacion);
+                        break;
+                    case "brazo":
+                        cargarModelo(padreCentro, modelos.brazos[1].nombre, cordenada[i][j], true, matriz[i][j].rotacion);
+                        break
+                    default:
+                        cargarModelo(padreCentro, modelos.taburetes[1].nombre, cordenada[i][j], true, matriz[i][j].rotacion);
+                        break;
+                }
+
+
             }
         }
     }
 
-/*    
-    console.log("matriz", matriz);
-    console.log("es i", i);
-    container.meshes.forEach((x) => { x.dispose() });
-    cargarModelo(padreCentro, modeloActual(texturaActual, modulos[1], true));
-    //cargarModelo(padreCentro, modeloActual(texturaActual, modulos[2], true));
-    setTimeout(function () {
-        switch (i) {
-            case 1:
-                padreActual.getChildren().forEach(hijo => {
-                    switch (hijo.name) {
-                        case 'izquierda':
-                            cargarModelo(hijo, modeloActual(texturaActual, modulos[1], true));
-                            //console.log("FFUE izquierda", izquierda);
-                            aplicar();
-                            break;
-                        case 'derecha':
-                            cargarModelo(hijo, modeloActual(texturaActual, modulos[2], true));
-                            //console.log("FFUE derecha", derecha);
-                            aplicar();
-                            break;
-                        case 'frente':
-                            cargarModelo(hijo, modeloActual(texturaActual, modulos[0], true));
-                            //console.log("FFUE frente", frente);
-                            aplicar();
-                            break;
-                        default:
-                            break;
-                    }
-                });
-                break;
-            case 2:
-                padreActual.getChildren().forEach(hijo => {
-                    switch (hijo.name) {
-                        case 'izquierda':
-                            cargarModelo(hijo, modeloActual(texturaActual, modulos[1], true));
-                            //console.log("FFUE izquierda", izquierda);
-                            break;
-                        case 'derecha':
-                            cargarModelo(hijo, modeloActual(texturaActual, modulos[1], true));
-                            //console.log("FFUE derecha", derecha);
-                            break;
-                        case 'frente':
-                            cargarModelo(hijo, modeloActual(texturaActual, modulos[1], true));
-                            //console.log("FFUE frente", frente);
-                            break;
-                        default:
-                            break;
-                    }
-                });
-                break;
-            case 3:
-                padreActual.getChildren().forEach(hijo => {
-                    switch (hijo.name) {
-                        case 'izquierda':
-                            cargarModelo(hijo, modeloActual(texturaActual, modulos[2], true));
-                            //console.log("FFUE izquierda", izquierda);
-                            break;
-                        case 'derecha':
-                            cargarModelo(hijo, modeloActual(texturaActual, modulos[2], true));
-                            //console.log("FFUE derecha", derecha);
-                            break;
-                        case 'frente':
-                            cargarModelo(hijo, modeloActual(texturaActual, modulos[2], true));
-                            //console.log("FFUE frente", frente);
-                            break;
-                        default:
-                            break;
-                    }
-                });
-                break;
-            default:
-                break;
-        }
-    }, 2000);
-*/
+    /*    
+        console.log("matriz", matriz);
+        console.log("es i", i);
+        container.meshes.forEach((x) => { x.dispose() });
+        cargarModelo(padreCentro, modeloActual(texturaActual, modulos[1], true));
+        //cargarModelo(padreCentro, modeloActual(texturaActual, modulos[2], true));
+        setTimeout(function () {
+            switch (i) {
+                case 1:
+                    padreActual.getChildren().forEach(hijo => {
+                        switch (hijo.name) {
+                            case 'izquierda':
+                                cargarModelo(hijo, modeloActual(texturaActual, modulos[1], true));
+                                //console.log("FFUE izquierda", izquierda);
+                                aplicar();
+                                break;
+                            case 'derecha':
+                                cargarModelo(hijo, modeloActual(texturaActual, modulos[2], true));
+                                //console.log("FFUE derecha", derecha);
+                                aplicar();
+                                break;
+                            case 'frente':
+                                cargarModelo(hijo, modeloActual(texturaActual, modulos[0], true));
+                                //console.log("FFUE frente", frente);
+                                aplicar();
+                                break;
+                            default:
+                                break;
+                        }
+                    });
+                    break;
+                case 2:
+                    padreActual.getChildren().forEach(hijo => {
+                        switch (hijo.name) {
+                            case 'izquierda':
+                                cargarModelo(hijo, modeloActual(texturaActual, modulos[1], true));
+                                //console.log("FFUE izquierda", izquierda);
+                                break;
+                            case 'derecha':
+                                cargarModelo(hijo, modeloActual(texturaActual, modulos[1], true));
+                                //console.log("FFUE derecha", derecha);
+                                break;
+                            case 'frente':
+                                cargarModelo(hijo, modeloActual(texturaActual, modulos[1], true));
+                                //console.log("FFUE frente", frente);
+                                break;
+                            default:
+                                break;
+                        }
+                    });
+                    break;
+                case 3:
+                    padreActual.getChildren().forEach(hijo => {
+                        switch (hijo.name) {
+                            case 'izquierda':
+                                cargarModelo(hijo, modeloActual(texturaActual, modulos[2], true));
+                                //console.log("FFUE izquierda", izquierda);
+                                break;
+                            case 'derecha':
+                                cargarModelo(hijo, modeloActual(texturaActual, modulos[2], true));
+                                //console.log("FFUE derecha", derecha);
+                                break;
+                            case 'frente':
+                                cargarModelo(hijo, modeloActual(texturaActual, modulos[2], true));
+                                //console.log("FFUE frente", frente);
+                                break;
+                            default:
+                                break;
+                        }
+                    });
+                    break;
+                default:
+                    break;
+            }
+        }, 2000);
+    */
 }
 
 function addSlider(isVertical, isClamped, displayThumb, row, col, zoom) {
@@ -1784,35 +1812,83 @@ function addSlider(isVertical, isClamped, displayThumb, row, col, zoom) {
     //slider.value = Math.PI + Math.random() * Math.PI;
     panel.addControl(slider);
 }
-
-function opcPrearmado(i){
-    
+/*
+for (var i = 0; i < matriz.length; i++) {
+    for (var j = 0; j < matriz.length; j++) {
+        console.log(cordenada[i][j]);
+        if (matriz[i][j].posi == 1) {
+            console.log(cordenada[i][j]);
+            //cargarModeloCustom(modelos.taburetes[v].nombre,cordenada[i][j]);
+            //cargarModelo(padreCentro, modelos.puffino[0].nombre);
+            //cargarModelo(padreCentro, modeloActual(texturaActual, moduloActual, true), cordenada[i][j], true);
+        }
+    }
+}
+*/
+function opcPrearmado(i) {
+    /*
+    [
+        [{ cor: 1, tipo: "taburete" }, { cor: 1, tipo: "taburete" }, { cor: 1, tipo: "taburete" }],
+        [{ cor: 1, tipo: "taburete" }, { cor: 1, tipo: "taburete" }, { cor: 1, tipo: "taburete" }],
+        [{ cor: 1, tipo: "taburete" }, { cor: 1, tipo: "taburete" }, { cor: 1, tipo: "taburete" }]
+    ]
+    */
     switch (i) {
         case 0:
-        prearmado(0, [[1,1,0],[1,1,1],[0,1,1]]);
-        break;
+            prearmado(0, [
+                [{ cor: 1, tipo: "esquina", rotacion: 0 }, { cor: 1, tipo: "brazo", rotacion: 0 }, { cor: 1, tipo: "esquina", rotacion: 1 }],
+                [{ cor: 1, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "taburete", rotacion: 0 }],
+                [{ cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "taburete", rotacion: 0 }]
+            ]);
+            break;
         case 1:
-        prearmado(0, [[1,0,0],[1,1,1],[0,0,1]]);
-        break;
+            prearmado(0, [
+                [{ cor: 1, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "taburete", rotacion: 0 }],
+                [{ cor: 1, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }],
+                [{ cor: 1, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }]
+            ]);
+            break;
         case 2:
-        prearmado(0, [[0,1,0],[1,0,1],[0,1,0]]);
-        break;
+            prearmado(0, [
+                [{ cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }],
+                [{ cor: 1, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "taburete", rotacion: 0 }],
+                [{ cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }]
+            ]);
+            break;
         case 3:
-        prearmado(0, [[0,0,1],[1,0,1],[1,0,0]]);
-        break;
+            prearmado(0, [
+                [{ cor: 1, tipo: "taburete", rotacion: 1 }, { cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "taburete", rotacion: 0 }],
+                [{ cor: 1, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "taburete", rotacion: 0 }],
+                [{ cor: 1, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "taburete", rotacion: 0 }]
+            ]);
+            break;
         case 4:
-        prearmado(0, [[0,1,0],[0,1,0],[0,1,0]]);
-        break;
+            prearmado(0, [
+                [{ cor: 1, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }],
+                [{ cor: 1, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "taburete", rotacion: 0 }],
+                [{ cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }]
+            ]); break;
         case 5:
-        prearmado(0, [[0,1,1],[0,1,0],[1,1,0]]);
-        break;
+            prearmado(0, [
+                [{ cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "taburete", rotacion: 0 }],
+                [{ cor: 1, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }],
+                [{ cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }]
+            ]); break;
         case 6:
-        prearmado(0, [[0,1,0],[1,1,1],[0,1,0]]);
-        break;
+            prearmado(0, [
+                [{ cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }],
+                [{ cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "taburete", rotacion: 0 }],
+                [{ cor: 1, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "taburete", rotacion: 0 }]
+            ]);
+            break;
         default:
-        prearmado(0, [[0,1,0],[1,1,1],[0,1,0]]);
-        break;
-        
+            prearmado(0, [
+                [{ cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "taburete", rotacion: 0 }],
+                [{ cor: 1, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "taburete", rotacion: 0 }],
+                [{ cor: 1, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }]
+            ]);
+            break;
+
     }
 }
 //function
