@@ -560,7 +560,7 @@ function createButon3D(mesh, opc) {
     }
 }
 
-function cargarModelo(padre, modelo,posicion) {
+function cargarModelo(padre, modelo,posicion,prearmado) {
     //para quitar el padre pero dejar las tran
     //alert("ENTRO");
     var derecha;
@@ -583,6 +583,8 @@ function cargarModelo(padre, modelo,posicion) {
         if (typeof posicion !== 'undefined') {
             padreActual.position = posicion;
         }
+
+        
         //newMeshes.meshes[0].getChildren()[0].sparent = padreCentro;
         numPadre++;
         //modeloActual(texturaActual, moduloActual, true);
@@ -630,6 +632,26 @@ function cargarModelo(padre, modelo,posicion) {
         createButon3D(meshDebug1, 'derecha');
         createButon3D(meshDebug, 'izquierda');
         createButon3D(meshDebug2, 'frente');
+        if (typeof prearmado !== 'undefined') {
+            
+           newMeshes.meshes.forEach(mesh => {
+                //hl.addMesh(mesh, BABYLON.Color3.Green());
+                container.meshes.push(mesh);
+                meshClickleable(mesh);
+                
+            });
+            padreActual.parent = padre;
+            aplicar();
+           //console.log("TRUE");
+        }else{
+            
+            newMeshes.meshes.forEach(mesh => {
+                hl.addMesh(mesh, BABYLON.Color3.Green());
+                container.meshes.push(mesh);
+                meshClickleable(mesh);
+            });
+            padreActual.parent = padre;
+        }
         activarBotonesAplicar(true);
         esconderTodosBotones(false);
         //resaltarMueble(padreActual, true);
@@ -640,16 +662,11 @@ function cargarModelo(padre, modelo,posicion) {
         //var nodo= new Node("nodo",scene);
         //var nodo = new BABYLON.Mesh("nodo", escena);
         //nodo.parent = padre;
-        padreActual.parent = padre;
         //let cadenaTemp = modelo.slice(0, -5);
         // newMeshes.meshes[0].name = "padre" + cadenaTemp[0].toUpperCase() + cadenaTemp.substring(1);
         //padre.rotation.y = Math.PI;
         //console.log("escala", padre);
-        newMeshes.meshes.forEach(mesh => {
-            hl.addMesh(mesh, BABYLON.Color3.Green());
-            container.meshes.push(mesh);
-            meshClickleable(mesh);
-        });
+       
         /*switch (ultimoClickeado) {
             case 'izquierda':
                 createButon3D(izquierda, 'izquierda');
@@ -673,8 +690,12 @@ function cargarModelo(padre, modelo,posicion) {
         //createHoloButton(padreActual);
         //actualizarDimensiones(modelo);
         //padreActual.setParent(null);
-        container.addAllToScene();
 
+        container.addAllToScene();
+        if (typeof prearmado !== 'undefined') {
+             aplicar();
+         }else{
+         }
     }, onSuccess = () => {
         engine.hideLoadingUI();
         //padreActual.setParent(null);
@@ -1600,26 +1621,13 @@ function nombreImagenTextura(nombreTextura) {
 }
 
 function prearmado(v, matriz) {
-    /*var cordenada =
-    [
-        [{ x: -.75, y: 0, z: -.75 }, { x: -.75, y: 0, z: 0 }, { x: -.75, y: 0, z: 4.75 }],
-        [{ x: 0, y: 0, z: -.75 }, { x: 0, y: 0, z: 0 }, { x: 0, y: 0, z: .75 }],
-        [{ x: .75, y: 0, z: -.75 }, { x: .75, y: 0, z: 0 }, { x: .75, y: 0, z: 4.75 }]
-    ];*/
-    
     var cordenada =
         [
             [{ x: -4.75, y: 0, z: -4.75 }, { x: -4.75, y: 0, z: 0 }, { x: -4.75, y: 0, z: 4.75 }],
             [{ x: 0, y: 0, z: -4.75 }, { x: 0, y: 0, z: 0 }, { x: 0, y: 0, z: 4.75 }],
             [{ x: 4.75, y: 0, z: -4.75 }, { x: 4.75, y: 0, z: 0 }, { x: 4.75, y: 0, z: 4.75 }]
         ]
-    
-    
-         /*matriz[i].forEach((x)=>{   
-         });*/
-    //cargarModeloCustom(modelos.puffino[0].nombre)
 
-    //}
     for (var i = 0; i < matriz.length; i++) {
         //console.log(matriz[i]);
         for (var j = 0; j < matriz.length; j++) {
@@ -1630,7 +1638,7 @@ function prearmado(v, matriz) {
                 container.meshes.forEach((x) => { x.dispose() });
                 //cargarModeloCustom(modelos.taburetes[v].nombre,cordenada[i][j]);
                //cargarModelo(padreCentro, modelos.puffino[0].nombre);
-               cargarModelo(padreCentro, modeloActual(texturaActual, moduloActual, true),cordenada[i][j]);
+               cargarModelo(padreCentro, modeloActual(texturaActual, moduloActual, true),cordenada[i][j],true);
             }
         }
     }
