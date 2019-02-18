@@ -234,7 +234,7 @@ window.addEventListener('DOMContentLoaded', function () {
         //GUI
         //Does not work
         //altoTotal.innerText = 1 + " m";
-        
+
         anchoTotal.innerText = dimensionSuperior.ancho() + " m";
         largoTotal.innerText = dimensionSuperior.largo() + " m";
         canvas.addEventListener("mousedown", function () {
@@ -559,7 +559,8 @@ function createButon3D(mesh, opc) {
         });
     }
 }
-function cargarModelo(padre, modelo) {
+
+function cargarModelo(padre, modelo,posicion) {
     //para quitar el padre pero dejar las tran
     //alert("ENTRO");
     var derecha;
@@ -577,7 +578,12 @@ function cargarModelo(padre, modelo) {
         //console.log("padre a guardar", newMeshes.meshes[0]);
         padreAnterior = padreActual;
         padreActual = newMeshes.meshes[0].getChildren()[0];
-        newMeshes.meshes[0].getChildren()[0].sparent = padreCentro;
+        padreActual.sparent = padreCentro;
+        
+        if (typeof posicion !== 'undefined') {
+            padreActual.position = posicion;
+        }
+        //newMeshes.meshes[0].getChildren()[0].sparent = padreCentro;
         numPadre++;
         //modeloActual(texturaActual, moduloActual, true);
         padreActual.precio = modeloActual(texturaActual, moduloActual, false);
@@ -679,7 +685,7 @@ function cargarModelo(padre, modelo) {
     //padreActual.setParent(padreCentro);
 }
 
-function cargarModeloCustom(padre, modelo) {
+function cargarModeloCustom(modelo, posicion) {
     escena.meshes.forEach((x) => { x.dispose() });
     container.meshes.forEach((x) => { x.dispose() });
 
@@ -710,13 +716,20 @@ function cargarModeloCustom(padre, modelo) {
         console.log("cargando");
         //engine.displayLoadingUI();
     });*/
-    BABYLON.SceneLoader.ImportMesh("", "assets/modelos/", modelo, escena, function (newMeshes, particleSystems) { 
+    showLoadingScreen();
+    BABYLON.SceneLoader.ImportMesh("", "assets/modelos/", modelo, escena, function (newMeshes, particleSystems) {
         //console.log(newMeshes);
         //console.log(padre);
         //ModeloCustom=newMeshes;
-        newMeshes[0].setParent(padre);
+        newMeshes[0].setParent(padreCentro);
+        if (typeof posicion === 'undefined') {
+
+        } else {
+            newMeshes[0].position = posicion;
+        }
         //newMeshes.meshes[0].getChildren()[0].setParent(padreCentro);
         //engine.displayLoadingUI();
+        hideLoadingScreen();
     });
 }
 
@@ -1586,7 +1599,44 @@ function nombreImagenTextura(nombreTextura) {
     return transformada[0] + " " + transformada[1];
 }
 
-function prearmado(i) {
+function prearmado(v, matriz) {
+    /*var cordenada =
+    [
+        [{ x: -.75, y: 0, z: -.75 }, { x: -.75, y: 0, z: 0 }, { x: -.75, y: 0, z: 4.75 }],
+        [{ x: 0, y: 0, z: -.75 }, { x: 0, y: 0, z: 0 }, { x: 0, y: 0, z: .75 }],
+        [{ x: .75, y: 0, z: -.75 }, { x: .75, y: 0, z: 0 }, { x: .75, y: 0, z: 4.75 }]
+    ];*/
+    
+    var cordenada =
+        [
+            [{ x: -4.75, y: 0, z: -4.75 }, { x: -4.75, y: 0, z: 0 }, { x: -4.75, y: 0, z: 4.75 }],
+            [{ x: 0, y: 0, z: -4.75 }, { x: 0, y: 0, z: 0 }, { x: 0, y: 0, z: 4.75 }],
+            [{ x: 4.75, y: 0, z: -4.75 }, { x: 4.75, y: 0, z: 0 }, { x: 4.75, y: 0, z: 4.75 }]
+        ]
+    
+    
+         /*matriz[i].forEach((x)=>{   
+         });*/
+    //cargarModeloCustom(modelos.puffino[0].nombre)
+
+    //}
+    for (var i = 0; i < matriz.length; i++) {
+        //console.log(matriz[i]);
+        for (var j = 0; j < matriz.length; j++) {
+            //console.log(matriz[i][j]);
+            if (matriz[i][j] == 1) {
+                console.log(cordenada[i][j]);
+                escena.meshes.forEach((x) => { x.dispose() });
+                container.meshes.forEach((x) => { x.dispose() });
+                //cargarModeloCustom(modelos.taburetes[v].nombre,cordenada[i][j]);
+               //cargarModelo(padreCentro, modelos.puffino[0].nombre);
+               cargarModelo(padreCentro, modeloActual(texturaActual, moduloActual, true),cordenada[i][j]);
+            }
+        }
+    }
+
+/*    
+    console.log("matriz", matriz);
     console.log("es i", i);
     container.meshes.forEach((x) => { x.dispose() });
     cargarModelo(padreCentro, modeloActual(texturaActual, modulos[1], true));
@@ -1660,8 +1710,9 @@ function prearmado(i) {
                 break;
         }
     }, 2000);
-
+*/
 }
+
 function addSlider(isVertical, isClamped, displayThumb, row, col, zoom) {
     var panel = new BABYLON.GUI.StackPanel();
     var posicionAuxi;
@@ -1725,3 +1776,35 @@ function addSlider(isVertical, isClamped, displayThumb, row, col, zoom) {
     //slider.value = Math.PI + Math.random() * Math.PI;
     panel.addControl(slider);
 }
+
+function opcPrearmado(i){
+    
+    switch (i) {
+        case 0:
+        prearmado(0, [[1,1,0],[1,1,1],[0,1,1]]);
+        break;
+        case 1:
+        prearmado(0, [[1,0,0],[1,1,1],[0,0,1]]);
+        break;
+        case 2:
+        prearmado(0, [[0,1,0],[1,0,1],[0,1,0]]);
+        break;
+        case 3:
+        prearmado(0, [[0,0,1],[1,0,1],[1,0,0]]);
+        break;
+        case 4:
+        prearmado(0, [[0,1,0],[0,1,0],[0,1,0]]);
+        break;
+        case 5:
+        prearmado(0, [[0,1,1],[0,1,0],[1,1,0]]);
+        break;
+        case 6:
+        prearmado(0, [[0,1,0],[1,1,1],[0,1,0]]);
+        break;
+        default:
+        prearmado(0, [[0,1,0],[1,1,1],[0,1,0]]);
+        break;
+        
+    }
+}
+//function
