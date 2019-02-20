@@ -433,6 +433,9 @@ div .materiales {
 	background-color: #6FC6FF;
 	color: white;
 }
+#file-input{
+    display: none;
+}
 @media only screen and (max-width: 600px) {
 	.motor3D .grid-container {
 		display: grid;

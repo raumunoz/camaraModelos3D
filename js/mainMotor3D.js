@@ -1,8 +1,21 @@
+const inputElement = document.getElementById("file-input");
+inputElement.addEventListener("change", function(e){
+    
+    console.log("archivos",inputElement.files);
+    const reader =new FileReader();
+    reader.onload=function(){
+        console.log(reader.result);
+        //materialSphere3.diffuseTexture = new BABYLON.Texture("data:gopher", scene, false, false, BABYLON.Texture.BILINEAR_SAMPLINGMODE, null, null, base64Img, true);
+        background.texture = new BABYLON.Texture("data:gopher", escena, false, true, BABYLON.Texture.BILINEAR_SAMPLINGMODE, null, null, reader.result, true);
+        //background.texture = new BABYLON.Texture("C:/Users/csar/OneDrive/Imágenes", escena);
+    }
+    reader.readAsDataURL(inputElement.files[0]);
+}, false);
 let ModeloCustom;
 let grid;
 let meshClicleado = false;
 let buttonClicleado = false;
-let debugg = [];
+let debugg;
 let listaTablaMuebles = [{ mueble: "Taburete casual", numero: 0 }];
 let perfLi;
 let perfLi1;
@@ -573,6 +586,7 @@ function cargarModelo(padre, modelo, posicion, prearmado, rotacion) {
         modelo = "BrazoContempo.gltf";
     }
     engine.displayLoadingUI();
+    showLoadingScreen();
     BABYLON.SceneLoader.LoadAssetContainer("assets/modelos/", modelo, escena, function (newMeshes) {
         meshesAcargar = newMeshes;
         //modeloActual(texturaActual, moduloActual,true)
@@ -709,6 +723,7 @@ function cargarModelo(padre, modelo, posicion, prearmado, rotacion) {
         }
     }, onSuccess = () => {
         engine.hideLoadingUI();
+        hideLoadingScreen();
         //padreActual.setParent(null);
     }, onProgress = () => {
         //console.log("progress")
@@ -748,7 +763,7 @@ function cargarModeloCustom(modelo, posicion) {
         console.log("cargando");
         //engine.displayLoadingUI();
     });*/
-    showLoadingScreen();
+    //showLoadingScreen();
     BABYLON.SceneLoader.ImportMesh("", "assets/modelos/", modelo, escena, function (newMeshes, particleSystems) {
         //console.log(newMeshes);
         //console.log(padre);
@@ -761,7 +776,7 @@ function cargarModeloCustom(modelo, posicion) {
         }
         //newMeshes.meshes[0].getChildren()[0].setParent(padreCentro);
         //engine.displayLoadingUI();
-        hideLoadingScreen();
+        //hideLoadingScreen();
     });
 }
 
@@ -1891,4 +1906,17 @@ function opcPrearmado(i) {
 
     }
 }
+/*
+function handleFiles() {
+    const fileList = this.files; /* now you can work with the file list 
+    debugg=this.files;
+    console.log("archivo",this.files);
+    const reader = new FileReader();
+    reader.onLoad=function(){
+        console.log("Resultado",reader.result);
+    }
+    reader.readAsText(this.files);
+//}
+*/
+
 //function
