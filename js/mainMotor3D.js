@@ -1,21 +1,29 @@
+let debugg;
 const inputElement = document.getElementById("file-input");
-inputElement.addEventListener("change", function(e){
-    
-    console.log("archivos",inputElement.files);
-    const reader =new FileReader();
-    reader.onload=function(){
-        console.log(reader.result);
+inputElement.addEventListener("change", function (e) {
+    var imagen;
+    console.log("CAMBIO");
+    //console.log("archivos",inputElement.files);
+    const reader = new FileReader();
+    reader.onload = function () {
+        console.log("resultado", reader.result);
         //materialSphere3.diffuseTexture = new BABYLON.Texture("data:gopher", scene, false, false, BABYLON.Texture.BILINEAR_SAMPLINGMODE, null, null, base64Img, true);
-        background.texture = new BABYLON.Texture("data:gopher", escena, false, true, BABYLON.Texture.BILINEAR_SAMPLINGMODE, null, null, reader.result, true);
+        //debugg=reader.result;
+        //reader.result="";
+        background.texture = new BABYLON.Texture("data:" + imagen, escena, false, true, BABYLON.Texture.BILINEAR_SAMPLINGMODE, null, null, reader.result, true);
         //background.texture = new BABYLON.Texture("C:/Users/csar/OneDrive/Imágenes", escena);
+        //inputElement.replaceWith( inputElement.val('').clone( true ) );
     }
+    //my_array.slice(-1)[0]
+    imagen = inputElement.files[0].name;
+    debugg = inputElement.files;
     reader.readAsDataURL(inputElement.files[0]);
+    console.log("nombre,", imagen);
 }, false);
 let ModeloCustom;
 let grid;
 let meshClicleado = false;
 let buttonClicleado = false;
-let debugg;
 let listaTablaMuebles = [{ mueble: "Taburete casual", numero: 0 }];
 let perfLi;
 let perfLi1;
@@ -189,8 +197,12 @@ var targetProxy = new Proxy(dimensionSuperior, {
                 // altoTotal.innerText = 1 + " m";
                 anchoTotal.innerText = dimensionSuperior.ancho() + " m";
                 largoTotal.innerText = dimensionSuperior.largo() + " m";
-                perfLi.innerHTML = `largo: ` + dimensionSuperior.largo() + ` m`;
-                perfLi1.innerHTML = `ancho: ` + dimensionSuperior.ancho() + ` m`;
+
+                if (typeof perfLi !== 'undefined') {
+
+                    perfLi.innerHTML = `largo: ` + dimensionSuperior.largo() + ` m`;
+                    perfLi1.innerHTML = `ancho: ` + dimensionSuperior.ancho() + ` m`;
+                }
                 //perfLi2.innerHTML = `alto: ` + 1 + ` m`;
 
             }, 1000);
@@ -659,7 +671,7 @@ function cargarModelo(padre, modelo, posicion, prearmado, rotacion) {
             console.log("ROTACION", rotacion);
 
             if (rotacion > 0) {
-                for (let index = 0; index < rotacion; index++) {     
+                for (let index = 0; index < rotacion; index++) {
                     padreActual.rotation.y = (Math.PI / 2) + padreActual.rotation.y;
                     console.log("ROTACION");
                 }
@@ -791,6 +803,7 @@ function cambioTextura(opc) {
 }
 function cambioModulo(opc) {
     moduloActual = modulos[opc];
+    console.log()
     actualizarMueble();
     agregarBorder(opc, false);
     //alert(modeloActual(texturaActual,moduloActual));
@@ -1158,10 +1171,10 @@ function actualizarMueble() {
         removerModelo(padreActual);
         //cargarModelo(meshDebug1, modeloActual(texturaActual, moduloActual));
         if (hijosDerecha || hijosFrente || hijosIzquierda) {
-            cargarModelo(padreActual, modeloActual(texturaActual, moduloActual, true), { hijosDerecha, hijosFrente, hijosIzquierda });
+            cargarModelo(padreActual, modeloActual(texturaActual, moduloActual, true)/*, { hijosDerecha, hijosFrente, hijosIzquierda }*/);
         } else {
             console.log("no hay hijos");
-            cargarModelo(dummy, modeloActual(texturaActual, moduloActual, true), 'no hay hijos');
+            cargarModelo(dummy, modeloActual(texturaActual, moduloActual, true)/*, 'no hay hijos'*/);
             //console.log("no hay hijos");
         }
     }
@@ -1852,63 +1865,62 @@ function opcPrearmado(i) {
         case 0:
             prearmado(0, [
                 [{ cor: 1, tipo: "esquina", rotacion: 0 }, { cor: 1, tipo: "brazo", rotacion: 0 }, { cor: 1, tipo: "esquina", rotacion: 1 }],
-                [{ cor: 1, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "taburete", rotacion: 0 }],
-                [{ cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "taburete", rotacion: 0 }]
+                [{ cor: 1, tipo: "brazo", rotacion: 3 }, { cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }],
+                [{ cor: 1, tipo: "esquina", rotacion: 3 }, { cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }]
             ]);
+
             break;
         case 1:
             prearmado(0, [
-                [{ cor: 1, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "taburete", rotacion: 0 }],
-                [{ cor: 1, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }],
-                [{ cor: 1, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }]
+                [{ cor: 0, tipo: "esquina", rotacion: 0 }, { cor: 0, tipo: "brazo", rotacion: 0 }, { cor: 0, tipo: "esquina", rotacion: 0 }],
+                [{ cor: 1, tipo: "esquina", rotacion: 0 }, { cor: 1, tipo: "brazo", rotacion: 0 }, { cor: 1, tipo: "esquina", rotacion: 1 }],
+                [{ cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }]
             ]);
             break;
         case 2:
             prearmado(0, [
-                [{ cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }],
-                [{ cor: 1, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "taburete", rotacion: 0 }],
+                [{ cor: 1, tipo: "esquina", rotacion: 0 }, { cor: 1, tipo: "brazo", rotacion: 0 }, { cor: 1, tipo: "esquina", rotacion: 1 }],
+                [{ cor: 1, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "taburete", rotacion: 0 }],
                 [{ cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }]
             ]);
             break;
         case 3:
             prearmado(0, [
-                [{ cor: 1, tipo: "taburete", rotacion: 1 }, { cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "taburete", rotacion: 0 }],
-                [{ cor: 1, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "taburete", rotacion: 0 }],
-                [{ cor: 1, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "taburete", rotacion: 0 }]
+                [{ cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }],
+                [{ cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "esquina", rotacion: 0 }, { cor: 1, tipo: "esquina", rotacion: 1 }],
+                [{ cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }]
             ]);
             break;
         case 4:
             prearmado(0, [
-                [{ cor: 1, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }],
-                [{ cor: 1, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "taburete", rotacion: 0 }],
-                [{ cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }]
-            ]); break;
+                [{ cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }],
+                [{ cor: 1, tipo: "esquina", rotacion: 0 }, { cor: 1, tipo: "brazo", rotacion: 0 }, { cor: 1, tipo: "esquina", rotacion: 1 }],
+                [{ cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "taburete", rotacion: 0 }]
+            ]);
+            break;
         case 5:
             prearmado(0, [
-                [{ cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "taburete", rotacion: 0 }],
-                [{ cor: 1, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }],
-                [{ cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }]
-            ]); break;
+                [{ cor: 1, tipo: "esquina", rotacion: 0 }, { cor: 1, tipo: "brazo", rotacion: 0 }, { cor: 1, tipo: "esquina", rotacion: 1 }],
+                [{ cor: 1, tipo: "brazo", rotacion: 3 }, { cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "brazo", rotacion: 1 }],
+                [{ cor: 1, tipo: "esquina", rotacion: 3 }, { cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "taburete", rotacion: 0 }]
+            ]);
+            break;
         case 6:
             prearmado(0, [
-                [{ cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }],
-                [{ cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "taburete", rotacion: 0 }],
-                [{ cor: 1, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "taburete", rotacion: 0 }]
+                [{ cor: 1, tipo: "esquina", rotacion: 0 }, { cor: 1, tipo: "brazo", rotacion: 0 }, { cor: 1, tipo: "brazo", rotacion: 0 },{ cor: 1, tipo: "esquina", rotacion: 1 }],
+                [{ cor: 1, tipo: "brazo", rotacion: 0 }, { cor: 0, tipo: "brazo", rotacion: 0 }, { cor: 0, tipo: "brazo", rotacion: 0 },{ cor: 1, tipo: "brazo", rotacion: 2 }],
+                [{ cor: 0, tipo: "esquina", rotacion: 0 }, { cor: 0, tipo: "brazo", rotacion: 0 }, { cor: 0, tipo: "brazo", rotacion: 0 },{ cor: 1, tipo: "esquina", rotacion: 1 }],
             ]);
             break;
         default:
-            prearmado(0, [
-                [{ cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "taburete", rotacion: 0 }],
-                [{ cor: 1, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "taburete", rotacion: 0 }],
-                [{ cor: 1, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }]
-            ]);
+
             break;
 
     }
 }
 /*
 function handleFiles() {
-    const fileList = this.files; /* now you can work with the file list 
+    const fileList = this.files; /* now you can work with the file list
     debugg=this.files;
     console.log("archivo",this.files);
     const reader = new FileReader();

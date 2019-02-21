@@ -9,6 +9,7 @@ let scenaCamara;
 let promesa;
 let materialVideo;
 let camaraActivada;
+let texturaVideo;
 function cargarCamara(escena, camera) {
     camaraLocal = camera;
     scenaCamara = escena;
@@ -28,8 +29,7 @@ function cargarCamara(escena, camera) {
     btnCamara.style.visibility = "hidden";
     navigator.mediaDevices.enumerateDevices().then(function (dispositivos) {
         dispositivos.forEach(device => {
-            console.log(device.kind + ": " + device.label +
-                " id = " + device.deviceId);
+            console.log(device.kind + ": " + device.label +" id = " + device.deviceId);
             if (device.kind == "videoinput") {
                 //alert(device.label);
             }
