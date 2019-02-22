@@ -599,6 +599,8 @@ function cargarModelo(padre, modelo, posicion, prearmado, rotacion) {
     }
     engine.displayLoadingUI();
     showLoadingScreen();
+    //showLoadingScreen();
+    //
     BABYLON.SceneLoader.LoadAssetContainer("assets/modelos/", modelo, escena, function (newMeshes) {
         meshesAcargar = newMeshes;
         //modeloActual(texturaActual, moduloActual,true)
@@ -775,7 +777,7 @@ function cargarModeloCustom(modelo, posicion) {
         console.log("cargando");
         //engine.displayLoadingUI();
     });*/
-    //showLoadingScreen();
+    showLoadingScreen();
     BABYLON.SceneLoader.ImportMesh("", "assets/modelos/", modelo, escena, function (newMeshes, particleSystems) {
         //console.log(newMeshes);
         //console.log(padre);
@@ -789,6 +791,7 @@ function cargarModeloCustom(modelo, posicion) {
         //newMeshes.meshes[0].getChildren()[0].setParent(padreCentro);
         //engine.displayLoadingUI();
         //hideLoadingScreen();
+        hideLoadingScreen();
     });
 }
 
