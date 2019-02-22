@@ -62,8 +62,7 @@
 	padding: 10px 0;
 	width: 100%;
 	display: grid;
-
-grid-template-columns: 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr;
 }
 
 .btn-grid {
@@ -77,6 +76,7 @@ grid-template-columns: 1fr 1fr 1fr;
 	overflow-y: hidden;
 	white-space: nowrap;
 }
+
 .btn-grid1 {
 	display: grid;
 	grid-template-columns: max-content max-content max-content max-content max-content;
@@ -88,6 +88,7 @@ grid-template-columns: 1fr 1fr 1fr;
 	overflow-y: hidden;
 	white-space: nowrap;
 }
+
 .btn-grid2 {
 	display: grid;
 	grid-template-columns: max-content max-content max-content max-content max-content;
@@ -196,15 +197,7 @@ grid-template-columns: 1fr 1fr 1fr;
 .motor3D .grid-container {
 	display: grid;
 	grid-template-areas: /*'header header header header header header'*/
-	'mate main main main main main'
-	'mate main main main main main'
-	'mate main main main main main' 
-	'mate main main main main main' 
-	'modu main main main main main' 
-	'preA main main main main main' 
-	'erra main main main main main' 
-	'accion main main main main main' 
-	'footer footer footer footer footer footer';
+	'mate main main main main main' 'mate main main main main main' 'mate main main main main main' 'mate main main main main main' 'modu main main main main main' 'preA main main main main main' 'erra main main main main main' 'accion main main main main main' 'footer footer footer footer footer footer';
 	grid-gap: 10px;
 	padding: 10px;
 }
@@ -215,10 +208,10 @@ grid-template-columns: 1fr 1fr 1fr;
 	padding: 0;
 	font-size: 23px;
 }
-.nav-tabs{
+
+.nav-tabs {
 	font-size: 16px;
 }
-
 
 .motor3D .materiales {
 	background-color: whitesmoke;
@@ -265,8 +258,9 @@ grid-template-columns: 1fr 1fr 1fr;
 
 .nav-tabs li a {
 	padding-bottom: 1px;
-	padding-top:1px;
+	padding-top: 1px;
 }
+
 .motor3D li img {
 	width: 50%;
 	background-color: green;
@@ -416,6 +410,7 @@ grid-template-columns: 1fr 1fr 1fr;
 div .item4 {
 	background-color: #6FC6FF;
 }
+
 /*
 div .materiales {
     background-color: #333;
@@ -423,31 +418,41 @@ div .materiales {
     white-space: nowrap;
 }
 */
+
 .acciones:nth-child(2) {
 	background: green;
 }
+
 .acciones:nth-child(1) {
 	background: red;
 }
+
 .precios {
 	background-color: #6FC6FF;
 }
-.precios span{
+
+.precios span {
 	background-color: #6FC6FF;
 	color: white;
 }
-#file-input{
-    display: none;
+
+#file-input {
+	display: none;
 }
+
+.opc-PreArmado img {
+	background-color: red;
+	padding-left: 0px;
+	margin: 0px;
+	border: solid 1px;
+	border-color: black;
+}
+
 @media only screen and (max-width: 600px) {
 	.motor3D .grid-container {
 		display: grid;
 		grid-template-areas: /*'header header header header header header'*/
-		'mate mate mate modu modu modu' 
-		'main main main main main main' 
-		'erra erra erra preA preA preA' 
-		'accion accion accion accion accion accion' 
-		'footer footer footer footer footer footer';
+		'mate mate mate modu modu modu' 'main main main main main main' 'erra erra erra preA preA preA' 'accion accion accion accion accion accion' 'footer footer footer footer footer footer';
 		grid-gap: 1px;
 		padding: 0px;
 	}
@@ -574,7 +579,7 @@ div .materiales {
 		padding-top: 0px;
 		width: 100%;
 	}
-	.nav-tabs{
+	.nav-tabs {
 		font-size: 12px;
 	}
 	.nav-tabs li a {
@@ -583,7 +588,4 @@ div .materiales {
 		padding-right: 7px;
 		padding-left: 7px;
 	}
-	
-	
 }
-
