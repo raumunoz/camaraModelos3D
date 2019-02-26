@@ -200,6 +200,14 @@
 			font-family: 'Montserrat', Arial, sans-serif;
 			font-size: 12px;
 		}
+
+		@media only screen and (max-width: 600px) {
+			body {
+				background-color: lightblue;
+				color: red;
+			}
+
+		}
 	</style>
 
 </head>
@@ -386,7 +394,7 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-md-4 text-center animate-box">
+					<div class="col-xs-4 col-8 col-sm-2 col-md-4  text-center animate-box">
 						<div class="product">
 							<a id="yokoShow" style="cursor: pointer;">
 								<div class="product-grid"
@@ -403,7 +411,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-md-4 text-center animate-box">
+					<div class="col-xs-4 col-8 col-sm-2 col-md-4 text-center animate-box">
 						<div class="product">
 							<a id="puffinoShow" style="cursor: pointer;">
 								<div class="product-grid"
@@ -420,8 +428,7 @@
 							</div>
 						</div>
 					</div>
-
-					<div class="col-md-4 text-center animate-box">
+					<div class="col-xs-4 col-8 col-sm-2 col-md-4 col-xs-4 text-center animate-box">
 						<div class="product">
 							<a id="kidsShow" style="cursor: pointer;">
 								<div class="product-grid"
@@ -448,11 +455,57 @@
 		<div id="yokoDiv">
 			<ul id="sliderYoko">
 				<li>
-					<a style="cursor: pointer;" onclick="cambioModulo(0)">
+					<a style="cursor: pointer;" onclick="cambioModulo(0,true)">
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/puffino_ANDREW_SMART_1.jpg); max-width: 20em;margin: 0 auto;">
+									style="background-image:url(assets/imagenes/tabureteContempo.PNG); max-width: 5em;margin: 0 auto;">
+								</div>
+								<div class="desc" style="margin-top: 1em;">
+									<h3><a href="single.html">Yoko Modular</a></h3>
+									<span class="price">$350</span>
+								</div>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a style="cursor: pointer;" onclick="cambioModulo(1,true)">
+						<div class="text-center animate-box">
+							<div class="product" style="margin-top: 1em;">
+								<div class="product-grid"
+									style="background-image:url(assets/imagenes/brazoContempo.png); max-width: 5em;margin: 0 auto;">
+								</div>
+								<div class="desc" style="margin-top: 1em;">
+									<h3><a href="single.html">Yoko Modular</a></h3>
+									<span class="price">$350</span>
+								</div>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a style="cursor: pointer;" onclick="cambioModulo(2,true)">
+						<div class="text-center animate-box">
+							<div class="product" style="margin-top: 1em;">
+								<div class="product-grid"
+									style="background-image:url(assets/imagenes/esquinaContempo.PNG); max-width: 5em;margin: 0 auto;">
+								</div>
+								<div class="desc" style="margin-top: 1em;">
+									<h3><a href="single.html">Yoko Modular</a></h3>
+									<span class="price">$350</span>
+								</div>
+							</div>
+						</div>
+					</a>
+				</li>
+				<!--
+				<li>
+					<a style="cursor: pointer;" onclick="cambioModulo(3)">
+						<div class="text-center animate-box">
+							<div class="product" style="margin-top: 1em;">
+								<div class="product-grid"
+									style="background-image:url(assets/imagenes/tabureteContempo.PNG); max-width: 5em;margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em;">
 									<h3><a href="single.html">Yoko Modular</a></h3>
@@ -467,7 +520,7 @@
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/puffino_ANDREW_SMART_1.jpg); max-width: 20em;margin: 0 auto;">
+									style="background-image:url(images/productos/puffino_ANDREW_SMART_1.jpg); max-width: 5em;margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em;">
 									<h3><a href="single.html">Yoko Modular</a></h3>
@@ -477,51 +530,7 @@
 						</div>
 					</a>
 				</li>
-				<li>
-					<a style="cursor: pointer;" onclick="cambioModulo(0)">
-						<div class="text-center animate-box">
-							<div class="product" style="margin-top: 1em;">
-								<div class="product-grid"
-									style="background-image:url(images/productos/puffino_ANDREW_SMART_1.jpg); max-width: 20em;margin: 0 auto;">
-								</div>
-								<div class="desc" style="margin-top: 1em;">
-									<h3><a href="single.html">Yoko Modular</a></h3>
-									<span class="price">$350</span>
-								</div>
-							</div>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a style="cursor: pointer;" onclick="cambioModulo(0)">
-						<div class="text-center animate-box">
-							<div class="product" style="margin-top: 1em;">
-								<div class="product-grid"
-									style="background-image:url(images/productos/puffino_ANDREW_SMART_1.jpg); max-width: 20em;margin: 0 auto;">
-								</div>
-								<div class="desc" style="margin-top: 1em;">
-									<h3><a href="single.html">Yoko Modular</a></h3>
-									<span class="price">$350</span>
-								</div>
-							</div>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a style="cursor: pointer;" onclick="cambioModulo(0)">
-						<div class="text-center animate-box">
-							<div class="product" style="margin-top: 1em;">
-								<div class="product-grid"
-									style="background-image:url(images/productos/puffino_ANDREW_SMART_1.jpg); max-width: 20em;margin: 0 auto;">
-								</div>
-								<div class="desc" style="margin-top: 1em;">
-									<h3><a href="single.html">Yoko Modular</a></h3>
-									<span class="price">$350</span>
-								</div>
-							</div>
-						</div>
-					</a>
-				</li>
+				-->
 			</ul>
 		</div>
 		<!-- FIN SLIDER DE MODELOS YOKO MODULAR -->
@@ -534,7 +543,7 @@
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/atlixco.jpg); max-width: 20em;margin: 0 auto;">
+									style="background-image:url(images/productos/puffino/atlixco.jpg); max-width: 5em;margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">ATLIXCO</a></h3>
@@ -553,7 +562,7 @@
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/atlixco_chico.jpg); max-width: 20em;margin: 0 auto;">
+									style="background-image:url(images/productos/puffino/atlixco_chico.jpg); max-width: 5em;margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">ATLIXCO CHICO</a></h3>
@@ -572,7 +581,7 @@
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/bernal.jpg); max-width: 20em;margin: 0 auto;">
+									style="background-image:url(images/productos/puffino/bernal.jpg); max-width: 5em;margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">BERNAL</a></h3>
@@ -591,7 +600,7 @@
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/cozumel.jpg); max-width: 20em;margin: 0 auto;">
+									style="background-image:url(images/productos/puffino/cozumel.jpg); max-width: 5em;margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">COZUMEL</a></h3>
@@ -610,7 +619,7 @@
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/cozumel_sillon.jpg); max-width: 20em;margin: 0 auto;">
+									style="background-image:url(images/productos/puffino/cozumel_sillon.jpg); max-width: 5em;margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">COZUMEL SILLÓN</a></h3>
@@ -629,7 +638,7 @@
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/cozumel_taburete.jpg); max-width: 20em;margin: 0 auto;">
+									style="background-image:url(images/productos/puffino/cozumel_taburete.jpg); max-width: 5em;margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">COZUMEL TABURETE</a></h3>
@@ -648,7 +657,7 @@
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/guadalajara.jpg); max-width: 20em;margin: 0 auto;">
+									style="background-image:url(images/productos/puffino/guadalajara.jpg); max-width: 5em;margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">GUADALAJARA</a></h3>
@@ -667,7 +676,7 @@
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/guanajuato.jpg); max-width: 20em;margin: 0 auto;">
+									style="background-image:url(images/productos/puffino/guanajuato.jpg); max-width: 5em;margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">GUANAJUATO</a></h3>
@@ -686,7 +695,7 @@
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/lapaz.jpg); max-width: 20em;margin: 0 auto;">
+									style="background-image:url(images/productos/puffino/lapaz.jpg); max-width: 5em;margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">LA PAZ</a></h3>
@@ -705,7 +714,7 @@
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/lapaz_chico.jpg); max-width: 20em;margin: 0 auto;">
+									style="background-image:url(images/productos/puffino/lapaz_chico.jpg); max-width: 5em;margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">LA PAZ CHICO</a></h3>
@@ -720,11 +729,11 @@
 					</a>
 				</li>
 				<li>
-					<a style="cursor: pointer;" onclick=cargarModeloCustom(modelos.puffino[9].nombre)">
+					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[9].nombre)">
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/merida.jpg); max-width: 20em;margin: 0 auto;">
+									style="background-image:url(images/productos/puffino/merida.jpg); max-width: 5em;margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">MÉRIDA</a></h3>
@@ -743,7 +752,7 @@
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/oaxaca.jpg); max-width: 20em;margin: 0 auto;">
+									style="background-image:url(images/productos/puffino/oaxaca.jpg); max-width: 5em;margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">OAXACA</a></h3>
@@ -762,7 +771,7 @@
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/oaxaca_matrimonial.jpg); max-width: 20em;margin: 0 auto;">
+									style="background-image:url(images/productos/puffino/oaxaca_matrimonial.jpg); max-width: 5em;margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">OAXACA MATRIMONIAL</a></h3>
@@ -781,7 +790,7 @@
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/oaxaca_queen.jpg); max-width: 20em;margin: 0 auto;">
+									style="background-image:url(images/productos/puffino/oaxaca_queen.jpg); max-width: 5em;margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">OAXACA QUEEN</a></h3>
@@ -800,7 +809,7 @@
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/patzcuaro.jpg); max-width: 20em;margin: 0 auto;">
+									style="background-image:url(images/productos/puffino/patzcuaro.jpg); max-width: 5em;margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">PÁTZCUARO</a></h3>
@@ -819,7 +828,7 @@
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/patzcuaro_kids.jpg); max-width: 20em;margin: 0 auto;">
+									style="background-image:url(images/productos/puffino/patzcuaro_kids.jpg); max-width: 5em;margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">PÁTZCUARO NIÑOS</a></h3>
@@ -838,7 +847,7 @@
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/puebla.jpg); max-width: 20em;margin: 0 auto;">
+									style="background-image:url(images/productos/puffino/puebla.jpg); max-width: 5em;margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">PUEBLA</a></h3>
@@ -857,7 +866,7 @@
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/pruebla_chico.jpg); max-width: 20em;margin: 0 auto;">
+									style="background-image:url(images/productos/puffino/pruebla_chico.jpg); max-width: 5em;margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">PUEBLA CHICO</a></h3>
@@ -876,7 +885,7 @@
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/puertovallarta.jpg); max-width: 20em;margin: 0 auto;">
+									style="background-image:url(images/productos/puffino/puertovallarta.jpg); max-width: 5em;margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">PUERTO VALLARTA</a></h3>
@@ -895,7 +904,7 @@
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/veracruz.jpg); max-width: 20em;margin: 0 auto;">
+									style="background-image:url(images/productos/puffino/veracruz.jpg); max-width: 5em;margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">VERACRUZ</a></h3>
@@ -914,7 +923,7 @@
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/veracruz_ninos.jpg); max-width: 20em;margin: 0 auto;">
+									style="background-image:url(images/productos/puffino/veracruz_ninos.jpg); max-width: 5em;margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">VERACRUZ NIÑOS</a></h3>
@@ -933,7 +942,7 @@
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/zacatecas_chico.jpg); max-width: 20em;margin: 0 auto;">
+									style="background-image:url(images/productos/puffino/zacatecas_chico.jpg); max-width: 5em;margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">ZACATECAS CHICO</a></h3>
@@ -952,7 +961,7 @@
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/zacatecas_mediano.jpg); max-width: 20em;margin: 0 auto;">
+									style="background-image:url(images/productos/puffino/zacatecas_mediano.jpg); max-width: 5em;margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">ZACATECAS MEDIANO</a></h3>
@@ -971,7 +980,7 @@
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/zacatecas_grande.jpg); max-width: 20em;margin: 0 auto;">
+									style="background-image:url(images/productos/puffino/zacatecas_grande.jpg); max-width: 5em;margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">ZACATECAS GRANDE</a></h3>
@@ -990,7 +999,7 @@
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/zacatlan.jpg); max-width: 20em;margin: 0 auto;">
+									style="background-image:url(images/productos/puffino/zacatlan.jpg); max-width: 5em;margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">ZACATLÁN</a></h3>
@@ -1009,7 +1018,7 @@
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/zacatlan_mediano.jpg); max-width: 20em;margin: 0 auto;">
+									style="background-image:url(images/productos/puffino/zacatlan_mediano.jpg); max-width: 5em;margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">ZACATLÁN MEDIANO</a></h3>
@@ -1036,7 +1045,7 @@
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/kids/kids_conejo.jpg); max-width: 20em;margin: 0 auto;">
+									style="background-image:url(images/productos/kids/kids_conejo.jpg); max-width: 5em;margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">CONEJO</a></h3>
@@ -1055,7 +1064,7 @@
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/kids/kids_dinosaurio.jpg); max-width: 20em;margin: 0 auto;">
+									style="background-image:url(images/productos/kids/kids_dinosaurio.jpg); max-width: 5em;margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">DINOSAURIO</a></h3>
@@ -1074,7 +1083,7 @@
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/kids/kids_dona.jpg); max-width: 20em;margin: 0 auto;">
+									style="background-image:url(images/productos/kids/kids_dona.jpg); max-width: 5em;margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">DONA</a></h3>
@@ -1093,7 +1102,7 @@
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/kids/kids_jirafa.jpg); max-width: 20em;margin: 0 auto;">
+									style="background-image:url(images/productos/kids/kids_jirafa.jpg); max-width: 5em;margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">JIRAFA</a></h3>
@@ -1112,7 +1121,7 @@
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/kids/kids_perrito.jpg); max-width: 20em;margin: 0 auto;">
+									style="background-image:url(images/productos/kids/kids_perrito.jpg); max-width: 5em;margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">PERRITO</a></h3>
@@ -1131,7 +1140,7 @@
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/kids/kids_unicornio.jpg); max-width: 20em;margin: 0 auto;">
+									style="background-image:url(images/productos/kids/kids_unicornio.jpg); max-width: 5em;margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">UNICORNIO</a></h3>
@@ -1745,28 +1754,59 @@
 		//Funciones para cargar la vista del slider de las categorías de productos
 		function loadYokoSlider() {
 			$("#sliderYoko").flexisel({
-				visibleItems: 4,
+				visibleItems: 3,
 				itemsToScroll: 1,
 				autoPlay: {
 					enable: true,
 					interval: 7000,
 					pauseOnHover: true
+				}, responsiveBreakpoints: {
+					portrait: {
+						changePoint: 480,
+						visibleItems: 1,
+						itemsToScroll: 1
+					},
+					landscape: {
+						changePoint: 640,
+						visibleItems: 2,
+						itemsToScroll: 2
+					},
+					tablet: {
+						changePoint: 768,
+						visibleItems: 3,
+						itemsToScroll: 3
+					}
 				}
 			});
 		}
 
 		function loadPuffinoSlider() {
 			$("#sliderPuffino").flexisel({
-				visibleItems: 4,
+				visibleItems: 3,
 				itemsToScroll: 1,
 				autoPlay: {
 					enable: true,
 					interval: 7000,
 					pauseOnHover: true
+				}, responsiveBreakpoints: {
+					portrait: {
+						changePoint: 480,
+						visibleItems: 1,
+						itemsToScroll: 1
+					},
+					landscape: {
+						changePoint: 640,
+						visibleItems: 2,
+						itemsToScroll: 2
+					},
+					tablet: {
+						changePoint: 768,
+						visibleItems: 3,
+						itemsToScroll: 3
+					}
 				}
 			});
 		}
-
 		function loadKidsSlider() {
 			$("#sliderKids").flexisel({
 				visibleItems: 4,
@@ -1775,8 +1815,27 @@
 					enable: false,
 					interval: 7000,
 					pauseOnHover: true
+				}, responsiveBreakpoints: {
+					portrait: {
+						changePoint: 480,
+						visibleItems: 1,
+						itemsToScroll: 1
+					},
+					landscape: {
+						changePoint: 640,
+						visibleItems: 2,
+						itemsToScroll: 2
+					},
+					tablet: {
+						changePoint: 768,
+						visibleItems: 3,
+						itemsToScroll: 3
+					}
 				}
 			});
+		}
+		function loadSlider(){
+			
 		}
 	</script>
 	<script src="js/pantallaCarga.js"></script>

@@ -301,7 +301,11 @@ window.addEventListener('DOMContentLoaded', function () {
         scene.clearColor = new BABYLON.Color3.White();
         //esfera = BABYLON.Mesh.CreateSphere("sphere1", 16, 2, scene);
         hl = new BABYLON.HighlightLayer("hl1", scene);
-
+        var gizmoLayer = new BABYLON.GizmoManager(scene, {
+            singleGizmo: true
+        });
+        gizmoLayer.positionGizmoEnabled = true;
+        gizmoLayer.gizmos.positionGizmo.scaleRatio=2;
         // Parameters: alpha, beta, radius, target position, scene
         camera = new BABYLON.ArcRotateCamera("Camera", 0, 0, 10, new BABYLON.Vector3(0, 0, 0), scene);
 
@@ -804,7 +808,11 @@ function cambioTextura(opc) {
     //alert(modeloActual(texturaActual,moduloActual));
     //alert(opc);
 }
-function cambioModulo(opc) {
+function cambioModulo(opc,limpiar) {
+    if ((typeof limpiar === 'undefined') != true) {
+        escena.meshes.forEach((x) => { x.dispose() });
+        container.meshes.forEach((x) => { x.dispose() });
+    }
     moduloActual = modulos[opc];
     console.log()
     actualizarMueble();
