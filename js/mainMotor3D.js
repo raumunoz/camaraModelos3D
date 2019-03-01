@@ -1,9 +1,9 @@
 let gizmo;
 let debugg;
 const inputElement = document.getElementById("file-input");
+let bandera=false;
 inputElement.addEventListener("change", function (e) {
     var imagen;
-    console.log("CAMBIO");
     //console.log("archivos",inputElement.files);
     const reader = new FileReader();
     reader.onload = function () {
@@ -221,7 +221,9 @@ let botonesMueble;
 let padres = [];
 let numPadre = 0;
 window.addEventListener('DOMContentLoaded', function () {
-
+   // var currentPosition = { x: 0, y: 0 };
+    //var currentRotation = { x: 0, y: 0 };
+    //var clicked = false;
     //se cargar e botton depaypal
     paypal.Buttons({
         createOrder: function (data, actions) {
@@ -328,16 +330,39 @@ window.addEventListener('DOMContentLoaded', function () {
             }
 
         });
+/*
+        canvas.addEventListener("pointerdown", function (evt) {
+            currentPosition.x = evt.clientX;
+            currentPosition.y = evt.clientY;
+            currentRotation.x = padreCentro.rotation.x;
+            currentRotation.y = padreCentro.rotation.y;
+            clicked = true;
+        });
+
+        canvas.addEventListener("pointermove", function (evt) {
+            if (!clicked) {
+                return;
+            }
+            //padreCentro.rotation.x
+            padreCentro.rotation.y = currentRotation.y - (evt.clientX - currentPosition.x) / 350;
+            padreCentro.rotation.x = currentRotation.x + (evt.clientY - currentPosition.y) / 350;
+            console.log("ROTATION X ",padreCentro.rotation.x,"ROTATION Y ",padreCentro.rotation.y);
+        });*/
+
+        canvas.addEventListener("pointerup", function (evt) {
+            clicked = false;
+        });
+
         var scene = new BABYLON.Scene(engine);
         scene.preventDefaultOnPointerDown = false;
         utilLayer = new BABYLON.UtilityLayerRenderer(scene);
         utilLayer.utilityLayerScene.autoClearDepthAndStencil = false;
-        utilLayer.DefaultKeepDepthUtilityLayer; 
-        
-       utilLayer.DefaultKeepDepthUtilityLayer; 
+        utilLayer.DefaultKeepDepthUtilityLayer;
+
+        utilLayer.DefaultKeepDepthUtilityLayer;
         scene.clearColor = new BABYLON.Color3.White();
         //esfera = BABYLON.Mesh.CreateSphere("sphere1", 16, 2, scene);
-        
+
         /*
         gizmoLayer = new BABYLON.GizmoManager(scene, {
             singleGizmo: true
@@ -347,7 +372,7 @@ window.addEventListener('DOMContentLoaded', function () {
         gizmoLayer.gizmos.positionGizmo=new BABYLON.PositionGizmo(utilLayer);
         gizmoLayer.gizmos.positionGizmo.scaleRatio = 2;
        */
-       // gizmoLayer.positionGizmo
+        // gizmoLayer.positionGizmo
         // Parameters: alpha, beta, radius, target position, scene
         gizmo = new BABYLON.PositionGizmo();
         gizmo.attachedMesh = padreCentro;
@@ -370,8 +395,41 @@ window.addEventListener('DOMContentLoaded', function () {
         camera.inputs.attached.mousewheel.wheelPrecision = 80;
         */
         camera = new BABYLON.FreeCamera("camera1", new BABYLON.Vector3(0, 0, -30), scene);
-        pointerDragBehavior = new BABYLON.PointerDragBehavior({dragPlaneNormal: new BABYLON.Vector3(0,0,1)});
+        pointerDragBehavior = new BABYLON.PointerDragBehavior({ dragPlaneNormal: new BABYLON.Vector3(0, 0, 1) });
         pointerDragBehavior.useObjectOrienationForDragging = false;
+
+        pointerDragBehavior.onDragStartObservable.add((event)=>{
+            console.log("dragStart");
+            //console.log(event);
+            //currentPosition  event.dragPlanePoint.y;
+            //currentRotation event.dragPlanePoint.y;
+            if (bandera) {      
+                padreCentro.rotation.x=padreCentro.rotation.x-(event.dragPlanePoint.y/150);
+                padreCentro.rotation.y=padreCentro.rotation.y+(event.dragPlanePoint.x/150);
+            }
+        });
+        pointerDragBehavior.onDragObservable.add((event)=>{
+            //console.log("drag");
+            //console.log(event);
+            //dragPlaneNormal
+            //dragPlanePoint
+            //console.log("d x",event.dragPlanePoint.x,"y",event.dragPlanePoint.y);
+            //console.log("deltaX",event.delta.x);
+            //console.log("deltaY",event.delta.z);
+            if (bandera) {      
+                padreCentro.rotation.x=padreCentro.rotation.x-(event.dragPlanePoint.y/150);
+                padreCentro.rotation.y=padreCentro.rotation.y+(event.dragPlanePoint.x/150);
+            }
+        });
+        pointerDragBehavior.onDragEndObservable.add((event)=>{
+            //console.log("dragEnd");
+            //console.log(event);
+            if (bandera) {      
+                padreCentro.rotation.x=padreCentro.rotation.x-(event.dragPlanePoint.y/150);
+                padreCentro.rotation.y=padreCentro.rotation.y+(event.dragPlanePoint.x/150);
+            }
+
+        });
         
         //camera.setTarget(BABYLON.Vector3.Zero());
         /*camara = new BABYLON.ArcRotateCamera("Camera", 3 * Math.PI / 2, -Math.PI / 2, 200, BABYLON.Vector3.Zero(), scene);
@@ -432,7 +490,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
 
     escena = createScene();
-    
+
     hl = new BABYLON.HighlightLayer("hl1", escena);
     hl.innerGlow = false;
     background = new BABYLON.Layer("back", "assets/imagenes/fondos/fondo.jpg", escena);
@@ -1734,11 +1792,11 @@ function prearmado(v, matriz) {
             [{ x: 0, y: 0, z: -4.75 }, { x: 0, y: 0, z: 0 }, { x: 0, y: 0, z: 4.75 }],
             [{ x: 4.75, y: 0, z: -4.75 }, { x: 4.75, y: 0, z: 0 }, { x: 4.75, y: 0, z: 4.75 }]
         ];
-    
+
     //escena.meshes.forEach((x) => { x.dispose() });
     //container.meshes.forEach((x) => { x.dispose() });
-    escena.meshes=[];
-    container.meshes=[];
+    escena.meshes = [];
+    container.meshes = [];
     for (var i = 0; i < matriz.length; i++) {
         //console.log(matriz[i]);
         for (var j = 0; j < matriz.length; j++) {
@@ -1989,6 +2047,15 @@ function opcPrearmado(i) {
 
             break;
 
+    }
+}
+function activarRotacion(){
+    
+    bandera=!bandera;
+    if (bandera) {
+        pointerDragBehavior.moveAttached = false;
+    } else {
+        pointerDragBehavior.moveAttached = true;
     }
 }
 /*
