@@ -22,7 +22,8 @@
 	<script src="js/slick.js"></script>
 
 	<script src="js/camara.js"></script>
-
+	<script src="https://www.paypal.com/sdk/js?client-id=Ab3CfXg7wt8RiCw6JkaSJ6TNF0SNKfMj9hJ5LiW2LjRGcGtoLKpFn3lGxDRizT5FHXsONUzWVgetL1jN&currency=MXN">
+	</script>
 	<script src="js/tienda2.js"></script>
 	<script type="text/javascript" src="js/jquery.flexisel.js"></script>
 	<!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"> -->
@@ -202,11 +203,21 @@
 		}
 
 		@media only screen and (max-width: 600px) {
-			body {
-				background-color: lightblue;
-				color: red;
-			}
 
+			.product .product-grid {
+
+				background-size: cover;
+				background-position: top center;
+				background-repeat: no-repeat;
+				position: relative;
+				height: 350px;
+				margin-bottom: 20px;
+				-webkit-transition: 0.3s;
+				-o-transition: 0.3s;
+				transition: 0.3s;
+				height: 5em;
+
+			}
 		}
 	</style>
 
@@ -459,7 +470,7 @@
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(assets/imagenes/tabureteContempo.PNG); max-width: 5em;margin: 0 auto;">
+									style="background-image:url(assets/imagenes/tabureteContempo.PNG); margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em;">
 									<h3><a href="single.html">Yoko Modular</a></h3>
@@ -474,7 +485,7 @@
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(assets/imagenes/brazoContempo.png); max-width: 5em;margin: 0 auto;">
+									style="background-image:url(assets/imagenes/brazoContempo.png); margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em;">
 									<h3><a href="single.html">Yoko Modular</a></h3>
@@ -489,7 +500,7 @@
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(assets/imagenes/esquinaContempo.PNG); max-width: 5em;margin: 0 auto;">
+									style="background-image:url(assets/imagenes/esquinaContempo.PNG); margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em;">
 									<h3><a href="single.html">Yoko Modular</a></h3>
@@ -505,7 +516,7 @@
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(assets/imagenes/tabureteContempo.PNG); max-width: 5em;margin: 0 auto;">
+									style="background-image:url(assets/imagenes/tabureteContempo.PNG); margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em;">
 									<h3><a href="single.html">Yoko Modular</a></h3>
@@ -520,7 +531,7 @@
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/puffino_ANDREW_SMART_1.jpg); max-width: 5em;margin: 0 auto;">
+									style="background-image:url(images/productos/puffino_ANDREW_SMART_1.jpg); margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em;">
 									<h3><a href="single.html">Yoko Modular</a></h3>
@@ -539,11 +550,11 @@
 		<div id="puffinoDiv">
 			<ul id="sliderPuffino">
 				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[0].nombre)">
+					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[0])">
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/atlixco.jpg); max-width: 5em;margin: 0 auto;">
+									style="background-image:url(images/productos/puffino/atlixco.jpg); margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">ATLIXCO</a></h3>
@@ -558,11 +569,11 @@
 					</a>
 				</li>
 				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[1].nombre)">
+					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[1])">
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/atlixco_chico.jpg); max-width: 5em;margin: 0 auto;">
+									style="background-image:url(images/productos/puffino/atlixco_chico.jpg); margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">ATLIXCO CHICO</a></h3>
@@ -577,11 +588,11 @@
 					</a>
 				</li>
 				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[2].nombre)">
+					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[2])">
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/bernal.jpg); max-width: 5em;margin: 0 auto;">
+									style="background-image:url(images/productos/puffino/bernal.jpg); margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">BERNAL</a></h3>
@@ -596,11 +607,11 @@
 					</a>
 				</li>
 				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[3].nombre)">
+					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[3])">
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/cozumel.jpg); max-width: 5em;margin: 0 auto;">
+									style="background-image:url(images/productos/puffino/cozumel.jpg); margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">COZUMEL</a></h3>
@@ -615,11 +626,11 @@
 					</a>
 				</li>
 				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[18].nombre)">
+					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[18])">
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/cozumel_sillon.jpg); max-width: 5em;margin: 0 auto;">
+									style="background-image:url(images/productos/puffino/cozumel_sillon.jpg); margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">COZUMEL SILLÓN</a></h3>
@@ -634,11 +645,11 @@
 					</a>
 				</li>
 				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[4].nombre)">
+					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[4])">
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/cozumel_taburete.jpg); max-width: 5em;margin: 0 auto;">
+									style="background-image:url(images/productos/puffino/cozumel_taburete.jpg); margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">COZUMEL TABURETE</a></h3>
@@ -653,11 +664,11 @@
 					</a>
 				</li>
 				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[5].nombre)">
+					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[5])">
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/guadalajara.jpg); max-width: 5em;margin: 0 auto;">
+									style="background-image:url(images/productos/puffino/guadalajara.jpg); margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">GUADALAJARA</a></h3>
@@ -672,11 +683,11 @@
 					</a>
 				</li>
 				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[6].nombre)">
+					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[6])">
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/guanajuato.jpg); max-width: 5em;margin: 0 auto;">
+									style="background-image:url(images/productos/puffino/guanajuato.jpg); margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">GUANAJUATO</a></h3>
@@ -691,11 +702,11 @@
 					</a>
 				</li>
 				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[7].nombre)">
+					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[7])">
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/lapaz.jpg); max-width: 5em;margin: 0 auto;">
+									style="background-image:url(images/productos/puffino/lapaz.jpg); margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">LA PAZ</a></h3>
@@ -710,11 +721,11 @@
 					</a>
 				</li>
 				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[8].nombre)">
+					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[8])">
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/lapaz_chico.jpg); max-width: 5em;margin: 0 auto;">
+									style="background-image:url(images/productos/puffino/lapaz_chico.jpg); margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">LA PAZ CHICO</a></h3>
@@ -729,11 +740,11 @@
 					</a>
 				</li>
 				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[9].nombre)">
+					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[9])">
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/merida.jpg); max-width: 5em;margin: 0 auto;">
+									style="background-image:url(images/productos/puffino/merida.jpg); margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">MÉRIDA</a></h3>
@@ -748,11 +759,11 @@
 					</a>
 				</li>
 				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[10].nombre)">
+					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[10])">
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/oaxaca.jpg); max-width: 5em;margin: 0 auto;">
+									style="background-image:url(images/productos/puffino/oaxaca.jpg); margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">OAXACA</a></h3>
@@ -767,11 +778,11 @@
 					</a>
 				</li>
 				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[11].nombre)">
+					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[11])">
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/oaxaca_matrimonial.jpg); max-width: 5em;margin: 0 auto;">
+									style="background-image:url(images/productos/puffino/oaxaca_matrimonial.jpg); margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">OAXACA MATRIMONIAL</a></h3>
@@ -786,11 +797,11 @@
 					</a>
 				</li>
 				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[11].nombre)">
+					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[11])">
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/oaxaca_queen.jpg); max-width: 5em;margin: 0 auto;">
+									style="background-image:url(images/productos/puffino/oaxaca_queen.jpg); margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">OAXACA QUEEN</a></h3>
@@ -805,11 +816,11 @@
 					</a>
 				</li>
 				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[13].nombre)">
+					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[13])">
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/patzcuaro.jpg); max-width: 5em;margin: 0 auto;">
+									style="background-image:url(images/productos/puffino/patzcuaro.jpg); margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">PÁTZCUARO</a></h3>
@@ -824,11 +835,11 @@
 					</a>
 				</li>
 				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[14].nombre)">
+					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[14])">
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/patzcuaro_kids.jpg); max-width: 5em;margin: 0 auto;">
+									style="background-image:url(images/productos/puffino/patzcuaro_kids.jpg); margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">PÁTZCUARO NIÑOS</a></h3>
@@ -843,11 +854,11 @@
 					</a>
 				</li>
 				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[15].nombre)">
+					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[15])">
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/puebla.jpg); max-width: 5em;margin: 0 auto;">
+									style="background-image:url(images/productos/puffino/puebla.jpg); margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">PUEBLA</a></h3>
@@ -862,11 +873,11 @@
 					</a>
 				</li>
 				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[16].nombre)">
+					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[16])">
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/pruebla_chico.jpg); max-width: 5em;margin: 0 auto;">
+									style="background-image:url(images/productos/puffino/pruebla_chico.jpg); margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">PUEBLA CHICO</a></h3>
@@ -881,11 +892,11 @@
 					</a>
 				</li>
 				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[17].nombre)">
+					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[17])">
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/puertovallarta.jpg); max-width: 5em;margin: 0 auto;">
+									style="background-image:url(images/productos/puffino/puertovallarta.jpg); margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">PUERTO VALLARTA</a></h3>
@@ -900,11 +911,11 @@
 					</a>
 				</li>
 				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[19].nombre)">
+					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[19])">
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/veracruz.jpg); max-width: 5em;margin: 0 auto;">
+									style="background-image:url(images/productos/puffino/veracruz.jpg); margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">VERACRUZ</a></h3>
@@ -919,11 +930,11 @@
 					</a>
 				</li>
 				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[20].nombre)">
+					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[20])">
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/veracruz_ninos.jpg); max-width: 5em;margin: 0 auto;">
+									style="background-image:url(images/productos/puffino/veracruz_ninos.jpg); margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">VERACRUZ NIÑOS</a></h3>
@@ -938,11 +949,11 @@
 					</a>
 				</li>
 				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[21].nombre)">
+					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[21])">
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/zacatecas_chico.jpg); max-width: 5em;margin: 0 auto;">
+									style="background-image:url(images/productos/puffino/zacatecas_chico.jpg); margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">ZACATECAS CHICO</a></h3>
@@ -957,11 +968,11 @@
 					</a>
 				</li>
 				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[23].nombre)">
+					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[23])">
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/zacatecas_mediano.jpg); max-width: 5em;margin: 0 auto;">
+									style="background-image:url(images/productos/puffino/zacatecas_mediano.jpg); margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">ZACATECAS MEDIANO</a></h3>
@@ -976,11 +987,11 @@
 					</a>
 				</li>
 				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[22].nombre)">
+					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[22])">
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/zacatecas_grande.jpg); max-width: 5em;margin: 0 auto;">
+									style="background-image:url(images/productos/puffino/zacatecas_grande.jpg); margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">ZACATECAS GRANDE</a></h3>
@@ -995,11 +1006,11 @@
 					</a>
 				</li>
 				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[24].nombre)">
+					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[24])">
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/zacatlan.jpg); max-width: 5em;margin: 0 auto;">
+									style="background-image:url(images/productos/puffino/zacatlan.jpg); margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">ZACATLÁN</a></h3>
@@ -1014,11 +1025,11 @@
 					</a>
 				</li>
 				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[23].nombre)">
+					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[23])">
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/zacatlan_mediano.jpg); max-width: 5em;margin: 0 auto;">
+									style="background-image:url(images/productos/puffino/zacatlan_mediano.jpg); margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">ZACATLÁN MEDIANO</a></h3>
@@ -1041,11 +1052,11 @@
 		<div id="kidsDiv">
 			<ul id="sliderKids">
 				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.kids[0].nombre)">
+					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.kids[0])">
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/kids/kids_conejo.jpg); max-width: 5em;margin: 0 auto;">
+									style="background-image:url(images/productos/kids/kids_conejo.jpg); margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">CONEJO</a></h3>
@@ -1060,11 +1071,11 @@
 					</a>
 				</li>
 				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.kids[1].nombre)">
+					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.kids[1])">
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/kids/kids_dinosaurio.jpg); max-width: 5em;margin: 0 auto;">
+									style="background-image:url(images/productos/kids/kids_dinosaurio.jpg); margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">DINOSAURIO</a></h3>
@@ -1079,11 +1090,11 @@
 					</a>
 				</li>
 				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.kids[2].nombre)">
+					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.kids[2])">
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/kids/kids_dona.jpg); max-width: 5em;margin: 0 auto;">
+									style="background-image:url(images/productos/kids/kids_dona.jpg); margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">DONA</a></h3>
@@ -1098,11 +1109,11 @@
 					</a>
 				</li>
 				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.kids[3].nombre)">
+					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.kids[3])">
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/kids/kids_jirafa.jpg); max-width: 5em;margin: 0 auto;">
+									style="background-image:url(images/productos/kids/kids_jirafa.jpg); margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">JIRAFA</a></h3>
@@ -1117,11 +1128,11 @@
 					</a>
 				</li>
 				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.kids[4].nombre)">
+					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.kids[4])">
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/kids/kids_perrito.jpg); max-width: 5em;margin: 0 auto;">
+									style="background-image:url(images/productos/kids/kids_perrito.jpg); margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">PERRITO</a></h3>
@@ -1136,11 +1147,11 @@
 					</a>
 				</li>
 				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.kids[5].nombre)">
+					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.kids[5])">
 						<div class="text-center animate-box">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/kids/kids_unicornio.jpg); max-width: 5em;margin: 0 auto;">
+									style="background-image:url(images/productos/kids/kids_unicornio.jpg); margin: 0 auto;">
 								</div>
 								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
 									<h3 style="line-height: 30px;"><a href="single.html">UNICORNIO</a></h3>
@@ -1157,7 +1168,9 @@
 			</ul>
 		</div>
 		<!-- FIN SLIDER DE MODELOS KIDS-->
-
+		<div style="color:#FFF;">
+			<hr>
+		</div> 
 		<div class="motor3D">
 			<div class="grid-container">
 				<!--	
@@ -1319,8 +1332,11 @@
 						<span id="Precio">$1500</span>
 					</div>
 					<div>
+						<!--
 						<a class="btn green" onclick="captura()">Comprar</a>
+						-->
 					</div>
+					<div id="paypal-button-container"></div>
 				</div>
 				<div class="item3" id="main">
 					<div id="datGUI">
@@ -1818,7 +1834,7 @@
 				}, responsiveBreakpoints: {
 					portrait: {
 						changePoint: 480,
-						visibleItems: 1,
+						visibleItems: 2,
 						itemsToScroll: 1
 					},
 					landscape: {
@@ -1834,8 +1850,8 @@
 				}
 			});
 		}
-		function loadSlider(){
-			
+		function loadSlider() {
+
 		}
 	</script>
 	<script src="js/pantallaCarga.js"></script>

@@ -1,3 +1,4 @@
+let gizmo;
 let debugg;
 const inputElement = document.getElementById("file-input");
 inputElement.addEventListener("change", function (e) {
@@ -20,6 +21,7 @@ inputElement.addEventListener("change", function (e) {
     reader.readAsDataURL(inputElement.files[0]);
     console.log("nombre,", imagen);
 }, false);
+let pointerDragBehavior;
 let ModeloCustom;
 let grid;
 let meshClicleado = false;
@@ -44,12 +46,16 @@ let largoTotal;
 let altoTotal;
 let archivosTexturas;
 let sliders = [];
-/*let modelos = {
+let gizmoLayer;
+//let utilLayer;
+/*
+let modelos = {
     taburetes: ['tabureteContempo.gltf', 'tabureteCasual.gltf', 'tabureteTrendy.gltf'],
     brazos: ['BrazoContempo.gltf', 'brazoCasual.gltf', 'brazoTrendy.gltf'],
     esquinas: ['esquinaContempo.gltf', 'esquinaCasual.gltf', 'esquinaTrendy.gltf'],
     completos: ['completoContempo.gltf', 'completoCasual.gltf', 'completoTrendy.gltf']
-}*/
+}
+*/
 let modelos = {
     taburetes: [
         { nombre: "tabureteContempo.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 1800 },
@@ -72,39 +78,39 @@ let modelos = {
         { nombre: "completoTrendy.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 }
     ],
     puffino: [
-        { nombre: "Atlixco.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
-        { nombre: "Atlixco_chico.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
-        { nombre: "Bernal.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
-        { nombre: "conzumel.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
-        { nombre: "Taburete_conzumel.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
-        { nombre: "Guadalajara.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
-        { nombre: "guanajuato.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
-        { nombre: "La paz.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
-        { nombre: "La Paz_chico.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
-        { nombre: "mérida.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
-        { nombre: "Oaxaca.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
-        { nombre: "Oaxaca_matrimonial.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
-        { nombre: "OaxacaMatrimonial.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
-        { nombre: "pátzcuaro.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
-        { nombre: "pátzcuaroNiño.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
-        { nombre: "puebla.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
-        { nombre: "puebla_chico.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
-        { nombre: "puertoVallarta.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
-        { nombre: "sillon_conzumel.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
-        { nombre: "veracruz.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
-        { nombre: "veracruz_niños.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
-        { nombre: "ZacatecasChico.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
-        { nombre: "Zacatecas_grande.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
-        { nombre: "zacatecas_mediano.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
-        { nombre: "zacatlán.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 }
+        { nombre: "Atlixco.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 2599 },
+        { nombre: "Atlixco_chico.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 2459 },
+        { nombre: "Bernal.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 2999 },
+        { nombre: "conzumel.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 4999 },
+        { nombre: "Taburete_conzumel.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 2999 },
+        { nombre: "Guadalajara.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 5199 },
+        { nombre: "guanajuato.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 4699 },
+        { nombre: "La paz.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3499 },
+        { nombre: "La Paz_chico.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3099 },
+        { nombre: "mérida.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3999 },
+        { nombre: "Oaxaca.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3899 },
+        { nombre: "Oaxaca_matrimonial.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 4599 },
+        { nombre: "OaxacaMatrimonial.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 4799 },
+        { nombre: "pátzcuaro.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 4499 },
+        { nombre: "pátzcuaroNiño.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3199 },
+        { nombre: "puebla.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3099 },
+        { nombre: "puebla_chico.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 2699 },
+        { nombre: "puertoVallarta.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3999 },
+        { nombre: "sillon_conzumel.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 4199 },
+        { nombre: "veracruz.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 4199 },
+        { nombre: "veracruz_niños.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3399 },
+        { nombre: "ZacatecasChico.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 2399 },
+        { nombre: "Zacatecas_grande.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3199 },
+        { nombre: "zacatecas_mediano.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 2699 },
+        { nombre: "zacatlán.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3399 }
     ],
     kids: [
-        { nombre: "puff_conejo .gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
-        { nombre: "puff_dinosaurio.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
-        { nombre: "dona.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
-        { nombre: "jirafa.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
-        { nombre: "puffPerro.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
-        { nombre: "unicornio.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
+        { nombre: "puff_conejo .gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3499 },
+        { nombre: "puff_dinosaurio.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3699 },
+        { nombre: "dona.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3399 },
+        { nombre: "jirafa.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3799 },
+        { nombre: "puffPerro.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3699 },
+        { nombre: "unicornio.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3499 },
     ],
     yokoModular: [
         { nombre: "puff_conejo .gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
@@ -215,6 +221,32 @@ let botonesMueble;
 let padres = [];
 let numPadre = 0;
 window.addEventListener('DOMContentLoaded', function () {
+
+    //se cargar e botton depaypal
+    paypal.Buttons({
+        createOrder: function (data, actions) {
+            return actions.order.create({
+                purchase_units: [{
+                    amount: {
+                        value: precioTotal
+                    }
+                }]
+            });
+        },
+        onApprove: function (data, actions) {
+            return actions.order.capture().then(function (details) {
+                alert('Transaction completed by ' + details.payer.name.given_name);
+                // Call your server to save the transaction
+                return fetch('/paypal-transaction-complete', {
+                    method: 'post',
+                    body: JSON.stringify({
+                        orderID: data.orderID
+                    })
+                });
+            });
+        }
+    }).render('#paypal-button-container');
+
     hasTouchscreen = 'ontouchstart' in window;
 
     //alert(hasTouchscreen ? 'has touchscreen' : 'doesn\'t have touchscreen');
@@ -298,18 +330,32 @@ window.addEventListener('DOMContentLoaded', function () {
         });
         var scene = new BABYLON.Scene(engine);
         scene.preventDefaultOnPointerDown = false;
+        utilLayer = new BABYLON.UtilityLayerRenderer(scene);
+        utilLayer.utilityLayerScene.autoClearDepthAndStencil = false;
+        utilLayer.DefaultKeepDepthUtilityLayer; 
+        
+       utilLayer.DefaultKeepDepthUtilityLayer; 
         scene.clearColor = new BABYLON.Color3.White();
         //esfera = BABYLON.Mesh.CreateSphere("sphere1", 16, 2, scene);
-        hl = new BABYLON.HighlightLayer("hl1", scene);
-        var gizmoLayer = new BABYLON.GizmoManager(scene, {
+        
+        /*
+        gizmoLayer = new BABYLON.GizmoManager(scene, {
             singleGizmo: true
-        });
+            //UtilityLayerRenderer:utilLayer
+       });
         gizmoLayer.positionGizmoEnabled = true;
-        gizmoLayer.gizmos.positionGizmo.scaleRatio=2;
+        gizmoLayer.gizmos.positionGizmo=new BABYLON.PositionGizmo(utilLayer);
+        gizmoLayer.gizmos.positionGizmo.scaleRatio = 2;
+       */
+       // gizmoLayer.positionGizmo
         // Parameters: alpha, beta, radius, target position, scene
-        camera = new BABYLON.ArcRotateCamera("Camera", 0, 0, 10, new BABYLON.Vector3(0, 0, 0), scene);
+        gizmo = new BABYLON.PositionGizmo();
+        gizmo.attachedMesh = padreCentro;
+        hl = new BABYLON.HighlightLayer("hl1", scene);
+        //camera = new BABYLON.ArcRotateCamera("Camera", 0, 0, 10, new BABYLON.Vector3(0, 0, 0), scene);
 
         // This positions the camera
+        /*
         camera.setPosition(new BABYLON.Vector3(0, 0, -10));
 
         // This attaches the camera to the canvas
@@ -321,7 +367,13 @@ window.addEventListener('DOMContentLoaded', function () {
         camera.useBouncingBehavior = false;
         camera.useFramingBehavior = false;
         camera.useAutoRotationBehavior = true;
-        camera.inputs.attached.mousewheel.wheelPrecision = 40;
+        camera.inputs.attached.mousewheel.wheelPrecision = 80;
+        */
+        camera = new BABYLON.FreeCamera("camera1", new BABYLON.Vector3(0, 0, -30), scene);
+        pointerDragBehavior = new BABYLON.PointerDragBehavior({dragPlaneNormal: new BABYLON.Vector3(0,0,1)});
+        pointerDragBehavior.useObjectOrienationForDragging = false;
+        
+        //camera.setTarget(BABYLON.Vector3.Zero());
         /*camara = new BABYLON.ArcRotateCamera("Camera", 3 * Math.PI / 2, -Math.PI / 2, 200, BABYLON.Vector3.Zero(), scene);
         camara.upperBetaLimit = 3;
         camara.lowerRadiusLimit = 4;
@@ -380,23 +432,23 @@ window.addEventListener('DOMContentLoaded', function () {
 
 
     escena = createScene();
+    
+    hl = new BABYLON.HighlightLayer("hl1", escena);
+    hl.innerGlow = false;
     background = new BABYLON.Layer("back", "assets/imagenes/fondos/fondo.jpg", escena);
     background.isBackground = true;
     background.texture.level = 0;
-
     container = new BABYLON.AssetContainer(escena);
-    hl = new BABYLON.HighlightLayer("hl1", escena);
-    hl.innerGlow = false;
-
 
 
     manager = new BABYLON.GUI.GUI3DManager(escena);
     padreCentro = new BABYLON.Mesh("padreCentro", escena);
     padreActual = padreCentro;
+
     //cargarModelo(padreCentro, modelos.puffs[0].nombre);
     pantallaCarga();
     cargarModelo(padreCentro, modeloActual(texturaActual, moduloActual, true));
-
+    padreCentro.addBehavior(pointerDragBehavior);
     /*BABYLON.SceneLoader.LoadAssetContainer("./", "brazoCasual.gltf", escena, function (newMeshes) {
 
         //  console.log("containerBrazo", newMeshes);
@@ -669,7 +721,7 @@ function cargarModelo(padre, modelo, posicion, prearmado, rotacion) {
         if (typeof prearmado !== 'undefined') {
 
             newMeshes.meshes.forEach(mesh => {
-                //hl.addMesh(mesh, BABYLON.Color3.Green());
+                hl.addMesh(mesh, BABYLON.Color3.Green());
                 container.meshes.push(mesh);
                 meshClickleable(mesh);
 
@@ -753,6 +805,9 @@ function cargarModelo(padre, modelo, posicion, prearmado, rotacion) {
 function cargarModeloCustom(modelo, posicion) {
     escena.meshes.forEach((x) => { x.dispose() });
     container.meshes.forEach((x) => { x.dispose() });
+    precioTotal = 0;
+    precioTotal = modelo.precio;
+    spanPrecio.innerText = "$" + precioTotal;
 
     /*
     BABYLON.SceneLoader.LoadAssetContainer("assets/modelos/", modelo, escena, function (newMeshes) {
@@ -782,7 +837,7 @@ function cargarModeloCustom(modelo, posicion) {
         //engine.displayLoadingUI();
     });*/
     showLoadingScreen();
-    BABYLON.SceneLoader.ImportMesh("", "assets/modelos/", modelo, escena, function (newMeshes, particleSystems) {
+    BABYLON.SceneLoader.ImportMesh("", "assets/modelos/", modelo.nombre, escena, function (newMeshes, particleSystems) {
         //console.log(newMeshes);
         //console.log(padre);
         //ModeloCustom=newMeshes;
@@ -808,7 +863,7 @@ function cambioTextura(opc) {
     //alert(modeloActual(texturaActual,moduloActual));
     //alert(opc);
 }
-function cambioModulo(opc,limpiar) {
+function cambioModulo(opc, limpiar) {
     if ((typeof limpiar === 'undefined') != true) {
         escena.meshes.forEach((x) => { x.dispose() });
         container.meshes.forEach((x) => { x.dispose() });
@@ -1671,15 +1726,19 @@ function nombreImagenTextura(nombreTextura) {
 }
 
 function prearmado(v, matriz) {
+    precioTotal = 0;
+
     var cordenada =
         [
             [{ x: -4.75, y: 0, z: -4.75 }, { x: -4.75, y: 0, z: 0 }, { x: -4.75, y: 0, z: 4.75 }],
             [{ x: 0, y: 0, z: -4.75 }, { x: 0, y: 0, z: 0 }, { x: 0, y: 0, z: 4.75 }],
             [{ x: 4.75, y: 0, z: -4.75 }, { x: 4.75, y: 0, z: 0 }, { x: 4.75, y: 0, z: 4.75 }]
         ];
-
-    escena.meshes.forEach((x) => { x.dispose() });
-    container.meshes.forEach((x) => { x.dispose() });
+    
+    //escena.meshes.forEach((x) => { x.dispose() });
+    //container.meshes.forEach((x) => { x.dispose() });
+    escena.meshes=[];
+    container.meshes=[];
     for (var i = 0; i < matriz.length; i++) {
         //console.log(matriz[i]);
         for (var j = 0; j < matriz.length; j++) {
@@ -1694,7 +1753,7 @@ function prearmado(v, matriz) {
                     case "taburete":
                         cargarModelo(padreCentro, modelos.taburetes[1].nombre, cordenada[i][j], true, matriz[i][j].rotacion);
                         break;
-                    case "esquina": 6
+                    case "esquina":
                         cargarModelo(padreCentro, modelos.esquinas[1].nombre, cordenada[i][j], true, matriz[i][j].rotacion);
                         break;
                     case "brazo":
@@ -1872,6 +1931,9 @@ function opcPrearmado(i) {
         [{ cor: 1, tipo: "taburete" }, { cor: 1, tipo: "taburete" }, { cor: 1, tipo: "taburete" }]
     ]
     */
+    precioTotal = 0;
+    /*container.meshes=[];
+    escena.meshes=[];*/
     switch (i) {
         case 0:
             prearmado(0, [
@@ -1918,9 +1980,9 @@ function opcPrearmado(i) {
             break;
         case 6:
             prearmado(0, [
-                [{ cor: 1, tipo: "esquina", rotacion: 0 }, { cor: 1, tipo: "brazo", rotacion: 0 }, { cor: 1, tipo: "brazo", rotacion: 0 },{ cor: 1, tipo: "esquina", rotacion: 1 }],
-                [{ cor: 1, tipo: "brazo", rotacion: 0 }, { cor: 0, tipo: "brazo", rotacion: 0 }, { cor: 0, tipo: "brazo", rotacion: 0 },{ cor: 1, tipo: "brazo", rotacion: 2 }],
-                [{ cor: 0, tipo: "esquina", rotacion: 0 }, { cor: 0, tipo: "brazo", rotacion: 0 }, { cor: 0, tipo: "brazo", rotacion: 0 },{ cor: 1, tipo: "esquina", rotacion: 1 }],
+                [{ cor: 1, tipo: "esquina", rotacion: 0 }, { cor: 1, tipo: "brazo", rotacion: 0 }, { cor: 1, tipo: "brazo", rotacion: 0 }, { cor: 1, tipo: "esquina", rotacion: 1 }],
+                [{ cor: 1, tipo: "brazo", rotacion: 0 }, { cor: 0, tipo: "brazo", rotacion: 0 }, { cor: 0, tipo: "brazo", rotacion: 0 }, { cor: 1, tipo: "brazo", rotacion: 2 }],
+                [{ cor: 0, tipo: "esquina", rotacion: 0 }, { cor: 0, tipo: "brazo", rotacion: 0 }, { cor: 0, tipo: "brazo", rotacion: 0 }, { cor: 1, tipo: "esquina", rotacion: 1 }],
             ]);
             break;
         default:
