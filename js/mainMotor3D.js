@@ -1,4 +1,4 @@
-let gizmo;
+//let gizmo;
 let debugg;
 const inputElement = document.getElementById("file-input");
 let bandera=false;
@@ -17,7 +17,7 @@ inputElement.addEventListener("change", function (e) {
     }
     //my_array.slice(-1)[0]
     imagen = inputElement.files[0].name;
-    debugg = inputElement.files;
+    //debugg = inputElement.files;
     reader.readAsDataURL(inputElement.files[0]);
     console.log("nombre,", imagen);
 }, false);
@@ -46,7 +46,7 @@ let largoTotal;
 let altoTotal;
 let archivosTexturas;
 let sliders = [];
-let gizmoLayer;
+//let gizmoLayer;
 //let utilLayer;
 /*
 let modelos = {
@@ -221,9 +221,9 @@ let botonesMueble;
 let padres = [];
 let numPadre = 0;
 window.addEventListener('DOMContentLoaded', function () {
-   // var currentPosition = { x: 0, y: 0 };
-    //var currentRotation = { x: 0, y: 0 };
-    //var clicked = false;
+    var currentPosition = { x: 0, y: 0 };
+    var currentRotation = { x: 0, y: 0 };
+    var clicked = false;
     //se cargar e botton depaypal
     paypal.Buttons({
         createOrder: function (data, actions) {
@@ -330,12 +330,14 @@ window.addEventListener('DOMContentLoaded', function () {
             }
 
         });
-/*
+
         canvas.addEventListener("pointerdown", function (evt) {
+            if (bandera) {
             currentPosition.x = evt.clientX;
             currentPosition.y = evt.clientY;
             currentRotation.x = padreCentro.rotation.x;
-            currentRotation.y = padreCentro.rotation.y;
+            currentRotation.y = padreCentro.rotation.y;   
+            }
             clicked = true;
         });
 
@@ -344,15 +346,26 @@ window.addEventListener('DOMContentLoaded', function () {
                 return;
             }
             //padreCentro.rotation.x
+            if(bandera){                
             padreCentro.rotation.y = currentRotation.y - (evt.clientX - currentPosition.x) / 350;
             padreCentro.rotation.x = currentRotation.x + (evt.clientY - currentPosition.y) / 350;
-            console.log("ROTATION X ",padreCentro.rotation.x,"ROTATION Y ",padreCentro.rotation.y);
-        });*/
-
-        canvas.addEventListener("pointerup", function (evt) {
-            clicked = false;
+            }
+            //console.log("ROTATION X ",padreCentro.rotation.x,"ROTATION Y ",padreCentro.rotation.y);
         });
 
+
+        canvas.addEventListener("ontouchstart", function (evt) {
+            clicked = false;
+            alert(evt.touches.length)
+        });
+        canvas.addEventListener("ontouchmove", function (evt) {
+            clicked = false;
+        });
+        canvas.addEventListener("ontouchend", function (evt) {
+            clicked = false;
+        });
+        
+        
         var scene = new BABYLON.Scene(engine);
         scene.preventDefaultOnPointerDown = false;
         utilLayer = new BABYLON.UtilityLayerRenderer(scene);
@@ -374,8 +387,8 @@ window.addEventListener('DOMContentLoaded', function () {
        */
         // gizmoLayer.positionGizmo
         // Parameters: alpha, beta, radius, target position, scene
-        gizmo = new BABYLON.PositionGizmo();
-        gizmo.attachedMesh = padreCentro;
+        //gizmo = new BABYLON.PositionGizmo();
+        //gizmo.attachedMesh = padreCentro;
         hl = new BABYLON.HighlightLayer("hl1", scene);
         //camera = new BABYLON.ArcRotateCamera("Camera", 0, 0, 10, new BABYLON.Vector3(0, 0, 0), scene);
 
@@ -394,7 +407,11 @@ window.addEventListener('DOMContentLoaded', function () {
         camera.useAutoRotationBehavior = true;
         camera.inputs.attached.mousewheel.wheelPrecision = 80;
         */
+       //var camera = new BABYLON.UniversalCamera("UniversalCamera", new BABYLON.Vector3(0, 0, -10), scene);
+        //camera = new BABYLON.UniversalCamera("camera1", new BABYLON.Vector3(0, 0, -30), scene);
         camera = new BABYLON.FreeCamera("camera1", new BABYLON.Vector3(0, 0, -30), scene);
+        //camera.attachControl(canvas);
+       // camera = new BABYLON.FreeCamera("camera1", new BABYLON.Vector3(0, 0, -30), scene);
         pointerDragBehavior = new BABYLON.PointerDragBehavior({ dragPlaneNormal: new BABYLON.Vector3(0, 0, 1) });
         pointerDragBehavior.useObjectOrienationForDragging = false;
 
@@ -403,10 +420,10 @@ window.addEventListener('DOMContentLoaded', function () {
             //console.log(event);
             //currentPosition  event.dragPlanePoint.y;
             //currentRotation event.dragPlanePoint.y;
-            if (bandera) {      
+            /*if (bandera) {      
                 padreCentro.rotation.x=padreCentro.rotation.x-(event.dragPlanePoint.y/150);
                 padreCentro.rotation.y=padreCentro.rotation.y+(event.dragPlanePoint.x/150);
-            }
+            }*/
         });
         pointerDragBehavior.onDragObservable.add((event)=>{
             //console.log("drag");
@@ -416,18 +433,20 @@ window.addEventListener('DOMContentLoaded', function () {
             //console.log("d x",event.dragPlanePoint.x,"y",event.dragPlanePoint.y);
             //console.log("deltaX",event.delta.x);
             //console.log("deltaY",event.delta.z);
-            if (bandera) {      
+            /*if (bandera) {      
                 padreCentro.rotation.x=padreCentro.rotation.x-(event.dragPlanePoint.y/150);
                 padreCentro.rotation.y=padreCentro.rotation.y+(event.dragPlanePoint.x/150);
-            }
+            }*/
         });
         pointerDragBehavior.onDragEndObservable.add((event)=>{
             //console.log("dragEnd");
             //console.log(event);
+            /*
             if (bandera) {      
                 padreCentro.rotation.x=padreCentro.rotation.x-(event.dragPlanePoint.y/150);
                 padreCentro.rotation.y=padreCentro.rotation.y+(event.dragPlanePoint.x/150);
             }
+            */
 
         });
         
@@ -484,7 +503,7 @@ window.addEventListener('DOMContentLoaded', function () {
         scene.onBeforeRenderObservable.add(() => {
 
         })
-
+        createButton();
         return scene;
     }
 
@@ -587,22 +606,31 @@ var createLabel = function (mesh) {
     text1.color = "white";
     label.addControl(text1);
 }
-var createButton = function (mesh) {
-    var button1 = new BABYLON.GUI.Button.CreateSimpleButton("but1", "+");
-    button1.width = 0.02;
-    button1.height = "20px";
-    button1.color = "white";
-    button1.cornerRadius = 20;
-    button1.background = "black";
+var createButton = function () {
+    //BABYLON.GUI.Button.Create
+    //var panel = new BABYLON.GUI.StackPanel();
+    //panel.width = "200px";
+    var button1 = BABYLON.GUI.Button.CreateImageOnlyButton("but1", "/assets/iconos/3d_Rotate.png");
+    //var button1 = new BABYLON.GUI.Button.CreateSimpleButton("but1", "+");
+    button1.width = "40px";
+    button1.height = "40px";
+    //button1.color = "white";
+    button1.verticalAlignment=3;
+    button1.horizontalAlignment=3;
+    //button1.cornerRadius = 20;
+    //button1.background = "black";
     advancedTexture.addControl(button1);
-    button1.linkWithMesh(mesh);
-    var text1 = new BABYLON.GUI.TextBlock();
+    //button1.linkWithMesh(mesh);
+    //var text1 = new BABYLON.GUI.TextBlock();
     //text1.text = mesh.name;
-    text1.color = "black";
-    button1.addControl(text1);
+    //text1.color = "black";
+    //button1.addControl(text1);
     button1.onPointerUpObservable.add(function () {
-        circle.scaleX += 0.1;
+        activarRotacion();
     });
+    //grid.addControl(panel, 3, 1);
+    //panel.addControl(button1);
+    
 }
 var createHoloButton = function (mesh) {
 
@@ -1907,7 +1935,6 @@ function prearmado(v, matriz) {
 
 function addSlider(isVertical, isClamped, displayThumb, row, col, zoom) {
     var panel = new BABYLON.GUI.StackPanel();
-    var posicionAuxi;
     panel.width = "220px";
     grid.addControl(panel, row, col);
 
@@ -1916,7 +1943,7 @@ function addSlider(isVertical, isClamped, displayThumb, row, col, zoom) {
               header.height = "30px";
               header.color = "white";
               panel.addControl(header);
-              */
+    */
     var slider = new BABYLON.GUI.Slider();
     sliders.push(slider);
     if (zoom) {
