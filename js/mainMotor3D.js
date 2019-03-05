@@ -1,7 +1,7 @@
 //let gizmo;
 let debugg;
 const inputElement = document.getElementById("file-input");
-let bandera=false;
+let bandera = false;
 inputElement.addEventListener("change", function (e) {
     var imagen;
     //console.log("archivos",inputElement.files);
@@ -45,7 +45,7 @@ let anchoTotal;
 let largoTotal;
 let altoTotal;
 let archivosTexturas;
-let sliders = [];
+//let sliders = [];
 //let gizmoLayer;
 //let utilLayer;
 /*
@@ -319,6 +319,7 @@ window.addEventListener('DOMContentLoaded', function () {
         //Works
         canvas.addEventListener("mouseup", function () {
             console.log("Mouse UP!");
+            clicked = false;
             //document.body.style.overflow="hidden";            
             if (hasTouchscreen) {
                 document.body.style.overflow = "auto";
@@ -333,10 +334,10 @@ window.addEventListener('DOMContentLoaded', function () {
 
         canvas.addEventListener("pointerdown", function (evt) {
             if (bandera) {
-            currentPosition.x = evt.clientX;
-            currentPosition.y = evt.clientY;
-            currentRotation.x = padreCentro.rotation.x;
-            currentRotation.y = padreCentro.rotation.y;   
+                currentPosition.x = evt.clientX;
+                currentPosition.y = evt.clientY;
+                currentRotation.x = padreCentro.rotation.x;
+                currentRotation.y = padreCentro.rotation.y;
             }
             clicked = true;
         });
@@ -346,26 +347,32 @@ window.addEventListener('DOMContentLoaded', function () {
                 return;
             }
             //padreCentro.rotation.x
-            if(bandera){                
-            padreCentro.rotation.y = currentRotation.y - (evt.clientX - currentPosition.x) / 350;
-            padreCentro.rotation.x = currentRotation.x + (evt.clientY - currentPosition.y) / 350;
+            if (bandera && clicked) {
+                padreCentro.rotation.y = currentRotation.y - (evt.clientX - currentPosition.x) / 350;
+                padreCentro.rotation.x = currentRotation.x + (evt.clientY - currentPosition.y) / 350;
             }
             //console.log("ROTATION X ",padreCentro.rotation.x,"ROTATION Y ",padreCentro.rotation.y);
         });
 
 
-        canvas.addEventListener("ontouchstart", function (evt) {
-            clicked = false;
-            alert(evt.touches.length)
-        });
-        canvas.addEventListener("ontouchmove", function (evt) {
-            clicked = false;
-        });
-        canvas.addEventListener("ontouchend", function (evt) {
-            clicked = false;
-        });
-        
-        
+        canvas.addEventListener("mousedown", function (e) {            
+            debugg=e;
+            if (e.touches.length === 2) {
+                
+                alert("dos dedos");
+            }else{
+                alert("un dedo");
+                
+            }
+        }, false);
+        canvas.addEventListener("mouseup", function (e) {
+            console.log("mouseup",e);
+        }, false);
+        canvas.addEventListener("mousemove", function (e) {
+            console.log("evenmousemovet",e);
+        }, false);
+
+
         var scene = new BABYLON.Scene(engine);
         scene.preventDefaultOnPointerDown = false;
         utilLayer = new BABYLON.UtilityLayerRenderer(scene);
@@ -407,15 +414,15 @@ window.addEventListener('DOMContentLoaded', function () {
         camera.useAutoRotationBehavior = true;
         camera.inputs.attached.mousewheel.wheelPrecision = 80;
         */
-       //var camera = new BABYLON.UniversalCamera("UniversalCamera", new BABYLON.Vector3(0, 0, -10), scene);
+        //var camera = new BABYLON.UniversalCamera("UniversalCamera", new BABYLON.Vector3(0, 0, -10), scene);
         //camera = new BABYLON.UniversalCamera("camera1", new BABYLON.Vector3(0, 0, -30), scene);
         camera = new BABYLON.FreeCamera("camera1", new BABYLON.Vector3(0, 0, -30), scene);
         //camera.attachControl(canvas);
-       // camera = new BABYLON.FreeCamera("camera1", new BABYLON.Vector3(0, 0, -30), scene);
+        // camera = new BABYLON.FreeCamera("camera1", new BABYLON.Vector3(0, 0, -30), scene);
         pointerDragBehavior = new BABYLON.PointerDragBehavior({ dragPlaneNormal: new BABYLON.Vector3(0, 0, 1) });
         pointerDragBehavior.useObjectOrienationForDragging = false;
 
-        pointerDragBehavior.onDragStartObservable.add((event)=>{
+        pointerDragBehavior.onDragStartObservable.add((event) => {
             console.log("dragStart");
             //console.log(event);
             //currentPosition  event.dragPlanePoint.y;
@@ -425,7 +432,7 @@ window.addEventListener('DOMContentLoaded', function () {
                 padreCentro.rotation.y=padreCentro.rotation.y+(event.dragPlanePoint.x/150);
             }*/
         });
-        pointerDragBehavior.onDragObservable.add((event)=>{
+        pointerDragBehavior.onDragObservable.add((event) => {
             //console.log("drag");
             //console.log(event);
             //dragPlaneNormal
@@ -438,7 +445,7 @@ window.addEventListener('DOMContentLoaded', function () {
                 padreCentro.rotation.y=padreCentro.rotation.y+(event.dragPlanePoint.x/150);
             }*/
         });
-        pointerDragBehavior.onDragEndObservable.add((event)=>{
+        pointerDragBehavior.onDragEndObservable.add((event) => {
             //console.log("dragEnd");
             //console.log(event);
             /*
@@ -449,7 +456,7 @@ window.addEventListener('DOMContentLoaded', function () {
             */
 
         });
-        
+
         //camera.setTarget(BABYLON.Vector3.Zero());
         /*camara = new BABYLON.ArcRotateCamera("Camera", 3 * Math.PI / 2, -Math.PI / 2, 200, BABYLON.Vector3.Zero(), scene);
         camara.upperBetaLimit = 3;
@@ -469,6 +476,7 @@ window.addEventListener('DOMContentLoaded', function () {
         var light = new BABYLON.HemisphericLight("hemiLight", new BABYLON.Vector3(-1, 1, 0), scene);
         // compared click for sphere
         advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI");
+        /*
         grid = new BABYLON.GUI.Grid();
         advancedTexture.addControl(grid);
 
@@ -483,12 +491,12 @@ window.addEventListener('DOMContentLoaded', function () {
         grid.addRowDefinition(50, true);
         grid.addRowDefinition(40, true);
 
-
+*/
         if (!hasTouchscreen) {
             //crearInterfaceDatGUI();
-            addSlider(false, true, true, 3, 2, false);
-            addSlider(true, true, true, 2, 1, false);
-            addSlider(false, true, true, 1, 2, true);
+            //addSlider(false, true, true, 3, 2, false);
+            //addSlider(true, true, true, 2, 1, false);
+            //addSlider(false, true, true, 1, 2, true);
         } else {
             //crearInterfaceDatGUI();
 
@@ -606,6 +614,7 @@ var createLabel = function (mesh) {
     text1.color = "white";
     label.addControl(text1);
 }
+
 var createButton = function () {
     //BABYLON.GUI.Button.Create
     //var panel = new BABYLON.GUI.StackPanel();
@@ -615,8 +624,8 @@ var createButton = function () {
     button1.width = "40px";
     button1.height = "40px";
     //button1.color = "white";
-    button1.verticalAlignment=3;
-    button1.horizontalAlignment=3;
+    button1.verticalAlignment = 3;
+    button1.horizontalAlignment = 3;
     //button1.cornerRadius = 20;
     //button1.background = "black";
     advancedTexture.addControl(button1);
@@ -630,7 +639,7 @@ var createButton = function () {
     });
     //grid.addControl(panel, 3, 1);
     //panel.addControl(button1);
-    
+
 }
 var createHoloButton = function (mesh) {
 
@@ -2076,9 +2085,9 @@ function opcPrearmado(i) {
 
     }
 }
-function activarRotacion(){
-    
-    bandera=!bandera;
+function activarRotacion() {
+    clicked=false;
+    bandera = !bandera;
     if (bandera) {
         pointerDragBehavior.moveAttached = false;
     } else {
