@@ -45,6 +45,8 @@ let anchoTotal;
 let largoTotal;
 let altoTotal;
 let archivosTexturas;
+let evCache = new Array();
+let prevDiff = -1;
 //let sliders = [];
 //let gizmoLayer;
 //let utilLayer;
@@ -333,6 +335,10 @@ window.addEventListener('DOMContentLoaded', function () {
         });
 
         canvas.addEventListener("pointerdown", function (evt) {
+            // The pointerdown event signals the start of a touch interaction.
+            // This event is cached to support 2-finger gestures
+            evCache.push(evt);
+            //log("pointerDown", ev);
             if (bandera) {
                 currentPosition.x = evt.clientX;
                 currentPosition.y = evt.clientY;
@@ -343,6 +349,51 @@ window.addEventListener('DOMContentLoaded', function () {
         });
 
         canvas.addEventListener("pointermove", function (evt) {
+            // Find this event in the cache and update its record with this event
+
+            for (var i = 0; i < evCache.length; i++) {
+                if (evt.pointerId == evCache[i].pointerId) {
+                    evCache[i] = evt;
+                    break;
+                }
+            }
+            // If two pointers are down, check for pinch gestures
+            if (evCache.length == 2) {
+                bandera = false;
+                clicked = false;
+                // Calculate the distance between the two pointers
+                var curDiff = Math.abs(evCache[0].clientX - evCache[1].clientX);
+
+                if (prevDiff > 0) {
+                    if (curDiff > prevDiff) {
+                        // The distance between the two pointers has increased
+                        //log("Pinch moving OUT -> Zoom in", ev);
+                        //ev.target.style.background = "pink";
+                        console.log("zoom", (camera.position.z - (curDiff/40)*-1));
+                        
+                        if((camera.position.z)>-130){
+                            camera.position.z = (camera.position.z - (curDiff/40)*-1);
+                        }else{
+                            camera.position.z=-130;
+                        }
+                    }
+                    if (curDiff < prevDiff) {
+                        // The distance between the two pointers has decreased
+                        //log("Pinch moving IN -> Zoom out", ev);
+                        //ev.target.style.background = "lightblue";
+                        console.log("zoom", (camera.position.z + (curDiff/40)*-1));
+                        if((camera.position.z)<-10){
+                            camera.position.z = (camera.position.z + (curDiff/40)*-1);
+
+                        }else{
+                            camera.position.z=-20;
+                        }
+                    }
+                }
+
+                // Cache the distance for the next move event 
+                prevDiff = curDiff;
+            }
             if (!clicked) {
                 return;
             }
@@ -353,25 +404,11 @@ window.addEventListener('DOMContentLoaded', function () {
             }
             //console.log("ROTATION X ",padreCentro.rotation.x,"ROTATION Y ",padreCentro.rotation.y);
         });
-
-
-        canvas.addEventListener("mousedown", function (e) {            
-            debugg=e;
-            if (e.touches.length === 2) {
-                
-                alert("dos dedos");
-            }else{
-                alert("un dedo");
-                
-            }
-        }, false);
-        canvas.addEventListener("mouseup", function (e) {
-            console.log("mouseup",e);
-        }, false);
-        canvas.addEventListener("mousemove", function (e) {
-            console.log("evenmousemovet",e);
-        }, false);
-
+        canvas.onpointerup = pointerup_handler;
+        canvas.onpointercancel = pointerup_handler;
+        canvas.onpointerout = pointerup_handler;
+        canvas.onpointerleave = pointerup_handler;        
+        
 
         var scene = new BABYLON.Scene(engine);
         scene.preventDefaultOnPointerDown = false;
@@ -2092,6 +2129,25 @@ function activarRotacion() {
         pointerDragBehavior.moveAttached = false;
     } else {
         pointerDragBehavior.moveAttached = true;
+    }
+}
+
+function pointerup_handler(ev) {
+    //console.log(ev.type, ev);
+    // Remove this pointer from the cache and reset the target's
+    // background and border
+    remove_event(ev);
+    // If the number of pointers down is less than two then reset diff tracker
+    if (evCache.length < 2) prevDiff = -1;
+}
+
+function remove_event(ev) {
+    // Remove this event from the target's cache
+    for (var i = 0; i < evCache.length; i++) {
+        if (evCache[i].pointerId == ev.pointerId) {
+            evCache.splice(i, 1);
+            break;
+        }
     }
 }
 /*
