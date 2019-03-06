@@ -110,7 +110,7 @@ let modelos = {
         { nombre: "puff_conejo .gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3499 },
         { nombre: "puff_dinosaurio.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3699 },
         { nombre: "dona.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3399 },
-        { nombre: "jirafa.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3799 },
+        { nombre: "puff_jirafa.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3799 },
         { nombre: "puffPerro.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3699 },
         { nombre: "unicornio.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3499 },
     ],
@@ -301,16 +301,17 @@ window.addEventListener('DOMContentLoaded', function () {
         anchoTotal.innerText = dimensionSuperior.ancho() + " m";
         largoTotal.innerText = dimensionSuperior.largo() + " m";
         canvas.addEventListener("mousedown", function () {
-            // console.log("Mouse DOWN!");
+            meshClicleado=false;
+            console.log("Mouse DOWN!");
 
-            /*if((meshClicleado==false) ){
-                    
+            if((meshClicleado==false) ){
+                 /*   
                 if(buttonClicleado==true){
                    // setTimeout(function(){ aplicar(); }, 3000);
                 }else{
                     aplicar();
-                }
-            }*/
+                }*/
+            }
             if (hasTouchscreen) {
                 document.body.style.overflow = "hidden";
                 console.log("en canvas");
@@ -327,14 +328,23 @@ window.addEventListener('DOMContentLoaded', function () {
                 document.body.style.overflow = "auto";
             }
 
+            /*
             if (meshClicleado || buttonClicleado) {
                 meshClicleado = false;
                 buttonClicleado = false;
             }
+            */
+           if (meshClicleado) {
+               console.log("mesh",meshClicleado);
+           }else{
+            console.log("mesh",meshClicleado);
+            aplicar();
+           }
 
         });
 
         canvas.addEventListener("pointerdown", function (evt) {
+            meshClicleado=false;
             // The pointerdown event signals the start of a touch interaction.
             // This event is cached to support 2-finger gestures
             evCache.push(evt);
@@ -1148,6 +1158,7 @@ function resaltarMueble(padreActual, bool) {
 }
 
 function aplicar() {
+    
     resaltarMueble(padreActual, false);
     activarBotonesAplicar(false);
     if ((!btnDerecho.isVisible) && (!btnIzquierdo.isVisible)) {
@@ -1164,6 +1175,7 @@ function aplicar() {
         esconderMesh(btnDerecho, true);
         esconderMesh(btnFrente, true);
     }
+    meshClicleado=false;
 }
 
 function removerModelo(padre) {
@@ -1301,7 +1313,7 @@ function meshClickleable(mesh) {
     mesh.actionManager.registerAction(new BABYLON.ExecuteCodeAction(BABYLON.ActionManager.OnPickUpTrigger, function () {
         console.log("Mesh clickeado", mesh.name);
         meshClicleado = true;
-        aplicar();
+        //aplicar();
         if (muebleSelecionado === false) {
             esconderMesh(btnDerecho, false);
             esconderMesh(btnIzquierdo, false);
@@ -2133,6 +2145,12 @@ function activarRotacion() {
 }
 
 function pointerup_handler(ev) {
+    if (meshClicleado) {
+        console.log("mesh",meshClicleado);
+    }else{
+     console.log("mesh",meshClicleado);
+     aplicar();
+    }
     //console.log(ev.type, ev);
     // Remove this pointer from the cache and reset the target's
     // background and border
