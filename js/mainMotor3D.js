@@ -193,6 +193,7 @@ var targetProxy = new Proxy(dimensionSuperior, {
                 // altoTotal.innerText = 1;
                 anchoTotal.innerText = dimensionSuperior.ancho();
                 largoTotal.innerText = dimensionSuperior.largo();
+
             }, 1000);
         } else {
             setTimeout(function () {
@@ -255,7 +256,9 @@ window.addEventListener('DOMContentLoaded', function () {
     }).render('#paypal-button-container');
 
     hasTouchscreen = 'ontouchstart' in window;
-
+    if(hasTouchscreen){
+        cambiarMenuMovil(1);
+    }
     //alert(hasTouchscreen ? 'has touchscreen' : 'doesn\'t have touchscreen');
     /*dimensionSuperior.watch("x",
         function (identificador, valorViejo, valorNuevo) {
@@ -2193,7 +2196,7 @@ function remove_event(ev) {
 }
 /*funciones */
 function cambiarMenuMovil(i) {
-
+    ocultarDivsGrid(i);
     switch (i) {
         case 1:
             gridContainer.style.gridTemplateAreas = `
@@ -2244,19 +2247,40 @@ function cambiarMenuMovil(i) {
             break;
     }
 }
-function ocultarDivsGrid(i){
-    var modu;
-    var preA;
-    var erra;
-    var mate;
+function ocultarDivsGrid(i) {
+    var modu = document.getElementById("iconosTexturas");;
+    var preA = document.getElementById("iconosPrearmado");
+    var erra = document.getElementById("botones-herramientas");
+    var mate = document.getElementById("materiales");
 
     switch (i) {
-        case value:
-            
+        case 1:
+            modu.style.display = "none";
+            preA.style.display = "none";
+            erra.style.display = "block";
+            mate.style.display = "none";
             break;
-    
+        case 2:
+            modu.style.display = "none";
+            preA.style.display = "none";
+            erra.style.display = "none";
+            mate.style.display = "block";
+            break;
+        case 3:
+            modu.style.display = "none";
+            preA.style.display = "block";
+            erra.style.display = "none";
+            mate.style.display = "none";
+            break;
+        case 4:
+            modu.style.display = "block";
+            preA.style.display = "none";
+            erra.style.display = "none";
+            mate.style.display = "none";
+            break;
+
         default:
-            break;
+        break;
     }
 }
 /*

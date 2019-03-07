@@ -196,6 +196,7 @@
 .motor3D .selecionMenu {
 	grid-area: sclm;
 	background-color: #efefef;
+	display: none;
 }
 .selecionMenu button{
 	height: 30px;
@@ -622,4 +623,20 @@ div .materiales {
 		padding-right: 7px;
 		padding-left: 7px;
 	}
+	.motor3D .selecionMenu {
+		grid-area: sclm;
+		background-color: #efefef;
+		display: block;
+	}
+	#iconosTexturas {
+		display: none;
+	}
+	#iconosPrearmado {
+		display: none;
+	}
+	#botones-herramientas {
+		display: none;
+	}
+	
+
 }
