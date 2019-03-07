@@ -22,8 +22,9 @@
 	<script src="js/slick.js"></script>
 
 	<script src="js/camara.js"></script>
-	<script src="https://www.paypal.com/sdk/js?client-id=Ab3CfXg7wt8RiCw6JkaSJ6TNF0SNKfMj9hJ5LiW2LjRGcGtoLKpFn3lGxDRizT5FHXsONUzWVgetL1jN&currency=MXN">
-	</script>
+	<script
+		src="https://www.paypal.com/sdk/js?client-id=Ab3CfXg7wt8RiCw6JkaSJ6TNF0SNKfMj9hJ5LiW2LjRGcGtoLKpFn3lGxDRizT5FHXsONUzWVgetL1jN&currency=MXN">
+		</script>
 	<script src="js/tienda2.js"></script>
 	<script type="text/javascript" src="js/jquery.flexisel.js"></script>
 	<!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"> -->
@@ -1170,9 +1171,9 @@
 		<!-- FIN SLIDER DE MODELOS KIDS-->
 		<div style="color:#FFF;">
 			<hr>
-		</div> 
+		</div>
 		<div class="motor3D">
-			<div class="grid-container">
+			<div class="grid-container" id="grid-container">
 				<!--	
 				<div class="item1" href="#" id="head">
 					¡Compra hoy y obtén hasta -20% de descuento!
@@ -1318,12 +1319,16 @@
 						height="25" width="25" onclick="activarCamara()">
 					<img src="assets/iconos/save.png" id="btnCamara" disabled="true" alt="camara" id="fondo" height="25"
 						width="25" onclick="captura()">
+					<!--
 					<img src="assets/iconos/3d_Rotate.png" id="btnCamara" disabled="true" alt="camara" id="fondo" height="25"
 						width="25" onclick="activarRotacion()">
+						-->
 					<img src="assets/iconos/rotate_90_degrees_ccw_black_18dp.png" alt="girar" id="btnRotar" height="25"
 						width="25" onclick="rotarSelecionado()">
+					<!--
 					<img src="assets/iconos/check_black_18dp.png" alt="acaeptar" id="btnAplicar" height="25" width="25"
-						onclick="aplicar()">	
+						onclick="aplicar()">
+						-->
 					<img src="assets/iconos/remove_black_18dp.png" alt="cancelar" id="btnCancelar" height="25"
 						width="25" onclick="cancelar()">
 				</div>
@@ -1338,11 +1343,19 @@
 						-->
 					</div>
 					<div id="paypal-button-container"></div>
-				</div>
-				<div class="item3" id="main">
-					<div id="datGUI">
+				</div><div class="item3" id="main">
+					<div id="datGUI" class="datGUI">
 						<canvas id="render">
 						</canvas>
+						<!--
+										<button id="btnPrueba" class="btnPrueba">comida</button>
+										-->
+						<div class="selecionMenu">
+							<button type="button" onclick="cambiarMenuMovil(1)">Foto</button>
+							<button type="button" onclick="cambiarMenuMovil(2)">Color</button>
+							<button type="button" onclick="cambiarMenuMovil(3)">Pre ensamblado</button>
+							<button type="button" onclick="cambiarMenuMovil(4)">modelo</button>
+						</div>
 					</div>
 				</div>
 

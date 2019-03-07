@@ -1,4 +1,5 @@
 //let gizmo;
+
 let debugg;
 const inputElement = document.getElementById("file-input");
 let bandera = false;
@@ -149,7 +150,7 @@ let btnFrente;
 let ultimoClickeado;
 let modulos = ["modTaburete", "modEsquina", "modBrazo", "completo"];
 let texturas = ['textuNegra', 'textuBlanca', 'textuTrendy'];
-let btnAplicar;
+//let btnAplicar;
 let btnCancelar;
 let padreActual;
 let padreAnterior;
@@ -169,7 +170,7 @@ let btnCamara;
 let isAssigned;
 let dimensionesText;
 let hasTouchscreen;
-
+let gridContainer;
 let dimensionSuperior = {
     x: { posi: 0, nega: 0 },
     y: { posi: 0, nega: 0 },
@@ -229,10 +230,12 @@ window.addEventListener('DOMContentLoaded', function () {
     //se cargar e botton depaypal
     paypal.Buttons({
         createOrder: function (data, actions) {
-            return actions.order.create({
+            return actions.order.create({                
                 purchase_units: [{
+                    description:'orden numero 125 ',
                     amount: {
-                        value: precioTotal
+                        //value: precioT1otal
+                        value:1
                     }
                 }]
             });
@@ -263,6 +266,7 @@ window.addEventListener('DOMContentLoaded', function () {
     cargando = false;
     isAssigned = false;
     btnCamara = document.getElementById("btnCamara");
+    gridContainer=document.getElementById("grid-container");
     //btnCamara.style.opacity=0.1;
     // btnCamara.style.visibility = "hidden";
     texturaActual = texturas[1];
@@ -272,11 +276,13 @@ window.addEventListener('DOMContentLoaded', function () {
     //btnTextura1 = document.getElementById(texturas[1]);
     //btnTextura1.style.outline = "5px solid grey";
     //btnTextura2 = document.getElementById(texturas[2]);
+
+
     btnModelo = document.getElementById(modulos[0]);
     btnModelo1 = document.getElementById(modulos[1]);
     btnModelo2 = document.getElementById(modulos[2]);
     btnModelo.style.outline = "5px solid grey";
-    btnAplicar = document.getElementById('btnAplicar');
+   // btnAplicar = document.getElementById('btnAplicar');
     btnCancelar = document.getElementById('btnCancelar');
     btnRotar = document.getElementById('btnRotar');
     // get the canvas DOM element
@@ -302,6 +308,7 @@ window.addEventListener('DOMContentLoaded', function () {
         largoTotal.innerText = dimensionSuperior.largo() + " m";
         canvas.addEventListener("mousedown", function () {
             meshClicleado=false;
+            buttonClicleado=false;
             console.log("Mouse DOWN!");
 
             if((meshClicleado==false) ){
@@ -334,10 +341,12 @@ window.addEventListener('DOMContentLoaded', function () {
                 buttonClicleado = false;
             }
             */
-           if (meshClicleado) {
+           if (meshClicleado || buttonClicleado) {
                console.log("mesh",meshClicleado);
+               console.log("boton",buttonClicleado);
            }else{
             console.log("mesh",meshClicleado);
+            console.log("boton",buttonClicleado);
             aplicar();
            }
 
@@ -686,7 +695,6 @@ var createButton = function () {
     });
     //grid.addControl(panel, 3, 1);
     //panel.addControl(button1);
-
 }
 var createHoloButton = function (mesh) {
 
@@ -713,6 +721,7 @@ function createButon3D(mesh, opc) {
     text1.color = "white";
     text1.fontSize = 250;
     if (opc === 'izquierda') {
+        
         btnIzquierdo = new BABYLON.GUI.Button3D(mesh, mesh.name);
         manager.addControl(btnIzquierdo);
         btnIzquierdo.linkToTransformNode(mesh);
@@ -723,6 +732,8 @@ function createButon3D(mesh, opc) {
         btnIzquierdo.scaling.y = 2;
         btnIzquierdo.scaling.x = 2;
         btnIzquierdo.onPointerClickObservable.add(function () {
+            console.log("btnDerecho");
+            meshClicleado=true;
             //meshClicleado=true;
             buttonClicleado = true;
             cargarModelo(mesh, modeloActual(texturaActual, moduloActual, true));
@@ -747,6 +758,8 @@ function createButon3D(mesh, opc) {
         btnFrente.scaling.y = 2;
         btnFrente.scaling.x = 2;
         btnFrente.onPointerClickObservable.add(() => {
+            console.log("btnDerecho");
+            meshClicleado=true;
             //meshClicleado=true;
             buttonClicleado = true;
             cargarModelo(mesh, modeloActual(texturaActual, moduloActual, true));
@@ -770,6 +783,8 @@ function createButon3D(mesh, opc) {
         btnDerecho.scaling.x = 2;
         btnDerecho.scaling.y = 2;
         btnDerecho.onPointerClickObservable.add(() => {
+            console.log("btnDerecho");
+            meshClicleado=true;
             //meshClicleado=true;
             buttonClicleado = true;
             cargarModelo(mesh, modeloActual(texturaActual, moduloActual, true));
@@ -983,7 +998,15 @@ function cargarModeloCustom(modelo, posicion) {
         //console.log(newMeshes);
         //console.log(padre);
         //ModeloCustom=newMeshes;
+        debugg=newMeshes;
         newMeshes[0].setParent(padreCentro);
+        newMeshes.forEach(mesh => {
+            //hl.addMesh(mesh, BABYLON.Color3.Green());
+            container.meshes.push(mesh);
+            meshClickleable(mesh);
+
+        });
+        //newMeshes.forEach(x=>x.setParent(padreCentro));
         if (typeof posicion === 'undefined') {
 
         } else {
@@ -1080,7 +1103,7 @@ function activarBotonesAplicar(bool) {
             btnCancelar.style.visibility = "visible";
         }
 
-        btnAplicar.style.visibility = "visible";
+        //btnAplicar.style.visibility = "visible";
         btnRotar.style.visibility = "visible";
         //btnCamara.style.visibility = "hidden";
         /*
@@ -1101,9 +1124,9 @@ function activarBotonesAplicar(bool) {
         //btnCamara.style.opacity = .2;
         //btnCamara.setAttribute("onClick", "javascript: ;");
     } else {
-        btnAplicar.style.visibility = "hidden";
+       //btnAplicar.style.visibility = "hidden";
         btnCancelar.style.visibility = "hidden";
-        btnRotar.style.visibility = "hidden";
+        //btnRotar.style.visibility = "hidden";
         //btnCamara.style.visibility = "visible";
         muebleSelecionado = false;
         /*
@@ -2149,7 +2172,7 @@ function pointerup_handler(ev) {
         console.log("mesh",meshClicleado);
     }else{
      console.log("mesh",meshClicleado);
-     aplicar();
+     //aplicar();
     }
     //console.log(ev.type, ev);
     // Remove this pointer from the cache and reset the target's
@@ -2168,10 +2191,78 @@ function remove_event(ev) {
         }
     }
 }
+/*funciones */
+function cambiarMenuMovil(i) {
+
+    switch (i) {
+        case 1:
+            gridContainer.style.gridTemplateAreas = `
+        'main main main main main main'
+        'sclm sclm sclm sclm sclm sclm'
+        'erra erra erra erra erra erra'
+        'preA preA preA preA preA preA'
+        'mate mate mate modu modu modu' 
+        'accion accion accion accion accion accion'
+        'footer footer footer footer footer footer'
+        `;
+            break;
+        case 2:
+            gridContainer.style.gridTemplateAreas = `
+    'main main main main main main'
+    'sclm sclm sclm sclm sclm sclm'
+    'mate mate mate mate mate mate' 
+    'preA preA preA preA preA preA'
+    'erra erra erra erra erra erra'
+    'accion accion accion accion accion accion'
+    'footer footer footer footer footer footer'
+    `;
+            break;
+        case 3:
+            gridContainer.style.gridTemplateAreas = `
+            'main main main main main main'
+            'sclm sclm sclm sclm sclm sclm'
+            'preA preA preA preA preA preA'
+            'modu modu modu modu modu modu' 
+            'erra erra erra erra erra erra'
+            'accion accion accion accion accion accion'
+            'footer footer footer footer footer footer'
+            `;
+
+            break;
+        case 4:
+            gridContainer.style.gridTemplateAreas = `
+        'main main main main main main'
+        'sclm sclm sclm sclm sclm sclm'
+        'modu modu modu modu modu modu' 
+        'preA preA preA preA preA preA'
+        'erra erra erra erra erra erra'
+        'accion accion accion accion accion accion'
+        'footer footer footer footer footer footer'
+        `;
+            break;
+        default:
+            break;
+    }
+}
+function ocultarDivsGrid(i){
+    var modu;
+    var preA;
+    var erra;
+    var mate;
+
+    switch (i) {
+        case value:
+            
+            break;
+    
+        default:
+            break;
+    }
+}
 /*
 function handleFiles() {
     const fileList = this.files; /* now you can work with the file list
-    debugg=this.files;
+    debugsg=this.files;
     console.log("archivo",this.files);
     const reader = new FileReader();
     reader.onLoad=function(){
