@@ -25,11 +25,12 @@
 	<script
 		src="https://www.paypal.com/sdk/js?client-id=Ab3CfXg7wt8RiCw6JkaSJ6TNF0SNKfMj9hJ5LiW2LjRGcGtoLKpFn3lGxDRizT5FHXsONUzWVgetL1jN&currency=MXN">
 		</script>
+	<!--
 	<script src="js/tienda2.js"></script>
+	-->
 	<script type="text/javascript" src="js/jquery.flexisel.js"></script>
 	<!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"> -->
 	<!-- <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i" rel="stylesheet"> -->
-	<!--<script src="http://sdks.shopifycdn.com/js-buy-sdk/v1/latest/index.umd.min.js"></script>-->
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="css/animate.css">
 	<!-- Icomoon Icon Fonts-->
@@ -1201,7 +1202,9 @@
 							<img src="assets/imagenes/IcongrisBotones.jpg" id="textuTrendy" onclick="cambioTextura(2)">
 						</li>
 					</ul>-->
+					<!--
 					<h6 id="descripcionMaterial">Material</h6>
+					-->
 					<!--	
 						<div class="btn-group" role="group" aria-label="Basic example">
 						<button type="button" class="btn btn-secondary">Left</button>
@@ -1334,13 +1337,10 @@
 				</div>
 				<div class="acciones">
 					<div class="precios">
-						<span>Total</span>
-						<span id="Precio">$1500</span>
-					</div>
-					<div>
-						<!--
-						<a class="btn green" onclick="captura()">Comprar</a>
-						-->
+						<div class="div-precio">
+								<span>Total</span>
+								<span id="Precio">$1500</span>
+						</div>					
 					</div>
 					<div id="paypal-button-container"></div>
 				</div><div class="item3" id="main">
@@ -1351,10 +1351,10 @@
 										<button id="btnPrueba" class="btnPrueba">comida</button>
 										-->
 						<div class="selecionMenu">
-							<button type="button" onclick="cambiarMenuMovil(1)">Foto</button>
-							<button type="button" onclick="cambiarMenuMovil(2)">Color</button>
-							<button type="button" onclick="cambiarMenuMovil(3)">Pre armado</button>
-							<button type="button" onclick="cambiarMenuMovil(4)">Modelo</button>
+							<button type="button" onclick="cambiarMenuMovil(1)" class="btn">Foto</button>
+							<button type="button" onclick="cambiarMenuMovil(2)" class="btn">Color</button>
+							<button type="button" onclick="cambiarMenuMovil(3)" class="btn">Pre armado</button>
+							<button type="button" onclick="cambiarMenuMovil(4)" class="btn">Modelo</button>
 						</div>
 					</div>
 				</div>
