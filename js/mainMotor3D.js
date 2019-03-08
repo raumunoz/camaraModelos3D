@@ -2198,6 +2198,7 @@ function remove_event(ev) {
 /*funciones */
 function cambiarMenuMovil(i) {
     ocultarDivsGrid(i);
+    resaltarBotonMenu(i);
     switch (i) {
         case 1:
             gridContainer.style.gridTemplateAreas =
@@ -2278,6 +2279,58 @@ function ocultarDivsGrid(i) {
             mate.style.display = "none";
             break;
 
+        default:
+            break;
+    }
+}
+
+function resaltarBotonMenu(o) {
+    var btnfoto = document.getElementById("slct-btn-foto");
+    var btnColor = document.getElementById("slct-btn-color");
+    var btnPreArmado = document.getElementById("slct-btn-preArmado");
+    var btnModelo = document.getElementById("slct-btn-modelo");
+
+    switch (o) {
+        case 1:
+            btnfoto.style.border = "thin solid Tomato ";
+            btnfoto.style.color = "Tomato ";
+            btnColor.style.border = "thin solid grey";
+            btnColor.style.color = "grey";
+            btnPreArmado.style.border = "thin solid grey";
+            btnPreArmado.style.color = "grey";
+            btnModelo.style.border = "thin solid grey";
+            btnModelo.style.color = "grey";
+            break;
+        case 2:
+            btnfoto.style.border = "thin solid grey";
+            btnfoto.style.color = "grey";
+            btnColor.style.border = "thin solid Tomato ";
+            btnColor.style.color = "Tomato ";
+            btnPreArmado.style.border = "thin solid grey";
+            btnPreArmado.style.color = "grey";
+            btnModelo.style.border = "thin solid grey";
+            btnModelo.style.color = "grey";
+            break;
+        case 3:
+            btnfoto.style.border = "thin solid grey";
+            btnfoto.style.color = "grey";
+            btnColor.style.border = "thin solid grey";
+            btnColor.style.color = "grey";
+            btnPreArmado.style.border = "thin solid Tomato ";
+            btnPreArmado.style.color = "Tomato ";
+            btnModelo.style.border = "thin solid grey";
+            btnModelo.style.color = "grey";
+            break;
+        case 4:
+            btnfoto.style.border = "thin solid grey";
+            btnfoto.style.color = "grey";
+            btnColor.style.border = "thin solid grey";
+            btnColor.style.color = "grey";
+            btnPreArmado.style.border = "thin solid grey";
+            btnPreArmado.style.color = "grey";
+            btnModelo.style.border = "thin solid Tomato";
+            btnModelo.style.color = "Tomato";
+            break;
         default:
             break;
     }
