@@ -1280,28 +1280,28 @@
 					<!--<span id="descripcionModulo"></span>-->
 					<ul class="opc-PreArmado">
 						<li>
-							<img src="assets/iconos/PreArmado1.png" class="btn-imagen-grid " alt="taburete"
+							<img src="assets/iconos/PreArmado1.png" class="btn-imagen-grid btn-prearmado" alt="taburete"
 								id="modTaburete" onclick="opcPrearmado(0)">
 						</li>
 						<li>
-							<img src="assets/iconos/PreArmado3.png" class="btn-imagen-grid" alt="brazo" id="modBrazo"
-								onclick="opcPrearmado(1)">
+							<img src="assets/iconos/PreArmado3.png" class="btn-imagen-grid btn-prearmado" alt="brazo"
+								id="modBrazo" onclick="opcPrearmado(1)">
 						</li>
 						<li>
-							<img src="assets/iconos/PreArmado4.png" class="btn-imagen-grid" alt="brazo" id="modBrazo"
-								onclick="opcPrearmado(2)">
+							<img src="assets/iconos/PreArmado4.png" class="btn-imagen-grid btn-prearmado" alt="brazo"
+								id="modBrazo" onclick="opcPrearmado(2)">
 						</li>
 						<li>
-							<img src="assets/iconos/PreArmado7.png" class="btn-imagen-grid" alt="brazo" id="modBrazo"
-								onclick="opcPrearmado(3)">
+							<img src="assets/iconos/PreArmado7.png" class="btn-imagen-grid btn-prearmado" alt="brazo"
+								id="modBrazo" onclick="opcPrearmado(3)">
 						</li>
 						<li>
-							<img src="assets/iconos/PreArmado8.png" class="btn-imagen-grid" alt="brazo" id="modBrazo"
-								onclick="opcPrearmado(4)">
+							<img src="assets/iconos/PreArmado8.png" class="btn-imagen-grid btn-prearmado" alt="brazo"
+								id="modBrazo" onclick="opcPrearmado(4)">
 						</li>
 						<li>
-							<img src="assets/iconos/PreArmado9.png" class="btn-imagen-grid" alt="brazo" id="modBrazo"
-								onclick="opcPrearmado(5)">
+							<img src="assets/iconos/PreArmado9.png" class="btn-imagen-grid btn-prearmado" alt="brazo"
+								id="modBrazo" onclick="opcPrearmado(5)">
 						</li>
 					</ul>
 				</div>
@@ -1310,38 +1310,42 @@
 
 				</div>
 				<div class="botones-herramientas" id="botones-herramientas">
-					<span>
-						<label for="file-input">
-							<img src="assets/iconos/fondo.png" alt="fondo" id="fondo" height="25" width="25">
-						</label>
-						<input id="file-input" type="file" />
-					</span>
-					<img src="assets/iconos/camaraA.png" id="btnCamara" disabled="true" alt="camara" id="fondo"
-						height="25" width="25" onclick="activarCamara()">
-					<img src="assets/iconos/save.png" id="btnCamara" disabled="true" alt="camara" id="fondo" height="25"
-						width="25" onclick="captura()">
-					<!--
-					<img src="assets/iconos/3d_Rotate.png" id="btnCamara" disabled="true" alt="camara" id="fondo" height="25"
-						width="25" onclick="activarRotacion()">
-						-->
-					<img src="assets/iconos/rotate_90_degrees_ccw_black_18dp.png" alt="girar" id="btnRotar" height="25"
-						width="25" onclick="rotarSelecionado()">
-					<!--
-					<img src="assets/iconos/check_black_18dp.png" alt="acaeptar" id="btnAplicar" height="25" width="25"
-						onclick="aplicar()">
-						-->
-					<img src="assets/iconos/remove_black_18dp.png" alt="cancelar" id="btnCancelar" height="25"
-						width="25" onclick="cancelar()">
+					<div class="div-img-fotos">
+						<span>
+							<label for="file-input">
+								<img src="assets/iconos/fondo.png" alt="fondo" id="fondo" height="25" width="25" class="img-menu">
+							</label>
+							<input id="file-input" type="file" />
+						</span>
+						<img src="assets/iconos/camaraA.png" id="btnCamara" disabled="true" alt="camara" id="fondo" class="img-menu"
+							height="25" width="25" onclick="activarCamara()">
+						<img src="assets/iconos/save.png" id="btnCamara" disabled="true" alt="camara" id="fondo" height="25" width="25"
+							onclick="captura()" class="img-menu">
+						<!--
+												<img src="assets/iconos/3d_Rotate.png" id="btnCamara" disabled="true" alt="camara" id="fondo" height="25"
+													width="25" onclick="activarRotacion()">
+													-->
+						<img src="assets/iconos/rotate_90_degrees_ccw_black_18dp.png" alt="girar" id="btnRotar" height="25" width="25"
+							onclick="rotarSelecionado()" class="img-menu">
+						<!--
+												<img src="assets/iconos/check_black_18dp.png" alt="acaeptar" id="btnAplicar" height="25" width="25"
+													onclick="aplicar()">
+													-->
+						<img src="assets/iconos/remove_black_18dp.png" alt="cancelar" id="btnCancelar" height="25" width="25"
+							onclick="cancelar()" class="img-menu">
+					</div>
+				
 				</div>
 				<div class="acciones">
 					<div class="precios">
 						<div class="div-precio">
-								<span>Total</span>
-								<span id="Precio">$1500</span>
-						</div>					
+							<span>Total</span>
+							<span id="Precio">$1500</span>
+						</div>
 					</div>
 					<div id="paypal-button-container"></div>
-				</div><div class="item3" id="main">
+				</div>
+				<div class="item3" id="main">
 					<div id="datGUI" class="datGUI">
 						<canvas id="render">
 						</canvas>
@@ -1349,10 +1353,14 @@
 										<button id="btnPrueba" class="btnPrueba">comida</button>
 										-->
 						<div class="selecionMenu">
-							<button type="button" onclick="cambiarMenuMovil(1)" class="btn" id="slct-btn-foto">Foto</button>
-							<button type="button" onclick="cambiarMenuMovil(2)" class="btn" id="slct-btn-color">Color</button>
-							<button type="button" onclick="cambiarMenuMovil(3)" class="btn" id="slct-btn-preArmado">Pre armado</button>
-							<button type="button" onclick="cambiarMenuMovil(4)" class="btn" id="slct-btn-modelo">Modelo</button>
+							<button type="button" onclick="cambiarMenuMovil(1)" class="btn"
+								id="slct-btn-foto">Foto</button>
+							<button type="button" onclick="cambiarMenuMovil(2)" class="btn slct-btn-color"
+								id="slct-btn-color">Color</button>
+							<button type="button" onclick="cambiarMenuMovil(3)" class="btn" id="slct-btn-preArmado">Pre
+								armado</button>
+							<button type="button" onclick="cambiarMenuMovil(4)" class="btn"
+								id="slct-btn-modelo">Modelo</button>
 						</div>
 					</div>
 				</div>
@@ -1363,6 +1371,7 @@
 				</div>
 			</div>
 		</div>
+
 
 		<table class="table">
 			<thead>
