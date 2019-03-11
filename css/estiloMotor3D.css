@@ -489,6 +489,11 @@ div .materiales {
 	padding-left: 14%;
 	padding-right: 0;
 }
+.topDivPush{
+	height: 30px;
+
+width: 100%;
+}
 @media only screen and (max-width: 600px) {
 	.motor3D .grid-container {
 		display: grid;

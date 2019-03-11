@@ -77,6 +77,7 @@
 
 		.slick-slide img {
 			width: 100%;
+			
 		}
 
 		.slick-prev:before,
@@ -205,21 +206,35 @@
 		}
 
 		@media only screen and (max-width: 600px) {
-
 			.product .product-grid {
-
-				background-size: cover;
-				background-position: top center;
-				background-repeat: no-repeat;
-				position: relative;
-				height: 350px;
-				margin-bottom: 20px;
-				-webkit-transition: 0.3s;
-				-o-transition: 0.3s;
-				transition: 0.3s;
-				height: 5em;
+			background-size: contain;
+			background-position: top center;
+			background-repeat: no-repeat;
+			position: relative;
+			margin-bottom: 5px;
+			-webkit-transition: 0.3s;
+			-o-transition: 0.3s;
+			transition: 0.3s;
+			height: 7em;
 
 			}
+			
+		.nbs-flexisel-item {
+			float: left;
+			margin: 0px;
+			padding: 0px;
+			cursor: pointer;
+			position: relative;
+			line-height: 0px;
+		}
+
+		.nbs-flexisel-item img {
+			max-width: 100%;
+			cursor: pointer;
+			position: relative;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
 		}
 	</style>
 
@@ -459,718 +474,723 @@
 						</div>
 					</div>
 				</div>
-
+				<div id="slidersModelosPadre">
+					
+		<!-- SLIDER DE MODELOS YOKO MODULAR -->
+		<div id="yokoDiv">
+				<ul id="sliderYoko">
+					<li>
+						<a style="cursor: pointer;" onclick="cambioModulo(0,true)">
+							<div class="text-center animate-box">
+								<div class="product" style="margin-top: 1em;">
+									<div class="product-grid"
+										style="background-image:url(assets/imagenes/tabureteContempo.PNG); margin: 0 auto;">
+									</div>
+									<div class="desc" style="margin-top: 1em;">
+										<h3><a href="single.html">Yoko Modular</a></h3>
+										<span class="price">$350</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a style="cursor: pointer;" onclick="cambioModulo(1,true)">
+							<div class="text-center animate-box">
+								<div class="product" style="margin-top: 1em;">
+									<div class="product-grid"
+										style="background-image:url(assets/imagenes/brazoContempo.png); margin: 0 auto;">
+									</div>
+									<div class="desc" style="margin-top: 1em;">
+										<h3><a href="single.html">Yoko Modular</a></h3>
+										<span class="price">$350</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a style="cursor: pointer;" onclick="cambioModulo(2,true)">
+							<div class="text-center animate-box">
+								<div class="product" style="margin-top: 1em;">
+									<div class="product-grid"
+										style="background-image:url(assets/imagenes/esquinaContempo.PNG); margin: 0 auto;">
+									</div>
+									<div class="desc" style="margin-top: 1em;">
+										<h3><a href="single.html">Yoko Modular</a></h3>
+										<span class="price">$350</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</li>
+					<!--
+					<li>
+						<a style="cursor: pointer;" onclick="cambioModulo(3)">
+							<div class="text-center animate-box">
+								<div class="product" style="margin-top: 1em;">
+									<div class="product-grid"
+										style="background-image:url(assets/imagenes/tabureteContempo.PNG); margin: 0 auto;">
+									</div>
+									<div class="desc" style="margin-top: 1em;">
+										<h3><a href="single.html">Yoko Modular</a></h3>
+										<span class="price">$350</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a style="cursor: pointer;" onclick="cambioModulo(0)">
+							<div class="text-center animate-box">
+								<div class="product" style="margin-top: 1em;">
+									<div class="product-grid"
+										style="background-image:url(images/productos/puffino_ANDREW_SMART_1.jpg); margin: 0 auto;">
+									</div>
+									<div class="desc" style="margin-top: 1em;">
+										<h3><a href="single.html">Yoko Modular</a></h3>
+										<span class="price">$350</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</li>
+					-->
+				</ul>
+			</div>
+			<!-- FIN SLIDER DE MODELOS YOKO MODULAR -->
+	
+			<!-- SLIDER DE MODELOS PUFFINO -->
+			<div id="puffinoDiv">
+				<ul id="sliderPuffino">
+					<li>
+						<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[0])">
+							<div class="text-center animate-box">
+								<div class="product" style="margin-top: 1em;">
+									<div class="product-grid"
+										style="background-image:url(images/productos/puffino/atlixco.jpg); margin: 0 auto;">
+									</div>
+									<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+										<h3 style="line-height: 30px;"><a href="single.html">ATLIXCO</a></h3>
+										<span class="price" style="font-size:12px;">desde </span><span
+											class="price">$2599</span>
+									</div>
+									<div class="medidas">
+										<span>(46cm x 46cm x 46cm)</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[1])">
+							<div class="text-center animate-box">
+								<div class="product" style="margin-top: 1em;">
+									<div class="product-grid"
+										style="background-image:url(images/productos/puffino/atlixco_chico.jpg); margin: 0 auto;">
+									</div>
+									<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+										<h3 style="line-height: 30px;"><a href="single.html">ATLIXCO CHICO</a></h3>
+										<span class="price" style="font-size:12px;">desde </span><span
+											class="price">$2499</span>
+									</div>
+									<div class="medidas">
+										<span>(40cm x 40cm x 40cm)</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[2])">
+							<div class="text-center animate-box">
+								<div class="product" style="margin-top: 1em;">
+									<div class="product-grid"
+										style="background-image:url(images/productos/puffino/bernal.jpg); margin: 0 auto;">
+									</div>
+									<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+										<h3 style="line-height: 30px;"><a href="single.html">BERNAL</a></h3>
+										<span class="price" style="font-size:12px;">desde </span><span
+											class="price">$2999</span>
+									</div>
+									<div class="medidas">
+										<span>(50cm x 70cm x 75cm)</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[3])">
+							<div class="text-center animate-box">
+								<div class="product" style="margin-top: 1em;">
+									<div class="product-grid"
+										style="background-image:url(images/productos/puffino/cozumel.jpg); margin: 0 auto;">
+									</div>
+									<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+										<h3 style="line-height: 30px;"><a href="single.html">COZUMEL</a></h3>
+										<span class="price" style="font-size:12px;">desde </span><span
+											class="price">$4999</span>
+									</div>
+									<div class="medidas">
+										<span>Sillón (100cm x 85cm x 80cm) Taburete (100cm x 50cm x 35cm)</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[18])">
+							<div class="text-center animate-box">
+								<div class="product" style="margin-top: 1em;">
+									<div class="product-grid"
+										style="background-image:url(images/productos/puffino/cozumel_sillon.jpg); margin: 0 auto;">
+									</div>
+									<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+										<h3 style="line-height: 30px;"><a href="single.html">COZUMEL SILLÓN</a></h3>
+										<span class="price" style="font-size:12px;">desde </span><span
+											class="price">$4199</span>
+									</div>
+									<div class="medidas">
+										<span>(100cm x 85cm x 80cm)</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[4])">
+							<div class="text-center animate-box">
+								<div class="product" style="margin-top: 1em;">
+									<div class="product-grid"
+										style="background-image:url(images/productos/puffino/cozumel_taburete.jpg); margin: 0 auto;">
+									</div>
+									<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+										<h3 style="line-height: 30px;"><a href="single.html">COZUMEL TABURETE</a></h3>
+										<span class="price" style="font-size:12px;">desde </span><span
+											class="price">$2999</span>
+									</div>
+									<div class="medidas">
+										<span>(100cm x 50cm x 35cm)</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[5])">
+							<div class="text-center animate-box">
+								<div class="product" style="margin-top: 1em;">
+									<div class="product-grid"
+										style="background-image:url(images/productos/puffino/guadalajara.jpg); margin: 0 auto;">
+									</div>
+									<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+										<h3 style="line-height: 30px;"><a href="single.html">GUADALAJARA</a></h3>
+										<span class="price" style="font-size:12px;">desde </span><span
+											class="price">$5199</span>
+									</div>
+									<div class="medidas">
+										<span>(165cm x 85cm x 85cm)</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[6])">
+							<div class="text-center animate-box">
+								<div class="product" style="margin-top: 1em;">
+									<div class="product-grid"
+										style="background-image:url(images/productos/puffino/guanajuato.jpg); margin: 0 auto;">
+									</div>
+									<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+										<h3 style="line-height: 30px;"><a href="single.html">GUANAJUATO</a></h3>
+										<span class="price" style="font-size:12px;">desde </span><span
+											class="price">$4699</span>
+									</div>
+									<div class="medidas">
+										<span>(100cm x 75cm x 180cm)</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[7])">
+							<div class="text-center animate-box">
+								<div class="product" style="margin-top: 1em;">
+									<div class="product-grid"
+										style="background-image:url(images/productos/puffino/lapaz.jpg); margin: 0 auto;">
+									</div>
+									<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+										<h3 style="line-height: 30px;"><a href="single.html">LA PAZ</a></h3>
+										<span class="price" style="font-size:12px;">desde </span><span
+											class="price">$3499</span>
+									</div>
+									<div class="medidas">
+										<span>(95cm x 80cm x 200cm)</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[8])">
+							<div class="text-center animate-box">
+								<div class="product" style="margin-top: 1em;">
+									<div class="product-grid"
+										style="background-image:url(images/productos/puffino/lapaz_chico.jpg); margin: 0 auto;">
+									</div>
+									<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+										<h3 style="line-height: 30px;"><a href="single.html">LA PAZ CHICO</a></h3>
+										<span class="price" style="font-size:12px;">desde </span><span
+											class="price">$3099</span>
+									</div>
+									<div class="medidas">
+										<span>(84cm x 70cm x 115cm)</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[9])">
+							<div class="text-center animate-box">
+								<div class="product" style="margin-top: 1em;">
+									<div class="product-grid"
+										style="background-image:url(images/productos/puffino/merida.jpg); margin: 0 auto;">
+									</div>
+									<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+										<h3 style="line-height: 30px;"><a href="single.html">MÉRIDA</a></h3>
+										<span class="price" style="font-size:12px;">desde </span><span
+											class="price">$3999</span>
+									</div>
+									<div class="medidas">
+										<span>(84cm x 70cm x 115cm)</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[10])">
+							<div class="text-center animate-box">
+								<div class="product" style="margin-top: 1em;">
+									<div class="product-grid"
+										style="background-image:url(images/productos/puffino/oaxaca.jpg); margin: 0 auto;">
+									</div>
+									<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+										<h3 style="line-height: 30px;"><a href="single.html">OAXACA</a></h3>
+										<span class="price" style="font-size:12px;">desde </span><span
+											class="price">$3899</span>
+									</div>
+									<div class="medidas">
+										<span>(90cm x 40cm x 90cm)</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[11])">
+							<div class="text-center animate-box">
+								<div class="product" style="margin-top: 1em;">
+									<div class="product-grid"
+										style="background-image:url(images/productos/puffino/oaxaca_matrimonial.jpg); margin: 0 auto;">
+									</div>
+									<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+										<h3 style="line-height: 30px;"><a href="single.html">OAXACA MATRIMONIAL</a></h3>
+										<span class="price" style="font-size:12px;">desde </span><span
+											class="price">$4599</span>
+									</div>
+									<div class="medidas">
+										<span>(120cm x 65cm x 120cm)</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[11])">
+							<div class="text-center animate-box">
+								<div class="product" style="margin-top: 1em;">
+									<div class="product-grid"
+										style="background-image:url(images/productos/puffino/oaxaca_queen.jpg); margin: 0 auto;">
+									</div>
+									<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+										<h3 style="line-height: 30px;"><a href="single.html">OAXACA QUEEN</a></h3>
+										<span class="price" style="font-size:12px;">desde </span><span
+											class="price">$4799</span>
+									</div>
+									<div class="medidas">
+										<span>(150cm x 65cm x 150cm)</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[13])">
+							<div class="text-center animate-box">
+								<div class="product" style="margin-top: 1em;">
+									<div class="product-grid"
+										style="background-image:url(images/productos/puffino/patzcuaro.jpg); margin: 0 auto;">
+									</div>
+									<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+										<h3 style="line-height: 30px;"><a href="single.html">PÁTZCUARO</a></h3>
+										<span class="price" style="font-size:12px;">desde </span><span
+											class="price">$4499</span>
+									</div>
+									<div class="medidas">
+										<span>(100cm x 80cm x 85cm)</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[14])">
+							<div class="text-center animate-box">
+								<div class="product" style="margin-top: 1em;">
+									<div class="product-grid"
+										style="background-image:url(images/productos/puffino/patzcuaro_kids.jpg); margin: 0 auto;">
+									</div>
+									<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+										<h3 style="line-height: 30px;"><a href="single.html">PÁTZCUARO NIÑOS</a></h3>
+										<span class="price" style="font-size:12px;">desde </span><span
+											class="price">$3199</span>
+									</div>
+									<div class="medidas">
+										<span>(80cm x 63cm x 70cm)</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[15])">
+							<div class="text-center animate-box">
+								<div class="product" style="margin-top: 1em;">
+									<div class="product-grid"
+										style="background-image:url(images/productos/puffino/puebla.jpg); margin: 0 auto;">
+									</div>
+									<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+										<h3 style="line-height: 30px;"><a href="single.html">PUEBLA</a></h3>
+										<span class="price" style="font-size:12px;">desde </span><span
+											class="price">$3099</span>
+									</div>
+									<div class="medidas">
+										<span>(120cm x 25cm x 170cm)</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[16])">
+							<div class="text-center animate-box">
+								<div class="product" style="margin-top: 1em;">
+									<div class="product-grid"
+										style="background-image:url(images/productos/puffino/pruebla_chico.jpg); margin: 0 auto;">
+									</div>
+									<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+										<h3 style="line-height: 30px;"><a href="single.html">PUEBLA CHICO</a></h3>
+										<span class="price" style="font-size:12px;">desde </span><span
+											class="price">$2699</span>
+									</div>
+									<div class="medidas">
+										<span>(900cm x 25cm x 130cm)</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[17])">
+							<div class="text-center animate-box">
+								<div class="product" style="margin-top: 1em;">
+									<div class="product-grid"
+										style="background-image:url(images/productos/puffino/puertovallarta.jpg); margin: 0 auto;">
+									</div>
+									<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+										<h3 style="line-height: 30px;"><a href="single.html">PUERTO VALLARTA</a></h3>
+										<span class="price" style="font-size:12px;">desde </span><span
+											class="price">$3999</span>
+									</div>
+									<div class="medidas">
+										<span>(46cm x 75cm x 125cm)</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[19])">
+							<div class="text-center animate-box">
+								<div class="product" style="margin-top: 1em;">
+									<div class="product-grid"
+										style="background-image:url(images/productos/puffino/veracruz.jpg); margin: 0 auto;">
+									</div>
+									<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+										<h3 style="line-height: 30px;"><a href="single.html">VERACRUZ</a></h3>
+										<span class="price" style="font-size:12px;">desde </span><span
+											class="price">$4199</span>
+									</div>
+									<div class="medidas">
+										<span>(80cm x 87cm x 80cm)</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[20])">
+							<div class="text-center animate-box">
+								<div class="product" style="margin-top: 1em;">
+									<div class="product-grid"
+										style="background-image:url(images/productos/puffino/veracruz_ninos.jpg); margin: 0 auto;">
+									</div>
+									<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+										<h3 style="line-height: 30px;"><a href="single.html">VERACRUZ NIÑOS</a></h3>
+										<span class="price" style="font-size:12px;">desde </span><span
+											class="price">$3399</span>
+									</div>
+									<div class="medidas">
+										<span>(69cm x 65cm x 65cm)</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[21])">
+							<div class="text-center animate-box">
+								<div class="product" style="margin-top: 1em;">
+									<div class="product-grid"
+										style="background-image:url(images/productos/puffino/zacatecas_chico.jpg); margin: 0 auto;">
+									</div>
+									<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+										<h3 style="line-height: 30px;"><a href="single.html">ZACATECAS CHICO</a></h3>
+										<span class="price" style="font-size:12px;">desde </span><span
+											class="price">$2399</span>
+									</div>
+									<div class="medidas">
+										<span>(45cm x 33cm x 55cm)</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[23])">
+							<div class="text-center animate-box">
+								<div class="product" style="margin-top: 1em;">
+									<div class="product-grid"
+										style="background-image:url(images/productos/puffino/zacatecas_mediano.jpg); margin: 0 auto;">
+									</div>
+									<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+										<h3 style="line-height: 30px;"><a href="single.html">ZACATECAS MEDIANO</a></h3>
+										<span class="price" style="font-size:12px;">desde </span><span
+											class="price">$2699</span>
+									</div>
+									<div class="medidas">
+										<span>(60cm x 33cm x 60cm)</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[22])">
+							<div class="text-center animate-box">
+								<div class="product" style="margin-top: 1em;">
+									<div class="product-grid"
+										style="background-image:url(images/productos/puffino/zacatecas_grande.jpg); margin: 0 auto;">
+									</div>
+									<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+										<h3 style="line-height: 30px;"><a href="single.html">ZACATECAS GRANDE</a></h3>
+										<span class="price" style="font-size:12px;">desde </span><span
+											class="price">$3199</span>
+									</div>
+									<div class="medidas">
+										<span>(90cm x 33cm x 90cm)</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[24])">
+							<div class="text-center animate-box">
+								<div class="product" style="margin-top: 1em;">
+									<div class="product-grid"
+										style="background-image:url(images/productos/puffino/zacatlan.jpg); margin: 0 auto;">
+									</div>
+									<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+										<h3 style="line-height: 30px;"><a href="single.html">ZACATLÁN</a></h3>
+										<span class="price" style="font-size:12px;">desde </span><span
+											class="price">$3399</span>
+									</div>
+									<div class="medidas">
+										<span>(64cm x 125cm x 64cm)</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[23])">
+							<div class="text-center animate-box">
+								<div class="product" style="margin-top: 1em;">
+									<div class="product-grid"
+										style="background-image:url(images/productos/puffino/zacatlan_mediano.jpg); margin: 0 auto;">
+									</div>
+									<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+										<h3 style="line-height: 30px;"><a href="single.html">ZACATLÁN MEDIANO</a></h3>
+										<span class="price" style="font-size:12px;">desde </span><span
+											class="price">$2899</span>
+									</div>
+									<div class="medidas">
+										<span>(50cm x 95cm x 50cm)</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+			<!-- FIN SLIDER DE MODELOS PUFFINO -->
+	
+	
+			<!-- SLIDER DE MODELOS KIDS -->
+			<div id="kidsDiv">
+				<ul id="sliderKids">
+					<li>
+						<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.kids[0])">
+							<div class="text-center animate-box">
+								<div class="product" style="margin-top: 1em;">
+									<div class="product-grid"
+										style="background-image:url(images/productos/kids/kids_conejo.jpg); margin: 0 auto;">
+									</div>
+									<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+										<h3 style="line-height: 30px;"><a href="single.html">CONEJO</a></h3>
+										<span class="price" style="font-size:12px;">desde </span><span
+											class="price">$3499</span>
+									</div>
+									<div class="medidas">
+										<span>(76cm x 90cm x 76cm)</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.kids[1])">
+							<div class="text-center animate-box">
+								<div class="product" style="margin-top: 1em;">
+									<div class="product-grid"
+										style="background-image:url(images/productos/kids/kids_dinosaurio.jpg); margin: 0 auto;">
+									</div>
+									<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+										<h3 style="line-height: 30px;"><a href="single.html">DINOSAURIO</a></h3>
+										<span class="price" style="font-size:12px;">desde </span><span
+											class="price">$3699</span>
+									</div>
+									<div class="medidas">
+										<span>(72cm x 90cm x 76cm)</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.kids[2])">
+							<div class="text-center animate-box">
+								<div class="product" style="margin-top: 1em;">
+									<div class="product-grid"
+										style="background-image:url(images/productos/kids/kids_dona.jpg); margin: 0 auto;">
+									</div>
+									<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+										<h3 style="line-height: 30px;"><a href="single.html">DONA</a></h3>
+										<span class="price" style="font-size:12px;">desde </span><span
+											class="price">$3399</span>
+									</div>
+									<div class="medidas">
+										<span>(96cm diametro x 32cm)</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.kids[3])">
+							<div class="text-center animate-box">
+								<div class="product" style="margin-top: 1em;">
+									<div class="product-grid"
+										style="background-image:url(images/productos/kids/kids_jirafa.jpg); margin: 0 auto;">
+									</div>
+									<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+										<h3 style="line-height: 30px;"><a href="single.html">JIRAFA</a></h3>
+										<span class="price" style="font-size:12px;">desde </span><span
+											class="price">$3799</span>
+									</div>
+									<div class="medidas">
+										<span>(72cm x 90cm x 76cm)</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.kids[4])">
+							<div class="text-center animate-box">
+								<div class="product" style="margin-top: 1em;">
+									<div class="product-grid"
+										style="background-image:url(images/productos/kids/kids_perrito.jpg); margin: 0 auto;">
+									</div>
+									<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+										<h3 style="line-height: 30px;"><a href="single.html">PERRITO</a></h3>
+										<span class="price" style="font-size:12px;">desde </span><span
+											class="price">$3699</span>
+									</div>
+									<div class="medidas">
+										<span>(72cm x 90cm x 76cm)</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</li>
+					<li>
+						<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.kids[5])">
+							<div class="text-center animate-box">
+								<div class="product" style="margin-top: 1em;">
+									<div class="product-grid"
+										style="background-image:url(images/productos/kids/kids_unicornio.jpg); margin: 0 auto;">
+									</div>
+									<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+										<h3 style="line-height: 30px;"><a href="single.html">UNICORNIO</a></h3>
+										<span class="price" style="font-size:12px;">desde </span><span
+											class="price">$3499</span>
+									</div>
+									<div class="medidas">
+										<span>(72cm x 90cm x 76cm)</span>
+									</div>
+								</div>
+							</div>
+						</a>
+					</li>
+				</ul>
+			</div>
+	
+			<!-- FIN SLIDER DE MODELOS KIDS-->
+					<hr>
+				</div>
+				
 			</div>
 		</div>
 		<!---->
 
-		<!-- SLIDER DE MODELOS YOKO MODULAR -->
-		<div id="yokoDiv">
-			<ul id="sliderYoko">
-				<li>
-					<a style="cursor: pointer;" onclick="cambioModulo(0,true)">
-						<div class="text-center animate-box">
-							<div class="product" style="margin-top: 1em;">
-								<div class="product-grid"
-									style="background-image:url(assets/imagenes/tabureteContempo.PNG); margin: 0 auto;">
-								</div>
-								<div class="desc" style="margin-top: 1em;">
-									<h3><a href="single.html">Yoko Modular</a></h3>
-									<span class="price">$350</span>
-								</div>
-							</div>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a style="cursor: pointer;" onclick="cambioModulo(1,true)">
-						<div class="text-center animate-box">
-							<div class="product" style="margin-top: 1em;">
-								<div class="product-grid"
-									style="background-image:url(assets/imagenes/brazoContempo.png); margin: 0 auto;">
-								</div>
-								<div class="desc" style="margin-top: 1em;">
-									<h3><a href="single.html">Yoko Modular</a></h3>
-									<span class="price">$350</span>
-								</div>
-							</div>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a style="cursor: pointer;" onclick="cambioModulo(2,true)">
-						<div class="text-center animate-box">
-							<div class="product" style="margin-top: 1em;">
-								<div class="product-grid"
-									style="background-image:url(assets/imagenes/esquinaContempo.PNG); margin: 0 auto;">
-								</div>
-								<div class="desc" style="margin-top: 1em;">
-									<h3><a href="single.html">Yoko Modular</a></h3>
-									<span class="price">$350</span>
-								</div>
-							</div>
-						</div>
-					</a>
-				</li>
-				<!--
-				<li>
-					<a style="cursor: pointer;" onclick="cambioModulo(3)">
-						<div class="text-center animate-box">
-							<div class="product" style="margin-top: 1em;">
-								<div class="product-grid"
-									style="background-image:url(assets/imagenes/tabureteContempo.PNG); margin: 0 auto;">
-								</div>
-								<div class="desc" style="margin-top: 1em;">
-									<h3><a href="single.html">Yoko Modular</a></h3>
-									<span class="price">$350</span>
-								</div>
-							</div>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a style="cursor: pointer;" onclick="cambioModulo(0)">
-						<div class="text-center animate-box">
-							<div class="product" style="margin-top: 1em;">
-								<div class="product-grid"
-									style="background-image:url(images/productos/puffino_ANDREW_SMART_1.jpg); margin: 0 auto;">
-								</div>
-								<div class="desc" style="margin-top: 1em;">
-									<h3><a href="single.html">Yoko Modular</a></h3>
-									<span class="price">$350</span>
-								</div>
-							</div>
-						</div>
-					</a>
-				</li>
-				-->
-			</ul>
-		</div>
-		<!-- FIN SLIDER DE MODELOS YOKO MODULAR -->
-
-		<!-- SLIDER DE MODELOS PUFFINO -->
-		<div id="puffinoDiv">
-			<ul id="sliderPuffino">
-				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[0])">
-						<div class="text-center animate-box">
-							<div class="product" style="margin-top: 1em;">
-								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/atlixco.jpg); margin: 0 auto;">
-								</div>
-								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-									<h3 style="line-height: 30px;"><a href="single.html">ATLIXCO</a></h3>
-									<span class="price" style="font-size:12px;">desde </span><span
-										class="price">$2599</span>
-								</div>
-								<div class="medidas">
-									<span>(46cm x 46cm x 46cm)</span>
-								</div>
-							</div>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[1])">
-						<div class="text-center animate-box">
-							<div class="product" style="margin-top: 1em;">
-								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/atlixco_chico.jpg); margin: 0 auto;">
-								</div>
-								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-									<h3 style="line-height: 30px;"><a href="single.html">ATLIXCO CHICO</a></h3>
-									<span class="price" style="font-size:12px;">desde </span><span
-										class="price">$2499</span>
-								</div>
-								<div class="medidas">
-									<span>(40cm x 40cm x 40cm)</span>
-								</div>
-							</div>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[2])">
-						<div class="text-center animate-box">
-							<div class="product" style="margin-top: 1em;">
-								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/bernal.jpg); margin: 0 auto;">
-								</div>
-								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-									<h3 style="line-height: 30px;"><a href="single.html">BERNAL</a></h3>
-									<span class="price" style="font-size:12px;">desde </span><span
-										class="price">$2999</span>
-								</div>
-								<div class="medidas">
-									<span>(50cm x 70cm x 75cm)</span>
-								</div>
-							</div>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[3])">
-						<div class="text-center animate-box">
-							<div class="product" style="margin-top: 1em;">
-								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/cozumel.jpg); margin: 0 auto;">
-								</div>
-								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-									<h3 style="line-height: 30px;"><a href="single.html">COZUMEL</a></h3>
-									<span class="price" style="font-size:12px;">desde </span><span
-										class="price">$4999</span>
-								</div>
-								<div class="medidas">
-									<span>Sillón (100cm x 85cm x 80cm) Taburete (100cm x 50cm x 35cm)</span>
-								</div>
-							</div>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[18])">
-						<div class="text-center animate-box">
-							<div class="product" style="margin-top: 1em;">
-								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/cozumel_sillon.jpg); margin: 0 auto;">
-								</div>
-								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-									<h3 style="line-height: 30px;"><a href="single.html">COZUMEL SILLÓN</a></h3>
-									<span class="price" style="font-size:12px;">desde </span><span
-										class="price">$4199</span>
-								</div>
-								<div class="medidas">
-									<span>(100cm x 85cm x 80cm)</span>
-								</div>
-							</div>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[4])">
-						<div class="text-center animate-box">
-							<div class="product" style="margin-top: 1em;">
-								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/cozumel_taburete.jpg); margin: 0 auto;">
-								</div>
-								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-									<h3 style="line-height: 30px;"><a href="single.html">COZUMEL TABURETE</a></h3>
-									<span class="price" style="font-size:12px;">desde </span><span
-										class="price">$2999</span>
-								</div>
-								<div class="medidas">
-									<span>(100cm x 50cm x 35cm)</span>
-								</div>
-							</div>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[5])">
-						<div class="text-center animate-box">
-							<div class="product" style="margin-top: 1em;">
-								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/guadalajara.jpg); margin: 0 auto;">
-								</div>
-								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-									<h3 style="line-height: 30px;"><a href="single.html">GUADALAJARA</a></h3>
-									<span class="price" style="font-size:12px;">desde </span><span
-										class="price">$5199</span>
-								</div>
-								<div class="medidas">
-									<span>(165cm x 85cm x 85cm)</span>
-								</div>
-							</div>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[6])">
-						<div class="text-center animate-box">
-							<div class="product" style="margin-top: 1em;">
-								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/guanajuato.jpg); margin: 0 auto;">
-								</div>
-								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-									<h3 style="line-height: 30px;"><a href="single.html">GUANAJUATO</a></h3>
-									<span class="price" style="font-size:12px;">desde </span><span
-										class="price">$4699</span>
-								</div>
-								<div class="medidas">
-									<span>(100cm x 75cm x 180cm)</span>
-								</div>
-							</div>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[7])">
-						<div class="text-center animate-box">
-							<div class="product" style="margin-top: 1em;">
-								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/lapaz.jpg); margin: 0 auto;">
-								</div>
-								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-									<h3 style="line-height: 30px;"><a href="single.html">LA PAZ</a></h3>
-									<span class="price" style="font-size:12px;">desde </span><span
-										class="price">$3499</span>
-								</div>
-								<div class="medidas">
-									<span>(95cm x 80cm x 200cm)</span>
-								</div>
-							</div>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[8])">
-						<div class="text-center animate-box">
-							<div class="product" style="margin-top: 1em;">
-								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/lapaz_chico.jpg); margin: 0 auto;">
-								</div>
-								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-									<h3 style="line-height: 30px;"><a href="single.html">LA PAZ CHICO</a></h3>
-									<span class="price" style="font-size:12px;">desde </span><span
-										class="price">$3099</span>
-								</div>
-								<div class="medidas">
-									<span>(84cm x 70cm x 115cm)</span>
-								</div>
-							</div>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[9])">
-						<div class="text-center animate-box">
-							<div class="product" style="margin-top: 1em;">
-								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/merida.jpg); margin: 0 auto;">
-								</div>
-								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-									<h3 style="line-height: 30px;"><a href="single.html">MÉRIDA</a></h3>
-									<span class="price" style="font-size:12px;">desde </span><span
-										class="price">$3999</span>
-								</div>
-								<div class="medidas">
-									<span>(84cm x 70cm x 115cm)</span>
-								</div>
-							</div>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[10])">
-						<div class="text-center animate-box">
-							<div class="product" style="margin-top: 1em;">
-								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/oaxaca.jpg); margin: 0 auto;">
-								</div>
-								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-									<h3 style="line-height: 30px;"><a href="single.html">OAXACA</a></h3>
-									<span class="price" style="font-size:12px;">desde </span><span
-										class="price">$3899</span>
-								</div>
-								<div class="medidas">
-									<span>(90cm x 40cm x 90cm)</span>
-								</div>
-							</div>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[11])">
-						<div class="text-center animate-box">
-							<div class="product" style="margin-top: 1em;">
-								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/oaxaca_matrimonial.jpg); margin: 0 auto;">
-								</div>
-								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-									<h3 style="line-height: 30px;"><a href="single.html">OAXACA MATRIMONIAL</a></h3>
-									<span class="price" style="font-size:12px;">desde </span><span
-										class="price">$4599</span>
-								</div>
-								<div class="medidas">
-									<span>(120cm x 65cm x 120cm)</span>
-								</div>
-							</div>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[11])">
-						<div class="text-center animate-box">
-							<div class="product" style="margin-top: 1em;">
-								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/oaxaca_queen.jpg); margin: 0 auto;">
-								</div>
-								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-									<h3 style="line-height: 30px;"><a href="single.html">OAXACA QUEEN</a></h3>
-									<span class="price" style="font-size:12px;">desde </span><span
-										class="price">$4799</span>
-								</div>
-								<div class="medidas">
-									<span>(150cm x 65cm x 150cm)</span>
-								</div>
-							</div>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[13])">
-						<div class="text-center animate-box">
-							<div class="product" style="margin-top: 1em;">
-								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/patzcuaro.jpg); margin: 0 auto;">
-								</div>
-								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-									<h3 style="line-height: 30px;"><a href="single.html">PÁTZCUARO</a></h3>
-									<span class="price" style="font-size:12px;">desde </span><span
-										class="price">$4499</span>
-								</div>
-								<div class="medidas">
-									<span>(100cm x 80cm x 85cm)</span>
-								</div>
-							</div>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[14])">
-						<div class="text-center animate-box">
-							<div class="product" style="margin-top: 1em;">
-								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/patzcuaro_kids.jpg); margin: 0 auto;">
-								</div>
-								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-									<h3 style="line-height: 30px;"><a href="single.html">PÁTZCUARO NIÑOS</a></h3>
-									<span class="price" style="font-size:12px;">desde </span><span
-										class="price">$3199</span>
-								</div>
-								<div class="medidas">
-									<span>(80cm x 63cm x 70cm)</span>
-								</div>
-							</div>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[15])">
-						<div class="text-center animate-box">
-							<div class="product" style="margin-top: 1em;">
-								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/puebla.jpg); margin: 0 auto;">
-								</div>
-								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-									<h3 style="line-height: 30px;"><a href="single.html">PUEBLA</a></h3>
-									<span class="price" style="font-size:12px;">desde </span><span
-										class="price">$3099</span>
-								</div>
-								<div class="medidas">
-									<span>(120cm x 25cm x 170cm)</span>
-								</div>
-							</div>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[16])">
-						<div class="text-center animate-box">
-							<div class="product" style="margin-top: 1em;">
-								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/pruebla_chico.jpg); margin: 0 auto;">
-								</div>
-								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-									<h3 style="line-height: 30px;"><a href="single.html">PUEBLA CHICO</a></h3>
-									<span class="price" style="font-size:12px;">desde </span><span
-										class="price">$2699</span>
-								</div>
-								<div class="medidas">
-									<span>(900cm x 25cm x 130cm)</span>
-								</div>
-							</div>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[17])">
-						<div class="text-center animate-box">
-							<div class="product" style="margin-top: 1em;">
-								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/puertovallarta.jpg); margin: 0 auto;">
-								</div>
-								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-									<h3 style="line-height: 30px;"><a href="single.html">PUERTO VALLARTA</a></h3>
-									<span class="price" style="font-size:12px;">desde </span><span
-										class="price">$3999</span>
-								</div>
-								<div class="medidas">
-									<span>(46cm x 75cm x 125cm)</span>
-								</div>
-							</div>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[19])">
-						<div class="text-center animate-box">
-							<div class="product" style="margin-top: 1em;">
-								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/veracruz.jpg); margin: 0 auto;">
-								</div>
-								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-									<h3 style="line-height: 30px;"><a href="single.html">VERACRUZ</a></h3>
-									<span class="price" style="font-size:12px;">desde </span><span
-										class="price">$4199</span>
-								</div>
-								<div class="medidas">
-									<span>(80cm x 87cm x 80cm)</span>
-								</div>
-							</div>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[20])">
-						<div class="text-center animate-box">
-							<div class="product" style="margin-top: 1em;">
-								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/veracruz_ninos.jpg); margin: 0 auto;">
-								</div>
-								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-									<h3 style="line-height: 30px;"><a href="single.html">VERACRUZ NIÑOS</a></h3>
-									<span class="price" style="font-size:12px;">desde </span><span
-										class="price">$3399</span>
-								</div>
-								<div class="medidas">
-									<span>(69cm x 65cm x 65cm)</span>
-								</div>
-							</div>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[21])">
-						<div class="text-center animate-box">
-							<div class="product" style="margin-top: 1em;">
-								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/zacatecas_chico.jpg); margin: 0 auto;">
-								</div>
-								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-									<h3 style="line-height: 30px;"><a href="single.html">ZACATECAS CHICO</a></h3>
-									<span class="price" style="font-size:12px;">desde </span><span
-										class="price">$2399</span>
-								</div>
-								<div class="medidas">
-									<span>(45cm x 33cm x 55cm)</span>
-								</div>
-							</div>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[23])">
-						<div class="text-center animate-box">
-							<div class="product" style="margin-top: 1em;">
-								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/zacatecas_mediano.jpg); margin: 0 auto;">
-								</div>
-								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-									<h3 style="line-height: 30px;"><a href="single.html">ZACATECAS MEDIANO</a></h3>
-									<span class="price" style="font-size:12px;">desde </span><span
-										class="price">$2699</span>
-								</div>
-								<div class="medidas">
-									<span>(60cm x 33cm x 60cm)</span>
-								</div>
-							</div>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[22])">
-						<div class="text-center animate-box">
-							<div class="product" style="margin-top: 1em;">
-								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/zacatecas_grande.jpg); margin: 0 auto;">
-								</div>
-								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-									<h3 style="line-height: 30px;"><a href="single.html">ZACATECAS GRANDE</a></h3>
-									<span class="price" style="font-size:12px;">desde </span><span
-										class="price">$3199</span>
-								</div>
-								<div class="medidas">
-									<span>(90cm x 33cm x 90cm)</span>
-								</div>
-							</div>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[24])">
-						<div class="text-center animate-box">
-							<div class="product" style="margin-top: 1em;">
-								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/zacatlan.jpg); margin: 0 auto;">
-								</div>
-								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-									<h3 style="line-height: 30px;"><a href="single.html">ZACATLÁN</a></h3>
-									<span class="price" style="font-size:12px;">desde </span><span
-										class="price">$3399</span>
-								</div>
-								<div class="medidas">
-									<span>(64cm x 125cm x 64cm)</span>
-								</div>
-							</div>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[23])">
-						<div class="text-center animate-box">
-							<div class="product" style="margin-top: 1em;">
-								<div class="product-grid"
-									style="background-image:url(images/productos/puffino/zacatlan_mediano.jpg); margin: 0 auto;">
-								</div>
-								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-									<h3 style="line-height: 30px;"><a href="single.html">ZACATLÁN MEDIANO</a></h3>
-									<span class="price" style="font-size:12px;">desde </span><span
-										class="price">$2899</span>
-								</div>
-								<div class="medidas">
-									<span>(50cm x 95cm x 50cm)</span>
-								</div>
-							</div>
-						</div>
-					</a>
-				</li>
-			</ul>
-		</div>
-		<!-- FIN SLIDER DE MODELOS PUFFINO -->
-
-
-		<!-- SLIDER DE MODELOS KIDS -->
-		<div id="kidsDiv">
-			<ul id="sliderKids">
-				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.kids[0])">
-						<div class="text-center animate-box">
-							<div class="product" style="margin-top: 1em;">
-								<div class="product-grid"
-									style="background-image:url(images/productos/kids/kids_conejo.jpg); margin: 0 auto;">
-								</div>
-								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-									<h3 style="line-height: 30px;"><a href="single.html">CONEJO</a></h3>
-									<span class="price" style="font-size:12px;">desde </span><span
-										class="price">$3499</span>
-								</div>
-								<div class="medidas">
-									<span>(76cm x 90cm x 76cm)</span>
-								</div>
-							</div>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.kids[1])">
-						<div class="text-center animate-box">
-							<div class="product" style="margin-top: 1em;">
-								<div class="product-grid"
-									style="background-image:url(images/productos/kids/kids_dinosaurio.jpg); margin: 0 auto;">
-								</div>
-								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-									<h3 style="line-height: 30px;"><a href="single.html">DINOSAURIO</a></h3>
-									<span class="price" style="font-size:12px;">desde </span><span
-										class="price">$3699</span>
-								</div>
-								<div class="medidas">
-									<span>(72cm x 90cm x 76cm)</span>
-								</div>
-							</div>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.kids[2])">
-						<div class="text-center animate-box">
-							<div class="product" style="margin-top: 1em;">
-								<div class="product-grid"
-									style="background-image:url(images/productos/kids/kids_dona.jpg); margin: 0 auto;">
-								</div>
-								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-									<h3 style="line-height: 30px;"><a href="single.html">DONA</a></h3>
-									<span class="price" style="font-size:12px;">desde </span><span
-										class="price">$3399</span>
-								</div>
-								<div class="medidas">
-									<span>(96cm diametro x 32cm)</span>
-								</div>
-							</div>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.kids[3])">
-						<div class="text-center animate-box">
-							<div class="product" style="margin-top: 1em;">
-								<div class="product-grid"
-									style="background-image:url(images/productos/kids/kids_jirafa.jpg); margin: 0 auto;">
-								</div>
-								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-									<h3 style="line-height: 30px;"><a href="single.html">JIRAFA</a></h3>
-									<span class="price" style="font-size:12px;">desde </span><span
-										class="price">$3799</span>
-								</div>
-								<div class="medidas">
-									<span>(72cm x 90cm x 76cm)</span>
-								</div>
-							</div>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.kids[4])">
-						<div class="text-center animate-box">
-							<div class="product" style="margin-top: 1em;">
-								<div class="product-grid"
-									style="background-image:url(images/productos/kids/kids_perrito.jpg); margin: 0 auto;">
-								</div>
-								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-									<h3 style="line-height: 30px;"><a href="single.html">PERRITO</a></h3>
-									<span class="price" style="font-size:12px;">desde </span><span
-										class="price">$3699</span>
-								</div>
-								<div class="medidas">
-									<span>(72cm x 90cm x 76cm)</span>
-								</div>
-							</div>
-						</div>
-					</a>
-				</li>
-				<li>
-					<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.kids[5])">
-						<div class="text-center animate-box">
-							<div class="product" style="margin-top: 1em;">
-								<div class="product-grid"
-									style="background-image:url(images/productos/kids/kids_unicornio.jpg); margin: 0 auto;">
-								</div>
-								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-									<h3 style="line-height: 30px;"><a href="single.html">UNICORNIO</a></h3>
-									<span class="price" style="font-size:12px;">desde </span><span
-										class="price">$3499</span>
-								</div>
-								<div class="medidas">
-									<span>(72cm x 90cm x 76cm)</span>
-								</div>
-							</div>
-						</div>
-					</a>
-				</li>
-			</ul>
-		</div>
-		<!-- FIN SLIDER DE MODELOS KIDS-->
-		<div style="color:#FFF;">
+		<div style="color:#FFF;" class="topDivPush">
 			<hr>
 		</div>
 		<div class="motor3D">
@@ -1800,18 +1820,18 @@
 				}, responsiveBreakpoints: {
 					portrait: {
 						changePoint: 480,
-						visibleItems: 1,
+						visibleItems: 3,
 						itemsToScroll: 1
 					},
 					landscape: {
 						changePoint: 640,
-						visibleItems: 2,
-						itemsToScroll: 2
+						visibleItems: 4,
+						itemsToScroll: 3
 					},
 					tablet: {
 						changePoint: 768,
-						visibleItems: 3,
-						itemsToScroll: 3
+						visibleItems: 5,
+						itemsToScroll: 2
 					}
 				}
 			});
@@ -1828,17 +1848,17 @@
 				}, responsiveBreakpoints: {
 					portrait: {
 						changePoint: 480,
-						visibleItems: 1,
+						visibleItems: 2,
 						itemsToScroll: 1
 					},
 					landscape: {
 						changePoint: 640,
-						visibleItems: 2,
+						visibleItems: 4,
 						itemsToScroll: 2
 					},
 					tablet: {
 						changePoint: 768,
-						visibleItems: 3,
+						visibleItems: 5,
 						itemsToScroll: 3
 					}
 				}
