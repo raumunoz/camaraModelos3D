@@ -1,128 +1,38 @@
 {
-    "accessors" : [
-        {
-            "bufferView" : 0,
-            "componentType" : 5123,
-            "count" : 32064,
-            "max" : [
-                5679
-            ],
-            "min" : [
-                0
-            ],
-            "type" : "SCALAR"
-        },
-        {
-            "bufferView" : 1,
-            "componentType" : 5126,
-            "count" : 5680,
-            "max" : [
-                1.2480274438858032,
-                1.2962548732757568,
-                1.2106002569198608
-            ],
-            "min" : [
-                -1.231492280960083,
-                -1.1754392385482788,
-                -1.1901544332504272
-            ],
-            "type" : "VEC3"
-        },
-        {
-            "bufferView" : 2,
-            "componentType" : 5126,
-            "count" : 5680,
-            "max" : [
-                1.0,
-                1.0,
-                1.0
-            ],
-            "min" : [
-                -1.0,
-                -0.999969482421875,
-                -1.0
-            ],
-            "type" : "VEC3"
-        },
-        {
-            "bufferView" : 3,
-            "componentType" : 5126,
-            "count" : 5680,
-            "max" : [
-                1.0,
-                0.8830114603042603,
-                0.787336528301239,
-                1.0
-            ],
-            "min" : [
-                -1.0,
-                -0.8219461441040039,
-                -1.0,
-                1.0
-            ],
-            "type" : "VEC4"
-        },
-        {
-            "bufferView" : 4,
-            "componentType" : 5126,
-            "count" : 5680,
-            "max" : [
-                0.6666666865348816,
-                1.0
-            ],
-            "min" : [
-                0.0,
-                0.0
-            ],
-            "type" : "VEC2"
-        }
-    ],
     "asset" : {
-        "generator" : "Khronos Blender glTF 2.0 exporter",
+        "generator" : "Khronos Blender glTF 2.0 I/O",
         "version" : "2.0"
     },
-    "bufferViews" : [
+    "scene" : 0,
+    "scenes" : [
         {
-            "buffer" : 0,
-            "byteLength" : 64128,
-            "byteOffset" : 0,
-            "target" : 34963
-        },
-        {
-            "buffer" : 0,
-            "byteLength" : 68160,
-            "byteOffset" : 64128,
-            "target" : 34962
-        },
-        {
-            "buffer" : 0,
-            "byteLength" : 68160,
-            "byteOffset" : 132288,
-            "target" : 34962
-        },
-        {
-            "buffer" : 0,
-            "byteLength" : 90880,
-            "byteOffset" : 200448,
-            "target" : 34962
-        },
-        {
-            "buffer" : 0,
-            "byteLength" : 45440,
-            "byteOffset" : 291328,
-            "target" : 34962
+            "name" : "Scene",
+            "nodes" : [
+                1
+            ]
         }
     ],
-    "buffers" : [
+    "nodes" : [
         {
-            "byteLength" : 336768,
-            "uri" : "Atlixco.bin"
-        }
-    ],
-    "images" : [
+            "mesh" : 0,
+            "name" : "main",
+            "rotation" : [
+                0.7071068286895752,
+                0,
+                0,
+                0.7071067094802856
+            ]
+        },
         {
-            "name" : "GAMUZA ROYAL BLUE",
-            "uri" : "GAMUZA ROYAL BLUE.jpg"
+            "children" : [
+                0
+            ],
+            "name" : "centro",
+            "scale" : [
+                5,
+                5,
+                5
+            ]
         }
     ],
     "materials" : [
@@ -130,9 +40,11 @@
             "name" : "base",
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 0
+                    "index" : 0,
+                    "texCoord" : 0
                 },
-                "metallicFactor" : 0.0
+                "metallicFactor" : 0,
+                "roughnessFactor" : 1
             }
         }
     ],
@@ -142,55 +54,90 @@
             "primitives" : [
                 {
                     "attributes" : {
-                        "NORMAL" : 2,
-                        "POSITION" : 1,
-                        "TANGENT" : 3,
-                        "TEXCOORD_0" : 4
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2
                     },
-                    "indices" : 0,
+                    "indices" : 3,
                     "material" : 0
                 }
             ]
         }
     ],
-    "nodes" : [
-        {
-            "mesh" : 0,
-            "name" : "Cube.012",
-            "rotation" : [
-                -8.146034247147327e-08,
-                0.0,
-                -0.0,
-                1.0
-            ],
-            "scale" : [
-                0.9275989532470703,
-                0.9305358529090881,
-                0.958031952381134
-            ],
-            "translation" : [
-                -0.000929713249206543,
-                0.1960805207490921,
-                0.0029735565185546875
-            ]
-        }
-    ],
-    "samplers" : [
-        {}
-    ],
-    "scene" : 0,
-    "scenes" : [
-        {
-            "name" : "Scene",
-            "nodes" : [
-                0
-            ]
-        }
-    ],
     "textures" : [
         {
-            "sampler" : 0,
             "source" : 0
+        }
+    ],
+    "images" : [
+        {
+            "mimeType" : "image/png",
+            "name" : "GAMUZA ROYAL BLUE.jpg",
+            "uri" : "GAMUZA ROYAL BLUE.png"
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 5710,
+            "max" : [
+                1.157668948173523,
+                1.1597938537597656,
+                1.093788504600525
+            ],
+            "min" : [
+                -1.1423310041427612,
+                -1.1402060985565186,
+                -1.206211805343628
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 5710,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 5710,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5123,
+            "count" : 32064,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 68520,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 68520,
+            "byteOffset" : 68520
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 45680,
+            "byteOffset" : 137040
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 64128,
+            "byteOffset" : 182720
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 246848,
+            "uri" : "atlixco.bin"
         }
     ]
 }

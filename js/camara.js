@@ -27,11 +27,15 @@ function cargarCamara(escena, camera) {
     advancedTexture.addControl(ellipse1);
 */
     btnCamara.style.visibility = "hidden";
+    var cmaTrasera;
     navigator.mediaDevices.enumerateDevices().then(function (dispositivos) {
         dispositivos.forEach(device => {
             console.log(device.kind + ": " + device.label +" id = " + device.deviceId);
             if (device.kind == "videoinput") {
-                //alert(device.label);
+                //alert(device.label);videoinput
+                if(device.label=="camera 0, facing back"){
+                    cmaTrasera=device.deviceId;
+                }	
             }
         });
         /*dispositivos.forEach(dispositivo => {
@@ -46,10 +50,17 @@ function cargarCamara(escena, camera) {
         });*/
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
             // Take the user to a different screen here.
-            idCamara = dispositivos[2].deviceId;
+            idCamara = cmaTrasera;
             // alert("camara MObil");
+            console.log("mobil");
         } else {
-            idCamara = dispositivos[0].deviceId;
+           
+            if (typeof cmaTrasera !== 'undefined') {
+                idCamara = cmaTrasera;
+    
+            }else{
+                idCamara = dispositivos[0].deviceId;
+            }
         }
         encenderCamara(idCamara);
     });
@@ -122,3 +133,43 @@ function activarCamara() {
 
     }
 }
+/*
+navigator.mediaDevices.enumerateDevices().then(function (dispositivos) {
+    var cmaTrasera;
+    arreDispositivos=dispositivos;
+    dispositivos.forEach(device => {
+        console.log(device.kind + ": " + device.label +" id = " + device.deviceId);
+        if (device.kind == "videoinput") {
+            //alert(device.label);videoinput
+            if(device.label=="camera 0, facing back"){
+                cmaTrasera=device.deviceId;
+            }	
+        }
+    });
+    /*
+    dispositivos.forEach(dispositivo => {
+        console.log(" " + dispositivo.label);
+        
+        if (dispositivo.label == "camera 0, facing back") {
+            mobil = true;
+            idCamara=dispositivo.deviceId;
+            
+        }
+      
+    });*/
+    /*if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
+        // Take the user to a different screen here.
+        idCamara = cmaTrasera;
+        // alert("camara MObil");
+        console.log("mobil");
+    } else {
+       
+        if (typeof cmaTrasera !== 'undefined') {
+            idCamara = cmaTrasera;
+
+        }else{
+            idCamara = dispositivos[0].deviceId;
+        }
+    }
+    encenderCamara(idCamara);
+});*/

@@ -1,6 +1,6 @@
 //let gizmo;
 
-let debugg;
+let debugg=0;
 const inputElement = document.getElementById("file-input");
 let bandera = false;
 inputElement.addEventListener("change", function (e) {
@@ -48,6 +48,7 @@ let altoTotal;
 let archivosTexturas;
 let evCache = new Array();
 let prevDiff = -1;
+let customMesh=true;
 //let sliders = [];
 //let gizmoLayer;
 //let utilLayer;
@@ -220,10 +221,12 @@ var targetProxy = new Proxy(dimensionSuperior, {
         target[key] = value;
     }
 });
+var padreProxy;
 
 let botonesMueble;
 let padres = [];
 let numPadre = 0;
+let mainCustomMesh;
 window.addEventListener('DOMContentLoaded', function () {
     gridContainer = document.getElementById("grid-container");
     var currentPosition = { x: 0, y: 0 };
@@ -365,8 +368,8 @@ window.addEventListener('DOMContentLoaded', function () {
             if (bandera) {
                 currentPosition.x = evt.clientX;
                 currentPosition.y = evt.clientY;
-                currentRotation.x = padreCentro.rotation.x;
-                currentRotation.y = padreCentro.rotation.y;
+                currentRotation.x = mainCustomMesh.rotation.x;
+                currentRotation.y = mainCustomMesh.rotation.y;
             }
             clicked = true;
         });
@@ -422,8 +425,8 @@ window.addEventListener('DOMContentLoaded', function () {
             }
             //padreCentro.rotation.x
             if (bandera && clicked) {
-                padreCentro.rotation.y = currentRotation.y - (evt.clientX - currentPosition.x) / 350;
-                padreCentro.rotation.x = currentRotation.x + (evt.clientY - currentPosition.y) / 350;
+                padreProxy.y = currentRotation.y - (evt.clientX - currentPosition.x) / 350;
+                padreProxy.x = currentRotation.x + (evt.clientY - currentPosition.y) / 350;
             }
             //console.log("ROTATION X ",padreCentro.rotation.x,"ROTATION Y ",padreCentro.rotation.y);
         });
@@ -588,6 +591,33 @@ window.addEventListener('DOMContentLoaded', function () {
 
     manager = new BABYLON.GUI.GUI3DManager(escena);
     padreCentro = new BABYLON.Mesh("padreCentro", escena);
+    padreProxy=new Proxy(padreCentro.rotation,{
+        set: function (target, key, value) {
+            console.log(target);
+            console.log(key);
+            if(key=='x'){
+                padreCentro.rotation.x=value;
+                if(customMesh){
+                   mainCustomMesh.rotation.x=value;
+                }
+            }
+            if(key=='y'){
+                padreCentro.rotation.y=value;
+                if(customMesh){
+                    mainCustomMesh.rotation.y=value;
+                 }
+            }
+            if(key=='z'){
+                padreCentro.rotation.z=value;
+                if(customMesh){
+                    mainCustomMesh.rotation.z=value;
+                 }
+            }
+            console.log(value);
+            target[key]=value;
+        }
+        
+    }); 
     padreActual = padreCentro;
 
     //cargarModelo(padreCentro, modelos.puffs[0].nombre);
@@ -806,6 +836,7 @@ function createButon3D(mesh, opc) {
 
 function cargarModelo(padre, modelo, posicion, prearmado, rotacion) {
     //para quitar el padre pero dejar las tran
+    customMesh=false;
     //alert("ENTRO");
     var derecha;
     var izquierda;
@@ -963,64 +994,45 @@ function cargarModelo(padre, modelo, posicion, prearmado, rotacion) {
     //padreActual.setParent(padreCentro);
 }
 
-function cargarModeloCustom(modelo, posicion) {
+function cargarModeloCustom(modelo, posicion) {    
+    customMesh=true;
     escena.meshes.forEach((x) => { x.dispose() });
     container.meshes.forEach((x) => { x.dispose() });
     precioTotal = 0;
     precioTotal = modelo.precio;
     spanPrecio.innerText = "$" + precioTotal;
-
-    /*
-    BABYLON.SceneLoader.LoadAssetContainer("assets/modelos/", modelo, escena, function (newMeshes) {
-        meshesAcargar = newMeshes;
-        console.log("newMeshes", newMeshes);
-        padreAnterior = padreActual;
-        padreActual = newMeshes.meshes[0].getChildren()[0];
-        newMeshes.meshes[0].getChildren()[0].padreCentro.setParent(padreCentro);
-        numPadre++;
-        container.meshes.push(padreActual);
-        padreActual.parent = padre;
-        
-        /*
-        newMeshes.meshes.forEach(mesh => {
-            hl.addMesh(mesh, BABYLON.Color3.Green());
-            container.meshes.push(mesh);
-            meshClickleable(mesh);
-        });
-        
-       console.log("cargar");
-        container.addAllToScene();
-    }, onSuccess = () => {
-        //engine.hideLoadingUI();
-        console.log("completo");
-    }, onProgress = () => {
-        console.log("cargando");
-        //engine.displayLoadingUI();
-    });*/
     showLoadingScreen();
+   // BABYLON.SceneLoader.LoadAssetContainer("assets/modelos/", modelo.nombre, escena, function (newMeshes) {
     BABYLON.SceneLoader.ImportMesh("", "assets/modelos/", modelo.nombre, escena, function (newMeshes, particleSystems) {
         //console.log(newMeshes);
         //console.log(padre);
         //ModeloCustom=newMeshes;
-        debugg = newMeshes;
-        newMeshes[0].setParent(padreCentro);
+        debugg = newMeshes[0].getChildren()[0];
+       // newMeshes[0].setParent(padreCentro);
         newMeshes.forEach(mesh => {
             //hl.addMesh(mesh, BABYLON.Color3.Green());
             container.meshes.push(mesh);
             meshClickleable(mesh);
+            //mesh.setParent(padreCentro);
+            if(mesh.name=="main"){
+               // mainCustomMesh=mesh;
+               debugg.addBehavior(pointerDragBehavior);
+            }
 
         });
+        mainCustomMesh=newMeshes[0];
         //newMeshes.forEach(x=>x.setParent(padreCentro));
         if (typeof posicion === 'undefined') {
 
         } else {
-            newMeshes[0].position = posicion;
+            newMeshes[1].position = posicion;
         }
         //newMeshes.meshes[0].getChildren()[0].setParent(padreCentro);
         //engine.displayLoadingUI();
         //hideLoadingScreen();
         hideLoadingScreen();
     });
+    BABYLON.SceneLoader.ImportMesh
 }
 
 function cambioTextura(opc) {
@@ -1885,6 +1897,7 @@ padreActual.getChildren()[0].material._albedoTexture.dispose();
 new BABYLON.Texture("textures/filename", scene);
 padreActual.getChildren()[0].material._albedoTexture= new BABYLON.Texture("assets/modelos/tabureteContempo1_base_DIFFUSE.jpg", escena);
 */
+
 function nombreImagenTextura(nombreTextura) {
     var transformada = nombreTextura.split(" ");
     transformada[0] = transformada[0].toLowerCase();
@@ -2335,6 +2348,7 @@ function resaltarBotonMenu(o) {
             break;
     }
 }
+
 /*
 function handleFiles() {
     const fileList = this.files; /* now you can work with the file list
@@ -2349,3 +2363,11 @@ function handleFiles() {
 */
 
 //function
+BABYLON.SceneLoader.LoadAssetContainer("assets/modelos/", "atlixco.gltfb", escena, function (container) {
+        // Scale and position the loaded model (First mesh loaded from gltf is the root node)
+        container.meshes[0].position.z = 8
+        container.meshes[0].position.y = -1
+        debugg=container;
+        // Add loaded file to the scene
+        container.addAllToScene();
+    });

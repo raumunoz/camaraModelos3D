@@ -72,7 +72,7 @@ window.addEventListener("resize", function () {
 function loadingAnimation() {
     var deltaTime = escena.getEngine().getDeltaTime();
     //loadingSquare.rotation += 0.001 * deltaTime;
-    console.log("time", deltaTime);
+    //console.log("time", deltaTime);
     if(deltaTime>30 && deltaTime < 60){
         loadingText.text = "cargando.";
     }
