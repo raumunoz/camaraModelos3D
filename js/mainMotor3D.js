@@ -2361,13 +2361,3 @@ function handleFiles() {
     reader.readAsText(this.files);
 //}
 */
-
-//function
-BABYLON.SceneLoader.LoadAssetContainer("assets/modelos/", "atlixco.gltfb", escena, function (container) {
-        // Scale and position the loaded model (First mesh loaded from gltf is the root node)
-        container.meshes[0].position.z = 8
-        container.meshes[0].position.y = -1
-        debugg=container;
-        // Add loaded file to the scene
-        container.addAllToScene();
-    });
