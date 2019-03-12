@@ -1330,30 +1330,47 @@
 
 				</div>
 				<div class="botones-herramientas" id="botones-herramientas">
-					<div class="div-img-fotos">
-						<span>
-							<label for="file-input">
-								<img src="assets/iconos/fondo.png" alt="fondo" id="fondo" height="25" width="25" class="img-menu">
-							</label>
-							<input id="file-input" type="file" />
-						</span>
-						<img src="assets/iconos/camaraA.png" id="btnCamara" disabled="true" alt="camara" id="fondo" class="img-menu"
-							height="25" width="25" onclick="activarCamara()">
-						<img src="assets/iconos/save.png" id="btnCamara" disabled="true" alt="camara" id="fondo" height="25" width="25"
-							onclick="captura()" class="img-menu">
-						<!--
-												<img src="assets/iconos/3d_Rotate.png" id="btnCamara" disabled="true" alt="camara" id="fondo" height="25"
-													width="25" onclick="activarRotacion()">
-													-->
-						<img src="assets/iconos/rotate_90_degrees_ccw_black_18dp.png" alt="girar" id="btnRotar" height="25" width="25"
-							onclick="rotarSelecionado()" class="img-menu">
-						<!--
-												<img src="assets/iconos/check_black_18dp.png" alt="acaeptar" id="btnAplicar" height="25" width="25"
-													onclick="aplicar()">
-													-->
-						<img src="assets/iconos/remove_black_18dp.png" alt="cancelar" id="btnCancelar" height="25" width="25"
-							onclick="cancelar()" class="img-menu">
-					</div>
+						<div class="div-img-fotos">
+						
+						
+						
+								<!--
+														<img src="assets/iconos/3d_Rotate.png" id="btnCamara" disabled="true" alt="camara" id="fondo" height="25"
+															width="25" onclick="activarRotacion()">
+															-->
+								
+								<!--
+														<img src="assets/iconos/check_black_18dp.png" alt="acaeptar" id="btnAplicar" height="25" width="25"
+															onclick="aplicar()">
+															-->
+								
+							<ul class="opc-herramienta">
+								<li> 
+									<span class="img-fondo img-menu btn-imagen-grid" class="">
+												<label for="file-input">
+													<img src="assets/iconos/fondo.png" alt="fondo" id="fondo" height="25" width="25" class="img-menu btn-imagen-grid">
+												</label>
+												<input id="file-input" type="file" />
+									</span>
+								</li>
+								<li>
+									<img src="assets/iconos/camaraA.png" id="btnCamara" disabled="true" alt="camara" id="fondo" class="img-menu btn-imagen-grid "
+									height="25" width="25" onclick="activarCamara()">
+								</li>
+								<li>
+									<img src="assets/iconos/save.png" id="btnCamara" disabled="true" alt="camara" id="fondo" height="25" width="25"
+									onclick="captura()" class="img-menu btn-imagen-grid ">
+								</li>
+								<li>
+									<img src="assets/iconos/rotate90.png"  disabled="true" alt="girar" id="btnRotar" height="25" width="25"
+									onclick="rotarSelecionado()" class="img-menu btn-imagen-grid ">
+								</li>
+								<li>
+										<img src="assets/iconos/remove_black_18dp.png" alt="cancelar" id="btnCancelar" height="25" width="25"
+										onclick="cancelar()" class="img-menu btn-imagen-grid ">
+								</li>
+							</ul>
+						</div>
 				
 				</div>
 				<div class="acciones">
