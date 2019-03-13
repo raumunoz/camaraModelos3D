@@ -1,3 +1,5 @@
+/*#00abb3*/
+/*: #FA675B*/
 html {
 	font-size: 16px;
 }
@@ -22,15 +24,15 @@ html {
 }
 
 .icon-facebook {
-	background: #00abb3;
+	background: #FA675B;
 }
 
 .icon-youtube{
-	background: #00abb3;
+	background: #FA675B;
 }
 
 .icon-instagram {
-	background: #00abb3;
+	background: #FA675B;
 }
 
 .icon2:first-child {

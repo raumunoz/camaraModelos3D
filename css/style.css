@@ -66,7 +66,8 @@ p {
 
 h1, h2, h3, h4, h5, h6, figure {
   color: #000;
-  font-family: "Montserrat", Arial, sans-serif;
+  /*font-family: "Montserrat", Arial, sans-serif;*/
+  font-family: "Roboto", sans-serif;
   font-weight: 400;
   margin: 0 0 20px 0;
 }
@@ -185,7 +186,8 @@ h1, h2, h3, h4, h5, h6, figure {
   margin: 0;
   list-style: none;
   display: inline-block;
-  font-family: "Montserrat", Arial, sans-serif;
+  /*font-family: "Montserrat", Arial, sans-serif;*/
+  font-family: "Roboto", sans-serif;
 }
 .fh5co-nav ul li a {
   font-size: 13px;
@@ -710,7 +712,8 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 .fh5co-bg-section {
-  background: rgba(149, 191, 59, 51);
+  /*background: rgba(149, 191, 59, 51);*/
+  background-color: #F7F7F8;
 }
 
 #fh5co-services,
@@ -1141,7 +1144,9 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 #fh5co-footer {
-  background: #353a34;
+  /*background: #353a34;*/
+  background: #413F3F;
+  color: WhiteSmoke ;
 }
 #fh5co-footer .fh5co-footer-links {
   padding: 0;

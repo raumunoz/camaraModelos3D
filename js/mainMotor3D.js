@@ -1725,8 +1725,8 @@ function generarRenglonMueble(cantidad, nombreMueble, precio) {
             <tr>
                <th scope="row">`+ cantidad + `</th>
                <td>`+ nombreMueble + `</td>
-               <td>`+ precio + `$</td>
-               <td>`+ (precio * cantidad) + `$</td>
+               <td>$`+ precio + `</td>
+               <td>$`+ (precio * cantidad) + `</td>
            </tr>
                `
     return renglonTabla;
