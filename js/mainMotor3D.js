@@ -368,8 +368,8 @@ window.addEventListener('DOMContentLoaded', function () {
             if (bandera) {
                 currentPosition.x = evt.clientX;
                 currentPosition.y = evt.clientY;
-                currentRotation.x = mainCustomMesh.rotation.x;
-                currentRotation.y = mainCustomMesh.rotation.y;
+                currentRotation.x = padreCentro.rotation.x;
+                currentRotation.y = padreCentro.rotation.y;
             }
             clicked = true;
         });
@@ -425,8 +425,8 @@ window.addEventListener('DOMContentLoaded', function () {
             }
             //padreCentro.rotation.x
             if (bandera && clicked) {
-                padreProxy.y = currentRotation.y - (evt.clientX - currentPosition.x) / 350;
-                padreProxy.x = currentRotation.x + (evt.clientY - currentPosition.y) / 350;
+                padreCentro.rotation.y = currentRotation.y - (evt.clientX - currentPosition.x) / 350;
+                padreCentro.rotation.x = currentRotation.x + (evt.clientY - currentPosition.y) / 350;
             }
             //console.log("ROTATION X ",padreCentro.rotation.x,"ROTATION Y ",padreCentro.rotation.y);
         });
@@ -1013,6 +1013,7 @@ function cargarModeloCustom(modelo, posicion) {
             //hl.addMesh(mesh, BABYLON.Color3.Green());
             container.meshes.push(mesh);
             meshClickleable(mesh);
+            mesh.setParent(padreCentro);
             //mesh.setParent(padreCentro);
             if(mesh.name=="main"){
                // mainCustomMesh=mesh;
@@ -1353,6 +1354,8 @@ function meshClickleable(mesh) {
         console.log("Mesh clickeado", mesh.name);
         meshClicleado = true;
         //aplicar();
+        mesh.parent.addBehavior(pointerDragBehavior);
+        //mesh.addBehavior(pointerDragBehavior);
         if (muebleSelecionado === false) {
             esconderMesh(btnDerecho, false);
             esconderMesh(btnIzquierdo, false);
@@ -2361,3 +2364,13 @@ function handleFiles() {
     reader.readAsText(this.files);
 //}
 */
+
+function zoomear(zoom){
+    if(zoom=="in"){
+        camera.position.z=camera.position.z+1;
+        
+    }
+    if(zoom=="out"){
+        camera.position.z=camera.position.z-1;
+    }
+}

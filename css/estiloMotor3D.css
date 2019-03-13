@@ -525,7 +525,7 @@ div .materiales {
 }
 .grid-texturas{
 	margin: 0;
-	padding-left: 14%;
+	padding-left: 0%;
 	padding-right: 0;
 }
 .topDivPush{
@@ -816,10 +816,13 @@ width: 100%;
 		padding: 0 0 5px 5px;
 	}
 	.motor3D #btnRotar {
-
 		width: auto;
 		margin-right: 1px;
 		margin-left: 1px;
-	
+	}
+	.grid-texturas {
+		margin: 0;
+		padding-left: 14%;
+		padding-right: 0;
 	}
 }
