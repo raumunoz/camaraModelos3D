@@ -552,6 +552,12 @@ width: 100%;
 .div-img-fotos{
 	height: 190px;	
 }
+.btn-agregar {
+
+    background-color: #4DD7D3;
+    color: #4d4d4d;
+
+}
 @media only screen and (max-width: 600px) {
 	.motor3D .grid-container {
 		display: grid;
