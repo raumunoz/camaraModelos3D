@@ -34,7 +34,9 @@ html {
 .icon-instagram {
 	background: #FA675B;
 }
-
+.icon-twitter {
+    background: #FA675B;
+}
 .icon2:first-child {
 	border-radius: 1rem 0 0 0;
 }
