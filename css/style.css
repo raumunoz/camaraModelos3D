@@ -645,19 +645,22 @@ h1, h2, h3, h4, h5, h6, figure {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+/*iconos en contacto*/
 .fh5co-contact-info ul li.address:before {
   font-size: 30px;
+  color: #2ACA89;
   content: "\e9d1";
 }
 
 .fh5co-contact-info ul li.phone:before {
   font-size: 23px;
+  color: #2ACA89;
   content: "\e9f4";
 }
 
 .fh5co-contact-info ul li.email:before {
   font-size: 23px;
+  color: #2ACA89;
   content: "\e9da";
 }
 
@@ -1085,6 +1088,15 @@ h1, h2, h3, h4, h5, h6, figure {
   font-size: 400px;
   margin-bottom: 30px;
   text-align: center;
+}
+.address{
+  color:  #2ACA89;
+}
+.phone *{
+  color:  #2ACA89;
+}
+.email *{
+  color:  #2ACA89;
 }
 
 @media screen and (max-width: 768px) {
@@ -1691,24 +1703,24 @@ h1, h2, h3, h4, h5, h6, figure {
 }
 
 .btn-primary {
-  background: #d1c286;
+  background: #4e56df;
   color: #fff;
-  border: 2px solid #d1c286;
+  border: 2px solid #4e56df;
 }
-
+/*boton primario*/
 .btn-primary:hover, .btn-primary:focus, .btn-primary:active {
-  background: #d8cb98 !important;
-  border-color: #d8cb98 !important;
+  background: #7e83e7 !important;
+  border-color: #7e83e7 !important;
 }
 
 .btn-primary.btn-outline {
   background: transparent;
-  color: #d1c286;
-  border: 2px solid #d1c286;
+  color: #a9acef;
+  border: 2px solid #a9acef;
 }
 
 .btn-primary.btn-outline:hover, .btn-primary.btn-outline:focus, .btn-primary.btn-outline:active {
-  background: #d1c286;
+  background: #a9acef;
   color: #fff;
 }
 
