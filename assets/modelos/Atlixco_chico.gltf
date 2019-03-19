@@ -8,30 +8,33 @@
         {
             "name" : "Scene",
             "nodes" : [
-                0
+                1
             ]
         }
     ],
     "nodes" : [
         {
             "mesh" : 0,
-            "name" : "Cube.013",
-            "scale" : [
-                0.16132156550884247,
-                0.16183233261108398,
-                0.16661427915096283
+            "name" : "main"
+        },
+        {
+            "children" : [
+                0
             ],
-            "translation" : [
-                -0.000929713249206543,
-                0.19436022639274597,
-                0.0029735565185546875
-            ]
+            "name" : "centro"
         }
     ],
     "materials" : [
         {
-            "name" : "Material.081",
-            "pbrMetallicRoughness" : {}
+            "name" : "Material",
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 0,
+                    "texCoord" : 0
+                },
+                "metallicFactor" : 0,
+                "roughnessFactor" : 1
+            }
         }
     ],
     "meshes" : [
@@ -41,64 +44,88 @@
                 {
                     "attributes" : {
                         "POSITION" : 0,
-                        "NORMAL" : 1
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2
                     },
-                    "indices" : 2,
+                    "indices" : 3,
                     "material" : 0
                 }
             ]
+        }
+    ],
+    "textures" : [
+        {
+            "source" : 0
+        }
+    ],
+    "images" : [
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "LONA NARANJA.jpg",
+            "uri" : "LONA NARANJA.jpg"
         }
     ],
     "accessors" : [
         {
             "bufferView" : 0,
             "componentType" : 5126,
-            "count" : 334,
+            "count" : 5674,
             "max" : [
-                1.2480274438858032,
-                1.2962548732757568,
-                1.2106002569198608
+                5.033343315124512,
+                5.244398593902588,
+                5.042582035064697
             ],
             "min" : [
-                -1.231492280960083,
-                -1.1904182434082031,
-                -1.1901544332504272
+                -4.966656684875488,
+                -4.755601406097412,
+                -4.957417964935303
             ],
             "type" : "VEC3"
         },
         {
             "bufferView" : 1,
             "componentType" : 5126,
-            "count" : 334,
+            "count" : 5674,
             "type" : "VEC3"
         },
         {
             "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 5674,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
             "componentType" : 5123,
-            "count" : 1992,
+            "count" : 32064,
             "type" : "SCALAR"
         }
     ],
     "bufferViews" : [
         {
             "buffer" : 0,
-            "byteLength" : 4008,
+            "byteLength" : 68088,
             "byteOffset" : 0
         },
         {
             "buffer" : 0,
-            "byteLength" : 4008,
-            "byteOffset" : 4008
+            "byteLength" : 68088,
+            "byteOffset" : 68088
         },
         {
             "buffer" : 0,
-            "byteLength" : 3984,
-            "byteOffset" : 8016
+            "byteLength" : 45392,
+            "byteOffset" : 136176
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 64128,
+            "byteOffset" : 181568
         }
     ],
     "buffers" : [
         {
-            "byteLength" : 12000,
+            "byteLength" : 245696,
             "uri" : "Atlixco_chico.bin"
         }
     ]

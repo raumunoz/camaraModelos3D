@@ -8,7 +8,6 @@
         {
             "name" : "Scene",
             "nodes" : [
-                0,
                 1
             ]
         }
@@ -16,37 +15,37 @@
     "nodes" : [
         {
             "mesh" : 0,
-            "name" : "Cube.017",
-            "scale" : [
-                0.45217278599739075,
-                0.38594850897789,
-                0.38594850897789
+            "name" : "main",
+            "rotation" : [
+                0,
+                -0.913974940776825,
+                0,
+                0.40577054023742676
             ],
             "translation" : [
-                0.2768956422805786,
-                1.347238540649414,
-                0.7623770236968994
+                0,
+                1.5449378490447998,
+                0
             ]
         },
         {
-            "mesh" : 1,
-            "name" : "Cube.021",
-            "rotation" : [
-                0.2877649664878845,
-                0.03440481051802635,
-                0.03468789532780647,
-                0.9564540982246399
+            "children" : [
+                0
             ],
-            "scale" : [
-                0.02971259318292141,
-                0.02971259504556656,
-                0.02971259318292141
-            ],
-            "translation" : [
-                0.2748368978500366,
-                1.6900129318237305,
-                1.170316457748413
-            ]
+            "name" : "centro"
+        }
+    ],
+    "materials" : [
+        {
+            "name" : "Material.004",
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 0,
+                    "texCoord" : 0
+                },
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.9285714626312256
+            }
         }
     ],
     "meshes" : [
@@ -56,118 +55,88 @@
                 {
                     "attributes" : {
                         "POSITION" : 0,
-                        "NORMAL" : 1
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2
                     },
-                    "indices" : 2
+                    "indices" : 3,
+                    "material" : 0
                 }
             ]
-        },
+        }
+    ],
+    "textures" : [
         {
-            "name" : "Cube.024",
-            "primitives" : [
-                {
-                    "attributes" : {
-                        "POSITION" : 3,
-                        "NORMAL" : 4
-                    },
-                    "indices" : 5
-                }
-            ]
+            "source" : 0
+        }
+    ],
+    "images" : [
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "GAMUZA ROSA CHICLE.jpg",
+            "uri" : "GAMUZA ROSA CHICLE.jpg"
         }
     ],
     "accessors" : [
         {
             "bufferView" : 0,
             "componentType" : 5126,
-            "count" : 129,
+            "count" : 44941,
             "max" : [
-                7.748603820800781e-07,
-                1.0610548257827759,
-                1.4797890186309814
+                3.777592420578003,
+                3.160053014755249,
+                4.403538227081299
             ],
             "min" : [
-                -1.0000003576278687,
-                -3.410259962081909,
-                -5.123540878295898
+                -3.777592420578003,
+                -10.99582290649414,
+                -16.44557762145996
             ],
             "type" : "VEC3"
         },
         {
             "bufferView" : 1,
             "componentType" : 5126,
-            "count" : 129,
+            "count" : 44941,
             "type" : "VEC3"
         },
         {
             "bufferView" : 2,
-            "componentType" : 5123,
-            "count" : 696,
-            "type" : "SCALAR"
+            "componentType" : 5126,
+            "count" : 44941,
+            "type" : "VEC2"
         },
         {
             "bufferView" : 3,
-            "componentType" : 5126,
-            "count" : 1186,
-            "max" : [
-                4.21748685836792,
-                1.2823710441589355,
-                0.9375
-            ],
-            "min" : [
-                -4.21748685836792,
-                -4.377928733825684,
-                -0.9375
-            ],
-            "type" : "VEC3"
-        },
-        {
-            "bufferView" : 4,
-            "componentType" : 5126,
-            "count" : 1186,
-            "type" : "VEC3"
-        },
-        {
-            "bufferView" : 5,
             "componentType" : 5123,
-            "count" : 7104,
+            "count" : 249600,
             "type" : "SCALAR"
         }
     ],
     "bufferViews" : [
         {
             "buffer" : 0,
-            "byteLength" : 1548,
+            "byteLength" : 539292,
             "byteOffset" : 0
         },
         {
             "buffer" : 0,
-            "byteLength" : 1548,
-            "byteOffset" : 1548
+            "byteLength" : 539292,
+            "byteOffset" : 539292
         },
         {
             "buffer" : 0,
-            "byteLength" : 1392,
-            "byteOffset" : 3096
+            "byteLength" : 359528,
+            "byteOffset" : 1078584
         },
         {
             "buffer" : 0,
-            "byteLength" : 14232,
-            "byteOffset" : 4488
-        },
-        {
-            "buffer" : 0,
-            "byteLength" : 14232,
-            "byteOffset" : 18720
-        },
-        {
-            "buffer" : 0,
-            "byteLength" : 14208,
-            "byteOffset" : 32952
+            "byteLength" : 499200,
+            "byteOffset" : 1438112
         }
     ],
     "buffers" : [
         {
-            "byteLength" : 47160,
+            "byteLength" : 1937312,
             "uri" : "Bernal.bin"
         }
     ]

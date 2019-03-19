@@ -1,138 +1,45 @@
 {
-    "accessors" : [
-        {
-            "bufferView" : 0,
-            "componentType" : 5123,
-            "count" : 56880,
-            "max" : [
-                10605
-            ],
-            "min" : [
-                0
-            ],
-            "type" : "SCALAR"
-        },
-        {
-            "bufferView" : 1,
-            "componentType" : 5126,
-            "count" : 10606,
-            "max" : [
-                0.41146305203437805,
-                0.16942040622234344,
-                1.1409797668457031
-            ],
-            "min" : [
-                -0.41146305203437805,
-                -0.41507789492607117,
-                -0.26318347454071045
-            ],
-            "type" : "VEC3"
-        },
-        {
-            "bufferView" : 2,
-            "componentType" : 5126,
-            "count" : 10606,
-            "max" : [
-                0.999969482421875,
-                0.999969482421875,
-                1.0
-            ],
-            "min" : [
-                -0.999969482421875,
-                -1.0,
-                -0.99993896484375
-            ],
-            "type" : "VEC3"
-        },
-        {
-            "bufferView" : 3,
-            "componentType" : 5126,
-            "count" : 10606,
-            "max" : [
-                0.99599689245224,
-                0.9999985098838806,
-                0.9999998807907104,
-                1.0
-            ],
-            "min" : [
-                -1.0,
-                -1.0,
-                -0.9999788999557495,
-                1.0
-            ],
-            "type" : "VEC4"
-        },
-        {
-            "bufferView" : 4,
-            "componentType" : 5126,
-            "count" : 10606,
-            "max" : [
-                0.7067137956619263,
-                1.0
-            ],
-            "min" : [
-                0.0,
-                0.0
-            ],
-            "type" : "VEC2"
-        }
-    ],
     "asset" : {
-        "generator" : "Khronos Blender glTF 2.0 exporter",
+        "generator" : "Khronos Blender glTF 2.0 I/O",
         "version" : "2.0"
     },
-    "bufferViews" : [
+    "scene" : 0,
+    "scenes" : [
         {
-            "buffer" : 0,
-            "byteLength" : 113760,
-            "byteOffset" : 0,
-            "target" : 34963
-        },
-        {
-            "buffer" : 0,
-            "byteLength" : 127272,
-            "byteOffset" : 113760,
-            "target" : 34962
-        },
-        {
-            "buffer" : 0,
-            "byteLength" : 127272,
-            "byteOffset" : 241032,
-            "target" : 34962
-        },
-        {
-            "buffer" : 0,
-            "byteLength" : 169696,
-            "byteOffset" : 368304,
-            "target" : 34962
-        },
-        {
-            "buffer" : 0,
-            "byteLength" : 84848,
-            "byteOffset" : 538000,
-            "target" : 34962
+            "name" : "Scene",
+            "nodes" : [
+                1
+            ]
         }
     ],
-    "buffers" : [
+    "nodes" : [
         {
-            "byteLength" : 622848,
-            "uri" : "guanajuato.bin"
-        }
-    ],
-    "images" : [
+            "mesh" : 0,
+            "name" : "main",
+            "rotation" : [
+                0,
+                -0.094810850918293,
+                0,
+                0.9954953193664551
+            ]
+        },
         {
-            "name" : "GAMUZA FERRERO",
-            "uri" : "GAMUZA FERRERO.jpg"
+            "children" : [
+                0
+            ],
+            "name" : "centro"
         }
     ],
     "materials" : [
         {
-            "name" : "base",
+            "name" : "main",
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 0
+                    "index" : 0,
+                    "texCoord" : 0
                 },
-                "metallicFactor" : 0.0
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.9238095283508301
             }
         }
     ],
@@ -142,55 +49,90 @@
             "primitives" : [
                 {
                     "attributes" : {
-                        "NORMAL" : 2,
-                        "POSITION" : 1,
-                        "TANGENT" : 3,
-                        "TEXCOORD_0" : 4
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2
                     },
-                    "indices" : 0,
+                    "indices" : 3,
                     "material" : 0
                 }
             ]
         }
     ],
-    "nodes" : [
-        {
-            "mesh" : 0,
-            "name" : "Cube.001",
-            "rotation" : [
-                -2.1757243118258884e-08,
-                -0.094810850918293,
-                -2.0721573346094146e-09,
-                0.9954953193664551
-            ],
-            "scale" : [
-                5.0,
-                5.0,
-                5.0
-            ],
-            "translation" : [
-                4.634878525289622e-16,
-                2.0873637199401855,
-                -2.500487804412842
-            ]
-        }
-    ],
-    "samplers" : [
-        {}
-    ],
-    "scene" : 0,
-    "scenes" : [
-        {
-            "name" : "Scene",
-            "nodes" : [
-                0
-            ]
-        }
-    ],
     "textures" : [
         {
-            "sampler" : 0,
             "source" : 0
+        }
+    ],
+    "images" : [
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "GAMUZA FERRERO.jpg",
+            "uri" : "GAMUZA FERRERO.jpg"
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 10606,
+            "max" : [
+                2.0573153495788574,
+                0.8471020460128784,
+                5.704898834228516
+            ],
+            "min" : [
+                -2.0573153495788574,
+                -2.0753893852233887,
+                -1.3159173727035522
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 10606,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 10606,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5123,
+            "count" : 56880,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 127272,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 127272,
+            "byteOffset" : 127272
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 84848,
+            "byteOffset" : 254544
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 113760,
+            "byteOffset" : 339392
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 453152,
+            "uri" : "guanajuato.bin"
         }
     ]
 }
