@@ -164,7 +164,7 @@
 	font-size: 8px;
 	text-transform: uppercase;
 	display: inline-block;
-	background-color: #333537;
+	background-color: #FFFFFF;
 	padding: 0px 0px;
 	border: 0px;
 	margin: 1px;
@@ -175,7 +175,7 @@
 }
 
 .btn-imagen-grid:hover {
-	background-color: #3d3f41;
+	background-color: #6FC6FF;
 	box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
 	-webkit-transform: translate3d(-1px, -2px, 0);
 	transform: translate3d(-1px, -2px, 0);

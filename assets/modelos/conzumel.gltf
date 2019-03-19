@@ -8,190 +8,215 @@
         {
             "name" : "Scene",
             "nodes" : [
-                0,
-                1,
-                2,
-                3
+                2
             ]
         }
     ],
     "nodes" : [
         {
-            "name" : "Lamp",
-            "rotation" : [
-                0.16907575726509094,
-                0.7558802962303162,
-                -0.27217137813568115,
-                0.570947527885437
-            ],
-            "translation" : [
-                -1.7071971893310547,
-                5.903861999511719,
-                -1.0054539442062378
-            ]
-        },
-        {
-            "name" : "Camera",
-            "rotation" : [
-                0.483536034822464,
-                0.33687159419059753,
-                -0.20870360732078552,
-                0.7804827094078064
-            ],
-            "translation" : [
-                7.481131553649902,
-                5.34366512298584,
-                6.5076398849487305
-            ]
-        },
-        {
             "mesh" : 0,
-            "name" : "Cube.009",
-            "scale" : [
-                1.3359993696212769,
-                0.5827400088310242,
-                0.5827400088310242
-            ],
+            "name" : "Cube.022",
             "translation" : [
-                -0.0032644271850585938,
-                1.6851119995117188,
-                2.082247018814087
+                0.569200873374939,
+                -1.733393669128418,
+                -6.051107406616211
             ]
         },
         {
+            "children" : [
+                0
+            ],
             "mesh" : 1,
-            "name" : "Cube.022",
-            "scale" : [
-                0.39333653450012207,
-                0.46987539529800415,
-                0.39333653450012207
+            "name" : "main",
+            "rotation" : [
+                0,
+                0.9578065276145935,
+                0,
+                0.28741389513015747
             ],
             "translation" : [
-                0.017769336700439453,
-                0.5633962154388428,
-                -1.6044889688491821
+                1.8172616958618164,
+                1.219643235206604,
+                -2.2467944622039795
             ]
+        },
+        {
+            "children" : [
+                1
+            ],
+            "name" : "centro"
+        }
+    ],
+    "materials" : [
+        {
+            "name" : "main",
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 0,
+                    "texCoord" : 0
+                },
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.9238095283508301
+            }
         }
     ],
     "meshes" : [
+        {
+            "name" : "Cube.022",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2
+                    },
+                    "indices" : 3,
+                    "material" : 0
+                }
+            ]
+        },
         {
             "name" : "Cube.028",
             "primitives" : [
                 {
                     "attributes" : {
-                        "POSITION" : 0,
-                        "NORMAL" : 1
+                        "POSITION" : 4,
+                        "NORMAL" : 5,
+                        "TEXCOORD_0" : 6
                     },
-                    "indices" : 2
+                    "indices" : 7,
+                    "material" : 0
                 }
             ]
-        },
+        }
+    ],
+    "textures" : [
         {
-            "name" : "Cube.022",
-            "primitives" : [
-                {
-                    "attributes" : {
-                        "POSITION" : 3,
-                        "NORMAL" : 4
-                    },
-                    "indices" : 5
-                }
-            ]
+            "source" : 0
+        }
+    ],
+    "images" : [
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "LONA NEGRO AZABACHE.jpg",
+            "uri" : "LONA NEGRO AZABACHE.jpg"
         }
     ],
     "accessors" : [
         {
             "bufferView" : 0,
             "componentType" : 5126,
-            "count" : 513,
+            "count" : 8663,
             "max" : [
-                1.2383822202682495,
-                1.3065065145492554,
-                1.4572679996490479
+                2.5776681900024414,
+                0.9464786052703857,
+                1.0844670534133911
             ],
             "min" : [
-                -1.1980557441711426,
-                -2.9456305503845215,
-                -4.493908405303955
+                -2.545769214630127,
+                -0.8525786399841309,
+                -1.2737698554992676
             ],
             "type" : "VEC3"
         },
         {
             "bufferView" : 1,
             "componentType" : 5126,
-            "count" : 513,
+            "count" : 8663,
             "type" : "VEC3"
         },
         {
             "bufferView" : 2,
-            "componentType" : 5123,
-            "count" : 3066,
-            "type" : "SCALAR"
+            "componentType" : 5126,
+            "count" : 8663,
+            "type" : "VEC2"
         },
         {
             "bufferView" : 3,
-            "componentType" : 5126,
-            "count" : 478,
-            "max" : [
-                4.284851551055908,
-                1.3035081624984741,
-                1.8142104148864746
-            ],
-            "min" : [
-                -4.232375621795654,
-                -1.174187421798706,
-                -2.1269619464874268
-            ],
-            "type" : "VEC3"
+            "componentType" : 5123,
+            "count" : 45696,
+            "type" : "SCALAR"
         },
         {
             "bufferView" : 4,
             "componentType" : 5126,
-            "count" : 478,
+            "count" : 9404,
+            "max" : [
+                2.5257134437561035,
+                1.056815505027771,
+                1.304380178451538
+            ],
+            "min" : [
+                -2.4538991451263428,
+                -2.6159629821777344,
+                -4.043266296386719
+            ],
             "type" : "VEC3"
         },
         {
             "bufferView" : 5,
+            "componentType" : 5126,
+            "count" : 9404,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 6,
+            "componentType" : 5126,
+            "count" : 9404,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 7,
             "componentType" : 5123,
-            "count" : 2856,
+            "count" : 49008,
             "type" : "SCALAR"
         }
     ],
     "bufferViews" : [
         {
             "buffer" : 0,
-            "byteLength" : 6156,
+            "byteLength" : 103956,
             "byteOffset" : 0
         },
         {
             "buffer" : 0,
-            "byteLength" : 6156,
-            "byteOffset" : 6156
+            "byteLength" : 103956,
+            "byteOffset" : 103956
         },
         {
             "buffer" : 0,
-            "byteLength" : 6132,
-            "byteOffset" : 12312
+            "byteLength" : 69304,
+            "byteOffset" : 207912
         },
         {
             "buffer" : 0,
-            "byteLength" : 5736,
-            "byteOffset" : 18444
+            "byteLength" : 91392,
+            "byteOffset" : 277216
         },
         {
             "buffer" : 0,
-            "byteLength" : 5736,
-            "byteOffset" : 24180
+            "byteLength" : 112848,
+            "byteOffset" : 368608
         },
         {
             "buffer" : 0,
-            "byteLength" : 5712,
-            "byteOffset" : 29916
+            "byteLength" : 112848,
+            "byteOffset" : 481456
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 75232,
+            "byteOffset" : 594304
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 98016,
+            "byteOffset" : 669536
         }
     ],
     "buffers" : [
         {
-            "byteLength" : 35628,
+            "byteLength" : 767552,
             "uri" : "conzumel.bin"
         }
     ]

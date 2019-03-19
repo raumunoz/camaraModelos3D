@@ -8,54 +8,33 @@
         {
             "name" : "Scene",
             "nodes" : [
-                0,
-                1,
-                2
+                1
             ]
         }
     ],
     "nodes" : [
         {
-            "name" : "Lamp",
-            "rotation" : [
-                0.16907575726509094,
-                0.7558802962303162,
-                -0.27217137813568115,
-                0.570947527885437
-            ],
-            "translation" : [
-                4.076245307922363,
-                5.903861999511719,
-                -1.0054539442062378
-            ]
-        },
-        {
-            "name" : "Camera",
-            "rotation" : [
-                0.483536034822464,
-                0.33687159419059753,
-                -0.20870360732078552,
-                0.7804827094078064
-            ],
-            "translation" : [
-                7.481131553649902,
-                5.34366512298584,
-                6.5076398849487305
-            ]
-        },
-        {
             "mesh" : 0,
-            "name" : "Cube.010",
-            "scale" : [
-                0.14934676885604858,
-                0.15878517925739288,
-                0.12885639071464539
+            "name" : "main"
+        },
+        {
+            "children" : [
+                0
             ],
-            "translation" : [
-                0.08539630472660065,
-                0.16159677505493164,
-                -0.18036341667175293
-            ]
+            "name" : "centro"
+        }
+    ],
+    "materials" : [
+        {
+            "name" : "main",
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 0,
+                    "texCoord" : 0
+                },
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.8714285492897034
+            }
         }
     ],
     "meshes" : [
@@ -65,63 +44,88 @@
                 {
                     "attributes" : {
                         "POSITION" : 0,
-                        "NORMAL" : 1
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2
                     },
-                    "indices" : 2
+                    "indices" : 3,
+                    "material" : 0
                 }
             ]
+        }
+    ],
+    "textures" : [
+        {
+            "source" : 0
+        }
+    ],
+    "images" : [
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "GAMUZA AZUL MARINO.jpg",
+            "uri" : "GAMUZA AZUL MARINO.jpg"
         }
     ],
     "accessors" : [
         {
             "bufferView" : 0,
             "componentType" : 5126,
-            "count" : 240,
+            "count" : 8074,
             "max" : [
-                5.460536003112793,
-                4.377042293548584,
-                5.108180999755859
+                3.9932312965393066,
+                3.4544193744659424,
+                3.2136683464050293
             ],
             "min" : [
-                0,
-                -1,
-                -1.6149747371673584
+                -3.9932312965393066,
+                -0.7939260005950928,
+                -1.027734637260437
             ],
             "type" : "VEC3"
         },
         {
             "bufferView" : 1,
             "componentType" : 5126,
-            "count" : 240,
+            "count" : 8074,
             "type" : "VEC3"
         },
         {
             "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 8074,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
             "componentType" : 5123,
-            "count" : 1362,
+            "count" : 43584,
             "type" : "SCALAR"
         }
     ],
     "bufferViews" : [
         {
             "buffer" : 0,
-            "byteLength" : 2880,
+            "byteLength" : 96888,
             "byteOffset" : 0
         },
         {
             "buffer" : 0,
-            "byteLength" : 2880,
-            "byteOffset" : 2880
+            "byteLength" : 96888,
+            "byteOffset" : 96888
         },
         {
             "buffer" : 0,
-            "byteLength" : 2724,
-            "byteOffset" : 5760
+            "byteLength" : 64592,
+            "byteOffset" : 193776
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 87168,
+            "byteOffset" : 258368
         }
     ],
     "buffers" : [
         {
-            "byteLength" : 8484,
+            "byteLength" : 345536,
             "uri" : "Guadalajara.bin"
         }
     ]
