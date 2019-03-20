@@ -5,7 +5,47 @@
      overflow: scroll;
 }
 */
-body{
+
+.carrito li a {
+	text-decoration: none;
+}
+
+.carrito ul li {
+	list-style: none;
+}
+
+.carrito {
+	transform: translateX(200%);
+	transition: all .5s;
+	visibility: hidden;
+	width: 0%;
+	margin: 0;
+	background: #efefef;
+	padding-left: -20px;
+	font-weight: bold;
+	font-size: 18px;
+	font-family: BeaufortLOL;
+	color: pink;
+	top: 12%;
+	position: absolute;
+	margin: 0;
+	padding: 0;
+	z-index: 2;
+}
+
+.carrito-activo {
+	width: 50%;
+	visibility: visible;
+	transition: all .3s;
+	transform: translateX(100%);
+}
+
+.div-nav {
+	margin-left: 0px;
+	margin-right: 0px;
+}
+
+body {
 	margin: 0;
 	padding: 0;
 	width: 100%;
@@ -113,6 +153,7 @@ body{
 	margin-right: 1px;
 	margin-left: 1px;
 }
+
 .btn-grid {
 	display: grid;
 	grid-template-columns: max-content max-content max-content max-content max-content max-content max-content max-content max-content;
@@ -256,15 +297,7 @@ body{
 .motor3D .grid-container {
 	display: grid;
 	grid-template-areas: /*'header header header header header header'*/
-	  'mate main main main main main'
-	  'mate main main main main main'
-	  'mate main main main main main' 
-	  'mate main main main main main' 
-	  'modu main main main main main' 
-	  'preA main main main main main' 
-	  'erra main main main main main' 
-	  'accion main main main main main' 
-	  'footer footer footer footer footer footer';
+	'mate main main main main main' 'mate main main main main main' 'mate main main main main main' 'mate main main main main main' 'modu main main main main main' 'preA main main main main main' 'erra main main main main main' 'accion main main main main main' 'footer footer footer footer footer footer';
 	grid-gap: 10px;
 	padding: 10px;
 }
@@ -523,45 +556,52 @@ div .materiales {
 	position: absolute;
 	width: 100%;
 }
+
 .imgMueble {
 	background-color: #333537;
 	width: 50%;
 }
-.grid-texturas{
+
+.grid-texturas {
 	margin: 0;
 	padding-left: 0%;
 	padding-right: 0;
 }
-.topDivPush{
-	height: 30px;
 
-width: 100%;
+.topDivPush {
+	height: 30px;
+	width: 100%;
 }
+
 .img-fondo {
 	grid-area: imgF;
 }
-.img-camara{
+
+.img-camara {
 	grid-area: imgC;
 }
 
-.img-save{
+.img-save {
 	grid-area: imgS;
 }
-.img-rotate{
+
+.img-rotate {
 	grid-area: imgR;
 }
-.img-cancelar{
+
+.img-cancelar {
 	grid-area: imgX;
 }
-.div-img-fotos{
-	height: 190px;	
+
+.div-img-fotos {
+	height: 190px;
 }
+
 .btn-agregar {
-
-    background-color: #4DD7D3;
-    color: #4d4d4d;
-
+	background-color: #4DD7D3;
+	color: #4d4d4d;
 }
+
 @media only screen and (max-width: 600px) {
 	.motor3D .grid-container {
 		display: grid;
@@ -698,7 +738,6 @@ width: 100%;
 		grid-template-columns: 1fr 1fr 1fr;
 		grid-template-rows: 1fr 1fr 1fr;
 	}
-	
 	.opc-PreArmado li img {
 		padding: 0px;
 	}
@@ -809,16 +848,15 @@ width: 100%;
 		height: 59px;
 		width: auto;
 	}
-	.div-img-fotos{
+	.div-img-fotos {
 		margin-top: 5%;
 	}
-	.grid-texturas{
+	.grid-texturas {
 		margin: 0;
 		padding-left: 0%;
 		padding-right: 0;
 	}
 	.motor3D .botones-herramientas * {
-
 		height: 12;
 		width: 12;
 		height: 60px;

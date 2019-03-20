@@ -1721,8 +1721,7 @@ function getListaMuebles(padres) {
 
 function generarRenglonMueble(cantidad, nombreMueble, precio) {
     let renglonTabla =
-        `
-            <tr>
+        `   <tr>
                <th scope="row">`+ cantidad + `</th>
                <td>`+ nombreMueble + `</td>
                <td>$`+ precio + `</td>

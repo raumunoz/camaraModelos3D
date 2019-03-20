@@ -4,7 +4,6 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<!-- Facebook and Twitter integration -->
 	<meta property="og:title" content="" />
 	<meta property="og:image" content="" />
@@ -15,7 +14,8 @@
 	<meta name="twitter:image" content="" />
 	<meta name="twitter:url" content="" />
 	<meta name="twitter:card" content="" />
-
+	<meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 	<script src="js/jquery-2.2.0.min.js">
 	</script>
@@ -256,7 +256,7 @@
 
 	</div>
 
-	<div class="row" align="left" style="background-color:#fA675b;">
+	<div class="row div-nav"  style="background-color:#fA675b;">
 		<div class="col-md-5 col-sm-2">&nbsp;</div>
 		<div class="col-md-5 col-sm-2" style="text-align: right; margin-top: 0.3em;margin-bottom: 0.3em;"><span
 				style="font-size:15px; color:#FFF; font-family: 'Montserrat', Arial, sans-serif;">Servicio al cliente
@@ -270,10 +270,11 @@
 			<a href="https://api.whatsapp.com/send?phone=5214778541112" target="_blank">
 				<img src="images/whats.png" style="max-width: 1.8em;">
 			</a>
-			<a href="/checkout.html" target="_blank">
-				<img src="images/shopping_cart_white_24dp.png" style="max-width: 1.8em;">
-			</a>
+				<img src="images/shopping_cart_white_24dp.png" style="max-width: 1.8em;" onclick="mostrarCarro()">
 		</div>
+	</div>
+	<div class="carrito" id="carrito">
+		carrito
 	</div>
 	<div class="fh5co-loader"></div>
 
@@ -1667,6 +1668,19 @@
 			</div>
 		</div>
 	</div>
+	
+
+	<div class="card">
+		<div class="card-header">
+		  Featured
+		</div>
+		<div class="card-body">
+		  <h5 class="card-title">Special title treatment</h5>
+		  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+		  <a href="#" class="btn btn-primary">Go somewhere</a>
+		</div>
+	  </div>
+
 	<footer id="fh5co-footer" role="contentinfo">
 		<div class="container">
 			<div class="row row-pb-md">
@@ -1761,6 +1775,7 @@
 	<!--<script src="js/jquery-3.3.1.min.js"></script>-->
 	<script src="js/babylon.custom.js"></script>
 	<script src="js/mainMotor3D.js"></script>
+	<script src="js/carrito.js"></script>
 	<script type="text/javascript" src="js/texturas.json"></script>
 	<script type="text/javascript">
 		$(document).on('ready', function () {
