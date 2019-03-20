@@ -2,51 +2,257 @@
 <html>
 
 <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
- <!-- Bootstrap CSS -->
- <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-    <title>Babylon.js sample code</title>
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+  <!-- Bootstrap CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <title>Babylon.js sample code</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/icomoon.css">
+  <!-- Babylon.js -->
 
-    <!-- Babylon.js -->
+  <style>
+    .rng-carrito {
+      background-color: white;
+    }
 
-    <style>
-        html,
-        body {
-            overflow: hidden;
-            width: 100%;
-            height: 100%;
-            margin: 0;
-            padding: 0;
-        }
+    .contenedor {
+      background-color: tomato;
+      width: 50%;
+    }
 
-        #renderCanvas {
-            width: 100%;
-            height: 100%;
-            touch-action: none;
-        }
-    </style>
+    .rng-carrito {
+      border-bottom: 1px solid #777777;
+      height: 8.5em;
+    }
+
+    .img-carrito {
+      margin-top: 20%;
+    }
+
+    .rng-desc-carrito {
+      padding: 25px;
+      padding-right: 0px;
+    }
+
+    .rng-btn-remover-carrito span {
+      font-size: 20px;
+    }
+
+    .rng-btn-remover-carrito {
+      padding-top: 2.5em;
+    }
+
+    .rng-precio {
+      color: #3acca3;
+      font-size: 25px;
+    }
+
+    .rng-div-cantidad {
+      color: #bbb;
+      font-size: 15px;
+    }
+
+    .rng-div-precio {
+      padding-top: 1.5em;
+      padding-left: 3em;
+    }
+
+    .icon-cross {
+      display: none;
+      cursor: pointer;
+    }
+
+    .rng-carrito:hover .icon-cross {
+      display: block;
+    }
+  </style>
 </head>
 
+
 <body>
-        <div class="card" style="width: 18rem;">
-                <img class="card-img-top" src="assets/imagenes/brazoContempo.jpeg" alt="Card image cap" height="75" width="75">
-                <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-                </div>
-                <ul class="list-group list-group-flush">
-                  <li class="list-group-item">Cras justo odio</li>
-                  <li class="list-group-item">Dapibus ac facilisis in</li>
-                  <li class="list-group-item">Vestibulum at eros</li>
-                </ul>
-                <div class="card-body">
-                  <a href="#" class="card-link">Card link</a>
-                  <a href="#" class="card-link">Another link</a>
+  <div class="card" style="width: 18rem;">
+    <img class="card-img-top" src="assets/imagenes/brazoContempo.jpeg" alt="Card image cap" height="150" width="150">
+    <div class="card-body">
+      <h5 class="card-title">Card title</h5>
+      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
+        content.</p>
+    </div>
+    <ul class="list-group list-group-flush">
+      <li class="list-group-item">Cras justo odio</li>
+      <li class="list-group-item">Dapibus ac facilisis in</li>
+      <li class="list-group-item">Vestibulum at eros</li>
+    </ul>
+    <div class="card-body">
+      <a href="#" class="card-link">Card link</a>
+      <a href="#" class="card-link">Another link</a>
+    </div>
+  </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-sm">
+        One of three columns
+      </div>
+      <div class="col-sm">
+        One of three columns
+      </div>
+      <div class="col-sm">
+        One of three columns
+      </div>
+    </div>
+  </div>
+
+  <div class="contenedor">
+    <div class="row rng-carrito">
+      <div class="col-1"></div>
+      <div class="col-2">
+        <img src="assets/imagenes/brazoContempo.jpeg" alt="brazo" id="imgProducto" class="img-carrito" height="90">
+      </div>
+      <div class="col-5 rng-desc-carrito">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, nesciunt.
+      </div>
+      <div class="col-3 rng-div-precio">
+        <span class="rng-precio">
+          $75
+        </span>
+        <div class="rng-div-cantidad">
+          Cantidad: <span class="rng-cantidad">3</span>
+        </div>
+      </div>
+      <div class="col-1 rng-btn-remover-carrito">
+        <span class="icon">
+          <i class="icon-cross" onclick="removerArticulo(this)" id="rnd()"></i>
+        </span>
+      </div>
+    </div>
+    <div class="row rng-carrito">
+        <div class="col-1"></div>
+        <div class="col-2">
+          <img src="assets/imagenes/brazoContempo.jpeg" alt="brazo" id="imgProducto" class="img-carrito" height="90">
+        </div>
+        <div class="col-5 rng-desc-carrito">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, nesciunt.
+        </div>
+        <div class="col-3 rng-div-precio">
+          <span class="rng-precio">
+            $75
+          </span>
+          <div class="rng-div-cantidad">
+            Cantidad: <span class="rng-cantidad">3</span>
+          </div>
+        </div>
+        <div class="col-1 rng-btn-remover-carrito">
+          <span class="icon">
+            <i class="icon-cross" onclick="removerArticulo(this)" id="rnd()"></i>
+          </span>
+        </div>
+      </div>
+      <div class="row rng-carrito">
+          <div class="col-1"></div>
+          <div class="col-2">
+            <img src="assets/imagenes/brazoContempo.jpeg" alt="brazo" id="imgProducto" class="img-carrito" height="90">
+          </div>
+          <div class="col-5 rng-desc-carrito">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, nesciunt.
+          </div>
+          <div class="col-3 rng-div-precio">
+            <span class="rng-precio">
+              $75
+            </span>
+            <div class="rng-div-cantidad">
+              Cantidad: <span class="rng-cantidad">3</span>
+            </div>
+          </div>
+          <div class="col-1 rng-btn-remover-carrito">
+            <span class="icon">
+              <i class="icon-cross" onclick="removerArticulo(this)" id="rnd()"></i>
+            </span>
+          </div>
+        </div>
+        <div class="row rng-carrito">
+            <div class="col-1"></div>
+            <div class="col-2">
+              <img src="assets/imagenes/brazoContempo.jpeg" alt="brazo" id="imgProducto" class="img-carrito" height="90">
+            </div>
+            <div class="col-5 rng-desc-carrito">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, nesciunt.
+            </div>
+            <div class="col-3 rng-div-precio">
+              <span class="rng-precio">
+                $75
+              </span>
+              <div class="rng-div-cantidad">
+                Cantidad: <span class="rng-cantidad">3</span>
+              </div>
+            </div>
+            <div class="col-1 rng-btn-remover-carrito">
+              <span class="icon">
+                <i class="icon-cross" onclick="removerArticulo(this)" id="rnd()"></i>
+              </span>
+            </div>
+          </div>
+          <div class="row rng-carrito">
+              <div class="col-1"></div>
+              <div class="col-2">
+                <img src="assets/imagenes/brazoContempo.jpeg" alt="brazo" id="imgProducto" class="img-carrito" height="90">
+              </div>
+              <div class="col-5 rng-desc-carrito">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, nesciunt.
+              </div>
+              <div class="col-3 rng-div-precio">
+                <span class="rng-precio">
+                  $75
+                </span>
+                <div class="rng-div-cantidad">
+                  Cantidad: <span class="rng-cantidad">3</span>
                 </div>
               </div>
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+              <div class="col-1 rng-btn-remover-carrito">
+                <span class="icon">
+                  <i class="icon-cross" onclick="removerArticulo(this)" id="rnd()"></i>
+                </span>
+              </div>
+            </div>
+            <div class="row rng-carrito">
+                <div class="col-1"></div>
+                <div class="col-2">
+                  <img src="assets/imagenes/brazoContempo.jpeg" alt="brazo" id="imgProducto" class="img-carrito" height="90">
+                </div>
+                <div class="col-5 rng-desc-carrito">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, nesciunt.
+                </div>
+                <div class="col-3 rng-div-precio">
+                  <span class="rng-precio">
+                    $75
+                  </span>
+                  <div class="rng-div-cantidad">
+                    Cantidad: <span class="rng-cantidad">3</span>
+                  </div>
+                </div>
+                <div class="col-1 rng-btn-remover-carrito">
+                  <span class="icon">
+                    <i class="icon-cross" onclick="removerArticulo(this)" id="rnd()"></i>
+                  </span>
+                </div>
+              </div>
+              
+  </div>
+
+  <div class="row">
+    <div class="col-8">col-8</div>
+    <div class="col-4">col-4</div>
+  </div>
+  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+    crossorigin="anonymous"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+    crossorigin="anonymous"></script>
+  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+    crossorigin="anonymous"></script>
+  <script>
+    let padre;
+    function removerArticulo(elemento) {
+      padre = elemento.parentNode.parentNode.parentNode;
+      padre.style.backgroundColor = "violet";
+      padre.remove();
+    }
+  </script>
 </body>
 
 </html>
