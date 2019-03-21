@@ -4,6 +4,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<!-- Facebook and Twitter integration -->
 	<meta property="og:title" content="" />
 	<meta property="og:image" content="" />
@@ -40,6 +41,7 @@
 	<!-- Icomoon Icon Fonts-->
 	<link rel="stylesheet" href="css/icomoon.css">
 	<!-- Bootstrap  -->
+		
 	<link rel="stylesheet" href="css/bootstrap.css">
 
 	<!-- Flexslider  -->
@@ -258,11 +260,11 @@
 
 	<div class="row div-nav"  style="background-color:#fA675b;">
 		<div class="col-md-5 col-sm-2">&nbsp;</div>
-		<div class="col-md-5 col-sm-2" style="text-align: right; margin-top: 0.3em;margin-bottom: 0.3em;"><span
+		<div class="col-md-5 col-sm-7" style="text-align: right; margin-top: 0.3em;margin-bottom: 0.3em;"><span
 				style="font-size:15px; color:#FFF; font-family: 'Montserrat', Arial, sans-serif;">Servicio al cliente
 				Teléfono:
 				477 854 11 12</span></div>
-		<div class="col-md-1 col-sm-2" style="margin-top: 0.3em;margin-bottom: 0.3em; text-align: center;"><a
+		<div class="col-md-1 col-sm-1" style="margin-top: 0.3em;margin-bottom: 0.3em; text-align: center;"><a
 				href="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2F1962138827348733&amp;tabs=messages&amp;width=302&amp;height=300&amp;small_header=true&amp;adapt_container_width=true&amp;hide_cover=true&amp;show_facepile=false&amp;appId"
 				target="_blank"><img src="images/messeng.png" style="max-width: 1.8em;"></a>
 		</div>
@@ -274,7 +276,33 @@
 		</div>
 	</div>
 	<div class="carrito" id="carrito">
-		carrito
+
+		<div class="row rng-item">
+      <div class="col-1 col-sm-0"></div>
+      <div class="col-2 col-sm-3">
+        <img src="assets/imagenes/brazoContempo.jpeg" alt="brazo" id="imgProducto" class="img-carrito" height="90">
+      </div>
+      <div class="col-5 col-sm-4 rng-desc-carrito">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, nesciunt.
+      </div>
+      <div class="col-3 rng-div-precio">
+        <span class="rng-precio">
+          $75
+        </span>
+        <div class="rng-div-cantidad">
+          Cantidad: <span class="rng-cantidad">3</span>
+        </div>
+      </div>
+      <div class="col-1 rng-btn-remover-carrito">
+        <span class="icon">
+          <i class="icon-cross" onclick="removerArticulo(this)" id="rnd()"></i>
+        </span>
+      </div>
+		</div>
+		<div class="row rng-total">
+			Total <span id="total-carrito"></span>
+			<button>chekcout</button>
+		</div>
+		</div>
 	</div>
 	<div class="fh5co-loader"></div>
 
@@ -1589,6 +1617,8 @@
 						<h2>Clientes Felices</h2>
 					</div>
 				</div>
+				<!--FACEBOOK-->
+				<!--
 				<div class="row">
 					<div class="col-md-10 col-md-offset-1">
 						<div class="row">
@@ -1613,6 +1643,7 @@
 						</div>
 					</div>
 				</div>
+			-->
 			</div>
 		</div>
 		
@@ -1668,19 +1699,6 @@
 			</div>
 		</div>
 	</div>
-	
-
-	<div class="card">
-		<div class="card-header">
-		  Featured
-		</div>
-		<div class="card-body">
-		  <h5 class="card-title">Special title treatment</h5>
-		  <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-		  <a href="#" class="btn btn-primary">Go somewhere</a>
-		</div>
-	  </div>
-
 	<footer id="fh5co-footer" role="contentinfo">
 		<div class="container">
 			<div class="row row-pb-md">

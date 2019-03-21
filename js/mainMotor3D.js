@@ -2373,3 +2373,9 @@ function zoomear(zoom){
         camera.position.z=camera.position.z-1;
     }
 }
+
+/*funciones del carrito */
+function removerArticulo(elemento) {
+    padre = elemento.parentNode.parentNode.parentNode;
+    padre.remove();
+  }

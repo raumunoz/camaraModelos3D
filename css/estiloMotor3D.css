@@ -20,26 +20,70 @@
 	visibility: hidden;
 	width: 0%;
 	margin: 0;
-	background: #efefef;
-	padding-left: -20px;
-	font-weight: bold;
-	font-size: 18px;
-	font-family: BeaufortLOL;
-	color: pink;
-	top: 12%;
+	background-color: white;
+	font-size: 16px;
+	top: 6.5%;
 	position: absolute;
 	margin: 0;
 	padding: 0;
 	z-index: 2;
+	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
 }
 
 .carrito-activo {
 	width: 50%;
 	visibility: visible;
 	transition: all .3s;
-	transform: translateX(100%);
+	transform: translateX(90%);
 }
 
+.rng-item {
+	border-bottom: 1px solid #777777;
+	height: 8.5em;
+	padding: 0;
+	margin: 0;
+  }
+
+  .img-carrito {
+	margin-top: 20%;
+  }
+
+  .rng-desc-carrito {
+	padding: 25px;
+	padding-right: 0px;
+  }
+
+  .rng-btn-remover-carrito span {
+	font-size: 20px;
+  }
+
+  .rng-btn-remover-carrito {
+	padding-top: 2.5em;
+  }
+
+  .rng-precio {
+	color: #3acca3;
+	font-size: 25px;
+  }
+
+  .rng-div-cantidad {
+	color: #bbb;
+	font-size: 15px;
+  }
+
+  .rng-div-precio {
+	padding-top: 1.5em;
+	padding-left: 3em;
+  }
+
+  .icon-cross {
+	display: none;
+	cursor: pointer;
+  }
+
+  .rng-item:hover .icon-cross {
+	display: block;
+  }
 .div-nav {
 	margin-left: 0px;
 	margin-right: 0px;
@@ -603,6 +647,15 @@ div .materiales {
 }
 
 @media only screen and (max-width: 600px) {
+	.carrito{
+		top: 5.5%;
+	}
+	.carrito-activo {
+		width: 90%;
+		visibility: visible;
+		transition: all .3s;
+		transform: translateX(0%);
+	}
 	.motor3D .grid-container {
 		display: grid;
 		grid-template-areas: /*'header header header header header header'*/
