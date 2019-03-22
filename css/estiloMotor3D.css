@@ -13,7 +13,10 @@
 .carrito ul li {
 	list-style: none;
 }
-
+.product .price {
+	color: #4DD7D3;
+	font-weight: lighter;
+}
 .carrito {
 	transform: translateX(200%);
 	transition: all .5s;
@@ -35,6 +38,10 @@
 	visibility: visible;
 	transition: all .3s;
 	transform: translateX(90%);
+}
+.total-activo{
+	display:  block;
+	background-color: #15B358;
 }
 
 .rng-item {
@@ -91,6 +98,7 @@
 .rng-total{
 	margin:0;
 	padding:0;
+	padding-left:25%;
 }
 .rng-total-titulo{
 	text-align: center;
@@ -99,9 +107,11 @@
 	text-align: center;
 }
 .rng-btn-total{
-	width: 100%;
 	padding-bottom: 15px;
 	margin: 5px;
+	width: 100%;
+	font-size: 25px;
+  height: 60%;
 }
 
 body {
@@ -628,7 +638,9 @@ div .materiales {
 }
 
 .topDivPush {
-	height: 30px;
+	height: auto;
+	/*este over flow sirve para  que no se desmaquete*/
+	overflow: hidden;
 	width: 100%;
 }
 
@@ -656,9 +668,18 @@ div .materiales {
 	height: 190px;
 }
 
+.blue{
+	background-color: #55acee;
+	box-shadow: 0px 5px 0px 0px #3C93D5;
+}
+.blue:hover {
+	background-color: #6FC6FF;
+}
 .btn-agregar {
-	background-color: #4DD7D3;
-	color: #4d4d4d;
+	color: white;
+	font-weight: bold;
+	width: 50%;
+	border-radius: 25% 25% 25% 25%;
 }
 
 @media only screen and (max-width: 600px) {
@@ -671,6 +692,7 @@ div .materiales {
 		transition: all .3s;
 		transform: translateX(0%);
 	}
+	
 	.motor3D .grid-container {
 		display: grid;
 		grid-template-areas: /*'header header header header header header'*/
@@ -858,7 +880,7 @@ div .materiales {
 		width: 65%;
 		padding-left: 11%;
 		padding-right: 11%;
-		padding-top: 11%
+		padding-top: 11%;
 	}
 	.precios {
 		background-color: #6FC6FF;
