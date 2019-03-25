@@ -45,39 +45,73 @@
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
-     <link rel="stylesheet" href="css/font.css">
-      <link rel="stylesheet" href="css/main.css">
-
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/estiloMotor3D.css">
 	</head>
 	<body>
-	<div class="social-bar">
-            <a href="https://www.facebook.com/puffino.mx/" class="icon2 icon-facebook" target="_blank"></a>
-            <a href="https://www.youtube.com/channel/UC_IQX58WKgUAJiZfj9oy6wg/featured" class="icon2 icon-youtube" target="_blank"></a>
-            <a href="https://www.instagram.com/puffinomx/" class="icon2 icon-instagram" target="_blank"></a>
- </div>	
+			<div class="social-bar">
+					<a href="https://www.facebook.com/puffino.mx/" class="icon2 icon-facebook" target="_blank"></a>
+					<a href="https://www.youtube.com/channel/UC_IQX58WKgUAJiZfj9oy6wg/featured" class="icon2 icon-youtube"
+						target="_blank"></a>
+					<a href="https://www.instagram.com/puffinomx/" class="icon2 icon-instagram" target="_blank"></a>
+					<a href="https://www.twitter.com/puffinomx/" class="icon2 icon-twitter" target="_blank"></a>
+			
+			
+			
+				</div>
+			
+				<div class="row div-nav" style="background-color:#fA675b;">
+					<div class="col-md-5 col-sm-2">&nbsp;</div>
+					<div class="col-md-5 col-sm-7" style="text-align: right; margin-top: 0.3em;margin-bottom: 0.3em;"><span
+							style="font-size:15px; color:#FFF; font-family: 'Montserrat', Arial, sans-serif;">Servicio al cliente
+							Teléfono:
+							477 854 11 12</span></div>
+					<div class="col-md-1 col-sm-1" style="margin-top: 0.3em;margin-bottom: 0.3em; text-align: center;"><a
+							href="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2F1962138827348733&amp;tabs=messages&amp;width=302&amp;height=300&amp;small_header=true&amp;adapt_container_width=true&amp;hide_cover=true&amp;show_facepile=false&amp;appId"
+							target="_blank"><img src="images/messeng.png" style="max-width: 1.8em;"></a>
+					</div>
+					<div class="col-md-1 col-sm-2" style="margin-top: 0.3em;margin-bottom: 0.3em;">
+						<a href="https://api.whatsapp.com/send?phone=5214778541112" target="_blank">
+							<img src="images/whats.png" style="max-width: 1.8em;">
+						</a>
+						<img src="images/shopping_cart_white_24dp.png" style="max-width: 1.8em;" onclick="mostrarCarro()">
+					</div>
+				</div>
+				<div class="carrito" id="carrito">
+			
+					<div class="row rng-item">
+						<div class="col-1 col-sm-0"></div>
+						<div class="col-2 col-sm-3">
+							<img src="assets/imagenes/brazoContempo.jpeg" alt="brazo" id="imgProducto" class="img-carrito" height="90">
+						</div>
+						<div class="col-5 col-sm-4 rng-desc-carrito">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique,
+							nesciunt.
+						</div>
+						<div class="col-3 rng-div-precio">
+							<span class="rng-precio">
+								$75
+							</span>
+							<div class="rng-div-cantidad">
+								Cantidad: <span class="rng-cantidad">3</span>
+							</div>
+						</div>
+						<div class="col-1 rng-btn-remover-carrito">
+							<span class="icon">
+								<i class="icon-cross" onclick="removerArticulo(this)" id="rnd()"></i>
+							</span>
+						</div>
+					</div>
+					<div class="row rng-total total-desactivo" id="rng-total">
+						<div class="col-6 rng-total-titulo">Total</div>
+						<div class="col-6">$<span id="total-carrito">10</span></div>
+						<!--<div class="col-6"><button class="rng-btn-total btn btn-primary blue" onclick="">continuar</button></div>-->
+						<div id="paypal-button-container"></div>
+					</div>
+				</div>
 	<div class="fh5co-loader"></div>
 	
 	<div id="page">
-		<div class="row" align="left" style="background-color:#fA675b;">
-			<div class="col-md-5">&nbsp;</div>
-			<div class="col-md-5" style="text-align: right; margin-top: 0.3em;margin-bottom: 0.3em;"><span
-					style="font-size:15px; color:#FFF; font-family: 'Montserrat', Arial, sans-serif;">Servicio al
-					cliente
-					Teléfono:
-					477 854 11 12</span></div>
-			<div class="col-md-1" style="margin-top: 0.3em;margin-bottom: 0.3em; text-align: center;"><a
-					href="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2F1962138827348733&amp;tabs=messages&amp;width=302&amp;height=300&amp;small_header=true&amp;adapt_container_width=true&amp;hide_cover=true&amp;show_facepile=false&amp;appId"
-					target="_blank"><img src="images/messeng.png" style="max-width: 1.8em;"></a>
-			</div>
-			<div class="col-md-1" style="margin-top: 0.3em;margin-bottom: 0.3em;">
-				<a href="https://api.whatsapp.com/send?phone=5214778541112" target="_blank">
-					<img src="images/whats.png" style="max-width: 1.8em;">
-				</a>
-				<a href="/checkout.html" target="_blank">
-					<img src="images/shopping_cart_white_24dp.png" style="max-width: 1.8em;">
-				</a>
-			</div>
-		</div>
 		<nav class="fh5co-nav" role="navigation" style="background-color:#4DD7D3;">
 			<div class="container" style="margin-left:0px;">
 				<div class="row">
@@ -322,7 +356,8 @@
 
 	<!-- Main -->
 	<script src="js/main.js"></script>
-
+	<script src="https://www.paypal.com/sdk/js?client-id=Ab3CfXg7wt8RiCw6JkaSJ6TNF0SNKfMj9hJ5LiW2LjRGcGtoLKpFn3lGxDRizT5FHXsONUzWVgetL1jN&currency=MXN"></script>
+	<script src="js/carrito.js"></script>
 	</body>
 </html>
 

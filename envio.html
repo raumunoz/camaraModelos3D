@@ -48,6 +48,7 @@
 	<![endif]-->
 	<link rel="stylesheet" href="css/font.css">
 	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/estiloMotor3D.css">
 
 </head>
 
@@ -57,30 +58,64 @@
 		<a href="https://www.youtube.com/channel/UC_IQX58WKgUAJiZfj9oy6wg/featured" class="icon2 icon-youtube"
 			target="_blank"></a>
 		<a href="https://www.instagram.com/puffinomx/" class="icon2 icon-instagram" target="_blank"></a>
+		<a href="https://www.twitter.com/puffinomx/" class="icon2 icon-twitter" target="_blank"></a>
+
+
+
+	</div>
+	<div class="row div-nav" style="background-color:#fA675b;">
+		<div class="col-md-5 col-sm-2">&nbsp;</div>
+		<div class="col-md-5 col-sm-7" style="text-align: right; margin-top: 0.3em;margin-bottom: 0.3em;"><span
+				style="font-size:15px; color:#FFF; font-family: 'Montserrat', Arial, sans-serif;">Servicio al cliente
+				Teléfono:
+				477 854 11 12</span></div>
+		<div class="col-md-1 col-sm-1" style="margin-top: 0.3em;margin-bottom: 0.3em; text-align: center;"><a
+				href="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2F1962138827348733&amp;tabs=messages&amp;width=302&amp;height=300&amp;small_header=true&amp;adapt_container_width=true&amp;hide_cover=true&amp;show_facepile=false&amp;appId"
+				target="_blank"><img src="images/messeng.png" style="max-width: 1.8em;"></a>
+		</div>
+		<div class="col-md-1 col-sm-2" style="margin-top: 0.3em;margin-bottom: 0.3em;">
+			<a href="https://api.whatsapp.com/send?phone=5214778541112" target="_blank">
+				<img src="images/whats.png" style="max-width: 1.8em;">
+			</a>
+			<img src="images/shopping_cart_white_24dp.png" style="max-width: 1.8em;" onclick="mostrarCarro()">
+		</div>
+	</div>
+	<div class="carrito" id="carrito">
+
+		<div class="row rng-item">
+			<div class="col-1 col-sm-0"></div>
+			<div class="col-2 col-sm-3">
+				<img src="assets/imagenes/brazoContempo.jpeg" alt="brazo" id="imgProducto" class="img-carrito"
+					height="90">
+			</div>
+			<div class="col-5 col-sm-4 rng-desc-carrito">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+				Similique,
+				nesciunt.
+			</div>
+			<div class="col-3 rng-div-precio">
+				<span class="rng-precio">
+					$75
+				</span>
+				<div class="rng-div-cantidad">
+					Cantidad: <span class="rng-cantidad">3</span>
+				</div>
+			</div>
+			<div class="col-1 rng-btn-remover-carrito">
+				<span class="icon">
+					<i class="icon-cross" onclick="removerArticulo(this)" id="rnd()"></i>
+				</span>
+			</div>
+		</div>
+		<div class="row rng-total total-desactivo" id="rng-total">
+			<div class="col-6 rng-total-titulo">Total</div>
+			<div class="col-6">$<span id="total-carrito">10</span></div>
+			<!--<div class="col-6"><button class="rng-btn-total btn btn-primary blue" onclick="">continuar</button></div>-->
+			<div id="paypal-button-container"></div>
+		</div>
 	</div>
 	<div class="fh5co-loader"></div>
 
 	<div id="page">
-		<div class="row" align="left" style="background-color:#fA675b;">
-			<div class="col-md-5">&nbsp;</div>
-			<div class="col-md-5" style="text-align: right; margin-top: 0.3em;margin-bottom: 0.3em;"><span
-					style="font-size:15px; color:#FFF; font-family: 'Montserrat', Arial, sans-serif;">Servicio al
-					cliente
-					Teléfono:
-					477 854 11 12</span></div>
-			<div class="col-md-1" style="margin-top: 0.3em;margin-bottom: 0.3em; text-align: center;"><a
-					href="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2F1962138827348733&amp;tabs=messages&amp;width=302&amp;height=300&amp;small_header=true&amp;adapt_container_width=true&amp;hide_cover=true&amp;show_facepile=false&amp;appId"
-					target="_blank"><img src="images/messeng.png" style="max-width: 1.8em;"></a>
-			</div>
-			<div class="col-md-1" style="margin-top: 0.3em;margin-bottom: 0.3em;">
-				<a href="https://api.whatsapp.com/send?phone=5214778541112" target="_blank">
-					<img src="images/whats.png" style="max-width: 1.8em;">
-				</a>
-				<a href="/checkout.html" target="_blank">
-					<img src="images/shopping_cart_white_24dp.png" style="max-width: 1.8em;">
-				</a>
-			</div>
-		</div>
 		<nav class="fh5co-nav" role="navigation" style="background-color:#4DD7D3;">
 			<div class="container" style="margin-left:0px;">
 				<div class="row">
@@ -237,67 +272,74 @@
 		</div-->
 	</div>
 	<footer id="fh5co-footer" role="contentinfo">
-			<div class="container">
-				<div class="row row-pb-md">
-					<div class="col-md-4 fh5co-widget">
-						<img src="images/puff_logo.png" style="" width="150" height="75">
+		<div class="container">
+			<div class="row row-pb-md">
+				<div class="col-md-4 fh5co-widget">
+					<img src="images/puff_logo.png" style="" width="150" height="75">
 					<p>
 						<ul class="fh5co-social-icons">
-								<li><a href="https://www.facebook.com/puffino.mx/"><i style="background: #353a34;" class="icon-facebook"></i></a></li>
-								<li><a href="https://www.youtube.com/channel/UC_IQX58WKgUAJiZfj9oy6wg/featured"><i style="background: #353a34;" class="icon-youtube"></i></a></li>
-								<li><a href="https://www.instagram.com/puffinomx/"><i style="background: #353a34;" class="icon-instagram"></i></a></li>
-								<li><a href="https://www.twitter.com/puffinomx/"><i style="background: #353a34;" class="icon-twitter"></i></a></li>
-								<li><a href="https://www.pinterest.com/puffinomx/"><i style="background: #353a34;" class="icon-pinterest"></i></a></li>
+							<li><a href="https://www.facebook.com/puffino.mx/"><i style="background: #353a34;"
+										class="icon-facebook"></i></a></li>
+							<li><a href="https://www.youtube.com/channel/UC_IQX58WKgUAJiZfj9oy6wg/featured"><i
+										style="background: #353a34;" class="icon-youtube"></i></a></li>
+							<li><a href="https://www.instagram.com/puffinomx/"><i style="background: #353a34;"
+										class="icon-instagram"></i></a></li>
+							<li><a href="https://www.twitter.com/puffinomx/"><i style="background: #353a34;"
+										class="icon-twitter"></i></a></li>
+							<li><a href="https://www.pinterest.com/puffinomx/"><i style="background: #353a34;"
+										class="icon-pinterest"></i></a></li>
 						</ul>
 					</p>
-					</div>
-					<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
-						<ul class="fh5co-footer-links">
-							<li><a href="#"></a></li>
-							<li><a href="#"></a></li>
-							<li><a href="#"></a></li>
-							<li><a href="#"></a></li>
-							<li><a href="#"></a></li>
-						</ul>
-					</div>
-	
-					<div class="col-md-1 col-sm-4 col-xs-6 col-md-push-1">
-						<ul class="fh5co-footer-links">
-							<li><a href="#"></a></li>
-							<li><a href="#"></a></li>
-							<li><a href="#"></a></li>
-							<li><a href="#"></a></li>
-							<li><a href="#"></a></li>
-						</ul>
-					</div>
-	
-					<div class="col-md-3 col-sm-4 col-xs-6 col-md-push-1">
-						<ul class="fh5co-footer-links">
-							<h3 style="color:#FFF;">CONTÁCTANOS</h3>
-							<li>477 274 28 38</li>
-							<li>Lunes a viernes de 9 a.m. a 4 p.m. </li>
-							<li>Correo electrónico: </li>
-							<li>denisse.martinez@budabag.com.mx</li>
-							<li>León, Gto. </li>
-	
-						</ul>
-					</div>
 				</div>
-	
-				<div class="row copyright">
-					<div class="col-md-12 text-center">
-	
-						<p>
-	
-						</p>
-					</div>
+				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
+					<ul class="fh5co-footer-links">
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+					</ul>
+				</div>
+
+				<div class="col-md-1 col-sm-4 col-xs-6 col-md-push-1">
+					<ul class="fh5co-footer-links">
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+						<li><a href="#"></a></li>
+					</ul>
+				</div>
+
+				<div class="col-md-3 col-sm-4 col-xs-6 col-md-push-1">
+					<ul class="fh5co-footer-links">
+						<h3 style="color:#FFF;">CONTÁCTANOS</h3>
+						<li>477 274 28 38</li>
+						<li>Lunes a viernes de 9 a.m. a 4 p.m. </li>
+						<li>Correo electrónico: </li>
+						<li>denisse.martinez@budabag.com.mx</li>
+						<li>León, Gto. </li>
+
+					</ul>
 				</div>
 			</div>
-			<p  style="font-family: 'Montserrat', Arial, sans-serif;font-size: 1em;line-height: 2em;padding-left: 20%;padding-right: 20%;">Las fotografías mostradas en este sitio web son reales y propiedad de Puffino. Copyright 2017
-				León,
-				Guanajuato. Derechos reservados ©, prohibida su reproducción o uso total o parcial por
-				cualquier medio.
-			</p>
+
+			<div class="row copyright">
+				<div class="col-md-12 text-center">
+
+					<p>
+
+					</p>
+				</div>
+			</div>
+		</div>
+		<p
+			style="font-family: 'Montserrat', Arial, sans-serif;font-size: 1em;line-height: 2em;padding-left: 20%;padding-right: 20%;">
+			Las fotografías mostradas en este sitio web son reales y propiedad de Puffino. Copyright 2017
+			León,
+			Guanajuato. Derechos reservados ©, prohibida su reproducción o uso total o parcial por
+			cualquier medio.
+		</p>
 	</footer>
 	</div>
 
@@ -320,8 +362,9 @@
 	<!-- Flexslider -->
 	<script src="js/jquery.flexslider-min.js"></script>
 	<!-- Main -->
+	<script src="https://www.paypal.com/sdk/js?client-id=Ab3CfXg7wt8RiCw6JkaSJ6TNF0SNKfMj9hJ5LiW2LjRGcGtoLKpFn3lGxDRizT5FHXsONUzWVgetL1jN&currency=MXN"></script>
 	<script src="js/main.js"></script>
-
+	<script src="js/carrito.js"></script>
 </body>
 
 </html>
