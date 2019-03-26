@@ -218,9 +218,9 @@ body {
 }
 
 .motor3D #btnRotar {
-	width: auto;
-	margin-right: 1px;
-	margin-left: 1px;
+	/*margin-right: 1px;*/
+	/*margin-left: 1px;*/
+	
 }
 
 .btn-grid {
@@ -681,7 +681,10 @@ div .materiales {
 	width: 50%;
 	border-radius: 25% 25% 25% 25%;
 }
-
+/*estilo de iconos*/
+.icon-footer{
+	/*margin-top: 20%;*/
+}
 @media only screen and (max-width: 600px) {
 	.carrito{
 		top: 5.5%;
