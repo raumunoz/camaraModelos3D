@@ -1,17 +1,149 @@
 <!DOCTYPE HTML>
 <html>
 
-<head>
+		<style type="text/css">	
+			#sliderYoko,
+			#sliderPuffino,
+			#sliderKids {
+				display: none;
+			}
+	
+			.nbs-flexisel-container {
+				position: relative;
+				max-width: 100%;
+			}
+	
+			.nbs-flexisel-ul {
+				position: relative;
+				width: 99999px;
+				margin: 0px;
+				padding: 0px;
+				list-style-type: none;
+				text-align: center;
+				overflow: auto;
+			}
+	
+			.nbs-flexisel-inner {
+				position: relative;
+				overflow: hidden;
+				float: left;
+				width: 100%;
+				background: #ffffff;
+				background: #ffffff -moz-linear-gradient(top, #ffffff 0%, #ffffff 100%);
+				/* FF3.6+ */
+				background: #ffffff -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #ffffff));
+				/* Chrome,Safari4+ */
+				background: #ffffff -webkit-linear-gradient(top, #ffffff 0%, #ffffff 100%);
+				/* Chrome10+,Safari5.1+ */
+				background: #ffffff -o-linear-gradient(top, #ffffff 0%, #ffffff 100%);
+				/* Opera11.10+ */
+				background: #ffffff -ms-linear-gradient(top, #ffffff 0%, #ffffff 100%);
+				/* IE10+ */
+				background: #ffffff linear-gradient(top, #ffffff 0%, #ffffff 100%);
+				/* W3C */
+			}
+	
+			.nbs-flexisel-item {
+				float: left;
+				margin: 0px;
+				padding: 0px;
+				cursor: pointer;
+				position: relative;
+				line-height: 0px;
+			}
+	
+			.nbs-flexisel-item img {
+				max-width: 100%;
+				cursor: pointer;
+				position: relative;
+				margin-top: 10px;
+				margin-bottom: 10px;
+			}
+	
+			/*** Navigation ***/
+	
+			.nbs-flexisel-nav-left,
+			.nbs-flexisel-nav-right {
+				padding: 5px 10px;
+				border-radius: 15px;
+				-moz-border-radius: 15px;
+				-webkit-border-radius: 15px;
+				position: absolute;
+				cursor: pointer;
+				z-index: 4;
+				top: 50%;
+				transform: translateY(-50%);
+				background: rgba(0, 0, 0, 0.5);
+				color: #fff;
+			}
+	
+			.nbs-flexisel-nav-left {
+				left: 10px;
+			}
+	
+			.nbs-flexisel-nav-left:before {
+				content: "<"
+			}
+	
+			.nbs-flexisel-nav-left.disabled {
+				opacity: 0.4;
+			}
+	
+			.nbs-flexisel-nav-right {
+				right: 5px;
+			}
+	
+			.nbs-flexisel-nav-right:before {
+				content: ">"
+			}
+	
+			.nbs-flexisel-nav-right.disabled {
+				opacity: 0.4;
+			}
+	
+			.medidas {
+				font-family: 'Montserrat', Arial, sans-serif;
+				font-size: 12px;
+			}
+	
+			@media only screen and (max-width: 600px) {
+	
+				.product .product-grid {
+	
+					background-size: cover;
+					background-position: top center;
+					background-repeat: no-repeat;
+					position: relative;
+					height: 350px;
+					margin-bottom: 20px;
+					-webkit-transition: 0.3s;
+					-o-transition: 0.3s;
+					transition: 0.3s;
+					height: 5em;
+	
+				}
+
+				
+			}
+
+
+			#owl-demo .item img{
+    display: block;
+    width: 100%;
+    height: auto;
+}
+		</style>
+	<head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-	<!-- Facebook and Twitter integration -->
-	<meta property="og:title" content="" />
-	<meta property="og:image" content="" />
-	<meta property="og:url" content="" />
-	<meta property="og:site_name" content="" />
-	<meta property="og:description" content="" />
+	
+ 	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content=""/>
+	<meta property="og:image" content=""/>
+	<meta property="og:url" content=""/>
+	<meta property="og:site_name" content=""/>
+	<meta property="og:description" content=""/>
 	<meta name="twitter:title" content="" />
 	<meta name="twitter:image" content="" />
 	<meta name="twitter:url" content="" />
@@ -19,7 +151,7 @@
 
 	<!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"> -->
 	<!-- <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i" rel="stylesheet"> -->
-
+	
 	<!-- Animate.css -->
 	<link rel="stylesheet" href="css/animate.css">
 	<!-- Icomoon Icon Fonts-->
@@ -43,333 +175,908 @@
 	<!--[if lt IE 9]>
 	<script src="js/respond.min.js"></script>
 	<![endif]-->
+    
+     <link rel="stylesheet" href="css/font.css">
+      <link rel="stylesheet" href="css/main.css">
 
-	<link rel="stylesheet" href="css/font.css">
-	<link rel="stylesheet" href="css/main.css">
-	<link rel="stylesheet" type="text/css" href="css/estiloMotor3D.css">
-
-</head>
-
-<body>
+	</head>
+	<body>
 	<div class="social-bar">
-		<a href="https://www.facebook.com/puffino.mx/" class="icon2 icon-facebook" target="_blank"></a>
-		<a href="https://www.youtube.com/channel/UC_IQX58WKgUAJiZfj9oy6wg/featured" class="icon2 icon-youtube"
-			target="_blank"></a>
-		<a href="https://www.instagram.com/puffinomx/" class="icon2 icon-instagram" target="_blank"></a>
-		<a href="https://www.twitter.com/puffinomx/" class="icon2 icon-twitter" target="_blank"></a>
-
-
-
-	</div>
-
-	<div class="row div-nav" style="background-color:#fA675b;">
-		<div class="col-md-5 col-sm-2">&nbsp;</div>
-		<div class="col-md-5 col-sm-7" style="text-align: right; margin-top: 0.3em;margin-bottom: 0.3em;"><span
+            <a href="https://www.facebook.com/puffino.mx/" class="icon2 icon-facebook" target="_blank"></a>
+            <a href="https://www.youtube.com/channel/UC_IQX58WKgUAJiZfj9oy6wg/featured" class="icon2 icon-youtube" target="_blank"></a>
+            <a href="https://www.instagram.com/puffinomx/" class="icon2 icon-instagram" target="_blank"></a>
+	   </div>	
+	
+	<div class="row" align="left" style="background-color:#00ADC1;">
+		<div class="col-md-5">&nbsp;</div>
+		<div class="col-md-5" style="text-align: right; margin-top: 0.3em;margin-bottom: 0.3em;"><span
 				style="font-size:15px; color:#FFF; font-family: 'Montserrat', Arial, sans-serif;">Servicio al cliente
 				Teléfono:
 				477 854 11 12</span></div>
-		<div class="col-md-1 col-sm-1" style="margin-top: 0.3em;margin-bottom: 0.3em; text-align: center;"><a
+		<div class="col-md-1" style="margin-top: 0.3em;margin-bottom: 0.3em; text-align: center;"><a
 				href="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2F1962138827348733&amp;tabs=messages&amp;width=302&amp;height=300&amp;small_header=true&amp;adapt_container_width=true&amp;hide_cover=true&amp;show_facepile=false&amp;appId"
 				target="_blank"><img src="images/messeng.png" style="max-width: 1.8em;"></a>
 		</div>
-		<div class="col-md-1 col-sm-2" style="margin-top: 0.3em;margin-bottom: 0.3em;">
-			<a href="https://api.whatsapp.com/send?phone=5214778541112" target="_blank">
-				<img src="images/whats.png" style="max-width: 1.8em;">
-			</a>
-			<img src="images/shopping_cart_white_24dp.png" style="max-width: 1.8em;" onclick="mostrarCarro()">
-		</div>
+		<div class="col-md-1" style="margin-top: 0.3em;margin-bottom: 0.3em;"><a
+				href="https://api.whatsapp.com/send?phone=5214778541112" target="_blank"><img src="images/whats.png"
+					style="max-width: 1.8em;"></a></div>
 	</div>
-	<div class="carrito" id="carrito">
 
-		<div class="row rng-item">
-			<div class="col-1 col-sm-0"></div>
-			<div class="col-2 col-sm-3">
-				<img src="assets/imagenes/brazoContempo.jpeg" alt="brazo" id="imgProducto" class="img-carrito"
-					height="90">
-			</div>
-			<div class="col-5 col-sm-4 rng-desc-carrito">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-				Similique,
-				nesciunt.
-			</div>
-			<div class="col-3 rng-div-precio">
-				<span class="rng-precio">
-					$75
-				</span>
-				<div class="rng-div-cantidad">
-					Cantidad: <span class="rng-cantidad">3</span>
-				</div>
-			</div>
-			<div class="col-1 rng-btn-remover-carrito">
-				<span class="icon">
-					<i class="icon-cross" onclick="removerArticulo(this)" id="rnd()"></i>
-				</span>
-			</div>
-		</div>
-		<div class="row rng-total total-desactivo" id="rng-total">
-			<div class="col-6 rng-total-titulo">Total</div>
-			<div class="col-6">$<span id="total-carrito">10</span></div>
-			<!--<div class="col-6"><button class="rng-btn-total btn btn-primary blue" onclick="">continuar</button></div>-->
-			<div id="paypal-button-container"></div>
-		</div>
-	</div>
-	</div>
 	<div class="fh5co-loader"></div>
-
-
+	
 	<div id="page">
-		<nav class="fh5co-nav" role="navigation" style="background-color:#4DD7D3;">
+	<nav class="fh5co-nav" role="navigation" style="background-color:#FF675A;">
 			<div class="container" style="margin-left:0px;">
 				<div class="row">
 					<div class="col-md-3 col-xs-2">
-						<div id="fh5co-logo"><a href="index.html"><img src="images/puff_logo.png"
-									style="max-width:100%; height:auto;"></a></div>
+						<div id="fh5co-logo"><a href="index.html"><img src="images/puff_logo.png" style="max-width:100%; height:auto;"></a></div>
 					</div>
 					<div class="col-md-7 col-xs-7 menu-1" style="margin-top:4%;">
 						<ul>
 							<li class="has-dropdown">
-								<a href="about.html" style="font-family: 'Roboto', sans-serif;">SOBRE PUFFINO</a>
+								<a href="acercade.html">SOBRE PUFFINO</a>
 								<!--ul class="dropdown">
-										<li><a href="single.html">Single Shop</a></li>
-									</ul-->
+								<li><a href="single.html">Single Shop</a></li>
+							</ul-->
 							</li>
 							<li><a href="catalogo.html">Catálogo</a></li>
 							<li class="has-dropdown">
 								<a href="envio.html">Envío y Devoluciones</a>
 								<!--ul class="dropdown">
-										<li><a href="#">Web Design</a></li>
-										<li><a href="#">eCommerce</a></li>
-										<li><a href="#">Branding</a></li>
-										<li><a href="#">API</a></li>
-									</ul-->
+								<li><a href="#">Web Design</a></li>
+								<li><a href="#">eCommerce</a></li>
+								<li><a href="#">Branding</a></li>
+								<li><a href="#">API</a></li>
+							</ul-->
 							</li>
 							<li><a href="contact.html">Contacto</a></li>
 						</ul>
 					</div>
 					<!--<div class="col-md-3 col-xs-4 text-right hidden-xs menu-2" style="margin-top:3%;">
-								<ul>
-									<li class="search">
-										<div class="input-group">
-											<input type="text" placeholder="Buscar..">
-											<span class="input-group-btn">
-												<button class="btn btn-primary" type="button"><i
-														class="icon-search"></i></button>
-											</span>
-										</div>
-									</li>
-									<li class="shopping-cart"><a href="#" class="cart"><span><small>0</small><i
-													class="icon-shopping-cart"></i></span></a></li>
-								</ul>
-							</div>-->
+						<ul>
+							<li class="search">
+								<div class="input-group">
+									<input type="text" placeholder="Buscar..">
+									<span class="input-group-btn">
+										<button class="btn btn-primary" type="button"><i class="icon-search"></i></button>
+									</span>
+								</div>
+							</li>
+							<li class="shopping-cart"><a href="#" class="cart"><span><small>0</small><i class="icon-shopping-cart"></i></span></a></li>
+						</ul>
+					</div>-->
 				</div>
 
 			</div>
 		</nav>
-		<div id="fh5co-product">
-			<div class="container">
-				<div class="row animate-box">
-					<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-						<span>Cool Stuff</span>
-						<h2>Products.</h2>
-						<p>Dignissimos asperiores vitae velit veniam totam fuga molestias accusamus alias autem
-							provident. Odit ab aliquam dolor eius.</p>
-					</div>
+
+	<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" role="banner" style="background-image:url(images/3_hs_tit.jpg);">
+		<div class="row visible-lg visible-md" >
+				<div class="col-md-12 text-left" style="font-family:Verdana, Geneva, sans-serif; color:#fff;  padding-top:80px; padding-left:10%;  font-size:4.2em;">
+					Catálogo
 				</div>
-				<div class="row">
-					<div class="col-md-4 text-center animate-box">
-						<div class="product">
-							<div class="product-grid" style="background-image:url(images/product-1.jpg);">
+			</div>
+            
+            	<div class="row visible-sm visible-xs">
+				<div class="col-md-12 text-left" style="font-family:Verdana, Geneva, sans-serif; color:#fff; padding-top:60px; padding-left:10%;  font-size:3.0em;">
+					Catálogo
+				</div>
+			</div>
+	</header>
+	
+	<div id="fh5co-product" style="padding-bottom: 0px;">
+		<div class="container">
+			<div class="row">
+				<div class="col-xs-4 col-8 col-sm-2 col-md-4  text-center animate-box">
+					<div class="product">
+						<a id="yokoShow" style="cursor: pointer;">
+							<div class="product-grid"
+								style="background-image:url(assets/imagenes/brazoContempo.png);">
 								<div class="inner">
-									<!--p>
-									<a href="single.html" class="icon"><i class="icon-shopping-cart"></i></a>
-									<a href="single.html" class="icon"><i class="icon-eye"></i></a>
-								</p-->
+									<!--<p>
+										<a id="holiShow" style="cursor: pointer;" class="icon"><i class="icon-eye"></i></a>
+									</p>-->
 								</div>
 							</div>
-							<div class="desc">
-								<h3><a href="single.html">Hauteville Concrete Rocking Chair</a></h3>
+						</a>
+						<div class="desc">
+							<h3><a id="" style="cursor: pointer;">Yooko Modular</a></h3>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-4 col-8 col-sm-2 col-md-4 text-center animate-box">
+					<div class="product">
+						<a id="puffinoShow" style="cursor: pointer;">
+							<div class="product-grid"
+								style="background-image:url(images/productos/puffino_ANDREW_SOFT_1.jpg);">
+								<div class="inner">
+									<!--<p>
+										<a id="holiShow" style="cursor: pointer;" class="icon"><i class="icon-eye"></i></a>
+									</p>-->
+								</div>
+							</div>
+						</a>
+						<div class="desc">
+							<h3><a href="single.html">Puffino </a></h3>
+						</div>
+					</div>
+				</div>
+				<div class="col-xs-4 col-8 col-sm-2 col-md-4 col-xs-4 text-center animate-box">
+					<div class="product">
+						<a id="kidsShow" style="cursor: pointer;">
+							<div class="product-grid"
+								style="background-image:url(images/productos/puffino_conejo.jpeg);">
+								<div class="inner">
+									<!--<p>
+										<a id="holiShow" style="cursor: pointer;" class="icon"><i class="icon-eye"></i></a>
+									</p>-->
+								</div>
+							</div>
+						</a>
+						<div class="desc">
+							<h3><a href="single.html">Puffino Kids</a></h3>
+						</div>
+					</div>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<!---->
+
+	<!-- SLIDER DE MODELOS YOKO MODULAR -->
+	<div id="yokoDiv">
+		<ul id="sliderYoko">
+			<li>
+				<a style="cursor: pointer;" onclick="changeProduct(1)">
+					<div class="text-center animate-box">
+						<div class="product" style="margin-top: 1em;">
+							<div class="product-grid"
+								style="background-image:url(assets/imagenes/tabureteContempo.PNG); margin: 0 auto;">
+							</div>
+							<div class="desc" style="margin-top: 1em;">
+								<h3><a href="single.html">Yooko taburete</a></h3>
 								<span class="price">$350</span>
 							</div>
 						</div>
 					</div>
-					<div class="col-md-4 text-center animate-box">
-						<div class="product">
-							<div class="product-grid" style="background-image:url(images/product-2.jpg);">
-								<div class="inner">
-									<p>
-										<a href="single.html" class="icon"><i class="icon-shopping-cart"></i></a>
-										<a href="single.html" class="icon"><i class="icon-eye"></i></a>
-									</p>
-								</div>
+				</a>
+			</li>
+			<li>
+				<a style="cursor: pointer;" onclick="changeProduct(2)">
+					<div class="text-center animate-box">
+						<div class="product" style="margin-top: 1em;">
+							<div class="product-grid"
+								style="background-image:url(assets/imagenes/brazoContempo.png); margin: 0 auto;">
 							</div>
-							<div class="desc">
-								<h3><a href="single.html">Pavilion Speaker</a></h3>
-								<span class="price">$600</span>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 text-center animate-box">
-						<div class="product">
-							<div class="product-grid" style="background-image:url(images/product-3.jpg);">
-								<div class="inner">
-									<p>
-										<a href="single.html" class="icon"><i class="icon-shopping-cart"></i></a>
-										<a href="single.html" class="icon"><i class="icon-eye"></i></a>
-									</p>
-								</div>
-							</div>
-							<div class="desc">
-								<h3><a href="single.html">Ligomancer</a></h3>
-								<span class="price">$780</span>
+							<div class="desc" style="margin-top: 1em;">
+								<h3><a href="single.html">Yooko Modular</a></h3>
+								<span class="price">$350</span>
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-4 text-center animate-box">
-						<div class="product">
-							<div class="product-grid" style="background-image:url(images/product-4.jpg);">
-								<div class="inner">
-									<p>
-										<a href="single.html" class="icon"><i class="icon-shopping-cart"></i></a>
-										<a href="single.html" class="icon"><i class="icon-eye"></i></a>
-									</p>
-								</div>
+				</a>
+			</li>
+			<li>
+				<a style="cursor: pointer;" onclick="cambioModulo(2,true)">
+					<div class="text-center animate-box">
+						<div class="product" style="margin-top: 1em;">
+							<div class="product-grid"
+								style="background-image:url(assets/imagenes/esquinaContempo.PNG); margin: 0 auto;">
 							</div>
-							<div class="desc">
-								<h3><a href="single.html">Alato Cabinet</a></h3>
-								<span class="price">$800</span>
+							<div class="desc" style="margin-top: 1em;">
+								<h3><a href="single.html">Yooko esquina</a></h3>
+								<span class="price">$350</span>
 							</div>
 						</div>
 					</div>
-					<div class="col-md-4 text-center animate-box">
-						<div class="product">
-							<div class="product-grid" style="background-image:url(images/product-5.jpg);">
-								<div class="inner">
-									<p>
-										<a href="single.html" class="icon"><i class="icon-shopping-cart"></i></a>
-										<a href="single.html" class="icon"><i class="icon-eye"></i></a>
-									</p>
-								</div>
+				</a>
+			</li>
+			<!--
+			<li>
+				<a style="cursor: pointer;" onclick="cambioModulo(3)">
+					<div class="text-center animate-box">
+						<div class="product" style="margin-top: 1em;">
+							<div class="product-grid"
+								style="background-image:url(assets/imagenes/tabureteContempo.PNG); margin: 0 auto;">
 							</div>
-							<div class="desc">
-								<h3><a href="single.html">Earing Wireless</a></h3>
-								<span class="price">$100</span>
-							</div>
-						</div>
-					</div>
-					<div class="col-md-4 text-center animate-box">
-						<div class="product">
-							<div class="product-grid" style="background-image:url(images/product-6.jpg);">
-								<div class="inner">
-									<p>
-										<a href="single.html" class="icon"><i class="icon-shopping-cart"></i></a>
-										<a href="single.html" class="icon"><i class="icon-eye"></i></a>
-									</p>
-								</div>
-							</div>
-							<div class="desc">
-								<h3><a href="single.html">Sculptural Coffee Table</a></h3>
-								<span class="price">$960</span>
+							<div class="desc" style="margin-top: 1em;">
+								<h3><a href="single.html">Yoko Modular</a></h3>
+								<span class="price">$350</span>
 							</div>
 						</div>
 					</div>
-				</div>
-				<div class="row">
-					<div class="col-md-4 text-center animate-box">
-						<div class="product">
-							<div class="product-grid" style="background-image:url(images/product-7.jpg);">
-								<div class="inner">
-									<p>
-										<a href="single.html" class="icon"><i class="icon-shopping-cart"></i></a>
-										<a href="single.html" class="icon"><i class="icon-eye"></i></a>
-									</p>
-								</div>
+				</a>
+			</li>
+			<li>
+				<a style="cursor: pointer;" onclick="cambioModulo(0)">
+					<div class="text-center animate-box">
+						<div class="product" style="margin-top: 1em;">
+							<div class="product-grid"
+								style="background-image:url(images/productos/puffino_ANDREW_SMART_1.jpg); margin: 0 auto;">
 							</div>
-							<div class="desc">
-								<h3><a href="single.html">The WW Chair</a></h3>
-								<span class="price">$540</span>
+							<div class="desc" style="margin-top: 1em;">
+								<h3><a href="single.html">Yoko Modular</a></h3>
+								<span class="price">$350</span>
 							</div>
 						</div>
 					</div>
-					<div class="col-md-4 text-center animate-box">
-						<div class="product">
-							<div class="product-grid" style="background-image:url(images/product-8.jpg);">
-								<div class="inner">
-									<p>
-										<a href="single.html" class="icon"><i class="icon-shopping-cart"></i></a>
-										<a href="single.html" class="icon"><i class="icon-eye"></i></a>
-									</p>
-								</div>
+				</a>
+			</li>
+			-->
+		</ul>
+	</div>
+	<!-- FIN SLIDER DE MODELOS YOKO MODULAR -->
+
+	<!-- SLIDER DE MODELOS PUFFINO -->
+	<div id="puffinoDiv">
+		<ul id="sliderPuffino">
+			<li>
+				<a style="cursor: pointer;" onclick="changeProduct(30)">
+					<div class="text-center animate-box">
+						<div class="product" style="margin-top: 1em;">
+							<div class="product-grid"
+								style="background-image:url(images/productos/puffino/atlixco.jpg); margin: 0 auto;">
 							</div>
-							<div class="desc">
-								<h3><a href="single.html">Himitsu Money Box</a></h3>
-								<span class="price">$55</span>
+							<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+								<h3 style="line-height: 30px;"><a href="single.html">Yumil</a></h3>
+								<span class="price" style="font-size:12px;">desde </span><span
+									class="price">$2599</span>
+							</div>
+							<div class="medidas">
+								<span>(46cm x 46cm x 46cm)</span>
 							</div>
 						</div>
 					</div>
-					<div class="col-md-4 text-center animate-box">
-						<div class="product">
-							<div class="product-grid" style="background-image:url(images/product-9.jpg);">
-								<div class="inner">
-									<p>
-										<a href="single.html" class="icon"><i class="icon-shopping-cart"></i></a>
-										<a href="single.html" class="icon"><i class="icon-eye"></i></a>
-									</p>
-								</div>
+				</a>
+			</li>
+			<li>
+				<a style="cursor: pointer;" onclick="changeProduct(31)">
+					<div class="text-center animate-box">
+						<div class="product" style="margin-top: 1em;">
+							<div class="product-grid"
+								style="background-image:url(images/productos/puffino/atlixco_chico.jpg); margin: 0 auto;">
 							</div>
-							<div class="desc">
-								<h3><a href="single.html">Ariane Prin</a></h3>
-								<span class="price">$99</span>
+							<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+								<h3 style="line-height: 30px;"><a href="single.html">Yumil Mediano</a></h3>
+								<span class="price" style="font-size:12px;">desde </span><span
+									class="price">$2499</span>
 							</div>
+							<div class="medidas">
+								<span>(40cm x 40cm x 40cm)</span>
+							</div>
+						</div>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a style="cursor: pointer;" onclick="changeProduct(29)">
+					<div class="text-center animate-box">
+						<div class="product" style="margin-top: 1em;">
+							<div class="product-grid"
+								style="background-image:url(images/productos/puffino/bernal.jpg); margin: 0 auto;">
+							</div>
+							<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+								<h3 style="line-height: 30px;"><a href="single.html">Yeeb</a></h3>
+								<span class="price" style="font-size:12px;">desde </span><span
+									class="price">$2999</span>
+							</div>
+							<div class="medidas">
+								<span>(50cm x 70cm x 75cm)</span>
+							</div>
+						</div>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a style="cursor: pointer;" onclick="changeProduct(13)">
+					<div class="text-center animate-box">
+						<div class="product" style="margin-top: 1em;">
+							<div class="product-grid"
+								style="background-image:url(images/productos/puffino/cozumel.jpg); margin: 0 auto;">
+							</div>
+							<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+								<h3 style="line-height: 30px;"><a href="single.html">Kauil</a></h3>
+								<span class="price" style="font-size:12px;">desde </span><span
+									class="price">$4999</span>
+							</div>
+							<div class="medidas">
+								<span>Sillón (100cm x 85cm x 80cm) Taburete (100cm x 50cm x 35cm)</span>
+							</div>
+						</div>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a style="cursor: pointer;" onclick="changeProduct(14)">
+					<div class="text-center animate-box">
+						<div class="product" style="margin-top: 1em;">
+							<div class="product-grid"
+								style="background-image:url(images/productos/puffino/cozumel_sillon.jpg); margin: 0 auto;">
+							</div>
+							<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+								<h3 style="line-height: 30px;"><a href="single.html">Kauil Sillón</a></h3>
+								<span class="price" style="font-size:12px;">desde </span><span
+									class="price">$4199</span>
+							</div>
+							<div class="medidas">
+								<span>(100cm x 85cm x 80cm)</span>
+							</div>
+						</div>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a style="cursor: pointer;" onclick="changeProduct(15)">
+					<div class="text-center animate-box">
+						<div class="product" style="margin-top: 1em;">
+							<div class="product-grid"
+								style="background-image:url(images/productos/puffino/cozumel_taburete.jpg); margin: 0 auto;">
+							</div>
+							<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+								<h3 style="line-height: 30px;"><a href="single.html">Kauil Taburete</a></h3>
+								<span class="price" style="font-size:12px;">desde </span><span
+									class="price">$2999</span>
+							</div>
+							<div class="medidas">
+								<span>(100cm x 50cm x 35cm)</span>
+							</div>
+						</div>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a style="cursor: pointer;" onclick="changeProduct(9)">
+					<div class="text-center animate-box">
+						<div class="product" style="margin-top: 1em;">
+							<div class="product-grid"
+								style="background-image:url(images/productos/puffino/guadalajara.jpg); margin: 0 auto;">
+							</div>
+							<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+								<h3 style="line-height: 30px;"><a href="single.html">Balam</a></h3>
+								<span class="price" style="font-size:12px;">desde </span><span
+									class="price">$5199</span>
+							</div>
+							<div class="medidas">
+								<span>(165cm x 85cm x 85cm)</span>
+							</div>
+						</div>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a style="cursor: pointer;" onclick="changeProduct(12)">
+					<div class="text-center animate-box">
+						<div class="product" style="margin-top: 1em;">
+							<div class="product-grid"
+								style="background-image:url(images/productos/puffino/guanajuato.jpg); margin: 0 auto;">
+							</div>
+							<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+								<h3 style="line-height: 30px;"><a href="single.html">Ikal</a></h3>
+								<span class="price" style="font-size:12px;">desde </span><span
+									class="price">$4699</span>
+							</div>
+							<div class="medidas">
+								<span>(100cm x 75cm x 180cm)</span>
+							</div>
+						</div>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a style="cursor: pointer;" onclick="changeProduct(21)">
+					<div class="text-center animate-box">
+						<div class="product" style="margin-top: 1em;">
+							<div class="product-grid"
+								style="background-image:url(images/productos/puffino/lapaz.jpg); margin: 0 auto;">
+							</div>
+							<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+								<h3 style="line-height: 30px;"><a href="single.html">Nima</a></h3>
+								<span class="price" style="font-size:12px;">desde </span><span
+									class="price">$3499</span>
+							</div>
+							<div class="medidas">
+								<span>(95cm x 80cm x 200cm)</span>
+							</div>
+						</div>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a style="cursor: pointer;" onclick="changeProduct(22)">
+					<div class="text-center animate-box">
+						<div class="product" style="margin-top: 1em;">
+							<div class="product-grid"
+								style="background-image:url(images/productos/puffino/lapaz_chico.jpg); margin: 0 auto;">
+							</div>
+							<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+								<h3 style="line-height: 30px;"><a href="single.html">Nima mediano</a></h3>
+								<span class="price" style="font-size:12px;">desde </span><span
+									class="price">$3099</span>
+							</div>
+							<div class="medidas">
+								<span>(84cm x 70cm x 115cm)</span>
+							</div>
+						</div>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a style="cursor: pointer;" onclick="changeProduct(32)">
+					<div class="text-center animate-box">
+						<div class="product" style="margin-top: 1em;">
+							<div class="product-grid"
+								style="background-image:url(images/productos/puffino/merida.jpg); margin: 0 auto;">
+							</div>
+							<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+								<h3 style="line-height: 30px;"><a href="single.html">Zazil</a></h3>
+								<span class="price" style="font-size:12px;">desde </span><span
+									class="price">$3999</span>
+							</div>
+							<div class="medidas">
+								<span>(84cm x 70cm x 115cm)</span>
+							</div>
+						</div>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a style="cursor: pointer;" onclick="changeProduct(26)">
+					<div class="text-center animate-box">
+						<div class="product" style="margin-top: 1em;">
+							<div class="product-grid"
+								style="background-image:url(images/productos/puffino/oaxaca.jpg); margin: 0 auto;">
+							</div>
+							<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+								<h3 style="line-height: 30px;"><a href="single.html">Toot</a></h3>
+								<span class="price" style="font-size:12px;">desde </span><span
+									class="price">$3899</span>
+							</div>
+							<div class="medidas">
+								<span>(90cm x 40cm x 90cm)</span>
+							</div>
+						</div>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a style="cursor: pointer;" onclick="changeProduct(27)">
+					<div class="text-center animate-box">
+						<div class="product" style="margin-top: 1em;">
+							<div class="product-grid"
+								style="background-image:url(images/productos/puffino/oaxaca_matrimonial.jpg); margin: 0 auto;">
+							</div>
+							<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+								<h3 style="line-height: 30px;"><a href="single.html">Toot Matrimonial</a></h3>
+								<span class="price" style="font-size:12px;">desde </span><span
+									class="price">$4599</span>
+							</div>
+							<div class="medidas">
+								<span>(120cm x 65cm x 120cm)</span>
+							</div>
+						</div>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a style="cursor: pointer;" onclick="changeProduct(28)">
+					<div class="text-center animate-box">
+						<div class="product" style="margin-top: 1em;">
+							<div class="product-grid"
+								style="background-image:url(images/productos/puffino/oaxaca_queen.jpg); margin: 0 auto;">
+							</div>
+							<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+								<h3 style="line-height: 30px;"><a href="single.html">OAXACA QUEEN</a></h3>
+								<span class="price" style="font-size:12px;">desde </span><span
+									class="price">$4799</span>
+							</div>
+							<div class="medidas">
+								<span>(150cm x 65cm x 150cm)</span>
+							</div>
+						</div>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a style="cursor: pointer;" onclick="changeProduct(24)">
+					<div class="text-center animate-box">
+						<div class="product" style="margin-top: 1em;">
+							<div class="product-grid"
+								style="background-image:url(images/productos/puffino/patzcuaro.jpg); margin: 0 auto;">
+							</div>
+							<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+								<h3 style="line-height: 30px;"><a href="single.html">Tanak</a></h3>
+								<span class="price" style="font-size:12px;">desde </span><span
+									class="price">$4499</span>
+							</div>
+							<div class="medidas">
+								<span>(100cm x 80cm x 85cm)</span>
+							</div>
+						</div>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a style="cursor: pointer;" onclick="changeProduct(25)">
+					<div class="text-center animate-box">
+						<div class="product" style="margin-top: 1em;">
+							<div class="product-grid"
+								style="background-image:url(images/productos/puffino/patzcuaro_kids.jpg); margin: 0 auto;">
+							</div>
+							<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+								<h3 style="line-height: 30px;"><a href="single.html">Tanak Niños</a></h3>
+								<span class="price" style="font-size:12px;">desde </span><span
+									class="price">$3199</span>
+							</div>
+							<div class="medidas">
+								<span>(80cm x 63cm x 70cm)</span>
+							</div>
+						</div>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a style="cursor: pointer;" onclick="changeProduct(7)">
+					<div class="text-center animate-box">
+						<div class="product" style="margin-top: 1em;">
+							<div class="product-grid"
+								style="background-image:url(images/productos/puffino/puebla.jpg); margin: 0 auto;">
+							</div>
+							<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+								<h3 style="line-height: 30px;"><a href="single.html">Alom</a></h3>
+								<span class="price" style="font-size:12px;">desde </span><span
+									class="price">$3099</span>
+							</div>
+							<div class="medidas">
+								<span>(120cm x 25cm x 170cm)</span>
+							</div>
+						</div>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a style="cursor: pointer;" onclick="changeProduct(8)">
+					<div class="text-center animate-box">
+						<div class="product" style="margin-top: 1em;">
+							<div class="product-grid"
+								style="background-image:url(images/productos/puffino/pruebla_chico.jpg); margin: 0 auto;">
+							</div>
+							<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+								<h3 style="line-height: 30px;"><a href="single.html">Alom Mediano</a></h3>
+								<span class="price" style="font-size:12px;">desde </span><span
+									class="price">$2299</span>
+							</div>
+							<div class="medidas">
+								<span>(900cm x 25cm x 130cm)</span>
+							</div>
+						</div>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a style="cursor: pointer;" onclick="changeProduct(23)">
+					<div class="text-center animate-box">
+						<div class="product" style="margin-top: 1em;">
+							<div class="product-grid"
+								style="background-image:url(images/productos/puffino/puertovallarta.jpg); margin: 0 auto;">
+							</div>
+							<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+								<h3 style="line-height: 30px;"><a href="single.html">Seti</a></h3>
+								<span class="price" style="font-size:12px;">desde </span><span
+									class="price">$3999</span>
+							</div>
+							<div class="medidas">
+								<span>(46cm x 75cm x 125cm)</span>
+							</div>
+						</div>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a style="cursor: pointer;" onclick="changeProduct(10)">
+					<div class="text-center animate-box">
+						<div class="product" style="margin-top: 1em;">
+							<div class="product-grid"
+								style="background-image:url(images/productos/puffino/veracruz.jpg); margin: 0 auto;">
+							</div>
+							<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+								<h3 style="line-height: 30px;"><a href="single.html">Canek</a></h3>
+								<span class="price" style="font-size:12px;">desde </span><span
+									class="price">$4199</span>
+							</div>
+							<div class="medidas">
+								<span>(80cm x 87cm x 80cm)</span>
+							</div>
+						</div>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a style="cursor: pointer;" onclick="changeProduct(11)">
+					<div class="text-center animate-box">
+						<div class="product" style="margin-top: 1em;">
+							<div class="product-grid"
+								style="background-image:url(images/productos/puffino/veracruz_ninos.jpg); margin: 0 auto;">
+							</div>
+							<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+								<h3 style="line-height: 30px;"><a href="single.html">Canek Niños</a></h3>
+								<span class="price" style="font-size:12px;">desde </span><span
+									class="price">$3399</span>
+							</div>
+							<div class="medidas">
+								<span>(69cm x 65cm x 65cm)</span>
+							</div>
+						</div>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a style="cursor: pointer;" onclick="changeProduct(17)">
+					<div class="text-center animate-box">
+						<div class="product" style="margin-top: 1em;">
+							<div class="product-grid"
+								style="background-image:url(images/productos/puffino/zacatecas_chico.jpg); margin: 0 auto;">
+							</div>
+							<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+								<h3 style="line-height: 30px;"><a href="single.html">Kimbo Chico</a></h3>
+								<span class="price" style="font-size:12px;">desde </span><span
+									class="price">$2399</span>
+							</div>
+							<div class="medidas">
+								<span>(45cm x 33cm x 55cm)</span>
+							</div>
+						</div>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a style="cursor: pointer;" onclick="changeProduct(18)">
+					<div class="text-center animate-box">
+						<div class="product" style="margin-top: 1em;">
+							<div class="product-grid"
+								style="background-image:url(images/productos/puffino/zacatecas_mediano.jpg); margin: 0 auto;">
+							</div>
+							<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+								<h3 style="line-height: 30px;"><a href="single.html">Kimbo Mediano</a></h3>
+								<span class="price" style="font-size:12px;">desde </span><span
+									class="price">$2699</span>
+							</div>
+							<div class="medidas">
+								<span>(60cm x 33cm x 60cm)</span>
+							</div>
+						</div>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a style="cursor: pointer;" onclick="changeProduct(16)">
+					<div class="text-center animate-box">
+						<div class="product" style="margin-top: 1em;">
+							<div class="product-grid"
+								style="background-image:url(images/productos/puffino/zacatecas_grande.jpg); margin: 0 auto;">
+							</div>
+							<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+								<h3 style="line-height: 30px;"><a href="single.html">Kimbo</a></h3>
+								<span class="price" style="font-size:12px;">desde </span><span
+									class="price">$3199</span>
+							</div>
+							<div class="medidas">
+								<span>(90cm x 33cm x 90cm)</span>
+							</div>
+						</div>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a style="cursor: pointer;" onclick="changeProduct(19)">
+					<div class="text-center animate-box">
+						<div class="product" style="margin-top: 1em;">
+							<div class="product-grid"
+								style="background-image:url(images/productos/puffino/zacatlan.jpg); margin: 0 auto;">
+							</div>
+							<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+								<h3 style="line-height: 30px;"><a href="single.html">Kuk</a></h3>
+								<span class="price" style="font-size:12px;">desde </span><span
+									class="price">$3399</span>
+							</div>
+							<div class="medidas">
+								<span>(64cm x 125cm x 64cm)</span>
+							</div>
+						</div>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a style="cursor: pointer;" onclick="changeProduct(20)">
+					<div class="text-center animate-box">
+						<div class="product" style="margin-top: 1em;">
+							<div class="product-grid"
+								style="background-image:url(images/productos/puffino/zacatlan_mediano.jpg); margin: 0 auto;">
+							</div>
+							<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+								<h3 style="line-height: 30px;"><a href="single.html">Kuk Mediano</a></h3>
+								<span class="price" style="font-size:12px;">desde </span><span
+									class="price">$2899</span>
+							</div>
+							<div class="medidas">
+								<span>(50cm x 95cm x 50cm)</span>
+							</div>
+						</div>
+					</div>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<!-- FIN SLIDER DE MODELOS PUFFINO -->
+
+
+	<!-- SLIDER DE MODELOS KIDS -->
+	<div id="kidsDiv">
+		<ul id="sliderKids">
+			<li>
+				<a style="cursor: pointer;" onclick="changeProduct(1)">
+					<div class="text-center animate-box">
+						<div class="product" style="margin-top: 1em;">
+							<div class="product-grid"
+								style="background-image:url(images/productos/kids/kids_conejo.jpg); margin: 0 auto;">
+							</div>
+							<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+								<h3 style="line-height: 30px;"><a href="single.html">CONEJO</a></h3>
+								<span class="price" style="font-size:12px;">desde </span><span
+									class="price">$3499</span>
+							</div>
+							<div class="medidas">
+								<span>(76cm x 90cm x 76cm)</span>
+							</div>
+						</div>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a style="cursor: pointer;" onclick="changeProduct(2)">
+					<div class="text-center animate-box">
+						<div class="product" style="margin-top: 1em;">
+							<div class="product-grid"
+								style="background-image:url(images/productos/kids/kids_dinosaurio.jpg); margin: 0 auto;">
+							</div>
+							<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+								<h3 style="line-height: 30px;"><a href="single.html">DINOSAURIO</a></h3>
+								<span class="price" style="font-size:12px;">desde </span><span
+									class="price">$3699</span>
+							</div>
+							<div class="medidas">
+								<span>(72cm x 90cm x 76cm)</span>
+							</div>
+						</div>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a style="cursor: pointer;" onclick="changeProduct(3)">
+					<div class="text-center animate-box">
+						<div class="product" style="margin-top: 1em;">
+							<div class="product-grid"
+								style="background-image:url(images/productos/kids/kids_dona.jpg); margin: 0 auto;">
+							</div>
+							<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+								<h3 style="line-height: 30px;"><a href="single.html">DONA</a></h3>
+								<span class="price" style="font-size:12px;">desde </span><span
+									class="price">$3399</span>
+							</div>
+							<div class="medidas">
+								<span>(96cm diametro x 32cm)</span>
+							</div>
+						</div>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a style="cursor: pointer;" onclick="changeProduct(4)">
+					<div class="text-center animate-box">
+						<div class="product" style="margin-top: 1em;">
+							<div class="product-grid"
+								style="background-image:url(images/productos/kids/kids_jirafa.jpg); margin: 0 auto;">
+							</div>
+							<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+								<h3 style="line-height: 30px;"><a href="single.html">JIRAFA</a></h3>
+								<span class="price" style="font-size:12px;">desde </span><span
+									class="price">$3799</span>
+							</div>
+							<div class="medidas">
+								<span>(72cm x 90cm x 76cm)</span>
+							</div>
+						</div>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a style="cursor: pointer;" onclick="changeProduct(5)">
+					<div class="text-center animate-box">
+						<div class="product" style="margin-top: 1em;">
+							<div class="product-grid"
+								style="background-image:url(images/productos/kids/kids_perrito.jpg); margin: 0 auto;">
+							</div>
+							<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+								<h3 style="line-height: 30px;"><a href="single.html">PERRITO</a></h3>
+								<span class="price" style="font-size:12px;">desde </span><span
+									class="price">$3699</span>
+							</div>
+							<div class="medidas">
+								<span>(72cm x 90cm x 76cm)</span>
+							</div>
+						</div>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a style="cursor: pointer;" onclick="changeProduct(6)">
+					<div class="text-center animate-box">
+						<div class="product" style="margin-top: 1em;">
+							<div class="product-grid"
+								style="background-image:url(images/productos/kids/kids_unicornio.jpg); margin: 0 auto;">
+							</div>
+							<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+								<h3 style="line-height: 30px;"><a href="single.html">UNICORNIO</a></h3>
+								<span class="price" style="font-size:12px;">desde </span><span
+									class="price">$3499</span>
+							</div>
+							<div class="medidas">
+								<span>(72cm x 90cm x 76cm)</span>
+							</div>
+						</div>
+					</div>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<!-- FIN SLIDER DE MODELOS KIDS-->
+
+
+	<!--SECCION DE DETALLE DE PRODUCTOS-->
+	<div id="detailP">
+		<div class="container">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<div id="holi">
+						<ul id="sliderDetail" style="margin-bottom: -5.5em;">
+						</ul>
+					</div>
+					<div class="row">
+						<div class="col-md-12 col-md-offset-0 text-center fh5co-heading">
+							<h2 id="nombreP"></h2>
+							<h5 id="medidasP"></h5>
+							<p id="descriptionP" style="font-family: 'Montserrat', Arial, sans-serif;font-size: 0.9em;line-height: 2em;">	
+								
+							</p>
+							<a href="#" class="btn btn-primary btn-outline btn-lg">Comprar</a>
 						</div>
 					</div>
 				</div>
 			</div>
 		</div>
+	</div>
 
-		<!--div id="fh5co-started">
-		<div class="container">
-			<div class="row animate-box">
-				<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
-					<h2>Soporte y Atención al Cliente</h2>
-					<p>Suscríbete en nuestro boletín así tendrás cupones y promociones</p>
-				</div>
-			</div>
-			<div class="row animate-box">
-				<div class="col-md-8 col-md-offset-2">
-					<form class="form-inline">
-						<div class="col-md-6 col-sm-6">
-							<div class="form-group">
-								<label for="email" class="sr-only">Correo</label>
-								<input type="email" class="form-control" id="email" placeholder="Correo">
-							</div>
-						</div>
-						<div class="col-md-6 col-sm-6">
-							<button type="submit" class="btn btn-default btn-block">Suscríbete</button>
-						</div>
-					</form>
-				</div>
-			</div>
-		</div-->
+	<div class="row">
+		<div class="col-md-8 col-md-offset-2 text-center fh5co-heading" style="margin-bottom: 10px;">
+			<p style="font-family: 'Montserrat', Arial, sans-serif;font-size: 1em;line-height: 2em;">
+				Las fotografías mostradas en este sitio web son reales y propiedad de Puffino. Copyright 2017
+				León,
+				Guanajuato. Derechos reservados ©, prohibida su reproducción o uso total o parcial por
+				cualquier medio.
+			</p>
+		</div>
 	</div>
 
 	<footer id="fh5co-footer" role="contentinfo">
-		<div class="container">
-			<div class="row row-pb-md">
+			<div class="container">
+				<div class="row row-pb-md">
 				<div class="col-md-4 fh5co-widget">
-					<img src="images/puff_logo.png" style="" width="150" height="75">
+					
 					<p>
 						<ul class="fh5co-social-icons">
-							<li><a href="https://www.facebook.com/puffino.mx/"><i style="background: #353a34;"
-										class="icon-facebook"></i></a></li>
-							<li><a href="https://www.youtube.com/channel/UC_IQX58WKgUAJiZfj9oy6wg/featured"><i
-										style="background: #353a34;" class="icon-youtube"></i></a></li>
-							<li><a href="https://www.instagram.com/puffinomx/"><i style="background: #353a34;"
-										class="icon-instagram"></i></a></li>
-							<li><a href="https://www.twitter.com/puffinomx/"><i style="background: #353a34;"
-										class="icon-twitter"></i></a></li>
-							<li><a href="https://www.pinterest.com/puffinomx/"><i style="background: #353a34;"
-										class="icon-pinterest"></i></a></li>
+								<li><a href="https://www.facebook.com/puffino.mx/"><i style="background: #353a34;" class="icon-facebook"></i></a></li>
+								<li><a href="https://www.youtube.com/channel/UC_IQX58WKgUAJiZfj9oy6wg/featured"><i style="background: #353a34;" class="icon-youtube"></i></a></li>
+								<li><a href="https://www.instagram.com/puffinomx/"><i style="background: #353a34;" class="icon-instagram"></i></a></li>
 						</ul>
 					</p>
 				</div>
@@ -396,37 +1103,33 @@
 				<div class="col-md-3 col-sm-4 col-xs-6 col-md-push-1">
 					<ul class="fh5co-footer-links">
 						<h3 style="color:#FFF;">CONTÁCTANOS</h3>
-						<li>477 274 28 38</li>
+                        <li>477 274 28 38</li>
 						<li>Lunes a viernes de 9 a.m. a 4 p.m. </li>
-						<li>Correo electrónico: </li>
-						<li>denisse.martinez@budabag.com.mx</li>
-						<li>León, Gto. </li>
-
+                        <li>Correo electrónico: </li>
+                        <li>denisse.martinez@budabag.com.mx</li>
+                        <li>León, Gto. </li>
+						
 					</ul>
 				</div>
 			</div>
 
-			<div class="row copyright">
-				<div class="col-md-12 text-center">
+				<div class="row copyright">
+					<div class="col-md-12 text-center">
 
-					<p>
-
-					</p>
+						<p>
+							
+						</p>
+					</div>
 				</div>
+
 			</div>
-		</div>
-		<p
-			style="font-family: 'Montserrat', Arial, sans-serif;font-size: 1em;line-height: 2em;padding-left: 20%;padding-right: 20%;">
-			Las fotografías mostradas en este sitio web son reales y propiedad de Puffino. Copyright 2017
-			León,
-			Guanajuato. Derechos reservados ©, prohibida su reproducción o uso total o parcial por
-			cualquier medio.
-		</p>
-	</footer>
-	<div class="gototop js-top">
-		<a href="#" class="js-gotop"><i class="icon-arrow-up" style="background-color:#4DD7D3;"></i></a>
+		</footer>
 	</div>
 
+	<div class="gototop js-top">
+			<a href="#" class="js-gotop"><i class="icon-arrow-up" style="background-color:#ff675a;"></i></a>
+	</div>
+	
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
 	<!-- jQuery Easing -->
@@ -443,9 +1146,812 @@
 	<script src="js/jquery.flexslider-min.js"></script>
 	<!-- Main -->
 	<script src="js/main.js"></script>
+	<script type="text/javascript" src="js/jquery.flexisel.js"></script>
 
-	<script src="js/mainMotor3D.js"></script>
-	<script src="js/carrito.js"></script>
-</body>
 
+	<script type="text/javascript">
+
+		var showYoko = true;
+		var showPuffino = true;
+		var showKids = true;
+
+		$(document).ready(function () {
+			$("#yokoDiv").hide(500);
+			$("#puffinoDiv").hide(500);
+			$("#kidsDiv").hide(500);
+
+			//Dejar de mostrar el detalle
+			$("#detailP").hide(500);
+
+			$("#yokoShow").click(function () {
+				showYokoDiv();
+			});
+
+			$("#puffinoShow").click(function () {
+				showPuffinoDiv();
+			});
+
+			$("#kidsShow").click(function () {
+				showKidsDiv();
+			});
+
+		});
+
+
+		//Funciones para mostrar u ocultar el div de los productos pertenecientes a una categoría
+		function showYokoDiv() {
+			if (showYoko) {
+				//Verificamos si alguna otra categoría se está mostrando y la ocultamos
+				if (!showPuffino) {
+					$("#puffinoDiv").hide(500);
+					showPuffino = true;
+				}
+
+				if (!showKids) {
+					$("#kidsDiv").hide(500);
+					showKids = true;
+				}
+
+				//Mostramos la categoría de Yoko Modular
+				$("#yokoDiv").show(500);
+				setTimeout(loadYokoSlider, 500);
+				showYoko = false;
+			}
+			else {
+				$("#yokoDiv").hide(500);
+				showYoko = true;
+			}
+		}
+
+		function showPuffinoDiv() {
+			if (showPuffino) {
+				//Verificamos si alguna otra categoría se está mostrando y la ocultamos
+				if (!showYoko) {
+					$("#yokoDiv").hide(500);
+					showYoko = true;
+				}
+
+				if (!showKids) {
+					$("#kidsDiv").hide(500);
+					showKids = true;
+				}
+
+				//Mostramos la categoría de Puffino
+				$("#puffinoDiv").show(500);
+				setTimeout(loadPuffinoSlider, 500);
+				showPuffino = false;
+			}
+			else {
+				$("#puffinoDiv").hide(500);
+				showPuffino = true;
+			}
+		}
+
+		function showKidsDiv() {
+			if (showKids) {
+				//Verificamos si alguna otra categoría se está mostrando y la ocultamos
+				if (!showYoko) {
+					$("#yokoDiv").hide(500);
+					showYoko = true;
+				}
+
+				if (!showPuffino) {
+					$("#puffinoDiv").hide(500);
+					showPuffino = true;
+				}
+
+				//Mostramos la categoría de Puffino
+				$("#kidsDiv").show(500);
+				setTimeout(loadKidsSlider, 500);
+				showKids = false;
+			}
+			else {
+				$("#kidsDiv").hide(500);
+				showKids = true;
+			}
+		}
+
+		//Funciones para cargar la vista del slider de las categorías de productos
+		function loadYokoSlider() {
+			$("#sliderYoko").flexisel({
+				visibleItems: 3,
+				itemsToScroll: 1,
+				autoPlay: {
+					enable: true,
+					interval: 7000,
+					pauseOnHover: true
+				}, responsiveBreakpoints: {
+					portrait: {
+						changePoint: 480,
+						visibleItems: 1,
+						itemsToScroll: 1
+					},
+					landscape: {
+						changePoint: 640,
+						visibleItems: 2,
+						itemsToScroll: 2
+					},
+					tablet: {
+						changePoint: 768,
+						visibleItems: 3,
+						itemsToScroll: 3
+					}
+				}
+			});
+		}
+
+		function loadPuffinoSlider() {
+			$("#sliderPuffino").flexisel({
+				visibleItems: 3,
+				itemsToScroll: 1,
+				autoPlay: {
+					enable: true,
+					interval: 7000,
+					pauseOnHover: true
+				}, responsiveBreakpoints: {
+					portrait: {
+						changePoint: 480,
+						visibleItems: 1,
+						itemsToScroll: 1
+					},
+					landscape: {
+						changePoint: 640,
+						visibleItems: 2,
+						itemsToScroll: 2
+					},
+					tablet: {
+						changePoint: 768,
+						visibleItems: 3,
+						itemsToScroll: 3
+					}
+				}
+			});
+		}
+		function loadKidsSlider() {
+			$("#sliderKids").flexisel({
+				visibleItems: 4,
+				itemsToScroll: 1,
+				autoPlay: {
+					enable: false,
+					interval: 7000,
+					pauseOnHover: true
+				}, responsiveBreakpoints: {
+					portrait: {
+						changePoint: 480,
+						visibleItems: 2,
+						itemsToScroll: 1
+					},
+					landscape: {
+						changePoint: 640,
+						visibleItems: 2,
+						itemsToScroll: 2
+					},
+					tablet: {
+						changePoint: 768,
+						visibleItems: 3,
+						itemsToScroll: 3
+					}
+				}
+			});
+		}
+
+		function loadDetailSlider() {
+			$("#sliderDetail").flexisel({
+				visibleItems: 1,
+				itemsToScroll: 1,
+				autoPlay: {
+					enable: false,
+					interval: 5000,
+					pauseOnHover: true
+				}, responsiveBreakpoints: {
+					portrait: {
+						changePoint: 480,
+						visibleItems: 1,
+						itemsToScroll: 1
+					},
+					landscape: {
+						changePoint: 640,
+						visibleItems: 1,
+						itemsToScroll: 1
+					},
+					tablet: {
+						changePoint: 768,
+						visibleItems:	1,
+						itemsToScroll: 1
+					}
+				}
+			});
+		}
+	</script>
+
+	<script>
+		function changeProduct(value){
+			$("#detailP").hide(100);
+
+			//Conejo
+			if(value == 1){
+				document.getElementById('nombreP').innerHTML = 'CONEJO';
+				document.getElementById('medidasP').innerHTML = 'Mide 76 cm de largo x 90 cm de ancho y 76 cm de alto.';
+				document.getElementById('descriptionP').innerHTML = 'Conejo decorativo de gamuza para niños con orejas dinámicas, relleno puffino.';
+
+				//Galeria
+				$("#sliderDetail").empty();
+				document.getElementById('sliderDetail').innerHTML = ''
+				+	'<li><img style="max-width: 80%; margin-bottom: 0px;" src="images/catalogo/kids/conejo1.jpeg"></li>';
+
+				setTimeout(loadDetailSlider, 500);
+
+				$("#detailP").show(500);
+
+			}
+			//Dinosaurio
+			else if(value == 2){
+				document.getElementById('nombreP').innerHTML = 'DINOSAURIO';
+				document.getElementById('medidasP').innerHTML = ' Mide 72 cm de largo x 90 cm de ancho y 76 cm de alto.';
+				document.getElementById('descriptionP').innerHTML = 'Dinosaurio decorativo de gamuza color topacio para niños. Diseño único e innovador, perfecto para cualquier lugar, relleno puffino.';
+
+				//Galeria
+				$("#sliderDetail").empty();
+				document.getElementById('sliderDetail').innerHTML = ''
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/kids/dino1.png"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/kids/dino2.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/kids/dino3.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/kids/dino4.png"></li>';
+
+				setTimeout(loadDetailSlider, 500);
+
+				$("#detailP").show(500);
+			}
+			//Dona
+			else if(value == 3){
+				document.getElementById('nombreP').innerHTML = 'DONA';
+				document.getElementById('medidasP').innerHTML = 'Mide 96cm de diámetro x 32 de alto.';
+				document.getElementById('descriptionP').innerHTML = 'Dona decorativa de gamuza para niños y adultos, perfecta para decorar cualquier espacio, relleno puffino.';
+
+				//Galeria
+				$("#sliderDetail").empty();
+				document.getElementById('sliderDetail').innerHTML = ''
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/kids/dona1.png"></li>';
+
+				setTimeout(loadDetailSlider, 500);
+
+				$("#detailP").show(500);
+			}
+			//Jirafa
+			else if(value == 4){
+				document.getElementById('nombreP').innerHTML = 'JIRAFA';
+				document.getElementById('medidasP').innerHTML = 'Mide 72 cm de largo x 90 cm de ancho y 76 cm de alto.';
+				document.getElementById('descriptionP').innerHTML = 'Jirafa decorativa de gamuza para niños. Diseño único e innovador, perfecto para cualquier habitación, relleno puffino.';
+
+				//Galeria
+				$("#sliderDetail").empty();
+				document.getElementById('sliderDetail').innerHTML = ''
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/kids/jirafa1.png"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/kids/jirafa2.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/kids/jirafa3.png"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/kids/jirafa4.jpg"></li>';
+
+				setTimeout(loadDetailSlider, 500);
+
+				$("#detailP").show(500);
+			}
+			//Perrito
+			else if(value == 5){
+				document.getElementById('nombreP').innerHTML = 'PERRITO';
+				document.getElementById('medidasP').innerHTML = 'Mide 72 cm de largo x 90 cm de ancho y 76 cm de alto.';
+				document.getElementById('descriptionP').innerHTML = 'Perrito decorativo de gamuza para niños. Diseño único e innovador con orejas gigantes, relleno puffino.';
+
+				//Galeria
+				$("#sliderDetail").empty();
+				document.getElementById('sliderDetail').innerHTML = ''
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/kids/perrito1.png"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/kids/perrito2.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/kids/perrito3.png"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/kids/perrito4.jpg"></li>';
+
+				setTimeout(loadDetailSlider, 500);
+
+				$("#detailP").show(500);
+			}
+			//Unicornio
+			else if(value == 6){
+				document.getElementById('nombreP').innerHTML = 'UNICORNIO';
+				document.getElementById('medidasP').innerHTML = 'Mide 72 cm de largo x 90 cm de ancho y 76 cm de alto.';
+				document.getElementById('descriptionP').innerHTML = 'Unicornio decorativo de gamuza para niños. Diseño único e innovador con cola y cuerno de colores, relleno puffino.';
+
+				//Galeria
+				$("#sliderDetail").empty();
+				document.getElementById('sliderDetail').innerHTML = ''
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/kids/unicornio1.png"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/kids/unicornio2.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/kids/unicornio3.png"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/kids/unicornio4.png"></li>';
+
+				setTimeout(loadDetailSlider, 500);
+
+				$("#detailP").show(500);
+			}
+			//Alom
+			else if(value == 7){
+				document.getElementById('nombreP').innerHTML = 'ALOM';
+				document.getElementById('medidasP').innerHTML = 'Mide 120cm de ancho x 25cm de alto x 170cm de fondo.';
+				document.getElementById('descriptionP').innerHTML = 'Almohada Puff Alom, relleno puffino.';
+
+				//Galeria
+				$("#sliderDetail").empty();
+				document.getElementById('sliderDetail').innerHTML = ''
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/alom1.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/alom2.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/alom3.png"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/alom4.png"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/alom5.png"></li>';
+
+				setTimeout(loadDetailSlider, 500);
+
+				$("#detailP").show(500);
+			}
+			//Alom mediano
+			else if(value == 8){
+				document.getElementById('nombreP').innerHTML = 'ALOM MEDIANO';
+				document.getElementById('medidasP').innerHTML = 'Mide 90cm de ancho x 25cm de alto x 130cm de fondo.';
+				document.getElementById('descriptionP').innerHTML = 'Almohada Puff Alom MedianO, relleno puffino.';
+
+				//Galeria
+				$("#sliderDetail").empty();
+				document.getElementById('sliderDetail').innerHTML = ''
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/alom_med1.png"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/alom_med2.png"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/alom_med3.png"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/alom_med4.png"></li>';
+
+				setTimeout(loadDetailSlider, 500);
+
+				$("#detailP").show(500);
+			}
+			//Balam
+			else if(value == 9){
+				document.getElementById('nombreP').innerHTML = 'BALAM';
+				document.getElementById('medidasP').innerHTML = 'Mide 160cm de ancho x 85cm de alto x 85cm de fondo.';
+				document.getElementById('descriptionP').innerHTML = 'Sillón Puff Balam de dos plazas con descansabrazos, relleno puffino.';
+
+				//Galeria
+				$("#sliderDetail").empty();
+				document.getElementById('sliderDetail').innerHTML = ''
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/balam1.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/balam2.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/balam3.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/balam4.png"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/balam5.png"></li>';
+
+				setTimeout(loadDetailSlider, 500);
+
+				$("#detailP").show(500);
+			}
+			//Canek
+			else if(value == 10){
+				document.getElementById('nombreP').innerHTML = 'CANEK';
+				document.getElementById('medidasP').innerHTML = 'Mide 80cm de ancho x 87cm de alto x 80cm de fondo.';
+				document.getElementById('descriptionP').innerHTML = 'Sillón Puff Canek  individual con descansabrazos, relleno puffino.';
+
+				//Galeria
+				$("#sliderDetail").empty();
+				document.getElementById('sliderDetail').innerHTML = ''
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/canek1.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/canek2.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/canek3.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/canek4.png"></li>';
+
+				setTimeout(loadDetailSlider, 500);
+
+				$("#detailP").show(500);
+			}
+			//Canek niños
+			else if(value == 11){
+				document.getElementById('nombreP').innerHTML = 'CANEK NIÑOS';
+				document.getElementById('medidasP').innerHTML = 'Mide 69cm de ancho x 65cm de alto x 65cm de fondo.';
+				document.getElementById('descriptionP').innerHTML = 'Sillón Puff Canek Niños con descansabrazos, relleno puffino.';
+
+				//Galeria
+				$("#sliderDetail").empty();
+				document.getElementById('sliderDetail').innerHTML = ''
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/canek_n1.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/canek_n2.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/canek_n3.jpg"></li>';
+
+				setTimeout(loadDetailSlider, 500);
+
+				$("#detailP").show(500);
+			}
+			//IKAL
+			else if(value == 12){
+				document.getElementById('nombreP').innerHTML = 'IKAL';
+				document.getElementById('medidasP').innerHTML = 'Mide 100cm de ancho x 75cm de alto x 180cm de fondo.';
+				document.getElementById('descriptionP').innerHTML = 'Sillón Puff Ikal  individual, relleno puffino.';
+
+				//Galeria
+				$("#sliderDetail").empty();
+				document.getElementById('sliderDetail').innerHTML = ''
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/ikal1.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/ikal2.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/ikal3.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/ikal4.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/ikal5.png"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/ikal6.png"></li>';
+
+				setTimeout(loadDetailSlider, 500);
+
+				$("#detailP").show(500);
+			}
+			//KAUIL
+			else if(value == 13){
+				document.getElementById('nombreP').innerHTML = 'KAUIL';
+				document.getElementById('medidasP').innerHTML = 'Medida sillón 100 cm de ancho x 85 cm de alto x 80 cm de fondo, medida taburete 100 cm de ancho x 50 cm de alto x 35 cm de fondo.';
+				document.getElementById('descriptionP').innerHTML = 'Sillón Puff Kauil Individual, relleno puffino.';
+
+				//Galeria
+				$("#sliderDetail").empty();
+				document.getElementById('sliderDetail').innerHTML = ''
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/kauil1.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/kauil2.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/kauil3.png"></li>';
+
+				setTimeout(loadDetailSlider, 500);
+
+				$("#detailP").show(500);
+			}
+			//KAUIL SILLON
+			else if(value == 14){
+				document.getElementById('nombreP').innerHTML = 'KAUIL SILLÓN';
+				document.getElementById('medidasP').innerHTML = ' Medida 100 cm de ancho x 85 cm de alto x 80 cm de fondo.';
+				document.getElementById('descriptionP').innerHTML = 'Sillón Puff Kauil Individual, relleno puffino.';
+
+				//Galeria
+				$("#sliderDetail").empty();
+				document.getElementById('sliderDetail').innerHTML = ''
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/kauil_s1.png"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/kauil_s2.png"></li>';
+
+				setTimeout(loadDetailSlider, 500);
+
+				$("#detailP").show(500);
+			}
+			//KAUIL TABURETE
+			else if(value == 15){
+				document.getElementById('nombreP').innerHTML = 'KAUIL TABURETE';
+				document.getElementById('medidasP').innerHTML = 'Medida 100cm de ancho x 50cm de alto x 35cm de fondo.';
+				document.getElementById('descriptionP').innerHTML = 'Taburete Puff Kauil individual, relleno puffino.';
+
+				//Galeria
+				$("#sliderDetail").empty();
+				document.getElementById('sliderDetail').innerHTML = ''
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/kauil_t1.png"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/kauil_t1.png"></li>';
+
+				setTimeout(loadDetailSlider, 500);
+
+				$("#detailP").show(500);
+			}
+			//KIMBO
+			else if(value == 16){
+				document.getElementById('nombreP').innerHTML = 'KIMBO';
+				document.getElementById('medidasP').innerHTML = 'Mide 90cm de ancho x 33cm de alto x 90cm de fondo.';
+				document.getElementById('descriptionP').innerHTML = 'Sillón Puff Kimbo, relleno puffino.';
+
+				//Galeria
+				$("#sliderDetail").empty();
+				document.getElementById('sliderDetail').innerHTML = ''
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/kimbo1.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/kimbo2.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/kimbo3.png"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/kimbo4.png"></li>';
+
+				setTimeout(loadDetailSlider, 500);
+
+				$("#detailP").show(500);
+			}
+			//KIMBO CHICO
+			else if(value == 17){
+				document.getElementById('nombreP').innerHTML = 'KIMBO CHICO';
+				document.getElementById('medidasP').innerHTML = 'Mide 45cm de ancho x 33cm de alto x 55cm de fondo.';
+				document.getElementById('descriptionP').innerHTML = 'Sillón Kimbo Chico, relleno puffino.';
+
+				//Galeria
+				$("#sliderDetail").empty();
+				document.getElementById('sliderDetail').innerHTML = ''
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/kimbo_c1.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/kimbo_c2.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/kimbo_c3.png"></li>';
+
+				setTimeout(loadDetailSlider, 500);
+
+				$("#detailP").show(500);
+			}
+			//KIMBO MEDIANO
+			else if(value == 18){
+				document.getElementById('nombreP').innerHTML = 'KIMBO MEDIANO';
+				document.getElementById('medidasP').innerHTML = 'Mide 60cm de ancho x 33cm de alto x 60 de fondo.';
+				document.getElementById('descriptionP').innerHTML = 'Sillón Puff Kimbo Mediano, relleno puffino.';
+
+				//Galeria
+				$("#sliderDetail").empty();
+				document.getElementById('sliderDetail').innerHTML = ''
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/kimbo_m1.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/kimbo_m2.png"></li>';
+
+				setTimeout(loadDetailSlider, 500);
+
+				$("#detailP").show(500);
+			}
+			//KUK
+			else if(value == 19){
+				document.getElementById('nombreP').innerHTML = 'KUK';
+				document.getElementById('medidasP').innerHTML = 'Mide 64cm de ancho x 125cm de alto x 64cm de fondo.';
+				document.getElementById('descriptionP').innerHTML = 'Puff Kuk en forma de pera, relleno puffino.';
+
+				//Galeria
+				$("#sliderDetail").empty();
+				document.getElementById('sliderDetail').innerHTML = ''
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/kuk1.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/kuk2.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/kuk3.png"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/kuk4.png"></li>';
+
+				setTimeout(loadDetailSlider, 500);
+
+				$("#detailP").show(500);
+			}
+			//KUK MEDIANO
+			else if(value == 20){
+				document.getElementById('nombreP').innerHTML = 'KUK MEDIANO';
+				document.getElementById('medidasP').innerHTML = 'Mide 50 cm de ancho x 95cm de alto x 50cm de fondo.';
+				document.getElementById('descriptionP').innerHTML = 'Puff Kuk Mediano en forma de pera, relleno puffino.';
+
+				//Galeria
+				$("#sliderDetail").empty();
+				document.getElementById('sliderDetail').innerHTML = ''
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/kuk_m1.png"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/kuk_m2.png"></li>';
+
+				setTimeout(loadDetailSlider, 500);
+
+				$("#detailP").show(500);
+			}
+			//NIMA
+			else if(value == 21){
+				document.getElementById('nombreP').innerHTML = 'NIMA';
+				document.getElementById('medidasP').innerHTML = 'Mide 95cm de ancho x 80cm de alto x 200cm de fondo.';
+				document.getElementById('descriptionP').innerHTML = 'Sillón Puff Nima, relleno puffino.';
+
+				//Galeria
+				$("#sliderDetail").empty();
+				document.getElementById('sliderDetail').innerHTML = ''
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/nima1.png"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/nima2.png"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/nima3.png"></li>';
+
+				setTimeout(loadDetailSlider, 500);
+
+				$("#detailP").show(500);
+			}
+			//NIMA MEDIANO
+			else if(value == 22){
+				document.getElementById('nombreP').innerHTML = 'NIMA MEDIANO';
+				document.getElementById('medidasP').innerHTML = ' Mide 84cm de ancho x 70cm de alto x 115cm de fondo.';
+				document.getElementById('descriptionP').innerHTML = 'Sillón Puff Nima Mediano individual, relleno puffino.';
+
+				//Galeria
+				$("#sliderDetail").empty();
+				document.getElementById('sliderDetail').innerHTML = ''
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/nima_m1.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/nima_m1.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/nima_m1.jpg"></li>';
+
+				setTimeout(loadDetailSlider, 500);
+
+				$("#detailP").show(500);
+			}
+			//SETI
+			else if(value == 23){
+				document.getElementById('nombreP').innerHTML = 'SETI';
+				document.getElementById('medidasP').innerHTML = 'Mide 46cm de ancho x 75cm de alto x 125cm de fondo.';
+				document.getElementById('descriptionP').innerHTML = 'Sillón Puff Seti individual, relleno puffino.';
+
+				//Galeria
+				$("#sliderDetail").empty();
+				document.getElementById('sliderDetail').innerHTML = ''
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/seti1.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/seti2.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/seti3.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/seti4.png"></li>';
+
+				setTimeout(loadDetailSlider, 500);
+
+				$("#detailP").show(500);
+			}
+			//TANAK
+			else if(value == 24){
+				document.getElementById('nombreP').innerHTML = 'TANAK';
+				document.getElementById('medidasP').innerHTML = 'Mide 100cm de ancho x 80cm de alto x 85cm de fondo.';
+				document.getElementById('descriptionP').innerHTML = 'Sillón Puff Tanak individual clásico con descansabrazos, relleno puffino.';
+
+				//Galeria
+				$("#sliderDetail").empty();
+				document.getElementById('sliderDetail').innerHTML = ''
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/tanak1.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/tanak2.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/tanak3.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/tanak4.png"></li>';
+
+				setTimeout(loadDetailSlider, 500);
+
+				$("#detailP").show(500);
+			}
+			//TANAK NINOS
+			else if(value == 25){
+				document.getElementById('nombreP').innerHTML = 'TANAK NIÑOS';
+				document.getElementById('medidasP').innerHTML = ' Mide 80cm de ancho x 63cm de alto x 70cm de fondo.';
+				document.getElementById('descriptionP').innerHTML = 'Sillón Puff Tanak Niños con descansabrazos, relleno puffino.';
+
+				//Galeria
+				$("#sliderDetail").empty();
+				document.getElementById('sliderDetail').innerHTML = ''
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/tanak_n1.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/tanak_n1.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/tanak_n1.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/tanak_n1.jpg"></li>';
+
+				setTimeout(loadDetailSlider, 500);
+
+				$("#detailP").show(500);
+			}
+			//TOOT INDIVIDUAL
+			else if(value == 26){
+				document.getElementById('nombreP').innerHTML = 'TOOT INDIVIDUAL';
+				document.getElementById('medidasP').innerHTML = 'Mide 90cm de ancho x 40cm de alto x 90cm de fondo, colchoneta de 100cm x 190 cm.';
+				document.getElementById('descriptionP').innerHTML = 'Sillón Puff Toot Individual con opción a convertirse en colchoneta, relleno puffino.';
+
+				//Galeria
+				$("#sliderDetail").empty();
+				document.getElementById('sliderDetail').innerHTML = ''
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/toot_i1.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/toot_i2.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/toot_i3.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/toot_i4.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/toot_i5.jpg"></li>';
+
+				setTimeout(loadDetailSlider, 500);
+
+				$("#detailP").show(500);
+			}
+			//TOOT MATRIMONIAL
+			else if(value == 27){
+				document.getElementById('nombreP').innerHTML = 'TOOT MATRIMONIAL';
+				document.getElementById('medidasP').innerHTML = 'Mide 120cm de ancho x 65cm de alto x 120cm de fondo, colchoneta de 137cm x 190 cm.';
+				document.getElementById('descriptionP').innerHTML = 'Sillón Puff Toot Matrimonial  con opción a convertirse en colchoneta.';
+
+				//Galeria
+				$("#sliderDetail").empty();
+				document.getElementById('sliderDetail').innerHTML = ''
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/toot_m1.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/toot_m2.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/toot_m3.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/toot_m4.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/toot_m5.jpg"></li>';
+
+				setTimeout(loadDetailSlider, 500);
+
+				$("#detailP").show(500);
+			}
+			//TOOT QUEEN
+			else if(value == 28){
+				document.getElementById('nombreP').innerHTML = 'TOOT QUEEN';
+				document.getElementById('medidasP').innerHTML = 'Mide 150cm de ancho x 65cm de alto x 150cm de fondo, colchoneta de 160cm x 200 cm.';
+				document.getElementById('descriptionP').innerHTML = 'Sillón Puff Toot Queen con opción a convertirse en colchoneta.';
+
+				//Galeria
+				$("#sliderDetail").empty();
+				document.getElementById('sliderDetail').innerHTML = ''
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/toot_q1.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/toot_q2.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/toot_q3.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/toot_q4.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/toot_q5.jpg"></li>';
+
+				setTimeout(loadDetailSlider, 500);
+
+				$("#detailP").show(500);
+			}
+			//YEEB NIÑOS
+			else if(value == 28){
+				document.getElementById('nombreP').innerHTML = 'YEEB NIÑOS';
+				document.getElementById('medidasP').innerHTML = 'Mide 55cm de ancho x 70cm de alto x 75cm de fondo.';
+				document.getElementById('descriptionP').innerHTML = 'Sillón Puff Yeeb Niños individual, relleno puffino.';
+
+				//Galeria
+				$("#sliderDetail").empty();
+				document.getElementById('sliderDetail').innerHTML = ''
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/yeeb1.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/yeeb2.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/yeeb3.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/yeeb4.png"></li>';
+
+				setTimeout(loadDetailSlider, 500);
+
+				$("#detailP").show(500);
+			}
+			//YEEB NIÑOS
+			else if(value == 29){
+				document.getElementById('nombreP').innerHTML = 'YEEB NIÑOS';
+				document.getElementById('medidasP').innerHTML = 'Mide 55cm de ancho x 70cm de alto x 75cm de fondo.';
+				document.getElementById('descriptionP').innerHTML = 'Sillón Puff Yeeb Niños individual, relleno puffino.';
+
+				//Galeria
+				$("#sliderDetail").empty();
+				document.getElementById('sliderDetail').innerHTML = ''
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/yeeb1.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/yeeb2.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/yeeb3.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/yeeb4.png"></li>';
+
+				setTimeout(loadDetailSlider, 500);
+
+				$("#detailP").show(500);
+			}
+			//YUMIL
+			else if(value == 30){
+				document.getElementById('nombreP').innerHTML = 'YUMIL';
+				document.getElementById('medidasP').innerHTML = 'Mide 46cm de ancho x 46cm de alto x 46cm de fondo.';
+				document.getElementById('descriptionP').innerHTML = 'Sillón Yumil, relleno puffino.';
+
+				//Galeria
+				$("#sliderDetail").empty();
+				document.getElementById('sliderDetail').innerHTML = ''
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/yumil1.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/yumil2.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/yumil3.png"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/yumil4.png"></li>';
+
+				setTimeout(loadDetailSlider, 500);
+
+				$("#detailP").show(500);
+			}
+			//YUMIL MEDIANO
+			else if(value == 31){
+				document.getElementById('nombreP').innerHTML = 'YUMIL MEDIANO';
+				document.getElementById('medidasP').innerHTML = 'Mide 40cm de ancho x 40cm de alto x 40cm de fondo.';
+				document.getElementById('descriptionP').innerHTML = 'Sillón Puff Yumil Mediano, relleno puffino.';
+
+				//Galeria
+				$("#sliderDetail").empty();
+				document.getElementById('sliderDetail').innerHTML = ''
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/yumil_m1.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/yumil_m2.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/yumil_m3.png"></li>';
+
+				setTimeout(loadDetailSlider, 500);
+
+				$("#detailP").show(500);
+			}
+			//ZAZIL
+			else if(value == 32){
+				document.getElementById('nombreP').innerHTML = 'ZAZIL';
+				document.getElementById('medidasP').innerHTML = ' Mide 100cm de ancho x 80cm de alto x 85cm de fondo.';
+				document.getElementById('descriptionP').innerHTML = 'Sillón Puff Zazil individual clásico con descansabrazos, relleno puffino.';
+
+				//Galeria
+				$("#sliderDetail").empty();
+				document.getElementById('sliderDetail').innerHTML = ''
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/zazil1.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/zazil2.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/zazil3.jpg"></li>'
+				+	'<li style="max-width: 80%;"><img src="images/catalogo/puffino/zazil4.png"></li>';
+
+				setTimeout(loadDetailSlider, 500);
+
+				$("#detailP").show(500);
+			}
+		}
+	</script>
+	</body>
 </html>
+
