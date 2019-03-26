@@ -1,6 +1,6 @@
 //let gizmo;
 
-let debugg=0;
+let debugg = 0;
 const inputElement = document.getElementById("file-input");
 let bandera = false;
 inputElement.addEventListener("change", function (e) {
@@ -48,7 +48,7 @@ let altoTotal;
 let archivosTexturas;
 let evCache = new Array();
 let prevDiff = -1;
-let customMesh=true;
+let customMesh = true;
 //let sliders = [];
 //let gizmoLayer;
 //let utilLayer;
@@ -247,7 +247,7 @@ window.addEventListener('DOMContentLoaded', function () {
     cargando = false;
     isAssigned = false;
     btnCamara = document.getElementById("btnCamara");
-    
+
     //btnCamara.style.opacity=0.1;
     // btnCamara.style.visibility = "hidden";
     texturaActual = texturas[1];
@@ -304,7 +304,16 @@ window.addEventListener('DOMContentLoaded', function () {
                 document.body.style.overflow = "hidden";
                 console.log("en canvas");
             }
-
+            /*
+            if (meshClicleado || buttonClicleado) {
+                console.log("mesh", meshClicleado);
+                console.log("boton", buttonClicleado);
+               // activarRotacion();
+            } else {
+                
+            }*/
+            console.log("DOWN,mesh", meshClicleado);
+            console.log("DOWN,boton", buttonClicleado);
 
         });
         //Works
@@ -323,11 +332,11 @@ window.addEventListener('DOMContentLoaded', function () {
             }
             */
             if (meshClicleado || buttonClicleado) {
-                console.log("mesh", meshClicleado);
-                console.log("boton", buttonClicleado);
+                //console.log("mesh", meshClicleado);
+                //console.log("boton", buttonClicleado);
             } else {
-                console.log("mesh", meshClicleado);
-                console.log("boton", buttonClicleado);
+                // console.log("mesh", meshClicleado);
+                //console.log("boton", buttonClicleado);
                 aplicar();
             }
 
@@ -548,8 +557,9 @@ window.addEventListener('DOMContentLoaded', function () {
         scene.onBeforeRenderObservable.add(() => {
 
         })
-        createButton();
+        //createButton();
         return scene;
+
     }
 
 
@@ -565,39 +575,41 @@ window.addEventListener('DOMContentLoaded', function () {
 
     manager = new BABYLON.GUI.GUI3DManager(escena);
     padreCentro = new BABYLON.Mesh("padreCentro", escena);
-    padreProxy=new Proxy(padreCentro.rotation,{
+    padreProxy = new Proxy(padreCentro.rotation, {
         set: function (target, key, value) {
             console.log(target);
             console.log(key);
-            if(key=='x'){
-                padreCentro.rotation.x=value;
-                if(customMesh){
-                   mainCustomMesh.rotation.x=value;
+            if (key == 'x') {
+                padreCentro.rotation.x = value;
+                if (customMesh) {
+                    mainCustomMesh.rotation.x = value;
                 }
             }
-            if(key=='y'){
-                padreCentro.rotation.y=value;
-                if(customMesh){
-                    mainCustomMesh.rotation.y=value;
-                 }
+            if (key == 'y') {
+                padreCentro.rotation.y = value;
+                if (customMesh) {
+                    mainCustomMesh.rotation.y = value;
+                }
             }
-            if(key=='z'){
-                padreCentro.rotation.z=value;
-                if(customMesh){
-                    mainCustomMesh.rotation.z=value;
-                 }
+            if (key == 'z') {
+                padreCentro.rotation.z = value;
+                if (customMesh) {
+                    mainCustomMesh.rotation.z = value;
+                }
             }
             console.log(value);
-            target[key]=value;
+            target[key] = value;
         }
-        
-    }); 
+
+    });
     padreActual = padreCentro;
 
     //cargarModelo(padreCentro, modelos.puffs[0].nombre);
     pantallaCarga();
     cargarModelo(padreCentro, modeloActual(texturaActual, moduloActual, true));
     padreCentro.addBehavior(pointerDragBehavior);
+    activarRotacion();
+    BABYLON.Scene.LongPressDelay=200;
     /*BABYLON.SceneLoader.LoadAssetContainer("./", "brazoCasual.gltf", escena, function (newMeshes) {
 
         //  console.log("containerBrazo", newMeshes);
@@ -679,31 +691,20 @@ var createLabel = function (mesh) {
     label.addControl(text1);
 }
 
+/*
 var createButton = function () {
-    //BABYLON.GUI.Button.Create
-    //var panel = new BABYLON.GUI.StackPanel();
-    //panel.width = "200px";
     var button1 = BABYLON.GUI.Button.CreateImageOnlyButton("but1", "/assets/iconos/3d_Rotate.png");
-    //var button1 = new BABYLON.GUI.Button.CreateSimpleButton("but1", "+");
     button1.width = "40px";
     button1.height = "40px";
-    //button1.color = "white";
     button1.verticalAlignment = 3;
     button1.horizontalAlignment = 3;
-    //button1.cornerRadius = 20;
-    //button1.background = "black";
     advancedTexture.addControl(button1);
-    //button1.linkWithMesh(mesh);
-    //var text1 = new BABYLON.GUI.TextBlock();
-    //text1.text = mesh.name;
-    //text1.color = "black";
-    //button1.addControl(text1);
     button1.onPointerUpObservable.add(function () {
-        activarRotacion();
-    });
+        //activarRotacion();
+    });*
     //grid.addControl(panel, 3, 1);
     //panel.addControl(button1);
-}
+}*/
 var createHoloButton = function (mesh) {
 
     btnRotar = new BABYLON.GUI.HolographicButton("down");
@@ -810,7 +811,7 @@ function createButon3D(mesh, opc) {
 
 function cargarModelo(padre, modelo, posicion, prearmado, rotacion) {
     //para quitar el padre pero dejar las tran
-    customMesh=false;
+    customMesh = false;
     //alert("ENTRO");
     var derecha;
     var izquierda;
@@ -968,34 +969,34 @@ function cargarModelo(padre, modelo, posicion, prearmado, rotacion) {
     //padreActual.setParent(padreCentro);
 }
 
-function cargarModeloCustom(modelo, posicion) {    
-    customMesh=true;
+function cargarModeloCustom(modelo, posicion) {
+    customMesh = true;
     escena.meshes.forEach((x) => { x.dispose() });
     container.meshes.forEach((x) => { x.dispose() });
     precioTotal = 0;
     precioTotal = modelo.precio;
     spanPrecio.innerText = "$" + precioTotal;
     showLoadingScreen();
-   // BABYLON.SceneLoader.LoadAssetContainer("assets/modelos/", modelo.nombre, escena, function (newMeshes) {
+    // BABYLON.SceneLoader.LoadAssetContainer("assets/modelos/", modelo.nombre, escena, function (newMeshes) {
     BABYLON.SceneLoader.ImportMesh("", "assets/modelos/", modelo.nombre, escena, function (newMeshes, particleSystems) {
         //console.log(newMeshes);
         //console.log(padre);
         //ModeloCustom=newMeshes;
         debugg = newMeshes[0].getChildren()[0];
-       // newMeshes[0].setParent(padreCentro);
+        // newMeshes[0].setParent(padreCentro);
         newMeshes.forEach(mesh => {
             //hl.addMesh(mesh, BABYLON.Color3.Green());
             container.meshes.push(mesh);
             meshClickleable(mesh);
             mesh.setParent(padreCentro);
             //mesh.setParent(padreCentro);
-            if(mesh.name=="main"){
-               // mainCustomMesh=mesh;
-               debugg.addBehavior(pointerDragBehavior);
+            if (mesh.name == "main") {
+                // mainCustomMesh=mesh;
+                debugg.addBehavior(pointerDragBehavior);
             }
 
         });
-        mainCustomMesh=newMeshes[0];
+        mainCustomMesh = newMeshes[0];
         //newMeshes.forEach(x=>x.setParent(padreCentro));
         if (typeof posicion === 'undefined') {
 
@@ -1323,10 +1324,35 @@ function puffActual(mod) {
     return modelos.puffs[mod].nombre;
 }
 function meshClickleable(mesh) {
+    /*
+    clicked = false;
+    bandera = !bandera;
+    if (bandera) {
+        pointerDragBehavior.moveAttached = false;
+    } else {
+        pointerDragBehavior.moveAttached = true;
+    }
+    */
+   
     mesh.actionManager = new BABYLON.ActionManager(escena);
     mesh.actionManager.registerAction(new BABYLON.ExecuteCodeAction(BABYLON.ActionManager.OnPickUpTrigger, function () {
-        console.log("Mesh clickeado", mesh.name);
+        console.log("%c ActionManager: up  mesh: " + mesh.name, 'background: orange; color: white');
+        //activarRotacion();
+        bandera=true;
+        pointerDragBehavior.moveAttached = false;
+    }));
+    mesh.actionManager.registerAction(new BABYLON.ExecuteCodeAction(BABYLON.ActionManager.OnPickDownTrigger, function () {
+        //activarRotacion();
+    }));
+    /*
+    mesh.actionManager.registerAction(new BABYLON.ExecuteCodeAction(BABYLON.ActionManager.OnPickDownTrigger, function () {
+        activarRotacion();
+    }));*/
+    mesh.actionManager.registerAction(new BABYLON.ExecuteCodeAction(BABYLON.ActionManager.OnLongPressTrigger, (function(mesh) {
+        console.log("%c ActionManager: long press : " + mesh.name, 'background: green; color: white');
         meshClicleado = true;
+        bandera=false;
+        pointerDragBehavior.moveAttached = true;
         //aplicar();
         mesh.parent.addBehavior(pointerDragBehavior);
         //mesh.addBehavior(pointerDragBehavior);
@@ -1338,7 +1364,7 @@ function meshClickleable(mesh) {
             padreActual = mesh.parent;
             activarBotonesAplicar(true);
         }
-    }));
+    }).bind(this, mesh)));
 }
 /*Esta funcion se activa cuando se cambia de textura o de modulo */
 function actualizarMueble() {
@@ -2191,7 +2217,7 @@ function cambiarMenuMovil(i) {
     switch (i) {
         case 1:
             gridContainer.style.gridTemplateAreas =
-        `'main main main main main main'
+                `'main main main main main main'
         'sclm sclm sclm sclm sclm sclm'
         'erra erra erra erra erra erra'
         'preA preA preA preA preA preA'
@@ -2202,7 +2228,7 @@ function cambiarMenuMovil(i) {
             break;
         case 2:
             gridContainer.style.gridTemplateAreas =
-    `'main main main main main main'
+                `'main main main main main main'
     'sclm sclm sclm sclm sclm sclm'
     'mate mate mate mate mate mate' 
     'preA preA preA preA preA preA'
@@ -2211,8 +2237,8 @@ function cambiarMenuMovil(i) {
     'footer footer footer footer footer footer'`;
             break;
         case 3:
-            gridContainer.style.gridTemplateAreas =    
-            `'main main main main main main'
+            gridContainer.style.gridTemplateAreas =
+                `'main main main main main main'
             'sclm sclm sclm sclm sclm sclm'
             'preA preA preA preA preA preA'
             'modu modu modu modu modu modu' 
@@ -2223,7 +2249,7 @@ function cambiarMenuMovil(i) {
             break;
         case 4:
             gridContainer.style.gridTemplateAreas =
-       `'main main main main main main'
+                `'main main main main main main'
         'sclm sclm sclm sclm sclm sclm'
         'modu modu modu modu modu modu' 
         'preA preA preA preA preA preA'
@@ -2338,13 +2364,13 @@ function handleFiles() {
 //}
 */
 
-function zoomear(zoom){
-    if(zoom=="in"){
-        camera.position.z=camera.position.z+1;
-        
+function zoomear(zoom) {
+    if (zoom == "in") {
+        camera.position.z = camera.position.z + 1;
+
     }
-    if(zoom=="out"){
-        camera.position.z=camera.position.z-1;
+    if (zoom == "out") {
+        camera.position.z = camera.position.z - 1;
     }
 }
 

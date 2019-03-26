@@ -318,7 +318,7 @@
 					<div class="col-md-7 col-xs-7 menu-1" style="margin-top:4%;">
 						<ul>
 							<li class="has-dropdown">
-								<a href="acercade.html" style="font-family: 'Roboto', sans-serif;">SOBRE PUFFINO</a>
+								<a href="about.html" style="font-family: 'Roboto', sans-serif;">SOBRE PUFFINO</a>
 								<!--ul class="dropdown">
 								<li><a href="single.html">Single Shop</a></li>
 							</ul-->
@@ -1759,7 +1759,6 @@
 	<!--<script src="js/jquery-3.3.1.min.js"></script>-->
 	<script src="js/babylon.custom.js"></script>
 	<script src="js/mainMotor3D.js"></script>
-	<script src="js/carrito.js"></script>
 	<script type="text/javascript" src="js/texturas.json"></script>
 	<script type="text/javascript">
 		$(document).on('ready', function () {
@@ -1777,19 +1776,19 @@
 	</script>
 
 
-	<script type="text/javascript">
+<script type="text/javascript">
 
 		var showYoko = true;
 		var showPuffino = true;
 		var showKids = true;
-
+		
 		$(document).ready(function () {
 			$("#yokoDiv").hide(500);
 			$("#puffinoDiv").hide(500);
 			$("#kidsDiv").hide(500);
-
-
-
+			
+			
+			
 			$("#yokoShow").click(function () {
 				showYokoDiv();
 			});
@@ -1803,8 +1802,8 @@
 			});
 
 		});
-
-
+		
+		
 		//Funciones para mostrar u ocultar el div de los productos pertenecientes a una categoría
 		function showYokoDiv() {
 			if (showYoko) {
@@ -1813,7 +1812,7 @@
 					$("#puffinoDiv").hide(500);
 					showPuffino = true;
 				}
-
+				
 				if (!showKids) {
 					$("#kidsDiv").hide(500);
 					showKids = true;
@@ -1829,7 +1828,7 @@
 				showYoko = true;
 			}
 		}
-
+		
 		function showPuffinoDiv() {
 			if (showPuffino) {
 				//Verificamos si alguna otra categoría se está mostrando y la ocultamos
@@ -1842,7 +1841,7 @@
 					$("#kidsDiv").hide(500);
 					showKids = true;
 				}
-
+				
 				//Mostramos la categoría de Puffino
 				$("#puffinoDiv").show(500);
 				setTimeout(loadPuffinoSlider, 500);
@@ -1866,7 +1865,7 @@
 					$("#puffinoDiv").hide(500);
 					showPuffino = true;
 				}
-
+				
 				//Mostramos la categoría de Puffino
 				$("#kidsDiv").show(500);
 				setTimeout(loadKidsSlider, 500);
@@ -1906,6 +1905,7 @@
 				}
 			});
 		}
+						
 		function loadPuffinoSlider() {
 			$("#sliderPuffino").flexisel({
 				visibleItems: 3,
@@ -1964,8 +1964,9 @@
 
 		}
 	</script>
-	<script src="js/pantallaCarga.js"></script>
 	<script src="https://www.paypal.com/sdk/js?client-id=Ab3CfXg7wt8RiCw6JkaSJ6TNF0SNKfMj9hJ5LiW2LjRGcGtoLKpFn3lGxDRizT5FHXsONUzWVgetL1jN&currency=MXN"></script>
+	<script src="js/pantallaCarga.js"></script>
+	<script src="js/carrito.js"></script>
 	</body>
 
 </html>
