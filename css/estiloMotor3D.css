@@ -685,6 +685,23 @@ div .materiales {
 .icon-footer{
 	/*margin-top: 20%;*/
 }
+.btn-prearmado{
+	border: none !important;
+}
+.tituloPagina{
+	text-align: center;
+	color: #3454DA;
+	padding: 0;
+	margin: 0;
+  margin-top: 0px;
+	margin-top: 3%;
+}
+.testimonial{
+	text-align: center;
+}
+.img-sobre-nosotros{
+	width: 178%;
+}
 @media only screen and (max-width: 600px) {
 	.carrito{
 		top: 5.5%;
@@ -964,5 +981,8 @@ div .materiales {
 		margin: 0;
 		padding-left: 14%;
 		padding-right: 0;
+	}
+	.img-sobre-nosotros{
+		width: 206%;
 	}
 }

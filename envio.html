@@ -1,56 +1,248 @@
 <!DOCTYPE HTML>
 <html>
 
-<head>
-	<meta charset="utf-8">
-	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<meta name="viewport" content="width=device-width, initial-scale=1">
-
-
-
-
-	<!-- Facebook and Twitter integration -->
-	<meta property="og:title" content="" />
-	<meta property="og:image" content="" />
-	<meta property="og:url" content="" />
-	<meta property="og:site_name" content="" />
-	<meta property="og:description" content="" />
-	<meta name="twitter:title" content="" />
-	<meta name="twitter:image" content="" />
-	<meta name="twitter:url" content="" />
-	<meta name="twitter:card" content="" />
-
-	<!-- <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"> -->
-	<!-- <link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i" rel="stylesheet"> -->
-
-	<!-- Animate.css -->
-	<link rel="stylesheet" href="css/animate.css">
-	<!-- Icomoon Icon Fonts-->
-	<link rel="stylesheet" href="css/icomoon.css">
-	<!-- Bootstrap  -->
-	<link rel="stylesheet" href="css/bootstrap.css">
-
-	<!-- Flexslider  -->
-	<link rel="stylesheet" href="css/flexslider.css">
-
-	<!-- Owl Carousel  -->
-	<link rel="stylesheet" href="css/owl.carousel.min.css">
-	<link rel="stylesheet" href="css/owl.theme.default.min.css">
-
-	<!-- Theme style  -->
-	<link rel="stylesheet" href="css/style.css">
-
-	<!-- Modernizr JS -->
-	<script src="js/modernizr-2.6.2.min.js"></script>
-	<!-- FOR IE9 below -->
-	<!--[if lt IE 9]>
-	<script src="js/respond.min.js"></script>
-	<![endif]-->
-	<link rel="stylesheet" href="css/font.css">
-	<link rel="stylesheet" href="css/main.css">
-	<link rel="stylesheet" type="text/css" href="css/estiloMotor3D.css">
-
-</head>
+		<head>
+				<meta charset="utf-8">
+				<meta http-equiv="X-UA-Compatible" content="IE=edge">
+				<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+				<!-- Facebook and Twitter integration -->
+				<meta property="og:title" content="" />
+				<meta property="og:image" content="" />
+				<meta property="og:url" content="" />
+				<meta property="og:site_name" content="" />
+				<meta property="og:description" content="" />
+				<meta name="twitter:title" content="" />
+				<meta name="twitter:image" content="" />
+				<meta name="twitter:url" content="" />
+				<meta name="twitter:card" content="" />
+				<meta charset="utf-8">
+				<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+			
+				<script src="js/jquery-2.2.0.min.js">
+				</script>
+				<script src="js/slick.js"></script>
+			
+				<script src="js/camara.js"></script>
+			
+				<!--
+				<script src="js/tienda2.js"></script>
+				-->
+				<script type="text/javascript" src="js/jquery.flexisel.js"></script>
+				<!--FUENTES-->
+				<!--
+				<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"> 
+				<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i" rel="stylesheet">-->
+				<link href="https://fonts.googleapis.com/css?family=Roboto|Montserrat:400,700|Playfair+Display:400,400i"
+					rel="stylesheet">
+				<!-- Animate.css -->
+				<link rel="stylesheet" href="css/animate.css">
+				<!-- Icomoon Icon Fonts-->
+				<link rel="stylesheet" href="css/icomoon.css">
+				<!-- Bootstrap  -->
+			
+				<link rel="stylesheet" href="css/bootstrap.css">
+			
+				<!-- Flexslider  -->
+				<link rel="stylesheet" href="css/flexslider.css">
+			
+				<!-- Owl Carousel  -->
+				<link rel="stylesheet" href="css/owl.carousel.min.css">
+				<link rel="stylesheet" href="css/owl.theme.default.min.css">
+			
+				<!-- Theme style  -->
+				<link rel="stylesheet" href="css/style.css">
+			
+				<!-- Modernizr JS -->
+				<script src="js/modernizr-2.6.2.min.js"></script>
+			
+			
+				<!-- FOR IE9 below -->
+				<!--[if lt IE 9]>
+				<script src="js/respond.min.js"></script>
+				<![endif]-->
+				<link rel="stylesheet" type="text/css" href="css/slick.css">
+				<link rel="stylesheet" type="text/css" href="css/slick-theme.css">
+			
+				<link rel="stylesheet" type="text/css" href="css/estiloMotor3D.css">
+				<script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
+				<link rel="stylesheet" href="css/font.css">
+				<link rel="stylesheet" href="css/main.css">
+			
+			
+				<style type="text/css">
+					.slider2 {
+						width: 100%;
+						margin: 100px auto;
+					}
+			
+					.slick-slide {
+						margin: 0px 20px;
+					}
+			
+					.slick-slide img {
+						width: 100%;
+			
+					}
+			
+					.slick-prev:before,
+					.slick-next:before {
+						color: #FFF;
+					}
+			
+					.slick-slide {
+						transition: all ease-in-out .3s;
+						opacity: .2;
+					}
+			
+					.slick-active {
+						opacity: .5;
+					}
+			
+					.slick-current {
+						opacity: 1;
+						transform: scale(1.2);
+					}
+			
+			
+			
+					#sliderYoko,
+					#sliderPuffino,
+					#sliderKids {
+						display: none;
+					}
+			
+					.nbs-flexisel-container {
+						position: relative;
+						max-width: 100%;
+					}
+			
+					.nbs-flexisel-ul {
+						position: relative;
+						width: 99999px;
+						margin: 0px;
+						padding: 0px;
+						list-style-type: none;
+						text-align: center;
+						overflow: auto;
+					}
+			
+					.nbs-flexisel-inner {
+						position: relative;
+						overflow: hidden;
+						float: left;
+						width: 100%;
+						background: #ffffff;
+						background: #ffffff -moz-linear-gradient(top, #ffffff 0%, #ffffff 100%);
+						/* FF3.6+ */
+						background: #ffffff -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #ffffff));
+						/* Chrome,Safari4+ */
+						background: #ffffff -webkit-linear-gradient(top, #ffffff 0%, #ffffff 100%);
+						/* Chrome10+,Safari5.1+ */
+						background: #ffffff -o-linear-gradient(top, #ffffff 0%, #ffffff 100%);
+						/* Opera11.10+ */
+						background: #ffffff -ms-linear-gradient(top, #ffffff 0%, #ffffff 100%);
+						/* IE10+ */
+						background: #ffffff linear-gradient(top, #ffffff 0%, #ffffff 100%);
+						/* W3C */
+					}
+			
+					.nbs-flexisel-item {
+						float: left;
+						margin: 0px;
+						padding: 0px;
+						cursor: pointer;
+						position: relative;
+						line-height: 0px;
+					}
+			
+					.nbs-flexisel-item img {
+						max-width: 100%;
+						cursor: pointer;
+						position: relative;
+						margin-top: 10px;
+						margin-bottom: 10px;
+					}
+			
+					/*** Navigation ***/
+			
+					.nbs-flexisel-nav-left,
+					.nbs-flexisel-nav-right {
+						padding: 5px 10px;
+						border-radius: 15px;
+						-moz-border-radius: 15px;
+						-webkit-border-radius: 15px;
+						position: absolute;
+						cursor: pointer;
+						z-index: 4;
+						top: 50%;
+						transform: translateY(-50%);
+						background: rgba(0, 0, 0, 0.5);
+						color: #fff;
+					}
+			
+					.nbs-flexisel-nav-left {
+						left: 10px;
+					}
+			
+					.nbs-flexisel-nav-left:before {
+						content: "<"
+					}
+			
+					.nbs-flexisel-nav-left.disabled {
+						opacity: 0.4;
+					}
+			
+					.nbs-flexisel-nav-right {
+						right: 5px;
+					}
+			
+					.nbs-flexisel-nav-right:before {
+						content: ">"
+					}
+			
+					.nbs-flexisel-nav-right.disabled {
+						opacity: 0.4;
+					}
+			
+					.medidas {
+						font-family: 'Montserrat', Arial, sans-serif;
+						font-size: 12px;
+					}
+			
+					@media only screen and (max-width: 600px) {
+						.product .product-grid {
+							background-size: contain;
+							background-position: top center;
+							background-repeat: no-repeat;
+							position: relative;
+							margin-bottom: 5px;
+							-webkit-transition: 0.3s;
+							-o-transition: 0.3s;
+							transition: 0.3s;
+							height: 7em;
+			
+						}
+			
+						.nbs-flexisel-item {
+							float: left;
+							margin: 0px;
+							padding: 0px;
+							cursor: pointer;
+							position: relative;
+							line-height: 0px;
+						}
+			
+						.nbs-flexisel-item img {
+							max-width: 100%;
+							cursor: pointer;
+							position: relative;
+							margin-top: 10px;
+							margin-bottom: 10px;
+						}
+					}
+				</style>
+			
+			</head>
 
 <body>
 	<div class="social-bar">
@@ -128,37 +320,37 @@
 							<li class="has-dropdown">
 								<a href="about.html" style="font-family: 'Roboto', sans-serif;">SOBRE PUFFINO</a>
 								<!--ul class="dropdown">
-											<li><a href="single.html">Single Shop</a></li>
-										</ul-->
+								<li><a href="single.html">Single Shop</a></li>
+							</ul-->
 							</li>
 							<li><a href="catalogo.html">Catálogo</a></li>
 							<li class="has-dropdown">
 								<a href="envio.html">Envío y Devoluciones</a>
 								<!--ul class="dropdown">
-											<li><a href="#">Web Design</a></li>
-											<li><a href="#">eCommerce</a></li>
-											<li><a href="#">Branding</a></li>
-											<li><a href="#">API</a></li>
-										</ul-->
+								<li><a href="#">Web Design</a></li>
+								<li><a href="#">eCommerce</a></li>
+								<li><a href="#">Branding</a></li>
+								<li><a href="#">API</a></li>
+							</ul-->
 							</li>
 							<li><a href="contact.html">Contacto</a></li>
 						</ul>
 					</div>
 					<!--<div class="col-md-3 col-xs-4 text-right hidden-xs menu-2" style="margin-top:3%;">
-									<ul>
-										<li class="search">
-											<div class="input-group">
-												<input type="text" placeholder="Buscar..">
-												<span class="input-group-btn">
-													<button class="btn btn-primary" type="button"><i
-															class="icon-search"></i></button>
-												</span>
-											</div>
-										</li>
-										<li class="shopping-cart"><a href="#" class="cart"><span><small>0</small><i
-														class="icon-shopping-cart"></i></span></a></li>
-									</ul>
-								</div>-->
+						<ul>
+							<li class="search">
+								<div class="input-group">
+									<input type="text" placeholder="Buscar..">
+									<span class="input-group-btn">
+										<button class="btn btn-primary" type="button"><i
+												class="icon-search"></i></button>
+									</span>
+								</div>
+							</li>
+							<li class="shopping-cart"><a href="#" class="cart"><span><small>0</small><i
+											class="icon-shopping-cart"></i></span></a></li>
+						</ul>
+					</div>-->
 				</div>
 
 			</div>
@@ -172,8 +364,8 @@
 					<!-- Tabs -->
 
 
+					<h1 class="tituloPagina">ENVIOS Y DEVOLUCIONES</h1>
 					<div class="fh5co-tab-content tab-content" data-tab-content="2">
-						<h1 style="text-align: center;color: blue;">ENVIOS Y DEVOLUCIONES</h1>
 						<div class="col-md-10 col-md-offset-1">
 							<h3 class="colorAqua">POLÍTICAS DE ENVÍO</h3>
 							<ul>
@@ -312,12 +504,10 @@
 				</div>
 
 				<div class="col-md-3 col-sm-4 col-xs-6 col-md-push-1">
-					<ul class="fh5co-footer-links">
+					<ul class="fh5co-footer-links contacto-links">
 						<h3 style="color:#FFF;">CONTÁCTANOS</h3>
-						<li>477 274 28 38</li>
-						<li>Lunes a viernes de 9 a.m. a 4 p.m. </li>
-						<li>Correo electrónico: </li>
-						<li>denisse.martinez@budabag.com.mx</li>
+						<li>477 854 11 12 </li>
+						<li>ventas@oldravenfurniture.com </li>
 						<li>León, Gto. </li>
 
 					</ul>

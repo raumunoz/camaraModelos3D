@@ -831,7 +831,7 @@ function cargarModelo(padre, modelo, posicion, prearmado, rotacion) {
         //console.log("padre a guardar", newMeshes.meshes[0]);
         padreAnterior = padreActual;
         padreActual = newMeshes.meshes[0].getChildren()[0];
-        padreActual.sparent = padreCentro;
+        padreActual.setParent = padreCentro;
 
         if (typeof posicion !== 'undefined') {
             padreActual.position = posicion;
@@ -853,7 +853,7 @@ function cargarModelo(padre, modelo, posicion, prearmado, rotacion) {
         precioTotal = 0;
         padres.forEach((x) => precioTotal += x.precio)
         spanPrecio.innerText = "$" + precioTotal;
-        actualizarTablaMuebles();
+        //actualizarTablaMuebles();
         //divLista.innerText = getListaMuebles(padres);
         //listaDeMuebles.push(modeloActual(texturaActual, moduloActual, true, true));
 
@@ -1233,7 +1233,7 @@ function cancelar() {
     precioTotal = 0;
     padres.forEach((x) => precioTotal += x.precio)
     spanPrecio.innerText = "$" + precioTotal;
-    actualizarTablaMuebles();
+    //actualizarTablaMuebles();
     //divLista.innerText = getListaMuebles(padres);
 }
 /*regresa el modelo */
@@ -1730,7 +1730,7 @@ function generarRenglonMueble(cantidad, nombreMueble, precio) {
                `
     return renglonTabla;
 }
-
+/*
 function actualizarTablaMuebles() {
     let tbody = document.getElementById("tbodyMuebles");
     let renglones = "";
@@ -1740,6 +1740,7 @@ function actualizarTablaMuebles() {
     });
     tbody.innerHTML = renglones;
 }
+*/
 
 function exiteMueble(muebles, dato) {
     let datito = muebles.find(o => o.mueble === dato);
@@ -1863,7 +1864,7 @@ function generarBotonesTextura() {
             texturasHTML2 = texturasHTML2 + generarBotonImagen(x.chico, x.medio);
         }
     });
-    console.log(texturasHTML);
+    //console.log(texturasHTML);
     gridTexturas.innerHTML = texturasHTML;
     gridTexturas1.innerHTML = texturasHTML1;
     gridTexturas2.innerHTML = texturasHTML2;
