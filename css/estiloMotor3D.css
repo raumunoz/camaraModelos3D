@@ -676,10 +676,19 @@ div .materiales {
 	background-color: #6FC6FF;
 }
 .btn-agregar {
-	color: white;
-	font-weight: bold;
-	width: 50%;
-	border-radius: 25% 25% 25% 25%;
+	background-color:#4E56DF;
+  border: none;
+  color: white;
+  padding: 20px 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 16px;
+}
+.btn-agregar:hover{
+	background-color: rgba(118, 124, 224, 0.904);
 }
 /*estilo de iconos*/
 .icon-footer{

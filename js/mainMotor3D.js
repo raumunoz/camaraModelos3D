@@ -988,7 +988,7 @@ function cargarModeloCustom(modelo, posicion) {
             //hl.addMesh(mesh, BABYLON.Color3.Green());
             container.meshes.push(mesh);
             meshClickleable(mesh);
-            mesh.setParent(padreCentro);
+            mesh.parent=padreCentro;
             //mesh.setParent(padreCentro);
             if (mesh.name == "main") {
                 // mainCustomMesh=mesh;
