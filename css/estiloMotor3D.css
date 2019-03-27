@@ -192,15 +192,16 @@ body {
 }
 
 .motor3D .opc-herramienta {
+	grid-area: hrr;
 	list-style-type: none;
 	overflow: hidden;
 	display: flex;
 	flex-direction: row;
 	justify-content: space-evenly;
-	padding: 10px 10px 10px 10px;
-	width: 100%;
 	display: grid;
-	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr;
+	margin: 0;
+	padding: 0;
 }
 
 .opc-herramienta ul {
@@ -217,6 +218,7 @@ body {
 	background-color: gold;
 }
 
+
 .motor3D #btnRotar {
 	/*margin-right: 1px;*/
 	/*margin-left: 1px;*/
@@ -225,37 +227,38 @@ body {
 
 .btn-grid {
 	display: grid;
-	grid-template-columns: max-content max-content max-content max-content max-content max-content max-content max-content max-content;
-	grid-template-rows: max-content max-content max-content max-content max-content;
-	width: 245px;
-	height: 340px;
-	background-color: #f0f0f0;
+	grid-template-columns: max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content;
+	grid-template-rows: max-content max-content max-content max-content;
+	width: 16em;
 	overflow-x: auto;
-	overflow-y: hidden;
+	overflow-y: auto;
 	white-space: nowrap;
+	height: 5.3em;
 }
+
 
 .btn-grid1 {
-	display: grid;
-	grid-template-columns: max-content max-content max-content max-content max-content;
-	grid-template-rows: max-content max-content max-content max-content max-content;
-	width: 245px;
-	height: 340px;
-	background-color: #f0f0f0;
-	overflow-x: auto;
-	overflow-y: hidden;
-	white-space: nowrap;
+    display: grid;
+    grid-template-columns: max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content;
+    grid-template-rows: max-content max-content max-content max-content;
+    background-color: #f0f0f0;
+    overflow: auto;
+    white-space: nowrap;
+    display: grid;
+    grid-template-columns: max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content;
+    grid-template-rows: max-content max-content max-content max-content;
+    width: 16em;
+    overflow-x: auto;
+    overflow-y: hidden;
+		white-space: nowrap;
 }
-
 .btn-grid2 {
 	display: grid;
-	grid-template-columns: max-content max-content max-content max-content max-content;
-	grid-template-rows: max-content max-content max-content max-content max-content;
-	width: 245px;
-	height: 340px;
-	background-color: #f0f0f0;
+	grid-template-columns: max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content;
+	grid-template-rows: max-content max-content max-content max-content;
+	width: 16em;
 	overflow-x: auto;
-	overflow-y: hidden;
+	overflow-y: auto;
 	white-space: nowrap;
 }
 
@@ -305,11 +308,11 @@ body {
 
 .motor3D canvas {
 	background-color: #F5F2F0;
-	width: 103%;
-	height: 640px;
+	width: 40em;
+	height: 22em;
 	touch-action: none;
 	/*CANVA margin Rigth*/
-	margin-right: 1046px;
+	/*margin-right: 1046px;*/
 }
 
 /*
@@ -366,7 +369,14 @@ body {
 .motor3D .grid-container {
 	display: grid;
 	grid-template-areas: /*'header header header header header header'*/
-	'mate main main main main main' 'mate main main main main main' 'mate main main main main main' 'mate main main main main main' 'modu main main main main main' 'preA main main main main main' 'erra main main main main main' 'accion main main main main main' 'footer footer footer footer footer footer';
+
+	'preA preA main main main main'
+	'preA preA main main main main'
+	'mate mate main main main main'
+	'mate mate main main main main'
+	'modu modu main main main main'
+	'accion accion accion erra erra erra'
+	'footer footer footer footer footer footer';
 	grid-gap: 10px;
 	padding: 10px;
 }
@@ -594,6 +604,9 @@ div .materiales {
 
 .precios {
 	background-color: #6FC6FF;
+	float: left;
+	width: 35%;
+	height: 100%;
 }
 
 .precios span {
@@ -666,6 +679,7 @@ div .materiales {
 
 .div-img-fotos {
 	height: 190px;
+	grid:
 }
 
 .blue{
@@ -721,7 +735,16 @@ div .materiales {
 		transition: all .3s;
 		transform: translateX(0%);
 	}
-	
+/*
+document.getElementById('grid-container').style.gridTemplateAreas=
+`
+"preA preA preA main main main"
+"preA preA preA main main main"
+"mate mate mate main main main"
+"mate mate mate main main main"
+"accio accion accion sclm sclm sclm"
+`;
+*/
 	.motor3D .grid-container {
 		display: grid;
 		grid-template-areas: /*'header header header header header header'*/
@@ -794,6 +817,8 @@ div .materiales {
 		white-space: nowrap;
 		padding-left: 20%;
 	}
+
+	
 	.btn-grid2 {
 		display: grid;
 		grid-template-columns: max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content;

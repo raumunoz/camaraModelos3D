@@ -567,7 +567,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
     hl = new BABYLON.HighlightLayer("hl1", escena);
     hl.innerGlow = false;
-    background = new BABYLON.Layer("back", "assets/imagenes/fondos/fondo.jpg", escena);
+    background = new BABYLON.Layer("back", "assets/imagenes/fondos/sala3.jpg", escena);
     background.isBackground = true;
     background.texture.level = 0;
     container = new BABYLON.AssetContainer(escena);
@@ -2374,5 +2374,34 @@ function zoomear(zoom) {
         camera.position.z = camera.position.z - 1;
     }
 }
-
+function cambiarGrid(opc){
+    switch (opc) {
+        case 0:
+        document.getElementById('grid-container').style.gridTemplateAreas=
+            `
+            "preA preA preA main main main"
+            "preA preA preA main main main"
+            "mate mate mate main main main"
+            "mate mate mate main main main"
+            "accio accion accion erra erra erra"
+            `;
+        break;
+        case 1:
+        document.getElementById('grid-container').style.gridTemplateAreas=
+            `
+            "preA preA preA main main main"
+            "preA preA preA main main main"
+            "mate mate mate main main main"
+            "mate mate mate main main main"
+            "accio accion accion erra erra erra"
+            `;
+        break;
+        case 2:
+            
+        break;
+    
+        default:
+        break;
+    }
+}
 /*funciones del carrito */
