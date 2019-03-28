@@ -274,30 +274,33 @@
 		</div>
 	</div>
 	<div class="carrito" id="carrito">
-		<div class="row rng-item">
-			<div class="col-1 col-sm-0"></div>
-			<div class="col-2 col-sm-3">
-				<img src="assets/imagenes/brazoContempo.jpeg" alt="brazo" id="imgProducto" class="img-carrito"
-					height="90">
-			</div>
-			<div class="col-5 col-sm-4 rng-desc-carrito">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-				Similique,
-				nesciunt.
-			</div>
-			<div class="col-3 rng-div-precio">
-				<span class="rng-precio">
-					$75
-				</span>
-				<div class="rng-div-cantidad">
-					Cantidad: <span class="rng-cantidad">3</span>
-				</div>
-			</div>
-			<div class="col-1 rng-btn-remover-carrito">
-				<span class="icon">
-					<i class="icon-cross" onclick="removerArticulo(this)" id="rnd()"></i>
-				</span>
-			</div>
+		<div id="row-productos">
+				<div class="row rng-item">
+						<div class="col-1 col-sm-0"></div>
+						<div class="col-2 col-sm-3">
+							<img src="assets/imagenes/brazoContempo.jpeg" alt="brazo" id="imgProducto" class="img-carrito"
+								height="90">
+						</div>
+						<div class="col-5 col-sm-4 rng-desc-carrito">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+							Similique,
+							nesciunt.
+						</div>
+						<div class="col-3 rng-div-precio">
+							<span class="rng-precio">
+								$75
+							</span>
+							<div class="rng-div-cantidad">
+								Cantidad: <span class="rng-cantidad">3</span>
+							</div>
+						</div>
+						<div class="col-1 rng-btn-remover-carrito">
+							<span class="icon">
+								<i class="icon-cross" onclick="removerArticulo(this)" id="rnd()"></i>
+							</span>
+						</div>
+					</div>
 		</div>
+		
 		<div class="row rng-total total-desactivo" id="rng-total">
 			<div class="col-6 rng-total-titulo">Total</div>
 			<div class="col-6">$<span id="total-carrito">10</span></div>
@@ -316,42 +319,14 @@
 						<div id="fh5co-logo"><a href="index.html"><img src="images/puff_logo.png"
 									style="max-width:100%; height:auto;"></a></div>
 					</div>
-					<div class="col-md-7 col-xs-7 menu-1" style="margin-top:4%;">
+					<div class="col-md-9 col-xs-10 menu-1" style="margin-top:4%;">
 						<ul>
-							<li class="has-dropdown">
-								<a href="about.html" style="font-family: 'Roboto', sans-serif;">SOBRE PUFFINO</a>
-								<!--ul class="dropdown">
-								<li>Single Shop</a></li>
-							</ul-->
-							</li>
-							<li><a href="catalogo.html">Catálogo</a></li>
-							<li class="has-dropdown">
-								<a href="envio.html">Envío y Devoluciones</a>
-								<!--ul class="dropdown">
-								<li><a href="#">Web Design</a></li>
-								<li><a href="#">eCommerce</a></li>
-								<li><a href="#">Branding</a></li>
-								<li><a href="#">API</a></li>
-							</ul-->
-							</li>
-							<li><a href="contact.html">Contacto</a></li>
+							<li style="margin-right: 1.1em;"><a href="about.html" style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">NOSOTROS</a></li>
+							<li style="margin-right: 1.1em;"><a href="catalogo.html" style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">Catálogo</a></li>
+							<li style="margin-right: 1.1em;"><a href="envio.html" style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">Envío y Devoluciones</a></li>
+							<li style="margin-right: 1.1em;"><a href="contact.html" style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">Contacto</a></li>
 						</ul>
 					</div>
-					<!--<div class="col-md-3 col-xs-4 text-right hidden-xs menu-2" style="margin-top:3%;">
-						<ul>
-							<li class="search">
-								<div class="input-group">
-									<input type="text" placeholder="Buscar..">
-									<span class="input-group-btn">
-										<button class="btn btn-primary" type="button"><i
-												class="icon-search"></i></button>
-									</span>
-								</div>
-							</li>
-							<li class="shopping-cart"><a href="#" class="cart"><span><small>0</small><i
-											class="icon-shopping-cart"></i></span></a></li>
-						</ul>
-					</div>-->
 				</div>
 
 			</div>
@@ -455,7 +430,7 @@
 				<div class="row">
 					<div class="col-md-12 col-md-offset-2 text-center fh5co-heading" style="margin-bottom: 10px;">
 						<!--<h2 style="color:#8c2131">Productos.</h2>-->
-						<h2 style="color:#4E56DF">Productos.</h2>
+						<h2 style="font-size: 2rem; color:#4E56DF"><strong>Productos</strong></h2>
 					</div>
 				</div>
 				<div class="row">
@@ -463,7 +438,7 @@
 						<div class="product">
 							<a id="yokoShow" style="cursor: pointer;" onclick="">
 								<div class="product-grid"
-									style="background-image:url(assets/imagenes/brazoContempo.jpeg);">
+									style="background-image:url(assets/imagenes/brazoContempo.jpeg);" onclick="cambiarVistaMotor(0)">
 									<div class="inner">
 										<!--<p>
 											<a id="holiShow" style="cursor: pointer;" class="icon"><i class="icon-eye"></i></a>
@@ -480,7 +455,7 @@
 						<div class="product">
 							<a id="puffinoShow" style="cursor: pointer;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/puffino_ANDREW_SOFT_1.jpg);">
+									style="background-image:url(images/productos/puffino_ANDREW_SOFT_1.jpg);" onclick="cambiarVistaMotor(1)">
 									<div class="inner">
 										<!--
 										<p>
@@ -499,8 +474,8 @@
 						<div class="product">
 							<a id="kidsShow" style="cursor: pointer;">
 								<div class="product-grid"
-									style="background-image:url(images/productos/puffino_conejo.jpeg);">
-									<div class="inner">
+									style="background-image:url(images/productos/puffino_conejo.jpeg);" onclick="cambiarVistaMotor(2)">
+									<div class="inner" >
 										<!--
 										<p>
 											<a id="holiShow" style="cursor: pointer;" class="icon"><i class="icon-eye"></i></a>
@@ -525,7 +500,7 @@
 									<div class="text-center">
 										<div class="product" style="margin-top: 1em;">
 											<div class="product-grid"
-												style="background-image:url(assets/imagenes/yookoContempo_taburete.png); margin: 0 auto;">
+												style="background-image:url(assets/imagenes/yookoContempo_taburete.png); margin: 0 auto;" >
 											</div>
 											<div class="desc" style="margin-top: 1em;">
 												<h3>Yoko taburete</h3>
@@ -534,7 +509,7 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito()" class="btn-agregar"
+								<button type="button" onclick="agregarAlCarrito('Yoko sillón',7999)" class="btn-agregar"
 									id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
@@ -551,7 +526,7 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito()" class="btn-agregar "
+								<button type="button" onclick="agregarAlCarrito('Yoko sillón',7999)" class="btn-agregar "
 									id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
@@ -568,7 +543,7 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito()" class="btn-agregar "
+								<button type="button" onclick="agregarAlCarrito('Yoko esquinero',8999)" class="btn-agregar "
 									id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 						</ul>
@@ -596,7 +571,7 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito()" class="btn-agregar"
+								<button type="button" onclick="agregarAlCarrito('Yumil',2599)" class="btn-agregar"
 									id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
@@ -618,7 +593,7 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito()" class="btn-agregar"
+								<button type="button" onclick="agregarAlCarrito('Yumil CHICO',2499)" class="btn-agregar"
 									id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
@@ -639,7 +614,7 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito()" class="btn-agregar"
+								<button type="button" onclick="agregarAlCarrito('Yeeb',2999)" class="btn-agregar"
 									id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
@@ -660,7 +635,7 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito()" class="btn-agregar"
+								<button type="button" onclick="agregarAlCarrito('Kauil',4999)" class="btn-agregar"
 									id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
@@ -682,7 +657,7 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito()" class="btn-agregar"
+								<button type="button" onclick="agregarAlCarrito('Kauil SILLÓN',4199)" class="btn-agregar"
 									id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
@@ -704,7 +679,7 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito()" class="btn-agregar"
+								<button type="button" onclick="agregarAlCarrito('Kaul TABURETE',2999)" class="btn-agregar"
 									id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
@@ -725,7 +700,7 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito()" class="btn-agregar"
+								<button type="button" onclick="agregarAlCarrito('Balam',5199)" class="btn-agregar"
 									id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
@@ -746,7 +721,7 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito()" class="btn-agregar"
+								<button type="button" onclick="agregarAlCarrito('Ikal',4699)" class="btn-agregar"
 									id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
@@ -767,7 +742,7 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito()" class="btn-agregar"
+								<button type="button" onclick="agregarAlCarrito('Nima',3499)" class="btn-agregar"
 									id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
@@ -788,7 +763,7 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito()" class="btn-agregar"
+								<button type="button" onclick="agregarAlCarrito('Nima CHICO',3099)" class="btn-agregar"
 									id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
@@ -809,7 +784,7 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito()" class="btn-agregar"
+								<button type="button" onclick="agregarAlCarrito('Zazil',3999)" class="btn-agregar"
 									id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
@@ -830,7 +805,7 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito()" class="btn-agregar"
+								<button type="button" onclick="agregarAlCarrito('Toot',3899)" class="btn-agregar"
 									id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
@@ -852,7 +827,7 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito()" class="btn-agregar"
+								<button type="button" onclick="agregarAlCarrito('Toot Matrimonial',4599)" class="btn-agregar"
 									id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
@@ -873,7 +848,7 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito()" class="btn-agregar"
+								<button type="button" onclick="agregarAlCarrito('Toot QUEEN',4799)" class="btn-agregar"
 									id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
@@ -894,7 +869,7 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito()" class="btn-agregar"
+								<button type="button" onclick="agregarAlCarrito('Tanak',4499)" class="btn-agregar"
 									id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
@@ -916,7 +891,7 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito()" class="btn-agregar"
+								<button type="button" onclick="agregarAlCarrito('Tanak NIÑOS',3199)" class="btn-agregar"
 									id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
@@ -937,7 +912,7 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito()" class="btn-agregar"
+								<button type="button" onclick="agregarAlCarrito('Alom',3099)" class="btn-agregar"
 									id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
@@ -958,7 +933,7 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito()" class="btn-agregar"
+								<button type="button" onclick="agregarAlCarrito('Alom CHICO',2699)" class="btn-agregar"
 									id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
@@ -979,7 +954,7 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito()" class="btn-agregar"
+								<button type="button" onclick="agregarAlCarrito('Seti',3999)" class="btn-agregar"
 									id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
@@ -1000,7 +975,7 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito()" class="btn-agregar"
+								<button type="button" onclick="agregarAlCarrito('Canek',4199)" class="btn-agregar"
 									id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
@@ -1022,7 +997,7 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito()" class="btn-agregar"
+								<button type="button" onclick="agregarAlCarrito('Canek NIÑOS',3399)" class="btn-agregar"
 									id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
@@ -1044,7 +1019,7 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito()" class="btn-agregar"
+								<button type="button" onclick="agregarAlCarrito('Kimbo CHICO',2399)" class="btn-agregar"
 									id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
@@ -1066,7 +1041,7 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito()" class="btn-agregar"
+								<button type="button" onclick="agregarAlCarrito('Kimbo MEDIANO',2699)" class="btn-agregar"
 									id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
@@ -1088,7 +1063,7 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito()" class="btn-agregar"
+								<button type="button" onclick="agregarAlCarrito('Kimbo GRANDE',3199)" class="btn-agregar"
 									id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
@@ -1109,7 +1084,7 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito()" class="btn-agregar "
+								<button type="button" onclick="agregarAlCarrito('Kuk',3399)" class="btn-agregar "
 									id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
@@ -1131,7 +1106,7 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito()" class="btn-agregar"
+								<button type="button" onclick="agregarAlCarrito('Kuk MEDIANO',2899)" class="btn-agregar"
 									id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 						</ul>
@@ -1160,7 +1135,7 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito()" class="btn-agregar"
+								<button type="button" onclick="agregarAlCarrito('CONEJO',3499)" class="btn-agregar"
 									id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
@@ -1181,7 +1156,7 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito()" class="btn-agregar"
+								<button type="button" onclick="agregarAlCarrito('DINOSAURIO',3699)" class="btn-agregar"
 									id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
@@ -1202,7 +1177,7 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito()" class="btn-agregar"
+								<button type="button" onclick="agregarAlCarrito('DONA',3399)" class="btn-agregar"
 									id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
@@ -1223,7 +1198,7 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito()" class="btn-agregar"
+								<button type="button" onclick="agregarAlCarrito('JIRAFA',3799)" class="btn-agregar"
 									id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
@@ -1244,7 +1219,7 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito()" class="btn-agregar"
+								<button type="button" onclick="agregarAlCarrito('PERRITO',3699)" class="btn-agregar"
 									id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
@@ -1265,7 +1240,7 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito()" class="btn-agregar"
+								<button type="button" onclick="agregarAlCarrito('UNICORNIO',3499)" class="btn-agregar"
 									id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 						</ul>
@@ -1536,7 +1511,7 @@
 					<div class="col-md-8 col-sm-6 text-center">
 						<div class="feature-center animate-box">
 							<span class="icon">
-								<center><img src="images/logo_certi_pur_medium.png"></center>
+									<center style="width: 12em;height: 12em;"><img  style="width: 12em;height: 12em;" src="images/logo_certi_pur_medium.png"></center>
 							</span>
 							<h3 style="color: white;">Materia prima </h3>
 							<p style="color: white;text-align : center;">

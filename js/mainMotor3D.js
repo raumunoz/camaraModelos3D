@@ -2411,13 +2411,23 @@ function cambiarGrid(opc){
 function cambiarVistaMotor(opc){
 switch (opc) {
     case 0:
+    document.getElementById("descripcionMaterial").style.visibility="visible";
+    document.getElementById("iconosPrearmado").style.visibility="visible";
+    document.getElementById("iconosPrearmado").style.visibility="visible";
+    document.getElementById("grid-texturas").style.visibility="visible";
+    document.getElementById("iconosTexturas").style.visibility="visible";
+    break;
+    case 1:
+    document.getElementById("descripcionMaterial").style.visibility="visible";
+    document.getElementById("iconosPrearmado").style.visibility="hidden";
+    document.getElementById("grid-texturas").style.visibility="visible";
+    document.getElementById("iconosTexturas").style.visibility="hidden";
+    break;
+    case 2:
+    document.getElementById("descripcionMaterial").style.visibility="hidden";
     document.getElementById("iconosPrearmado").style.visibility="hidden";
     document.getElementById("grid-texturas").style.visibility="hidden";
     document.getElementById("iconosTexturas").style.visibility="hidden";
-    break;
-    case 1:
-    break;
-    case 2:
     break;
 
     default:
