@@ -1884,12 +1884,16 @@ function cambiarTexturaCliente(nombreTextura) {
     descripcionTextura.innerHTML = nombreImagenTextura(nombreTextura);
     //console.log("textura:",nombreTextura);
     var path = "assets/texturas/medio/" + nombreTextura + "";
-    padreActual.getChildren().forEach((x) => {
+    escena.materials.forEach((x) => {
+        x._albedoTexture = new BABYLON.Texture(path, escena);
+       });
+    /*container.meshes.forEach((x) => {
         if ((typeof x.material.name === 'undefined') != true) {
             x.material._albedoTexture.dispose();
             x.material._albedoTexture = new BABYLON.Texture(path, escena);
         }
-    });
+    });*/
+   
     //console.log(padreActual.getChildren()[0].material._albedoTexture= new BABYLON.Texture(`"assets/texturas/medio/`+nombreTextura+`"`, escena));
     //padreActual.getChildren()[0].material._albedoTexture= new BABYLON.Texture(`"assets/texturas/medio/`+nombreTextura+`"`, escena);
     //padreActual.getChildren()[0].material._albedoTexture= new BABYLON.Texture(path, escena);
@@ -2403,5 +2407,21 @@ function cambiarGrid(opc){
         default:
         break;
     }
+}
+function cambiarVistaMotor(opc){
+switch (opc) {
+    case 0:
+    document.getElementById("iconosPrearmado").style.visibility="hidden";
+    document.getElementById("grid-texturas").style.visibility="hidden";
+    document.getElementById("iconosTexturas").style.visibility="hidden";
+    break;
+    case 1:
+    break;
+    case 2:
+    break;
+
+    default:
+    break;
+}
 }
 /*funciones del carrito */

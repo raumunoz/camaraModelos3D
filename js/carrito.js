@@ -10,7 +10,7 @@ paypal.Buttons({
     createOrder: function (data, actions) {
         return actions.order.create({
             purchase_units: [{
-                description: 'orden numero 125 ',
+                description: 'orden numero 126 ',
                 amount: {
                     //value: precioT1otal
                     value: 1
