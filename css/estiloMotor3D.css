@@ -13,10 +13,12 @@
 .carrito ul li {
 	list-style: none;
 }
+
 .product .price {
 	color: #4DD7D3;
 	font-weight: lighter;
 }
+
 .carrito {
 	transform: translateX(200%);
 	transition: all .5s;
@@ -30,7 +32,7 @@
 	margin: 0;
 	padding: 0;
 	z-index: 2;
-	font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans",sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji";
+	font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
 }
 
 .carrito-activo {
@@ -39,79 +41,105 @@
 	transition: all .3s;
 	transform: translateX(90%);
 }
-.total-desactivo{
-	display:  none;
+
+.total-desactivo {
+	display: none;
 	background-color: #15B358;
 }
 
+#row-productos {
+	height: 16em;
+	overflow: auto;
+}
+#row-productos:nth-child(2) {
+	background: red;
+}
+#total-carrito {
+	color: #7D7D7D;
+}
+.num-carrito{
+color: #fff;
+font-size: 15px;
+font-weight: bold;
+}
+
 .rng-item {
-	border-bottom: 1px solid #777777;
+	border-bottom: 1px solid #c7c7c7;
 	height: 8.5em;
 	padding: 0;
 	margin: 0;
-  }
-
-  .img-carrito {
+}
+.row.rng-item:nth-child(odd) {
+	background-color: #fcfcfc;
+}
+.img-carrito {
 	margin-top: 20%;
-  }
+}
 
-  .rng-desc-carrito {
+.rng-desc-carrito {
 	padding: 25px;
 	padding-right: 0px;
-  }
+}
 
-  .rng-btn-remover-carrito span {
+.rng-btn-remover-carrito span {
 	font-size: 20px;
-  }
+}
 
-  .rng-btn-remover-carrito {
+.rng-btn-remover-carrito {
 	padding-top: 2.5em;
-  }
+}
 
-  .rng-precio {
+.rng-precio {
 	color: #3acca3;
 	font-size: 25px;
-  }
+}
 
-  .rng-div-cantidad {
+.rng-div-cantidad {
 	color: #bbb;
 	font-size: 15px;
-  }
+}
 
-  .rng-div-precio {
+.rng-div-precio {
 	padding-top: 1.5em;
 	padding-left: 3em;
-  }
+}
 
-  .icon-cross {
+.icon-cross {
 	display: none;
 	cursor: pointer;
-  }
+}
 
-  .rng-item:hover .icon-cross {
+.rng-item:hover .icon-cross {
 	display: block;
-  }
+}
+
 .div-nav {
 	margin-left: 0px;
 	margin-right: 0px;
 }
-.rng-total{
-	margin:0;
-	padding:0;
-	padding-left:25%;
+
+.rng-total {
+	margin: 0;
+	padding: 0;
+	padding-left: 25%;
+	font-size: 2em;
 }
-.rng-total-titulo{
+
+.rng-total-titulo {
+	text-align: left;
+	color: #B0B0B0;
+}
+
+.total-carrito {
 	text-align: center;
 }
-.total-carrito{
-	text-align: center;
-}
-.rng-btn-total{
+
+.rng-btn-total {
 	padding-bottom: 15px;
 	margin: 5px;
 	width: 100%;
 	font-size: 25px;
-  height: 60%;
+	height: 60%;
 }
 
 body {
@@ -218,11 +246,9 @@ body {
 	background-color: gold;
 }
 
-
 .motor3D #btnRotar {
 	/*margin-right: 1px;*/
 	/*margin-left: 1px;*/
-	
 }
 
 .btn-grid {
@@ -236,22 +262,22 @@ body {
 	height: 5.3em;
 }
 
-
 .btn-grid1 {
-    display: grid;
-    grid-template-columns: max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content;
-    grid-template-rows: max-content max-content max-content max-content;
-    background-color: #f0f0f0;
-    overflow: auto;
-    white-space: nowrap;
-    display: grid;
-    grid-template-columns: max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content;
-    grid-template-rows: max-content max-content max-content max-content;
-    width: 16em;
-    overflow-x: auto;
-    overflow-y: hidden;
-		white-space: nowrap;
+	display: grid;
+	grid-template-columns: max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content;
+	grid-template-rows: max-content max-content max-content max-content;
+	background-color: #f0f0f0;
+	overflow: auto;
+	white-space: nowrap;
+	display: grid;
+	grid-template-columns: max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content;
+	grid-template-rows: max-content max-content max-content max-content;
+	width: 16em;
+	overflow-x: auto;
+	overflow-y: hidden;
+	white-space: nowrap;
 }
+
 .btn-grid2 {
 	display: grid;
 	grid-template-columns: max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content;
@@ -306,8 +332,7 @@ body {
 	transform: translate3d(-1px, -2px, 0);
 }
 
-
-@media only screen  and (min-width : 1224px) {
+@media only screen and (min-width: 1224px) {
 	/* Styles */
 	.motor3D canvas {
 		background-color: #F5F2F0;
@@ -319,7 +344,7 @@ body {
 	}
 }
 
-@media only screen  and (min-width : 700px) {
+@media only screen and (min-width: 700px) {
 	/* Styles */
 	.motor3D canvas {
 		background-color: #F5F2F0;
@@ -330,6 +355,7 @@ body {
 		/*margin-right: 1046px;*/
 	}
 }
+
 /*
 .motor3D .item1 { grid-area: header;
     background-color: #c6aa2e !important;
@@ -384,14 +410,7 @@ body {
 .motor3D .grid-container {
 	display: grid;
 	grid-template-areas: /*'header header header header header header'*/
-
-	'preA preA main main main main'
-	'preA preA main main main main'
-	'mate mate main main main main'
-	'mate mate main main main main'
-	'modu modu main main main main'
-	'accion accion accion erra erra erra'
-	'footer footer footer footer footer footer';
+	'preA preA main main main main' 'preA preA main main main main' 'mate mate main main main main' 'mate mate main main main main' 'modu modu main main main main' 'accion accion accion erra erra erra' 'footer footer footer footer footer footer';
 	grid-gap: 10px;
 	padding: 10px;
 }
@@ -464,8 +483,7 @@ body {
 	border-bottom: 1px solid #e8e8e8;
 }
 
-.motor3D .acciones {
-}
+.motor3D .acciones {}
 
 .motor3D h1 {
 	font-family: 'Dancing Script', cursive;
@@ -691,67 +709,78 @@ div .materiales {
 
 .div-img-fotos {
 	height: 190px;
-	
 }
 
-.blue{
+.blue {
 	background-color: #55acee;
 	box-shadow: 0px 5px 0px 0px #3C93D5;
 }
+
 .blue:hover {
 	background-color: #6FC6FF;
 }
+
 .btn-agregar {
-	background-color:#4E56DF;
-  border: none;
-  color: white;
-  padding: 20px 20px;
-  text-align: center;
-  text-decoration: none;
-  display: inline-block;
-  margin: 4px 2px;
-  cursor: pointer;
-  border-radius: 16px;
+	background-color: #4E56DF;
+	border: none;
+	color: white;
+	padding: 20px 20px;
+	text-align: center;
+	text-decoration: none;
+	display: inline-block;
+	margin: 4px 2px;
+	cursor: pointer;
+	border-radius: 16px;
 }
-.btn-agregar:hover{
+
+.btn-agregar:hover {
 	background-color: rgba(118, 124, 224, 0.904);
 }
+
 /*estilo de iconos*/
-.icon-footer{
+
+.icon-footer {
 	/*margin-top: 20%;*/
 }
-.btn-prearmado{
+
+.btn-prearmado {
 	border: none !important;
 }
-.tituloPagina{
+
+.tituloPagina {
 	text-align: center;
 	color: #3454DA;
 	padding: 0;
 	margin: 0;
-  margin-top: 0px;
+	margin-top: 0px;
 	margin-top: 3%;
 }
-.testimonial{
+
+.testimonial {
 	text-align: center;
 }
-.img-sobre-nosotros{
+
+.img-sobre-nosotros {
 	width: 178%;
 }
+
 @media only screen and (max-width: 600px) {
-	.carrito{
-		top: 5.5%;
+	.carrito {
+		top: 9.5%;
 	}
 	.carrito-activo {
-		width: 40%;
+		width: 68%;
 		visibility: visible;
 		transition: all .3s;
-		transform: translateX(140%);
-	}
-	#row-productos{
+		transform: translateX(33%);
 		height: 15em;
+
+	}
+	#row-productos {
+		height: 0;
 		overflow: auto;
 	}
-/*
+	/*
 document.getElementById('grid-container').style.gridTemplateAreas=
 `
 "preA preA preA main main main"
@@ -833,8 +862,6 @@ document.getElementById('grid-container').style.gridTemplateAreas=
 		white-space: nowrap;
 		padding-left: 20%;
 	}
-
-	
 	.btn-grid2 {
 		display: grid;
 		grid-template-columns: max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content;
@@ -948,9 +975,7 @@ document.getElementById('grid-container').style.gridTemplateAreas=
 	#paypal-button-container {
 		float: right;
 		width: 65%;
-		padding-left: 11%;
-		padding-right: 11%;
-		padding-top: 11%;
+		padding-left: 15%;
 	}
 	.precios {
 		background-color: #6FC6FF;
@@ -1032,7 +1057,7 @@ document.getElementById('grid-container').style.gridTemplateAreas=
 		padding-left: 14%;
 		padding-right: 0;
 	}
-	.img-sobre-nosotros{
+	.img-sobre-nosotros {
 		width: 206%;
 	}
 }

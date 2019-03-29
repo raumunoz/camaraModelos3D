@@ -58,7 +58,6 @@ function agregarAlCarrito(nombre,precio,imagen) {
         }
         
     }
-    alert("agregar al carrito");
     actualizarDivCarrito();
 }
 
@@ -158,12 +157,16 @@ function actualizarDivCarrito(){
             
             document.getElementById("total-carrito").innerText=precioAPagar;
             renglonesCarrito.innerHTML =carritoTotal;
+            document.getElementById("num-carrito").innerText=itemsCarrito.length;
             actualizarBotonPaypal(precioAPagar);
         }else{
             document.getElementById("total-carrito").innerText=0;
             document.getElementById("carrito").classList.toggle("carrito-activo");
             document.getElementById("rng-total").classList.toggle("total-desactivo");
-            document.getElementById("paypal-button-container").innerHTML=""
+            document.getElementById("paypal-button-container").innerHTML="";
+            document.getElementById("num-carrito").innerText="";
+            document.getElementById("row-productos").style.height="2em";
+            document.getElementById("row-productos").innerText="";
         }
 }
 function actualizarBotonPaypal(total){
