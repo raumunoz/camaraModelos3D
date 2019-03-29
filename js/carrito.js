@@ -42,10 +42,10 @@ paypal.Buttons({
 }).render('#paypal-button-container');*/
 
 
-function agregarAlCarrito(nombre,precio) {
+function agregarAlCarrito(nombre,precio,imagen) {
     var existente=false;
     if(itemsCarrito.length==0){
-        itemsCarrito.push({name:nombre,price:precio,quantity:1});
+        itemsCarrito.push({name:nombre,price:precio,quantity:1,image:imagen});
     }else{
         itemsCarrito.forEach((x)=>{
             if(x.name===nombre){
@@ -54,7 +54,7 @@ function agregarAlCarrito(nombre,precio) {
             }
         });
         if(existente==false){
-            itemsCarrito.push({name:nombre,price:precio,quantity:1});
+            itemsCarrito.push({name:nombre,price:precio,quantity:1,image:imagen});
         }
         
     }
@@ -125,7 +125,7 @@ function actualizarDivCarrito(){
                 <div class="row rng-item">
                         <div class="col-1 col-sm-0"></div>
                         <div class="col-2 col-sm-3">
-                            <img src="assets/imagenes/brazoContempo.jpeg" alt="brazo" id="imgProducto" class="img-carrito"
+                            <img src="`+x.image+`" alt="brazo" id="imgProducto" class="img-carrito"
                                 height="90">
                         </div>
                         <div class="col-5 col-sm-4 rng-desc-carrito">`+x.name+`
@@ -158,7 +158,7 @@ function actualizarDivCarrito(){
             
             document.getElementById("total-carrito").innerText=precioAPagar;
             renglonesCarrito.innerHTML =carritoTotal;
-            actualizarBotonPaypal(carritoTotal);
+            actualizarBotonPaypal(precioAPagar);
         }else{
             document.getElementById("total-carrito").innerText=0;
             document.getElementById("carrito").classList.toggle("carrito-activo");
@@ -167,7 +167,10 @@ function actualizarDivCarrito(){
         }
 }
 function actualizarBotonPaypal(total){
-    document.getElementById("paypal-button-container").innerHTML=""
+    console.log(total);
+    var detalles="";
+    document.getElementById("paypal-button-container").innerHTML="";
+    itemsCarrito.forEach(x=>detalles=detalles+x.quantity+" "+x.name + " "+x.price+"|" );
     /*paypal.Buttons({
 
         // Set up the transaction
@@ -202,10 +205,10 @@ function actualizarBotonPaypal(total){
         createOrder: function (data, actions) {
             return actions.order.create({
                 purchase_units: [{
-                    description: 'orden numero 126 ',
+                    description: detalles,
                     amount: {
                         //value: precioT1otal
-                        value: 1
+                        value: total,
                     }
                 }]
             });

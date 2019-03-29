@@ -462,7 +462,18 @@ window.addEventListener('DOMContentLoaded', function () {
         */
         //var camera = new BABYLON.UniversalCamera("UniversalCamera", new BABYLON.Vector3(0, 0, -10), scene);
         //camera = new BABYLON.UniversalCamera("camera1", new BABYLON.Vector3(0, 0, -30), scene);
-        camera = new BABYLON.FreeCamera("camera1", new BABYLON.Vector3(0, 0, -30), scene);
+        //camera = new BABYLON.FreeCamera("camera1", new BABYLON.Vector3(0, 0, -30), scene);
+          // Creates, angles, distances and targets the camera
+     camera =    new BABYLON.ArcRotateCamera("Camera", 0, 0, 40, new BABYLON.Vector3(0, 0, 0), scene);
+     camera.useBouncingBehavior = false;
+    camera.useFramingBehavior = false;
+    camera.useAutoRotationBehavior = true;
+    camera.inputs.attached.mousewheel.wheelPrecision = 80;
+    // This positions the camera
+    camera.setPosition(new BABYLON.Vector3(0, 0, -10));
+    
+    // This attaches the camera to the canvas
+    camera.attachControl(canvas, true);
         //camera.attachControl(canvas);
         // camera = new BABYLON.FreeCamera("camera1", new BABYLON.Vector3(0, 0, -30), scene);
         pointerDragBehavior = new BABYLON.PointerDragBehavior({ dragPlaneNormal: new BABYLON.Vector3(0, 0, 1) });
@@ -1339,20 +1350,10 @@ function meshClickleable(mesh) {
         console.log("%c ActionManager: up  mesh: " + mesh.name, 'background: orange; color: white');
         //activarRotacion();
         bandera=true;
-        pointerDragBehavior.moveAttached = false;
-    }));
-    mesh.actionManager.registerAction(new BABYLON.ExecuteCodeAction(BABYLON.ActionManager.OnPickDownTrigger, function () {
-        //activarRotacion();
-    }));
-    /*
-    mesh.actionManager.registerAction(new BABYLON.ExecuteCodeAction(BABYLON.ActionManager.OnPickDownTrigger, function () {
-        activarRotacion();
-    }));*/
-    mesh.actionManager.registerAction(new BABYLON.ExecuteCodeAction(BABYLON.ActionManager.OnLongPressTrigger, (function(mesh) {
-        console.log("%c ActionManager: long press : " + mesh.name, 'background: green; color: white');
+       
         meshClicleado = true;
         bandera=false;
-        pointerDragBehavior.moveAttached = true;
+        
         //aplicar();
         mesh.parent.addBehavior(pointerDragBehavior);
         //mesh.addBehavior(pointerDragBehavior);
@@ -1364,6 +1365,17 @@ function meshClickleable(mesh) {
             padreActual = mesh.parent;
             activarBotonesAplicar(true);
         }
+    }));
+    mesh.actionManager.registerAction(new BABYLON.ExecuteCodeAction(BABYLON.ActionManager.OnPickDownTrigger, function () {
+        //activarRotacion();
+    }));
+    /*
+    mesh.actionManager.registerAction(new BABYLON.ExecuteCodeAction(BABYLON.ActionManager.OnPickDownTrigger, function () {
+        activarRotacion();
+    }));*/
+    mesh.actionManager.registerAction(new BABYLON.ExecuteCodeAction(BABYLON.ActionManager.OnLongPressTrigger, (function(mesh) {
+        console.log("%c ActionManager: long press : " + mesh.name, 'background: green; color: white');
+        
     }).bind(this, mesh)));
 }
 /*Esta funcion se activa cuando se cambia de textura o de modulo */
@@ -2370,12 +2382,23 @@ function handleFiles() {
 */
 
 function zoomear(zoom) {
-    if (zoom == "in") {
-        camera.position.z = camera.position.z + 1;
 
+    if (zoom == "in") {
+        //camera.position.z = camera.position.z + 1;
+        if(camera.radius<17){
+
+        }else{
+            camera.radius--;
+        }
+      
     }
     if (zoom == "out") {
-        camera.position.z = camera.position.z - 1;
+        //camera.position.z = camera.position.z - 1;
+        if(camera.radius>50){
+
+        }else{
+            camera.radius++;
+        }
     }
 }
 function cambiarGrid(opc){
