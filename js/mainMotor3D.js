@@ -312,13 +312,13 @@ window.addEventListener('DOMContentLoaded', function () {
             } else {
                 
             }*/
-            console.log("DOWN,mesh", meshClicleado);
-            console.log("DOWN,boton", buttonClicleado);
+           // console.log("DOWN,mesh", meshClicleado);
+            //console.log("DOWN,boton", buttonClicleado);
 
         });
         //Works
         canvas.addEventListener("mouseup", function () {
-            console.log("Mouse UP!");
+            //console.log("Mouse UP!");
             clicked = false;
             //document.body.style.overflow="hidden";            
             if (hasTouchscreen) {
@@ -346,17 +346,17 @@ window.addEventListener('DOMContentLoaded', function () {
             meshClicleado = false;
             // The pointerdown event signals the start of a touch interaction.
             // This event is cached to support 2-finger gestures
-            evCache.push(evt);
+            //evCache.push(evt);
             //log("pointerDown", ev);
-            if (bandera) {
-                currentPosition.x = evt.clientX;
-                currentPosition.y = evt.clientY;
-                currentRotation.x = padreCentro.rotation.x;
-                currentRotation.y = padreCentro.rotation.y;
-            }
+            /*if (bandera) {
+               // currentPosition.x = evt.clientX;
+                //currentPosition.y = evt.clientY;
+                //currentRotation.x = padreCentro.rotation.x;
+                //currentRotation.y = padreCentro.rotation.y;
+            }*/
             clicked = true;
         });
-
+/*
         canvas.addEventListener("pointermove", function (evt) {
             // Find this event in the cache and update its record with this event
 
@@ -407,12 +407,13 @@ window.addEventListener('DOMContentLoaded', function () {
                 return;
             }
             //padreCentro.rotation.x
-            if (bandera && clicked) {
+            /*if (bandera && clicked) {
                 padreCentro.rotation.y = currentRotation.y - (evt.clientX - currentPosition.x) / 350;
                 padreCentro.rotation.x = currentRotation.x + (evt.clientY - currentPosition.y) / 350;
-            }
+            }*/
             //console.log("ROTATION X ",padreCentro.rotation.x,"ROTATION Y ",padreCentro.rotation.y);
-        });
+       // });
+        
         canvas.onpointerup = pointerup_handler;
         canvas.onpointercancel = pointerup_handler;
         canvas.onpointerout = pointerup_handler;
@@ -978,6 +979,7 @@ function cargarModelo(padre, modelo, posicion, prearmado, rotacion) {
         engine.displayLoadingUI();
     });
     //padreActual.setParent(padreCentro);
+    
 }
 
 function cargarModeloCustom(modelo, posicion) {
@@ -1019,7 +1021,8 @@ function cargarModeloCustom(modelo, posicion) {
         //hideLoadingScreen();
         hideLoadingScreen();
     });
-    BABYLON.SceneLoader.ImportMesh
+    //BABYLON.SceneLoader.ImportMesh
+  
 }
 
 function cambioTextura(opc) {
