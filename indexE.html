@@ -274,13 +274,36 @@
            </div>
 	</div>
 	<div class="carrito" id="carrito">
-			<div id="row-productos">
-					todavía no has agregado
-			</div>
-			
+		<div id="row-productos">
+				<div class="row rng-item">
+						<div class="col-1 col-sm-0"></div>
+						<div class="col-2 col-sm-3">
+							<img src="assets/imagenes/brazoContempo.jpeg" alt="brazo" id="imgProducto" class="img-carrito"
+								height="90">
+						</div>
+						<div class="col-5 col-sm-4 rng-desc-carrito">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+							Similique,
+							nesciunt.
+						</div>
+						<div class="col-3 rng-div-precio">
+							<span class="rng-precio">
+								$75
+							</span>
+							<div class="rng-div-cantidad">
+								Cantidad: <span class="rng-cantidad">3</span>
+							</div>
+						</div>
+						<div class="col-1 rng-btn-remover-carrito">
+							<span class="icon">
+								<i class="icon-cross" onclick="removerArticulo(this)" id="rnd()"></i>
+							</span>
+						</div>
+					</div>
+		</div>
+		
 		<div class="row rng-total total-desactivo" id="rng-total">
 			<div class="col-6 rng-total-titulo">Total</div>
-			<div class="col-6">$<span id="total-carrito">0</span></div>
+			<div class="col-6">$<span id="total-carrito">10</span></div>
 			<!--<div class="col-6"><button class="rng-btn-total btn btn-primary blue" onclick="">continuar</button></div>-->
 			<div id="paypal-button-container"></div>
 		</div>

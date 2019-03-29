@@ -742,10 +742,14 @@ div .materiales {
 		top: 5.5%;
 	}
 	.carrito-activo {
-		width: 90%;
+		width: 40%;
 		visibility: visible;
 		transition: all .3s;
-		transform: translateX(0%);
+		transform: translateX(140%);
+	}
+	#row-productos{
+		height: 15em;
+		overflow: auto;
 	}
 /*
 document.getElementById('grid-container').style.gridTemplateAreas=

@@ -381,9 +381,9 @@ window.addEventListener('DOMContentLoaded', function () {
                         console.log("zoom", (camera.position.z - (curDiff / 40) * -1));
 
                         if ((camera.position.z) > -130) {
-                            camera.position.z = (camera.position.z - (curDiff / 40) * -1);
+                            //camera.position.z = (camera.position.z - (curDiff / 40) * -1);
                         } else {
-                            camera.position.z = -130;
+                            //camera.position.z = -130;
                         }
                     }
                     if (curDiff < prevDiff) {
@@ -392,10 +392,10 @@ window.addEventListener('DOMContentLoaded', function () {
                         //ev.target.style.background = "lightblue";
                         console.log("zoom", (camera.position.z + (curDiff / 40) * -1));
                         if ((camera.position.z) < -10) {
-                            camera.position.z = (camera.position.z + (curDiff / 40) * -1);
+                            //camera.position.z = (camera.position.z + (curDiff / 40) * -1);
 
                         } else {
-                            camera.position.z = -20;
+                            //camera.position.z = -20;
                         }
                     }
                 }

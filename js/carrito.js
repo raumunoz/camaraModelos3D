@@ -1,12 +1,18 @@
 let itemsCarrito=[];
 function mostrarCarro() {
-    document.getElementById("carrito").classList.toggle("carrito-activo");
-    document.getElementById("rng-total").classList.toggle("total-desactivo");
+
+        document.getElementById("carrito").classList.toggle("carrito-activo");
+        document.getElementById("rng-total").classList.toggle("total-desactivo");
+
    // actualizarDivCarrito();
 }
-function removerArticulo(elemento) {
+function removerArticulo(elemento,nombre) {
     padre = elemento.parentNode.parentNode.parentNode;
     padre.remove();
+    console.log(nombre);
+    itemsCarrito.splice(itemsCarrito.findIndex(v => v.name === nombre), 1);
+    console.log(itemsCarrito);
+    actualizarDivCarrito();
 }
 /*
 paypal.Buttons({
@@ -34,36 +40,7 @@ paypal.Buttons({
         });
     }
 }).render('#paypal-button-container');*/
-paypal.Buttons({
 
-    // Set up the transaction
-    createOrder: function (data, actions) {
-        return actions.order.create({
-            purchase_units: [{
-                amount: {
-                    value: '0.01',
-                    items: [{
-                        name: 'T-Shirt',
-                        description: 'Green XL',
-                        quantity: 1,
-                        price: 1,
-                        currency: 'MXN'
-                    }]
-                }
-            }]
-        });
-    },
-
-    // Finalize the transaction
-    onApprove: function (data, actions) {
-        return actions.order.capture().then(function (details) {
-            // Show a success message to the buyer
-            alert('Transaction completed by ' + details.payer.name.given_name + '!');
-        });
-    }
-
-
-}).render('#paypal-button-container');
 
 function agregarAlCarrito(nombre,precio) {
     var existente=false;
@@ -81,10 +58,12 @@ function agregarAlCarrito(nombre,precio) {
         }
         
     }
+    alert("agregar al carrito");
     actualizarDivCarrito();
 }
+
 function actualizarDivCarrito(){
-    
+    var precioAPagar=0;
     var renglonesCarrito= document.getElementById("row-productos");
     var item=
     `
@@ -161,18 +140,87 @@ function actualizarDivCarrito(){
                         </div>
                         <div class="col-1 rng-btn-remover-carrito">
                             <span class="icon">
-                                <i class="icon-cross" onclick="removerArticulo(this)" id="rnd()"></i>
+                                <i class="icon-cross" onclick="removerArticulo(this,'`+x.name+`')" id="rnd()"></i>
                             </span>
                         </div>
                     </div>
                     `
                     ;
-                           
+                    if(x.quantity>1){
+                        precioAPagar=precioAPagar+(x.quantity*x.price);
+                    }else{
+                        precioAPagar=precioAPagar+x.price;
+                    }   
                      
                 }
                 
             });
+            
+            document.getElementById("total-carrito").innerText=precioAPagar;
             renglonesCarrito.innerHTML =carritoTotal;
-
+            actualizarBotonPaypal(carritoTotal);
+        }else{
+            document.getElementById("total-carrito").innerText=0;
+            document.getElementById("carrito").classList.toggle("carrito-activo");
+            document.getElementById("rng-total").classList.toggle("total-desactivo");
+            document.getElementById("paypal-button-container").innerHTML=""
         }
+}
+function actualizarBotonPaypal(total){
+    document.getElementById("paypal-button-container").innerHTML=""
+    /*paypal.Buttons({
+
+        // Set up the transaction
+        createOrder: function (data, actions) {
+            return actions.order.create({
+                purchase_units: [{
+                    amount: {
+                        value: total,
+                        items: [{
+                            name: 'T-Shirt',
+                            description: 'Green XL',
+                            quantity: 1,
+                            price: 1,
+                            currency: 'MXN'
+                        }]
+                    }
+                }]
+            });
+        },
+    
+        // Finalize the transaction
+        onApprove: function (data, actions) {
+            return actions.order.capture().then(function (details) {
+                // Show a success message to the buyer
+                alert('Transaction completed by ' + details.payer.name.given_name + '!');
+            });
+        }
+    
+    
+    }).render('#paypal-button-container');*/
+    paypal.Buttons({
+        createOrder: function (data, actions) {
+            return actions.order.create({
+                purchase_units: [{
+                    description: 'orden numero 126 ',
+                    amount: {
+                        //value: precioT1otal
+                        value: 1
+                    }
+                }]
+            });
+        },
+        onApprove: function (data, actions) {
+            return actions.order.capture().then(function (details) {
+                alert('Transaction completed by ' + details.payer.name.given_name);
+                // Call your server to save the transaction
+                return fetch('/paypal-transaction-complete', {
+                    method: 'post',
+                    body: JSON.stringify({
+                        orderID: data.orderID
+                    })
+                });
+            });
+        }
+    }).render('#paypal-button-container');
 }
