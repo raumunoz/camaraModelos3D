@@ -141,6 +141,9 @@ font-weight: bold;
 	font-size: 25px;
 	height: 60%;
 }
+.btn-agregar-3d-a-carrito{
+	visibility: hidden;
+}
 
 body {
 	margin: 0;
