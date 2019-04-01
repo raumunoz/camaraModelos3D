@@ -15,36 +15,25 @@
     "nodes" : [
         {
             "mesh" : 0,
-            "name" : "main",
-            "rotation" : [
-                0.7071068286895752,
-                0,
-                0,
-                0.7071067094802856
-            ]
+            "name" : "main"
         },
         {
             "children" : [
                 0
             ],
-            "name" : "centro",
-            "scale" : [
-                5,
-                5,
-                5
-            ]
+            "name" : "centro"
         }
     ],
     "materials" : [
         {
-            "name" : "base",
+            "name" : "Material.004",
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
                     "index" : 0,
                     "texCoord" : 0
                 },
                 "metallicFactor" : 0,
-                "roughnessFactor" : 1
+                "roughnessFactor" : 0.7857142686843872
             }
         }
     ],
@@ -71,38 +60,38 @@
     ],
     "images" : [
         {
-            "mimeType" : "image/png",
+            "mimeType" : "image/jpeg",
             "name" : "GAMUZA ROYAL BLUE.jpg",
-            "uri" : "GAMUZA ROYAL BLUE.png"
+            "uri" : "GAMUZA ROYAL BLUE.jpg"
         }
     ],
     "accessors" : [
         {
             "bufferView" : 0,
             "componentType" : 5126,
-            "count" : 5710,
+            "count" : 5674,
             "max" : [
-                1.157668948173523,
-                1.1597938537597656,
-                1.093788504600525
+                0.5788344740867615,
+                0.603105902671814,
+                0.5798969268798828
             ],
             "min" : [
-                -1.1423310041427612,
-                -1.1402060985565186,
-                -1.206211805343628
+                -0.5711654424667358,
+                -0.5468941926956177,
+                -0.5701029896736145
             ],
             "type" : "VEC3"
         },
         {
             "bufferView" : 1,
             "componentType" : 5126,
-            "count" : 5710,
+            "count" : 5674,
             "type" : "VEC3"
         },
         {
             "bufferView" : 2,
             "componentType" : 5126,
-            "count" : 5710,
+            "count" : 5674,
             "type" : "VEC2"
         },
         {
@@ -115,28 +104,28 @@
     "bufferViews" : [
         {
             "buffer" : 0,
-            "byteLength" : 68520,
+            "byteLength" : 68088,
             "byteOffset" : 0
         },
         {
             "buffer" : 0,
-            "byteLength" : 68520,
-            "byteOffset" : 68520
+            "byteLength" : 68088,
+            "byteOffset" : 68088
         },
         {
             "buffer" : 0,
-            "byteLength" : 45680,
-            "byteOffset" : 137040
+            "byteLength" : 45392,
+            "byteOffset" : 136176
         },
         {
             "buffer" : 0,
             "byteLength" : 64128,
-            "byteOffset" : 182720
+            "byteOffset" : 181568
         }
     ],
     "buffers" : [
         {
-            "byteLength" : 246848,
+            "byteLength" : 245696,
             "uri" : "atlixco.bin"
         }
     ]

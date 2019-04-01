@@ -8,24 +8,39 @@
         {
             "name" : "Scene",
             "nodes" : [
-                0
+                1
             ]
         }
     ],
     "nodes" : [
         {
             "mesh" : 0,
-            "name" : "Cube.000",
-            "scale" : [
-                0.48785245418548584,
-                0.48785245418548584,
-                0.48785245418548584
-            ],
-            "translation" : [
-                -0.16506028175354004,
-                0.6926759481430054,
-                0.31798553466796875
+            "name" : "main",
+            "rotation" : [
+                0,
+                0.1882881075143814,
+                0,
+                0.9821138381958008
             ]
+        },
+        {
+            "children" : [
+                0
+            ],
+            "name" : "centro"
+        }
+    ],
+    "materials" : [
+        {
+            "name" : "main",
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 0,
+                    "texCoord" : 0
+                },
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.7904762029647827
+            }
         }
     ],
     "meshes" : [
@@ -35,63 +50,88 @@
                 {
                     "attributes" : {
                         "POSITION" : 0,
-                        "NORMAL" : 1
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2
                     },
-                    "indices" : 2
+                    "indices" : 3,
+                    "material" : 0
                 }
             ]
+        }
+    ],
+    "textures" : [
+        {
+            "source" : 0
+        }
+    ],
+    "images" : [
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "GAMUZA PET\u00c1LO.jpg",
+            "uri" : "GAMUZA PET\u00c1LO.jpg"
         }
     ],
     "accessors" : [
         {
             "bufferView" : 0,
             "componentType" : 5126,
-            "count" : 58,
+            "count" : 1121,
             "max" : [
-                3.7208094596862793,
-                4.6604132652282715,
-                3.318885087966919
+                2.1052258014678955,
+                2.317415237426758,
+                1.990951418876648
             ],
             "min" : [
-                -3.440187692642212,
-                -1.7764229774475098,
-                -3.1676535606384277
+                -1.9487701654434204,
+                -0.8889563083648682,
+                -1.7660683393478394
             ],
             "type" : "VEC3"
         },
         {
             "bufferView" : 1,
             "componentType" : 5126,
-            "count" : 58,
+            "count" : 1121,
             "type" : "VEC3"
         },
         {
             "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 1121,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
             "componentType" : 5123,
-            "count" : 336,
+            "count" : 5568,
             "type" : "SCALAR"
         }
     ],
     "bufferViews" : [
         {
             "buffer" : 0,
-            "byteLength" : 696,
+            "byteLength" : 13452,
             "byteOffset" : 0
         },
         {
             "buffer" : 0,
-            "byteLength" : 696,
-            "byteOffset" : 696
+            "byteLength" : 13452,
+            "byteOffset" : 13452
         },
         {
             "buffer" : 0,
-            "byteLength" : 672,
-            "byteOffset" : 1392
+            "byteLength" : 8968,
+            "byteOffset" : 26904
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 11136,
+            "byteOffset" : 35872
         }
     ],
     "buffers" : [
         {
-            "byteLength" : 2064,
+            "byteLength" : 47008,
             "uri" : "La Paz_chico.bin"
         }
     ]

@@ -975,8 +975,9 @@ function cargarModelo(padre, modelo, posicion, prearmado, rotacion) {
         engine.hideLoadingUI();
         hideLoadingScreen();
         //padreActual.setParent(null);
-    }, onProgress = () => {
+    }, onProgress = (x) => {
         //console.log("progress")
+        console.log("progreso",x);
         engine.displayLoadingUI();
     });
     //padreActual.setParent(padreCentro);
@@ -1019,9 +1020,15 @@ function cargarModeloCustom(modelo, posicion) {
         //newMeshes.meshes[0].getChildren()[0].setParent(padreCentro);
         //engine.displayLoadingUI();
         //hideLoadingScreen();
+        
+    },onSuccess = () => {
+        engine.hideLoadingUI();
         hideLoadingScreen();
+        //padreActual.setParent(null);
     });
-    //BABYLON.SceneLoader.ImportMesh
+    /*camera.zoomOn();
+    camera.maxZ=1000;
+    camera.target=padreCentro.position;*/
 
 }
 

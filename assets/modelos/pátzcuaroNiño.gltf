@@ -1,94 +1,45 @@
 {
-    "accessors" : [
-        {
-            "bufferView" : 0,
-            "componentType" : 5123,
-            "count" : 183552,
-            "max" : [
-                30593
-            ],
-            "min" : [
-                0
-            ],
-            "type" : "SCALAR"
-        },
-        {
-            "bufferView" : 1,
-            "componentType" : 5126,
-            "count" : 30594,
-            "max" : [
-                2.0,
-                2.490443229675293,
-                2.467407703399658
-            ],
-            "min" : [
-                -2.0,
-                -0.6595567464828491,
-                -1.0325919389724731
-            ],
-            "type" : "VEC3"
-        },
-        {
-            "bufferView" : 2,
-            "componentType" : 5126,
-            "count" : 30594,
-            "max" : [
-                0.999969482421875,
-                1.0,
-                0.999755859375
-            ],
-            "min" : [
-                -0.999969482421875,
-                -1.0,
-                -0.999969482421875
-            ],
-            "type" : "VEC3"
-        }
-    ],
     "asset" : {
-        "generator" : "Khronos Blender glTF 2.0 exporter",
+        "generator" : "Khronos Blender glTF 2.0 I/O",
         "version" : "2.0"
     },
-    "bufferViews" : [
+    "scene" : 0,
+    "scenes" : [
         {
-            "buffer" : 0,
-            "byteLength" : 367104,
-            "byteOffset" : 0,
-            "target" : 34963
-        },
-        {
-            "buffer" : 0,
-            "byteLength" : 367128,
-            "byteOffset" : 367104,
-            "target" : 34962
-        },
-        {
-            "buffer" : 0,
-            "byteLength" : 367128,
-            "byteOffset" : 734232,
-            "target" : 34962
+            "name" : "Scene",
+            "nodes" : [
+                1
+            ]
         }
     ],
-    "buffers" : [
+    "nodes" : [
         {
-            "byteLength" : 1101360,
-            "uri" : "p\u00e1tzcuaroNi\u00f1o.bin"
-        }
-    ],
-    "images" : [
+            "mesh" : 0,
+            "name" : "main",
+            "rotation" : [
+                0,
+                0.1257602721452713,
+                0,
+                0.992060661315918
+            ]
+        },
         {
-            "name" : "GAMUZA TOPACIO",
-            "uri" : "GAMUZA TOPACIO.jpg"
+            "children" : [
+                0
+            ],
+            "name" : "centro"
         }
     ],
     "materials" : [
         {
-            "name" : "Material.003",
+            "name" : "main",
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 0
+                    "index" : 0,
+                    "texCoord" : 0
                 },
-                "metallicFactor" : 0.0
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.8238095045089722
             }
         }
     ],
@@ -98,48 +49,90 @@
             "primitives" : [
                 {
                     "attributes" : {
-                        "NORMAL" : 2,
-                        "POSITION" : 1
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2
                     },
-                    "indices" : 0,
+                    "indices" : 3,
                     "material" : 0
                 }
             ]
         }
     ],
-    "nodes" : [
-        {
-            "mesh" : 0,
-            "name" : "Cube",
-            "rotation" : [
-                -2.168217427822583e-08,
-                0.1257602721452713,
-                2.7485782538860803e-09,
-                0.992060661315918
-            ],
-            "scale" : [
-                0.9999998807907104,
-                1.0,
-                0.9999998807907104
-            ]
-        }
-    ],
-    "samplers" : [
-        {}
-    ],
-    "scene" : 0,
-    "scenes" : [
-        {
-            "name" : "Scene",
-            "nodes" : [
-                0
-            ]
-        }
-    ],
     "textures" : [
         {
-            "sampler" : 0,
             "source" : 0
+        }
+    ],
+    "images" : [
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "GAMUZA TOPACIO.jpg",
+            "uri" : "GAMUZA TOPACIO.jpg"
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 31906,
+            "max" : [
+                2,
+                2.490443229675293,
+                2.467407703399658
+            ],
+            "min" : [
+                -2,
+                -0.6595567464828491,
+                -1.0325919389724731
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 31906,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 31906,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5123,
+            "count" : 183552,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 382872,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 382872,
+            "byteOffset" : 382872
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 255248,
+            "byteOffset" : 765744
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 367104,
+            "byteOffset" : 1020992
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 1388096,
+            "uri" : "p\u00e1tzcuaroNi\u00f1o.bin"
         }
     ]
 }

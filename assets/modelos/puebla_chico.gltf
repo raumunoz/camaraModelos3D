@@ -8,24 +8,39 @@
         {
             "name" : "Scene",
             "nodes" : [
-                0
+                1
             ]
         }
     ],
     "nodes" : [
         {
             "mesh" : 0,
-            "name" : "Plane.001",
-            "scale" : [
-                0.4068678319454193,
-                0.2560924291610718,
-                0.5701793432235718
-            ],
-            "translation" : [
-                -0.013962745666503906,
-                0.20828700065612793,
-                0.0010701417922973633
+            "name" : "main",
+            "rotation" : [
+                0,
+                -0.36857154965400696,
+                0,
+                0.929599404335022
             ]
+        },
+        {
+            "children" : [
+                0
+            ],
+            "name" : "centro"
+        }
+    ],
+    "materials" : [
+        {
+            "name" : "main",
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 0,
+                    "texCoord" : 0
+                },
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.9047619104385376
+            }
         }
     ],
     "meshes" : [
@@ -35,63 +50,88 @@
                 {
                     "attributes" : {
                         "POSITION" : 0,
-                        "NORMAL" : 1
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2
                     },
-                    "indices" : 2
+                    "indices" : 3,
+                    "material" : 0
                 }
             ]
+        }
+    ],
+    "textures" : [
+        {
+            "source" : 0
+        }
+    ],
+    "images" : [
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "LONA AZUL REY.jpg",
+            "uri" : "LONA AZUL REY.jpg"
         }
     ],
     "accessors" : [
         {
             "bufferView" : 0,
             "componentType" : 5126,
-            "count" : 640,
+            "count" : 11453,
             "max" : [
-                1.1529426574707031,
-                0.46861034631729126,
-                1.1819791793823242
+                2.2500462532043457,
+                0.5914778709411621,
+                3.2505950927734375
             ],
             "min" : [
-                -1.1528851985931396,
-                -0.5102745890617371,
-                -1.1813507080078125
+                -2.249953508377075,
+                -0.651671826839447,
+                -3.2494051456451416
             ],
             "type" : "VEC3"
         },
         {
             "bufferView" : 1,
             "componentType" : 5126,
-            "count" : 640,
+            "count" : 11453,
             "type" : "VEC3"
         },
         {
             "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 11453,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
             "componentType" : 5123,
-            "count" : 3828,
+            "count" : 61248,
             "type" : "SCALAR"
         }
     ],
     "bufferViews" : [
         {
             "buffer" : 0,
-            "byteLength" : 7680,
+            "byteLength" : 137436,
             "byteOffset" : 0
         },
         {
             "buffer" : 0,
-            "byteLength" : 7680,
-            "byteOffset" : 7680
+            "byteLength" : 137436,
+            "byteOffset" : 137436
         },
         {
             "buffer" : 0,
-            "byteLength" : 7656,
-            "byteOffset" : 15360
+            "byteLength" : 91624,
+            "byteOffset" : 274872
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 122496,
+            "byteOffset" : 366496
         }
     ],
     "buffers" : [
         {
-            "byteLength" : 23016,
+            "byteLength" : 488992,
             "uri" : "puebla_chico.bin"
         }
     ]

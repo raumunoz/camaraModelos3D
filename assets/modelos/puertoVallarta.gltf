@@ -1,196 +1,138 @@
 {
-    "accessors" : [
-        {
-            "bufferView" : 0,
-            "componentType" : 5125,
-            "count" : 271104,
-            "max" : [
-                180735
-            ],
-            "min" : [
-                0
-            ],
-            "type" : "SCALAR"
-        },
-        {
-            "bufferView" : 1,
-            "componentType" : 5126,
-            "count" : 180736,
-            "max" : [
-                2.2602434158325195,
-                1.7222211360931396,
-                1.2858915328979492
-            ],
-            "min" : [
-                -2.2602434158325195,
-                -3.228731632232666,
-                -5.660006523132324
-            ],
-            "type" : "VEC3"
-        },
-        {
-            "bufferView" : 2,
-            "componentType" : 5126,
-            "count" : 180736,
-            "max" : [
-                0.999969482421875,
-                0.999969482421875,
-                1.0
-            ],
-            "min" : [
-                -0.999969482421875,
-                -0.999969482421875,
-                -0.999969482421875
-            ],
-            "type" : "VEC3"
-        },
-        {
-            "bufferView" : 3,
-            "componentType" : 5126,
-            "count" : 180736,
-            "max" : [
-                1.0,
-                1.0,
-                1.0,
-                1.0
-            ],
-            "min" : [
-                -1.0,
-                -1.0,
-                -0.9999998807907104,
-                1.0
-            ],
-            "type" : "VEC4"
-        },
-        {
-            "bufferView" : 4,
-            "componentType" : 5126,
-            "count" : 180736,
-            "max" : [
-                1.0,
-                1.0
-            ],
-            "min" : [
-                0.0,
-                0.0
-            ],
-            "type" : "VEC2"
-        }
-    ],
     "asset" : {
-        "generator" : "Khronos Blender glTF 2.0 exporter",
+        "generator" : "Khronos Blender glTF 2.0 I/O",
         "version" : "2.0"
     },
-    "bufferViews" : [
+    "scene" : 0,
+    "scenes" : [
         {
-            "buffer" : 0,
-            "byteLength" : 1084416,
-            "byteOffset" : 0,
-            "target" : 34963
-        },
-        {
-            "buffer" : 0,
-            "byteLength" : 2168832,
-            "byteOffset" : 1084416,
-            "target" : 34962
-        },
-        {
-            "buffer" : 0,
-            "byteLength" : 2168832,
-            "byteOffset" : 3253248,
-            "target" : 34962
-        },
-        {
-            "buffer" : 0,
-            "byteLength" : 2891776,
-            "byteOffset" : 5422080,
-            "target" : 34962
-        },
-        {
-            "buffer" : 0,
-            "byteLength" : 1445888,
-            "byteOffset" : 8313856,
-            "target" : 34962
-        }
-    ],
-    "buffers" : [
-        {
-            "byteLength" : 9759744,
-            "uri" : "puertoVallarta.bin"
-        }
-    ],
-    "images" : [
-        {
-            "name" : "GAMUZA MIMOSA",
-            "uri" : "GAMUZA MIMOSA.jpg"
-        }
-    ],
-    "materials" : [
-        {
-            "name" : "base",
-            "pbrMetallicRoughness" : {
-                "baseColorTexture" : {
-                    "index" : 0
-                },
-                "metallicFactor" : 0.0
-            }
-        }
-    ],
-    "meshes" : [
-        {
-            "name" : "Cube.001",
-            "primitives" : [
-                {
-                    "attributes" : {
-                        "NORMAL" : 2,
-                        "POSITION" : 1,
-                        "TANGENT" : 3,
-                        "TEXCOORD_0" : 4
-                    },
-                    "indices" : 0,
-                    "material" : 0
-                }
+            "name" : "Scene",
+            "nodes" : [
+                1
             ]
         }
     ],
     "nodes" : [
         {
             "mesh" : 0,
-            "name" : "Cube.014",
+            "name" : "main",
             "rotation" : [
-                0.008004055358469486,
+                0.008004264906048775,
                 0.9919260740280151,
-                -0.08339837193489075,
-                0.09520140290260315
-            ],
-            "scale" : [
-                0.9999998211860657,
-                0.9999999403953552,
-                0.9999999403953552
-            ],
-            "translation" : [
-                0.0,
-                1.3917847871780396,
-                -2.1193084716796875
+                -0.08339831978082657,
+                0.09520173072814941
             ]
+        },
+        {
+            "children" : [
+                0
+            ],
+            "name" : "centro"
         }
     ],
-    "samplers" : [
-        {}
-    ],
-    "scene" : 0,
-    "scenes" : [
+    "materials" : [
         {
-            "name" : "Scene",
-            "nodes" : [
-                0
+            "name" : "main",
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 0,
+                    "texCoord" : 0
+                },
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.961904764175415
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Cube.003",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2
+                    },
+                    "indices" : 3,
+                    "material" : 0
+                }
             ]
         }
     ],
     "textures" : [
         {
-            "sampler" : 0,
             "source" : 0
+        }
+    ],
+    "images" : [
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "GAMUZA MIMOSA.jpg",
+            "uri" : "GAMUZA MIMOSA.jpg"
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 3160,
+            "max" : [
+                2.2607498168945312,
+                1.7375426292419434,
+                1.2892060279846191
+            ],
+            "min" : [
+                -2.2607498168945312,
+                -3.2368597984313965,
+                -5.661792755126953
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 3160,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 3160,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5123,
+            "count" : 16944,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 37920,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 37920,
+            "byteOffset" : 37920
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 25280,
+            "byteOffset" : 75840
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 33888,
+            "byteOffset" : 101120
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 135008,
+            "uri" : "PuertoVallarta.bin"
         }
     ]
 }

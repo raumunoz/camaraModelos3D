@@ -1,138 +1,39 @@
 {
-    "accessors" : [
-        {
-            "bufferView" : 0,
-            "componentType" : 5125,
-            "count" : 568512,
-            "max" : [
-                96342
-            ],
-            "min" : [
-                0
-            ],
-            "type" : "SCALAR"
-        },
-        {
-            "bufferView" : 1,
-            "componentType" : 5126,
-            "count" : 96343,
-            "max" : [
-                3.0070595741271973,
-                1.4631845951080322,
-                3.001905679702759
-            ],
-            "min" : [
-                -2.9929399490356445,
-                -2.0259127616882324,
-                -2.9980947971343994
-            ],
-            "type" : "VEC3"
-        },
-        {
-            "bufferView" : 2,
-            "componentType" : 5126,
-            "count" : 96343,
-            "max" : [
-                1.0,
-                0.999969482421875,
-                0.999969482421875
-            ],
-            "min" : [
-                -1.0,
-                -1.0,
-                -0.999969482421875
-            ],
-            "type" : "VEC3"
-        },
-        {
-            "bufferView" : 3,
-            "componentType" : 5126,
-            "count" : 96343,
-            "max" : [
-                0.9956864714622498,
-                1.0,
-                0.9405885934829712,
-                1.0
-            ],
-            "min" : [
-                -0.9971671104431152,
-                -1.0,
-                -0.9927769303321838,
-                1.0
-            ],
-            "type" : "VEC4"
-        },
-        {
-            "bufferView" : 4,
-            "componentType" : 5126,
-            "count" : 96343,
-            "max" : [
-                1.0,
-                1.0
-            ],
-            "min" : [
-                0.0,
-                0.0
-            ],
-            "type" : "VEC2"
-        }
-    ],
     "asset" : {
-        "generator" : "Khronos Blender glTF 2.0 exporter",
+        "generator" : "Khronos Blender glTF 2.0 I/O",
         "version" : "2.0"
     },
-    "bufferViews" : [
+    "scene" : 0,
+    "scenes" : [
         {
-            "buffer" : 0,
-            "byteLength" : 2274048,
-            "byteOffset" : 0,
-            "target" : 34963
-        },
-        {
-            "buffer" : 0,
-            "byteLength" : 1156116,
-            "byteOffset" : 2274048,
-            "target" : 34962
-        },
-        {
-            "buffer" : 0,
-            "byteLength" : 1156116,
-            "byteOffset" : 3430164,
-            "target" : 34962
-        },
-        {
-            "buffer" : 0,
-            "byteLength" : 1541488,
-            "byteOffset" : 4586280,
-            "target" : 34962
-        },
-        {
-            "buffer" : 0,
-            "byteLength" : 770744,
-            "byteOffset" : 6127768,
-            "target" : 34962
+            "name" : "Scene",
+            "nodes" : [
+                1
+            ]
         }
     ],
-    "buffers" : [
+    "nodes" : [
         {
-            "byteLength" : 6898512,
-            "uri" : "Oaxaca_matrimonial.bin"
-        }
-    ],
-    "images" : [
+            "mesh" : 0,
+            "name" : "main"
+        },
         {
-            "name" : "GAMUZA ROYAL BLUE",
-            "uri" : "GAMUZA ROYAL BLUE.jpg"
+            "children" : [
+                0
+            ],
+            "name" : "centro"
         }
     ],
     "materials" : [
         {
-            "name" : "base",
+            "name" : "main",
             "pbrMetallicRoughness" : {
                 "baseColorTexture" : {
-                    "index" : 0
+                    "index" : 0,
+                    "texCoord" : 0
                 },
-                "metallicFactor" : 0.0
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.9333333373069763
             }
         }
     ],
@@ -142,45 +43,216 @@
             "primitives" : [
                 {
                     "attributes" : {
-                        "NORMAL" : 2,
-                        "POSITION" : 1,
-                        "TANGENT" : 3,
-                        "TEXCOORD_0" : 4
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2
                     },
-                    "indices" : 0,
+                    "indices" : 3,
+                    "material" : 0
+                },
+                {
+                    "attributes" : {
+                        "POSITION" : 4,
+                        "NORMAL" : 5,
+                        "TEXCOORD_0" : 6
+                    },
+                    "indices" : 7,
+                    "material" : 0
+                },
+                {
+                    "attributes" : {
+                        "POSITION" : 8,
+                        "NORMAL" : 9,
+                        "TEXCOORD_0" : 10
+                    },
+                    "indices" : 11,
                     "material" : 0
                 }
             ]
         }
     ],
-    "nodes" : [
-        {
-            "mesh" : 0,
-            "name" : "Cylinder.039",
-            "rotation" : [
-                -8.146033536604591e-08,
-                0.0,
-                -0.0,
-                1.0
-            ]
-        }
-    ],
-    "samplers" : [
-        {}
-    ],
-    "scene" : 0,
-    "scenes" : [
-        {
-            "name" : "Scene",
-            "nodes" : [
-                0
-            ]
-        }
-    ],
     "textures" : [
         {
-            "sampler" : 0,
             "source" : 0
+        }
+    ],
+    "images" : [
+        {
+            "mimeType" : "image/jpeg",
+            "name" : "LONA MARINO GAR.jpg",
+            "uri" : "LONA MARINO GAR.jpg"
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 65535,
+            "max" : [
+                3.0057437419891357,
+                1.4630656242370605,
+                3.0014419555664062
+            ],
+            "min" : [
+                -2.9917354583740234,
+                -2.024881601333618,
+                -2.9976940155029297
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 65535,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 65535,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5123,
+            "count" : 367572,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 30736,
+            "max" : [
+                3.0057437419891357,
+                1.463103175163269,
+                2.995032548904419
+            ],
+            "min" : [
+                -2.9917354583740234,
+                -1.9868284463882446,
+                -2.99678635597229
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 5,
+            "componentType" : 5126,
+            "count" : 30736,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 6,
+            "componentType" : 5126,
+            "count" : 30736,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 7,
+            "componentType" : 5123,
+            "count" : 163644,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 8,
+            "componentType" : 5126,
+            "count" : 12485,
+            "max" : [
+                3.005251407623291,
+                1.463103175163269,
+                2.9972143173217773
+            ],
+            "min" : [
+                -2.9917349815368652,
+                -1.9868285655975342,
+                -2.997366428375244
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 9,
+            "componentType" : 5126,
+            "count" : 12485,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 10,
+            "componentType" : 5126,
+            "count" : 12485,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 11,
+            "componentType" : 5123,
+            "count" : 37296,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 786420,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 786420,
+            "byteOffset" : 786420
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 524280,
+            "byteOffset" : 1572840
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 735144,
+            "byteOffset" : 2097120
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 368832,
+            "byteOffset" : 2832264
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 368832,
+            "byteOffset" : 3201096
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 245888,
+            "byteOffset" : 3569928
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 327288,
+            "byteOffset" : 3815816
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 149820,
+            "byteOffset" : 4143104
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 149820,
+            "byteOffset" : 4292924
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 99880,
+            "byteOffset" : 4442744
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 74592,
+            "byteOffset" : 4542624
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 4617216,
+            "uri" : "Oaxaca_matrimonial.bin"
         }
     ]
 }
