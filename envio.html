@@ -256,55 +256,36 @@
 
 	</div>
 	<div class="row div-nav" style="background-color:#fA675b;">
-		<div class="col-md-5 col-sm-2">&nbsp;</div>
-		<div class="col-md-5 col-sm-7" style="text-align: right; margin-top: 0.3em;margin-bottom: 0.3em;"><span
-				style="font-size:15px; color:#FFF; font-family: 'Montserrat', Arial, sans-serif;">Servicio al cliente
+		<div class="col-md-10 col-8" style="text-align: right; margin-top: 0.3em;margin-bottom: 0.3em;">
+        <span style="font-size:13px; color:#FFF; font-family: 'Montserrat', Arial, sans-serif;">Servicio al cliente
 				Teléfono:
-				477 854 11 12</span></div>
-		<div class="col-md-1 col-sm-1" style="margin-top: 0.3em;margin-bottom: 0.3em; text-align: center;"><a
-				href="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2F1962138827348733&amp;tabs=messages&amp;width=302&amp;height=300&amp;small_header=true&amp;adapt_container_width=true&amp;hide_cover=true&amp;show_facepile=false&amp;appId"
-				target="_blank"><img src="images/messeng.png" style="max-width: 1.8em;"></a>
-		</div>
-		<div class="col-md-1 col-sm-2" style="margin-top: 0.3em;margin-bottom: 0.3em;">
+				477 854 11 12&nbsp;&nbsp;</span>
+                </div>
+                <div class="col-md-2 col-4 " style="text-align: right;">
+                <a href="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2F1962138827348733&amp;tabs=messages&amp;width=302&amp;height=300&amp;small_header=true&amp;adapt_container_width=true&amp;hide_cover=true&amp;show_facepile=false&amp;appId"
+				target="_blank"><img src="images/messeng.png" style="max-width: 1.8em; padding-right:5px"></a>
+               
 			<a href="https://api.whatsapp.com/send?phone=5214778541112" target="_blank">
-				<img src="images/whats.png" style="max-width: 1.8em;">
+				<img src="images/whats.png" style="max-width: 1.8em; padding-right:5px">
 			</a>
-			<img src="images/shopping_cart_white_24dp.png" style="max-width: 1.8em;" onclick="mostrarCarro()">
-		</div>
+        
+			<img src="images/shopping_cart_white_24dp.png" style="max-width: 1.8em; padding-right:5px" onclick="mostrarCarro()"><span id="num-carrito" class="num-carrito"></span>
+           </div>
 	</div>
 	<div class="carrito" id="carrito">
-
-		<div class="row rng-item">
-			<div class="col-1 col-sm-0"></div>
-			<div class="col-2 col-sm-3">
-				<img src="assets/imagenes/brazoContempo.jpeg" alt="brazo" id="imgProducto" class="img-carrito"
-					height="90">
+			<div id="row-productos">
+				Todavía no agregas nada.	
 			</div>
-			<div class="col-5 col-sm-4 rng-desc-carrito">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-				Similique,
-				nesciunt.
-			</div>
-			<div class="col-3 rng-div-precio">
-				<span class="rng-precio">
-					$75
-				</span>
-				<div class="rng-div-cantidad">
-					Cantidad: <span class="rng-cantidad">3</span>
-				</div>
-			</div>
-			<div class="col-1 rng-btn-remover-carrito">
-				<span class="icon">
-					<i class="icon-cross" onclick="removerArticulo(this)" id="rnd()"></i>
-				</span>
-			</div>
-		</div>
+			
 		<div class="row rng-total total-desactivo" id="rng-total">
-			<div class="col-6 rng-total-titulo">Total</div>
-			<div class="col-6">$<span id="total-carrito">10</span></div>
+			<div class="col-xs-6 rng-total-titulo">Total</div>
+			<div class="col-xs-6">$<span id="total-carrito">0</span></div>
 			<!--<div class="col-6"><button class="rng-btn-total btn btn-primary blue" onclick="">continuar</button></div>-->
 			<div id="paypal-button-container"></div>
+			<div id="paypal-button"></div>
 		</div>
 	</div>
+	
 	<div class="fh5co-loader"></div>
 
 	<div id="page">
@@ -315,60 +296,34 @@
 						<div id="fh5co-logo"><a href="index.html"><img src="images/puff_logo.png"
 									style="max-width:100%; height:auto;"></a></div>
 					</div>
-					<div class="col-md-7 col-xs-7 menu-1" style="margin-top:4%;">
+					<div class="col-md-9 col-xs-10 menu-1" style="margin-top:4%;">
 						<ul>
-							<li class="has-dropdown">
-								<a href="about.html" style="font-family: 'Roboto', sans-serif;">SOBRE PUFFINO</a>
-								<!--ul class="dropdown">
-								<li><a href="single.html">Single Shop</a></li>
-							</ul-->
-							</li>
-							<li><a href="catalogo.html">Catálogo</a></li>
-							<li class="has-dropdown">
-								<a href="envio.html">Envío y Devoluciones</a>
-								<!--ul class="dropdown">
-								<li><a href="#">Web Design</a></li>
-								<li><a href="#">eCommerce</a></li>
-								<li><a href="#">Branding</a></li>
-								<li><a href="#">API</a></li>
-							</ul-->
-							</li>
-							<li><a href="contact.html">Contacto</a></li>
+							<li style="margin-right: 1.1em;"><a href="about.html" style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">NOSOTROS</a></li>
+							<li style="margin-right: 1.1em;"><a href="catalogo.html" style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">Catálogo</a></li>
+							<li style="margin-right: 1.1em;"><a href="envio.html" style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">Envío y Devoluciones</a></li>
+							<li style="margin-right: 1.1em;"><a href="contact.html" style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">Contacto</a></li>
 						</ul>
 					</div>
-					<!--<div class="col-md-3 col-xs-4 text-right hidden-xs menu-2" style="margin-top:3%;">
-						<ul>
-							<li class="search">
-								<div class="input-group">
-									<input type="text" placeholder="Buscar..">
-									<span class="input-group-btn">
-										<button class="btn btn-primary" type="button"><i
-												class="icon-search"></i></button>
-									</span>
-								</div>
-							</li>
-							<li class="shopping-cart"><a href="#" class="cart"><span><small>0</small><i
-											class="icon-shopping-cart"></i></span></a></li>
-						</ul>
-					</div>-->
 				</div>
 
 			</div>
 		</nav>
-		<div id="fh5co-product">
-			<div class="container">
+
+		<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" style="height: 10%;">
+			<h1 class="tituloPagina" style="font-size: 2rem; color:#4E56DF; font-family: 'Roboto';"><strong>Envíos y devoluciones</strong></h1>
+		</header>
+
+		<div id="fh5co-product" style="padding-top: 4em;">
+			<div class="container" style="font-family: 'Roboto';">
 
 				<div class="row">
 
 
 					<!-- Tabs -->
-
-
-					<h1 class="tituloPagina">ENVIOS Y DEVOLUCIONES</h1>
 					<div class="fh5co-tab-content tab-content" data-tab-content="2">
 						<div class="col-md-10 col-md-offset-1">
-							<h3 class="colorAqua">POLÍTICAS DE ENVÍO</h3>
-							<ul>
+							<h3 style="color:#2ACA89; font-size: 1.3rem; font-weight: bolder;">POLÍTICAS DE ENVÍO</h3>
+							<ul style="font-size: 1.2rem;">
 
 								<li>Nuestros tiempos de entrega son de 7a 15 días hábiles, por medio de la paquetería
 									Estafeta.</li>
@@ -381,17 +336,16 @@
 								<li>Si tu pedido es mayor a5 Puffinos, el tiempo de entrega puede variar. Si existiera
 									algún contratiempo con tu pedido, el área de Ventas se pondrá en contacto contigo.
 								</li>
-								(Los tiempos de entrega pueden extenderse por motivos de la paquetería).
 							</ul>
-
+							<strong>(Los tiempos de entrega pueden extenderse por motivos de la paquetería).</strong>
 						</div>
 					</div>
 
-
+					<br>
 					<div class="fh5co-tab-content tab-content" data-tab-content="2">
 						<div class="col-md-10 col-md-offset-1">
-							<h3 class="colorAqua">POLÍTICAS DE DEVOLUCIONES</h3>
-							<p> En Puffino estamos orgullosos de que todos nuestros productos son fabricados bajo los
+								<h3 style="color:#2ACA89; font-size: 1.3rem; font-weight: bolder;">POLÍTICAS DE DEVOLUCIONES</h3>
+							<p style="font-size: 1.2rem;"> En Puffino estamos orgullosos de que todos nuestros productos son fabricados bajo los
 								mejores estándares de calidad. En caso de que tu producto sufra un defecto de fábrica,
 								el mismo se reparará o remplazará y el costo de la devolución irá por nuestra cuenta.
 
@@ -402,10 +356,10 @@
 								recibido el producto.
 
 								Cuando se solicite un reembolso será necesario llenar nuestro formato de devolución y
-								enviarlo por correo electrónico a nuestro equipo de ventas.</br>
+								enviarlo por correo electrónico a nuestro equipo de ventas.</br></br>
 
-								¿Cómo se llevan a cabo los reembolsos? </p>
-							<ul>
+								<strong>¿Cómo se llevan a cabo los reembolsos?</strong> </p>
+							<ul style="font-size: 1.2rem;">
 
 
 								<li>Si tu pago fue realizado con tarjeta de débito o crédito, el reembolso se realizará
@@ -420,12 +374,14 @@
 									bancaria para realizar el reembolso.</li>
 								(Los tiempos de entrega pueden extenderse por motivos de la paquetería).
 							</ul>
-							<h3 class="colorAqua"> POLÍTICAS DE CAMBIOS</h3>
-							<li>Aplica cuando el empaque de tu puffino llega en mal estado y por consecuencia se dañó el
-								producto.</li>
-							<li>Es necesario enviar fotografías del empaque para que podamos documentarlo y evaluar el
+
+							<br>
+							<h3 style="color:#2ACA89; font-size: 1.3rem; font-weight: bolder;">POLÍTICAS DE CAMBIOS</h3>
+							<p style="font-size: 1.2rem;">Aplica cuando el empaque de tu puffino llega en mal estado y por consecuencia se dañó el
+								producto.
+							Es necesario enviar fotografías del empaque para que podamos documentarlo y evaluar el
 								daño. (No aplican cambios cuando el daño fue generado por objetos punzantes cortantes.)
-							</li>
+							</p>
 						</div>
 					</div>
 
@@ -463,11 +419,28 @@
 			</div>
 		</div-->
 	</div>
-	<footer id="fh5co-footer" role="contentinfo">
-		<div class="container">
-			<div class="row row-pb-md">
-				<div class="col-md-4 fh5co-widget">
-					<img src="images/puff_logo.png" style="" width="150" height="75">
+	
+	<br>
+	<div class="row copyright" style="font-family: 'Roboto';">
+		<div class="col-md-3 col-sm-2 col-xs-2"></div>
+		<div class="col-md-6 col-sm-8 col-xs-8 text-center">
+				<p
+				style="font-size: 0.9rem;line-height: 1.2em; text-align:center; color:black">
+				*Las fotografías mostradas en este sitio web son reales y propiedad de Puffino. Copyright 2017
+				León,
+				Guanajuato. Derechos reservados ©, prohibida su reproducción o uso total o parcial por
+				cualquier medio.
+			</p>
+		</div>
+		<div class="col-md-3 col-sm-2 col-xs-2"></div>
+	</div>
+
+	<footer id="fh5co-footer" style="font-family: 'Roboto'; padding-top: 3em; padding-bottom: 0em;" role="contentinfo">
+		<center><div class="container">
+
+
+<div class="row">
+  <div class="col-sm-5 col-md-6"><img src="images/puff_logo.png" style="" width="150" height="75">
 					<p>
 						<ul class="fh5co-social-icons">
 							<li><a href="https://www.facebook.com/puffino.mx/"><i style="background: #353a34;"
@@ -481,55 +454,20 @@
 							<li><a href="https://www.pinterest.com/puffinomx/"><i style="background: #353a34;"
 										class="icon-pinterest"></i></a></li>
 						</ul>
-					</p>
-				</div>
-				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
-					<ul class="fh5co-footer-links">
-						<li><a href="#"></a></li>
-						<li><a href="#"></a></li>
-						<li><a href="#"></a></li>
-						<li><a href="#"></a></li>
-						<li><a href="#"></a></li>
-					</ul>
-				</div>
-
-				<div class="col-md-1 col-sm-4 col-xs-6 col-md-push-1">
-					<ul class="fh5co-footer-links">
-						<li><a href="#"></a></li>
-						<li><a href="#"></a></li>
-						<li><a href="#"></a></li>
-						<li><a href="#"></a></li>
-						<li><a href="#"></a></li>
-					</ul>
-				</div>
-
-				<div class="col-md-3 col-sm-4 col-xs-6 col-md-push-1">
-					<ul class="fh5co-footer-links contacto-links">
+					</p></div>
+  <div class="col-sm-6 col-md-6"><ul class="fh5co-footer-links contacto-links text-center">
 						<h3 style="color:#FFF;">CONTÁCTANOS</h3>
 						<li>477 854 11 12 </li>
 						<li>ventas@oldravenfurniture.com </li>
 						<li>León, Gto. </li>
 
-					</ul>
-				</div>
-			</div>
+					</ul></div>
+</div>
 
-			<div class="row copyright">
-				<div class="col-md-12 text-center">
 
-					<p>
-
-					</p>
-				</div>
-			</div>
-		</div>
-		<p
-			style="font-family: 'Montserrat', Arial, sans-serif;font-size: 1em;line-height: 2em;padding-left: 20%;padding-right: 20%;">
-			Las fotografías mostradas en este sitio web son reales y propiedad de Puffino. Copyright 2017
-			León,
-			Guanajuato. Derechos reservados ©, prohibida su reproducción o uso total o parcial por
-			cualquier medio.
-		</p>
+			
+		</div></center>
+		
 	</footer>
 	</div>
 

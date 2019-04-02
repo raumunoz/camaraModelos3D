@@ -98,14 +98,14 @@ function actualizarDivCarrito() {
             if (typeof x !== "undefined") {
                 carritoTotal = carritoTotal + `
                 <div class="row rng-item">
-                        <div class="col-xs-1 col-sm-0"></div>
-                        <div class="col-xs-2 col-sm-3">
+                        <div class="col-xs-1 col-1 col-sm-0"></div>
+                        <div class="col-xs-2 col-2 col-sm-3 div-imgaen-carrito" >
                             <img src="`+ x.image + `" alt="brazo" id="imgProducto" class="img-carrito"
                                 height="90">
                         </div>
-                        <div class="col-xs-5 col-sm-4 rng-desc-carrito">`+ x.name + `
+                        <div class="col-xs-5 col-5 col-sm-4 rng-desc-carrito ">`+ x.name + `
                         </div>
-                        <div class="col-xs-3 rng-div-precio">
+                        <div class="col-xs-3 col-3 rng-div-precio">
                             <span class="rng-precio">
                                 $`+ x.price + `
                             </span>
@@ -113,7 +113,7 @@ function actualizarDivCarrito() {
                                 Cantidad: <span class="rng-cantidad">`+ x.quantity + `</span>
                             </div>
                         </div>
-                        <div class="col-xs-1 rng-btn-remover-carrito">
+                        <div class="col-xs-1 col-1 rng-btn-remover-carrito">
                             <span class="icon">
                                 <i class="icon-cross" onclick="removerArticulo(this,'`+ x.name + `')" id="rnd()"></i>
                             </span>

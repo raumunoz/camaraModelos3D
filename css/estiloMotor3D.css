@@ -772,16 +772,35 @@ div .materiales {
 		top: 9.5%;
 	}
 	.carrito-activo {
-		width: 68%;
+		width: 81%;
 		visibility: visible;
 		transition: all .3s;
-		transform: translateX(33%);
+		transform: translateX(4%);
 		height: 15em;
-
 	}
 	#row-productos {
-		height: 0;
+		height: 9em;
 		overflow: auto;
+	}
+	.img-carrito{
+		height: auto;
+		width: 100%;
+	}
+	.rng-desc-carrito {
+		padding: 0;
+	}
+	.rng-div-precio{
+		padding-top: 0;
+		padding-left: 0;
+	}
+	.rng-precio{
+		padding: 0;
+	}
+	.rng-div-cantidad{
+
+	}
+	.rng-btn-remover-carrito{
+
 	}
 	/*
 document.getElementById('grid-container').style.gridTemplateAreas=

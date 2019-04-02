@@ -824,6 +824,7 @@ function createButon3D(mesh, opc) {
 
 function cargarModelo(padre, modelo, posicion, prearmado, rotacion) {
     //para quitar el padre pero dejar las tran
+
     customMesh = false;
     //alert("ENTRO");
     var derecha;
@@ -916,7 +917,7 @@ function cargarModelo(padre, modelo, posicion, prearmado, rotacion) {
             }
 
             padreActual.parent = padre;
-            
+
             //console.log("TRUE");
         } else {
 
@@ -966,7 +967,7 @@ function cargarModelo(padre, modelo, posicion, prearmado, rotacion) {
         //actualizarDimensiones(modelo);
         //padreActual.setParent(null);
         newMeshes.addAllToScene();
-       // container.addAllToScene();
+        // container.addAllToScene();
         if (typeof prearmado !== 'undefined') {
             aplicar();
         } else {
@@ -977,7 +978,7 @@ function cargarModelo(padre, modelo, posicion, prearmado, rotacion) {
         //padreActual.setParent(null);
     }, onProgress = (x) => {
         //console.log("progress")
-        console.log("progreso",x);
+        console.log("progreso", x);
         engine.displayLoadingUI();
     });
     //padreActual.setParent(padreCentro);
@@ -985,50 +986,71 @@ function cargarModelo(padre, modelo, posicion, prearmado, rotacion) {
 }
 
 function cargarModeloCustom(modelo, posicion) {
-    customMesh = true;
-    escena.removeMesh(padreCentro, true);
-    precioTotal = 0;
-    precioTotal = modelo.precio;
-    spanPrecio.innerText = "$" + precioTotal;
-    showLoadingScreen();
-    // BABYLON.SceneLoader.LoadAssetContainer("assets/modelos/", modelo.nombre, escena, function (newMeshes) {
-    BABYLON.SceneLoader.ImportMesh("", "assets/modelos/", modelo.nombre, escena, function (newMeshes, particleSystems) {
-        //console.log(newMeshes);
-        //console.log(padre);
-        //ModeloCustom=newMeshes;
-        debugg = newMeshes[0].getChildren()[0];
-        // newMeshes[0].setParent(padreCentro);
-        newMeshes.forEach(mesh => {
-            //hl.addMesh(mesh, BABYLON.Color3.Green());
-           // container.meshes.push(mesh);
-            meshClickleable(mesh);
-            mesh.parent = padreCentro;
-            //mesh.setParent(padreCentro);
-            /*if (mesh.name == "main") {
-                // mainCustomMesh=mesh;
-                debugg.addBehavior(pointerDragBehavior);
-            }*/
+    if (escena.isReady()) {
 
+
+        customMesh = true;
+        escena.removeMesh(padreCentro, true);
+        precioTotal = 0;
+        precioTotal = modelo.precio;
+        spanPrecio.innerText = "$" + precioTotal;
+        showLoadingScreen();
+        // BABYLON.SceneLoader.LoadAssetContainer("assets/modelos/", modelo.nombre, escena, function (newMeshes) {
+        BABYLON.SceneLoader.ImportMesh("", "assets/modelos/", modelo.nombre, escena, function (newMeshes, particleSystems) {
+            //console.log(newMeshes);
+            //console.log(padre);
+            //ModeloCustom=newMeshes;
+            debugg = newMeshes[0].getChildren()[0];
+
+            // newMeshes[0].setParent(padreCentro);
+            newMeshes.forEach(mesh => {
+                //hl.addMesh(mesh, BABYLON.Color3.Green());
+                // container.meshes.push(mesh);
+                meshClickleable(mesh);
+                mesh.parent = padreCentro;
+                //mesh.setParent(padreCentro);
+                /*if (mesh.name == "main") {
+                    // mainCustomMesh=mesh;
+                    debugg.addBehavior(pointerDragBehavior);
+                }*/
+
+            });
+            mainCustomMesh = newMeshes[0];
+            
+            console.log("tamanio", newMeshes.length());
+            //newMeshes.forEach(x=>x.setParent(padreCentro));
+            if (typeof posicion === 'undefined') {
+
+            } else {
+                newMeshes[1].position = posicion;
+            }
+            //newMeshes.meshes[0].getChildren()[0].setParent(padreCentro);
+            //engine.displayLoadingUI();
+            //hideLoadingScreen();
+            console.log("termino");
+            hideLoadingScreen();
+            camera.zoomOn();
+            camera.maxZ=1000;
+            camera.target=padreCentro.position;
+        }, onProgress = (x) => {
+            console.log("importados",x)
+            
+            //padreActual.setParent(null);
+        },onError = (x) => {
+            hideLoadingScreen();
+            camera.zoomOn();
+            camera.maxZ=1000;
+            camera.target=padreCentro.position;
+            console.log("errores",x);
+            //padreActual.setParent(null);
         });
-        mainCustomMesh = newMeshes[0];
-        //newMeshes.forEach(x=>x.setParent(padreCentro));
-        if (typeof posicion === 'undefined') {
+        /*camera.zoomOn();
+        camera.maxZ=1000;
+        camera.target=padreCentro.position;*/
 
-        } else {
-            newMeshes[1].position = posicion;
-        }
-        //newMeshes.meshes[0].getChildren()[0].setParent(padreCentro);
-        //engine.displayLoadingUI();
-        //hideLoadingScreen();
-        
-    },onSuccess = () => {
-        engine.hideLoadingUI();
-        hideLoadingScreen();
-        //padreActual.setParent(null);
-    });
-    /*camera.zoomOn();
-    camera.maxZ=1000;
-    camera.target=padreCentro.position;*/
+    }else{
+        console.log("espera a que carge este elemento");
+    }
 
 }
 
@@ -1352,7 +1374,7 @@ function meshClickleable(mesh) {
         //aplicar();
         mesh.parent.addBehavior(pointerDragBehavior);
         //mesh.addBehavior(pointerDragBehavior);
-        if (muebleSelecionado === false&& customMesh===false) {
+        if (muebleSelecionado === false && customMesh === false) {
             esconderMesh(btnDerecho, false);
             esconderMesh(btnIzquierdo, false);
             esconderMesh(btnFrente, false);
