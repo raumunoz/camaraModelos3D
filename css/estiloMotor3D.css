@@ -123,6 +123,7 @@ font-weight: bold;
 	padding: 0;
 	padding-left: 25%;
 	font-size: 2em;
+	border-top: solid gray 1px;
 }
 
 .rng-total-titulo {
@@ -781,7 +782,20 @@ div .materiales {
 	width: 178%;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1112px) {
+	.icon-cross{
+		padding: 33%;
+	}
+	.rng-item{
+		padding: 0;
+		margin: 0;
+		width: 100%;
+	}
+	.div-imgaen-carrito {
+		padding: 0;
+		margin: 0;
+	
+	}
 	.logo-puffino {
 		height: 3em;
 		
@@ -794,7 +808,58 @@ div .materiales {
 		visibility: visible;
 		transition: all .3s;
 		transform: translateX(4%);
-		height: 15em;
+		height: 18em;
+		
+	}
+	#row-productos {
+		height: 9em;
+		overflow: auto;
+		
+	}
+	.img-carrito{
+		width: auto;
+		position: relative;
+		top: -15%;
+		left: 30%;
+	}
+	.rng-desc-carrito {
+		padding-top: 4%;
+	}
+	.rng-div-precio{
+		margin: 0;
+		padding-top: 4%;
+	}
+	.rng-precio{
+		padding: 0;
+	}
+	.rng-div-cantidad{
+
+	}
+	.rng-btn-remover-carrito{
+			
+			padding-top: 3%;
+			padding-left: 0px;
+	}
+}
+@media only screen and (max-width: 600px) {
+	.rng-item{
+		padding-top: 7%;
+		width: 100%;
+	}
+	.logo-puffino {
+		height: 3em;
+		
+	}
+	.carrito {
+		top: 9.5%;
+	}
+	.carrito-activo {
+		width: 81%;
+		visibility: visible;
+		transition: all .3s;
+		transform: translateX(4%);
+		height: 18em;
+		
 	}
 	#row-productos {
 		height: 9em;
@@ -805,11 +870,12 @@ div .materiales {
 		width: 100%;
 	}
 	.rng-desc-carrito {
-		padding: 0;
+		padding-top: 4%;
 	}
 	.rng-div-precio{
-		padding-top: 0;
-		padding-left: 0;
+		margin: 0;
+
+padding: 0;
 	}
 	.rng-precio{
 		padding: 0;
@@ -818,7 +884,9 @@ div .materiales {
 
 	}
 	.rng-btn-remover-carrito{
-
+			
+			padding-top: 3%;
+			padding-left: 0px;
 	}
 	/*
 document.getElementById('grid-container').style.gridTemplateAreas=
