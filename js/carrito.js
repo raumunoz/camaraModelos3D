@@ -92,7 +92,7 @@ function actualizarDivCarrito() {
         </div>
         `;
     var carritoTotal = "";
-    if (itemsCarrito.length > 0) {
+    if (itemsCarrito.length >= 0) {
 
         itemsCarrito.forEach((x) => {
             if (typeof x !== "undefined") {
@@ -142,7 +142,7 @@ function actualizarDivCarrito() {
         document.getElementById("paypal-button-container").innerHTML = "";
         document.getElementById("num-carrito").innerText = "";
         document.getElementById("row-productos").style.height = "2em";
-        document.getElementById("row-productos").innerText = "";
+        document.getElementById("row-productos").innerText = "No has agregado nada al carrito";
     }
 }
 function actualizarBotonPaypal(total) {

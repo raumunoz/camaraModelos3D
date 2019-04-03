@@ -33,7 +33,7 @@ let perfLi1;
 let perfLi2;
 let padreBorrar;
 let hijosBorrar;
-var container;
+//var container;
 var padreCentro;
 let camaraActiva;
 let precioTotal = 0;
@@ -41,7 +41,7 @@ let ultimoPrecio = 0;
 let spanPrecio;
 let divLista;
 let listaDeMuebles = [];
-var assetContainers = [];
+
 let anchoTotal;
 let largoTotal;
 let altoTotal;
@@ -49,6 +49,7 @@ let archivosTexturas;
 let evCache = new Array();
 let prevDiff = -1;
 let customMesh = true;
+
 //let sliders = [];
 //let gizmoLayer;
 //let utilLayer;
@@ -279,7 +280,7 @@ window.addEventListener('DOMContentLoaded', function () {
     engine = new BABYLON.Engine(canvas, true, { stencil: true });
     // animation : progress indicator
     // createScene function that creates and return the scene
-    var createScene = function () {
+    createScene = function () {
         // create a FreeCamera, and set its position to (x:0, y:5, z:-10)
         //GUI
         //Does not work
@@ -312,13 +313,13 @@ window.addEventListener('DOMContentLoaded', function () {
             } else {
                 
             }*/
-            console.log("DOWN,mesh", meshClicleado);
-            console.log("DOWN,boton", buttonClicleado);
+            // console.log("DOWN,mesh", meshClicleado);
+            //console.log("DOWN,boton", buttonClicleado);
 
         });
         //Works
         canvas.addEventListener("mouseup", function () {
-            console.log("Mouse UP!");
+            //console.log("Mouse UP!");
             clicked = false;
             //document.body.style.overflow="hidden";            
             if (hasTouchscreen) {
@@ -346,73 +347,74 @@ window.addEventListener('DOMContentLoaded', function () {
             meshClicleado = false;
             // The pointerdown event signals the start of a touch interaction.
             // This event is cached to support 2-finger gestures
-            evCache.push(evt);
+            //evCache.push(evt);
             //log("pointerDown", ev);
-            if (bandera) {
-                currentPosition.x = evt.clientX;
-                currentPosition.y = evt.clientY;
-                currentRotation.x = padreCentro.rotation.x;
-                currentRotation.y = padreCentro.rotation.y;
-            }
+            /*if (bandera) {
+               // currentPosition.x = evt.clientX;
+                //currentPosition.y = evt.clientY;
+                //currentRotation.x = padreCentro.rotation.x;
+                //currentRotation.y = padreCentro.rotation.y;
+            }*/
             clicked = true;
         });
-
-        canvas.addEventListener("pointermove", function (evt) {
-            // Find this event in the cache and update its record with this event
-
-            for (var i = 0; i < evCache.length; i++) {
-                if (evt.pointerId == evCache[i].pointerId) {
-                    evCache[i] = evt;
-                    break;
-                }
-            }
-            // If two pointers are down, check for pinch gestures
-            if (evCache.length == 2) {
-                bandera = false;
-                clicked = false;
-                // Calculate the distance between the two pointers
-                var curDiff = Math.abs(evCache[0].clientX - evCache[1].clientX);
-
-                if (prevDiff > 0) {
-                    if (curDiff > prevDiff) {
-                        // The distance between the two pointers has increased
-                        //log("Pinch moving OUT -> Zoom in", ev);
-                        //ev.target.style.background = "pink";
-                        console.log("zoom", (camera.position.z - (curDiff / 40) * -1));
-
-                        if ((camera.position.z) > -130) {
-                            camera.position.z = (camera.position.z - (curDiff / 40) * -1);
-                        } else {
-                            camera.position.z = -130;
+        /*
+                canvas.addEventListener("pointermove", function (evt) {
+                    // Find this event in the cache and update its record with this event
+        
+                    for (var i = 0; i < evCache.length; i++) {
+                        if (evt.pointerId == evCache[i].pointerId) {
+                            evCache[i] = evt;
+                            break;
                         }
                     }
-                    if (curDiff < prevDiff) {
-                        // The distance between the two pointers has decreased
-                        //log("Pinch moving IN -> Zoom out", ev);
-                        //ev.target.style.background = "lightblue";
-                        console.log("zoom", (camera.position.z + (curDiff / 40) * -1));
-                        if ((camera.position.z) < -10) {
-                            camera.position.z = (camera.position.z + (curDiff / 40) * -1);
-
-                        } else {
-                            camera.position.z = -20;
+                    // If two pointers are down, check for pinch gestures
+                    if (evCache.length == 2) {
+                        bandera = false;
+                        clicked = false;
+                        // Calculate the distance between the two pointers
+                        var curDiff = Math.abs(evCache[0].clientX - evCache[1].clientX);
+        
+                        if (prevDiff > 0) {
+                            if (curDiff > prevDiff) {
+                                // The distance between the two pointers has increased
+                                //log("Pinch moving OUT -> Zoom in", ev);
+                                //ev.target.style.background = "pink";
+                                console.log("zoom", (camera.position.z - (curDiff / 40) * -1));
+        
+                                if ((camera.position.z) > -130) {
+                                    //camera.position.z = (camera.position.z - (curDiff / 40) * -1);
+                                } else {
+                                    //camera.position.z = -130;
+                                }
+                            }
+                            if (curDiff < prevDiff) {
+                                // The distance between the two pointers has decreased
+                                //log("Pinch moving IN -> Zoom out", ev);
+                                //ev.target.style.background = "lightblue";
+                                console.log("zoom", (camera.position.z + (curDiff / 40) * -1));
+                                if ((camera.position.z) < -10) {
+                                    //camera.position.z = (camera.position.z + (curDiff / 40) * -1);
+        
+                                } else {
+                                    //camera.position.z = -20;
+                                }
+                            }
                         }
+        
+                        // Cache the distance for the next move event 
+                        prevDiff = curDiff;
                     }
-                }
+                    if (!clicked) {
+                        return;
+                    }
+                    //padreCentro.rotation.x
+                    /*if (bandera && clicked) {
+                        padreCentro.rotation.y = currentRotation.y - (evt.clientX - currentPosition.x) / 350;
+                        padreCentro.rotation.x = currentRotation.x + (evt.clientY - currentPosition.y) / 350;
+                    }*/
+        //console.log("ROTATION X ",padreCentro.rotation.x,"ROTATION Y ",padreCentro.rotation.y);
+        // });
 
-                // Cache the distance for the next move event 
-                prevDiff = curDiff;
-            }
-            if (!clicked) {
-                return;
-            }
-            //padreCentro.rotation.x
-            if (bandera && clicked) {
-                padreCentro.rotation.y = currentRotation.y - (evt.clientX - currentPosition.x) / 350;
-                padreCentro.rotation.x = currentRotation.x + (evt.clientY - currentPosition.y) / 350;
-            }
-            //console.log("ROTATION X ",padreCentro.rotation.x,"ROTATION Y ",padreCentro.rotation.y);
-        });
         canvas.onpointerup = pointerup_handler;
         canvas.onpointercancel = pointerup_handler;
         canvas.onpointerout = pointerup_handler;
@@ -462,7 +464,20 @@ window.addEventListener('DOMContentLoaded', function () {
         */
         //var camera = new BABYLON.UniversalCamera("UniversalCamera", new BABYLON.Vector3(0, 0, -10), scene);
         //camera = new BABYLON.UniversalCamera("camera1", new BABYLON.Vector3(0, 0, -30), scene);
-        camera = new BABYLON.FreeCamera("camera1", new BABYLON.Vector3(0, 0, -30), scene);
+        //camera = new BABYLON.FreeCamera("camera1", new BABYLON.Vector3(0, 0, -30), scene);
+        // Creates, angles, distances and targets the camera
+        camera = new BABYLON.ArcRotateCamera("Camera", 0, 0, 40, new BABYLON.Vector3(0, 0, 0), scene);
+        camera.useBouncingBehavior = false;
+        camera.useFramingBehavior = false;
+        camera.useAutoRotationBehavior = true;
+        camera.inputs.attached.mousewheel.wheelPrecision = 80;
+        // This positions the camera
+        camera.setPosition(new BABYLON.Vector3(0, 0, -10));
+
+        // This attaches the camera to the canvas
+        camera.attachControl(canvas, false);
+        
+        
         //camera.attachControl(canvas);
         // camera = new BABYLON.FreeCamera("camera1", new BABYLON.Vector3(0, 0, -30), scene);
         pointerDragBehavior = new BABYLON.PointerDragBehavior({ dragPlaneNormal: new BABYLON.Vector3(0, 0, 1) });
@@ -564,13 +579,13 @@ window.addEventListener('DOMContentLoaded', function () {
 
 
     escena = createScene();
-
+camera.inputs.attached.mousewheel.detachControl(canvas);
     hl = new BABYLON.HighlightLayer("hl1", escena);
     hl.innerGlow = false;
     background = new BABYLON.Layer("back", "assets/imagenes/fondos/sala3.jpg", escena);
     background.isBackground = true;
     background.texture.level = 0;
-    container = new BABYLON.AssetContainer(escena);
+    //container = new BABYLON.AssetContainer(escena);
 
 
     manager = new BABYLON.GUI.GUI3DManager(escena);
@@ -811,6 +826,7 @@ function createButon3D(mesh, opc) {
 
 function cargarModelo(padre, modelo, posicion, prearmado, rotacion) {
     //para quitar el padre pero dejar las tran
+    
     customMesh = false;
     //alert("ENTRO");
     var derecha;
@@ -851,7 +867,7 @@ function cargarModelo(padre, modelo, posicion, prearmado, rotacion) {
         //aumentarPrecioTotal(modeloActual(texturaActual, moduloActual, false));
         padres.push(padreActual);
         precioTotal = 0;
-        padres.forEach((x) => precioTotal += x.precio)
+        padres.forEach((x) => precioTotal += x.precio);
         spanPrecio.innerText = "$" + precioTotal;
         //actualizarTablaMuebles();
         //divLista.innerText = getListaMuebles(padres);
@@ -889,7 +905,7 @@ function cargarModelo(padre, modelo, posicion, prearmado, rotacion) {
 
             newMeshes.meshes.forEach(mesh => {
                 hl.addMesh(mesh, BABYLON.Color3.Green());
-                container.meshes.push(mesh);
+                //container.meshes.push(mesh);
                 meshClickleable(mesh);
 
             });
@@ -903,13 +919,13 @@ function cargarModelo(padre, modelo, posicion, prearmado, rotacion) {
             }
 
             padreActual.parent = padre;
-            aplicar();
+
             //console.log("TRUE");
         } else {
 
             newMeshes.meshes.forEach(mesh => {
                 hl.addMesh(mesh, BABYLON.Color3.Green());
-                container.meshes.push(mesh);
+                //container.meshes.push(mesh);
                 meshClickleable(mesh);
             });
             padreActual.parent = padre;
@@ -917,7 +933,7 @@ function cargarModelo(padre, modelo, posicion, prearmado, rotacion) {
         activarBotonesAplicar(true);
         esconderTodosBotones(false);
         //resaltarMueble(padreActual, true);
-        container.meshes.push(padreActual);
+        // container.meshes.push(padreActual);
         //newMeshes.meshes[0].parent = padre;
         //se asigna un padre a el padre acutual
         //var dummy = new BABYLON.Mesh("dummy", scene)
@@ -952,8 +968,8 @@ function cargarModelo(padre, modelo, posicion, prearmado, rotacion) {
         //createHoloButton(padreActual);
         //actualizarDimensiones(modelo);
         //padreActual.setParent(null);
-
-        container.addAllToScene();
+        newMeshes.addAllToScene();
+        // container.addAllToScene();
         if (typeof prearmado !== 'undefined') {
             aplicar();
         } else {
@@ -962,53 +978,82 @@ function cargarModelo(padre, modelo, posicion, prearmado, rotacion) {
         engine.hideLoadingUI();
         hideLoadingScreen();
         //padreActual.setParent(null);
-    }, onProgress = () => {
+    }, onProgress = (x) => {
         //console.log("progress")
+        console.log("progreso", x);
         engine.displayLoadingUI();
     });
     //padreActual.setParent(padreCentro);
+
 }
 
 function cargarModeloCustom(modelo, posicion) {
-    customMesh = true;
-    escena.meshes.forEach((x) => { x.dispose() });
-    container.meshes.forEach((x) => { x.dispose() });
-    precioTotal = 0;
-    precioTotal = modelo.precio;
-    spanPrecio.innerText = "$" + precioTotal;
-    showLoadingScreen();
-    // BABYLON.SceneLoader.LoadAssetContainer("assets/modelos/", modelo.nombre, escena, function (newMeshes) {
-    BABYLON.SceneLoader.ImportMesh("", "assets/modelos/", modelo.nombre, escena, function (newMeshes, particleSystems) {
-        //console.log(newMeshes);
-        //console.log(padre);
-        //ModeloCustom=newMeshes;
-        debugg = newMeshes[0].getChildren()[0];
-        // newMeshes[0].setParent(padreCentro);
-        newMeshes.forEach(mesh => {
-            //hl.addMesh(mesh, BABYLON.Color3.Green());
-            container.meshes.push(mesh);
-            meshClickleable(mesh);
-            mesh.parent = padreCentro;
-            //mesh.setParent(padreCentro);
-            if (mesh.name == "main") {
-                // mainCustomMesh=mesh;
-                debugg.addBehavior(pointerDragBehavior);
+    if (escena.isReady()) {
+        esconderTodosBotones(true);
+
+        customMesh = true;
+        escena.removeMesh(padreCentro, true);
+        precioTotal = 0;
+        precioTotal = modelo.precio;
+        spanPrecio.innerText = "$" + precioTotal;
+        showLoadingScreen();
+        // BABYLON.SceneLoader.LoadAssetContainer("assets/modelos/", modelo.nombre, escena, function (newMeshes) {
+        BABYLON.SceneLoader.ImportMesh("", "assets/modelos/", modelo.nombre, escena, function (newMeshes, particleSystems) {
+            //console.log(newMeshes);
+            //console.log(padre);
+            //ModeloCustom=newMeshes;
+            debugg = newMeshes[0].getChildren()[0];
+
+            // newMeshes[0].setParent(padreCentro);
+            newMeshes.forEach(mesh => {
+                //hl.addMesh(mesh, BABYLON.Color3.Green());
+                // container.meshes.push(mesh);
+                meshClickleable(mesh);
+                mesh.parent = padreCentro;
+                //mesh.setParent(padreCentro);
+                /*if (mesh.name == "main") {
+                    // mainCustomMesh=mesh;
+                    debugg.addBehavior(pointerDragBehavior);
+                }*/
+
+            });
+            mainCustomMesh = newMeshes[0];
+            
+            console.log("tamanio", newMeshes.length());
+            //newMeshes.forEach(x=>x.setParent(padreCentro));
+            if (typeof posicion === 'undefined') {
+
+            } else {
+                newMeshes[1].position = posicion;
             }
-
+            //newMeshes.meshes[0].getChildren()[0].setParent(padreCentro);
+            //engine.displayLoadingUI();
+            //hideLoadingScreen();
+            console.log("termino");
+            hideLoadingScreen();
+            camera.zoomOn();
+            camera.maxZ=1000;
+            camera.target=padreCentro.position;
+        }, onProgress = (x) => {
+            console.log("importados",x)
+            
+            //padreActual.setParent(null);
+        },onError = (x) => {
+            hideLoadingScreen();
+            camera.zoomOn();
+            camera.maxZ=1000;
+            camera.target=padreCentro.position;
+            console.log("errores",x);
+            //padreActual.setParent(null);
         });
-        mainCustomMesh = newMeshes[0];
-        //newMeshes.forEach(x=>x.setParent(padreCentro));
-        if (typeof posicion === 'undefined') {
+        /*camera.zoomOn();
+        camera.maxZ=1000;
+        camera.target=padreCentro.position;*/
 
-        } else {
-            newMeshes[1].position = posicion;
-        }
-        //newMeshes.meshes[0].getChildren()[0].setParent(padreCentro);
-        //engine.displayLoadingUI();
-        //hideLoadingScreen();
-        hideLoadingScreen();
-    });
-    BABYLON.SceneLoader.ImportMesh
+    }else{
+        console.log("espera a que carge este elemento");
+    }
+
 }
 
 function cambioTextura(opc) {
@@ -1023,10 +1068,9 @@ function cambioTextura(opc) {
 function cambioModulo(opc, limpiar) {
     if ((typeof limpiar === 'undefined') != true) {
         escena.meshes.forEach((x) => { x.dispose() });
-        container.meshes.forEach((x) => { x.dispose() });
+        //container.meshes.forEach((x) => { x.dispose() });
     }
     moduloActual = modulos[opc];
-    console.log()
     actualizarMueble();
     agregarBorder(opc, false);
     //alert(modeloActual(texturaActual,moduloActual));
@@ -1196,20 +1240,6 @@ function aplicar() {
 function removerModelo(padre) {
     if (padres.length >= 1) {
         hijosBorrar = padre.getChildren();
-        container.meshes = container.meshes.filter((x) => {
-            return hijosBorrar.indexOf(x) < 0;
-        });
-        hijosBorrar.forEach(hijo => {
-            hijo.dispose();
-        });
-        /*padres.forEach((padreI)=>{
-            console.log("padreS nombre",padreI.name+" padreLocal",padre.name);
-            if(padreI.name===padre.name){
-                alert("SE cumple");
-                
-            }
-        });*/
-
         actualizarAlBorrar();
         padres.splice(padres.indexOf(padreActual), 1);
         padre.dispose();
@@ -1339,24 +1369,14 @@ function meshClickleable(mesh) {
         console.log("%c ActionManager: up  mesh: " + mesh.name, 'background: orange; color: white');
         //activarRotacion();
         bandera = true;
-        pointerDragBehavior.moveAttached = false;
-    }));
-    mesh.actionManager.registerAction(new BABYLON.ExecuteCodeAction(BABYLON.ActionManager.OnPickDownTrigger, function () {
-        //activarRotacion();
-    }));
-    /*
-    mesh.actionManager.registerAction(new BABYLON.ExecuteCodeAction(BABYLON.ActionManager.OnPickDownTrigger, function () {
-        activarRotacion();
-    }));*/
-    mesh.actionManager.registerAction(new BABYLON.ExecuteCodeAction(BABYLON.ActionManager.OnLongPressTrigger, (function (mesh) {
-        console.log("%c ActionManager: long press : " + mesh.name, 'background: green; color: white');
+
         meshClicleado = true;
         bandera = false;
-        pointerDragBehavior.moveAttached = true;
+
         //aplicar();
         mesh.parent.addBehavior(pointerDragBehavior);
         //mesh.addBehavior(pointerDragBehavior);
-        if (muebleSelecionado === false) {
+        if (muebleSelecionado === false && customMesh === false) {
             esconderMesh(btnDerecho, false);
             esconderMesh(btnIzquierdo, false);
             esconderMesh(btnFrente, false);
@@ -1364,6 +1384,20 @@ function meshClickleable(mesh) {
             padreActual = mesh.parent;
             activarBotonesAplicar(true);
         }
+    }));
+    mesh.actionManager.registerAction(new BABYLON.ExecuteCodeAction(BABYLON.ActionManager.OnPickDownTrigger, function () {
+        //activarRotacion();
+        if (muebleSelecionado) {
+            aplicar();
+        }
+    }));
+    /*
+    mesh.actionManager.registerAction(new BABYLON.ExecuteCodeAction(BABYLON.ActionManager.OnPickDownTrigger, function () {
+        activarRotacion();
+    }));*/
+    mesh.actionManager.registerAction(new BABYLON.ExecuteCodeAction(BABYLON.ActionManager.OnLongPressTrigger, (function (mesh) {
+        console.log("%c ActionManager: long press : " + mesh.name, 'background: green; color: white');
+
     }).bind(this, mesh)));
 }
 /*Esta funcion se activa cuando se cambia de textura o de modulo */
@@ -1433,7 +1467,15 @@ function actualizarMueble() {
 
 }
 function rotarSelecionado() {
-    padreActual.rotation.y = (Math.PI / 2) + padreActual.rotation.y;
+    if(customMesh){
+        padreCentro.rotation.y = (Math.PI / 2) + padreCentro.rotation.y;    
+    }else{
+        if(meshClicleado){
+            padreActual.rotation.y = (Math.PI / 2) + padreActual.rotation.y;
+        }
+    }
+    
+    
 }
 function esconderTodosBotones(bool) {
     if (bool) {
@@ -1928,8 +1970,8 @@ function prearmado(v, matriz) {
 
     //escena.meshes.forEach((x) => { x.dispose() });
     //container.meshes.forEach((x) => { x.dispose() });
-    escena.meshes = [];
-    container.meshes = [];
+    // escena.meshes = [];
+    //container.meshes = [];
     for (var i = 0; i < matriz.length; i++) {
         //console.log(matriz[i]);
         for (var j = 0; j < matriz.length; j++) {
@@ -2121,9 +2163,12 @@ function opcPrearmado(i) {
         [{ cor: 1, tipo: "taburete" }, { cor: 1, tipo: "taburete" }, { cor: 1, tipo: "taburete" }]
     ]
     */
+   esconderTodosBotones(true) ;
     precioTotal = 0;
     /*container.meshes=[];
     escena.meshes=[];*/
+    escena.removeMesh(padreCentro, true);
+    document.getElementById("btn-agregar-3d-a-carrito").style.visibility = "visible";
     switch (i) {
         case 0:
             prearmado(0, [
@@ -2370,12 +2415,23 @@ function handleFiles() {
 */
 
 function zoomear(zoom) {
+
     if (zoom == "in") {
-        camera.position.z = camera.position.z + 1;
+        //camera.position.z = camera.position.z + 1;
+        if (camera.radius < 17) {
+
+        } else {
+            camera.radius--;
+        }
 
     }
     if (zoom == "out") {
-        camera.position.z = camera.position.z - 1;
+        //camera.position.z = camera.position.z - 1;
+        if (camera.radius > 50) {
+
+        } else {
+            camera.radius++;
+        }
     }
 }
 function cambiarGrid(opc) {
@@ -2408,20 +2464,38 @@ function cambiarGrid(opc) {
             break;
     }
 }
+
 function cambiarVistaMotor(opc) {
     switch (opc) {
         case 0:
+            document.getElementById("descripcionMaterial").style.visibility = "visible";
+            document.getElementById("iconosPrearmado").style.visibility = "visible";
+            document.getElementById("iconosPrearmado").style.visibility = "visible";
+            document.getElementById("grid-texturas").style.visibility = "visible";
+            document.getElementById("iconosTexturas").style.visibility = "visible";
+            document.getElementById("btn-agregar-3d-a-carrito").style.visibility = "hidden";
+            break;
+        case 1:
+            document.getElementById("descripcionMaterial").style.visibility = "visible";
+            document.getElementById("iconosPrearmado").style.visibility = "hidden";
+            document.getElementById("grid-texturas").style.visibility = "visible";
+            document.getElementById("btn-agregar-3d-a-carrito").style.visibility = "hidden";
+            break;
+        case 2:
+            document.getElementById("descripcionMaterial").style.visibility = "hidden";
             document.getElementById("iconosPrearmado").style.visibility = "hidden";
             document.getElementById("grid-texturas").style.visibility = "hidden";
             document.getElementById("iconosTexturas").style.visibility = "hidden";
-            break;
-        case 1:
-            break;
-        case 2:
+            document.getElementById("btn-agregar-3d-a-carrito").style.visibility = "hidden";
             break;
 
         default:
             break;
     }
+}
+
+function agregarModelo3DaCArrito() {
+    alert("agregado al carrito");
+
 }
 /*funciones del carrito */
