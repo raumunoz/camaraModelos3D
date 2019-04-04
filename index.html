@@ -78,30 +78,35 @@
 		.slick-slide {
 			margin: 0px 20px;
 		}
+
 		.slick-slide img {
 			width: 100%;
-		
+
 		}
-@media only screen and (max-width: 600px) {
-	.slick-slide {
-			margin: 0px 1.3%;
+
+		@media only screen and (max-width: 600px) {
+			.slick-slide {
+				margin: 0px 1.3%;
+			}
+
+			.slick-slide img {
+				width: 140%;
+
+			}
+
 		}
-		.slick-slide img {
-			width: 140%;
-		
+
+		@media only screen and (max-width: 448px) {
+			.slick-slide {
+				margin: 0px .8%;
+			}
+
+			.slick-slide img {
+				width: 120%;
+
+			}
+
 		}
-		
-}
-@media only screen and (max-width: 448px) {
-	.slick-slide {
-			margin: 0px .8%;
-		}
-		.slick-slide img {
-			width: 120%;
-		
-		}
-		
-}
 
 		.slick-prev:before,
 		.slick-next:before {
@@ -260,12 +265,12 @@
 			}
 		}
 
-		.nomProducto{
-			color: #2ACA89 !important; 
+		.nomProducto {
+			color: #2ACA89 !important;
 		}
 
-		.priceProducto{
-			color: black !important; 
+		.priceProducto {
+			color: black !important;
 		}
 	</style>
 
@@ -285,26 +290,27 @@
 
 	<div class="row div-nav" style="background-color:#fA675b;">
 		<div class="col-md-10 col-8" style="text-align: right; margin-top: 0.3em;margin-bottom: 0.3em;">
-        <span style="font-size:13px; color:#FFF; font-family: 'Montserrat', Arial, sans-serif;">Servicio al cliente
+			<span style="font-size:13px; color:#FFF; font-family: 'Montserrat', Arial, sans-serif;">Servicio al cliente
 				Teléfono:
 				477 854 11 12&nbsp;&nbsp;</span>
-                </div>
-                <div class="col-md-2 col-4 " style="text-align: right;">
-                <a href="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2F1962138827348733&amp;tabs=messages&amp;width=302&amp;height=300&amp;small_header=true&amp;adapt_container_width=true&amp;hide_cover=true&amp;show_facepile=false&amp;appId"
+		</div>
+		<div class="col-md-2 col-4 " style="text-align: right;">
+			<a href="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2F1962138827348733&amp;tabs=messages&amp;width=302&amp;height=300&amp;small_header=true&amp;adapt_container_width=true&amp;hide_cover=true&amp;show_facepile=false&amp;appId"
 				target="_blank"><img src="images/messeng.png" style="max-width: 1.8em; padding-right:5px"></a>
-               
+
 			<a href="https://api.whatsapp.com/send?phone=5214778541112" target="_blank">
 				<img src="images/whats.png" style="max-width: 1.8em; padding-right:5px">
 			</a>
-        
-			<img src="images/shopping_cart_white_24dp.png" style="max-width: 1.8em; padding-right:5px" onclick="mostrarCarro()"><span id="num-carrito" class="num-carrito"></span>
-           </div>
+
+			<img src="images/shopping_cart_white_24dp.png" style="max-width: 1.8em; padding-right:5px"
+				onclick="mostrarCarro()"><span id="num-carrito" class="num-carrito"></span>
+		</div>
 	</div>
 	<div class="carrito" id="carrito">
-			<div id="row-productos">
-				Todavía no agregas nada.	
-			</div>
-			
+		<div id="row-productos">
+			Todavía no agregas nada.
+		</div>
+
 		<div class="row rng-total total-desactivo" id="rng-total">
 			<div class="col-xs-6 rng-total-titulo">Total</div>
 			<div class="col-xs-6">$<span id="total-carrito">0</span></div>
@@ -313,7 +319,7 @@
 			<div id="paypal-button"></div>
 		</div>
 	</div>
-	
+
 	<div class="fh5co-loader"></div>
 
 	<div id="page">
@@ -321,14 +327,20 @@
 			<div class="container" style="margin-left:0px;">
 				<div class="row">
 					<div class="col-md-3 col-xs-2">
-						<div id="fh5co-logo"><a href="index.html"><img src="images/puff_logo.png" class="logo-puffino"></a></div>
+						<div id="fh5co-logo"><a href="index.html"><img src="images/puff_logo.png"
+									class="logo-puffino"></a></div>
 					</div>
 					<div class="col-md-9 col-xs-10 menu-1" style="margin-top:4%;">
 						<ul>
-							<li style="margin-right: 1.1em;"><a href="about.html" style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">Nosotros</a></li>
-							<li style="margin-right: 1.1em;"><a href="catalogo.html" style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">Catálogo</a></li>
-							<li style="margin-right: 1.1em;"><a href="envio.html" style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">Envío y Devoluciones</a></li>
-							<li style="margin-right: 1.1em;"><a href="contact.html" style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">Contacto</a></li>
+							<li style="margin-right: 1.1em;"><a href="about.html"
+									style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">Nosotros</a></li>
+							<li style="margin-right: 1.1em;"><a href="catalogo.html"
+									style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">Catálogo</a></li>
+							<li style="margin-right: 1.1em;"><a href="envio.html"
+									style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">Envío y
+									Devoluciones</a></li>
+							<li style="margin-right: 1.1em;"><a href="contact.html"
+									style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">Contacto</a></li>
 						</ul>
 					</div>
 				</div>
@@ -336,43 +348,43 @@
 			</div>
 		</nav>
 
-		<section id="fh5co-hero" >
+		<section id="fh5co-hero">
 			<div class="flexslider">
-				<ul class="slides"  style="background:#4DD7D3">
-                <li><img src="images/puffinoslider1.jpg" style="width:100%;"></li>
-				<li><img src="images/puffinoslider2.jpg" style="width:100%;"></li>	
-				<li><img src="images/puffinoslider3.jpg" style="width:100%;"></li>	
-				<li><img src="images/puffinoslider4.jpg" style="width:100%;"></li>	
+				<ul class="slides" style="background:#4DD7D3">
+					<li><img src="images/puffinoslider1.jpg" style="width:100%;"></li>
+					<li><img src="images/puffinoslider2.jpg" style="width:100%;"></li>
+					<li><img src="images/puffinoslider3.jpg" style="width:100%;"></li>
+					<li><img src="images/puffinoslider4.jpg" style="width:100%;"></li>
 				</ul>
 			</div>
 		</section>
 		<section id="fh5co-services" style="background-color:#f5f5f5;">
-				<div class="col-md-12 col-md-offset-2 text-center fh5co-heading" style="margin-bottom: 10px;">
-							<h2 style="color:#4E56DF">Inspírate</h2>
-						</div>
+			<div class="col-md-12 col-md-offset-2 text-center fh5co-heading" style="margin-bottom: 10px;">
+				<h2 style="color:#4E56DF">Inspírate</h2>
+			</div>
 			<div class="row center slider2">
-			<div>
-				<img src="images/puffino_1web_840x840.jpg">
+				<div>
+					<img src="images/puffino_1web_840x840.jpg">
+				</div>
+				<div>
+					<img src="images/puffino_2web_840x840.jpg">
+				</div>
+				<div>
+					<img src="images/puffino_3web_840x840.jpg">
+				</div>
+				<div>
+					<img src="images/puffino_4web_840x840.jpg">
+				</div>
+				<div>
+					<img src="images/puffino_5web_840x840.jpg">
+				</div>
+				<div>
+					<img src="images/puffino_6web_840x840.jpg">
+				</div>
+				<div>
+					<img src="images/puffino_7web_840x840.jpg">
+				</div>
 			</div>
-			<div>
-				<img src="images/puffino_2web_840x840.jpg">
-			</div>
-			<div>
-				<img src="images/puffino_3web_840x840.jpg">
-			</div>
-			<div>
-				<img src="images/puffino_4web_840x840.jpg">
-			</div>
-			<div>
-				<img src="images/puffino_5web_840x840.jpg">
-			</div>
-			<div>
-				<img src="images/puffino_6web_840x840.jpg">
-			</div>
-			<div>
-				<img src="images/puffino_7web_840x840.jpg">
-			</div>
-         </div>
 		</section>
 
 		<div id="fh5co-product" style="padding-bottom: 0px;">
@@ -388,7 +400,8 @@
 						<div class="product">
 							<a id="yokoShow" style="cursor: pointer;" onclick="">
 								<div class="product-grid"
-									style="background-image:url(images/catalogo/yoko/yookocasual_silla.jpg);" onclick="cambiarVistaMotor(0)">
+									style="background-image:url(images/catalogo/yoko/yookocasual_silla.jpg);"
+									onclick="cambiarVistaMotor(0)">
 									<div class="inner">
 										<!--<p>
 											<a id="holiShow" style="cursor: pointer;" class="icon"><i class="icon-eye"></i></a>
@@ -397,7 +410,7 @@
 								</div>
 							</a>
 							<div class="desc">
-									<h3><a id="" style="cursor: pointer; ; font-size: 1.1rem;">Yooko Modular</a></h3>
+								<h3><a id="" style="cursor: pointer; ; font-size: 1.1rem;">Yooko Modular</a></h3>
 							</div>
 						</div>
 					</div>
@@ -405,7 +418,8 @@
 						<div class="product">
 							<a id="puffinoShow" style="cursor: pointer;">
 								<div class="product-grid"
-								style="background-image:url(images/catalogo/puffino_catalogo.png);" onclick="cambiarVistaMotor(1)">
+									style="background-image:url(images/catalogo/puffino_catalogo.png);"
+									onclick="cambiarVistaMotor(1)">
 									<div class="inner">
 										<!--
 										<p>
@@ -424,8 +438,9 @@
 						<div class="product">
 							<a id="kidsShow" style="cursor: pointer;">
 								<div class="product-grid"
-									style="background-image:url(images/catalogo/ninos_catalogo.jpg);" onclick="cambiarVistaMotor(2)">
-									<div class="inner" >
+									style="background-image:url(images/catalogo/ninos_catalogo.jpg);"
+									onclick="cambiarVistaMotor(2)">
+									<div class="inner">
 										<!--
 										<p>
 											<a id="holiShow" style="cursor: pointer;" class="icon"><i class="icon-eye"></i></a>
@@ -435,7 +450,7 @@
 								</div>
 							</a>
 							<div class="desc">
-								<h3><a  style="cursor: pointer; ; font-size: 1.1rem;">Puffino Niños</a></h3>
+								<h3><a style="cursor: pointer; ; font-size: 1.1rem;">Puffino Niños</a></h3>
 							</div>
 						</div>
 					</div>
@@ -451,7 +466,7 @@
 									<div class="text-center">
 										<div class="product" style="margin-top: 1em;">
 											<div class="product-grid"
-												style="background-image:url(images/catalogo/yoko/yookocasual_esquinero.jpg); margin: 0 auto;" >
+												style="background-image:url(images/catalogo/yoko/yookocasual_esquinero.jpg); margin: 0 auto;">
 											</div>
 											<div class="desc" style="margin-top: 1em;">
 												<h3><a class="nomProducto">Yooko Casual Esquinero</a></h3>
@@ -460,8 +475,9 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito('Yoko sillón',7999,'images/catalogo/yoko/yookocasual_esquinero.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
+								<button type="button"
+									onclick="agregarAlCarrito('Yoko sillón',7999,'images/catalogo/yoko/yookocasual_esquinero.jpg')"
+									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
 								<a style="cursor: pointer;" onclick="cambioModulo(1,true)">
@@ -477,8 +493,9 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito('Yoko sillón',7999,'images/catalogo/yoko/yookocasual_silla.jpg')" class="btn-agregar "
-									id="btn-agregar blue btn">Añadir al carrito</button>
+								<button type="button"
+									onclick="agregarAlCarrito('Yoko sillón',7999,'images/catalogo/yoko/yookocasual_silla.jpg')"
+									class="btn-agregar " id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
 								<a style="cursor: pointer;" onclick="cambioModulo(2,true)">
@@ -494,8 +511,9 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito('Yoko esquinero',8999,'images/catalogo/yoko/yookocasual_taburete.jpg')" class="btn-agregar "
-									id="btn-agregar blue btn">Añadir al carrito</button>
+								<button type="button"
+									onclick="agregarAlCarrito('Yoko esquinero',8999,'images/catalogo/yoko/yookocasual_taburete.jpg')"
+									class="btn-agregar " id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<!--Yooko Contempo-->
 							<li>
@@ -503,7 +521,7 @@
 									<div class="text-center">
 										<div class="product" style="margin-top: 1em;">
 											<div class="product-grid"
-												style="background-image:url(images/catalogo/yoko/yookocontempo_esquinero.jpg); margin: 0 auto;" >
+												style="background-image:url(images/catalogo/yoko/yookocontempo_esquinero.jpg); margin: 0 auto;">
 											</div>
 											<div class="desc" style="margin-top: 1em;">
 												<h3><a class="nomProducto">Yooko Contempo Esquinero</a></h3>
@@ -512,8 +530,9 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito('Yoko sillón',7999,'images/catalogo/yoko/yookocontempo_esquinero.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
+								<button type="button"
+									onclick="agregarAlCarrito('Yoko sillón',7999,'images/catalogo/yoko/yookocontempo_esquinero.jpg')"
+									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
 								<a style="cursor: pointer;" onclick="cambioModulo(1,true)">
@@ -529,8 +548,9 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito('Yoko sillón',7999,'images/catalogo/yoko/yookocontempo_silla.jpg')" class="btn-agregar "
-									id="btn-agregar blue btn">Añadir al carrito</button>
+								<button type="button"
+									onclick="agregarAlCarrito('Yoko sillón',7999,'images/catalogo/yoko/yookocontempo_silla.jpg')"
+									class="btn-agregar " id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
 								<a style="cursor: pointer;" onclick="cambioModulo(2,true)">
@@ -546,8 +566,9 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito('Yoko esquinero',8999,'images/catalogo/yoko/yookocontempo_taburete.jpg')" class="btn-agregar "
-									id="btn-agregar blue btn">Añadir al carrito</button>
+								<button type="button"
+									onclick="agregarAlCarrito('Yoko esquinero',8999,'images/catalogo/yoko/yookocontempo_taburete.jpg')"
+									class="btn-agregar " id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<!--Yooko Trendy-->
 							<li>
@@ -555,7 +576,7 @@
 									<div class="text-center">
 										<div class="product" style="margin-top: 1em;">
 											<div class="product-grid"
-												style="background-image:url(images/catalogo/yoko/yookotrendy_esquinero.jpg); margin: 0 auto;" >
+												style="background-image:url(images/catalogo/yoko/yookotrendy_esquinero.jpg); margin: 0 auto;">
 											</div>
 											<div class="desc" style="margin-top: 1em;">
 												<h3><a class="nomProducto">Yooko Trendy Esquinero</a></h3>
@@ -564,8 +585,9 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito('Yoko sillón',7999,'images/catalogo/yoko/yookotrendy_esquinero.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
+								<button type="button"
+									onclick="agregarAlCarrito('Yoko sillón',7999,'images/catalogo/yoko/yookotrendy_esquinero.jpg')"
+									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
 								<a style="cursor: pointer;" onclick="cambioModulo(1,true)">
@@ -581,8 +603,9 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito('Yoko sillón',7999,'images/catalogo/yoko/yookotrendy_silla.jpg')" class="btn-agregar "
-									id="btn-agregar blue btn">Añadir al carrito</button>
+								<button type="button"
+									onclick="agregarAlCarrito('Yoko sillón',7999,'images/catalogo/yoko/yookotrendy_silla.jpg')"
+									class="btn-agregar " id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
 								<a style="cursor: pointer;" onclick="cambioModulo(2,true)">
@@ -598,8 +621,9 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito('Yoko esquinero',8999,'images/catalogo/yoko/yookotrendy_taburete.jpg')" class="btn-agregar "
-									id="btn-agregar blue btn">Añadir al carrito</button>
+								<button type="button"
+									onclick="agregarAlCarrito('Yoko esquinero',8999,'images/catalogo/yoko/yookotrendy_taburete.jpg')"
+									class="btn-agregar " id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 						</ul>
 					</div>
@@ -625,8 +649,9 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito('Yumil',2599,'images/productos/puffino/atlixco.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
+								<button type="button"
+									onclick="agregarAlCarrito('Yumil',2599,'images/productos/puffino/atlixco.jpg')"
+									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
 								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[1])">
@@ -636,8 +661,9 @@
 												style="background-image:url(images/productos/puffino/atlixco_chico.jpg); margin: 0 auto;">
 											</div>
 											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">Yumil Mediano</a></h3>
-													<span class="priceProducto">$2499</span>
+												<h3 style="line-height: 30px;"><a class="nomProducto">Yumil Mediano</a>
+												</h3>
+												<span class="priceProducto">$2499</span>
 											</div>
 											<div class="medidas">
 												<span>(40cm x 40cm x 40cm)</span>
@@ -645,8 +671,9 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito('Yumil MEDIANO',2499,'images/productos/puffino/atlixco_chico.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
+								<button type="button"
+									onclick="agregarAlCarrito('Yumil MEDIANO',2499,'images/productos/puffino/atlixco_chico.jpg')"
+									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
 								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[2])">
@@ -656,8 +683,8 @@
 												style="background-image:url(images/productos/puffino/bernal.jpg); margin: 0 auto;">
 											</div>
 											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">Yeeb</a></h3>
-													<span class="priceProducto">$2999</span>
+												<h3 style="line-height: 30px;"><a class="nomProducto">Yeeb</a></h3>
+												<span class="priceProducto">$2999</span>
 											</div>
 											<div class="medidas">
 												<span>(50cm x 70cm x 75cm)</span>
@@ -665,8 +692,9 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito('Yeeb',2999,'images/productos/puffino/bernal.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
+								<button type="button"
+									onclick="agregarAlCarrito('Yeeb',2999,'images/productos/puffino/bernal.jpg')"
+									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
 								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[3])">
@@ -676,8 +704,8 @@
 												style="background-image:url(images/productos/puffino/cozumel.jpg); margin: 0 auto;">
 											</div>
 											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">Kauil</a></h3>
-													<span class="priceProducto">$4999</span>
+												<h3 style="line-height: 30px;"><a class="nomProducto">Kauil</a></h3>
+												<span class="priceProducto">$4999</span>
 											</div>
 											<div class="medidas">
 												<span>Sillón (100cm x 85cm x 80cm) Taburete (100cm x 50cm x 35cm)</span>
@@ -685,8 +713,9 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito('Kauil',4999,'images/productos/puffino/cozumel.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
+								<button type="button"
+									onclick="agregarAlCarrito('Kauil',4999,'images/productos/puffino/cozumel.jpg')"
+									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
 								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[18])">
@@ -696,8 +725,9 @@
 												style="background-image:url(images/productos/puffino/cozumel_sillon.jpg); margin: 0 auto;">
 											</div>
 											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">Kauil Sillón</a></h3>
-													<span class="priceProducto">$4199</span>
+												<h3 style="line-height: 30px;"><a class="nomProducto">Kauil Sillón</a>
+												</h3>
+												<span class="priceProducto">$4199</span>
 											</div>
 											<div class="medidas">
 												<span>(100cm x 85cm x 80cm)</span>
@@ -705,8 +735,9 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito('Kauil SILLÓN',4199,'images/productos/puffino/cozumel_sillon.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
+								<button type="button"
+									onclick="agregarAlCarrito('Kauil SILLÓN',4199,'images/productos/puffino/cozumel_sillon.jpg')"
+									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
 								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[4])">
@@ -716,8 +747,9 @@
 												style="background-image:url(images/productos/puffino/cozumel_taburete.jpg); margin: 0 auto;">
 											</div>
 											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">Kauil Taburete</a></h3>
-													<span class="priceProducto">$2999</span>
+												<h3 style="line-height: 30px;"><a class="nomProducto">Kauil Taburete</a>
+												</h3>
+												<span class="priceProducto">$2999</span>
 											</div>
 											<div class="medidas">
 												<span>(100cm x 50cm x 35cm)</span>
@@ -725,8 +757,9 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito('Kaul TABURETE',2999,'images/productos/puffino/cozumel_taburete.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
+								<button type="button"
+									onclick="agregarAlCarrito('Kaul TABURETE',2999,'images/productos/puffino/cozumel_taburete.jpg')"
+									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
 								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[5])">
@@ -736,8 +769,8 @@
 												style="background-image:url(images/productos/puffino/guadalajara.jpg); margin: 0 auto;">
 											</div>
 											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">Balam</a></h3>
-													<span class="priceProducto">$5199</span>
+												<h3 style="line-height: 30px;"><a class="nomProducto">Balam</a></h3>
+												<span class="priceProducto">$5199</span>
 											</div>
 											<div class="medidas">
 												<span>(165cm x 85cm x 85cm)</span>
@@ -745,8 +778,9 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito('Balam',5199,'images/productos/puffino/guadalajara.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
+								<button type="button"
+									onclick="agregarAlCarrito('Balam',5199,'images/productos/puffino/guadalajara.jpg')"
+									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
 								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[6])">
@@ -756,8 +790,8 @@
 												style="background-image:url(images/productos/puffino/guanajuato.jpg); margin: 0 auto;">
 											</div>
 											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">Ikal</a></h3>
-													<span class="priceProducto">$4699</span>
+												<h3 style="line-height: 30px;"><a class="nomProducto">Ikal</a></h3>
+												<span class="priceProducto">$4699</span>
 											</div>
 											<div class="medidas">
 												<span>(100cm x 75cm x 180cm)</span>
@@ -765,8 +799,9 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito('Ikal',4699,'images/productos/puffino/guanajuato.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
+								<button type="button"
+									onclick="agregarAlCarrito('Ikal',4699,'images/productos/puffino/guanajuato.jpg')"
+									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
 								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[7])">
@@ -776,8 +811,8 @@
 												style="background-image:url(images/productos/puffino/lapaz.jpg); margin: 0 auto;">
 											</div>
 											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">Nima</a></h3>
-													<span class="priceProducto">$3499</span>
+												<h3 style="line-height: 30px;"><a class="nomProducto">Nima</a></h3>
+												<span class="priceProducto">$3499</span>
 											</div>
 											<div class="medidas">
 												<span>(95cm x 80cm x 200cm)</span>
@@ -785,8 +820,9 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito('Nima',3499,'images/productos/puffino/lapaz.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
+								<button type="button"
+									onclick="agregarAlCarrito('Nima',3499,'images/productos/puffino/lapaz.jpg')"
+									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
 								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[8])">
@@ -796,8 +832,9 @@
 												style="background-image:url(images/productos/puffino/lapaz_chico.jpg); margin: 0 auto;">
 											</div>
 											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">Nima mediano</a></h3>
-													<span class="priceProducto">$3099</span>
+												<h3 style="line-height: 30px;"><a class="nomProducto">Nima mediano</a>
+												</h3>
+												<span class="priceProducto">$3099</span>
 											</div>
 											<div class="medidas">
 												<span>(84cm x 70cm x 115cm)</span>
@@ -805,8 +842,9 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito('Nima MEDIANO',3099,'images/productos/puffino/lapaz_chico.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
+								<button type="button"
+									onclick="agregarAlCarrito('Nima MEDIANO',3099,'images/productos/puffino/lapaz_chico.jpg')"
+									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
 								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[9])">
@@ -816,8 +854,8 @@
 												style="background-image:url(images/productos/puffino/merida.jpg); margin: 0 auto;">
 											</div>
 											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">Zazil</a></h3>
-													<span class="priceProducto">$3999</span>
+												<h3 style="line-height: 30px;"><a class="nomProducto">Zazil</a></h3>
+												<span class="priceProducto">$3999</span>
 											</div>
 											<div class="medidas">
 												<span>(84cm x 70cm x 115cm)</span>
@@ -825,8 +863,9 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito('Zazil',3999,'images/productos/puffino/merida.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
+								<button type="button"
+									onclick="agregarAlCarrito('Zazil',3999,'images/productos/puffino/merida.jpg')"
+									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
 								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[10])">
@@ -836,8 +875,8 @@
 												style="background-image:url(images/productos/puffino/oaxaca.jpg); margin: 0 auto;">
 											</div>
 											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">Toot</a></h3>
-													<span class="priceProducto">$3899</span>
+												<h3 style="line-height: 30px;"><a class="nomProducto">Toot</a></h3>
+												<span class="priceProducto">$3899</span>
 											</div>
 											<div class="medidas">
 												<span>(90cm x 40cm x 90cm)</span>
@@ -845,8 +884,9 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito('Toot',3899,'images/productos/puffino/oaxaca.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
+								<button type="button"
+									onclick="agregarAlCarrito('Toot',3899,'images/productos/puffino/oaxaca.jpg')"
+									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
 								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[11])">
@@ -856,8 +896,9 @@
 												style="background-image:url(images/productos/puffino/oaxaca_matrimonial.jpg); margin: 0 auto;">
 											</div>
 											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">Toot Matrimonial</a></h3>
-													<span class="priceProducto">$4599</span>
+												<h3 style="line-height: 30px;"><a class="nomProducto">Toot
+														Matrimonial</a></h3>
+												<span class="priceProducto">$4599</span>
 											</div>
 											<div class="medidas">
 												<span>(120cm x 65cm x 120cm)</span>
@@ -865,8 +906,9 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito('Toot Matrimonial',4599,'images/productos/puffino/oaxaca_matrimonial.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
+								<button type="button"
+									onclick="agregarAlCarrito('Toot Matrimonial',4599,'images/productos/puffino/oaxaca_matrimonial.jpg')"
+									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
 								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[11])">
@@ -876,8 +918,9 @@
 												style="background-image:url(images/productos/puffino/oaxaca_queen.jpg); margin: 0 auto;">
 											</div>
 											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">Toot Queen</a></h3>
-													<span class="priceProducto">$4799</span>
+												<h3 style="line-height: 30px;"><a class="nomProducto">Toot Queen</a>
+												</h3>
+												<span class="priceProducto">$4799</span>
 											</div>
 											<div class="medidas">
 												<span>(150cm x 65cm x 150cm)</span>
@@ -885,8 +928,9 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito('Toot QUEEN',4799,'images/productos/puffino/oaxaca_queen.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
+								<button type="button"
+									onclick="agregarAlCarrito('Toot QUEEN',4799,'images/productos/puffino/oaxaca_queen.jpg')"
+									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
 								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[13])">
@@ -896,8 +940,8 @@
 												style="background-image:url(images/productos/puffino/patzcuaro.jpg); margin: 0 auto;">
 											</div>
 											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">Tanak</a></h3>
-													<span class="priceProducto">$4499</span>
+												<h3 style="line-height: 30px;"><a class="nomProducto">Tanak</a></h3>
+												<span class="priceProducto">$4499</span>
 											</div>
 											<div class="medidas">
 												<span>(100cm x 80cm x 85cm)</span>
@@ -905,8 +949,9 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito('Tanak',4499,'images/productos/puffino/patzcuaro.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
+								<button type="button"
+									onclick="agregarAlCarrito('Tanak',4499,'images/productos/puffino/patzcuaro.jpg')"
+									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
 								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[14])">
@@ -916,8 +961,9 @@
 												style="background-image:url(images/productos/puffino/patzcuaro_kids.jpg); margin: 0 auto;">
 											</div>
 											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">Tanak Niños</a></h3>
-													<span class="priceProducto">$3199</span>
+												<h3 style="line-height: 30px;"><a class="nomProducto">Tanak Niños</a>
+												</h3>
+												<span class="priceProducto">$3199</span>
 											</div>
 											<div class="medidas">
 												<span>(80cm x 63cm x 70cm)</span>
@@ -925,8 +971,9 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito('Tanak NIÑOS',3199,'images/productos/puffino/patzcuaro_kids.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
+								<button type="button"
+									onclick="agregarAlCarrito('Tanak NIÑOS',3199,'images/productos/puffino/patzcuaro_kids.jpg')"
+									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
 								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[15])">
@@ -936,8 +983,8 @@
 												style="background-image:url(images/productos/puffino/puebla.jpg); margin: 0 auto;">
 											</div>
 											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">Alom</a></h3>
-													<span class="priceProducto">$3099</span>
+												<h3 style="line-height: 30px;"><a class="nomProducto">Alom</a></h3>
+												<span class="priceProducto">$3099</span>
 											</div>
 											<div class="medidas">
 												<span>(120cm x 25cm x 170cm)</span>
@@ -945,8 +992,9 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito('Alom',3099,'images/productos/puffino/puebla.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
+								<button type="button"
+									onclick="agregarAlCarrito('Alom',3099,'images/productos/puffino/puebla.jpg')"
+									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
 								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[16])">
@@ -956,8 +1004,9 @@
 												style="background-image:url(images/productos/puffino/pruebla_chico.jpg); margin: 0 auto;">
 											</div>
 											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">Alom Mediano</a></h3>
-													<span class="priceProducto">$2299</span>
+												<h3 style="line-height: 30px;"><a class="nomProducto">Alom Mediano</a>
+												</h3>
+												<span class="priceProducto">$2299</span>
 											</div>
 											<div class="medidas">
 												<span>(900cm x 25cm x 130cm)</span>
@@ -965,8 +1014,9 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito('Alom MEDIANO',2699,'images/productos/puffino/pruebla_chico.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
+								<button type="button"
+									onclick="agregarAlCarrito('Alom MEDIANO',2699,'images/productos/puffino/pruebla_chico.jpg')"
+									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
 								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[17])">
@@ -976,8 +1026,8 @@
 												style="background-image:url(images/productos/puffino/puertovallarta.jpg); margin: 0 auto;">
 											</div>
 											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">Seti</a></h3>
-													<span class="priceProducto">$3999</span>
+												<h3 style="line-height: 30px;"><a class="nomProducto">Seti</a></h3>
+												<span class="priceProducto">$3999</span>
 											</div>
 											<div class="medidas">
 												<span>(46cm x 75cm x 125cm)</span>
@@ -985,8 +1035,9 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito('Seti',3999,'images/productos/puffino/puertovallarta.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
+								<button type="button"
+									onclick="agregarAlCarrito('Seti',3999,'images/productos/puffino/puertovallarta.jpg')"
+									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
 								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[19])">
@@ -996,8 +1047,8 @@
 												style="background-image:url(images/productos/puffino/veracruz.jpg); margin: 0 auto;">
 											</div>
 											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">Canek</a></h3>
-													<span class="priceProducto">$4199</span>
+												<h3 style="line-height: 30px;"><a class="nomProducto">Canek</a></h3>
+												<span class="priceProducto">$4199</span>
 											</div>
 											<div class="medidas">
 												<span>(80cm x 87cm x 80cm)</span>
@@ -1005,8 +1056,9 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito('Canek',4199,'images/productos/puffino/veracruz.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
+								<button type="button"
+									onclick="agregarAlCarrito('Canek',4199,'images/productos/puffino/veracruz.jpg')"
+									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
 								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[20])">
@@ -1016,8 +1068,9 @@
 												style="background-image:url(images/productos/puffino/veracruz_ninos.jpg); margin: 0 auto;">
 											</div>
 											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">Canek Niños</a></h3>
-													<span class="priceProducto">$3399</span>
+												<h3 style="line-height: 30px;"><a class="nomProducto">Canek Niños</a>
+												</h3>
+												<span class="priceProducto">$3399</span>
 											</div>
 											<div class="medidas">
 												<span>(69cm x 65cm x 65cm)</span>
@@ -1025,8 +1078,9 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito('Canek NIÑOS',3399,'images/productos/puffino/veracruz_ninos.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
+								<button type="button"
+									onclick="agregarAlCarrito('Canek NIÑOS',3399,'images/productos/puffino/veracruz_ninos.jpg')"
+									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
 								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[21])">
@@ -1036,8 +1090,9 @@
 												style="background-image:url(images/productos/puffino/zacatecas_chico.jpg); margin: 0 auto;">
 											</div>
 											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">Kimbo Chico</a></h3>
-													<span class="priceProducto">$2399</span>
+												<h3 style="line-height: 30px;"><a class="nomProducto">Kimbo Chico</a>
+												</h3>
+												<span class="priceProducto">$2399</span>
 											</div>
 											<div class="medidas">
 												<span>(45cm x 33cm x 55cm)</span>
@@ -1045,8 +1100,9 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito('Kimbo CHICO',2399,'images/productos/puffino/zacatecas_chico.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
+								<button type="button"
+									onclick="agregarAlCarrito('Kimbo CHICO',2399,'images/productos/puffino/zacatecas_chico.jpg')"
+									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
 								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[23])">
@@ -1056,8 +1112,9 @@
 												style="background-image:url(images/productos/puffino/zacatecas_mediano.jpg); margin: 0 auto;">
 											</div>
 											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">Kimbo Mediano</a></h3>
-													<span class="priceProducto">$2699</span>
+												<h3 style="line-height: 30px;"><a class="nomProducto">Kimbo Mediano</a>
+												</h3>
+												<span class="priceProducto">$2699</span>
 											</div>
 											<div class="medidas">
 												<span>(60cm x 33cm x 60cm)</span>
@@ -1065,8 +1122,9 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito('Kimbo MEDIANO',2699,'images/productos/puffino/zacatecas_mediano.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
+								<button type="button"
+									onclick="agregarAlCarrito('Kimbo MEDIANO',2699,'images/productos/puffino/zacatecas_mediano.jpg')"
+									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
 								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[22])">
@@ -1076,8 +1134,9 @@
 												style="background-image:url(images/productos/puffino/zacatecas_grande.jpg); margin: 0 auto;">
 											</div>
 											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">Kimbo Grande</a></h3>
-													<span class="priceProducto">$3199</span>
+												<h3 style="line-height: 30px;"><a class="nomProducto">Kimbo Grande</a>
+												</h3>
+												<span class="priceProducto">$3199</span>
 											</div>
 											<div class="medidas">
 												<span>(90cm x 33cm x 90cm)</span>
@@ -1085,8 +1144,9 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito('Kimbo GRANDE',3199,'images/productos/puffino/zacatecas_grande.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
+								<button type="button"
+									onclick="agregarAlCarrito('Kimbo GRANDE',3199,'images/productos/puffino/zacatecas_grande.jpg')"
+									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
 								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[24])">
@@ -1096,8 +1156,8 @@
 												style="background-image:url(images/productos/puffino/zacatlan.jpg); margin: 0 auto;">
 											</div>
 											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">Kuk</a></h3>
-													<span class="priceProducto">$3399</span>
+												<h3 style="line-height: 30px;"><a class="nomProducto">Kuk</a></h3>
+												<span class="priceProducto">$3399</span>
 											</div>
 											<div class="medidas">
 												<span>(64cm x 125cm x 64cm)</span>
@@ -1105,8 +1165,9 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito('Kuk',3399,'images/productos/puffino/zacatlan.jpg')" class="btn-agregar "
-									id="btn-agregar blue btn">Añadir al carrito</button>
+								<button type="button"
+									onclick="agregarAlCarrito('Kuk',3399,'images/productos/puffino/zacatlan.jpg')"
+									class="btn-agregar " id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
 								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[23])">
@@ -1116,8 +1177,9 @@
 												style="background-image:url(images/productos/puffino/zacatlan_mediano.jpg); margin: 0 auto;">
 											</div>
 											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">Kuk Mediano</a></h3>
-													<span class="priceProducto">$2899</span>
+												<h3 style="line-height: 30px;"><a class="nomProducto">Kuk Mediano</a>
+												</h3>
+												<span class="priceProducto">$2899</span>
 											</div>
 											<div class="medidas">
 												<span>(50cm x 95cm x 50cm)</span>
@@ -1125,8 +1187,9 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito('Kuk MEDIANO',2899,'images/productos/puffino/zacatlan_mediano.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
+								<button type="button"
+									onclick="agregarAlCarrito('Kuk MEDIANO',2899,'images/productos/puffino/zacatlan_mediano.jpg')"
+									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 						</ul>
 					</div>
@@ -1144,8 +1207,8 @@
 												style="background-image:url(images/productos/kids/kids_conejo.jpg); margin: 0 auto;">
 											</div>
 											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">CONEJO</a></h3>
-													<span class="priceProducto">$3499</span>
+												<h3 style="line-height: 30px;"><a class="nomProducto">CONEJO</a></h3>
+												<span class="priceProducto">$3499</span>
 											</div>
 											<div class="medidas">
 												<span>(76cm x 90cm x 76cm)</span>
@@ -1153,8 +1216,9 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito('CONEJO',3499,'images/productos/kids/kids_conejo.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
+								<button type="button"
+									onclick="agregarAlCarrito('CONEJO',3499,'images/productos/kids/kids_conejo.jpg')"
+									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
 								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.kids[1])">
@@ -1164,8 +1228,9 @@
 												style="background-image:url(images/productos/kids/kids_dinosaurio.jpg); margin: 0 auto;">
 											</div>
 											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">DINOSAURIO</a></h3>
-													<span class="priceProducto">$3699</span>
+												<h3 style="line-height: 30px;"><a class="nomProducto">DINOSAURIO</a>
+												</h3>
+												<span class="priceProducto">$3699</span>
 											</div>
 											<div class="medidas">
 												<span>(72cm x 90cm x 76cm)</span>
@@ -1173,8 +1238,9 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito('DINOSAURIO',3699,'images/productos/kids/kids_dinosaurio.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
+								<button type="button"
+									onclick="agregarAlCarrito('DINOSAURIO',3699,'images/productos/kids/kids_dinosaurio.jpg')"
+									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
 								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.kids[2])">
@@ -1184,8 +1250,8 @@
 												style="background-image:url(images/productos/kids/kids_dona.jpg); margin: 0 auto;">
 											</div>
 											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">DONA</a></h3>
-													<span class="priceProducto">$3399</span>
+												<h3 style="line-height: 30px;"><a class="nomProducto">DONA</a></h3>
+												<span class="priceProducto">$3399</span>
 											</div>
 											<div class="medidas">
 												<span>(96cm diametro x 32cm)</span>
@@ -1193,8 +1259,9 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito('DONA',3399,'images/productos/kids/kids_dona.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
+								<button type="button"
+									onclick="agregarAlCarrito('DONA',3399,'images/productos/kids/kids_dona.jpg')"
+									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
 								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.kids[3])">
@@ -1204,8 +1271,8 @@
 												style="background-image:url(images/productos/kids/kids_jirafa.jpg); margin: 0 auto;">
 											</div>
 											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">JIRAFA</a></h3>
-													<span class="priceProducto">$3799</span>
+												<h3 style="line-height: 30px;"><a class="nomProducto">JIRAFA</a></h3>
+												<span class="priceProducto">$3799</span>
 											</div>
 											<div class="medidas">
 												<span>(72cm x 90cm x 76cm)</span>
@@ -1213,8 +1280,9 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito('JIRAFA',3799,'images/productos/kids/kids_jirafa.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
+								<button type="button"
+									onclick="agregarAlCarrito('JIRAFA',3799,'images/productos/kids/kids_jirafa.jpg')"
+									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
 								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.kids[4])">
@@ -1224,8 +1292,8 @@
 												style="background-image:url(images/productos/kids/kids_perrito.jpg); margin: 0 auto;">
 											</div>
 											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">PERRITO</a></h3>
-													<span class="priceProducto">$3699</span>
+												<h3 style="line-height: 30px;"><a class="nomProducto">PERRITO</a></h3>
+												<span class="priceProducto">$3699</span>
 											</div>
 											<div class="medidas">
 												<span>(72cm x 90cm x 76cm)</span>
@@ -1233,8 +1301,9 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito('PERRITO',3699,'images/productos/kids/kids_perrito.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
+								<button type="button"
+									onclick="agregarAlCarrito('PERRITO',3699,'images/productos/kids/kids_perrito.jpg')"
+									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
 								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.kids[5])">
@@ -1244,8 +1313,8 @@
 												style="background-image:url(images/productos/kids/kids_unicornio.jpg); margin: 0 auto;">
 											</div>
 											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">UNICORNIO</a></h3>
-													<span class="priceProducto">$3499</span>
+												<h3 style="line-height: 30px;"><a class="nomProducto">UNICORNIO</a></h3>
+												<span class="priceProducto">$3499</span>
 											</div>
 											<div class="medidas">
 												<span>(72cm x 90cm x 76cm)</span>
@@ -1253,8 +1322,9 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito('UNICORNIO',3499,'images/productos/kids/kids_unicornio.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
+								<button type="button"
+									onclick="agregarAlCarrito('UNICORNIO',3499,'images/productos/kids/kids_unicornio.jpg')"
+									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 						</ul>
 					</div>
@@ -1463,7 +1533,8 @@
 
 				</div>
 				<div class="acciones">
-					<button type="button" class="btn btn-success btn-agregar-3d-a-carrito" id="btn-agregar-3d-a-carrito" onclick="agregarModelo3DaCArrito()">Agregar al carrito</button>
+					<button type="button" class="btn btn-success btn-agregar-3d-a-carrito" id="btn-agregar-3d-a-carrito"
+						onclick="agregarModelo3DaCArrito()">Agregar al carrito</button>
 					<div class="precios">
 						<div class="div-precio">
 							<span>Total</span>
@@ -1524,7 +1595,8 @@
 					<div class="col-md-8 col-sm-6 text-center">
 						<div class="feature-center animate-box">
 							<span class="icon">
-									<center style="width: 12em;height: 12em;"><img  style="width: 12em;height: 12em;" src="images/logo_certi_pur_medium.png"></center>
+								<center style="width: 12em;height: 12em;"><img style="width: 12em;height: 12em;"
+										src="images/logo_certi_pur_medium.png"></center>
 							</span>
 							<h3 style="color: white;">Materia prima </h3>
 							<p style="color: white;text-align : center;">
@@ -1599,23 +1671,28 @@
 									<p>
 										Muy recomendable!
 										Súper buen servicio.
-										El envío y entrega fue en tiempo y forma sin ningún contratiempo , de hecho me lo mandaron mucho antes de lo previsto.
+										El envío y entrega fue en tiempo y forma sin ningún contratiempo , de hecho me
+										lo mandaron mucho antes de lo previsto.
 										El Puffino , precioso, y súper cómodo!
 									</p>
 								</div>
 								<div class="item testimonial">
-										<h3>Nancy Lizeth Estrada Hernandez </h3>
-										<p>
-					Estoy super encantada con mi puff el color el tamaño ...como lo esperaba cubrió mis expectativas llego en el tiempo esperado y la atención de Dennise excelente super atenta la chica claro que volvería a comprarme otro,muchos mas recomiendo ampliamente GRACIAS puffino
-										</p>
+									<h3>Nancy Lizeth Estrada Hernandez </h3>
+									<p>
+										Estoy super encantada con mi puff el color el tamaño ...como lo esperaba cubrió
+										mis expectativas llego en el tiempo esperado y la atención de Dennise excelente
+										super atenta la chica claro que volvería a comprarme otro,muchos mas recomiendo
+										ampliamente GRACIAS puffino
+									</p>
 								</div>
 
 								<div class="item testimonial">
-										<h3>Leslie Naj</h3>
-										<p>
-												me encantó, super cómodos y muy lindos
-												ya quiero comprar otro y sobre todo excelente servicio de atención a clientes, me atendio Leslie Olvera y muy amable la señorita, se los recomiendo al 100 
-										</p>
+									<h3>Leslie Naj</h3>
+									<p>
+										me encantó, super cómodos y muy lindos
+										ya quiero comprar otro y sobre todo excelente servicio de atención a clientes,
+										me atendio Leslie Olvera y muy amable la señorita, se los recomiendo al 100
+									</p>
 								</div>
 							</div>
 						</div>
@@ -1625,7 +1702,7 @@
 			</div>
 		</div>
 
-		<div id="fh5co-services"class="fh5co-bg-section" style="font-family: 'Roboto';background:white;padding: 0;">
+		<div id="fh5co-services" class="fh5co-bg-section" style="font-family: 'Roboto';background:white;padding: 0;">
 			<div class="container">
 				<div class="desc"><br><br>
 					<center>
@@ -1678,8 +1755,7 @@
 	<div class="row copyright" style="font-family: 'Roboto';">
 		<div class="col-md-3 col-sm-2 col-xs-2"></div>
 		<div class="col-md-6 col-sm-8 col-xs-8 text-center">
-				<p
-				style="font-size: 0.9rem;line-height: 1.2em; text-align:center; color:black">
+			<p style="font-size: 0.9rem;line-height: 1.2em; text-align:center; color:black">
 				*Las fotografías mostradas en este sitio web son reales y propiedad de Puffino. Copyright 2017
 				León,
 				Guanajuato. Derechos reservados ©, prohibida su reproducción o uso total o parcial por
@@ -1720,7 +1796,7 @@
 				</div>
 
 				<div class="col-md-4 fh5co-widget text-sm-right">
-					
+
 					<h3 style="font-size: 1.3rem; color:#FFF;">CONTÁCTANOS</h3>
 					<p>
 						477 854 11 12 <br>
@@ -1735,7 +1811,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 	</footer>
 	<div class="gototop js-top">
 		<a href="#" class="js-gotop"><i class="icon-arrow-up" style="background-color:#4DD7D3;"></i></a>
@@ -1764,53 +1840,53 @@
 	<script type="text/javascript" src="js/texturas.json"></script>
 	<script type="text/javascript">
 		$(document).on('ready', function () {
-				$(".center").slick({
-					dots: true,
-					infinite: true,
-					centerMode: true,
-					slidesToShow: 4,
-					slidesToScroll: 1,
-					autoplay: true,
-					autoplaySpeed: 1000,
+			$(".center").slick({
+				dots: true,
+				infinite: true,
+				centerMode: true,
+				slidesToShow: 4,
+				slidesToScroll: 1,
+				autoplay: true,
+				autoplaySpeed: 1000,
 
-					responsive: [
+				responsive: [
 					{
-							breakpoint: 992,
-							settings: {
-								arrows: false,
-								centerMode: true,
-								slidesToShow: 3,
-							}
-						},
-						{
-							breakpoint: 768,
-							settings: {
-								arrows: false,
-								centerMode: false,
-								slidesToShow: 2,
-							}
-						},
-						{
-							breakpoint: 480,
-							settings: {
-								arrows: false,
-								centerMode: true,
-								slidesToShow: 1,
-								itemMargin: 1
-							}
+						breakpoint: 992,
+						settings: {
+							arrows: false,
+							centerMode: true,
+							slidesToShow: 3,
 						}
-					]
-				});
-
+					},
+					{
+						breakpoint: 768,
+						settings: {
+							arrows: false,
+							centerMode: false,
+							slidesToShow: 2,
+						}
+					},
+					{
+						breakpoint: 480,
+						settings: {
+							arrows: false,
+							centerMode: true,
+							slidesToShow: 1,
+							itemMargin: 1
+						}
+					}
+				]
 			});
 
-		
+		});
+
+
 	</script>
 
 
 
 
-				  
+
 	<script type="text/javascript">
 
 		var showYoko = true;

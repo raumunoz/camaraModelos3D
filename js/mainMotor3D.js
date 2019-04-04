@@ -476,8 +476,8 @@ window.addEventListener('DOMContentLoaded', function () {
 
         // This attaches the camera to the canvas
         camera.attachControl(canvas, false);
-        
-        
+
+
         //camera.attachControl(canvas);
         // camera = new BABYLON.FreeCamera("camera1", new BABYLON.Vector3(0, 0, -30), scene);
         pointerDragBehavior = new BABYLON.PointerDragBehavior({ dragPlaneNormal: new BABYLON.Vector3(0, 0, 1) });
@@ -579,7 +579,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
 
     escena = createScene();
-camera.inputs.attached.mousewheel.detachControl(canvas);
+    camera.inputs.attached.mousewheel.detachControl(canvas);
     hl = new BABYLON.HighlightLayer("hl1", escena);
     hl.innerGlow = false;
     background = new BABYLON.Layer("back", "assets/imagenes/fondos/sala3.jpg", escena);
@@ -826,7 +826,8 @@ function createButon3D(mesh, opc) {
 
 function cargarModelo(padre, modelo, posicion, prearmado, rotacion) {
     //para quitar el padre pero dejar las tran
-    
+    console.log("prearmado", prearmado);
+    console.log("posicion", posicion);
     customMesh = false;
     //alert("ENTRO");
     var derecha;
@@ -842,37 +843,20 @@ function cargarModelo(padre, modelo, posicion, prearmado, rotacion) {
     //
     BABYLON.SceneLoader.LoadAssetContainer("assets/modelos/", modelo, escena, function (newMeshes) {
         meshesAcargar = newMeshes;
-        //modeloActual(texturaActual, moduloActual,true)
-        //rootMesh = newMeshes.createRootMesh();
-        //console.log("padre a guardar", newMeshes.meshes[0]);
         padreAnterior = padreActual;
         padreActual = newMeshes.meshes[0].getChildren()[0];
         padreActual.setParent = padreCentro;
-
         if (typeof posicion !== 'undefined') {
+            console.log("posicion", posicion);
             padreActual.position = posicion;
         }
-
-
-        //newMeshes.meshes[0].getChildren()[0].sparent = padreCentro;
         numPadre++;
-        //modeloActual(texturaActual, moduloActual, true);
         padreActual.precio = modeloActual(texturaActual, moduloActual, false);
         padreActual.name = modeloActual(texturaActual, moduloActual, true);
-
-        //padreActual.name = "padre" + numPadre;
-        // padreActual.esSuperior="NO";
-        //console.log("padre actual", padreActual);
-        //padreActual = newMeshes.meshes[0].parent;
-        //aumentarPrecioTotal(modeloActual(texturaActual, moduloActual, false));
         padres.push(padreActual);
         precioTotal = 0;
         padres.forEach((x) => precioTotal += x.precio);
         spanPrecio.innerText = "$" + precioTotal;
-        //actualizarTablaMuebles();
-        //divLista.innerText = getListaMuebles(padres);
-        //listaDeMuebles.push(modeloActual(texturaActual, moduloActual, true, true));
-
         padreActual.getChildren().forEach(hijo => {
             switch (hijo.name) {
                 case 'izquierda':
@@ -892,7 +876,6 @@ function cargarModelo(padre, modelo, posicion, prearmado, rotacion) {
             }
         });
         if (padre.name == 'padreCentro') {
-            //alert("Padre centro");
             ultimoClickeado = "primer";
         }
         meshDebug = izquierda;
@@ -932,53 +915,24 @@ function cargarModelo(padre, modelo, posicion, prearmado, rotacion) {
         }
         activarBotonesAplicar(true);
         esconderTodosBotones(false);
-        //resaltarMueble(padreActual, true);
-        // container.meshes.push(padreActual);
-        //newMeshes.meshes[0].parent = padre;
-        //se asigna un padre a el padre acutual
-        //var dummy = new BABYLON.Mesh("dummy", scene)
-        //var nodo= new Node("nodo",scene);
-        //var nodo = new BABYLON.Mesh("nodo", escena);
-        //nodo.parent = padre;
-        //let cadenaTemp = modelo.slice(0, -5);
-        // newMeshes.meshes[0].name = "padre" + cadenaTemp[0].toUpperCase() + cadenaTemp.substring(1);
-        //padre.rotation.y = Math.PI;
-        //console.log("escala", padre);
-
-        /*switch (ultimoClickeado) {
-            case 'izquierda':
-                createButon3D(izquierda, 'izquierda');
-                createButon3D(frente, 'frente');
-                esconderTodosBotones(true);
-                break;
-            case 'derecha':
-                createButon3D(derecha, 'derecha');
-                createButon3D(frente, 'frente');
-                esconderTodosBotones(true);
-                break;
-            case 'frente':
-                createButon3D(frente, 'frente');
-                createButon3D(izquierda, 'izquierda');
-                createButon3D(meshDebug, 'derecha');
-                esconderTodosBotones(true);
-                break;
-            default:
-                break;
-        }*/
-        //createHoloButton(padreActual);
-        //actualizarDimensiones(modelo);
-        //padreActual.setParent(null);
         newMeshes.addAllToScene();
-        // container.addAllToScene();
+
         if (typeof prearmado !== 'undefined') {
             aplicar();
-        } else {
+
         }
-    }, onSuccess = () => {
+        if ((padre.name == 'frente') || (padre.name == 'derecha') || (padre.name == 'izquierda')) {
+            console.log('botonClicleado', padre.name);
+
+            padreActual.parent = null;
+            padreActual.setAbsolutePosition(padre.getAbsolutePosition());
+        }
+
+    }, onProgress = () => {
         engine.hideLoadingUI();
         hideLoadingScreen();
         //padreActual.setParent(null);
-    }, onProgress = (x) => {
+    }, onError = (x) => {
         //console.log("progress")
         console.log("progreso", x);
         engine.displayLoadingUI();
@@ -989,10 +943,15 @@ function cargarModelo(padre, modelo, posicion, prearmado, rotacion) {
 
 function cargarModeloCustom(modelo, posicion) {
     if (escena.isReady()) {
+
         esconderTodosBotones(true);
 
         customMesh = true;
-        escena.removeMesh(padreCentro, true);
+
+        for (let i = escena.meshes.length - 1; i >= 0; i--) {
+
+            escena.removeMesh(escena.meshes[i]);
+        }
         precioTotal = 0;
         precioTotal = modelo.precio;
         spanPrecio.innerText = "$" + precioTotal;
@@ -1009,7 +968,7 @@ function cargarModeloCustom(modelo, posicion) {
                 //hl.addMesh(mesh, BABYLON.Color3.Green());
                 // container.meshes.push(mesh);
                 meshClickleable(mesh);
-                mesh.parent = padreCentro;
+                //mesh.parent = padreCentro;
                 //mesh.setParent(padreCentro);
                 /*if (mesh.name == "main") {
                     // mainCustomMesh=mesh;
@@ -1018,7 +977,7 @@ function cargarModeloCustom(modelo, posicion) {
 
             });
             mainCustomMesh = newMeshes[0];
-            
+
             console.log("tamanio", newMeshes.length());
             //newMeshes.forEach(x=>x.setParent(padreCentro));
             if (typeof posicion === 'undefined') {
@@ -1032,25 +991,25 @@ function cargarModeloCustom(modelo, posicion) {
             console.log("termino");
             hideLoadingScreen();
             camera.zoomOn();
-            camera.maxZ=1000;
-            camera.target=padreCentro.position;
+            camera.maxZ = 1000;
+            camera.target = padreCentro.position;
         }, onProgress = (x) => {
-            console.log("importados",x)
-            
+            console.log("importados", x)
+
             //padreActual.setParent(null);
-        },onError = (x) => {
+        }, onError = (x) => {
             hideLoadingScreen();
             camera.zoomOn();
-            camera.maxZ=1000;
-            camera.target=padreCentro.position;
-            console.log("errores",x);
+            camera.maxZ = 1000;
+            camera.target = padreCentro.position;
+            console.log("errores", x);
             //padreActual.setParent(null);
         });
         /*camera.zoomOn();
         camera.maxZ=1000;
         camera.target=padreCentro.position;*/
 
-    }else{
+    } else {
         console.log("espera a que carge este elemento");
     }
 
@@ -1067,7 +1026,10 @@ function cambioTextura(opc) {
 }
 function cambioModulo(opc, limpiar) {
     if ((typeof limpiar === 'undefined') != true) {
-        escena.meshes.forEach((x) => { x.dispose() });
+        for (let i = escena.meshes.length - 1; i >= 0; i--) {
+
+            escena.removeMesh(escena.meshes[i]);
+        }
         //container.meshes.forEach((x) => { x.dispose() });
     }
     moduloActual = modulos[opc];
@@ -1467,15 +1429,15 @@ function actualizarMueble() {
 
 }
 function rotarSelecionado() {
-    if(customMesh){
-        padreCentro.rotation.y = (Math.PI / 2) + padreCentro.rotation.y;    
-    }else{
-        if(meshClicleado){
+    if (customMesh) {
+        padreCentro.rotation.y = (Math.PI / 2) + padreCentro.rotation.y;
+    } else {
+        if (meshClicleado) {
             padreActual.rotation.y = (Math.PI / 2) + padreActual.rotation.y;
         }
     }
-    
-    
+
+
 }
 function esconderTodosBotones(bool) {
     if (bool) {
@@ -2163,11 +2125,15 @@ function opcPrearmado(i) {
         [{ cor: 1, tipo: "taburete" }, { cor: 1, tipo: "taburete" }, { cor: 1, tipo: "taburete" }]
     ]
     */
-   esconderTodosBotones(true) ;
+    esconderTodosBotones(true);
     precioTotal = 0;
     /*container.meshes=[];
     escena.meshes=[];*/
-    escena.removeMesh(padreCentro, true);
+    //escena.removeMesh(padreCentro, true);
+    for (let i = escena.meshes.length - 1; i >= 0; i--) {
+
+        escena.removeMesh(escena.meshes[i]);
+    }
     document.getElementById("btn-agregar-3d-a-carrito").style.visibility = "visible";
     switch (i) {
         case 0:
@@ -2493,9 +2459,13 @@ function cambiarVistaMotor(opc) {
             break;
     }
 }
-
-function agregarModelo3DaCArrito() {
-    alert("agregado al carrito");
-
+function acomodarCamara(){
+     camera.zoomOn();
+     camera.maxZ = 1000;
+     camera.target = padreCentro.position;
 }
 /*funciones del carrito */
+    function agregarModelo3DaCArrito() {
+        alert("agregado al carrito");
+    
+    }

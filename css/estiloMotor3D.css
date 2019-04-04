@@ -5,7 +5,14 @@
      overflow: scroll;
 }
 */
+body {
 
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    overflow-x: hidden;
+
+}
 .carrito li a {
 	text-decoration: none;
 }
@@ -146,11 +153,7 @@ font-weight: bold;
 	visibility: hidden;
 }
 
-body {
-	margin: 0;
-	padding: 0;
-	width: 100%;
-}
+
 
 .motor3D .modulos {
 	border-top: 1px solid #e8e8e8;
@@ -390,7 +393,7 @@ body {
 .item3 {
 	grid-area: main;
 	width: 100%;
-	height: 60%;
+	height: 100%;
 }
 
 .motor3D .item4 {
