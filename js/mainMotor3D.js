@@ -1025,16 +1025,28 @@ function cambioTextura(opc) {
     //alert(opc);
 }
 function cambioModulo(opc, limpiar) {
+    moduloActual = modulos[opc];
     if ((typeof limpiar === 'undefined') != true) {
+<<<<<<< HEAD
         for (let i = escena.meshes.length - 1; i >= 0; i--) {
 
             escena.removeMesh(escena.meshes[i]);
         }
+=======
+        //escena.meshes.forEach((x) => { x.dispose() });
+>>>>>>> 85c787d2f0bd88089bd7881b54c8eef4cab5e9ce
         //container.meshes.forEach((x) => { x.dispose() });
+        for (var i = 0; i < escena.meshes.length; i++) {
+            escena.meshes[i].dispose();
+            i--;
+        }
     }
-    moduloActual = modulos[opc];
-    actualizarMueble();
-    agregarBorder(opc, false);
+    if (customMesh) {
+        cargarModelo(padreActual, modeloActual(texturaActual, moduloActual, true)/*, { hijosDerecha, hijosFrente, hijosIzquierda }*/);
+    } else {
+        actualizarMueble();
+        agregarBorder(opc, false);
+    }
     //alert(modeloActual(texturaActual,moduloActual));
 }
 function agregarBorder(val, textura) {
