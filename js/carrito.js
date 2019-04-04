@@ -1,10 +1,16 @@
-
 let itemsCarrito = [];
+if(sessionStorage.getItem("carrito")==null){
+
+}else{
+    itemsCarrito=JSON.parse(sessionStorage.getItem("carrito"));
+    actualizarDivCarrito();
+}
 function mostrarCarro() {
 
     document.getElementById("carrito").classList.toggle("carrito-activo");
     document.getElementById("rng-total").classList.toggle("total-desactivo");
 
+    
     // actualizarDivCarrito();
 }
 function removerArticulo(elemento, nombre) {
@@ -19,9 +25,12 @@ function removerArticulo(elemento, nombre) {
 
 
 function agregarAlCarrito(nombre, precio, imagen) {
+    
+    
     var existente = false;
     if (itemsCarrito.length == 0) {
         itemsCarrito.push({ name: nombre, price: precio, quantity: 1, image: imagen });
+        
     } else {
         itemsCarrito.forEach((x) => {
             if (x.name === nombre) {
@@ -135,6 +144,7 @@ function actualizarDivCarrito() {
         renglonesCarrito.innerHTML = carritoTotal;
         document.getElementById("num-carrito").innerText = itemsCarrito.length;
         actualizarBotonPaypal(precioAPagar);
+        sessionStorage.setItem("carrito",JSON.stringify(itemsCarrito));
     } else {
         document.getElementById("total-carrito").innerText = 0;
         document.getElementById("carrito").classList.toggle("carrito-activo");

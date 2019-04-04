@@ -622,7 +622,6 @@ camera.inputs.attached.mousewheel.detachControl(canvas);
     //cargarModelo(padreCentro, modelos.puffs[0].nombre);
     pantallaCarga();
     cargarModelo(padreCentro, modeloActual(texturaActual, moduloActual, true));
-    esconderTodosBotones(true);
     padreCentro.addBehavior(pointerDragBehavior);
     activarRotacion();
     BABYLON.Scene.LongPressDelay = 200;
@@ -837,6 +836,7 @@ function cargarModelo(padre, modelo, posicion, prearmado, rotacion) {
     if (!modelo) {
         modelo = "BrazoContempo.gltf";
     }
+    engine.displayLoadingUI();
     showLoadingScreen();
     //showLoadingScreen();
     //
@@ -847,7 +847,8 @@ function cargarModelo(padre, modelo, posicion, prearmado, rotacion) {
         //console.log("padre a guardar", newMeshes.meshes[0]);
         padreAnterior = padreActual;
         padreActual = newMeshes.meshes[0].getChildren()[0];
-        //padreActual.setParent = padreCentro;
+        padreActual.setParent = padreCentro;
+
         if (typeof posicion !== 'undefined') {
             padreActual.position = posicion;
         }
@@ -927,7 +928,7 @@ function cargarModelo(padre, modelo, posicion, prearmado, rotacion) {
                 //container.meshes.push(mesh);
                 meshClickleable(mesh);
             });
-            //padreActual.parent = padre;
+            padreActual.parent = padre;
         }
         activarBotonesAplicar(true);
         esconderTodosBotones(false);
@@ -991,10 +992,7 @@ function cargarModeloCustom(modelo, posicion) {
         esconderTodosBotones(true);
 
         customMesh = true;
-        for (var i = 0; i < escena.meshes.length; i++) {
-            escena.meshes[i].dispose();
-            i--;
-        }
+        escena.removeMesh(padreCentro, true);
         precioTotal = 0;
         precioTotal = modelo.precio;
         spanPrecio.innerText = "$" + precioTotal;
@@ -2177,10 +2175,7 @@ function opcPrearmado(i) {
     precioTotal = 0;
     /*container.meshes=[];
     escena.meshes=[];*/
-    for (var i = 0; i < escena.meshes.length; i++) {
-            escena.meshes[i].dispose();
-            i--;
-        }
+    escena.removeMesh(padreCentro, true);
     document.getElementById("btn-agregar-3d-a-carrito").style.visibility = "visible";
     switch (i) {
         case 0:
