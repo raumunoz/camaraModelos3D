@@ -941,7 +941,14 @@ function cargarModelo(padre, modelo, posicion, prearmado, rotacion) {
 
 }
 
-function cargarModeloCustom(modelo, posicion) {
+function cargarModeloCustom(modelo,div) {
+    if(typeof div !== "undefined"){
+    debugg=div;
+    var onClicA=div.parentNode.parentNode.parentNode;
+    var click=onClicA.childNodes[4].attributes.onclick;
+    var agregarBtn=document.getElementById("btn-agregar-3d-a-carrito");
+    agregarBtn.setAttribute( "onClick", click.textContent );
+    }
     if (escena.isReady()) {
 
         esconderTodosBotones(true);
@@ -961,7 +968,7 @@ function cargarModeloCustom(modelo, posicion) {
             //console.log(newMeshes);
             //console.log(padre);
             //ModeloCustom=newMeshes;
-            debugg = newMeshes[0].getChildren()[0];
+            //debugg = newMeshes[0].getChildren()[0];
 
             // newMeshes[0].setParent(padreCentro);
             newMeshes.forEach(mesh => {
@@ -1027,14 +1034,7 @@ function cambioTextura(opc) {
 function cambioModulo(opc, limpiar) {
     moduloActual = modulos[opc];
     if ((typeof limpiar === 'undefined') != true) {
-<<<<<<< HEAD
-        for (let i = escena.meshes.length - 1; i >= 0; i--) {
-
-            escena.removeMesh(escena.meshes[i]);
-        }
-=======
         //escena.meshes.forEach((x) => { x.dispose() });
->>>>>>> 85c787d2f0bd88089bd7881b54c8eef4cab5e9ce
         //container.meshes.forEach((x) => { x.dispose() });
         for (var i = 0; i < escena.meshes.length; i++) {
             escena.meshes[i].dispose();
@@ -2451,20 +2451,28 @@ function cambiarVistaMotor(opc) {
             document.getElementById("iconosPrearmado").style.visibility = "visible";
             document.getElementById("grid-texturas").style.visibility = "visible";
             document.getElementById("iconosTexturas").style.visibility = "visible";
-            document.getElementById("btn-agregar-3d-a-carrito").style.visibility = "hidden";
+            document.getElementById("btn-agregar-3d-a-carrito").style.visibility = "visible";
+            for (let i = escena.meshes.length - 1; i >= 0; i--) {
+
+                escena.removeMesh(escena.meshes[i]);
+            }
+            cargarModelo(padreCentro, modeloActual(texturaActual, moduloActual, true));
+
             break;
         case 1:
             document.getElementById("descripcionMaterial").style.visibility = "visible";
             document.getElementById("iconosPrearmado").style.visibility = "hidden";
             document.getElementById("grid-texturas").style.visibility = "visible";
-            document.getElementById("btn-agregar-3d-a-carrito").style.visibility = "hidden";
+            document.getElementById("btn-agregar-3d-a-carrito").style.visibility = "visible";
+            cargarModeloCustom(modelos.puffino[10]);
             break;
         case 2:
             document.getElementById("descripcionMaterial").style.visibility = "hidden";
             document.getElementById("iconosPrearmado").style.visibility = "hidden";
             document.getElementById("grid-texturas").style.visibility = "hidden";
             document.getElementById("iconosTexturas").style.visibility = "hidden";
-            document.getElementById("btn-agregar-3d-a-carrito").style.visibility = "hidden";
+            document.getElementById("btn-agregar-3d-a-carrito").style.visibility = "visible";
+            cargarModeloCustom(modelos.kids[0]);
             break;
 
         default:

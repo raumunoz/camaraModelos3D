@@ -1,0 +1,9 @@
+unicorno
+	cambiar de color.	 
+puebla 
+	no funciona, arreglar
+dinosaurio 
+	no carga talvez es muy pesado
+dona
+	mejorar usar otra textura para la
+	base
