@@ -26,20 +26,21 @@ function removerArticulo(elemento, nombre) {
 
 function agregarAlCarrito(nombre, precio, imagen) {
     
-    
+
     var existente = false;
     if (itemsCarrito.length == 0) {
-        itemsCarrito.push({ name: nombre, price: precio, quantity: 1, image: imagen });
+        itemsCarrito.push({ name: nombre, price: precio, quantity: 1, image: imagen,details: getNombreTextura() });
         
     } else {
         itemsCarrito.forEach((x) => {
             if (x.name === nombre) {
                 x.quantity++;
                 existente = true;
+                x.details=getNombreTextura();
             }
         });
         if (existente == false) {
-            itemsCarrito.push({ name: nombre, price: precio, quantity: 1, image: imagen });
+            itemsCarrito.push({ name: nombre, price: precio, quantity: 1, image: imagen, details: getNombreTextura()});
         }
 
     }
@@ -112,7 +113,9 @@ function actualizarDivCarrito() {
                             <img src="`+ x.image + `" alt="brazo" id="imgProducto" class="img-carrito"
                                 height="90">
                         </div>
-                        <div class="col-xs-5 col-5 col-sm-4 rng-desc-carrito ">`+ x.name + `
+                        <div class="col-xs-2 col-2 col-sm-2 rng-desc-carrito ">`+ x.name + `
+                        </div>
+                        <div class="col-xs-2 col-5 col-sm-2 rng-desc-carrito ">`+ x.details + `
                         </div>
                         <div class="col-xs-3 col-3 rng-div-precio">
                             <span class="rng-precio">
@@ -245,4 +248,13 @@ function actualizarBotonPaypal(total) {
         }
     }, '#paypal-button');
 }
-
+function getNombreTextura(){
+    var detalles;
+    var descripcionTextura = document.getElementById("descripcionMaterial");
+    if((descripcionTextura.innerHTML=="Material")||(descripcionTextura.innerHTML=="")||(typeof descripcionTextura.innerHTML === "undefined")){
+        detalles="Default";
+    }else{
+        detalles=descripcionTextura.innerHTML;
+    }
+    return detalles;
+}

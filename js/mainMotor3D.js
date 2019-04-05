@@ -63,67 +63,67 @@ let modelos = {
 */
 let modelos = {
     taburetes: [
-        { nombre: "tabureteContempo.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 1800 },
-        { nombre: "tabureteCasual.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 1500 },
-        { nombre: "tabureteTrendy.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 1700 }
+        { apodo: "Yooko Contempo Taburete", nombre: "tabureteContempo.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 7099 },
+        { apodo: "Yooko Casual Taburete", nombre: "tabureteCasual.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 7099 },
+        { apodo: "Yooko Trendy Taburete", nombre: "tabureteTrendy.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 7099 }
     ],
     brazos: [
-        { nombre: "BrazoContempo.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 2300 },
-        { nombre: "brazoCasual.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 2200 },
-        { nombre: "brazoTrendy.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 2400 }
+        { apodo: "Yooko Contempo Silla", nombre: "BrazoContempo.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 8599 },
+        { apodo: "Yooko Casual Silla", nombre: "brazoCasual.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 8599 },
+        { apodo: "Yooko Trendy Silla", nombre: "brazoTrendy.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 8599 }
     ],
     esquinas: [
-        { nombre: "esquinaContempo.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 2800 },
-        { nombre: "esquinaCasual.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 2700 },
-        { nombre: "esquinaTrendy.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3100 }
+        { apodo: "Yooko Contempo Esquinero", nombre: "esquinaContempo.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 8799 },
+        { apodo: "Yooko Casual Esquinero", nombre: "esquinaCasual.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 8799 },
+        { apodo: "Yooko Trendy Esquinero", nombre: "esquinaTrendy.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 8799 }
     ],
     completos: [
-        { nombre: "completoContempo.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
-        { nombre: "completoCasual.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
-        { nombre: "completoTrendy.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 }
+        { apodo: "", nombre: "completoContempo.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
+        { apodo: "", nombre: "completoCasual.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
+        { apodo: "", nombre: "completoTrendy.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 }
     ],
     puffino: [
-        { nombre: "Atlixco.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 2599 },
-        { nombre: "Atlixco_chico.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 2459 },
-        { nombre: "Bernal.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 2999 },
-        { nombre: "conzumel.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 4999 },
-        { nombre: "Taburete_conzumel.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 2999 },
-        { nombre: "Guadalajara.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 5199 },
-        { nombre: "guanajuato.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 4699 },
-        { nombre: "La paz.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3499 },
-        { nombre: "La Paz_chico.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3099 },
-        { nombre: "mérida.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3999 },
-        { nombre: "Oaxaca.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3899 },
-        { nombre: "Oaxaca_matrimonial.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 4599 },
-        { nombre: "OaxacaMatrimonial.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 4799 },
-        { nombre: "pátzcuaro.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 4499 },
-        { nombre: "pátzcuaroNiño.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3199 },
-        { nombre: "puebla.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3099 },
-        { nombre: "puebla_chico.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 2699 },
-        { nombre: "puertoVallarta.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3999 },
-        { nombre: "sillon_conzumel.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 4199 },
-        { nombre: "veracruz.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 4199 },
-        { nombre: "veracruz_niños.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3399 },
-        { nombre: "ZacatecasChico.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 2399 },
-        { nombre: "Zacatecas_grande.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3199 },
-        { nombre: "zacatecas_mediano.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 2699 },
-        { nombre: "zacatlán.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3399 }
+        { apodo: "Yumil", nombre: "Atlixco.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 2499 },
+        { apodo: "Yumil Mediano", nombre: "Atlixco_chico.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 2499 },
+        { apodo: "Yeeb", nombre: "Bernal.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 2999 },
+        { apodo: "Kauil", nombre: "conzumel.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 4999 },
+        { apodo: "Kauil Taburete", nombre: "Taburete_conzumel.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 2999 },
+        { apodo: "Balam", nombre: "Guadalajara.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 5199 },
+        { apodo: "Ikal", nombre: "guanajuato.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 4699 },
+        { apodo: "Nima", nombre: "La paz.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3499 },
+        { apodo: "Nima mediano", nombre: "La Paz_chico.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3099 },
+        { apodo: "Zazil", nombre: "mérida.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3999 },
+        { apodo: "Toot", nombre: "Oaxaca.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3899 },
+        { apodo: "Toot Queen", nombre: "Oaxaca_matrimonial.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 4799 },
+        { apodo: "", nombre: "OaxacaMatrimonial.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 4799 },
+        { apodo: "Tanak", nombre: "pátzcuaro.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 4499 },
+        { apodo: "Tanak Niños", nombre: "pátzcuaroNiño.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3199 },
+        { apodo: "Alom", nombre: "puebla.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3099 },
+        { apodo: "Alom Mediano", nombre: "puebla_chico.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 2299 },
+        { apodo: "Seti", nombre: "puertoVallarta.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3999 },
+        { apodo: "Kauil Sillón", nombre: "sillon_conzumel.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 4199 },
+        { apodo: "Canek", nombre: "veracruz.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 4199 },
+        { apodo: "Canek Niños", nombre: "veracruz_niños.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3399 },
+        { apodo: "Kimbo Chico", nombre: "ZacatecasChico.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 2399 },
+        { apodo: "Kimbo Grande", nombre: "Zacatecas_grande.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3199 },
+        { apodo: "Kimbo Mediano", nombre: "zacatecas_mediano.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 2699 },
+        { apodo: "Kuk", nombre: "zacatlán.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3399 }
     ],
     kids: [
-        { nombre: "puff_conejo .gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3499 },
-        { nombre: "puff_dinosaurio.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3699 },
-        { nombre: "dona.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3399 },
-        { nombre: "puff_jirafa.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3799 },
-        { nombre: "puffPerro.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3699 },
-        { nombre: "unicornio.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3499 },
+        { apodo: "CONEJO", nombre: "puff_conejo .gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3499 },
+        { apodo: "DINOSAURIO", nombre: "puff_dinosaurio.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3699 },
+        { apodo: "DONA", nombre: "dona.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3399 },
+        { apodo: "JIRAFA", nombre: "puff_jirafa.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3799 },
+        { apodo: "PERRITO", nombre: "puffPerro.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3699 },
+        { apodo: "UNICORNIO", nombre: "unicornio.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3499 },
     ],
     yokoModular: [
-        { nombre: "puff_conejo .gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
-        { nombre: "puff_dinosaurio.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
-        { nombre: "dona.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
-        { nombre: "jirafa.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
-        { nombre: "puffPerro.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
-        { nombre: "unicornio.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
+        { apodo: "", nombre: "puff_conejo .gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
+        { apodo: "", nombre: "puff_dinosaurio.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
+        { apodo: "", nombre: "dona.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
+        { apodo: "", nombre: "jirafa.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
+        { apodo: "", nombre: "puffPerro.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
+        { apodo: "", nombre: "unicornio.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
     ]
 }
 let btnRotar;
@@ -573,6 +573,18 @@ window.addEventListener('DOMContentLoaded', function () {
 
         })
         //createButton();
+        // On click event, request pointer lock
+        scene.onPointerDown = function (evt) {
+            console.log(evt);
+            if (!engine.isFullscreen) {
+                engine.switchFullscreen(true); //true = requestPointerLock.
+            }
+            else if (!engine.isPointerLock && canvas.requestPointerLock) {
+                //Back-up pointerlock request in-case fullscreen pointerlock request fails. (*cough* Edge)
+                canvas.requestPointerLock();
+            }
+
+        };
         return scene;
 
     }
@@ -622,73 +634,16 @@ window.addEventListener('DOMContentLoaded', function () {
     //cargarModelo(padreCentro, modelos.puffs[0].nombre);
     pantallaCarga();
     cargarModelo(padreCentro, modeloActual(texturaActual, moduloActual, true));
+
     padreCentro.addBehavior(pointerDragBehavior);
     activarRotacion();
     BABYLON.Scene.LongPressDelay = 200;
-    /*BABYLON.SceneLoader.LoadAssetContainer("./", "brazoCasual.gltf", escena, function (newMeshes) {
 
-        //  console.log("containerBrazo", newMeshes);
-        //newMeshes.meshes[0].getChildren()[0].parent=padreCentro;
-        engine.displayLoadingUI();
-        padreActual = newMeshes.meshes[0].getChildren()[0];
-
-        meshDebug = padreActual.getChildren()[3];
-        meshDebug1 = padreActual.getChildren()[5];
-        meshDebug2 = padreActual.getChildren()[4];
-
-        meshDebug2.rotation.y = Math.PI / 2;
-        //meshDebug = newMeshes.meshes[5];
-        //meshDebug1 = newMeshes.meshes[3];
-
-        container.meshes.push(padreActual);
-
-        //meshClickleable(newMeshes.meshes[1]);
-        //padreActual.name = "padrebrazoCasual";
-        //meshDebug.position.x = 1;
-        //container.meshes.push(padre);
-        //createLabel(meshDebug);
-        //alert(onProgress);
-
-        newMeshes.meshes.forEach(mesh => {
-            //mesh.position.x=8;
-            meshClickleable(mesh);
-            container.meshes.push(mesh);
-        });
-        //...
-
-        createButon3D(meshDebug, 'derecha');
-        createButon3D(meshDebug1, 'izquierda');
-        createButon3D(meshDebug2, 'frente');
-        container.addAllToScene();
-    }, onSuccess = () => {
-        engine.hideLoadingUI();
-        cargando = !cargando;
-        // console.log("cargando", cargando);
-    }, onProgress = (evento) => {
-        evento.onProgress(() => {
-            //  console.log("se esta cargando");
-        })
-    });*/
-
-    // run the render loop
-    // console.log("container", container);
 });
 window.addEventListener("resize", function () {
     engine.resize();
 });
-function clika() {
-    //alert("click");
-    toogle = !toogle;
-    //console.log("toogle", toogle);
-    if (toogle) {
-        container.removeAllFromScene();
-        //console.log("container", container);
-    } else {
-        createButon3D(meshDebug1, true);
-        createButon3D(meshDebug, false);
-        container.addAllToScene();
-    }
-}
+
 var createLabel = function (mesh) {
     var label = new BABYLON.GUI.Rectangle("label for " + mesh.name);
     label.background = "black"
@@ -706,38 +661,6 @@ var createLabel = function (mesh) {
     label.addControl(text1);
 }
 
-/*
-var createButton = function () {
-    var button1 = BABYLON.GUI.Button.CreateImageOnlyButton("but1", "/assets/iconos/3d_Rotate.png");
-    button1.width = "40px";
-    button1.height = "40px";
-    button1.verticalAlignment = 3;
-    button1.horizontalAlignment = 3;
-    advancedTexture.addControl(button1);
-    button1.onPointerUpObservable.add(function () {
-        //activarRotacion();
-    });*
-    //grid.addControl(panel, 3, 1);
-    //panel.addControl(button1);
-}*/
-var createHoloButton = function (mesh) {
-
-    btnRotar = new BABYLON.GUI.HolographicButton("down");
-    manager.addControl(button);
-    btnRotar.linkToTransformNode(mesh);
-    btnRotar.position.z = 0;
-    var text1 = new BABYLON.GUI.TextBlock();
-    text1.text = "+";
-    text1.color = "white";
-    btnRotar.fontSize = 200;
-    btnRotar.content = text1;
-    //button.imageUrl = "curiGris_DISP.png";
-    btnRotar.scaling = new BABYLON.Vector3(2.7, 2.7, 1);
-
-    btnRotar.onPointerUpObservable.add(function () {
-
-    });
-}
 function createButon3D(mesh, opc) {
     //button.rotation.x=180;
     var text1 = new BABYLON.GUI.TextBlock();
@@ -886,7 +809,6 @@ function cargarModelo(padre, modelo, posicion, prearmado, rotacion) {
         createButon3D(meshDebug, 'izquierda');
         createButon3D(meshDebug2, 'frente');
         if (typeof prearmado !== 'undefined') {
-
             newMeshes.meshes.forEach(mesh => {
                 hl.addMesh(mesh, BABYLON.Color3.Green());
                 //container.meshes.push(mesh);
@@ -894,19 +816,15 @@ function cargarModelo(padre, modelo, posicion, prearmado, rotacion) {
 
             });
             console.log("ROTACION", rotacion);
-
             if (rotacion > 0) {
                 for (let index = 0; index < rotacion; index++) {
                     padreActual.rotation.y = (Math.PI / 2) + padreActual.rotation.y;
                     console.log("ROTACION");
                 }
             }
-
             padreActual.parent = padre;
-
             //console.log("TRUE");
         } else {
-
             newMeshes.meshes.forEach(mesh => {
                 hl.addMesh(mesh, BABYLON.Color3.Green());
                 //container.meshes.push(mesh);
@@ -917,7 +835,6 @@ function cargarModelo(padre, modelo, posicion, prearmado, rotacion) {
         activarBotonesAplicar(true);
         esconderTodosBotones(false);
         newMeshes.addAllToScene();
-
         if (typeof prearmado !== 'undefined') {
             aplicar();
 
@@ -928,7 +845,6 @@ function cargarModelo(padre, modelo, posicion, prearmado, rotacion) {
             padreActual.parent = null;
             padreActual.setAbsolutePosition(padre.getAbsolutePosition());
         }
-
     }, onProgress = () => {
         engine.hideLoadingUI();
         hideLoadingScreen();
@@ -939,18 +855,26 @@ function cargarModelo(padre, modelo, posicion, prearmado, rotacion) {
         engine.displayLoadingUI();
     });
     //padreActual.setParent(padreCentro);
-
 }
 
-function cargarModeloCustom(modelo,div) {
+function cargarModeloCustom(modelo, div, parametrosCarrito) {
     camera.inputs.attached.mousewheel.detachControl(canvas);
-    if(typeof div !== "undefined"){
-    debugg=div;
-    var onClicA=div.parentNode.parentNode.parentNode;
-    var click=onClicA.childNodes[4].attributes.onclick;
-    var agregarBtn=document.getElementById("btn-agregar-3d-a-carrito");
-    agregarBtn.setAttribute( "onClick", click.textContent );
+    var descripcionTextura = document.getElementById("descripcionMaterial");
+    descripcionTextura.innerHTML = "";
+    var agregarBtn = document.getElementById("btn-agregar-3d-a-carrito");
+    if (typeof parametrosCarrito === "undefined") {
+        if (typeof div !== "undefined") {
+            debugg = div;
+            var onClicA = div.parentNode.parentNode.parentNode;
+            var click = onClicA.childNodes[4].attributes.onclick;
+           
+            agregarBtn.setAttribute("onClick", click.textContent);
+        }
+        console.log("parametro",parametrosCarrito);
+    } else {
+        agregarBtn.setAttribute("onClick", "agregarAlCarrito('Toot',3899,'images/productos/puffino/oaxaca.jpg')");
     }
+
     if (escena.isReady()) {
 
         esconderTodosBotones(true);
@@ -997,7 +921,8 @@ function cargarModeloCustom(modelo,div) {
             //newMeshes.meshes[0].getChildren()[0].setParent(padreCentro);
             //engine.displayLoadingUI();
             //hideLoadingScreen();
-            console.log("termino");
+            console.log("terminó");
+            rand.onClick();
             hideLoadingScreen();
             camera.zoomOn();
             camera.maxZ = 1000;
@@ -1242,7 +1167,7 @@ function cancelar() {
     //actualizarTablaMuebles();
     //divLista.innerText = getListaMuebles(padres);
 }
-/*regresa el modelo */
+
 function modeloActual(text, moduA, nombre, completo) {
     let selecionado = 'normal';
     let indiceModulo = modulos.indexOf(moduA.toString());
@@ -1860,6 +1785,7 @@ function cargarJsonTexturas() {
     loadJSON(function (response) {
         // Parse JSON string into object
         archivosTexturas = JSON.parse(response);
+        console.log("archivoTextura", archivosTexturas)
         generarBotonesTextura();
     });
 }
@@ -1872,7 +1798,7 @@ function generarBotonesTextura() {
     var texturasHTML = "";
     var texturasHTML1 = "";
     var texturasHTML2 = "";
-    archivosTexturas.forEach((x) => {
+    /*archivosTexturas.forEach((x) => {
         texturasHTML = texturasHTML + generarBotonImagen(x.chico, x.medio);
         if (bandera == false) {
             texturasHTML1 = texturasHTML1 + generarBotonImagen(x.chico, x.medio);
@@ -1881,6 +1807,15 @@ function generarBotonesTextura() {
             bandera = false;
             texturasHTML2 = texturasHTML2 + generarBotonImagen(x.chico, x.medio);
         }
+    });*/
+    archivosTexturas[0].lonas.forEach((x) => {
+        texturasHTML = texturasHTML + generarBotonImagen(x.chico, x.medio);
+    });
+    archivosTexturas[0].gamuzas.forEach((x) => {
+        texturasHTML1 = texturasHTML1 + generarBotonImagen(x.chico, x.medio);
+    });
+    archivosTexturas[0].tactoPiel.forEach((x) => {
+        texturasHTML2 = texturasHTML2 + generarBotonImagen(x.chico, x.medio);
     });
     //console.log(texturasHTML);
     gridTexturas.innerHTML = texturasHTML;
@@ -1889,14 +1824,11 @@ function generarBotonesTextura() {
 }
 
 function generarBotonImagen(srcImagenChico, srcImagenMedio) {
-    var btnImagen = `<input type="image" src="assets/texturas/chico/` + srcImagenChico + `" class="btn-imagen-grid"  onclick="cambiarTexturaCliente('` + srcImagenMedio + `');"/>`;
+    var btnImagen = `<input type="image" src="assets/texturas/chico/` + srcImagenChico + `" class="btn-imagen-grid" id="` + srcImagenMedio + `"  onclick="cambiarTexturaCliente('` + srcImagenMedio + `');"/>`;
     return btnImagen;
 }
 
 function cambiarTexturaCliente(nombreTextura) {
-    //padreActual.getChildren()[0].material._albedoTexture.dispose();
-    //new BABYLON.Texture("textures/filename", scene);
-    //padreActual.getChildren()[0].material._albedoTexture= new BABYLON.Texture("assets/modelos/tabureteContempo1_base_DIFFUSE.jpg", escena);
     var descripcionTextura = document.getElementById("descripcionMaterial");
     console.log(nombreTextura);
     descripcionTextura.innerHTML = nombreImagenTextura(nombreTextura);
@@ -1905,23 +1837,9 @@ function cambiarTexturaCliente(nombreTextura) {
     escena.materials.forEach((x) => {
         x._albedoTexture = new BABYLON.Texture(path, escena);
     });
-    /*container.meshes.forEach((x) => {
-        if ((typeof x.material.name === 'undefined') != true) {
-            x.material._albedoTexture.dispose();
-            x.material._albedoTexture = new BABYLON.Texture(path, escena);
-        }
-    });*/
-
-    //console.log(padreActual.getChildren()[0].material._albedoTexture= new BABYLON.Texture(`"assets/texturas/medio/`+nombreTextura+`"`, escena));
-    //padreActual.getChildren()[0].material._albedoTexture= new BABYLON.Texture(`"assets/texturas/medio/`+nombreTextura+`"`, escena);
-    //padreActual.getChildren()[0].material._albedoTexture= new BABYLON.Texture(path, escena);
 }
 
-/*
-padreActual.getChildren()[0].material._albedoTexture.dispose();
-new BABYLON.Texture("textures/filename", scene);
-padreActual.getChildren()[0].material._albedoTexture= new BABYLON.Texture("assets/modelos/tabureteContempo1_base_DIFFUSE.jpg", escena);
-*/
+
 
 function nombreImagenTextura(nombreTextura) {
     var transformada = nombreTextura.split(" ");
@@ -2118,19 +2036,7 @@ function addSlider(isVertical, isClamped, displayThumb, row, col, zoom) {
     //slider.value = Math.PI + Math.random() * Math.PI;
     panel.addControl(slider);
 }
-/*
-for (var i = 0; i < matriz.length; i++) {
-    for (var j = 0; j < matriz.length; j++) {
-        console.log(cordenada[i][j]);
-        if (matriz[i][j].posi == 1) {
-            console.log(cordenada[i][j]);
-            //cargarModeloCustom(modelos.taburetes[v].nombre,cordenada[i][j]);
-            //cargarModelo(padreCentro, modelos.puffino[0].nombre);
-            //cargarModelo(padreCentro, modeloActual(texturaActual, moduloActual, true), cordenada[i][j], true);
-        }
-    }
-}
-*/
+
 function opcPrearmado(i) {
     /*
     [
@@ -2380,20 +2286,6 @@ function resaltarBotonMenu(o) {
             break;
     }
 }
-
-/*
-function handleFiles() {
-    const fileList = this.files; /* now you can work with the file list
-    debugsg=this.files;
-    console.log("archivo",this.files);
-    const reader = new FileReader();
-    reader.onLoad=function(){
-        console.log("Resultado",reader.result);
-    }
-    reader.readAsText(this.files);
-//}
-*/
-
 function zoomear(zoom) {
 
     if (zoom == "in") {
@@ -2481,13 +2373,23 @@ function cambiarVistaMotor(opc) {
             break;
     }
 }
-function acomodarCamara(){
-     camera.zoomOn();
-     camera.maxZ = 1000;
-     camera.target = padreCentro.position;
+function acomodarCamara() {
+    camera.zoomOn();
+    camera.maxZ = 1000;
+    camera.target = padreCentro.position;
 }
 /*funciones del carrito */
-    function agregarModelo3DaCArrito() {
-        alert("agregado al carrito");
-    
+function agregarModelo3DaCArrito() {
+    alert("agregado al carrito");
+
+}
+function pantallaCompleta() {
+    bandera = !bandera;
+    if (!engine.isFullscreen) {
+        engine.switchFullscreen(true); //true = requestPointerLock.
     }
+    else if (!engine.isPointerLock && canvas.requestPointerLock) {
+        //Back-up pointerlock request in-case fullscreen pointerlock request fails. (*cough* Edge)
+        canvas.requestPointerLock();
+    }
+}
