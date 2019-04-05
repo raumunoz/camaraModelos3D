@@ -825,6 +825,7 @@ function createButon3D(mesh, opc) {
 }
 
 function cargarModelo(padre, modelo, posicion, prearmado, rotacion) {
+    camera.inputs.attached.mousewheel.detachControl(canvas);
     //para quitar el padre pero dejar las tran
     console.log("prearmado", prearmado);
     console.log("posicion", posicion);
@@ -942,6 +943,7 @@ function cargarModelo(padre, modelo, posicion, prearmado, rotacion) {
 }
 
 function cargarModeloCustom(modelo,div) {
+    camera.inputs.attached.mousewheel.detachControl(canvas);
     if(typeof div !== "undefined"){
     debugg=div;
     var onClicA=div.parentNode.parentNode.parentNode;
