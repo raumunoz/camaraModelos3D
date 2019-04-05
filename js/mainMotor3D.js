@@ -63,59 +63,59 @@ let modelos = {
 */
 let modelos = {
     taburetes: [
-        { apodo: "Yooko Contempo Taburete", nombre: "tabureteContempo.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 7099 },
-        { apodo: "Yooko Casual Taburete", nombre: "tabureteCasual.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 7099 },
-        { apodo: "Yooko Trendy Taburete", nombre: "tabureteTrendy.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 7099 }
+        { apodo: "Yooko Contempo Taburete", nombre: "tabureteContempo.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 7099, imagenes: [{ imagen: "images/catalogo/yoko/yookocontempo_taburete.jpg" }] },
+        { apodo: "Yooko Casual Taburete", nombre: "tabureteCasual.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 7099, imagenes: [{ imagen: "images/catalogo/yoko/yookocasual_taburete.jpg" }] },
+        { apodo: "Yooko Trendy Taburete", nombre: "tabureteTrendy.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 7099, imagenes: [{ imagen: "images/catalogo/yoko/yookotrendy_taburete.jpg" }] }
     ],
     brazos: [
-        { apodo: "Yooko Contempo Silla", nombre: "BrazoContempo.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 8599 },
-        { apodo: "Yooko Casual Silla", nombre: "brazoCasual.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 8599 },
-        { apodo: "Yooko Trendy Silla", nombre: "brazoTrendy.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 8599 }
+        { apodo: "Yooko Contempo Silla", nombre: "BrazoContempo.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 8599, imagenes: [{ imagen: "images/catalogo/yoko/yookocontempo_silla.jpg" }] },
+        { apodo: "Yooko Casual Silla", nombre: "brazoCasual.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 8599, imagenes: [{ imagen: "images/catalogo/yoko/yookocasual_silla.jpg" }] },
+        { apodo: "Yooko Trendy Silla", nombre: "brazoTrendy.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 8599, imagenes: [{ imagen: "images/catalogo/yoko/yookotrendy_silla.jpg" }] }
     ],
     esquinas: [
-        { apodo: "Yooko Contempo Esquinero", nombre: "esquinaContempo.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 8799 },
-        { apodo: "Yooko Casual Esquinero", nombre: "esquinaCasual.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 8799 },
-        { apodo: "Yooko Trendy Esquinero", nombre: "esquinaTrendy.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 8799 }
+        { apodo: "Yooko Contempo Esquinero", nombre: "esquinaContempo.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 8799, imagenes: [{ imagen: "images/catalogo/yoko/yookocontempo_esquinero.jpg" }] },
+        { apodo: "Yooko Casual Esquinero", nombre: "esquinaCasual.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 8799, imagenes: [{ imagen: "images/catalogo/yoko/yookocasual_esquinero.jpg" }] },
+        { apodo: "Yooko Trendy Esquinero", nombre: "esquinaTrendy.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 8799, imagenes: [{ imagen: "images/catalogo/yoko/yookotrendy_esquinero.jpg" }] }
     ],
     completos: [
-        { apodo: "", nombre: "completoContempo.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
-        { apodo: "", nombre: "completoCasual.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
-        { apodo: "", nombre: "completoTrendy.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 }
+        { apodo: "", nombre: "completoContempo.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000, imagenes: [{ imagen: "" }] },
+        { apodo: "", nombre: "completoCasual.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000, imagenes: [{ imagen: "" }] },
+        { apodo: "", nombre: "completoTrendy.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000, imagenes: [{ imagen: "" }] }
     ],
     puffino: [
-        { apodo: "Yumil", nombre: "Atlixco.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 2499 },
-        { apodo: "Yumil Mediano", nombre: "Atlixco_chico.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 2499 },
-        { apodo: "Yeeb", nombre: "Bernal.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 2999 },
-        { apodo: "Kauil", nombre: "conzumel.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 4999 },
-        { apodo: "Kauil Taburete", nombre: "Taburete_conzumel.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 2999 },
-        { apodo: "Balam", nombre: "Guadalajara.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 5199 },
-        { apodo: "Ikal", nombre: "guanajuato.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 4699 },
-        { apodo: "Nima", nombre: "La paz.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3499 },
-        { apodo: "Nima mediano", nombre: "La Paz_chico.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3099 },
-        { apodo: "Zazil", nombre: "mérida.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3999 },
-        { apodo: "Toot", nombre: "Oaxaca.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3899 },
-        { apodo: "Toot Queen", nombre: "Oaxaca_matrimonial.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 4799 },
-        { apodo: "", nombre: "OaxacaMatrimonial.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 4799 },
-        { apodo: "Tanak", nombre: "pátzcuaro.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 4499 },
-        { apodo: "Tanak Niños", nombre: "pátzcuaroNiño.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3199 },
-        { apodo: "Alom", nombre: "puebla.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3099 },
-        { apodo: "Alom Mediano", nombre: "puebla_chico.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 2299 },
-        { apodo: "Seti", nombre: "puertoVallarta.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3999 },
-        { apodo: "Kauil Sillón", nombre: "sillon_conzumel.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 4199 },
-        { apodo: "Canek", nombre: "veracruz.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 4199 },
-        { apodo: "Canek Niños", nombre: "veracruz_niños.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3399 },
-        { apodo: "Kimbo Chico", nombre: "ZacatecasChico.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 2399 },
-        { apodo: "Kimbo Grande", nombre: "Zacatecas_grande.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3199 },
-        { apodo: "Kimbo Mediano", nombre: "zacatecas_mediano.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 2699 },
-        { apodo: "Kuk", nombre: "zacatlán.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3399 }
+        { apodo: "Yumil", nombre: "Atlixco.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 2499, imagenes: [{ imagen: "images/productos/puffino/atlixco.jpg" }] },
+        { apodo: "Yumil Mediano", nombre: "Atlixco_chico.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 2499, imagenes: [{ imagen: "images/productos/puffino/atlixco_chico.jpg" }] },
+        { apodo: "Yeeb", nombre: "Bernal.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 2999, imagenes: [{ imagen: "images/productos/puffino/bernal.jpg" }] },
+        { apodo: "Kauil", nombre: "conzumel.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 4999, imagenes: [{ imagen: "images/productos/puffino/cozumel.jpg" }] },
+        { apodo: "Kauil Taburete", nombre: "Taburete_conzumel.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 2999, imagenes: [{ imagen: "images/productos/puffino/cozumel_taburete.jpg" }] },
+        { apodo: "Balam", nombre: "Guadalajara.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 5199, imagenes: [{ imagen: "images/productos/puffino/guadalajara.jpg" }] },
+        { apodo: "Ikal", nombre: "guanajuato.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 4699, imagenes: [{ imagen: "images/productos/puffino/guanajuato.jpg" }] },
+        { apodo: "Nima", nombre: "La paz.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3499, imagenes: [{ imagen: "images/productos/puffino/lapaz.jpg" }] },
+        { apodo: "Nima mediano", nombre: "La Paz_chico.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3099, imagenes: [{ imagen: "images/productos/puffino/lapaz_chico.jpg" }] },
+        { apodo: "Zazil", nombre: "mérida.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3999, imagenes: [{ imagen: "images/productos/puffino/merida.jpg" }] },
+        { apodo: "Toot", nombre: "Oaxaca.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3899, imagenes: [{ imagen: "images/productos/puffino/oaxaca.jpg" }] },
+        { apodo: "Toot Queen", nombre: "Oaxaca_matrimonial.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 4799, imagenes: [{ imagen: "images/productos/puffino/oaxaca_queen.jpg" }] },
+        { apodo: "", nombre: "OaxacaMatrimonial.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 4799, imagenes: [{ imagen: "" }] },
+        { apodo: "Tanak", nombre: "pátzcuaro.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 4499, imagenes: [{ imagen: "images/productos/puffino/patzcuaro.jpg" }] },
+        { apodo: "Tanak Niños", nombre: "pátzcuaroNiño.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3199, imagenes: [{ imagen: "images/productos/puffino/patzcuaro_kids.jpg" }] },
+        { apodo: "Alom", nombre: "puebla.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3099, imagenes: [{ imagen: "images/productos/puffino/puebla.jpg" }] },
+        { apodo: "Alom Mediano", nombre: "puebla_chico.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 2299, imagenes: [{ imagen: "images/productos/puffino/pruebla_chico.jpg" }] },
+        { apodo: "Seti", nombre: "puertoVallarta.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3999, imagenes: [{ imagen: "images/productos/puffino/puertovallarta.jpg" }] },
+        { apodo: "Kauil Sillón", nombre: "sillon_conzumel.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 4199, imagenes: [{ imagen: "images/productos/puffino/cozumel_sillon.jpg" }] },
+        { apodo: "Canek", nombre: "veracruz.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 4199, imagenes: [{ imagen: "images/productos/puffino/veracruz.jpg" }] },
+        { apodo: "Canek Niños", nombre: "veracruz_niños.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3399, imagenes: [{ imagen: "images/productos/puffino/veracruz_ninos.jpg" }] },
+        { apodo: "Kimbo Chico", nombre: "ZacatecasChico.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 2399, imagenes: [{ imagen: "images/productos/puffino/zacatecas_chico.jpg" }] },
+        { apodo: "Kimbo Grande", nombre: "Zacatecas_grande.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3199, imagenes: [{ imagen: "images/productos/puffino/zacatecas_grande.jpg" }] },
+        { apodo: "Kimbo Mediano", nombre: "zacatecas_mediano.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 2699, imagenes: [{ imagen: "images/productos/puffino/zacatecas_mediano.jpg" }] },
+        { apodo: "Kuk", nombre: "zacatlán.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3399, imagenes: [{ imagen: "images/productos/puffino/zacatlan.jpg" }] }
     ],
     kids: [
-        { apodo: "CONEJO", nombre: "puff_conejo .gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3499 },
-        { apodo: "DINOSAURIO", nombre: "puff_dinosaurio.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3699 },
-        { apodo: "DONA", nombre: "dona.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3399 },
-        { apodo: "JIRAFA", nombre: "puff_jirafa.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3799 },
-        { apodo: "PERRITO", nombre: "puffPerro.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3699 },
-        { apodo: "UNICORNIO", nombre: "unicornio.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3499 },
+        { apodo: "CONEJO", nombre: "puff_conejo .gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3499, imagenes: [{ imagen: "images/productos/kids/kids_conejo.jpg" }] },
+        { apodo: "DINOSAURIO", nombre: "puff_dinosaurio.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3699, imagenes: [{ imagen: "images/productos/kids/kids_dinosaurio.jpg" }] },
+        { apodo: "DONA", nombre: "dona.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3399, imagenes: [{ imagen: "images/productos/kids/kids_dona.jpg" }] },
+        { apodo: "JIRAFA", nombre: "puff_jirafa.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3799, imagenes: [{ imagen: "images/productos/kids/kids_jirafa.jpg" }] },
+        { apodo: "PERRITO", nombre: "puffPerro.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3699, imagenes: [{ imagen: "images/productos/kids/kids_perrito.jpg" }] },
+        { apodo: "UNICORNIO", nombre: "unicornio.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3499, imagenes: [{ imagen: "images/productos/kids/kids_unicornio.jpg" }] },
     ],
     yokoModular: [
         { apodo: "", nombre: "puff_conejo .gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
@@ -574,6 +574,7 @@ window.addEventListener('DOMContentLoaded', function () {
         })
         //createButton();
         // On click event, request pointer lock
+        /*
         scene.onPointerDown = function (evt) {
             console.log(evt);
             if (!engine.isFullscreen) {
@@ -584,7 +585,7 @@ window.addEventListener('DOMContentLoaded', function () {
                 canvas.requestPointerLock();
             }
 
-        };
+        };*/
         return scene;
 
     }
@@ -857,22 +858,23 @@ function cargarModelo(padre, modelo, posicion, prearmado, rotacion) {
     //padreActual.setParent(padreCentro);
 }
 
-function cargarModeloCustom(modelo, div, parametrosCarrito) {
+function cargarModeloCustom(modelo, div) {
+
     camera.inputs.attached.mousewheel.detachControl(canvas);
     var descripcionTextura = document.getElementById("descripcionMaterial");
     descripcionTextura.innerHTML = "";
     var agregarBtn = document.getElementById("btn-agregar-3d-a-carrito");
-    if (typeof parametrosCarrito === "undefined") {
-        if (typeof div !== "undefined") {
-            debugg = div;
-            var onClicA = div.parentNode.parentNode.parentNode;
-            var click = onClicA.childNodes[4].attributes.onclick;
-           
-            agregarBtn.setAttribute("onClick", click.textContent);
-        }
-        console.log("parametro",parametrosCarrito);
+
+    if (typeof div !== "undefined") {
+        debugg = div;
+        var onClicA = div.parentNode.parentNode.parentNode;
+        var click = onClicA.childNodes[4].attributes.onclick;
+
+        agregarBtn.setAttribute("onClick", click.textContent);
     } else {
-        agregarBtn.setAttribute("onClick", "agregarAlCarrito('Toot',3899,'images/productos/puffino/oaxaca.jpg')");
+        console.log("Indefinido", modelos.puffino[10]);
+
+        agregarBtn.setAttribute("onClick", `agregarAlCarrito('${modelo.apodo}',${modelo.precio},'${modelo.imagenes[0].imagen}')`);
     }
 
     if (escena.isReady()) {
@@ -2358,7 +2360,7 @@ function cambiarVistaMotor(opc) {
             document.getElementById("iconosPrearmado").style.visibility = "hidden";
             document.getElementById("grid-texturas").style.visibility = "visible";
             document.getElementById("btn-agregar-3d-a-carrito").style.visibility = "visible";
-            cargarModeloCustom(modelos.puffino[10]);
+            cargarModeloCustom(modelos.puffino[10], undefined);
             break;
         case 2:
             document.getElementById("descripcionMaterial").style.visibility = "hidden";
@@ -2366,7 +2368,7 @@ function cambiarVistaMotor(opc) {
             document.getElementById("grid-texturas").style.visibility = "hidden";
             document.getElementById("iconosTexturas").style.visibility = "hidden";
             document.getElementById("btn-agregar-3d-a-carrito").style.visibility = "visible";
-            cargarModeloCustom(modelos.kids[0]);
+            cargarModeloCustom(modelos.kids[0],undefined);
             break;
 
         default:
