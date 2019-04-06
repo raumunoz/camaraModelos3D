@@ -25,12 +25,9 @@ function removerArticulo(elemento, nombre) {
 
 
 function agregarAlCarrito(nombre, precio, imagen) {
-    
-
     var existente = false;
     if (itemsCarrito.length == 0) {
         itemsCarrito.push({ name: nombre, price: precio, quantity: 1, image: imagen,details: getNombreTextura() });
-        
     } else {
         itemsCarrito.forEach((x) => {
             if (x.name === nombre) {
@@ -42,9 +39,13 @@ function agregarAlCarrito(nombre, precio, imagen) {
         if (existente == false) {
             itemsCarrito.push({ name: nombre, price: precio, quantity: 1, image: imagen, details: getNombreTextura()});
         }
-
     }
     actualizarDivCarrito();
+}
+function agregarItemsCarrito(tmpCarrito){
+    tmpCarrito.forEach((item)=>{
+        agregarAlCarrito(item.name, item.price, item.image);
+    });
 }
 
 function actualizarDivCarrito() {

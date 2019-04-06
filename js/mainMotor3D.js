@@ -126,7 +126,7 @@ let modelos = {
         { apodo: "", nombre: "unicornio.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
     ]
 }
-let tmpCarrito = [];
+
 
 let btnRotar;
 let muebleSelecionado = false;
@@ -153,7 +153,7 @@ let btnDerecho;
 let btnFrente;
 let ultimoClickeado;
 let modulos = ["modTaburete", "modEsquina", "modBrazo", "completo"];
-let texturas = ['textuNegra', 'textuBlanca', 'textuTrendy'];
+let texturas = ['contemporáneo', 'casual', 'textuTrendy'];
 //let btnAplicar;
 let btnCancelar;
 let padreActual;
@@ -754,6 +754,8 @@ function cargarModelo(padre, modelo, posicion, prearmado, rotacion) {
     camera.inputs.attached.mousewheel.detachControl(canvas);
     console.log("prearmado", prearmado);
     console.log("posicion", posicion);
+    var agregarBtn = document.getElementById("btn-agregar-3d-a-carrito");
+    var tmpCarrito = [];
     customMesh = false;
     var derecha;
     var izquierda;
@@ -773,25 +775,40 @@ function cargarModelo(padre, modelo, posicion, prearmado, rotacion) {
             padreActual.position = posicion;
         }
         numPadre++;
-        //padreActual.precio = modeloActual(texturaActual, moduloActual, false);
-        //padreActual.name = modeloActual(texturaActual, moduloActual, true);
 
-        gtMdl= modelos.taburetes.find(x => x.nombre == modelo);
-        if(typeof gtMdl ==="undefined"){
-            gtMdl= modelos.esquinas.find(x => x.nombre == modelo);
-            if(typeof gtMdl ==="undefined"){
-                gtMdl= modelos.brazos.find(x => x.nombre == modelo);
+        /*funciones para actualizar el carrito */
+        gtMdl = modelos.taburetes.find(x => x.nombre == modelo);
+        if (typeof gtMdl === "undefined") {
+            gtMdl = modelos.esquinas.find(x => x.nombre == modelo);
+            if (typeof gtMdl === "undefined") {
+                gtMdl = modelos.brazos.find(x => x.nombre == modelo);
             }
         }
-           
-        modelos.brazos.find(x => x.nombre == debug)
-        modelos.esquinas.find(x => x.nombre == debug)
-
+        console.log("modelo", gtMdl);
+        // modelos.brazos.find(x => x.nombre == debug)
+        //modelos.esquinas.find(x => x.nombre == debug)
+        padreActual.precio = gtMdl.precio;
+        padreActual.name = gtMdl.nombre;
+        padreActual.textura = texturaActual;
+        padreActual.imagen = gtMdl.imagenes[0].imagen;
+        padreActual.apodo = gtMdl.apodo;
         padres.push(padreActual);
         //tmpCarrito.push(modeloActual(texturaActual, moduloActual, undefined,true));
 
         precioTotal = 0;
-        padres.forEach((x) => precioTotal += x.precio);
+        padres.forEach((x) => {
+            tmpCarrito.push({
+                "name": x.apodo,
+                "price": x.precio,
+                "quantity": 1,
+                "image": x.imagen,
+                "details": x.textura
+            });
+            precioTotal += x.precio;
+        }
+        );
+        agregarBtn.setAttribute("onClick", `agregarItemsCarrito(${JSON.stringify(tmpCarrito)})`);
+        console.log("carrito tmp",tmpCarrito);
         spanPrecio.innerText = "$" + precioTotal;
         padreActual.getChildren().forEach(hijo => {
             switch (hijo.name) {
@@ -1336,28 +1353,6 @@ function actualizarMueble() {
                 //console.log("Derecha NO tiene hijos");
             }
         });
-        /*  if (ultimoClickeado == "izquierda") {
-              padreTemp=padreActual.parent;
-              removerModelo(padreActual);
-              //cargarModelo(meshDebug1, modeloActual(texturaActual, moduloActual));
-              cargarModelo(padreTemp, modeloActual(texturaActual, moduloActual));
-          }
-          if (ultimoClickeado == "derecha") {
-              padreTemp=padreActual.parent;
-              removerModelo(padreActual);
-              //cargarModelo(meshDebug, modeloActual(texturaActual, moduloActual));
-              cargarModelo(padreTemp, modeloActual(texturaActual, moduloActual));
-          }
-          if (ultimoClickeado == "frente") {
-              padreTemp=padreActual.parent;
-              removerModelo(padreActual);
-              //cargarModelo(meshDebug, modeloActual(texturaActual, moduloActual));
-              cargarModelo(padreTemp, modeloActual(texturaActual, moduloActual));
-          }
-          if (ultimoClickeado == "primer") {
-              removerModelo(padreActual);
-              cargarModelo(padreCentro, modeloActual(texturaActual, moduloActual));
-          }*/
         var dummy = new BABYLON.Mesh("dummy", escena);
         dummy.parent = padreActual;
         dummy.setParent(null);
