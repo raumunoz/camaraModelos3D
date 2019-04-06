@@ -252,7 +252,7 @@ function getNombreTextura(){
     var detalles;
     var descripcionTextura = document.getElementById("descripcionMaterial");
     if((descripcionTextura.innerHTML=="Material")||(descripcionTextura.innerHTML=="")||(typeof descripcionTextura.innerHTML === "undefined")){
-        detalles="Default";
+        detalles="Material normal";
     }else{
         detalles=descripcionTextura.innerHTML;
     }

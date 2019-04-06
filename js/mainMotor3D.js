@@ -126,6 +126,8 @@ let modelos = {
         { apodo: "", nombre: "unicornio.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
     ]
 }
+let tmpCarrito = [];
+
 let btnRotar;
 let muebleSelecionado = false;
 var toogle = true;
@@ -750,35 +752,44 @@ function createButon3D(mesh, opc) {
 
 function cargarModelo(padre, modelo, posicion, prearmado, rotacion) {
     camera.inputs.attached.mousewheel.detachControl(canvas);
-    //para quitar el padre pero dejar las tran
     console.log("prearmado", prearmado);
     console.log("posicion", posicion);
     customMesh = false;
-    //alert("ENTRO");
     var derecha;
     var izquierda;
     var frente;
-    //console.log(hijos);
-    if (!modelo) {
+    var gtMdl;
+    /*if (!modelo) {
         modelo = "BrazoContempo.gltf";
-    }
-    engine.displayLoadingUI();
+    }*/
     showLoadingScreen();
-    //showLoadingScreen();
-    //
     BABYLON.SceneLoader.LoadAssetContainer("assets/modelos/", modelo, escena, function (newMeshes) {
         meshesAcargar = newMeshes;
         padreAnterior = padreActual;
         padreActual = newMeshes.meshes[0].getChildren()[0];
-        padreActual.setParent = padreCentro;
+        //padreActual.setParent = padreCentro;
         if (typeof posicion !== 'undefined') {
             console.log("posicion", posicion);
             padreActual.position = posicion;
         }
         numPadre++;
-        padreActual.precio = modeloActual(texturaActual, moduloActual, false);
-        padreActual.name = modeloActual(texturaActual, moduloActual, true);
+        //padreActual.precio = modeloActual(texturaActual, moduloActual, false);
+        //padreActual.name = modeloActual(texturaActual, moduloActual, true);
+
+        gtMdl= modelos.taburetes.find(x => x.nombre == modelo);
+        if(typeof gtMdl ==="undefined"){
+            gtMdl= modelos.esquinas.find(x => x.nombre == modelo);
+            if(typeof gtMdl ==="undefined"){
+                gtMdl= modelos.brazos.find(x => x.nombre == modelo);
+            }
+        }
+           
+        modelos.brazos.find(x => x.nombre == debug)
+        modelos.esquinas.find(x => x.nombre == debug)
+
         padres.push(padreActual);
+        //tmpCarrito.push(modeloActual(texturaActual, moduloActual, undefined,true));
+
         precioTotal = 0;
         padres.forEach((x) => precioTotal += x.precio);
         spanPrecio.innerText = "$" + precioTotal;
@@ -786,15 +797,12 @@ function cargarModelo(padre, modelo, posicion, prearmado, rotacion) {
             switch (hijo.name) {
                 case 'izquierda':
                     izquierda = hijo;
-                    //console.log("FFUE izquierda", izquierda);
                     break;
                 case 'derecha':
                     derecha = hijo;
-                    //console.log("FFUE derecha", derecha);
                     break;
                 case 'frente':
                     frente = hijo;
-                    //console.log("FFUE frente", frente);
                     break;
                 default:
                     break;
@@ -847,7 +855,6 @@ function cargarModelo(padre, modelo, posicion, prearmado, rotacion) {
             padreActual.setAbsolutePosition(padre.getAbsolutePosition());
         }
     }, onProgress = () => {
-        engine.hideLoadingUI();
         hideLoadingScreen();
         //padreActual.setParent(null);
     }, onError = (x) => {
@@ -1174,8 +1181,7 @@ function modeloActual(text, moduA, nombre, completo) {
     let selecionado = 'normal';
     let indiceModulo = modulos.indexOf(moduA.toString());
     let indiceTextura = texturas.indexOf(text.toString());
-    //  console.log("textura indice", indiceTextura);
-    // console.log("modulo indice", indiceModulo);
+    /*aquí se esconje de que tipo será taburete silla o esqunia*/
     switch (indiceModulo) {
         case 0:
             if (nombre == true /*&& completo === "undefined"*/) {
@@ -1188,7 +1194,6 @@ function modeloActual(text, moduA, nombre, completo) {
             if (completo == true) {
                 selecionado = modelos.taburetes[indiceTextura];
             }
-
             break;
         case 1:
             if (nombre == true /*&& completo === "undefined"*/) {
@@ -1854,7 +1859,7 @@ function nombreImagenTextura(nombreTextura) {
     return transformada[0] + " " + transformada[1];
 }
 
-function prearmado(v, matriz) {
+function prearmado(matriz) {
     precioTotal = 0;
 
     var cordenada =
@@ -1864,20 +1869,11 @@ function prearmado(v, matriz) {
             [{ x: 4.75, y: 0, z: -4.75 }, { x: 4.75, y: 0, z: 0 }, { x: 4.75, y: 0, z: 4.75 }]
         ];
 
-    //escena.meshes.forEach((x) => { x.dispose() });
-    //container.meshes.forEach((x) => { x.dispose() });
-    // escena.meshes = [];
-    //container.meshes = [];
     for (var i = 0; i < matriz.length; i++) {
-        //console.log(matriz[i]);
         for (var j = 0; j < matriz.length; j++) {
-            //console.lo(g(matriz[i][j]);
             if (matriz[i][j].cor == 1) {
                 console.log(cordenada[i][j]);
-                //)cargarModeloCustom(modelos.taburetes[v].nombre,cordenada[i][j]);
-                //cargarModelo(padreCentro, modelos.puffino[0].nombre);
                 console.log("tipo", matriz[i][j].tipo);
-                //cargarModelo(padreCentro, modeloActual(texturaActual, moduloActual, true), cordenada[i][j], true);
                 switch (matriz[i][j].tipo) {
                     case "taburete":
                         cargarModelo(padreCentro, modelos.taburetes[1].nombre, cordenada[i][j], true, matriz[i][j].rotacion);
@@ -1892,88 +1888,9 @@ function prearmado(v, matriz) {
                         cargarModelo(padreCentro, modelos.taburetes[1].nombre, cordenada[i][j], true, matriz[i][j].rotacion);
                         break;
                 }
-
-
             }
         }
     }
-
-    /*    
-        console.log("matriz", matriz);
-        console.log("es i", i);
-        container.meshes.forEach((x) => { x.dispose() });
-        cargarModelo(padreCentro, modeloActual(texturaActual, modulos[1], true));
-        //cargarModelo(padreCentro, modeloActual(texturaActual, modulos[2], true));
-        setTimeout(function () {
-            switch (i) {
-                case 1:
-                    padreActual.getChildren().forEach(hijo => {
-                        switch (hijo.name) {
-                            case 'izquierda':
-                                cargarModelo(hijo, modeloActual(texturaActual, modulos[1], true));
-                                //console.log("FFUE izquierda", izquierda);
-                                aplicar();
-                                break;
-                            case 'derecha':
-                                cargarModelo(hijo, modeloActual(texturaActual, modulos[2], true));
-                                //console.log("FFUE derecha", derecha);
-                                aplicar();
-                                break;
-                            case 'frente':
-                                cargarModelo(hijo, modeloActual(texturaActual, modulos[0], true));
-                                //console.log("FFUE frente", frente);
-                                aplicar();
-                                break;
-                            default:
-                                break;
-                        }
-                    });
-                    break;
-                case 2:
-                    padreActual.getChildren().forEach(hijo => {
-                        switch (hijo.name) {
-                            case 'izquierda':
-                                cargarModelo(hijo, modeloActual(texturaActual, modulos[1], true));
-                                //console.log("FFUE izquierda", izquierda);
-                                break;
-                            case 'derecha':
-                                cargarModelo(hijo, modeloActual(texturaActual, modulos[1], true));
-                                //console.log("FFUE derecha", derecha);
-                                break;
-                            case 'frente':
-                                cargarModelo(hijo, modeloActual(texturaActual, modulos[1], true));
-                                //console.log("FFUE frente", frente);
-                                break;
-                            default:
-                                break;
-                        }
-                    });
-                    break;
-                case 3:
-                    padreActual.getChildren().forEach(hijo => {
-                        switch (hijo.name) {
-                            case 'izquierda':
-                                cargarModelo(hijo, modeloActual(texturaActual, modulos[2], true));
-                                //console.log("FFUE izquierda", izquierda);
-                                break;
-                            case 'derecha':
-                                cargarModelo(hijo, modeloActual(texturaActual, modulos[2], true));
-                                //console.log("FFUE derecha", derecha);
-                                break;
-                            case 'frente':
-                                cargarModelo(hijo, modeloActual(texturaActual, modulos[2], true));
-                                //console.log("FFUE frente", frente);
-                                break;
-                            default:
-                                break;
-                        }
-                    });
-                    break;
-                default:
-                    break;
-            }
-        }, 2000);
-    */
 }
 
 function addSlider(isVertical, isClamped, displayThumb, row, col, zoom) {
@@ -2056,10 +1973,11 @@ function opcPrearmado(i) {
 
         escena.removeMesh(escena.meshes[i]);
     }
+    padres = [];
     document.getElementById("btn-agregar-3d-a-carrito").style.visibility = "visible";
     switch (i) {
         case 0:
-            prearmado(0, [
+            prearmado([
                 [{ cor: 1, tipo: "esquina", rotacion: 0 }, { cor: 1, tipo: "brazo", rotacion: 0 }, { cor: 1, tipo: "esquina", rotacion: 1 }],
                 [{ cor: 1, tipo: "brazo", rotacion: 3 }, { cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }],
                 [{ cor: 1, tipo: "esquina", rotacion: 3 }, { cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }]
@@ -2067,42 +1985,42 @@ function opcPrearmado(i) {
 
             break;
         case 1:
-            prearmado(0, [
+            prearmado([
                 [{ cor: 0, tipo: "esquina", rotacion: 0 }, { cor: 0, tipo: "brazo", rotacion: 0 }, { cor: 0, tipo: "esquina", rotacion: 0 }],
                 [{ cor: 1, tipo: "esquina", rotacion: 0 }, { cor: 1, tipo: "brazo", rotacion: 0 }, { cor: 1, tipo: "esquina", rotacion: 1 }],
                 [{ cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }]
             ]);
             break;
         case 2:
-            prearmado(0, [
+            prearmado([
                 [{ cor: 1, tipo: "esquina", rotacion: 0 }, { cor: 1, tipo: "brazo", rotacion: 0 }, { cor: 1, tipo: "esquina", rotacion: 1 }],
                 [{ cor: 1, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "taburete", rotacion: 0 }],
                 [{ cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }]
             ]);
             break;
         case 3:
-            prearmado(0, [
+            prearmado([
                 [{ cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }],
                 [{ cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "esquina", rotacion: 0 }, { cor: 1, tipo: "esquina", rotacion: 1 }],
                 [{ cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }]
             ]);
             break;
         case 4:
-            prearmado(0, [
+            prearmado([
                 [{ cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }],
                 [{ cor: 1, tipo: "esquina", rotacion: 0 }, { cor: 1, tipo: "brazo", rotacion: 0 }, { cor: 1, tipo: "esquina", rotacion: 1 }],
                 [{ cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "taburete", rotacion: 0 }]
             ]);
             break;
         case 5:
-            prearmado(0, [
+            prearmado([
                 [{ cor: 1, tipo: "esquina", rotacion: 0 }, { cor: 1, tipo: "brazo", rotacion: 0 }, { cor: 1, tipo: "esquina", rotacion: 1 }],
                 [{ cor: 1, tipo: "brazo", rotacion: 3 }, { cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "brazo", rotacion: 1 }],
                 [{ cor: 1, tipo: "esquina", rotacion: 3 }, { cor: 0, tipo: "taburete", rotacion: 0 }, { cor: 1, tipo: "taburete", rotacion: 0 }]
             ]);
             break;
         case 6:
-            prearmado(0, [
+            prearmado([
                 [{ cor: 1, tipo: "esquina", rotacion: 0 }, { cor: 1, tipo: "brazo", rotacion: 0 }, { cor: 1, tipo: "brazo", rotacion: 0 }, { cor: 1, tipo: "esquina", rotacion: 1 }],
                 [{ cor: 1, tipo: "brazo", rotacion: 0 }, { cor: 0, tipo: "brazo", rotacion: 0 }, { cor: 0, tipo: "brazo", rotacion: 0 }, { cor: 1, tipo: "brazo", rotacion: 2 }],
                 [{ cor: 0, tipo: "esquina", rotacion: 0 }, { cor: 0, tipo: "brazo", rotacion: 0 }, { cor: 0, tipo: "brazo", rotacion: 0 }, { cor: 1, tipo: "esquina", rotacion: 1 }],
@@ -2340,12 +2258,14 @@ function cambiarGrid(opc) {
 }
 
 function cambiarVistaMotor(opc) {
+    aplicar();
+    padres = [];
     switch (opc) {
         case 0:
             document.getElementById("descripcionMaterial").style.visibility = "visible";
             document.getElementById("iconosPrearmado").style.visibility = "visible";
             document.getElementById("iconosPrearmado").style.visibility = "visible";
-            document.getElementById("grid-texturas").style.visibility = "visible";
+            document.getElementById("grid-texturas").style.visibility = "hidden";
             document.getElementById("iconosTexturas").style.visibility = "visible";
             document.getElementById("btn-agregar-3d-a-carrito").style.visibility = "visible";
             for (let i = escena.meshes.length - 1; i >= 0; i--) {
@@ -2368,7 +2288,7 @@ function cambiarVistaMotor(opc) {
             document.getElementById("grid-texturas").style.visibility = "hidden";
             document.getElementById("iconosTexturas").style.visibility = "hidden";
             document.getElementById("btn-agregar-3d-a-carrito").style.visibility = "visible";
-            cargarModeloCustom(modelos.kids[0],undefined);
+            cargarModeloCustom(modelos.kids[0], undefined);
             break;
 
         default:
