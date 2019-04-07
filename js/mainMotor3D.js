@@ -5,20 +5,14 @@ const inputElement = document.getElementById("file-input");
 let bandera = false;
 inputElement.addEventListener("change", function (e) {
     var imagen;
-    //console.log("archivos",inputElement.files);
     const reader = new FileReader();
     reader.onload = function () {
         console.log("resultado", reader.result);
-        //materialSphere3.diffuseTexture = new BABYLON.Texture("data:gopher", scene, false, false, BABYLON.Texture.BILINEAR_SAMPLINGMODE, null, null, base64Img, true);
-        //debugg=reader.result;
-        //reader.result="";
-        background.texture = new BABYLON.Texture("data:" + imagen, escena, false, true, BABYLON.Texture.BILINEAR_SAMPLINGMODE, null, null, reader.result, true);
-        //background.texture = new BABYLON.Texture("C:/Users/csar/OneDrive/Imágenes", escena);
-        //inputElement.replaceWith( inputElement.val('').clone( true ) );
+      
+        background.texture = new BABYLON.Texture("data:" + imagen, escena, false, true, BABYLON.Texture.BILINEAR_SAMPLINGMODE, null, null, reader.result, true); 
     }
-    //my_array.slice(-1)[0]
+
     imagen = inputElement.files[0].name;
-    //debugg = inputElement.files;
     reader.readAsDataURL(inputElement.files[0]);
     console.log("nombre,", imagen);
 }, false);
@@ -33,7 +27,7 @@ let perfLi1;
 let perfLi2;
 let padreBorrar;
 let hijosBorrar;
-//var container;
+
 var padreCentro;
 let camaraActiva;
 let precioTotal = 0;
@@ -53,14 +47,7 @@ let customMesh = true;
 //let sliders = [];
 //let gizmoLayer;
 //let utilLayer;
-/*
-let modelos = {
-    taburetes: ['tabureteContempo.gltf', 'tabureteCasual.gltf', 'tabureteTrendy.gltf'],
-    brazos: ['BrazoContempo.gltf', 'brazoCasual.gltf', 'brazoTrendy.gltf'],
-    esquinas: ['esquinaContempo.gltf', 'esquinaCasual.gltf', 'esquinaTrendy.gltf'],
-    completos: ['completoContempo.gltf', 'completoCasual.gltf', 'completoTrendy.gltf']
-}
-*/
+
 let modelos = {
     taburetes: [
         { apodo: "Yooko Contempo Taburete", nombre: "tabureteContempo.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 7099, imagenes: [{ imagen: "images/catalogo/yoko/yookocontempo_taburete.jpg" }] },
@@ -201,14 +188,6 @@ var targetProxy = new Proxy(dimensionSuperior, {
             }, 1000);
         } else {
             setTimeout(function () {
-
-                /*perfLi.innerHTML = `largo: ` + dimensionesTotales.x + ` m`;
-                  perfLi1.innerHTML = `ancho: ` + dimensionesTotales.y + ` m`;
-                  perfLi2.innerHTML = `alto: ` + dimensionesTotales.z + ` m`;*/
-                /*altoTotal.innerText=dimensionesTotales.z;
-                anchoTotal.innerText=dimensionesTotales.y;
-                largoTotal.innerText=dimensionesTotales.x;*/
-                // altoTotal.innerText = 1 + " m";
                 anchoTotal.innerText = dimensionSuperior.ancho() + " m";
                 largoTotal.innerText = dimensionSuperior.largo() + " m";
 
@@ -217,7 +196,6 @@ var targetProxy = new Proxy(dimensionSuperior, {
                     perfLi.innerHTML = `largo: ` + dimensionSuperior.largo() + ` m`;
                     perfLi1.innerHTML = `ancho: ` + dimensionSuperior.ancho() + ` m`;
                 }
-                //perfLi2.innerHTML = `alto: ` + 1 + ` m`;
 
             }, 1000);
         }
@@ -232,44 +210,28 @@ let numPadre = 0;
 let mainCustomMesh;
 window.addEventListener('DOMContentLoaded', function () {
     gridContainer = document.getElementById("grid-container");
-    var currentPosition = { x: 0, y: 0 };
+    /*var currentPosition = { x: 0, y: 0 };
     var currentRotation = { x: 0, y: 0 };
-    var clicked = false;
+    var clicked = false;*/
     //se cargar e botton depaypal
     hasTouchscreen = 'ontouchstart' in window;
     if (hasTouchscreen) {
         cambiarMenuMovil(1);
     }
-    //alert(hasTouchscreen ? 'has touchscreen' : 'doesn\'t have touchscreen');
-    /*dimensionSuperior.watch("x",
-        function (identificador, valorViejo, valorNuevo) {
-            console.log("objeto." + identificador + " ha cambiado de "
-                + valorViejo + " a " + valorNuevo);
-            return valorNuevo;
-        });*/
     cargando = false;
     isAssigned = false;
     btnCamara = document.getElementById("btnCamara");
-
-    //btnCamara.style.opacity=0.1;
-    // btnCamara.style.visibility = "hidden";
     texturaActual = texturas[1];
     moduloActual = modulos[0];
     texturaActual = texturas[1];
-    // btnTextura = document.getElementById(texturas[0]);
-    //btnTextura1 = document.getElementById(texturas[1]);
-    //btnTextura1.style.outline = "5px solid grey";
-    //btnTextura2 = document.getElementById(texturas[2]);
 
 
     btnModelo = document.getElementById(modulos[0]);
     btnModelo1 = document.getElementById(modulos[1]);
     btnModelo2 = document.getElementById(modulos[2]);
     btnModelo.style.outline = "5px solid grey";
-    // btnAplicar = document.getElementById('btnAplicar');
     btnCancelar = document.getElementById('btnCancelar');
     btnRotar = document.getElementById('btnRotar');
-    // get the canvas DOM element
     canvas = document.getElementById('render');
     spanPrecio = document.getElementById('Precio');
     divLista = document.getElementById('item4');
@@ -277,8 +239,7 @@ window.addEventListener('DOMContentLoaded', function () {
     largoTotal = document.getElementById('anchoTotal');
     altoTotal = document.getElementById('altoTotal');
     cargarJsonTexturas();
-    //canvas.getContext('2d');
-    // load the 3D engine
+
     engine = new BABYLON.Engine(canvas, true, { stencil: true });
     // animation : progress indicator
     // createScene function that creates and return the scene
@@ -313,8 +274,6 @@ window.addEventListener('DOMContentLoaded', function () {
                 console.log("boton", buttonClicleado);
                // activarRotacion();
             } else {
-                
-            }*/
             // console.log("DOWN,mesh", meshClicleado);
             //console.log("DOWN,boton", buttonClicleado);
 
@@ -424,7 +383,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
 
         var scene = new BABYLON.Scene(engine);
-        scene.preventDefaultOnPointerDown = false;
+        scene.preventDefaultOnPointerDown = true;
         utilLayer = new BABYLON.UtilityLayerRenderer(scene);
         utilLayer.utilityLayerScene.autoClearDepthAndStencil = false;
         utilLayer.DefaultKeepDepthUtilityLayer;
@@ -477,12 +436,12 @@ window.addEventListener('DOMContentLoaded', function () {
         camera.setPosition(new BABYLON.Vector3(0, 0, -10));
 
         // This attaches the camera to the canvas
-        camera.attachControl(canvas, false);
+        camera.attachControl(canvas, true);
 
 
         //camera.attachControl(canvas);
         // camera = new BABYLON.FreeCamera("camera1", new BABYLON.Vector3(0, 0, -30), scene);
-        pointerDragBehavior = new BABYLON.PointerDragBehavior({ dragPlaneNormal: new BABYLON.Vector3(0, 0, 1) });
+        /*pointerDragBehavior = new BABYLON.PointerDragBehavior({ dragPlaneNormal: new BABYLON.Vector3(0, 0, 1) });
         pointerDragBehavior.useObjectOrienationForDragging = false;
 
         pointerDragBehavior.onDragStartObservable.add((event) => {
@@ -494,8 +453,8 @@ window.addEventListener('DOMContentLoaded', function () {
                 padreCentro.rotation.x=padreCentro.rotation.x-(event.dragPlanePoint.y/150);
                 padreCentro.rotation.y=padreCentro.rotation.y+(event.dragPlanePoint.x/150);
             }*/
-        });
-        pointerDragBehavior.onDragObservable.add((event) => {
+        //});
+      ///  pointerDragBehavior.onDragObservable.add((event) => {
             //console.log("drag");
             //console.log(event);
             //dragPlaneNormal
@@ -507,8 +466,8 @@ window.addEventListener('DOMContentLoaded', function () {
                 padreCentro.rotation.x=padreCentro.rotation.x-(event.dragPlanePoint.y/150);
                 padreCentro.rotation.y=padreCentro.rotation.y+(event.dragPlanePoint.x/150);
             }*/
-        });
-        pointerDragBehavior.onDragEndObservable.add((event) => {
+      //  });
+       // pointerDragBehavior.onDragEndObservable.add((event) => {
             //console.log("dragEnd");
             //console.log(event);
             /*
@@ -518,7 +477,7 @@ window.addEventListener('DOMContentLoaded', function () {
             }
             */
 
-        });
+       // });
 
         //camera.setTarget(BABYLON.Vector3.Zero());
         /*camara = new BABYLON.ArcRotateCamera("Camera", 3 * Math.PI / 2, -Math.PI / 2, 200, BABYLON.Vector3.Zero(), scene);

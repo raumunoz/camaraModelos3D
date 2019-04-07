@@ -906,7 +906,7 @@ document.getElementById('grid-container').style.gridTemplateAreas=
 		display: grid;
 		grid-template-areas: /*'header header header header header header'*/
 		'main main main main main main' 'sclm sclm sclm sclm sclm sclm' 'erra erra erra erra erra erra' 'preA preA preA preA preA preA' 'mate mate mate modu modu modu' 'accion accion accion accion accion accion' 'footer footer footer footer footer footer';
-		grid-gap: 1px;
+		grid-gap: 0px;
 		padding: 0px;
 	}
 	.motor3D .modulos {
@@ -1175,15 +1175,11 @@ document.getElementById('grid-container').style.gridTemplateAreas=
 	.logo-puffino {
 		height: 3em;
 	}
-	@media screen and (min-width: 320px) and (max-width: 767px) and (orientation: landscape) {
-		html {
-		  transform: rotate(-90deg);
-		  transform-origin: left top;
-		  width: 100vh;
-		  overflow-x: hidden;
-		  position: absolute;
-		  top: 100%;
-		  left: 0;
-		}
-	  }
 }
+	html{
+		overflow-x: hidden !important;
+		width: 100%;
+		height: 100%;
+		margin: 0;
+		padding: 0;
+	}
