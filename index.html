@@ -65,7 +65,7 @@
 	<link rel="stylesheet" type="text/css" href="css/slick-theme.css">
 
 	<link rel="stylesheet" type="text/css" href="css/estiloMotor3D.css">
-	
+
 	<link rel="stylesheet" href="css/font.css">
 	<link rel="stylesheet" href="css/main.css">
 
@@ -278,8 +278,25 @@
 </head>
 
 <body>
-	
 
+	<div class="row div-nav" style="background-color:#fA675b;">
+		<div class="col-md-10 col-8" style="text-align: right; margin-top: 0.3em;margin-bottom: 0.3em;">
+			<span style="font-size:13px; color:#FFF; font-family: 'Montserrat', Arial, sans-serif;">Servicio al cliente
+				Teléfono:
+				477 854 11 12&nbsp;&nbsp;</span>
+		</div>
+		<div class="col-md-2 col-4 " style="text-align: right;">
+			<a href="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2F1962138827348733&amp;tabs=messages&amp;width=302&amp;height=300&amp;small_header=true&amp;adapt_container_width=true&amp;hide_cover=true&amp;show_facepile=false&amp;appId"
+				target="_blank"><img src="images/messeng.png" style="max-width: 1.8em; padding-right:5px"></a>
+
+			<a href="https://api.whatsapp.com/send?phone=5214778541112" target="_blank">
+				<img src="images/whats.png" style="max-width: 1.8em; padding-right:5px">
+			</a>
+
+			<img src="images/shopping_cart_white_24dp.png" style="max-width: 1.8em; padding-right:5px"
+				onclick="mostrarCarro()"><span id="num-carrito" class="num-carrito"></span>
+		</div>
+	</div>
 	<div id="page">
 		<!--	
 		<div class="social-bar" id="social-bar">
@@ -293,39 +310,22 @@
 			
 				</div>
 			-->
-				<div class="row div-nav" style="background-color:#fA675b;">
-					<div class="col-md-10 col-8" style="text-align: right; margin-top: 0.3em;margin-bottom: 0.3em;">
-						<span style="font-size:13px; color:#FFF; font-family: 'Montserrat', Arial, sans-serif;">Servicio al cliente
-							Teléfono:
-							477 854 11 12&nbsp;&nbsp;</span>
-					</div>
-					<div class="col-md-2 col-4 " style="text-align: right;">
-						<a href="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2F1962138827348733&amp;tabs=messages&amp;width=302&amp;height=300&amp;small_header=true&amp;adapt_container_width=true&amp;hide_cover=true&amp;show_facepile=false&amp;appId"
-							target="_blank"><img src="images/messeng.png" style="max-width: 1.8em; padding-right:5px"></a>
-			
-						<a href="https://api.whatsapp.com/send?phone=5214778541112" target="_blank">
-							<img src="images/whats.png" style="max-width: 1.8em; padding-right:5px">
-						</a>
-			
-						<img src="images/shopping_cart_white_24dp.png" style="max-width: 1.8em; padding-right:5px"
-							onclick="mostrarCarro()"><span id="num-carrito" class="num-carrito"></span>
-					</div>
-				</div>
-				<div class="carrito" id="carrito">
-					<div id="row-productos">
-						Todavía no agregas nada.
-					</div>
-			
-					<div class="row rng-total total-desactivo" id="rng-total">
-						<div class="col-xs-6 rng-total-titulo">Total</div>
-						<div class="col-xs-6">$<span id="total-carrito">0</span></div>
-						<!--<div class="col-6"><button class="rng-btn-total btn btn-primary blue" onclick="">continuar</button></div>-->
-						<div id="paypal-button-container"></div>
-						<div id="paypal-button"></div>
-					</div>
-				</div>
-			
-				<div class="fh5co-loader"></div>
+
+		<div class="carrito" id="carrito">
+			<div id="row-productos">
+				Todavía no agregas nada.
+			</div>
+
+			<div class="row rng-total total-desactivo" id="rng-total">
+				<div class="col-xs-6 rng-total-titulo">Total</div>
+				<div class="col-xs-6">$<span id="total-carrito">0</span></div>
+				<!--<div class="col-6"><button class="rng-btn-total btn btn-primary blue" onclick="">continuar</button></div>-->
+				<div id="paypal-button-container"></div>
+				<div id="paypal-button"></div>
+			</div>
+		</div>
+
+		<div class="fh5co-loader"></div>
 		<nav class="fh5co-nav" role="navigation" style="background-color:#4DD7D3;">
 			<div class="container" style="margin-left:0px;">
 				<div class="row">
@@ -335,6 +335,8 @@
 					</div>
 					<div class="col-md-9 col-xs-10 menu-1" style="margin-top:4%;">
 						<ul>
+							<li style="margin-right: 1.1em;"><a href="index.html"
+									style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">Inicio</a></li>
 							<li style="margin-right: 1.1em;"><a href="about.html"
 									style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">Nosotros</a></li>
 							<li style="margin-right: 1.1em;"><a href="catalogo.html"
@@ -479,7 +481,7 @@
 									</div>
 								</a>
 								<button type="button"
-									onclick="agregarAlCarrito('Yoko sillón',7999,'images/catalogo/yoko/yookocasual_esquinero.jpg')"
+									onclick="agregarAlCarrito('Yoko sillón',7999,'images/catalogo/yoko/yookocasual_esquinero.jpg',this)"
 									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
@@ -497,7 +499,7 @@
 									</div>
 								</a>
 								<button type="button"
-									onclick="agregarAlCarrito('Yoko sillón',7999,'images/catalogo/yoko/yookocasual_silla.jpg')"
+									onclick="agregarAlCarrito('Yoko sillón',7999,'images/catalogo/yoko/yookocasual_silla.jpg',this)"
 									class="btn-agregar " id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
@@ -534,7 +536,7 @@
 									</div>
 								</a>
 								<button type="button"
-									onclick="agregarAlCarrito('Yoko sillón',7999,'images/catalogo/yoko/yookocontempo_esquinero.jpg')"
+									onclick="agregarAlCarrito('Yoko sillón',7999,'images/catalogo/yoko/yookocontempo_esquinero.jpg',this)"
 									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
@@ -552,7 +554,7 @@
 									</div>
 								</a>
 								<button type="button"
-									onclick="agregarAlCarrito('Yoko sillón',7999,'images/catalogo/yoko/yookocontempo_silla.jpg')"
+									onclick="agregarAlCarrito('Yoko sillón',7999,'images/catalogo/yoko/yookocontempo_silla.jpg',this)"
 									class="btn-agregar " id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
@@ -570,7 +572,7 @@
 									</div>
 								</a>
 								<button type="button"
-									onclick="agregarAlCarrito('Yoko esquinero',8999,'images/catalogo/yoko/yookocontempo_taburete.jpg')"
+									onclick="agregarAlCarrito('Yoko esquinero',8999,'images/catalogo/yoko/yookocontempo_taburete.jpg',this)"
 									class="btn-agregar " id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<!--Yooko Trendy-->
@@ -589,7 +591,7 @@
 									</div>
 								</a>
 								<button type="button"
-									onclick="agregarAlCarrito('Yoko sillón',7999,'images/catalogo/yoko/yookotrendy_esquinero.jpg')"
+									onclick="agregarAlCarrito('Yoko sillón',7999,'images/catalogo/yoko/yookotrendy_esquinero.jpg',this)"
 									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
@@ -607,7 +609,7 @@
 									</div>
 								</a>
 								<button type="button"
-									onclick="agregarAlCarrito('Yoko sillón',7999,'images/catalogo/yoko/yookotrendy_silla.jpg')"
+									onclick="agregarAlCarrito('Yoko sillón',7999,'images/catalogo/yoko/yookotrendy_silla.jpg',this)"
 									class="btn-agregar " id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
@@ -625,7 +627,7 @@
 									</div>
 								</a>
 								<button type="button"
-									onclick="agregarAlCarrito('Yoko esquinero',8999,'images/catalogo/yoko/yookotrendy_taburete.jpg')"
+									onclick="agregarAlCarrito('Yoko esquinero',8999,'images/catalogo/yoko/yookotrendy_taburete.jpg',this)"
 									class="btn-agregar " id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 						</ul>
@@ -653,7 +655,7 @@
 									</div>
 								</a>
 								<button type="button"
-									onclick="agregarAlCarrito('Yumil',2599,'images/productos/puffino/atlixco.jpg')"
+									onclick="agregarAlCarrito('Yumil',2599,'images/productos/puffino/atlixco.jpg',this)"
 									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
@@ -675,7 +677,7 @@
 									</div>
 								</a>
 								<button type="button"
-									onclick="agregarAlCarrito('Yumil MEDIANO',2499,'images/productos/puffino/atlixco_chico.jpg')"
+									onclick="agregarAlCarrito('Yumil MEDIANO',2499,'images/productos/puffino/atlixco_chico.jpg',this)"
 									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
@@ -696,7 +698,7 @@
 									</div>
 								</a>
 								<button type="button"
-									onclick="agregarAlCarrito('Yeeb',2999,'images/productos/puffino/bernal.jpg')"
+									onclick="agregarAlCarrito('Yeeb',2999,'images/productos/puffino/bernal.jpg',this)"
 									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
@@ -717,7 +719,7 @@
 									</div>
 								</a>
 								<button type="button"
-									onclick="agregarAlCarrito('Kauil',4999,'images/productos/puffino/cozumel.jpg')"
+									onclick="agregarAlCarrito('Kauil',4999,'images/productos/puffino/cozumel.jpg',this)"
 									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
@@ -739,7 +741,7 @@
 									</div>
 								</a>
 								<button type="button"
-									onclick="agregarAlCarrito('Kauil SILLÓN',4199,'images/productos/puffino/cozumel_sillon.jpg')"
+									onclick="agregarAlCarrito('Kauil SILLÓN',4199,'images/productos/puffino/cozumel_sillon.jpg',this)"
 									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
@@ -761,7 +763,7 @@
 									</div>
 								</a>
 								<button type="button"
-									onclick="agregarAlCarrito('Kaul TABURETE',2999,'images/productos/puffino/cozumel_taburete.jpg')"
+									onclick="agregarAlCarrito('Kaul TABURETE',2999,'images/productos/puffino/cozumel_taburete.jpg',this)"
 									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
@@ -782,7 +784,7 @@
 									</div>
 								</a>
 								<button type="button"
-									onclick="agregarAlCarrito('Balam',5199,'images/productos/puffino/guadalajara.jpg')"
+									onclick="agregarAlCarrito('Balam',5199,'images/productos/puffino/guadalajara.jpg',this)"
 									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
@@ -803,7 +805,7 @@
 									</div>
 								</a>
 								<button type="button"
-									onclick="agregarAlCarrito('Ikal',4699,'images/productos/puffino/guanajuato.jpg')"
+									onclick="agregarAlCarrito('Ikal',4699,'images/productos/puffino/guanajuato.jpg',this)"
 									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
@@ -824,7 +826,7 @@
 									</div>
 								</a>
 								<button type="button"
-									onclick="agregarAlCarrito('Nima',3499,'images/productos/puffino/lapaz.jpg')"
+									onclick="agregarAlCarrito('Nima',3499,'images/productos/puffino/lapaz.jpg',this)"
 									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
@@ -846,7 +848,7 @@
 									</div>
 								</a>
 								<button type="button"
-									onclick="agregarAlCarrito('Nima MEDIANO',3099,'images/productos/puffino/lapaz_chico.jpg')"
+									onclick="agregarAlCarrito('Nima MEDIANO',3099,'images/productos/puffino/lapaz_chico.jpg',this)"
 									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
@@ -867,7 +869,7 @@
 									</div>
 								</a>
 								<button type="button"
-									onclick="agregarAlCarrito('Zazil',3999,'images/productos/puffino/merida.jpg')"
+									onclick="agregarAlCarrito('Zazil',3999,'images/productos/puffino/merida.jpg',this)"
 									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
@@ -888,7 +890,7 @@
 									</div>
 								</a>
 								<button type="button"
-									onclick="agregarAlCarrito('Toot',3899,'images/productos/puffino/oaxaca.jpg')"
+									onclick="agregarAlCarrito('Toot',3899,'images/productos/puffino/oaxaca.jpg',this)"
 									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
@@ -910,7 +912,7 @@
 									</div>
 								</a>
 								<button type="button"
-									onclick="agregarAlCarrito('Toot Matrimonial',4599,'images/productos/puffino/oaxaca_matrimonial.jpg')"
+									onclick="agregarAlCarrito('Toot Matrimonial',4599,'images/productos/puffino/oaxaca_matrimonial.jpg',this)"
 									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
@@ -932,7 +934,7 @@
 									</div>
 								</a>
 								<button type="button"
-									onclick="agregarAlCarrito('Toot QUEEN',4799,'images/productos/puffino/oaxaca_queen.jpg')"
+									onclick="agregarAlCarrito('Toot QUEEN',4799,'images/productos/puffino/oaxaca_queen.jpg',this)"
 									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
@@ -953,7 +955,7 @@
 									</div>
 								</a>
 								<button type="button"
-									onclick="agregarAlCarrito('Tanak',4499,'images/productos/puffino/patzcuaro.jpg')"
+									onclick="agregarAlCarrito('Tanak',4499,'images/productos/puffino/patzcuaro.jpg',this)"
 									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
@@ -975,7 +977,7 @@
 									</div>
 								</a>
 								<button type="button"
-									onclick="agregarAlCarrito('Tanak NIÑOS',3199,'images/productos/puffino/patzcuaro_kids.jpg')"
+									onclick="agregarAlCarrito('Tanak NIÑOS',3199,'images/productos/puffino/patzcuaro_kids.jpg',this)"
 									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
@@ -996,7 +998,7 @@
 									</div>
 								</a>
 								<button type="button"
-									onclick="agregarAlCarrito('Alom',3099,'images/productos/puffino/puebla.jpg')"
+									onclick="agregarAlCarrito('Alom',3099,'images/productos/puffino/puebla.jpg',this)"
 									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
@@ -1372,7 +1374,7 @@
 							<img src="assets/imagenes/IcongrisBotones.jpg" id="textuTrendy" onclick="cambioTextura(2)">
 						</li>
 					</ul>-->
-					<h6 id="descripcionMaterial">Material</h6>
+					<h4 id="descripcionMaterial" style="color: #4E56DF;">Material</h4>
 					<!--	
 						<div class="btn-group" role="group" aria-label="Basic example">
 						<button type="button" class="btn btn-secondary">Left</button>
@@ -1404,19 +1406,19 @@
 						</ul>
 						<div class="tab-content">
 							<div class="tab-pane" id="tab-id-0" role="tabpanel">
-								<div class="btn-grid" id="btn-grid">
+								<div class="btn-grid  cont-txturas" id="btn-grid">
 									<input type="image" src="assets/texturas/chico/TP ROJOchico.jpg"
-										class="btn-imagen-grid" />
+										class="btn-imagen-grid " />
 								</div>
 							</div>
 							<div class="tab-pane active" id="tab-id-1" role="tabpanel">
-								<div class="btn-grid1" id="btn-grid1">
+								<div class="btn-grid1 cont-txturas-1" id="btn-grid1">
 									<input type="image" src="assets/texturas/chico/TP ROJOchico.jpg"
 										class="btn-imagen-grid" />
 								</div>
 							</div>
 							<div class="tab-pane" id="tab-id-2" role="tabpanel">
-								<div class="btn-grid2" id="btn-grid2">
+								<div class="btn-grid2 cont-txturas-2" id="btn-grid2">
 									<input type="image" src="assets/texturas/chico/TP ROJOchico.jpg"
 										class="btn-imagen-grid" />
 								</div>
@@ -1547,14 +1549,14 @@
 				</div>
 				<div class="item3" id="main">
 					<div id="datGUI" class="datGUI">
-						<canvas id="renderCanvas" class="renderCanvas"  touch-action="pan-up pan-down pinch-zoom">
+						<canvas id="renderCanvas" class="renderCanvas" touch-action="pan-up pan-down pinch-zoom">
 						</canvas>
 						<!--
 										<button id="btnPrueba" class="btnPrueba">comida</button>
 										-->
 						<div class="selecionMenu">
 							<button type="button" onclick="cambiarMenuMovil(1)" class="btn"
-								id="slct-btn-foto">Foto</button>
+								id="slct-btn-foto">Herramientas</button>
 							<button type="button" onclick="cambiarMenuMovil(2)" class="btn slct-btn-color"
 								id="slct-btn-color">Color</button>
 							<button type="button" onclick="cambiarMenuMovil(3)" class="btn" id="slct-btn-preArmado">Pre
@@ -2084,7 +2086,7 @@
 	<script src="js/pantallaCarga.js"></script>
 	<script src="js/carrito.js"></script>
 	<script type="text/javascript">
-	document.body.style.width="100%";
+		document.body.style.width = "100%";
 	</script>
 </body>
 

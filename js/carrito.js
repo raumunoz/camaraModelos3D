@@ -1,3 +1,4 @@
+let debbugCarrito;
 let itemsCarrito = [];
 if(sessionStorage.getItem("carrito")==null){
 
@@ -24,7 +25,8 @@ function removerArticulo(elemento, nombre) {
 
 
 
-function agregarAlCarrito(nombre, precio, imagen) {
+function agregarAlCarrito(nombre, precio, imagen,element) {
+    debbugCarrito=element;
     var existente = false;
     if (itemsCarrito.length == 0) {
         itemsCarrito.push({ name: nombre, price: precio, quantity: 1, image: imagen,details: getNombreTextura() });
@@ -157,6 +159,9 @@ function actualizarDivCarrito() {
         document.getElementById("num-carrito").innerText = "";
         document.getElementById("row-productos").style.height = "2em";
         document.getElementById("row-productos").innerText = "No has agregado nada al carrito";
+    }
+    if(itemsCarrito.length==0){
+        
     }
 }
 function actualizarBotonPaypal(total) {

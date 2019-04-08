@@ -2030,38 +2030,44 @@ function cambiarMenuMovil(i) {
     resaltarBotonMenu(i);
     switch (i) {
         case 1:
-            gridContainer.style.gridTemplateAreas =
-                `'main main main main main main'
+           /* gridContainer.style.gridTemplateAreas =
+        `'main main main main main main'
         'sclm sclm sclm sclm sclm sclm'
         'erra erra erra erra erra erra'
         'preA preA preA preA preA preA'
         'mate mate mate modu modu modu' 
         'accion accion accion accion accion accion'
         'footer footer footer footer footer footer'
-        `;
+        `;*/
+        //document.getElementById("slct-btn-color").style.display="none";
             break;
         case 2:
+            /*
             gridContainer.style.gridTemplateAreas =
-                `'main main main main main main'
-    'sclm sclm sclm sclm sclm sclm'
-    'mate mate mate mate mate mate' 
-    'preA preA preA preA preA preA'
-    'erra erra erra erra erra erra'
-    'accion accion accion accion accion accion'
-    'footer footer footer footer footer footer'`;
+            `'main main main main main main'
+            'sclm sclm sclm sclm sclm sclm'
+            'mate mate mate mate mate mate' 
+            'preA preA preA preA preA preA'
+            'erra erra erra erra erra erra'
+            'accion accion accion accion accion accion'
+            'footer footer footer footer footer footer'`;
+            */
+            //document.getElementById("slct-btn-color").style.display="initial";
             break;
         case 3:
+            /*
             gridContainer.style.gridTemplateAreas =
-                `'main main main main main main'
+            `'main main main main main main'
             'sclm sclm sclm sclm sclm sclm'
             'preA preA preA preA preA preA'
             'modu modu modu modu modu modu' 
             'erra erra erra erra erra erra'
             'accion accion accion accion accion accion'
             'footer footer footer footer footer footer'`;
-
+            */
             break;
         case 4:
+        /*
             gridContainer.style.gridTemplateAreas =
                 `'main main main main main main'
         'sclm sclm sclm sclm sclm sclm'
@@ -2070,7 +2076,7 @@ function cambiarMenuMovil(i) {
         'erra erra erra erra erra erra'
         'accion accion accion accion accion accion'
         'footer footer footer footer footer footer'
-        `;
+        `;*/
             break;
         default:
             break;
@@ -2226,6 +2232,9 @@ function cambiarVistaMotor(opc) {
             document.getElementById("grid-texturas").style.visibility = "hidden";
             document.getElementById("iconosTexturas").style.visibility = "visible";
             document.getElementById("btn-agregar-3d-a-carrito").style.visibility = "visible";
+            document.getElementById("slct-btn-color").style.display="none";
+            document.getElementById("slct-btn-preArmado").style.display="initial";
+            document.getElementById("slct-btn-modelo").style.display="initial";
             for (let i = escena.meshes.length - 1; i >= 0; i--) {
 
                 escena.removeMesh(escena.meshes[i]);
@@ -2238,6 +2247,9 @@ function cambiarVistaMotor(opc) {
             document.getElementById("iconosPrearmado").style.visibility = "hidden";
             document.getElementById("grid-texturas").style.visibility = "visible";
             document.getElementById("btn-agregar-3d-a-carrito").style.visibility = "visible";
+            document.getElementById("slct-btn-color").style.display="initial";
+            document.getElementById("slct-btn-preArmado").style.display="none";
+            document.getElementById("slct-btn-modelo").style.display="none";
             cargarModeloCustom(modelos.puffino[10], undefined);
             break;
         case 2:
@@ -2246,6 +2258,9 @@ function cambiarVistaMotor(opc) {
             document.getElementById("grid-texturas").style.visibility = "hidden";
             document.getElementById("iconosTexturas").style.visibility = "hidden";
             document.getElementById("btn-agregar-3d-a-carrito").style.visibility = "visible";
+            document.getElementById("slct-btn-color").style.display="none";
+            document.getElementById("slct-btn-preArmado").style.display="none";
+            document.getElementById("slct-btn-modelo").style.display="none";
             cargarModeloCustom(modelos.kids[0], undefined);
             break;
 
