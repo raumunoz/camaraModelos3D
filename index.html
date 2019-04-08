@@ -17,6 +17,7 @@
 	<meta name="twitter:card" content="" />
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="msapplication-tap-highlight" content="no" />
 
 	<script src="js/jquery-2.2.0.min.js">
 	</script>
@@ -64,7 +65,7 @@
 	<link rel="stylesheet" type="text/css" href="css/slick-theme.css">
 
 	<link rel="stylesheet" type="text/css" href="css/estiloMotor3D.css">
-	<script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
+	
 	<link rel="stylesheet" href="css/font.css">
 	<link rel="stylesheet" href="css/main.css">
 
@@ -280,7 +281,8 @@
 	
 
 	<div id="page">
-			<div class="social-bar" id="social-bar">
+		<!--	
+		<div class="social-bar" id="social-bar">
 					<a href="https://www.facebook.com/puffino.mx/" class="icon2 icon-facebook" target="_blank"></a>
 					<a href="https://www.youtube.com/channel/UC_IQX58WKgUAJiZfj9oy6wg/featured" class="icon2 icon-youtube"
 						target="_blank"></a>
@@ -290,7 +292,7 @@
 			
 			
 				</div>
-			
+			-->
 				<div class="row div-nav" style="background-color:#fA675b;">
 					<div class="col-md-10 col-8" style="text-align: right; margin-top: 0.3em;margin-bottom: 0.3em;">
 						<span style="font-size:13px; color:#FFF; font-family: 'Montserrat', Arial, sans-serif;">Servicio al cliente
@@ -1545,7 +1547,7 @@
 				</div>
 				<div class="item3" id="main">
 					<div id="datGUI" class="datGUI">
-						<canvas id="render">
+						<canvas id="renderCanvas" class="renderCanvas"  touch-action="pan-up pan-down pinch-zoom">
 						</canvas>
 						<!--
 										<button id="btnPrueba" class="btnPrueba">comida</button>
@@ -1834,9 +1836,11 @@
 	<!-- Main -->
 	<script src="js/main.js"></script>
 
-	<script src="js/dat.gui.min.js"></script>
 	<!--<script src="js/jquery-3.3.1.min.js"></script>-->
+	<!--<script src="js/jquery-3.3.1.min.js"></script>-->
+	<script src="js/hammer.js"></script>
 	<script src="js/babylon.custom.js"></script>
+	<script src="js/enTouchControl.js"></script>
 	<script src="js/mainMotor3D.js"></script>
 	<script type="text/javascript" src="js/texturas.json"></script>
 	<script type="text/javascript">

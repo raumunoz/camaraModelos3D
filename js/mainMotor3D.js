@@ -232,7 +232,7 @@ window.addEventListener('DOMContentLoaded', function () {
     btnModelo.style.outline = "5px solid grey";
     btnCancelar = document.getElementById('btnCancelar');
     btnRotar = document.getElementById('btnRotar');
-    canvas = document.getElementById('render');
+    canvas = document.getElementById('renderCanvas');
     spanPrecio = document.getElementById('Precio');
     divLista = document.getElementById('item4');
     anchoTotal = document.getElementById('largoTotal');
@@ -265,7 +265,7 @@ window.addEventListener('DOMContentLoaded', function () {
                }*/
             }
             if (hasTouchscreen) {
-                document.body.style.overflow = "hidden";
+               // document.body.style.overflow = "hidden";
                 console.log("en canvas");
             }
             /*
@@ -375,11 +375,11 @@ window.addEventListener('DOMContentLoaded', function () {
                     }*/
         //console.log("ROTATION X ",padreCentro.rotation.x,"ROTATION Y ",padreCentro.rotation.y);
         // });
-
+/*
         canvas.onpointerup = pointerup_handler;
         canvas.onpointercancel = pointerup_handler;
         canvas.onpointerout = pointerup_handler;
-        canvas.onpointerleave = pointerup_handler;
+        canvas.onpointerleave = pointerup_handler;*/
 
 
         var scene = new BABYLON.Scene(engine);
@@ -497,7 +497,7 @@ window.addEventListener('DOMContentLoaded', function () {
         */
         var light = new BABYLON.HemisphericLight("hemiLight", new BABYLON.Vector3(-1, 1, 0), scene);
         // compared click for sphere
-        advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI");
+       // advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI");
         /*
         grid = new BABYLON.GUI.Grid();
         advancedTexture.addControl(grid);
@@ -522,7 +522,7 @@ window.addEventListener('DOMContentLoaded', function () {
         } else {
             //crearInterfaceDatGUI();
 
-            crearInterfaceTexto();
+       //     crearInterfaceTexto();
         }
         engine.runRenderLoop(function () {
             scene.render();
@@ -547,6 +547,7 @@ window.addEventListener('DOMContentLoaded', function () {
             }
 
         };*/
+        canvas.addEventListener('touchmove', e=>e.preventDefault());
         return scene;
 
     }
@@ -596,9 +597,9 @@ window.addEventListener('DOMContentLoaded', function () {
     //cargarModelo(padreCentro, modelos.puffs[0].nombre);
     pantallaCarga();
     cargarModelo(padreCentro, modeloActual(texturaActual, moduloActual, true));
-
+/*
     padreCentro.addBehavior(pointerDragBehavior);
-    activarRotacion();
+    activarRotacion();*/
     BABYLON.Scene.LongPressDelay = 200;
 
 });
@@ -1258,7 +1259,7 @@ function meshClickleable(mesh) {
         bandera = false;
 
         //aplicar();
-        mesh.parent.addBehavior(pointerDragBehavior);
+       // mesh.parent.addBehavior(pointerDragBehavior);
         //mesh.addBehavior(pointerDragBehavior);
         if (muebleSelecionado === false && customMesh === false) {
             esconderMesh(btnDerecho, false);
@@ -1478,14 +1479,15 @@ function crearInterfaceDatGUI() {
     customContainer.appendChild(gui.domElement);
     f2.open();
 }
-function crearInterfaceTexto() {
-    dimensionesText = new BABYLON.GUI.TextBlock();
-    dimensionesText.text = (" ancho: " + 1 + /*" alto: " + 1 + */" largo: " + 1);
-    dimensionesText.color = "black";
-    dimensionesText.fontSize = 12;
-    advancedTexture.addControl(dimensionesText);
-    dimensionesText.textVerticalAlignment = 1;
-}
+
+//function crearInterfaceTexto() {
+//    dimensionesText = new BABYLON.GUI.TextBlock();
+//    dimensionesText.text = (" ancho: " + 1 + /*" alto: " + 1 + */" largo: " + 1);
+//    dimensionesText.color = "black";
+//    dimensionesText.fontSize = 12;
+//    advancedTexture.addControl(dimensionesText);
+//    dimensionesText.textVerticalAlignment = 1;
+//}
 function compararPoicion(numO) {
     let num = numO.getBoundingInfo().boundingBox.centerWorld;
     console.log("cordenandasss", num);
@@ -1986,6 +1988,7 @@ function opcPrearmado(i) {
 
     }
 }
+/*
 function activarRotacion() {
     clicked = false;
     bandera = !bandera;
@@ -1994,8 +1997,8 @@ function activarRotacion() {
     } else {
         pointerDragBehavior.moveAttached = true;
     }
-}
-
+}*/
+/*
 function pointerup_handler(ev) {
     if (meshClicleado) {
         console.log("mesh", meshClicleado);
@@ -2006,10 +2009,11 @@ function pointerup_handler(ev) {
     //console.log(ev.type, ev);
     // Remove this pointer from the cache and reset the target's
     // background and border
-    remove_event(ev);
+    //remove_event(ev);
     // If the number of pointers down is less than two then reset diff tracker
-    if (evCache.length < 2) prevDiff = -1;
-}
+    //if (evCache.length < 2) prevDiff = -1;
+}*/
+/*
 
 function remove_event(ev) {
     // Remove this event from the target's cache
@@ -2019,7 +2023,7 @@ function remove_event(ev) {
             break;
         }
     }
-}
+}*/
 /*funciones */
 function cambiarMenuMovil(i) {
     ocultarDivsGrid(i);
