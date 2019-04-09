@@ -789,12 +789,12 @@ div .materiales {
 	20% {
 		transform: scale(25, 25);
 		opacity: 1;
-		background-color: #15B358;
+	
 	}
 	100% {
 	  opacity: 0;
 	  transform: scale(40, 40);
-	  background-color: rgb(0, 128, 53);
+	  
 	}
   }
   
