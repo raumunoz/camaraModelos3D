@@ -8,8 +8,8 @@ inputElement.addEventListener("change", function (e) {
     const reader = new FileReader();
     reader.onload = function () {
         console.log("resultado", reader.result);
-      
-        background.texture = new BABYLON.Texture("data:" + imagen, escena, false, true, BABYLON.Texture.BILINEAR_SAMPLINGMODE, null, null, reader.result, true); 
+
+        background.texture = new BABYLON.Texture("data:" + imagen, escena, false, true, BABYLON.Texture.BILINEAR_SAMPLINGMODE, null, null, reader.result, true);
     }
 
     imagen = inputElement.files[0].name;
@@ -265,7 +265,7 @@ window.addEventListener('DOMContentLoaded', function () {
                }*/
             }
             if (hasTouchscreen) {
-               // document.body.style.overflow = "hidden";
+                // document.body.style.overflow = "hidden";
                 console.log("en canvas");
             }
             /*
@@ -375,11 +375,11 @@ window.addEventListener('DOMContentLoaded', function () {
                     }*/
         //console.log("ROTATION X ",padreCentro.rotation.x,"ROTATION Y ",padreCentro.rotation.y);
         // });
-/*
-        canvas.onpointerup = pointerup_handler;
-        canvas.onpointercancel = pointerup_handler;
-        canvas.onpointerout = pointerup_handler;
-        canvas.onpointerleave = pointerup_handler;*/
+        /*
+                canvas.onpointerup = pointerup_handler;
+                canvas.onpointercancel = pointerup_handler;
+                canvas.onpointerout = pointerup_handler;
+                canvas.onpointerleave = pointerup_handler;*/
 
 
         var scene = new BABYLON.Scene(engine);
@@ -454,30 +454,30 @@ window.addEventListener('DOMContentLoaded', function () {
                 padreCentro.rotation.y=padreCentro.rotation.y+(event.dragPlanePoint.x/150);
             }*/
         //});
-      ///  pointerDragBehavior.onDragObservable.add((event) => {
-            //console.log("drag");
-            //console.log(event);
-            //dragPlaneNormal
-            //dragPlanePoint
-            //console.log("d x",event.dragPlanePoint.x,"y",event.dragPlanePoint.y);
-            //console.log("deltaX",event.delta.x);
-            //console.log("deltaY",event.delta.z);
-            /*if (bandera) {      
-                padreCentro.rotation.x=padreCentro.rotation.x-(event.dragPlanePoint.y/150);
-                padreCentro.rotation.y=padreCentro.rotation.y+(event.dragPlanePoint.x/150);
-            }*/
-      //  });
-       // pointerDragBehavior.onDragEndObservable.add((event) => {
-            //console.log("dragEnd");
-            //console.log(event);
-            /*
-            if (bandera) {      
-                padreCentro.rotation.x=padreCentro.rotation.x-(event.dragPlanePoint.y/150);
-                padreCentro.rotation.y=padreCentro.rotation.y+(event.dragPlanePoint.x/150);
-            }
-            */
+        ///  pointerDragBehavior.onDragObservable.add((event) => {
+        //console.log("drag");
+        //console.log(event);
+        //dragPlaneNormal
+        //dragPlanePoint
+        //console.log("d x",event.dragPlanePoint.x,"y",event.dragPlanePoint.y);
+        //console.log("deltaX",event.delta.x);
+        //console.log("deltaY",event.delta.z);
+        /*if (bandera) {      
+            padreCentro.rotation.x=padreCentro.rotation.x-(event.dragPlanePoint.y/150);
+            padreCentro.rotation.y=padreCentro.rotation.y+(event.dragPlanePoint.x/150);
+        }*/
+        //  });
+        // pointerDragBehavior.onDragEndObservable.add((event) => {
+        //console.log("dragEnd");
+        //console.log(event);
+        /*
+        if (bandera) {      
+            padreCentro.rotation.x=padreCentro.rotation.x-(event.dragPlanePoint.y/150);
+            padreCentro.rotation.y=padreCentro.rotation.y+(event.dragPlanePoint.x/150);
+        }
+        */
 
-       // });
+        // });
 
         //camera.setTarget(BABYLON.Vector3.Zero());
         /*camara = new BABYLON.ArcRotateCamera("Camera", 3 * Math.PI / 2, -Math.PI / 2, 200, BABYLON.Vector3.Zero(), scene);
@@ -497,7 +497,7 @@ window.addEventListener('DOMContentLoaded', function () {
         */
         var light = new BABYLON.HemisphericLight("hemiLight", new BABYLON.Vector3(-1, 1, 0), scene);
         // compared click for sphere
-       // advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI");
+        // advancedTexture = BABYLON.GUI.AdvancedDynamicTexture.CreateFullscreenUI("UI");
         /*
         grid = new BABYLON.GUI.Grid();
         advancedTexture.addControl(grid);
@@ -522,17 +522,16 @@ window.addEventListener('DOMContentLoaded', function () {
         } else {
             //crearInterfaceDatGUI();
 
-       //     crearInterfaceTexto();
+            //     crearInterfaceTexto();
         }
         engine.runRenderLoop(function () {
             scene.render();
         });
-        //scene.debugLayer.show();
+        //scene.debugLayer.snahow();
 
         //esfera = BABYLON.Mesh.CreateBox("box", 2, scene);
-        scene.onBeforeRenderObservable.add(() => {
-
-        })
+        
+        
         //createButton();
         // On click event, request pointer lock
         /*
@@ -547,13 +546,16 @@ window.addEventListener('DOMContentLoaded', function () {
             }
 
         };*/
-        canvas.addEventListener('touchmove', e=>e.preventDefault());
+        canvas.addEventListener('touchmove', e => e.preventDefault());
         return scene;
 
     }
 
 
     escena = createScene();
+    /*escena.onNewMeshAddedObservable.add(function(){
+            
+    });*/
     camera.inputs.attached.mousewheel.detachControl(canvas);
     hl = new BABYLON.HighlightLayer("hl1", escena);
     hl.innerGlow = false;
@@ -597,9 +599,9 @@ window.addEventListener('DOMContentLoaded', function () {
     //cargarModelo(padreCentro, modelos.puffs[0].nombre);
     pantallaCarga();
     cargarModelo(padreCentro, modeloActual(texturaActual, moduloActual, true));
-/*
-    padreCentro.addBehavior(pointerDragBehavior);
-    activarRotacion();*/
+    /*
+        padreCentro.addBehavior(pointerDragBehavior);
+        activarRotacion();*/
     BABYLON.Scene.LongPressDelay = 200;
 
 });
@@ -768,7 +770,7 @@ function cargarModelo(padre, modelo, posicion, prearmado, rotacion) {
         }
         );
         agregarBtn.setAttribute("onClick", `agregarItemsCarrito(${JSON.stringify(tmpCarrito)})`);
-        console.log("carrito tmp",tmpCarrito);
+        console.log("carrito tmp", tmpCarrito);
         spanPrecio.innerText = "$" + precioTotal;
         padreActual.getChildren().forEach(hijo => {
             switch (hijo.name) {
@@ -831,13 +833,20 @@ function cargarModelo(padre, modelo, posicion, prearmado, rotacion) {
             padreActual.parent = null;
             padreActual.setAbsolutePosition(padre.getAbsolutePosition());
         }
+        console.log("%c succes : " + 'exito', 'background: orange; color: white');
+        setTimeout(function () {
+            camera.target = camera.target=new BABYLON.Vector3(0,0,0);
+            camera.zoomOn();
+            camera.maxZ = 1000;
+        }, 2000);
     }, onProgress = () => {
         hideLoadingScreen();
         //padreActual.setParent(null);
-    }, onError = (x) => {
+    }, onError = (x,msj) => {
         //console.log("progress")
         console.log("progreso", x);
-        engine.displayLoadingUI();
+        console.log("msj",msj);
+        //engine.displayLoadingUI();
     });
     //padreActual.setParent(padreCentro);
 }
@@ -908,21 +917,24 @@ function cargarModeloCustom(modelo, div) {
             //engine.displayLoadingUI();
             //hideLoadingScreen();
             console.log("terminó");
-            rand.onClick();
+          // rand.onClick();
             hideLoadingScreen();
-            camera.zoomOn();
-            camera.maxZ = 1000;
-            camera.target = padreCentro.position;
+           
+            
         }, onProgress = (x) => {
             console.log("importados", x)
 
             //padreActual.setParent(null);
-        }, onError = (x) => {
+        }, onError = (x,msj) => {
+            console.log("%c succes : " + 'error', 'background: orange; color: white');
+            
             hideLoadingScreen();
-            camera.zoomOn();
-            camera.maxZ = 1000;
-            camera.target = padreCentro.position;
-            console.log("errores", x);
+            setTimeout(function () {
+                camera.target = camera.target=new BABYLON.Vector3(0,0,0);
+                camera.zoomOn();
+                camera.maxZ = 1000;
+            }, 2000);
+            console.log("msj",msj)
             //padreActual.setParent(null);
         });
         /*camera.zoomOn();
@@ -1239,15 +1251,7 @@ function puffActual(mod) {
     return modelos.puffs[mod].nombre;
 }
 function meshClickleable(mesh) {
-    /*
-    clicked = false;
-    bandera = !bandera;
-    if (bandera) {
-        pointerDragBehavior.moveAttached = false;
-    } else {
-        pointerDragBehavior.moveAttached = true;
-    }
-    */
+
 
     mesh.actionManager = new BABYLON.ActionManager(escena);
     mesh.actionManager.registerAction(new BABYLON.ExecuteCodeAction(BABYLON.ActionManager.OnPickUpTrigger, function () {
@@ -1259,7 +1263,7 @@ function meshClickleable(mesh) {
         bandera = false;
 
         //aplicar();
-       // mesh.parent.addBehavior(pointerDragBehavior);
+        // mesh.parent.addBehavior(pointerDragBehavior);
         //mesh.addBehavior(pointerDragBehavior);
         if (muebleSelecionado === false && customMesh === false) {
             esconderMesh(btnDerecho, false);
@@ -1331,14 +1335,16 @@ function actualizarMueble() {
 }
 function rotarSelecionado() {
     if (customMesh) {
-        padreCentro.rotation.y = (Math.PI / 2) + padreCentro.rotation.y;
+        escena.meshes.forEach((x) => {
+            if (x.name = "centro") {
+                x.rotation.y = (Math.PI / 2) + x.rotation.y;
+            }
+        });
     } else {
         if (meshClicleado) {
             padreActual.rotation.y = (Math.PI / 2) + padreActual.rotation.y;
         }
     }
-
-
 }
 function esconderTodosBotones(bool) {
     if (bool) {
@@ -2030,16 +2036,16 @@ function cambiarMenuMovil(i) {
     resaltarBotonMenu(i);
     switch (i) {
         case 1:
-           /* gridContainer.style.gridTemplateAreas =
-        `'main main main main main main'
-        'sclm sclm sclm sclm sclm sclm'
-        'erra erra erra erra erra erra'
-        'preA preA preA preA preA preA'
-        'mate mate mate modu modu modu' 
-        'accion accion accion accion accion accion'
-        'footer footer footer footer footer footer'
-        `;*/
-        //document.getElementById("slct-btn-color").style.display="none";
+            /* gridContainer.style.gridTemplateAreas =
+         `'main main main main main main'
+         'sclm sclm sclm sclm sclm sclm'
+         'erra erra erra erra erra erra'
+         'preA preA preA preA preA preA'
+         'mate mate mate modu modu modu' 
+         'accion accion accion accion accion accion'
+         'footer footer footer footer footer footer'
+         `;*/
+            //document.getElementById("slct-btn-color").style.display="none";
             break;
         case 2:
             /*
@@ -2067,16 +2073,16 @@ function cambiarMenuMovil(i) {
             */
             break;
         case 4:
-        /*
-            gridContainer.style.gridTemplateAreas =
-                `'main main main main main main'
-        'sclm sclm sclm sclm sclm sclm'
-        'modu modu modu modu modu modu' 
-        'preA preA preA preA preA preA'
-        'erra erra erra erra erra erra'
-        'accion accion accion accion accion accion'
-        'footer footer footer footer footer footer'
-        `;*/
+            /*
+                gridContainer.style.gridTemplateAreas =
+                    `'main main main main main main'
+            'sclm sclm sclm sclm sclm sclm'
+            'modu modu modu modu modu modu' 
+            'preA preA preA preA preA preA'
+            'erra erra erra erra erra erra'
+            'accion accion accion accion accion accion'
+            'footer footer footer footer footer footer'
+            `;*/
             break;
         default:
             break;
@@ -2174,7 +2180,7 @@ function zoomear(zoom) {
 
     if (zoom == "in") {
         //camera.position.z = camera.position.z + 1;
-        if (camera.radius < 17) {
+        if (camera.radius < 8) {
 
         } else {
             camera.radius--;
@@ -2232,9 +2238,9 @@ function cambiarVistaMotor(opc) {
             document.getElementById("grid-texturas").style.visibility = "hidden";
             document.getElementById("iconosTexturas").style.visibility = "visible";
             document.getElementById("btn-agregar-3d-a-carrito").style.visibility = "visible";
-            document.getElementById("slct-btn-color").style.display="none";
-            document.getElementById("slct-btn-preArmado").style.display="initial";
-            document.getElementById("slct-btn-modelo").style.display="initial";
+            document.getElementById("slct-btn-color").style.display = "none";
+            document.getElementById("slct-btn-preArmado").style.display = "initial";
+            document.getElementById("slct-btn-modelo").style.display = "initial";
             for (let i = escena.meshes.length - 1; i >= 0; i--) {
 
                 escena.removeMesh(escena.meshes[i]);
@@ -2247,9 +2253,9 @@ function cambiarVistaMotor(opc) {
             document.getElementById("iconosPrearmado").style.visibility = "hidden";
             document.getElementById("grid-texturas").style.visibility = "visible";
             document.getElementById("btn-agregar-3d-a-carrito").style.visibility = "visible";
-            document.getElementById("slct-btn-color").style.display="initial";
-            document.getElementById("slct-btn-preArmado").style.display="none";
-            document.getElementById("slct-btn-modelo").style.display="none";
+            document.getElementById("slct-btn-color").style.display = "initial";
+            document.getElementById("slct-btn-preArmado").style.display = "none";
+            document.getElementById("slct-btn-modelo").style.display = "none";
             cargarModeloCustom(modelos.puffino[10], undefined);
             break;
         case 2:
@@ -2258,9 +2264,9 @@ function cambiarVistaMotor(opc) {
             document.getElementById("grid-texturas").style.visibility = "hidden";
             document.getElementById("iconosTexturas").style.visibility = "hidden";
             document.getElementById("btn-agregar-3d-a-carrito").style.visibility = "visible";
-            document.getElementById("slct-btn-color").style.display="none";
-            document.getElementById("slct-btn-preArmado").style.display="none";
-            document.getElementById("slct-btn-modelo").style.display="none";
+            document.getElementById("slct-btn-color").style.display = "none";
+            document.getElementById("slct-btn-preArmado").style.display = "none";
+            document.getElementById("slct-btn-modelo").style.display = "none";
             cargarModeloCustom(modelos.kids[0], undefined);
             break;
 
