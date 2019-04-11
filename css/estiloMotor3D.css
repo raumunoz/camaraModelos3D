@@ -859,7 +859,7 @@ div .materiales {
 		
 	}
 	.carrito {
-		top: 9.5%;
+		top: 0%;
 	}
 	.carrito-activo {
 		width: 81%;
@@ -909,7 +909,7 @@ div .materiales {
 		
 	}
 	.carrito {
-		top: 9.5%;
+		top: 0%;
 	}
 	.carrito-activo {
 		width: 81%;
@@ -937,9 +937,6 @@ padding: 0;
 	}
 	.rng-precio{
 		padding: 0;
-	}
-	.rng-div-cantidad{
-
 	}
 	.rng-btn-remover-carrito{
 			

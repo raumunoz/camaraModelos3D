@@ -1,0 +1,177 @@
+.tabla-carrito {}
+/*
+.carrito-footer {
+    display: grid;
+    width: 100%;
+    height: 250px;
+    grid-template-areas: "opcP opcP" "nav  main" "nav  foot";
+    grid-template-rows: 50px 1fr 30px;
+    grid-template-columns: 150px 1fr;
+}
+*/
+.table-header {}
+
+.tbody-carrito {}
+
+.item-imgagen {
+    height: 5em;
+    padding-left: 25px;
+}
+
+.table-row {}
+
+.wrap-texto {
+    text-align: center;
+}
+
+.promoCode, .subtotal {
+    width: 100%;
+}
+
+.promoCode {
+    border: 2px solid #efefef;
+    float: left;
+    width: 35%;
+    padding: 2%;
+    grid-area: prmC;
+}
+.opc-de-pago{
+   grid-area:opcP
+}
+
+.subtotal {
+    float: right;
+    width: 35%;
+}
+
+.subtotal .totalRow {
+    padding: .5em;
+    text-align: right;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font: inherit;
+    font-size: inherit;
+    font-size: 100%;
+    vertical-align: baseline;
+}
+
+.subtotal .totalRow .label {
+    font-family: "Montserrat", sans-serif;
+    font-size: .85em;
+    text-transform: uppercase;
+    color: #777;
+}
+
+.subtotal .totalRow span {
+    display: inline-block;
+    padding: 0 0 0 1em;
+    text-align: right;
+}
+
+.subtotal .totalRow {
+    padding: .5em;
+    text-align: right;
+}
+
+.subtotal .totalRow .label {
+    font-family: "Montserrat", sans-serif;
+    font-size: .85em;
+    text-transform: uppercase;
+    color: #777;
+}
+
+.subtotal .totalRow span {
+    display: inline-block;
+    padding: 0 0 0 1em;
+    text-align: right;
+}
+
+.subtotal .totalRow .value {
+    letter-spacing: -.025em;
+    width: 35%;
+}
+
+.subtotal .totalRow {
+    padding: .5em;
+    text-align: right;
+}
+
+.subtotal .totalRow.final {
+    font-size: 1.25em;
+    font-weight: bold;
+}
+
+.subtotal .totalRow {
+    padding: .5em;
+    text-align: right;
+}
+
+.btn:link, .btn:visited {
+    text-decoration: none;
+    font-family: "Montserrat", sans-serif;
+    letter-spacing: -.015em;
+    font-size: 1em;
+    padding: 1em 3em;
+    color: #fff;
+    background: #82ca9c;
+    font-weight: bold;
+    border-radius: 50px;
+    float: right;
+    text-align: right;
+    -webkit-transition: all 0.25s linear;
+    -moz-transition: all 0.25s linear;
+    -ms-transition: all 0.25s linear;
+    -o-transition: all 0.25s linear;
+    transition: all 0.25s linear;
+}
+
+.promoCode {
+    border: 2px solid #efefef;
+    float: left;
+    width: 35%;
+    padding: 2%;
+}
+
+.promoCode label {
+    display: block;
+    width: 100%;
+    font-style: italic;
+    font-size: 1.15em;
+    margin-bottom: .5em;
+    letter-spacing: -.025em;
+}
+
+.promoCode a.btn {
+    float: left;
+    width: 15%;
+    padding: .75em 0;
+    border-radius: 0 1em 1em 0;
+    text-align: center;
+    border: 1px solid #82ca9c;
+}
+
+.totals .totals-item {
+    clear: both;
+    width: 100%;
+    margin-bottom: 10px;
+    float: center;
+    text-align: right;
+}
+
+.totals .totals-item-total {
+    font-family: "HelveticaNeue-Medium", "Helvetica Neue Medium";
+}
+.totals .totals-item .totals-value {
+    float: right;
+    width: 21%;
+    text-align: right;
+    color: black;
+}
+@media all and (max-width: 1199px) {}
+
+@media all and (max-width: 991px) {}
+
+@media all and (max-width: 768px) {}
+
+@media all and (max-width: 575px) {}

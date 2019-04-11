@@ -1,9 +1,9 @@
 let debbugCarrito;
 let itemsCarrito = [];
-if(sessionStorage.getItem("carrito")==null){
+if (sessionStorage.getItem("carrito") == null) {
 
-}else{
-    itemsCarrito=JSON.parse(sessionStorage.getItem("carrito"));
+} else {
+    itemsCarrito = JSON.parse(sessionStorage.getItem("carrito"));
     actualizarDivCarrito();
 }
 function mostrarCarro() {
@@ -11,7 +11,7 @@ function mostrarCarro() {
     document.getElementById("carrito").classList.toggle("carrito-activo");
     document.getElementById("rng-total").classList.toggle("total-desactivo");
 
-    
+
     // actualizarDivCarrito();
 }
 function removerArticulo(elemento, nombre) {
@@ -25,27 +25,27 @@ function removerArticulo(elemento, nombre) {
 
 
 
-function agregarAlCarrito(nombre, precio, imagen,element) {
-    debbugCarrito=element;
+function agregarAlCarrito(nombre, precio, imagen, element) {
+    debbugCarrito = element;
     var existente = false;
     if (itemsCarrito.length == 0) {
-        itemsCarrito.push({ name: nombre, price: precio, quantity: 1, image: imagen,details: getNombreTextura() });
+        itemsCarrito.push({ name: nombre, price: precio, quantity: 1, image: imagen, details: getNombreTextura() });
     } else {
         itemsCarrito.forEach((x) => {
             if (x.name === nombre) {
                 x.quantity++;
                 existente = true;
-                x.details=getNombreTextura();
+                x.details = getNombreTextura();
             }
         });
         if (existente == false) {
-            itemsCarrito.push({ name: nombre, price: precio, quantity: 1, image: imagen, details: getNombreTextura()});
+            itemsCarrito.push({ name: nombre, price: precio, quantity: 1, image: imagen, details: getNombreTextura() });
         }
     }
     actualizarDivCarrito();
 }
-function agregarItemsCarrito(tmpCarrito){
-    tmpCarrito.forEach((item)=>{
+function agregarItemsCarrito(tmpCarrito) {
+    tmpCarrito.forEach((item) => {
         agregarAlCarrito(item.name, item.price, item.image);
     });
 }
@@ -149,8 +149,8 @@ function actualizarDivCarrito() {
         document.getElementById("total-carrito").innerText = precioAPagar;
         renglonesCarrito.innerHTML = carritoTotal;
         document.getElementById("num-carrito").innerText = itemsCarrito.length;
-        actualizarBotonPaypal(precioAPagar);
-        sessionStorage.setItem("carrito",JSON.stringify(itemsCarrito));
+        //actualizarBotonPaypal(precioAPagar);
+        sessionStorage.setItem("carrito", JSON.stringify(itemsCarrito));
     } else {
         document.getElementById("total-carrito").innerText = 0;
         document.getElementById("carrito").classList.toggle("carrito-activo");
@@ -160,8 +160,8 @@ function actualizarDivCarrito() {
         document.getElementById("row-productos").style.height = "2em";
         document.getElementById("row-productos").innerText = "No has agregado nada al carrito";
     }
-    if(itemsCarrito.length==0){
-        
+    if (itemsCarrito.length == 0) {
+
     }
 }
 function actualizarBotonPaypal(total) {
@@ -228,16 +228,16 @@ function actualizarBotonPaypal(total) {
                     soft_descriptor: 'ECHI5786786',
                     item_list: {
                         items: itemsApagar,
-                            /* {
-                              name: 'bolso',
-                              description: 'Black handbag.',
-                              quantity: '1',
-                              price: '15',
-                              tax: '0.02',
-                              sku: 'product34',
-                              currency: 'MXN'
-                            }*/
-                        
+                        /* {
+                          name: 'bolso',
+                          description: 'Black handbag.',
+                          quantity: '1',
+                          price: '15',
+                          tax: '0.02',
+                          sku: 'product34',
+                          currency: 'MXN'
+                        }*/
+
                     }
                 }],
                 note_to_payer: 'Contactanos si tienes alguna duda sobre tu pedido.'
@@ -247,20 +247,86 @@ function actualizarBotonPaypal(total) {
         onAuthorize: function (data, actions) {
             return actions.payment.execute().then(function () {
                 // Show a confirmation message to the buyer
-                itemsCarrito=[];
+                itemsCarrito = [];
                 actualizarDivCarrito();
                 window.alert('Gracias por su compra.');
             });
         }
     }, '#paypal-button');
 }
-function getNombreTextura(){
+function getNombreTextura() {
     var detalles;
     var descripcionTextura = document.getElementById("descripcionMaterial");
-    if((descripcionTextura.innerHTML=="Material")||(descripcionTextura.innerHTML=="")||(typeof descripcionTextura.innerHTML === "undefined")){
-        detalles="Material normal";
-    }else{
-        detalles=descripcionTextura.innerHTML;
+    if ((descripcionTextura.innerHTML == "Material") || (descripcionTextura.innerHTML == "") || (typeof descripcionTextura.innerHTML === "undefined")) {
+        detalles = "Material normal";
+    } else {
+        detalles = descripcionTextura.innerHTML;
     }
     return detalles;
+}
+function actualizarTablaCarrito() {
+    var precioAPagar = 0;
+    var renglonesTabla = document.getElementById("tabla-carrito");
+    var htmlTabla = "";
+    if (itemsCarrito.length >= 0) {
+        itemsCarrito.forEach((prducto) => {
+            if (typeof prducto !== "undefined") {
+                htmlTabla = htmlTabla + `
+                <tr class="table-row first last" data-cart-item="">
+                <td class="product-item first">
+                  <div class="image-wrap">
+                    <a class="image ">
+                      <img  class="item-imgagen" src="${prducto.image}" alt="">
+                    </a>
+                  </div>
+                  <div class="wrap wrap-texto">
+                    <span class="label title ">${prducto.name}</a></span>
+                  </div>
+                </td>
+                <td class="product-item ">
+                  <div class="wrap wrap-texto">
+                    <span class="label variant rng-desc-carrito">${prducto.details}</span>
+                  </div>
+                </td>
+                <td class="price"><span class="money" data-currency-mxn="$ ${prducto.price}" data-currency="MXN">$ ${prducto.price}</span></td>
+                <td class="quantity rng-div-cantidad">
+                  <span>
+                  ${prducto.quantity}
+                  </span>
+                </td>
+                <td class="total"><span class="money rng-precio" data-currency-mxn="$ ${prducto.price*prducto.quantity}" data-currency="MXN">$ ${prducto.price*prducto.quantity}</span></td>
+                <td class="remove last">
+                <span class="icon">
+                <i class="icon-cross" onclick="removerArticulo(this,'${prducto.name}')" id="rnd()"></i>
+            </span>
+                </td>
+              </tr>                    `
+                    ;
+                if (prducto.quantity > 1) {
+                    precioAPagar = precioAPagar + (prducto.price*prducto.quantity);
+                } else {
+                    precioAPagar = precioAPagar + prducto.price;
+                }
+
+            }
+
+        });
+
+        document.getElementById("total-pagina-cart").innerText = precioAPagar;
+        renglonesTabla.innerHTML = htmlTabla;
+        //document.getElementById("num-carrito").innerText = itemsCarrito.length;
+        //actualizarBotonPaypal(precioAPagar);
+        //sessionStorage.setItem("carrito", JSON.stringify(itemsCarrito));
+    } else {
+        document.getElementById("total-carrito").innerText = 0;
+        document.getElementById("carrito").classList.toggle("carrito-activo");
+        document.getElementById("rng-total").classList.toggle("total-desactivo");
+        document.getElementById("paypal-button-container").innerHTML = "";
+        document.getElementById("num-carrito").innerText = "";
+        document.getElementById("row-productos").style.height = "2em";
+        document.getElementById("row-productos").innerText = "No has agregado nada al carrito";
+    }
+    if (itemsCarrito.length == 0) {
+
+    }
 }
