@@ -1764,9 +1764,11 @@ function generarBotonesTextura() {
     var gridTexturas = document.getElementById("btn-grid");
     var gridTexturas1 = document.getElementById("btn-grid1");
     var gridTexturas2 = document.getElementById("btn-grid2");
+    var gridTexturas3 = document.getElementById("btn-grid3");
     var texturasHTML = "";
     var texturasHTML1 = "";
     var texturasHTML2 = "";
+    var texturasHTML3 = "";
     /*archivosTexturas.forEach((x) => {
         texturasHTML = texturasHTML + generarBotonImagen(x.chico, x.medio);
         if (bandera == false) {
@@ -1786,10 +1788,15 @@ function generarBotonesTextura() {
     archivosTexturas[0].tactoPiel.forEach((x) => {
         texturasHTML2 = texturasHTML2 + generarBotonImagen(x.chico, x.medio);
     });
+    archivosTexturas[0].gamuzaClon.forEach((x) => {
+        texturasHTML3 = texturasHTML3 + generarBotonImagen(x.chico, x.medio);
+    });
+    
     //console.log(texturasHTML);
     gridTexturas.innerHTML = texturasHTML;
     gridTexturas1.innerHTML = texturasHTML1;
     gridTexturas2.innerHTML = texturasHTML2;
+    gridTexturas3.innerHTML = texturasHTML3;
 }
 
 function generarBotonImagen(srcImagenChico, srcImagenMedio) {

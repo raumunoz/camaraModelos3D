@@ -297,6 +297,15 @@ font-weight: bold;
 	overflow-y: auto;
 	white-space: nowrap;
 }
+.btn-grid3 {
+	display: grid;
+	grid-template-columns: max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content;
+	grid-template-rows: max-content max-content max-content max-content;
+	width: 16em;
+	overflow-x: auto;
+	overflow-y: auto;
+	white-space: nowrap;
+}
 
 .btn-item-grid {
 	color: #fff;

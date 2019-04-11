@@ -250,6 +250,128 @@
                 "medio": "TP TANmedio.jpg",
                 "grande": "TP TAN.jpg"
             }
+        ],
+        "gamuza-yooko":[
+            {
+                "chico": "GAMUZA MARINOchico.jpg",
+                "medio": "GAMUZA MARINOmedio.jpg",
+                "grande": "GAMUZA MARINO.jpg"
+            },
+            {
+                "chico": "GAMUZA MADERAchico.jpg",
+                "medio": "GAMUZA MADERAmedio.jpg",
+                "grande": "GAMUZA MADERA.jpg"
+            },
+            {
+                "chico": "GAMUZA CAMELchico.jpg",
+                "medio": "GAMUZA CAMELmedio.jpg",
+                "grande": "GAMUZA CAMEL.jpg"
+            },
+            {
+                "chico": "GAMUZA CARBONchico.jpg",
+                "medio": "GAMUZA CARBONmedio.jpg",
+                "grande": "GAMUZA CARBON.jpg"
+            },
+            {
+                "chico": "GAMUZA ROJO QUEMADOchico.jpg",
+                "medio": "GAMUZA ROJO QUEMADOmedio.jpg",
+                "grande": "GAMUZA ROJO QUEMADO.jpg"
+            },
+            {
+                "chico": "GAMUZA FERREROchico.jpg",
+                "medio": "GAMUZA FERREROmedio.jpg",
+                "grande": "GAMUZA FERRERO.jpg"
+            },
+            {
+                "chico": "GAMUZA DELFINchico.jpg",
+                "medio": "GAMUZA DELFINmedio.jpg",
+                "grande": "GAMUZA DELFIN.jpg"
+            }
+        ],
+        "curri":[
+             {
+                "chico": "CURRI MOUSEchico.jpg",
+                "medio": "CURRI MOUSEmedio.jpg",
+                "grande": "CURRI MOUSE.jpg"
+            },
+            {
+                "chico": "CURRI PASTOchico.jpg",
+                "medio": "CURRI PASTOmedio.jpg",
+                "grande": "CURRI PASTO.jpg"
+            },
+            {
+                "chico": "CURRI GRIS CLAROchico.jpg",
+                "medio": "CURRI GRIS CLAROmedio.jpg",
+                "grande": "CURRI GRIS CLARO.jpg"
+            },
+            {
+                "chico": "CURRI CAPUCHINOchico.jpg",
+                "medio": "CURRI CAPUCHINOmedio.jpg",
+                "grande": "CURRI CAPUCHINO.jpg"
+            },
+            {
+                "chico": "CURRI ROJOchico.jpg",
+                "medio": "CURRI ROJOmedio.jpg",
+                "grande": "CURRI ROJO.jpg"
+            },
+            {
+                "chico": "CURRI MARRONchico.jpg",
+                "medio": "CURRI MARRONmedio.jpg",
+                "grande": "CURRI MARRON.jpg"
+            },
+            {
+                "chico": "CURRI ACEITUNAchico.jpg",
+                "medio": "CURRI ACEITUNAmedio.jpg",
+                "grande": "CURRI ACEITUNA.jpg"
+            },
+            {
+                "chico": "CURRI NATURALchico.jpg",
+                "medio": "CURRI NATURALmedio.jpg",
+                "grande": "CURRI NATURAL.jpg"
+            },
+            {
+                "chico": "CURRI CAFÉchico.jpg",
+                "medio": "CURRI CAFÉmedio.jpg",
+                "grande": "CURRI CAFÉ.jpg"
+            }
+        ]
+        ,
+        "gamuzaClon":[
+             {
+                "chico": "CURRI MOUSEchico.jpg",
+                "medio": "CURRI MOUSEmedio.jpg",
+                "grande": "CURRI MOUSE.jpg"
+            },
+            {
+                "chico": "CURRI GRIS CLAROchico.jpg",
+                "medio": "CURRI GRIS CLAROmedio.jpg",
+                "grande": "CURRI GRIS CLARO.jpg"
+            },
+            {
+                "chico": "CURRI CAPUCHINOchico.jpg",
+                "medio": "CURRI CAPUCHINOmedio.jpg",
+                "grande": "CURRI CAPUCHINO.jpg"
+            },
+            {
+                "chico": "CURRI MARRONchico.jpg",
+                "medio": "CURRI MARRONmedio.jpg",
+                "grande": "CURRI MARRON.jpg"
+            },
+            {
+                "chico": "CURRI ACEITUNAchico.jpg",
+                "medio": "CURRI ACEITUNAmedio.jpg",
+                "grande": "CURRI ACEITUNA.jpg"
+            },
+            {
+                "chico": "CURRI NATURALchico.jpg",
+                "medio": "CURRI NATURALmedio.jpg",
+                "grande": "CURRI NATURAL.jpg"
+            },
+            {
+                "chico": "CURRI CAFÉchico.jpg",
+                "medio": "CURRI CAFÉmedio.jpg",
+                "grande": "CURRI CAFÉ.jpg"
+            }
         ]
     }
 ]
