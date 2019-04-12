@@ -321,11 +321,12 @@ function actualizarTablaCarrito() {
             }
 
         });
-
+        //Subtotal-pagina-cart
         document.getElementById("total-pagina-cart").innerText = precioAPagar;
+        document.getElementById("Subtotal-pagina-cart").innerText = precioAPagar;
         renglonesTabla.innerHTML = htmlTabla;
         //document.getElementById("num-carrito").innerText = itemsCarrito.length;
-        //actualizarBotonPaypal(precioAPagar);
+        actualizarBotonPaypal(precioAPagar);
         //sessionStorage.setItem("carrito", JSON.stringify(itemsCarrito));
     } else {
         document.getElementById("total-carrito").innerText = 0;

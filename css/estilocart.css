@@ -15,7 +15,7 @@
 
 .item-imgagen {
     height: 5em;
-    padding-left: 25px;
+    padding-left: 25%;
 }
 
 .table-row {}
@@ -166,12 +166,105 @@
     float: right;
     width: 21%;
     text-align: right;
-    color: black;
+    color: #545454;
 }
-@media all and (max-width: 1199px) {}
+.money {
+    padding-left: 25%;
+}
+.quantity.rng-div-cantidad {
 
-@media all and (max-width: 991px) {}
+    text-align: center;
 
-@media all and (max-width: 768px) {}
+}
+.total {
 
-@media all and (max-width: 575px) {}
+    text-align: center;
+
+}
+.table th, .table td {
+    padding: 0.75rem;
+    vertical-align: center;
+    border-top: 1px solid #dee2e6;
+}
+#btn-agregar-ir-al-carrito {
+    margin-left: 59%;
+    width: 100%;
+}
+@media all and (max-width: 1199px) {
+    #btn-agregar-ir-al-carrito {
+        margin-left: 10%;;
+        width: 100%;
+    }
+}
+
+@media all and (max-width: 991px) {
+    #btn-agregar-ir-al-carrito {
+        margin-left: 10%;;
+        width: 100%;
+    }
+}
+
+@media all and (max-width: 768px) {
+    #btn-agregar-ir-al-carrito {
+
+        margin-left: 0;
+        width: 100%;
+        
+    
+    }
+    .btn:link, .btn:visited {
+        text-decoration: none;
+        font-family: "Montserrat", sans-serif;
+        letter-spacing: -.015em;
+        font-size: 1em;
+        padding: 1em 2em;
+        color: #fff;
+        background: #82ca9c;
+        font-weight: bold;
+        border-radius: 50px;
+        float: right;
+        text-align: right;
+        -webkit-transition: all 0.25s linear;
+        -moz-transition: all 0.25s linear;
+        -ms-transition: all 0.25s linear;
+        -o-transition: all 0.25s linear;
+        transition: all 0.25s linear;
+    }
+}
+
+@media all and (max-width: 575px) {
+    #btn-agregar-ir-al-carrito {
+
+        margin-left: 0;
+        width: 100%;
+    
+    }
+    .btn:link, .btn:visited {
+        text-decoration: none;
+        font-family: "Montserrat", sans-serif;
+        letter-spacing: -.015em;
+        font-size: 1em;
+        padding: 1em 1em;
+        color: #fff;
+        background: #82ca9c;
+        font-weight: bold;
+        border-radius: 50px;
+        float: right;
+        text-align: right;
+        -webkit-transition: all 0.25s linear;
+        -moz-transition: all 0.25s linear;
+        -ms-transition: all 0.25s linear;
+        -o-transition: all 0.25s linear;
+        transition: all 0.25s linear;
+        margin-top: 1.3em;
+    }
+    label {
+        display: inline-block;
+        margin-bottom: 0.5rem;
+        width: 34%;
+        
+    }
+    .input-descuento {
+        width: 45%;
+    }
+}

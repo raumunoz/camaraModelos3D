@@ -99,7 +99,7 @@
                         <div id="paypal-button-container"></div>
                         <div id="paypal-button"></div>
                         -->
-                <button type="button" class="btn btn-success btn-agregar-3d-a-carrito" id="btn-ir-a-carrito"
+                <button type="button" class="btn btn-success btn-agregar-3d-a-carrito" id="btn-agregar-ir-al-carrito"
                     onclick="location.href = '/cart.html';">Ir al carrito</button>
             </div>
         </div>
@@ -146,8 +146,7 @@
                                 <th class="wrap-texto">Material</th>
                                 <th class="wrap-texto">Precio</th>
                                 <th class="wrap-texto">Cantidad</th>
-                                <th class="wrap-texto">Total</th>
-                                <th class="last">x</th>
+                                <th class="wrap-texto last">Total</th>
                             </tr>
                         </thead>
 
@@ -197,52 +196,51 @@
                         </tbody>
 
                     </table>
-
-                    <!-- Tabs -->
-                    <h4>$<spa id="total-pagina-cart">45</spa>
                     </h4>
 
                     <br>
                 </div>
 
             </div>
-        </div>
-
-
-        <div class="container">
-            <div class="row">
-                <div class="col-*-*"></div>
-                <div class="col-*-*"></div>
-            </div>
-            <div class="carrito-footer ">
+            <div class="container">
                 <div class="row">
-                    <div class="col-md-3 col-sm-2 col-xs-2"><label for="promo">¿Tienes un cupón de
-                            descuento?</label><input type="text" name="promo" placholder="Enter Code">
-                        <a href="#" class="btn"></a></div>
-
-                    
+                    <div class="col-*-*"></div>
+                    <div class="col-*-*"></div>
                 </div>
-                <div class="totals">
-                        <div class="totals-item">
-                            <label>Subtotal</label>
-                            <div class="totals-value" id="cart-subtotal">71.97</div>
-                        </div>
-                        <div class="totals-item">
-                            <label>Tax (5%)</label>
-                            <div class="totals-value" id="cart-tax">3.60</div>
-                        </div>
-                        <div class="totals-item">
-                            <label>Shipping</label>
-                            <div class="totals-value" id="cart-shipping">15.00</div>
-                        </div>
-                        <div class="totals-item totals-item-total">
-                            <label>Grand Total</label>
-                            <div class="totals-value" id="cart-total">90.57</div>
+                <div class="carrito-footer ">
+                    <div class="row">
+                        <div class="promo col-12 col-sm-12 col-md-6  col-xs-6"><label for="promo">¿Tienes un cupón de
+                                descuento?</label><input class="input-descuento" type="text" name="promo" placholder="Enter Code">
+                            <a href="#" class="btn"></a></div>
+
+                        <div class="totals col-12 col-sm-12 col-md-6 col-xs-6">
+                            <div class="totals-item">
+                                <label>Subtotal</label>
+                                <div class="totals-value" id="cart-subtotal">$<spa id="Subtotal-pagina-cart">45</spa>
+                                </div>
+                            </div>
+                            <div class="totals-item">
+                                <label>Envio</label>
+                                <div class="totals-value" id="cart-shipping">$<spa id="envio-pagina-cart">0</spa>
+                                </div>
+                            </div>
+                            <div class="totals-item totals-item-total">
+                                <label style="font-weight: bold;">Total</label>
+                                <div class="totals-value" id="cart-total" style="font-weight: 620;">$<spa id="total-pagina-cart">45</spa>
+                                </div>
+                            </div>
+                            <button type="button" class="btn btn-success btn-agregar-3d-a-carrito"
+                                id="btn-agregar-ir-al-carrito" onclick="location.href = '/cart.html';"
+                                style="visibility: visible;">Pagar con tarjeta</button>
+                            <div id="paypal-button-container"></div>
+                            <div id="paypal-button"></div>
                         </div>
                     </div>
-                    
-            </div>
-            <div class="total">
+
+
+                </div>
+                <div class="total">
+                </div>
             </div>
         </div>
     </div>
@@ -326,6 +324,7 @@
         };
 
     </script>
+    <script src="https://www.paypalobjects.com/api/checkout.js"></script>
 </body>
 
 </html>
