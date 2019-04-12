@@ -77,7 +77,7 @@
                     {
                         "imagen": "images/catalogo/yoko/yookocasual_silla.jpg"
                     }
-                ],"index":"38"
+                ],"index":34
             },
             {
                 "apodo": "Yooko Trendy Silla",
@@ -92,7 +92,7 @@
                     {
                         "imagen": "images/catalogo/yoko/yookotrendy_silla.jpg"
                     }
-                ],"index":"38"
+                ],"index":40
             }
         ],
         "esquinas": [
@@ -109,7 +109,7 @@
                     {
                         "imagen": "images/catalogo/yoko/yookocontempo_esquinero.jpg"
                     }
-                ],"index":"38"
+                ],"index":36
             },
             {
                 "apodo": "Yooko Casual Esquinero",
@@ -124,7 +124,7 @@
                     {
                         "imagen": "images/catalogo/yoko/yookocasual_esquinero.jpg"
                     }
-                ],"index":"38"
+                ],"index":33
             },
             {
                 "apodo": "Yooko Trendy Esquinero",
@@ -139,7 +139,7 @@
                     {
                         "imagen": "images/catalogo/yoko/yookotrendy_esquinero.jpg"
                     }
-                ],"index":"38"
+                ],"index":39
             }
         ],
         "completos": [
@@ -203,7 +203,7 @@
                     {
                         "imagen": "images/productos/puffino/atlixco.jpg"
                     }
-                ],"index":"38"
+                ],"index":30
             },
             {
                 "apodo": "Yumil Mediano",
@@ -218,7 +218,7 @@
                     {
                         "imagen": "images/productos/puffino/atlixco_chico.jpg"
                     }
-                ],"index":"38"
+                ],"index":31
             },
             {
                 "apodo": "Yeeb",
@@ -233,7 +233,7 @@
                     {
                         "imagen": "images/productos/puffino/bernal.jpg"
                     }
-                ],"index":"38"
+                ],"index":29
             },
             {
                 "apodo": "Kauil",
@@ -248,7 +248,7 @@
                     {
                         "imagen": "images/productos/puffino/cozumel.jpg"
                     }
-                ],"index":"38"
+                ],"index":13
             },
             {
                 "apodo": "Kauil Taburete",
@@ -263,7 +263,7 @@
                     {
                         "imagen": "images/productos/puffino/cozumel_taburete.jpg"
                     }
-                ],"index":"38"
+                ],"index":15
             },
             {
                 "apodo": "Balam",
@@ -278,7 +278,7 @@
                     {
                         "imagen": "images/productos/puffino/guadalajara.jpg"
                     }
-                ],"index":"38"
+                ],"index":9
             },
             {
                 "apodo": "Ikal",
@@ -293,7 +293,7 @@
                     {
                         "imagen": "images/productos/puffino/guanajuato.jpg"
                     }
-                ],"index":"38"
+                ],"index":12
             },
             {
                 "apodo": "Nima",
@@ -308,7 +308,7 @@
                     {
                         "imagen": "images/productos/puffino/lapaz.jpg"
                     }
-                ],"index":"38"
+                ],"index":21
             },
             {
                 "apodo": "Nima mediano",
@@ -323,7 +323,7 @@
                     {
                         "imagen": "images/productos/puffino/lapaz_chico.jpg"
                     }
-                ],"index":"38"
+                ],"index":22
             },
             {
                 "apodo": "Zazil",
@@ -338,7 +338,7 @@
                     {
                         "imagen": "images/productos/puffino/merida.jpg"
                     }
-                ],"index":"38"
+                ],"index":32
             },
             {
                 "apodo": "Toot",
@@ -353,7 +353,7 @@
                     {
                         "imagen": "images/productos/puffino/oaxaca.jpg"
                     }
-                ],"index":"38"
+                ],"index":26
             },
             {
                 "apodo": "Toot Queen",
@@ -368,7 +368,7 @@
                     {
                         "imagen": "images/productos/puffino/oaxaca_queen.jpg"
                     }
-                ],"index":"38"
+                ],"index":28
             },
             {
                 "apodo": "",
@@ -398,7 +398,7 @@
                     {
                         "imagen": "images/productos/puffino/patzcuaro.jpg"
                     }
-                ],"index":"38"
+                ],"index":24
             },
             {
                 "apodo": "Tanak Niños",
@@ -413,7 +413,7 @@
                     {
                         "imagen": "images/productos/puffino/patzcuaro_kids.jpg"
                     }
-                ],"index":"38"
+                ],"index":25
             },
             {
                 "apodo": "Alom",
@@ -428,7 +428,7 @@
                     {
                         "imagen": "images/productos/puffino/puebla.jpg"
                     }
-                ],"index":"38"
+                ],"index":7
             },
             {
                 "apodo": "Alom Mediano",
@@ -443,7 +443,7 @@
                     {
                         "imagen": "images/productos/puffino/pruebla_chico.jpg"
                     }
-                ],"index":"38"
+                ],"index":8
             },
             {
                 "apodo": "Seti",
@@ -458,7 +458,7 @@
                     {
                         "imagen": "images/productos/puffino/puertovallarta.jpg"
                     }
-                ],"index":"38"
+                ],"index":23
             },
             {
                 "apodo": "Kauil Sillón",
@@ -473,7 +473,7 @@
                     {
                         "imagen": "images/productos/puffino/cozumel_sillon.jpg"
                     }
-                ],"index":"38"
+                ],"index":14
             },
             {
                 "apodo": "Canek",
@@ -488,7 +488,7 @@
                     {
                         "imagen": "images/productos/puffino/veracruz.jpg"
                     }
-                ],"index":"38"
+                ],"index":10
             },
             {
                 "apodo": "Canek Niños",
@@ -503,7 +503,7 @@
                     {
                         "imagen": "images/productos/puffino/veracruz_ninos.jpg"
                     }
-                ],"index":"38"
+                ],"index":11
             },
             {
                 "apodo": "Kimbo Chico",
@@ -518,7 +518,7 @@
                     {
                         "imagen": "images/productos/puffino/zacatecas_chico.jpg"
                     }
-                ],"index":"38"
+                ],"index":17
             },
             {
                 "apodo": "Kimbo Grande",
@@ -533,7 +533,7 @@
                     {
                         "imagen": "images/productos/puffino/zacatecas_grande.jpg"
                     }
-                ],"index":"38"
+                ],"index":16
             },
             {
                 "apodo": "Kimbo Mediano",
@@ -548,7 +548,7 @@
                     {
                         "imagen": "images/productos/puffino/zacatecas_mediano.jpg"
                     }
-                ],"index":"38"
+                ],"index":18
             },
             {
                 "apodo": "Kuk",
@@ -563,7 +563,7 @@
                     {
                         "imagen": "images/productos/puffino/zacatlan.jpg"
                     }
-                ],"index":"38"
+                ],"index":19
             }
         ],
         "kids": [
@@ -580,7 +580,7 @@
                     {
                         "imagen": "images/productos/kids/kids_conejo.jpg"
                     }
-                ],"index":"38"
+                ],"index":1
             },
             {
                 "apodo": "DINOSAURIO",
@@ -595,7 +595,7 @@
                     {
                         "imagen": "images/productos/kids/kids_dinosaurio.jpg"
                     }
-                ],"index":"38"
+                ],"index":2
             },
             {
                 "apodo": "DONA",
@@ -610,7 +610,7 @@
                     {
                         "imagen": "images/productos/kids/kids_dona.jpg"
                     }
-                ],"index":"38"
+                ],"index":3
             },
             {
                 "apodo": "JIRAFA",
@@ -625,7 +625,7 @@
                     {
                         "imagen": "images/productos/kids/kids_jirafa.jpg"
                     }
-                ],"index":"38"
+                ],"index":4
             },
             {
                 "apodo": "PERRITO",
@@ -640,7 +640,7 @@
                     {
                         "imagen": "images/productos/kids/kids_perrito.jpg"
                     }
-                ],"index":"38"
+                ],"index":5
             },
             {
                 "apodo": "UNICORNIO",
@@ -655,7 +655,7 @@
                     {
                         "imagen": "images/productos/kids/kids_unicornio.jpg"
                     }
-                ],"index":"38"
+                ],"index":6
             }
         ],
         "yokoModular": [

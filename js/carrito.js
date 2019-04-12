@@ -4,13 +4,16 @@ if (sessionStorage.getItem("carrito") == null) {
 
 } else {
     itemsCarrito = JSON.parse(sessionStorage.getItem("carrito"));
+    
     actualizarDivCarrito();
 }
 function mostrarCarro() {
 
     document.getElementById("carrito").classList.toggle("carrito-activo");
     document.getElementById("rng-total").classList.toggle("total-desactivo");
-
+    if(itemsCarrito.length<=0){
+        document.getElementById("btn-agregar-ir-al-carrito").style.visibility="hidden";
+    }
 
     // actualizarDivCarrito();
 }
@@ -21,6 +24,10 @@ function removerArticulo(elemento, nombre) {
     itemsCarrito.splice(itemsCarrito.findIndex(v => v.name === nombre), 1);
     console.log(itemsCarrito);
     actualizarDivCarrito();
+    if(itemsCarrito.length<=0){
+        mostrarCarro();
+        document.getElementById("row-productos").innerText = "No has agregado nada al carrito";
+    }
 }
 
 
@@ -145,13 +152,15 @@ function actualizarDivCarrito() {
             }
 
         });
-
+        document.getElementById("btn-agregar-ir-al-carrito").style.visibility="visible";
         document.getElementById("total-carrito").innerText = precioAPagar;
         renglonesCarrito.innerHTML = carritoTotal;
         document.getElementById("num-carrito").innerText = itemsCarrito.length;
         //actualizarBotonPaypal(precioAPagar);
         sessionStorage.setItem("carrito", JSON.stringify(itemsCarrito));
+
     } else {
+        document.getElementById("btn-agregar-ir-al-carrito").style.visibility="hidden";
         document.getElementById("total-carrito").innerText = 0;
         document.getElementById("carrito").classList.toggle("carrito-activo");
         document.getElementById("rng-total").classList.toggle("total-desactivo");
@@ -159,6 +168,7 @@ function actualizarDivCarrito() {
         document.getElementById("num-carrito").innerText = "";
         document.getElementById("row-productos").style.height = "2em";
         document.getElementById("row-productos").innerText = "No has agregado nada al carrito";
+        document.getElementById("btn-agregar-ir-al-carrito").style.visibility="hidden"
     }
     if (itemsCarrito.length == 0) {
 
