@@ -90,3 +90,7 @@ function elementoId(id){
 function estilosResumen(){
     var divTotales=elementoId("")
 }
+function cambiaPantallaResumen(){
+    var contenido=elementoId("contenido-cambiar");
+    contenido.innerHTML="<p>CAMBIO</p>"
+}

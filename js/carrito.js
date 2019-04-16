@@ -50,6 +50,7 @@ function agregarAlCarrito(nombre, precio, imagen, element) {
         }
     }
     actualizarDivCarrito();
+    window.location.href ="/cart.html";
 }
 function agregarItemsCarrito(tmpCarrito) {
     tmpCarrito.forEach((item) => {
