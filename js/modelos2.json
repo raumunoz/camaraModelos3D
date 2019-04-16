@@ -1,0 +1,755 @@
+{
+    "0": {
+      "taburetes": {
+        "0": {
+          "apodo": "Yooko Contempo Taburete",
+          "nombre": "tabureteContempo.gltf",
+          "descripcion": "",
+          "dimensiones": {
+            "0": {
+              "largo": "1.5",
+              "ancho": "1",
+              "alto": "1"
+            }
+          },
+          "precio": "7099",
+          "imagenes": {
+            "0": {
+              "imagen": "images/catalogo/yoko/yookocontempo_taburete.jpg"
+            }
+          },
+          "index": "38"
+        },
+        "1": {
+          "apodo": "Yooko Casual Taburete",
+          "nombre": "tabureteCasual.gltf",
+          "descripcion": "",
+          "dimensiones": {
+            "0": {
+              "largo": "1.5",
+              "ancho": "1",
+              "alto": "1"
+            }
+          },
+          "precio": "7099",
+          "imagenes": {
+            "0": {
+              "imagen": "images/catalogo/yoko/yookocasual_taburete.jpg"
+            }
+          },
+          "index": "35"
+        },
+        "2": {
+          "apodo": "Yooko Trendy Taburete",
+          "nombre": "tabureteTrendy.gltf",
+          "descripcion": "",
+          "dimensiones": {
+            "0": {
+              "largo": "1.5",
+              "ancho": "1",
+              "alto": "1"
+            }
+          },
+          "precio": "7099",
+          "imagenes": {
+            "0": {
+              "imagen": "images/catalogo/yoko/yookotrendy_taburete.jpg"
+            }
+          },
+          "index": "41"
+        }
+      },
+      "brazos": {
+        "0": {
+          "apodo": "Yooko Contempo Silla",
+          "nombre": "BrazoContempo.gltf",
+          "descripcion": "",
+          "dimensiones": {
+            "0": {
+              "largo": "1.5",
+              "ancho": "1",
+              "alto": "1"
+            }
+          },
+          "precio": "8599",
+          "imagenes": {
+            "0": {
+              "imagen": "images/catalogo/yoko/yookocontempo_silla.jpg"
+            }
+          },
+          "index": "37"
+        },
+        "1": {
+          "apodo": "Yooko Casual Silla",
+          "nombre": "brazoCasual.gltf",
+          "descripcion": "",
+          "dimensiones": {
+            "0": {
+              "largo": "1.5",
+              "ancho": "1",
+              "alto": "1"
+            }
+          },
+          "precio": "8599",
+          "imagenes": {
+            "0": {
+              "imagen": "images/catalogo/yoko/yookocasual_silla.jpg"
+            }
+          },
+          "index": "34"
+        },
+        "2": {
+          "apodo": "Yooko Trendy Silla",
+          "nombre": "brazoTrendy.gltf",
+          "descripcion": "",
+          "dimensiones": {
+            "0": {
+              "largo": "1.5",
+              "ancho": "1",
+              "alto": "1"
+            }
+          },
+          "precio": "8599",
+          "imagenes": {
+            "0": {
+              "imagen": "images/catalogo/yoko/yookotrendy_silla.jpg"
+            }
+          },
+          "index": "40"
+        }
+      },
+      "esquinas": {
+        "0": {
+          "apodo": "Yooko Contempo Esquinero",
+          "nombre": "esquinaContempo.gltf",
+          "descripcion": "",
+          "dimensiones": {
+            "0": {
+              "largo": "1.5",
+              "ancho": "1",
+              "alto": "1"
+            }
+          },
+          "precio": "8799",
+          "imagenes": {
+            "0": {
+              "imagen": "images/catalogo/yoko/yookocontempo_esquinero.jpg"
+            }
+          },
+          "index": "36"
+        },
+        "1": {
+          "apodo": "Yooko Casual Esquinero",
+          "nombre": "esquinaCasual.gltf",
+          "descripcion": "",
+          "dimensiones": {
+            "0": {
+              "largo": "1.5",
+              "ancho": "1",
+              "alto": "1"
+            }
+          },
+          "precio": "8799",
+          "imagenes": {
+            "0": {
+              "imagen": "images/catalogo/yoko/yookocasual_esquinero.jpg"
+            }
+          },
+          "index": "33"
+        },
+        "2": {
+          "apodo": "Yooko Trendy Esquinero",
+          "nombre": "esquinaTrendy.gltf",
+          "descripcion": "",
+          "dimensiones": {
+            "0": {
+              "largo": "1.5",
+              "ancho": "1",
+              "alto": "1"
+            }
+          },
+          "precio": "8799",
+          "imagenes": {
+            "0": {
+              "imagen": "images/catalogo/yoko/yookotrendy_esquinero.jpg"
+            }
+          },
+          "index": "39"
+        }
+      },
+      "puffino": {
+        "0": {
+          "apodo": "Yumil",
+          "nombre": "Atlixco.gltf",
+          "descripcion": "Sillón Yumil, relleno puffino.",
+          "dimensiones": {
+            "0": {
+              "largo": "46cm",
+              "ancho": "46cm",
+              "alto": "46cm"
+            }
+          },
+          "precio": "2499",
+          "imagenes": {
+            "0": {
+              "imagen": "images/productos/puffino/atlixco.jpg"
+            }
+          },
+          "index": "30"
+        },
+        "1": {
+          "apodo": "Yumil Mediano",
+          "nombre": "Atlixco_chico.gltf",
+          "descripcion": "Sillón Puff Yumil Mediano, relleno puffino.",
+          "dimensiones": {
+            "0": {
+              "largo": "40cm",
+              "ancho": "40cm",
+              "alto": "40cm"
+            }
+          },
+          "precio": "2499",
+          "imagenes": {
+            "0": {
+              "imagen": "images/productos/puffino/atlixco_chico.jpg"
+            }
+          },
+          "index": "31"
+        },
+        "2": {
+          "apodo": "Yeeb",
+          "nombre": "Bernal.gltf",
+          "descripcion": "",
+          "dimensiones": {
+            "0": {
+              "largo": "1.5",
+              "ancho": "1",
+              "alto": "1"
+            }
+          },
+          "precio": "2999",
+          "imagenes": {
+            "0": {
+              "imagen": "images/productos/puffino/bernal.jpg"
+            }
+          },
+          "index": "29"
+        },
+        "3": {
+          "apodo": "Kauil",
+          "nombre": "conzumel.gltf",
+          "descripcion": "",
+          "dimensiones": {
+            "0": {
+              "largo": "1.5",
+              "ancho": "1",
+              "alto": "1"
+            }
+          },
+          "precio": "4999",
+          "imagenes": {
+            "0": {
+              "imagen": "images/productos/puffino/cozumel.jpg"
+            }
+          },
+          "index": "13"
+        },
+        "4": {
+          "apodo": "Kauil Taburete",
+          "nombre": "Taburete_conzumel.gltf",
+          "descripcion": "",
+          "dimensiones": {
+            "0": {
+              "largo": "1.5",
+              "ancho": "1",
+              "alto": "1"
+            }
+          },
+          "precio": "2999",
+          "imagenes": {
+            "0": {
+              "imagen": "images/productos/puffino/cozumel_taburete.jpg"
+            }
+          },
+          "index": "15"
+        },
+        "5": {
+          "apodo": "Balam",
+          "nombre": "Guadalajara.gltf",
+          "descripcion": "",
+          "dimensiones": {
+            "0": {
+              "largo": "1.5",
+              "ancho": "1",
+              "alto": "1"
+            }
+          },
+          "precio": "5199",
+          "imagenes": {
+            "0": {
+              "imagen": "images/productos/puffino/guadalajara.jpg"
+            }
+          },
+          "index": "9"
+        },
+        "6": {
+          "apodo": "Ikal",
+          "nombre": "guanajuato.gltf",
+          "descripcion": "",
+          "dimensiones": {
+            "0": {
+              "largo": "1.5",
+              "ancho": "1",
+              "alto": "1"
+            }
+          },
+          "precio": "4699",
+          "imagenes": {
+            "0": {
+              "imagen": "images/productos/puffino/guanajuato.jpg"
+            }
+          },
+          "index": "12"
+        },
+        "7": {
+          "apodo": "Nima",
+          "nombre": "La paz.gltf",
+          "descripcion": "",
+          "dimensiones": {
+            "0": {
+              "largo": "1.5",
+              "ancho": "1",
+              "alto": "1"
+            }
+          },
+          "precio": "3499",
+          "imagenes": {
+            "0": {
+              "imagen": "images/productos/puffino/lapaz.jpg"
+            }
+          },
+          "index": "21"
+        },
+        "8": {
+          "apodo": "Nima mediano",
+          "nombre": "La Paz_chico.gltf",
+          "descripcion": "",
+          "dimensiones": {
+            "0": {
+              "largo": "1.5",
+              "ancho": "1",
+              "alto": "1"
+            }
+          },
+          "precio": "3099",
+          "imagenes": {
+            "0": {
+              "imagen": "images/productos/puffino/lapaz_chico.jpg"
+            }
+          },
+          "index": "22"
+        },
+        "9": {
+          "apodo": "Zazil",
+          "nombre": "mérida.gltf",
+          "descripcion": "",
+          "dimensiones": {
+            "0": {
+              "largo": "1.5",
+              "ancho": "1",
+              "alto": "1"
+            }
+          },
+          "precio": "3999",
+          "imagenes": {
+            "0": {
+              "imagen": "images/productos/puffino/merida.jpg"
+            }
+          },
+          "index": "32"
+        },
+        "10": {
+          "apodo": "Toot",
+          "nombre": "Oaxaca.gltf",
+          "descripcion": "",
+          "dimensiones": {
+            "0": {
+              "largo": "1.5",
+              "ancho": "1",
+              "alto": "1"
+            }
+          },
+          "precio": "3899",
+          "imagenes": {
+            "0": {
+              "imagen": "images/productos/puffino/oaxaca.jpg"
+            }
+          },
+          "index": "26"
+        },
+        "11": {
+          "apodo": "Toot Queen",
+          "nombre": "Oaxaca_matrimonial.gltf",
+          "descripcion": "",
+          "dimensiones": {
+            "0": {
+              "largo": "1.5",
+              "ancho": "1",
+              "alto": "1"
+            }
+          },
+          "precio": "4799",
+          "imagenes": {
+            "0": {
+              "imagen": "images/productos/puffino/oaxaca_queen.jpg"
+            }
+          },
+          "index": "28"
+        },
+        "12": {
+          "apodo": "Tanak",
+          "nombre": "pátzcuaro.gltf",
+          "descripcion": "",
+          "dimensiones": {
+            "0": {
+              "largo": "1.5",
+              "ancho": "1",
+              "alto": "1"
+            }
+          },
+          "precio": "4499",
+          "imagenes": {
+            "0": {
+              "imagen": "images/productos/puffino/patzcuaro.jpg"
+            }
+          },
+          "index": "24"
+        },
+        "13": {
+          "apodo": "Tanak Niños",
+          "nombre": "pátzcuaroNiño.gltf",
+          "descripcion": "",
+          "dimensiones": {
+            "0": {
+              "largo": "1.5",
+              "ancho": "1",
+              "alto": "1"
+            }
+          },
+          "precio": "3199",
+          "imagenes": {
+            "0": {
+              "imagen": "images/productos/puffino/patzcuaro_kids.jpg"
+            }
+          },
+          "index": "25"
+        },
+        "14": {
+          "apodo": "Alom",
+          "nombre": "puebla.gltf",
+          "descripcion": "",
+          "dimensiones": {
+            "0": {
+              "largo": "1.5",
+              "ancho": "1",
+              "alto": "1"
+            }
+          },
+          "precio": "3099",
+          "imagenes": {
+            "0": {
+              "imagen": "images/productos/puffino/puebla.jpg"
+            }
+          },
+          "index": "7"
+        },
+        "15": {
+          "apodo": "Alom Mediano",
+          "nombre": "puebla_chico.gltf",
+          "descripcion": "",
+          "dimensiones": {
+            "0": {
+              "largo": "1.5",
+              "ancho": "1",
+              "alto": "1"
+            }
+          },
+          "precio": "2299",
+          "imagenes": {
+            "0": {
+              "imagen": "images/productos/puffino/pruebla_chico.jpg"
+            }
+          },
+          "index": "8"
+        },
+        "16": {
+          "apodo": "Seti",
+          "nombre": "puertoVallarta.gltf",
+          "descripcion": "",
+          "dimensiones": {
+            "0": {
+              "largo": "1.5",
+              "ancho": "1",
+              "alto": "1"
+            }
+          },
+          "precio": "3999",
+          "imagenes": {
+            "0": {
+              "imagen": "images/productos/puffino/puertovallarta.jpg"
+            }
+          },
+          "index": "23"
+        },
+        "17": {
+          "apodo": "Kauil Sillón",
+          "nombre": "sillon_conzumel.gltf",
+          "descripcion": "",
+          "dimensiones": {
+            "0": {
+              "largo": "1.5",
+              "ancho": "1",
+              "alto": "1"
+            }
+          },
+          "precio": "4199",
+          "imagenes": {
+            "0": {
+              "imagen": "images/productos/puffino/cozumel_sillon.jpg"
+            }
+          },
+          "index": "14"
+        },
+        "18": {
+          "apodo": "Canek",
+          "nombre": "veracruz.gltf",
+          "descripcion": "",
+          "dimensiones": {
+            "0": {
+              "largo": "1.5",
+              "ancho": "1",
+              "alto": "1"
+            }
+          },
+          "precio": "4199",
+          "imagenes": {
+            "0": {
+              "imagen": "images/productos/puffino/veracruz.jpg"
+            }
+          },
+          "index": "10"
+        },
+        "19": {
+          "apodo": "Canek Niños",
+          "nombre": "veracruz_niños.gltf",
+          "descripcion": "",
+          "dimensiones": {
+            "0": {
+              "largo": "1.5",
+              "ancho": "1",
+              "alto": "1"
+            }
+          },
+          "precio": "3399",
+          "imagenes": {
+            "0": {
+              "imagen": "images/productos/puffino/veracruz_ninos.jpg"
+            }
+          },
+          "index": "11"
+        },
+        "20": {
+          "apodo": "Kimbo Chico",
+          "nombre": "ZacatecasChico.gltf",
+          "descripcion": "",
+          "dimensiones": {
+            "0": {
+              "largo": "1.5",
+              "ancho": "1",
+              "alto": "1"
+            }
+          },
+          "precio": "2399",
+          "imagenes": {
+            "0": {
+              "imagen": "images/productos/puffino/zacatecas_chico.jpg"
+            }
+          },
+          "index": "17"
+        },
+        "21": {
+          "apodo": "Kimbo Grande",
+          "nombre": "Zacatecas_grande.gltf",
+          "descripcion": "",
+          "dimensiones": {
+            "0": {
+              "largo": "1.5",
+              "ancho": "1",
+              "alto": "1"
+            }
+          },
+          "precio": "3199",
+          "imagenes": {
+            "0": {
+              "imagen": "images/productos/puffino/zacatecas_grande.jpg"
+            }
+          },
+          "index": "16"
+        },
+        "22": {
+          "apodo": "Kimbo Mediano",
+          "nombre": "zacatecas_mediano.gltf",
+          "descripcion": "",
+          "dimensiones": {
+            "0": {
+              "largo": "1.5",
+              "ancho": "1",
+              "alto": "1"
+            }
+          },
+          "precio": "2699",
+          "imagenes": {
+            "0": {
+              "imagen": "images/productos/puffino/zacatecas_mediano.jpg"
+            }
+          },
+          "index": "18"
+        },
+        "23": {
+          "apodo": "Kuk",
+          "nombre": "zacatlán.gltf",
+          "descripcion": "",
+          "dimensiones": {
+            "0": {
+              "largo": "1.5",
+              "ancho": "1",
+              "alto": "1"
+            }
+          },
+          "precio": "3399",
+          "imagenes": {
+            "0": {
+              "imagen": "images/productos/puffino/zacatlan.jpg"
+            }
+          },
+          "index": "19"
+        }
+      },
+      "kids": {
+        "0": {
+          "apodo": "CONEJO",
+          "nombre": "puff_conejo .gltf",
+          "descripcion": "",
+          "dimensiones": {
+            "0": {
+              "largo": "1.5",
+              "ancho": "1",
+              "alto": "1"
+            }
+          },
+          "precio": "3499",
+          "imagenes": {
+            "0": {
+              "imagen": "images/productos/kids/kids_conejo.jpg"
+            }
+          },
+          "index": "1"
+        },
+        "1": {
+          "apodo": "DINOSAURIO",
+          "nombre": "puff_dinosaurio.gltf",
+          "descripcion": "",
+          "dimensiones": {
+            "0": {
+              "largo": "1.5",
+              "ancho": "1",
+              "alto": "1"
+            }
+          },
+          "precio": "3699",
+          "imagenes": {
+            "0": {
+              "imagen": "images/productos/kids/kids_dinosaurio.jpg"
+            }
+          },
+          "index": "2"
+        },
+        "2": {
+          "apodo": "DONA",
+          "nombre": "dona.gltf",
+          "descripcion": "",
+          "dimensiones": {
+            "0": {
+              "largo": "1.5",
+              "ancho": "1",
+              "alto": "1"
+            }
+          },
+          "precio": "3399",
+          "imagenes": {
+            "0": {
+              "imagen": "images/productos/kids/kids_dona.jpg"
+            }
+          },
+          "index": "3"
+        },
+        "3": {
+          "apodo": "JIRAFA",
+          "nombre": "puff_jirafa.gltf",
+          "descripcion": "",
+          "dimensiones": {
+            "0": {
+              "largo": "1.5",
+              "ancho": "1",
+              "alto": "1"
+            }
+          },
+          "precio": "3799",
+          "imagenes": {
+            "0": {
+              "imagen": "images/productos/kids/kids_jirafa.jpg"
+            }
+          },
+          "index": "4"
+        },
+        "4": {
+          "apodo": "PERRITO",
+          "nombre": "puffPerro.gltf",
+          "descripcion": "",
+          "dimensiones": {
+            "0": {
+              "largo": "1.5",
+              "ancho": "1",
+              "alto": "1"
+            }
+          },
+          "precio": "3699",
+          "imagenes": {
+            "0": {
+              "imagen": "images/productos/kids/kids_perrito.jpg"
+            }
+          },
+          "index": "5"
+        },
+        "5": {
+          "apodo": "UNICORNIO",
+          "nombre": "unicornio.gltf",
+          "descripcion": "",
+          "dimensiones": {
+            "0": {
+              "largo": "1.5",
+              "ancho": "1",
+              "alto": "1"
+            }
+          },
+          "precio": "3499",
+          "imagenes": {
+            "0": {
+              "imagen": "images/productos/kids/kids_unicornio.jpg"
+            }
+          },
+          "index": "6"
+        }
+      }
+    }
+}

@@ -202,7 +202,7 @@ function actualizarBotonPaypal(total) {
             production: 'demo_production_client_id'
         },
         // Customize button (optional)
-        locale: 'en_US',
+        //locale: 'es_XC',
         style: {
             size: 'small',
             color: 'gold',
