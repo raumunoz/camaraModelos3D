@@ -2,7 +2,7 @@
 <html>
 
 <head>
-        <meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>chekout</title>
     <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -53,6 +53,7 @@
     <link rel="stylesheet" href="css/main.css">
 
 </head>
+
 <body>
     <div class="row div-nav" style="background-color:#fA675b;">
         <div class="col-md-10 col-8" style="text-align: right; margin-top: 0.3em;margin-bottom: 0.3em;">
@@ -88,7 +89,7 @@
                         <div id="paypal-button"></div>
                         -->
                 <button type="button" class="btn btn-success btn-agregar-3d-a-carrito" id="btn-agregar-ir-al-carrito"
-                    onclick="location.href = '/cart.html';">Ir al carrito</button>
+                    onclick="location.href = 'cart.html';">Ir al carrito</button>
             </div>
         </div>
         <nav class="fh5co-nav" role="navigation" style="background-color:#4DD7D3;">
@@ -124,71 +125,66 @@
         <div id="contenido-cambiar" style="padding-top: 4em;">
             <div class="" style="font-family: 'Roboto';padding: 0;margin: 0;width: 100%; max-width: auto;">
 
-                <div class="row">
+                <table class="table tablaCarrito">
 
-                    <table class="table">
+                    <thead>
+                        <tr class="table-header">
+                            <th class="first wrap-texto">Producto</th>
+                            <th class="wrap-texto">Material</th>
+                            <th class="wrap-texto">Precio</th>
+                            <th class="wrap-texto">Cantidad</th>
+                            <th class="wrap-texto last">Total</th>
+                        </tr>
+                    </thead>
 
-                        <thead>
-                            <tr class="table-header">
-                                <th class="first wrap-texto">Producto</th>
-                                <th class="wrap-texto">Material</th>
-                                <th class="wrap-texto">Precio</th>
-                                <th class="wrap-texto">Cantidad</th>
-                                <th class="wrap-texto last">Total</th>
-                            </tr>
-                        </thead>
+                    <tbody id="tabla-carrito" class="tbody-carrito">
 
-                        <tbody id="tabla-carrito" class="tbody-carrito">
+                        <tr class="table-row first last" data-cart-item="">
+                            <td class="product-item first">
+                                <div class="image-wrap">
+                                    <a class="image" href="/products/merida?variant=12424089862240">
+                                        <img src="//cdn.shopify.com/s/files/1/1832/7035/products/DakotaWide01_1024x1024_f904b784-a574-4a94-8de2-cdd15c0e9569_compact.jpg?v=1535944817"
+                                            alt="">
 
-                            <tr class="table-row first last" data-cart-item="">
-                                <td class="product-item first">
-                                    <div class="image-wrap">
-                                        <a class="image" href="/products/merida?variant=12424089862240">
-                                            <img src="//cdn.shopify.com/s/files/1/1832/7035/products/DakotaWide01_1024x1024_f904b784-a574-4a94-8de2-cdd15c0e9569_compact.jpg?v=1535944817"
-                                                alt="">
+                                    </a>
+                                </div>
+                                <div class="wrap">
 
-                                        </a>
-                                    </div>
-                                    <div class="wrap">
-
-                                        <span class="label title"><a href="/products/merida?variant=12424089862240"
-                                                title="">Zazil</a></span>
-                                        <span class="label variant">Selecciona el material / Ahora escoge el
-                                            color</span>
+                                    <span class="label title"><a href="/products/merida?variant=12424089862240"
+                                            title="">Zazil</a></span>
+                                    <span class="label variant">Selecciona el material / Ahora escoge el
+                                        color</span>
 
 
 
-                                    </div>
-                                </td>
+                                </div>
+                            </td>
 
-                                <td class="price"><span class="money" data-currency-mxn="$ 3,299.00"
-                                        data-currency="MXN">$ 3,299.00</span></td>
-                                <td class="quantity">
-                                    <span class="spinner">
-                                        <a href="/cart/change/12424089862240?line=1&amp;quantity=0"><span class="sub"><i
-                                                    class="material-icons"
-                                                    style="line-height: 33px; font-size:14px">remove</i></span></a>
-                                        <input type="number" value="1" data-id="12424089862240" min="1" max="100">
-                                        <a href="/cart/change/12424089862240?line=1&amp;quantity=2"><span class="add"><i
-                                                    class="material-icons"
-                                                    style="line-height: 33px; font-size:14px">add</i></span></a>
-                                    </span>
-                                </td>
-                                <td class="total"><span class="money" data-currency-mxn="$ 3,299.00"
-                                        data-currency="MXN">$ 3,299.00</span></td>
-                                <td class="remove last"><a href="/cart/change/12424089862240?line=1&amp;quantity=0"><i
-                                            class="material-icons"
-                                            style="color:#ce1600; line-height: 10px;">delete_forever</i></a></td>
-                            </tr>
+                            <td class="price"><span class="money" data-currency-mxn="$ 3,299.00" data-currency="MXN">$
+                                    3,299.00</span></td>
+                            <td class="quantity">
+                                <span class="spinner">
+                                    <a href="/cart/change/12424089862240?line=1&amp;quantity=0"><span class="sub"><i
+                                                class="material-icons"
+                                                style="line-height: 33px; font-size:14px">remove</i></span></a>
+                                    <input type="number" value="1" data-id="12424089862240" min="1" max="100">
+                                    <a href="/cart/change/12424089862240?line=1&amp;quantity=2"><span class="add"><i
+                                                class="material-icons"
+                                                style="line-height: 33px; font-size:14px">add</i></span></a>
+                                </span>
+                            </td>
+                            <td class="total"><span class="money" data-currency-mxn="$ 3,299.00" data-currency="MXN">$
+                                    3,299.00</span></td>
+                            <td class="remove last"><a href="/cart/change/12424089862240?line=1&amp;quantity=0"><i
+                                        class="material-icons"
+                                        style="color:#ce1600; line-height: 10px;">delete_forever</i></a></td>
+                        </tr>
 
-                        </tbody>
+                    </tbody>
 
-                    </table>
-                    </h4>
+                </table>
 
-                    <br>
-                </div>
-
+                <br>
             </div>
             <div class="container">
                 <div class="row">
@@ -198,7 +194,8 @@
                 <div class="carrito-footer ">
                     <div class="row">
                         <div class="promo col-12 col-sm-12 col-md-6  col-xs-6"><label for="promo">¿Tienes un cupón de
-                                descuento?</label><input class="input-descuento" type="text" name="promo" placholder="Enter Code">
+                                descuento?</label><input class="input-descuento" type="text" name="promo"
+                                placholder="Enter Code">
                             <a href="#" class="btn"></a></div>
 
                         <div class="totals col-12 col-sm-12 col-md-6 col-xs-6">
@@ -214,14 +211,14 @@
                             </div>
                             <div class="totals-item totals-item-total">
                                 <label style="font-weight: bold;">Total</label>
-                                <div class="totals-value" id="cart-total" style="font-weight: 620;">$<spa id="total-pagina-cart">45</spa>
+                                <div class="totals-value" id="cart-total" style="font-weight: 620;">$<spa
+                                        id="total-pagina-cart">45</spa>
                                 </div>
                             </div>
-                            <button type="button" class="btn btn-success btn-agregar-3d-a-carrito .btn-agregar-ir-al-carrito"
-                                id="btn-ir-al-shipping" onclick="location.href = '/shipping.html';"
+                            <button type="button"
+                                class="btn btn-success btn-agregar-3d-a-carrito .btn-agregar-ir-al-carrito"
+                                id="btn-ir-al-shipping" onclick="location.href = 'shipping.html';"
                                 style="visibility: visible;">Continuar con el pago</button>
-                            <div id="paypal-button-container"></div>
-                            <div id="paypal-button"></div>
                         </div>
                     </div>
 

@@ -180,6 +180,10 @@
     margin-right: 1.5em;
     margin-bottom: 1em;
 }
+.selecion-pago {
+    text-align: right;
+    margin-right: 5%;
+}
 
 .btn-contiunar-resumen {
     width: auto !important;
@@ -201,6 +205,9 @@
 }
 
 @media all and (max-width: 768px) {
+    .tablaCarrito{
+        font-size: .8em;
+    }
     #btn-ir-al-shipping {
 
         margin-left: 0;

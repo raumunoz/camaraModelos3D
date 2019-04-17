@@ -100,7 +100,7 @@
                         <div id="paypal-button"></div>
                         -->
                 <button type="button" class="btn btn-success btn-agregar-3d-a-carrito" id="btn-agregar-ir-al-carrito"
-                    onclick="location.href = '/cart.html';">Ir al carrito</button>
+                    onclick="location.href = 'cart.html';">Ir al carrito</button>
             </div>
         </div>
         <nav class="fh5co-nav" role="navigation" style="background-color:#4DD7D3;">
@@ -137,30 +137,30 @@
 
             <div class="container">
                 
-                <form id="form-envio" class="needs-validation">
+                <form id="form-envio"  onsubmit="return toSubmit(event);">
                     <h3>Información de contacto</h3>
                     <div class="form-row">
                         <div class="form-group col-md-12">
                             <label for="correo-shipping">Email</label>
-                            <input type="email" name="email" class="form-control" id="correo-shipping" placeholder="Email" required>
+                            <input type="email" name="email" class="form-control" id="correo-shipping" placeholder="Email">
                         </div>
                     </div>
                     <div class="form-row">
 
                         <div class="col-12 col-md-6">
-                            <input type="text" class="form-control" name="nombre" placeholder="Nombre" id="nombre-shiping" required>
+                            <input type="text" class="form-control" name="nombre" placeholder="Nombre" id="nombre-shipping">
                         </div>
                         <div class="col-12 col-md-6">
-                            <input type="text" class="form-control" name="apellidos" placeholder="Apellidos" id="apellidos-shiping" required>
+                            <input type="text" class="form-control" name="apellidos" placeholder="Apellidos" id="apellidos-shipping">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="direccion-shipping">Dirección</label>
-                        <input type="text" name="direccion"class="form-control" id="dirrecion-shipping" placeholder="Dirección" required>
+                        <input type="text" name="direccion"class="form-control" id="direccion-shipping" placeholder="Dirección" >
                     </div>
 
                     <div class="form-group">
-                        <input type="text" class="form-control" name="ciudad" id="ciudad-shipping" placeholder="Ciudad" required> 
+                        <input type="text" class="form-control" name="ciudad" id="ciudad-shipping" placeholder="Ciudad"> 
                     </div>
                     <div class="form-row">
 
@@ -180,13 +180,13 @@
                         </div>
                         <div class="form-group col-md-2">
                             <label for="codigo-postal-shipping">Código postal</label>
-                            <input type="text" class="form-control" id="codigo-postal-shipping" required>
+                            <input type="text" class="form-control" id="codigo-postal-shipping">
                         </div>
                     </div>
                     <div class="form-row">
                             <div class="form-group col-md-12">
                                 <label for="telefono-shipping">Teléfono</label>
-                                <input type="tel" class="form-control" id="telefono-shipping" placeholder="Teléfono" required>
+                                <input type="tel" class="form-control" id="telefono-shipping" placeholder="Teléfono">
                             </div>
                         </div>
                     <button type="submit" class="btn btn-primary" name='submit'>continuar</button>
@@ -257,6 +257,7 @@
     <div class="gototop js-top">
         <a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
     </div>
+    <script src="https://cdn.rawgit.com/PascaleBeier/bootstrap-validate/v2.2.0/dist/bootstrap-validate.js" ></script>
     <!-- jQuery -->
     <script src="js/jquery.min.js"></script>
     <!-- jQuery Easing -->

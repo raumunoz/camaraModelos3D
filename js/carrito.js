@@ -205,9 +205,9 @@ function actualizarBotonPaypal(total) {
         // Customize button (optional)
         //locale: 'es_XC',
         style: {
-            size: 'small',
+            size: 'responsive',
             color: 'gold',
-            shape: 'pill',
+            shape: 'rect',
             fundingicons: 'true',
         },
         funding: {
@@ -238,7 +238,7 @@ function actualizarBotonPaypal(total) {
                     custom: '90048630024435',
                     //invoice_number: '12345', Insert a unique invoice number
                     payment_options: {
-                        allowed_payment_method: 'INSTANT_FUNDING_SOURCE'
+                        allowed_payment_method: 'UNRESTRICTED'
                     },
                     soft_descriptor: 'ECHI5786786',
                     item_list: {
@@ -252,10 +252,21 @@ function actualizarBotonPaypal(total) {
                           sku: 'product34',
                           currency: 'MXN'
                         }*/
+                        /*
+                        shipping_address: {
+                            recipient_name: 'John Maverick',
+                            line1: 'Random address 1',
+                            line2: "Unit #34",
+                            city: 'Zacatecas',
+                            state: 'ZAC',
+                            postal_code: '95131',
+                            country_code: 'MX'
+                        }*/
 
                     }
                 }],
-                note_to_payer: 'Contactanos si tienes alguna duda sobre tu pedido.'
+                note_to_payer: 'Contactanos si tienes alguna duda sobre tu pedido.',
+                
             });
         },
         // Execute the payment
