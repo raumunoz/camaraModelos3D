@@ -112,13 +112,20 @@ function mostrarDetalles(val) {
 
 				//Galeria
 				$("#sliderDetail").empty();
-				document.getElementById('sliderDetail').innerHTML = ''
-					+ `<li><img style="max-width: 80%; margin-bottom: 0px;" src="${brazoMatch.imagenes[0].imagen}"></li>`;
-
+        if(brazoMatch.imagenes.length>1){
+          var imgenesHtml="";
+          brazoMatch.imagenes.forEach((imagen)=>{
+            imgenesHtml=imgenesHtml+`<li><img style="max-width: 80%; margin-bottom: 0px;" src="${imagen.imagen}"></li>`
+          })
+          document.getElementById('sliderDetail').innerHTML=imgenesHtml;
+        }else{
+          document.getElementById('sliderDetail').innerHTML = ''
+          + `<li><img style="max-width: 80%; margin-bottom: 0px;" src="${brazoMatch.imagenes[0].imagen}"></li>`;
+        }
 				setTimeout(loadDetailSlider, 500);
 
-				//Agregar acción de agregar al carrito
-				document.getElementById('btn-agregar blue btn').setAttribute("onClick", `agregarAlCarrito('${brazoMatch.apodo}',${brazoMatch.precio},'${brazoMatch.imagenes[0].imagen}')`);
+				//Agregar acción de agregar al carrito                                  agregarAlCarrito('Yumil MEDIANO',2499,'images/productos/puffino/atlixco_chico.jpg',this)"
+				document.getElementById('btn-agregar blue btn').setAttribute("onClick", `agregarAlCarrito('${brazoMatch.apodo}',${brazoMatch.precio},'${brazoMatch.imagenes[0].imagen}',this)`);
 
 				$("#detailP").show(500);
   }
@@ -133,13 +140,20 @@ function mostrarDetalles(val) {
 
 				//Galeria
 				$("#sliderDetail").empty();
-				document.getElementById('sliderDetail').innerHTML = ''
-					+ `<li><img style="max-width: 80%; margin-bottom: 0px;" src="${esquinaMatch.imagenes[0].imagen}"></li>`;
-
+				if(esquinaMatch.imagenes.length>1){
+          var imgenesHtml="";
+          esquinaMatch.imagenes.forEach((imagen)=>{
+            imgenesHtml=imgenesHtml+`<li><img style="max-width: 80%; margin-bottom: 0px;" src="${imagen.imagen}"></li>`
+          })
+          document.getElementById('sliderDetail').innerHTML=imgenesHtml;
+        }else{
+          document.getElementById('sliderDetail').innerHTML = ''
+          + `<li><img style="max-width: 80%; margin-bottom: 0px;" src="${esquinaMatch.imagenes[0].imagen}"></li>`;
+        }
 				setTimeout(loadDetailSlider, 500);
 
 				//Agregar acción de agregar al carrito
-				document.getElementById('btn-agregar blue btn').setAttribute("onClick", `agregarAlCarrito('${esquinaMatch.apodo}',${esquinaMatch.precio},'${esquinaMatch.imagenes[0].imagen}')`);
+				document.getElementById('btn-agregar blue btn').setAttribute("onClick", `agregarAlCarrito('${esquinaMatch.apodo}',${esquinaMatch.precio},'${esquinaMatch.imagenes[0].imagen}',this)`);
 
 				$("#detailP").show(500);
   }
@@ -154,13 +168,20 @@ function mostrarDetalles(val) {
 
 				//Galeria
 				$("#sliderDetail").empty();
-				document.getElementById('sliderDetail').innerHTML = ''
-					+ `<li><img style="max-width: 80%; margin-bottom: 0px;" src="${tabureteMatch.imagenes[0].imagen}"></li>`;
-
+				if(tabureteMatch.imagenes.length>1){
+          var imgenesHtml="";
+          tabureteMatch.imagenes.forEach((imagen)=>{
+            imgenesHtml=imgenesHtml+`<li><img style="max-width: 80%; margin-bottom: 0px;" src="${imagen.imagen}"></li>`
+          })
+          document.getElementById('sliderDetail').innerHTML=imgenesHtml;
+        }else{
+          document.getElementById('sliderDetail').innerHTML = ''
+          + `<li><img style="max-width: 80%; margin-bottom: 0px;" src="${tabureteMatch.imagenes[0].imagen}"></li>`;
+        }
 				setTimeout(loadDetailSlider, 500);
 
 				//Agregar acción de agregar al carrito
-				document.getElementById('btn-agregar blue btn').setAttribute("onClick", `agregarAlCarrito('${tabureteMatch.apodo}',${tabureteMatch.precio},'${tabureteMatch.imagenes[0].imagen}')`);
+				document.getElementById('btn-agregar blue btn').setAttribute("onClick", `agregarAlCarrito('${tabureteMatch.apodo}',${tabureteMatch.precio},'${tabureteMatch.imagenes[0].imagen}',this)`);
 
 				$("#detailP").show(500);
   }
@@ -175,13 +196,20 @@ function mostrarDetalles(val) {
 
     //Galeria
     $("#sliderDetail").empty();
-    document.getElementById('sliderDetail').innerHTML = ''
+    if(kidMatch.imagenes.length>1){
+      var imgenesHtml="";
+      kidMatch.imagenes.forEach((imagen)=>{
+        imgenesHtml=imgenesHtml+`<li><img style="max-width: 80%; margin-bottom: 0px;" src="${imagen.imagen}"></li>`
+      })
+      document.getElementById('sliderDetail').innerHTML=imgenesHtml;
+    }else{
+      document.getElementById('sliderDetail').innerHTML = ''
       + `<li><img style="max-width: 80%; margin-bottom: 0px;" src="${kidMatch.imagenes[0].imagen}"></li>`;
-
+    }
     setTimeout(loadDetailSlider, 500);
 
     //Agregar acción de agregar al carrito
-    document.getElementById('btn-agregar blue btn').setAttribute("onClick", `agregarAlCarrito('${kidMatch.apodo}',${kidMatch.precio},'${kidMatch.imagenes[0].imagen}')`);
+    document.getElementById('btn-agregar blue btn').setAttribute("onClick", `agregarAlCarrito('${kidMatch.apodo}',${kidMatch.precio},'${kidMatch.imagenes[0].imagen}',this)`);
 
     $("#detailP").show(500);
   }
@@ -195,14 +223,22 @@ function mostrarDetalles(val) {
 				document.getElementById('precioP').innerHTML = `$${puffinoMatch.precio}`;
 
 				//Galeria
-				$("#sliderDetail").empty();
-				document.getElementById('sliderDetail').innerHTML = ''
+        $("#sliderDetail").empty();
+        if(puffinoMatch.imagenes.length>1){
+          var imgenesHtml="";
+          puffinoMatch.imagenes.forEach((imagen)=>{
+            imgenesHtml=imgenesHtml+`<li><img style="max-width: 80%; margin-bottom: 0px;" src="${imagen.imagen}"></li>`
+          })
+          document.getElementById('sliderDetail').innerHTML=imgenesHtml;
+        }else{
+          document.getElementById('sliderDetail').innerHTML = ''
 					+ `<li><img style="max-width: 80%; margin-bottom: 0px;" src="${puffinoMatch.imagenes[0].imagen}"></li>`;
+        }
 
 				setTimeout(loadDetailSlider, 500);
 
 				//Agregar acción de agregar al carrito
-				document.getElementById('btn-agregar blue btn').setAttribute("onClick", `agregarAlCarrito('${puffinoMatch.apodo}',${puffinoMatch.precio},'${puffinoMatch.imagenes[0].imagen}')`);
+				document.getElementById('btn-agregar blue btn').setAttribute("onClick", `agregarAlCarrito('${puffinoMatch.apodo}',${puffinoMatch.precio},'${puffinoMatch.imagenes[0].imagen}',this)`);
 
 				$("#detailP").show(500);
   }

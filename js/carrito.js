@@ -30,8 +30,8 @@ function removerArticulo(elemento, nombre) {
     }
 }
 
-
-
+//agregarAlCarrito('CONEJO',3499,'images/productos/kids/kids_conejo.jpg')
+//agregarAlCarrito('Yumil MEDIANO',2499,'images/productos/puffino/atlixco_chico.jpg',this)"
 function agregarAlCarrito(nombre, precio, imagen, element) {
     debbugCarrito = element;
     var existente = false;
@@ -50,7 +50,7 @@ function agregarAlCarrito(nombre, precio, imagen, element) {
         }
     }
     actualizarDivCarrito();
-    window.location.href ="/cart.html";
+    window.location.href = "cart.html";
 }
 function agregarItemsCarrito(tmpCarrito) {
     tmpCarrito.forEach((item) => {
@@ -266,7 +266,7 @@ function actualizarBotonPaypal(total) {
                     }
                 }],
                 note_to_payer: 'Contactanos si tienes alguna duda sobre tu pedido.',
-                
+
             });
         },
         // Execute the payment
@@ -283,12 +283,17 @@ function actualizarBotonPaypal(total) {
 function getNombreTextura() {
     var detalles;
     var descripcionTextura = document.getElementById("descripcionMaterial");
-    if ((descripcionTextura.innerHTML == "Material") || (descripcionTextura.innerHTML == "") || (typeof descripcionTextura.innerHTML === "undefined")) {
-        detalles = "Material normal";
+    if (typeof descripcionTextura === "undefined") {
+
+        if ((descripcionTextura.innerHTML == "Material") || (descripcionTextura.innerHTML == "") || (typeof descripcionTextura.innerHTML === "undefined")) {
+            detalles = "Material normal";
+        } else {
+            detalles = descripcionTextura.innerHTML;
+        }
+        return detalles;
     } else {
-        detalles = descripcionTextura.innerHTML;
+        return "Material normal";
     }
-    return detalles;
 }
 function actualizarTablaCarrito() {
     var precioAPagar = 0;
@@ -342,7 +347,7 @@ function actualizarTablaCarrito() {
         document.getElementById("Subtotal-pagina-cart").innerText = precioAPagar;
         renglonesTabla.innerHTML = htmlTabla;
         //document.getElementById("num-carrito").innerText = itemsCarrito.length;
-        actualizarBotonPaypal(precioAPagar);
+        //actualizarBotonPaypal(precioAPagar);
         //sessionStorage.setItem("carrito", JSON.stringify(itemsCarrito));
     } else {
         document.getElementById("total-carrito").innerText = 0;
