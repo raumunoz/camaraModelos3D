@@ -13,15 +13,15 @@ var inputEstado = elementoId("estado-shipping");
         // Fetch all the forms we want to apply custom Bootstrap validation styles to
         //var forms = document.getElementsByClassName('needs-validation');
         
-        bootstrapValidate('#correo-shipping', 'email:tiene que ser correo');
-        bootstrapValidate('#direccion-shipping', 'email:tiene que ser correo');
-        bootstrapValidate('#ciudad-shipping', 'email:tiene que ser correo');
-        bootstrapValidate('#pais-shipping', 'email:tiene que ser correo');
-        bootstrapValidate('#estado-shipping', 'email:tiene que ser correo');
-        bootstrapValidate('#codigo-postal-shipping', 'email:tiene que ser correo');
-        bootstrapValidate('#apellidos-shipping', 'email:tiene que ser correo');
-        bootstrapValidate('#nombre-shipping', 'email:tiene que ser correo');
-        bootstrapValidate('#telefono-shipping', 'email:tiene que ser correo');
+        bootstrapValidate('#correo-shipping', 'email|required:Ingresa un correo valido');
+        bootstrapValidate('#direccion-shipping', 'required|required:campo requerido');
+        bootstrapValidate('#ciudad-shipping', 'required|required:campo requerido');
+        bootstrapValidate('#pais-shipping', 'required:tiene que ser correo');
+        //bootstrapValidate('#estado-shipping', 'email:tiene que ser correo');
+        bootstrapValidate('#codigo-postal-shipping', 'numeric|required:Ingresa solo numeros');
+        bootstrapValidate('#apellidos-shipping', 'required|required:campo requerido');
+        bootstrapValidate('#nombre-shipping', 'required|required:campo requerido');
+        bootstrapValidate('#telefono-shipping', 'numeric|required:Ingresa solo numeros');
         var forms = document.getElementById("form-envio");
         fetch("js/paisesEstados.json")
             .then(res => res.json())
@@ -35,13 +35,13 @@ var inputEstado = elementoId("estado-shipping");
             form.addEventListener('submit', function (event) {
                 if (form.checkValidity() === false) {
                     alert("invalido");
-                    event.preventDefault();
-                    event.stopPropagation();
+                    //event.preventDefault();
+                    //event.stopPropagation();
                 }else {
-                    var nombre = "";
+                   // var nombre = "";
                     alert("validado");
-                    event.preventDefault();
-                    event.stopPropagation();
+                    //event.preventDefault();
+                    //event.stopPropagation();
                 }
                 //form.classList.add('was-validated');
             }, false);
@@ -216,13 +216,13 @@ function cambiaPantallaResumen() {
         </div>
     </div>
         `;
-    actualizarBotonPaypal();
     actualizarTablaCarrito();
 }
 
 function toSubmit(e){
-    e.preventDefault();
-    e.stopPropagation();
-
+    console.log(e);
+    /*e.preventDefault();
+    e.stopPropagation();*/
+    alert("validado");
     return false;
 }
