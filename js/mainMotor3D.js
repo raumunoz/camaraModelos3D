@@ -852,7 +852,7 @@ function cargarModelo(padre, modelo, posicion, prearmado, rotacion) {
 }
 
 function cargarModeloCustom(modelo, div) {
-
+    console.log("cargarModelo",modelo);
     camera.inputs.attached.mousewheel.detachControl(canvas);
     var descripcionTextura = document.getElementById("descripcionMaterial");
     descripcionTextura.innerHTML = "";

@@ -106,7 +106,7 @@ function mostrarDetalles(val) {
     showDesc();
 
 				document.getElementById('nombreP').innerHTML = brazoMatch.apodo;
-				document.getElementById('medidasP').innerHTML = `Mide ${brazoMatch.dimensiones[0].largo} cm de largo x 90 cm de ${brazoMatch.dimensiones[0].ancho} y ${brazoMatch.dimensiones[0].alto} cm de alto.`;
+				document.getElementById('medidasP').innerHTML = `Mide ${brazoMatch.dimensiones[0].largo} cm de largo x ${brazoMatch.dimensiones[0].ancho} cm de y ${brazoMatch.dimensiones[0].alto} cm de alto.`;
 				document.getElementById('descriptionP').innerHTML = brazoMatch.descripcion;
 				document.getElementById('precioP').innerHTML = `$${brazoMatch.precio}`;
 
@@ -134,7 +134,7 @@ function mostrarDetalles(val) {
     showDesc();
 
 				document.getElementById('nombreP').innerHTML = esquinaMatch.apodo;
-				document.getElementById('medidasP').innerHTML = `Mide ${esquinaMatch.dimensiones[0].largo} cm de largo x 90 cm de ${esquinaMatch.dimensiones[0].ancho} y ${esquinaMatch.dimensiones[0].alto} cm de alto.`;
+				document.getElementById('medidasP').innerHTML = `Mide ${esquinaMatch.dimensiones[0].largo} cm de largo x ${esquinaMatch.dimensiones[0].ancho} cm de  y ${esquinaMatch.dimensiones[0].alto} cm de alto.`;
 				document.getElementById('descriptionP').innerHTML = esquinaMatch.descripcion;
 				document.getElementById('precioP').innerHTML = `$${esquinaMatch.precio}`;
 
@@ -162,7 +162,7 @@ function mostrarDetalles(val) {
     showDesc();
 
 				document.getElementById('nombreP').innerHTML = tabureteMatch.apodo;
-				document.getElementById('medidasP').innerHTML = `Mide ${tabureteMatch.dimensiones[0].largo} cm de largo x 90 cm de ${tabureteMatch.dimensiones[0].ancho} y ${tabureteMatch.dimensiones[0].alto} cm de alto.`;
+				document.getElementById('medidasP').innerHTML = `Mide ${tabureteMatch.dimensiones[0].largo} cm de largo x ${tabureteMatch.dimensiones[0].ancho} cm de  y ${tabureteMatch.dimensiones[0].alto} cm de alto.`;
 				document.getElementById('descriptionP').innerHTML = tabureteMatch.descripcion;
 				document.getElementById('precioP').innerHTML = `$${tabureteMatch.precio}`;
 
@@ -190,7 +190,7 @@ function mostrarDetalles(val) {
     showDesc();
 
     document.getElementById('nombreP').innerHTML = kidMatch.apodo;
-    document.getElementById('medidasP').innerHTML = `Mide ${kidMatch.dimensiones[0].largo} cm de largo x 90 cm de ${kidMatch.dimensiones[0].ancho} y ${kidMatch.dimensiones[0].alto} cm de alto.`;
+    document.getElementById('medidasP').innerHTML = `Mide ${kidMatch.dimensiones[0].largo} cm de largo x ${kidMatch.dimensiones[0].ancho} cm de  y ${kidMatch.dimensiones[0].alto} cm de alto.`;
     document.getElementById('descriptionP').innerHTML = kidMatch.descripcion;
     document.getElementById('precioP').innerHTML = `$${kidMatch.precio}`;
 
@@ -218,7 +218,7 @@ function mostrarDetalles(val) {
     showDesc();
 
 				document.getElementById('nombreP').innerHTML = puffinoMatch.apodo;
-				document.getElementById('medidasP').innerHTML = `Mide ${puffinoMatch.dimensiones[0].largo} cm de largo x 90 cm de ${puffinoMatch.dimensiones[0].ancho} y ${puffinoMatch.dimensiones[0].alto} cm de alto.`;
+				document.getElementById('medidasP').innerHTML = `Mide ${puffinoMatch.dimensiones[0].largo} cm de largo x ${puffinoMatch.dimensiones[0].ancho} cm de y ${puffinoMatch.dimensiones[0].alto} cm de alto.`;
 				document.getElementById('descriptionP').innerHTML = puffinoMatch.descripcion;
 				document.getElementById('precioP').innerHTML = `$${puffinoMatch.precio}`;
 

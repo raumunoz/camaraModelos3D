@@ -1,258 +1,1573 @@
-<!DOCTYPE html>
+<!DOCTYPE HTML>
 <html>
 
 <head>
-  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-  <!-- Bootstrap CSS -->
-  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-    integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  <title>Babylon.js sample code</title>
-  <link rel="stylesheet" href="css/style.css">
-  <link rel="stylesheet" href="css/icomoon.css">
-  <!-- Babylon.js -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content="" />
+	<meta property="og:image" content="" />
+	<meta property="og:url" content="" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:description" content="" />
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="msapplication-tap-highlight" content="no" />
 
-  <style>
-    .rng-carrito {
-      background-color: white;
-    }
+	<script src="js/jquery-2.2.0.min.js">
+	</script>
+	<script src="js/slick.js"></script>
 
-    .contenedor {
-      background-color: tomato;
-      width: 50%;
-    }
+	<script src="js/camara.js"></script>
 
-    .rng-carrito {
-      border-bottom: 1px solid #777777;
-      height: 8.5em;
-    }
+	<!--
+	<script src="js/tienda2.js"></script>
+	-->
+	<script type="text/javascript" src="js/jquery.flexisel.js"></script>
+	<!--FUENTES-->
+	<!--
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"> 
+	<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i" rel="stylesheet">-->
+	<link href="https://fonts.googleapis.com/css?family=Roboto|Montserrat:400,700|Playfair+Display:400,400i"
+		rel="stylesheet">
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="css/icomoon.css">
+	<!-- Bootstrap  -->
 
-    .img-carrito {
-      margin-top: 20%;
-    }
+	<link rel="stylesheet" href="css/bootstrap.css">
 
-    .rng-desc-carrito {
-      padding: 25px;
-      padding-right: 0px;
-    }
+	<!-- Flexslider  -->
+	<link rel="stylesheet" href="css/flexslider.css">
 
-    .rng-btn-remover-carrito span {
-      font-size: 20px;
-    }
+	<!-- Owl Carousel  -->
+	<link rel="stylesheet" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/owl.theme.default.min.css">
 
-    .rng-btn-remover-carrito {
-      padding-top: 2.5em;
-    }
+	<!-- Theme style  -->
+	<link rel="stylesheet" href="css/style.css">
 
-    .rng-precio {
-      color: #3acca3;
-      font-size: 25px;
-    }
+	<!-- Modernizr JS -->
+	<script src="js/modernizr-2.6.2.min.js"></script>
 
-    .rng-div-cantidad {
-      color: #bbb;
-      font-size: 15px;
-    }
 
-    .rng-div-precio {
-      padding-top: 1.5em;
-      padding-left: 3em;
-    }
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+	<script src="js/respond.min.js"></script>
+	<![endif]-->
+	<link rel="stylesheet" type="text/css" href="css/slick.css">
+	<link rel="stylesheet" type="text/css" href="css/slick-theme.css">
 
-    .icon-cross {
-      display: none;
-      cursor: pointer;
-    }
+	<link rel="stylesheet" type="text/css" href="css/estiloMotor3D.css">
 
-    .rng-carrito:hover .icon-cross {
-      display: block;
-    }
-  </style>
+	<link rel="stylesheet" href="css/font.css">
+	<link rel="stylesheet" href="css/main.css">
+
+
+	<style type="text/css">
+		.slider2 {
+			width: 100%;
+			margin: 10% auto;
+		}
+
+		.slick-slide {
+			margin: 0px 20px;
+		}
+
+		.slick-slide img {
+			width: 100%;
+
+		}
+
+		@media only screen and (max-width: 600px) {
+			.slick-slide {
+				margin: 0px 1.3%;
+			}
+
+			.slick-slide img {
+				width: 140%;
+
+			}
+
+		}
+
+		@media only screen and (max-width: 448px) {
+			.slick-slide {
+				margin: 0px .8%;
+			}
+
+			.slick-slide img {
+				width: 120%;
+
+			}
+
+		}
+
+		.slick-prev:before,
+		.slick-next:before {
+			color: #FFF;
+		}
+
+		.slick-slide {
+			transition: all ease-in-out .3s;
+			opacity: .2;
+		}
+
+		.slick-active {
+			opacity: .5;
+		}
+
+		.slick-current {
+			opacity: 1;
+			transform: scale(1.2);
+		}
+
+
+
+		#sliderYoko,
+		#sliderPuffino,
+		#sliderKids {
+			display: none;
+		}
+
+		.nbs-flexisel-container {
+			position: relative;
+			max-width: 100%;
+		}
+
+		.nbs-flexisel-ul {
+			position: relative;
+			width: 99999px;
+			margin: 0px;
+			padding: 0px;
+			list-style-type: none;
+			text-align: center;
+			overflow: auto;
+		}
+
+		.nbs-flexisel-inner {
+			position: relative;
+			overflow: hidden;
+			float: left;
+			width: 100%;
+			background: #ffffff;
+			background: #ffffff -moz-linear-gradient(top, #ffffff 0%, #ffffff 100%);
+			/* FF3.6+ */
+			background: #ffffff -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #ffffff));
+			/* Chrome,Safari4+ */
+			background: #ffffff -webkit-linear-gradient(top, #ffffff 0%, #ffffff 100%);
+			/* Chrome10+,Safari5.1+ */
+			background: #ffffff -o-linear-gradient(top, #ffffff 0%, #ffffff 100%);
+			/* Opera11.10+ */
+			background: #ffffff -ms-linear-gradient(top, #ffffff 0%, #ffffff 100%);
+			/* IE10+ */
+			background: #ffffff linear-gradient(top, #ffffff 0%, #ffffff 100%);
+			/* W3C */
+		}
+
+		.nbs-flexisel-item {
+			float: left;
+			margin: 0px;
+			padding: 0px;
+			cursor: pointer;
+			position: relative;
+			line-height: 0px;
+		}
+
+		.nbs-flexisel-item img {
+			max-width: 100%;
+			cursor: pointer;
+			position: relative;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+
+		/*** Navigation ***/
+
+		.nbs-flexisel-nav-left,
+		.nbs-flexisel-nav-right {
+			padding: 5px 10px;
+			border-radius: 15px;
+			-moz-border-radius: 15px;
+			-webkit-border-radius: 15px;
+			position: absolute;
+			cursor: pointer;
+			z-index: 4;
+			top: 50%;
+			transform: translateY(-50%);
+			background: rgba(0, 0, 0, 0.5);
+			color: #fff;
+		}
+
+		.nbs-flexisel-nav-left {
+			left: 10px;
+		}
+
+		.nbs-flexisel-nav-left:before {
+			content: "<"
+		}
+
+		.nbs-flexisel-nav-left.disabled {
+			opacity: 0.4;
+		}
+
+		.nbs-flexisel-nav-right {
+			right: 5px;
+		}
+
+		.nbs-flexisel-nav-right:before {
+			content: ">"
+		}
+
+		.nbs-flexisel-nav-right.disabled {
+			opacity: 0.4;
+		}
+
+		.medidas {
+			font-family: 'Montserrat', Arial, sans-serif;
+			font-size: 12px;
+		}
+
+		@media only screen and (max-width: 600px) {
+			.product .product-grid {
+				background-size: contain;
+				background-position: top center;
+				background-repeat: no-repeat;
+				position: relative;
+				margin-bottom: 5px;
+				-webkit-transition: 0.3s;
+				-o-transition: 0.3s;
+				transition: 0.3s;
+				height: 7em;
+
+			}
+
+			.nbs-flexisel-item {
+				float: left;
+				margin: 0px;
+				padding: 0px;
+				cursor: pointer;
+				position: relative;
+				line-height: 0px;
+			}
+
+			.nbs-flexisel-item img {
+				max-width: 100%;
+				cursor: pointer;
+				position: relative;
+				margin-top: 10px;
+				margin-bottom: 10px;
+			}
+		}
+
+		.nomProducto {
+			color: #2ACA89 !important;
+		}
+
+		.priceProducto {
+			color: black !important;
+		}
+	</style>
+
 </head>
 
-
 <body>
-  <div class="card" style="width: 18rem;">
-    <img class="card-img-top" src="assets/imagenes/brazoContempo.jpeg" alt="Card image cap" height="150" width="150">
-    <div class="card-body">
-      <h5 class="card-title">Card title</h5>
-      <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's
-        content.</p>
-    </div>
-    <ul class="list-group list-group-flush">
-      <li class="list-group-item">Cras justo odio</li>
-      <li class="list-group-item">Dapibus ac facilisis in</li>
-      <li class="list-group-item">Vestibulum at eros</li>
-    </ul>
-    <div class="card-body">
-      <a href="#" class="card-link">Card link</a>
-      <a href="#" class="card-link">Another link</a>
-    </div>
-  </div>
-  <div class="container">
-    <div class="row">
-      <div class="col-sm">
-        One of three columns
-      </div>
-      <div class="col-sm">
-        One of three columns
-      </div>
-      <div class="col-sm">
-        One of three columns
-      </div>
-    </div>
-  </div>
 
-  <div class="contenedor">
-    <div class="row rng-carrito">
-      <div class="col-1"></div>
-      <div class="col-2">
-        <img src="assets/imagenes/brazoContempo.jpeg" alt="brazo" id="imgProducto" class="img-carrito" height="90">
-      </div>
-      <div class="col-5 rng-desc-carrito">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, nesciunt.
-      </div>
-      <div class="col-3 rng-div-precio">
-        <span class="rng-precio">
-          $75
-        </span>
-        <div class="rng-div-cantidad">
-          Cantidad: <span class="rng-cantidad">3</span>
-        </div>
-      </div>
-      <div class="col-1 rng-btn-remover-carrito">
-        <span class="icon">
-          <i class="icon-cross" onclick="removerArticulo(this)" id="rnd()"></i>
-        </span>
-      </div>
-    </div>
-    <div class="row rng-carrito">
-        <div class="col-1"></div>
-        <div class="col-2">
-          <img src="assets/imagenes/brazoContempo.jpeg" alt="brazo" id="imgProducto" class="img-carrito" height="90">
-        </div>
-        <div class="col-5 rng-desc-carrito">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, nesciunt.
-        </div>
-        <div class="col-3 rng-div-precio">
-          <span class="rng-precio">
-            $75
-          </span>
-          <div class="rng-div-cantidad">
-            Cantidad: <span class="rng-cantidad">3</span>
-          </div>
-        </div>
-        <div class="col-1 rng-btn-remover-carrito">
-          <span class="icon">
-            <i class="icon-cross" onclick="removerArticulo(this)" id="rnd()"></i>
-          </span>
-        </div>
-      </div>
-      <div class="row rng-carrito">
-          <div class="col-1"></div>
-          <div class="col-2">
-            <img src="assets/imagenes/brazoContempo.jpeg" alt="brazo" id="imgProducto" class="img-carrito" height="90">
-          </div>
-          <div class="col-5 rng-desc-carrito">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, nesciunt.
-          </div>
-          <div class="col-3 rng-div-precio">
-            <span class="rng-precio">
-              $75
-            </span>
-            <div class="rng-div-cantidad">
-              Cantidad: <span class="rng-cantidad">3</span>
-            </div>
-          </div>
-          <div class="col-1 rng-btn-remover-carrito">
-            <span class="icon">
-              <i class="icon-cross" onclick="removerArticulo(this)" id="rnd()"></i>
-            </span>
-          </div>
-        </div>
-        <div class="row rng-carrito">
-            <div class="col-1"></div>
-            <div class="col-2">
-              <img src="assets/imagenes/brazoContempo.jpeg" alt="brazo" id="imgProducto" class="img-carrito" height="90">
-            </div>
-            <div class="col-5 rng-desc-carrito">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, nesciunt.
-            </div>
-            <div class="col-3 rng-div-precio">
-              <span class="rng-precio">
-                $75
-              </span>
-              <div class="rng-div-cantidad">
-                Cantidad: <span class="rng-cantidad">3</span>
-              </div>
-            </div>
-            <div class="col-1 rng-btn-remover-carrito">
-              <span class="icon">
-                <i class="icon-cross" onclick="removerArticulo(this)" id="rnd()"></i>
-              </span>
-            </div>
-          </div>
-          <div class="row rng-carrito">
-              <div class="col-1"></div>
-              <div class="col-2">
-                <img src="assets/imagenes/brazoContempo.jpeg" alt="brazo" id="imgProducto" class="img-carrito" height="90">
-              </div>
-              <div class="col-5 rng-desc-carrito">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, nesciunt.
-              </div>
-              <div class="col-3 rng-div-precio">
-                <span class="rng-precio">
-                  $75
-                </span>
-                <div class="rng-div-cantidad">
-                  Cantidad: <span class="rng-cantidad">3</span>
-                </div>
-              </div>
-              <div class="col-1 rng-btn-remover-carrito">
-                <span class="icon">
-                  <i class="icon-cross" onclick="removerArticulo(this)" id="rnd()"></i>
-                </span>
-              </div>
-            </div>
-            <div class="row rng-carrito">
-                <div class="col-1"></div>
-                <div class="col-2">
-                  <img src="assets/imagenes/brazoContempo.jpeg" alt="brazo" id="imgProducto" class="img-carrito" height="90">
-                </div>
-                <div class="col-5 rng-desc-carrito">Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, nesciunt.
-                </div>
-                <div class="col-3 rng-div-precio">
-                  <span class="rng-precio">
-                    $75
-                  </span>
-                  <div class="rng-div-cantidad">
-                    Cantidad: <span class="rng-cantidad">3</span>
-                  </div>
-                </div>
-                <div class="col-1 rng-btn-remover-carrito">
-                  <span class="icon">
-                    <i class="icon-cross" onclick="removerArticulo(this)" id="rnd()"></i>
-                  </span>
-                </div>
-              </div>
-              
-  </div>
+	<div class="row div-nav" style="background-color:#fA675b;">
+		<div class="col-md-10 col-8" style="text-align: right; margin-top: 0.3em;margin-bottom: 0.3em;">
+			<span style="font-size:13px; color:#FFF; font-family: 'Montserrat', Arial, sans-serif;">Servicio al cliente
+				Teléfono:
+				477 854 11 12&nbsp;&nbsp;</span>
+		</div>
+		<div class="col-md-2 col-4 " style="text-align: right;">
+			<a href="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2F1962138827348733&amp;tabs=messages&amp;width=302&amp;height=300&amp;small_header=true&amp;adapt_container_width=true&amp;hide_cover=true&amp;show_facepile=false&amp;appId"
+				target="_blank"><img src="images/messeng.png" style="max-width: 1.8em; padding-right:5px"></a>
 
-  <div class="row">
-    <div class="col-8">col-8</div>
-    <div class="col-4">col-4</div>
-  </div>
-  <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
-    integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
-    crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
-    integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
-    crossorigin="anonymous"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
-    integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
-    crossorigin="anonymous"></script>
-  <script>
-    let padre;
-    function removerArticulo(elemento) {
-      padre = elemento.parentNode.parentNode.parentNode;
-      padre.style.backgroundColor = "violet";
-      padre.remove();
-    }
-  </script>
+			<a href="https://api.whatsapp.com/send?phone=5214778541112" target="_blank">
+				<img src="images/whats.png" style="max-width: 1.8em; padding-right:5px">
+			</a>
+
+			<img src="images/shopping_cart_white_24dp.png" style="max-width: 1.8em; padding-right:5px"
+				onclick="mostrarCarro()"><span id="num-carrito" class="num-carrito"></span>
+		</div>
+	</div>
+	<div id="page">
+		<!--	
+		<div class="social-bar" id="social-bar">
+					<a href="https://www.facebook.com/puffino.mx/" class="icon2 icon-facebook" target="_blank"></a>
+					<a href="https://www.youtube.com/channel/UC_IQX58WKgUAJiZfj9oy6wg/featured" class="icon2 icon-youtube"
+						target="_blank"></a>
+					<a href="https://www.instagram.com/puffinomx/" class="icon2 icon-instagram" target="_blank"></a>
+					<a href="https://www.twitter.com/puffinomx/" class="icon2 icon-twitter" target="_blank"></a>
+			
+			
+			
+				</div>
+			-->
+
+		<div class="carrito" id="carrito">
+			<div id="row-productos">
+				Todavía no agregas nada.
+			</div>
+
+			<div class="row rng-total total-desactivo" id="rng-total">
+				<div class="col-xs-6 rng-total-titulo">Total</div>
+				<div class="col-xs-6">$<span id="total-carrito">0</span></div>
+				<!--<div class="col-6"><button class="rng-btn-total btn btn-primary blue" onclick="">continuar</button></div>-->
+				<!--
+				<div id="paypal-button-container"></div>
+				<div id="paypal-button"></div>
+				-->
+				<button type="button" class="btn btn-success btn-agregar-ir-al-carrito" id="btn-agregar-ir-al-carrito" onclick="location.href = '/cart.html';">IR AL CARRITO</button>
+			</div>
+		</div>
+
+		<div class="fh5co-loader"></div>
+		<nav class="fh5co-nav" role="navigation" style="background-color:#4DD7D3;">
+			<div class="container" style="margin-left:0px;">
+				<div class="row">
+					<div class="col-md-3 col-xs-2">
+						<div id="fh5co-logo"><a href="index.html"><img src="images/puff_logo.png"
+									class="logo-puffino"></a></div>
+					</div>
+					<div class="col-md-9 col-xs-10 menu-1" style="margin-top:4%;">
+						<ul>
+							<li style="margin-right: 1.1em;"><a href="index.html"
+									style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">Inicio</a></li>
+							<li style="margin-right: 1.1em;"><a href="about.html"
+									style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">Nosotros</a></li>
+							<li style="margin-right: 1.1em;"><a href="catalogo.html"
+									style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">Catálogo</a></li>
+							<li style="margin-right: 1.1em;"><a href="envio.html"
+									style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">Envío y
+									Devoluciones</a></li>
+							<li style="margin-right: 1.1em;"><a href="contact.html"
+									style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">Contacto</a></li>
+						</ul>
+					</div>
+				</div>
+
+			</div>
+		</nav>
+
+		<section id="fh5co-hero">
+			<div class="flexslider">
+				<ul class="slides" style="background:#4DD7D3">
+					<li><img src="images/puffinoslider1.jpg" style="width:100%;"></li>
+					<li><img src="images/puffinoslider2.jpg" style="width:100%;"></li>
+					<li><img src="images/puffinoslider3.jpg" style="width:100%;"></li>
+					<li><img src="images/puffinoslider4.jpg" style="width:100%;"></li>
+				</ul>
+			</div>
+		</section>
+		<section id="fh5co-services" style="background-color:#f5f5f5;">
+			<div class="col-md-12 col-md-offset-2 text-center fh5co-heading" style="margin-bottom: 10px;">
+				<h2 style="color:#4E56DF">Inspírate</h2>
+			</div>
+			<div class="row center slider2">
+				<div>
+					<img src="images/puffino_1web_840x840.jpg">
+				</div>
+				<div>
+					<img src="images/puffino_2web_840x840.jpg">
+				</div>
+				<div>
+					<img src="images/puffino_3web_840x840.jpg">
+				</div>
+				<div>
+					<img src="images/puffino_4web_840x840.jpg">
+				</div>
+				<div>
+					<img src="images/puffino_5web_840x840.jpg">
+				</div>
+				<div>
+					<img src="images/puffino_6web_840x840.jpg">
+				</div>
+				<div>
+					<img src="images/puffino_7web_840x840.jpg">
+				</div>
+			</div>
+		</section>
+
+		<div id="fh5co-product" style="padding-bottom: 0px;">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 col-md-offset-2 text-center fh5co-heading" style="margin-bottom: 10px;">
+						<!--<h2 style="color:#8c2131">Productos.</h2>-->
+						<h2 style="font-size: 2rem; color:#4E56DF"><strong>Productos</strong></h2>
+					</div>
+				</div>
+				<div class="row" style="justify-content: center">
+					<div class="col-xs-4 col-4 col-sm-4 col-md-4  text-center">
+						<div class="product">
+							<a id="yokoShow" style="cursor: pointer;" onclick="">
+								<div class="product-grid"
+									style="background-image:url(images/catalogo/yoko/yookocasual_silla.jpg);"
+									onclick="cambiarVistaMotor(0)">
+									<div class="inner">
+										<!--<p>
+											<a id="holiShow" style="cursor: pointer;" class="icon"><i class="icon-eye"></i></a>
+										</p>-->
+									</div>
+								</div>
+							</a>
+							<div class="desc">
+								<h3><a id="" style="cursor: pointer; ; font-size: 1.1rem;">Yooko Modular</a></h3>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-4 col-4 col-sm-4 col-md-4 text-center">
+						<div class="product">
+							<a id="puffinoShow" style="cursor: pointer;">
+								<div class="product-grid"
+									style="background-image:url(images/catalogo/puffino_catalogo.png);"
+									onclick="cambiarVistaMotor(1)">
+									<div class="inner">
+										<!--
+										<p>
+											<a id="holiShow" style="cursor: pointer;" class="icon"><i class="icon-eye"></i></a>
+										</p>
+										-->
+									</div>
+								</div>
+							</a>
+							<div class="desc">
+								<h3><a style="cursor: pointer; ; font-size: 1.1rem;">Puffino </a></h3>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-4 col-4 col-sm-4 col-md-4 col-xs-4 text-center">
+						<div class="product">
+							<a id="kidsShow" style="cursor: pointer;">
+								<div class="product-grid"
+									style="background-image:url(images/catalogo/ninos_catalogo.jpg);"
+									onclick="cambiarVistaMotor(2)">
+									<div class="inner">
+										<!--
+										<p>
+											<a id="holiShow" style="cursor: pointer;" class="icon"><i class="icon-eye"></i></a>
+										</p>
+										-->
+									</div>
+								</div>
+							</a>
+							<div class="desc">
+								<h3><a style="cursor: pointer; ; font-size: 1.1rem;">Puffino Niños</a></h3>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div id="slidersModelosPadre">
+
+					<!-- SLIDER DE MODELOS YOKO MODULAR -->
+					<div id="yokoDiv">
+						<ul id="sliderYoko">
+							<!--Yooko Casual-->
+							<li>
+								<a style="cursor: pointer;" onclick="cambioModulo(0,true)">
+									<div class="text-center">
+										<div class="product" style="margin-top: 1em;">
+											<div class="product-grid"
+												style="background-image:url(images/catalogo/yoko/yookocasual_esquinero.jpg); margin: 0 auto;">
+											</div>
+											<div class="desc" style="margin-top: 1em;">
+												<h3><a class="nomProducto">Yooko Casual Esquinero</a></h3>
+												<span class="priceProducto">$8799</span>
+											</div>
+										</div>
+									</div>
+								</a>
+								<button type="button"
+									onclick="agregarAlCarrito('Yoko sillón',7999,'images/catalogo/yoko/yookocasual_esquinero.jpg',this)"
+									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
+							</li>
+							<li>
+								<a style="cursor: pointer;" onclick="cambioModulo(1,true)">
+									<div class="text-center">
+										<div class="product" style="margin-top: 1em;">
+											<div class="product-grid"
+												style="background-image:url(images/catalogo/yoko/yookocasual_silla.jpg); margin: 0 auto;">
+											</div>
+											<div class="desc" style="margin-top: 1em;">
+												<h3><a class="nomProducto">Yooko Casual Silla</a></h3>
+												<span class="priceProducto">$8599</span>
+											</div>
+										</div>
+									</div>
+								</a>
+								<button type="button"
+									onclick="agregarAlCarrito('Yoko sillón',7999,'images/catalogo/yoko/yookocasual_silla.jpg',this)"
+									class="btn-agregar " id="btn-agregar blue btn">Añadir al carrito</button>
+							</li>
+							<li>
+								<a style="cursor: pointer;" onclick="cambioModulo(2,true)">
+									<div class="text-center">
+										<div class="product" style="margin-top: 1em;">
+											<div class="product-grid"
+												style="background-image:url(images/catalogo/yoko/yookocasual_taburete.jpg); margin: 0 auto;">
+											</div>
+											<div class="desc" style="margin-top: 1em;">
+												<h3><a class="nomProducto">Yooko Casual Taburete</a></h3>
+												<span class="priceProducto">$7099</span>
+											</div>
+										</div>
+									</div>
+								</a>
+								<button type="button"
+									onclick="agregarAlCarrito('Yoko esquinero',8999,'images/catalogo/yoko/yookocasual_taburete.jpg')"
+									class="btn-agregar " id="btn-agregar blue btn">Añadir al carrito</button>
+							</li>
+							<!--Yooko Contempo-->
+							<li>
+								<a style="cursor: pointer;" onclick="cambioModulo(0,true)">
+									<div class="text-center">
+										<div class="product" style="margin-top: 1em;">
+											<div class="product-grid"
+												style="background-image:url(images/catalogo/yoko/yookocontempo_esquinero.jpg); margin: 0 auto;">
+											</div>
+											<div class="desc" style="margin-top: 1em;">
+												<h3><a class="nomProducto">Yooko Contempo Esquinero</a></h3>
+												<span class="priceProducto">$8799</span>
+											</div>
+										</div>
+									</div>
+								</a>
+								<button type="button"
+									onclick="agregarAlCarrito('Yoko sillón',7999,'images/catalogo/yoko/yookocontempo_esquinero.jpg',this)"
+									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
+							</li>
+							<li>
+								<a style="cursor: pointer;" onclick="cambioModulo(1,true)">
+									<div class="text-center">
+										<div class="product" style="margin-top: 1em;">
+											<div class="product-grid"
+												style="background-image:url(images/catalogo/yoko/yookocontempo_silla.jpg); margin: 0 auto;">
+											</div>
+											<div class="desc" style="margin-top: 1em;">
+												<h3><a class="nomProducto">Yooko Contempo Silla</a></h3>
+												<span class="priceProducto">$8599</span>
+											</div>
+										</div>
+									</div>
+								</a>
+								<button type="button"
+									onclick="agregarAlCarrito('Yoko sillón',7999,'images/catalogo/yoko/yookocontempo_silla.jpg',this)"
+									class="btn-agregar " id="btn-agregar blue btn">Añadir al carrito</button>
+							</li>
+							<li>
+								<a style="cursor: pointer;" onclick="cambioModulo(2,true)">
+									<div class="text-center">
+										<div class="product" style="margin-top: 1em;">
+											<div class="product-grid"
+												style="background-image:url(images/catalogo/yoko/yookocontempo_taburete.jpg); margin: 0 auto;">
+											</div>
+											<div class="desc" style="margin-top: 1em;">
+												<h3><a class="nomProducto">Yooko Contempo Taburete</a></h3>
+												<span class="priceProducto">$7099</span>
+											</div>
+										</div>
+									</div>
+								</a>
+								<button type="button"
+									onclick="agregarAlCarrito('Yoko esquinero',8999,'images/catalogo/yoko/yookocontempo_taburete.jpg',this)"
+									class="btn-agregar " id="btn-agregar blue btn">Añadir al carrito</button>
+							</li>
+							<!--Yooko Trendy-->
+							<li>
+								<a style="cursor: pointer;" onclick="cambioModulo(0,true)">
+									<div class="text-center">
+										<div class="product" style="margin-top: 1em;">
+											<div class="product-grid"
+												style="background-image:url(images/catalogo/yoko/yookotrendy_esquinero.jpg); margin: 0 auto;">
+											</div>
+											<div class="desc" style="margin-top: 1em;">
+												<h3><a class="nomProducto">Yooko Trendy Esquinero</a></h3>
+												<span class="priceProducto">$8799</span>
+											</div>
+										</div>
+									</div>
+								</a>
+								<button type="button"
+									onclick="agregarAlCarrito('Yoko sillón',7999,'images/catalogo/yoko/yookotrendy_esquinero.jpg',this)"
+									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
+							</li>
+							<li>
+								<a style="cursor: pointer;" onclick="cambioModulo(1,true)">
+									<div class="text-center">
+										<div class="product" style="margin-top: 1em;">
+											<div class="product-grid"
+												style="background-image:url(images/catalogo/yoko/yookotrendy_silla.jpg); margin: 0 auto;">
+											</div>
+											<div class="desc" style="margin-top: 1em;">
+												<h3><a class="nomProducto">Yooko Trendy Silla</a></h3>
+												<span class="priceProducto">$8599</span>
+											</div>
+										</div>
+									</div>
+								</a>
+								<button type="button"
+									onclick="agregarAlCarrito('Yoko sillón',7999,'images/catalogo/yoko/yookotrendy_silla.jpg',this)"
+									class="btn-agregar " id="btn-agregar blue btn">Añadir al carrito</button>
+							</li>
+							<li>
+								<a style="cursor: pointer;" onclick="cambioModulo(2,true)">
+									<div class="text-center">
+										<div class="product" style="margin-top: 1em;">
+											<div class="product-grid"
+												style="background-image:url(images/catalogo/yoko/yookotrendy_taburete.jpg); margin: 0 auto;">
+											</div>
+											<div class="desc" style="margin-top: 1em;">
+												<h3><a class="nomProducto">Yooko Trendy Taburete</a></h3>
+												<span class="priceProducto">$7099</span>
+											</div>
+										</div>
+									</div>
+								</a>
+								<button type="button"
+									onclick="agregarAlCarrito('Yoko esquinero',8999,'images/catalogo/yoko/yookotrendy_taburete.jpg',this)"
+									class="btn-agregar " id="btn-agregar blue btn">Añadir al carrito</button>
+							</li>
+						</ul>
+					</div>
+					<!-- FIN SLIDER DE MODELOS YOKO MODULAR -->
+
+					<!-- SLIDER DE MODELOS PUFFINO -->
+					<div id="puffinoDiv">
+						<ul id="sliderPuffino">
+							<li>
+								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[0],this)">
+									<div class="text-center">
+										<div class="product" style="margin-top: 1em;">
+											<div class="product-grid"
+												style="background-image:url(images/productos/puffino/atlixco.jpg); margin: 0 auto;">
+											</div>
+											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+												<h3 style="line-height: 30px;"><a class="nomProducto">Yumil</a></h3>
+												<span class="priceProducto">$2599</span>
+											</div>
+											<div class="medidas">
+												<span>(46cm x 46cm x 46cm)</span>
+											</div>
+										</div>
+									</div>
+								</a>
+								<button type="button"
+									onclick="agregarAlCarrito('Yumil',2599,'images/productos/puffino/atlixco.jpg',this)"
+									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
+							</li>
+						
+						</ul>
+					</div>
+					<!-- FIN SLIDER DE MODELOS PUFFINO -->
+
+
+					<!-- SLIDER DE MODELOS KIDS -->
+					<div id="kidsDiv">
+						<ul id="sliderKids">
+							<li>
+								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.kids[0],this)">
+									<div class="text-center">
+										<div class="product" style="margin-top: 1em;">
+											<div class="product-grid"
+												style="background-image:url(images/productos/kids/kids_conejo.jpg); margin: 0 auto;">
+											</div>
+											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+												<h3 style="line-height: 30px;"><a class="nomProducto">CONEJO</a></h3>
+												<span class="priceProducto">$3499</span>
+											</div>
+											<div class="medidas">
+												<span>(76cm x 90cm x 76cm)</span>
+											</div>
+										</div>
+									</div>
+								</a>
+								<button type="button"
+									onclick="agregarAlCarrito('CONEJO',3499,'images/productos/kids/kids_conejo.jpg')"
+									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
+							</li>
+							<li>
+								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.kids[1],this)">
+									<div class="text-center">
+										<div class="product" style="margin-top: 1em;">
+											<div class="product-grid"
+												style="background-image:url(images/productos/kids/kids_dinosaurio.jpg); margin: 0 auto;">
+											</div>
+											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+												<h3 style="line-height: 30px;"><a class="nomProducto">DINOSAURIO</a>
+												</h3>
+												<span class="priceProducto">$3699</span>
+											</div>
+											<div class="medidas">
+												<span>(72cm x 90cm x 76cm)</span>
+											</div>
+										</div>
+									</div>
+								</a>
+								<button type="button"
+									onclick="agregarAlCarrito('DINOSAURIO',3699,'images/productos/kids/kids_dinosaurio.jpg')"
+									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
+							</li>
+							<li>
+								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.kids[2],this)">
+									<div class="text-center">
+										<div class="product" style="margin-top: 1em;">
+											<div class="product-grid"
+												style="background-image:url(images/productos/kids/kids_dona.jpg); margin: 0 auto;">
+											</div>
+											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+												<h3 style="line-height: 30px;"><a class="nomProducto">DONA</a></h3>
+												<span class="priceProducto">$3399</span>
+											</div>
+											<div class="medidas">
+												<span>(96cm diametro x 32cm)</span>
+											</div>
+										</div>
+									</div>
+								</a>
+								<button type="button"
+									onclick="agregarAlCarrito('DONA',3399,'images/productos/kids/kids_dona.jpg')"
+									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
+							</li>
+							<li>
+								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.kids[3],this)">
+									<div class="text-center">
+										<div class="product" style="margin-top: 1em;">
+											<div class="product-grid"
+												style="background-image:url(images/productos/kids/kids_jirafa.jpg); margin: 0 auto;">
+											</div>
+											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+												<h3 style="line-height: 30px;"><a class="nomProducto">JIRAFA</a></h3>
+												<span class="priceProducto">$3799</span>
+											</div>
+											<div class="medidas">
+												<span>(72cm x 90cm x 76cm)</span>
+											</div>
+										</div>
+									</div>
+								</a>
+								<button type="button"
+									onclick="agregarAlCarrito('JIRAFA',3799,'images/productos/kids/kids_jirafa.jpg')"
+									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
+							</li>
+							<li>
+								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.kids[4],this)">
+									<div class="text-center">
+										<div class="product" style="margin-top: 1em;">
+											<div class="product-grid"
+												style="background-image:url(images/productos/kids/kids_perrito.jpg); margin: 0 auto;">
+											</div>
+											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+												<h3 style="line-height: 30px;"><a class="nomProducto">PERRITO</a></h3>
+												<span class="priceProducto">$3699</span>
+											</div>
+											<div class="medidas">
+												<span>(72cm x 90cm x 76cm)</span>
+											</div>
+										</div>
+									</div>
+								</a>
+								<button type="button"
+									onclick="agregarAlCarrito('PERRITO',3699,'images/productos/kids/kids_perrito.jpg')"
+									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
+							</li>
+							<li>
+								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.kids[5],this)">
+									<div class="text-center">
+										<div class="product" style="margin-top: 1em;">
+											<div class="product-grid"
+												style="background-image:url(images/productos/kids/kids_unicornio.jpg); margin: 0 auto;">
+											</div>
+											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+												<h3 style="line-height: 30px;"><a class="nomProducto">UNICORNIO</a></h3>
+												<span class="priceProducto">$3499</span>
+											</div>
+											<div class="medidas">
+												<span>(72cm x 90cm x 76cm)</span>
+											</div>
+										</div>
+									</div>
+								</a>
+								<button type="button"
+									onclick="agregarAlCarrito('UNICORNIO',3499,'images/productos/kids/kids_unicornio.jpg')"
+									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
+							</li>
+						</ul>
+					</div>
+
+					<!-- FIN SLIDER DE MODELOS KIDS-->
+					<hr>
+				</div>
+
+			</div>
+		</div>
+		<!---->
+
+		<div style="color:#FFF;" class="topDivPush">
+		</div>
+		<br>
+		<div class="motor3D">
+			<div class="grid-container" id="grid-container">
+				<!--	
+				<div class="item1" href="#" id="head">
+					¡Compra hoy y obtén hasta -20% de descuento!
+				</div>
+			-->
+				<!--ITEM 2-->
+				<!--
+		<div class="nombreProducto">
+			<h3 id="nombre">Nombre</h3>
+			Producto
+		</div>
+	-->
+				<!--TEXTURAS POR DEFECTO-->
+
+				<div class="materiales" id="materiales">
+					<!--
+					<ul class="opc-modelo" id="iconosMuebles">
+						<li>
+							<img src="assets/imagenes/IconCojinTabureteTelanegra.jpg" id="textuNegra" onclick="cambioTextura(0)">
+						</li>
+						<li>
+							<img src="assets/imagenes/IconCojinTabureteTelaBlanca.jpg" id="textuBlanca" onclick="cambioTextura(1)">
+						</li>
+						<li>
+							<img src="assets/imagenes/IcongrisBotones.jpg" id="textuTrendy" onclick="cambioTextura(2)">
+						</li>
+					</ul>-->
+					<h4 id="descripcionMaterial" style="color: #4E56DF;">Material</h4>
+					<!--	
+						<div class="btn-group" role="group" aria-label="Basic example">
+						<button type="button" class="btn btn-secondary">Left</button>
+						<button type="button" class="btn btn-secondary">Middle</button>
+						<button type="button" class="btn btn-secondary">Right</button>
+					</div>
+					-->
+					<!-- usage example-->
+					<div class="grid-texturas" id="grid-texturas">
+						<ul class="nav nav-tabs tabTexturas" role="tablist">
+							<li role="presentation">
+								<a class="tabLink" href="#tab-id-0" aria-controls="tab-id-0" role="tab"
+									data-toggle="tab">
+									<span>Lona</span>
+								</a>
+							</li>
+							<li class="active" role="presentation">
+								<a class="tabLink" href="#tab-id-1" aria-controls="tab-id-1" role="tab"
+									data-toggle="tab">
+									<span>Gamuza</span>
+								</a>
+							</li>
+							<li role="presentation">
+								<a class="tabLink" href="#tab-id-2" aria-controls="tab-id-2" role="tab"
+									data-toggle="tab">
+									<span>Tacto piel</span>
+								</a>
+							</li>
+							<li role="presentation">
+								<a class="tabLink" href="#tab-id-3" aria-controls="tab-id-3" role="tab"
+									data-toggle="tab">
+									<span>Curri</span>
+								</a>
+							</li>
+						</ul>
+						<div class="tab-content">
+							<div class="tab-pane" id="tab-id-0" role="tabpanel">
+								<div class="btn-grid  cont-txturas" id="btn-grid">
+									<input type="image" src="assets/texturas/chico/TP ROJOchico.jpg"
+										class="btn-imagen-grid " />
+								</div>
+							</div>
+							<div class="tab-pane active" id="tab-id-1" role="tabpanel">
+								<div class="btn-grid1 cont-txturas-1" id="btn-grid1">
+									<input type="image" src="assets/texturas/chico/TP ROJOchico.jpg"
+										class="btn-imagen-grid" />
+								</div>
+							</div>
+							<div class="tab-pane" id="tab-id-2" role="tabpanel">
+								<div class="btn-grid2 cont-txturas-2" id="btn-grid2">
+									<input type="image" src="assets/texturas/chico/TP ROJOchico.jpg"
+										class="btn-imagen-grid" />
+								</div>
+							</div>
+							<div class="tab-pane" id="tab-id-3" role="tabpanel">
+								<div class="btn-grid3 cont-txturas-3" id="btn-grid3">
+									<input type="image" src="assets/texturas/chico/TP ROJOchico.jpg"
+										class="btn-imagen-grid" />
+								</div>
+							</div>
+						</div>
+					</div>
+
+				</div>
+
+				<div class="modulos" id="iconosTexturas">
+					<!-- <span>Modulos</span>-->
+					<!--<span id="descripcionModulo"></span>-->
+					<ul class="opc-modulos">
+						<li>
+							<img src="assets/imagenes/tabureteContempo.PNG" class="imgMueble" alt="taburete"
+								id="modTaburete" onclick="cambioModulo(0)">
+						</li>
+						<li>
+							<img src="assets/imagenes/brazoContempo.png" class="imgMueble" alt="esquina" id="modEsquina"
+								onclick="cambioModulo(1)">
+						</li>
+						<li>
+							<img src="assets/imagenes/esquinaContempo.PNG" class="imgMueble" alt="brazo" id="modBrazo"
+								onclick="cambioModulo(2)">
+						</li>
+					</ul>
+				</div>
+
+				<div class="pre-armado" id="iconosPrearmado">
+					<!-- <span>Modulos</span>-->
+					<!--<span id="descripcionModulo"></span>-->
+					<ul class="opc-PreArmado">
+						<li>
+							<img src="assets/iconos/prefabricados_1.png" class="btn-imagen-grid btn-prearmado"
+								alt="taburete" id="modTaburete" onclick="opcPrearmado(0)">
+						</li>
+						<li>
+							<img src="assets/iconos/prefabricados_2.png" class="btn-imagen-grid btn-prearmado"
+								alt="brazo" id="modBrazo" onclick="opcPrearmado(1)">
+						</li>
+						<li>
+							<img src="assets/iconos/prefabricados_3.png" class="btn-imagen-grid btn-prearmado"
+								alt="brazo" id="modBrazo" onclick="opcPrearmado(2)">
+						</li>
+						<li>
+							<img src="assets/iconos/prefabricados_4.png" class="btn-imagen-grid btn-prearmado"
+								alt="brazo" id="modBrazo" onclick="opcPrearmado(3)">
+						</li>
+						<li>
+							<img src="assets/iconos/prefabricados_5.png" class="btn-imagen-grid btn-prearmado"
+								alt="brazo" id="modBrazo" onclick="opcPrearmado(4)">
+						</li>
+						<li>
+							<img src="assets/iconos/prefabricados_6.png" class="btn-imagen-grid btn-prearmado"
+								alt="brazo" id="modBrazo" onclick="opcPrearmado(5)">
+						</li>
+					</ul>
+				</div>
+				<!--ITEM 2-->
+				<div class="botones-confimarcion">
+
+				</div>
+				<div class="botones-herramientas" id="botones-herramientas">
+					<div class="div-img-fotos">
+
+
+
+						<!--
+														<img src="assets/iconos/3d_Rotate.png" id="btnCamara" disabled="true" alt="camara" id="fondo" height="25"
+															width="25" onclick="activarRotacion()">
+															-->
+
+						<!--
+														<img src="assets/iconos/check_black_18dp.png" alt="acaeptar" id="btnAplicar" height="25" width="25"
+															onclick="aplicar()">
+															-->
+
+						<ul class="opc-herramienta">
+							<li>
+								<span class="img-fondo img-menu btn-imagen-grid" class="">
+									<label for="file-input">
+										<img src="assets/iconos/upload_image.png" alt="fondo" id="fondo" height="25"
+											width="25" class="img-menu btn-imagen-grid">
+									</label>
+									<input id="file-input" type="file" />
+								</span>
+							</li>
+							<li>
+								<img src="assets/iconos/take_picture.png" id="btnCamara" disabled="true" alt="camara"
+									id="fondo" class="img-menu btn-imagen-grid " height="25" width="25"
+									onclick="activarCamara()">
+							</li>
+							<li>
+								<img src="assets/iconos/download_image.png" id="btnCamara" disabled="true" alt="camara"
+									id="fondo" height="25" width="25" onclick="captura()"
+									class="img-menu btn-imagen-grid ">
+							</li>
+							<li>
+								<img src="assets/iconos/girar_model.png" disabled="true" alt="girar" id="btnRotar"
+									height="25" width="25" onclick="rotarSelecionado()"
+									class="img-menu btn-imagen-grid ">
+							</li>
+							<li>
+								<img src="assets/iconos/zoom_model.png" alt="zoomOut" id="btnC" height="25" width="25"
+									onclick="zoomear('in')" class="img-menu btn-imagen-grid ">
+							</li>
+							<li>
+								<img src="assets/iconos/zoom_out_model.png" alt="zoomIn" id="btnC" height="25"
+									width="25" onclick="zoomear('out')" class="img-menu btn-imagen-grid ">
+							</li>
+							<li>
+								<img src="assets/iconos/remove_black_18dp.png" alt="cancelar" id="btnCancelar"
+									height="25" width="25" onclick="cancelar()" class="img-menu btn-imagen-grid ">
+							</li>
+						</ul>
+					</div>
+
+				</div>
+				<div class="acciones">
+					<button type="button" class="btn btn-success btn-agregar-3d-a-carrito" id="btn-agregar-3d-a-carrito"
+						onclick="agregarModelo3DaCArrito()">Agregar al carrito</button>
+					<div class="precios">
+						<div class="div-precio">
+							<span>Total</span>
+							<span id="Precio">$1500</span>
+						</div>
+					</div>
+				</div>
+				<div class="item3" id="main">
+					<div id="datGUI" class="datGUI">
+						<canvas id="renderCanvas" class="renderCanvas" touch-action="pan-up pan-down pinch-zoom">
+						</canvas>
+						<!--
+										<button id="btnPrueba" class="btnPrueba">comida</button>
+										-->
+						<div class="selecionMenu">
+							<button type="button" onclick="cambiarMenuMovil(1)" class="btn"
+								id="slct-btn-foto">Herramientas</button>
+							<button type="button" onclick="cambiarMenuMovil(2)" class="btn slct-btn-color"
+								id="slct-btn-color">Color</button>
+							<button type="button" onclick="cambiarMenuMovil(3)" class="btn" id="slct-btn-preArmado">Pre
+								armado</button>
+							<button type="button" onclick="cambiarMenuMovil(4)" class="btn"
+								id="slct-btn-modelo">Modelo</button>
+						</div>
+					</div>
+				</div>
+
+				<div class="item4" id="item4">
+					Ancho: <span id="anchoTotal"></span> Largo: <span id="largoTotal"></span>
+					<!--Alto: <span id="altoTotal"></span>-->
+				</div>
+			</div>
+		</div>
+		<!--
+		tabla de precios
+		<table class="table">
+			<thead>
+				<tr>
+					<th scope="col">Cantidad</th>
+					<th scope="col">Modelo</th>
+					<th scope="col">Precio Unitario</th>
+					<th scope="col">SubTotal</th>
+				</tr>
+			</thead>
+			<tbody id="tbodyMuebles">
+			</tbody>
+		</table>
+		-->
+		<!--
+		<center>
+			<p style="font-size:24px;"> Sobre <span style="color:#99dc98; font-size:36px;">Puffino</span></p>
+		</center>
+		-->
+		<div id="fh5co-services" class="fh5co-bg-section" style="background-color: #2ACA89;">
+			<div class="container">
+				<div class="row" style="justify-content:center;">
+					<div class="col-md-2 col-sm-0 text-center"></div>
+					<div class="col-md-8 col-sm-6 text-center">
+						<div class="feature-center animate-box">
+							<span class="icon">
+								<center style="width: 12em;height: 12em;"><img style="width: 12em;height: 12em;"
+										src="images/logo_certi_pur_medium.png"></center>
+							</span>
+							<h3 style="color: white;">Materia prima </h3>
+							<p style="color: white;text-align : center;">
+								Somos una empresa 100% mexicana enfocada al medio ambiente y responsabilidad social,
+								trabajamos en encontrar los materiales perfectos los cuales contribuyen a cuidar el
+								planeta.
+							</p>
+							<h3 style="color: white;">Poliuretano Espumado</h3>
+							<p style="color: white;text-align : center;">
+
+								Material de alta resilencia por lo que no se deforma y se reincorpora de forma
+								inmediata (contamos con certificación ante CertiPUR-US).
+							</p>
+							<h3 style="color: white;">Perla negra</h3>
+							<p style="color: white;text-align : center;">
+								(Polietileno expandido)
+								<br>- Aislante del calor y el sonido.
+								<br>- Capacidad de absorción de golpes.
+								<br>- 100% reutilizable.
+							</p>
+						</div>
+					</div>
+					<div class="col-md-2 col-sm-0 text-center"></div>
+					<!--<div class="col-md-6 col-sm-6 align-self-end">-->
+					<!--<div class="col-md-6 col-sm-6" >
+						
+						<p style="color: white;text-align : justify;">CertiPUR es un programa voluntario de ensayos,
+							análisis
+							y
+							certificación de las propiedades relacionadas con el medio ambiente, la salud y la seguridad
+							de
+							la espuma de
+							poliuretano empleada en materiales de acolchado y muebles tapizados.<br /><br />
+							Perla negra (Polietileno expandido): cuya estructura celular pequeña y regular, lo
+							convierten en
+							un
+							excelente aislante del calor y el sonido, además de tener una excelente capacidad de
+							absorción
+							de golpes y
+							ser ligero. Sus propiedades físicas tan versátiles, así como lo amigable que resulta para el
+							medio ambiente,
+							ya que es un componente 100% reutilizable, lo convierten en un excelente complemento para
+							nuestra mezcla.
+						</p>
+					</div>-->
+
+				</div>
+			</div>
+		</div>
+
+		<!--
+			<div class="testimony-slide active text-center">
+			<iframe src="https://www.facebook.com/plugins/post.php?href=https%3A%2F%2Fwww.facebook.com%2Fnancy.esparzahernandez.5%2Fposts%2F527455201051647%3A0&width=500" width="500" height="374" style="border:none;overflow:hidden" scrolling="no" frameborder="0" allowTransparency="true" allow="encrypted-media"></iframe>
+			</div>
+								-->
+
+		<div id="fh5co-testimonial" class="fh5co-bg-section">
+			<div class="container">
+				<div class="row">
+					<div class="col-md-12 col-md-offset-2 text-center fh5co-heading">
+						<span>Testimoniales</span>
+						<h2 style="font-size: 2rem; color:#4E56DF"><strong>Clientes Felices</strong></h2>
+					</div>
+				</div>
+
+				<div class="row">
+					<div class="col-md-12 col-md-offset-1">
+						<div class="row">
+							<div class="owl-carousel owl-carousel-fullwidth">
+								<div class="item testimonial">
+									<h3>Caroline Le Lorier Fautsch</h3>
+									<p>
+										Muy recomendable!
+										Súper buen servicio.
+										El envío y entrega fue en tiempo y forma sin ningún contratiempo , de hecho me
+										lo mandaron mucho antes de lo previsto.
+										El Puffino , precioso, y súper cómodo!
+									</p>
+								</div>
+								<div class="item testimonial">
+									<h3>Nancy Lizeth Estrada Hernandez </h3>
+									<p>
+										Estoy super encantada con mi puff el color el tamaño ...como lo esperaba cubrió
+										mis expectativas llego en el tiempo esperado y la atención de Dennise excelente
+										super atenta la chica claro que volvería a comprarme otro,muchos mas recomiendo
+										ampliamente GRACIAS puffino
+									</p>
+								</div>
+
+								<div class="item testimonial">
+									<h3>Leslie Naj</h3>
+									<p>
+										me encantó, super cómodos y muy lindos
+										ya quiero comprar otro y sobre todo excelente servicio de atención a clientes,
+										me atendio Leslie Olvera y muy amable la señorita, se los recomiendo al 100
+									</p>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+
+		<div id="fh5co-services" class="fh5co-bg-section" style="font-family: 'Roboto';background:white;padding: 0;">
+			<div class="container">
+				<div class="desc"><br><br>
+					<center>
+						<h2 style="color:#2ACA89"><strong>QUIÉNES SOMOS</strong></h2>
+					</center>
+
+					<p style=" text-align:center; margin-left:5%; margin-right:5%;">En Puffino fabricamos muebles
+						materializando tus ideas, <br />
+						armonizamos y diseñamos tu espacio exclusivo basándonos en la innovación,<br>
+						sustentabilidad, comodidad, diseñoy vanguardia.<br />
+					</p>
+				</div>
+				<div class="row">
+					<div class="col-md-4 col-sm-4 text-center">
+						<div class="feature-center" data-animate-effect="fadeIn">
+							<span class="icon">
+								<img src="assets/iconos/envios_puffinoWEB.png" alt="envio" width="80" height="80"
+									class="icon-footer">
+							</span>
+							<h3 style="color:#575a57">ENVIO GRATIS<br> A TODO MEXICO</h3>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-4 text-center">
+						<div class="feature-center" data-animate-effect="fadeIn">
+							<span class="icon">
+								<img src="assets/iconos/ambiente_puffinoWEB.png" alt="ambiente" width="80" height="80"
+									class="icon-footer">
+							</span>
+							<h3 style="color:#575a57">CUIDAMOS EL<br> MEDIO AMBIENTE</h3>
+						</div>
+					</div>
+					<div class="col-md-4 col-sm-4 text-center">
+						<div class="feature-center" data-animate-effect="fadeIn">
+							<span class="icon">
+								<img src="assets/iconos/prodmexicano_puffinoWEB.png" alt="envio" width="80" height="80"
+									class="icon-footer">
+							</span>
+							<h3 style="color:#575a57">PRODUCTO 100%<br> MEXICANO</h3>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+
+	</div>
+
+
+	<br>
+	<div class="row copyright" style="font-family: 'Roboto';">
+		<div class="col-md-3 col-sm-2 col-xs-2"></div>
+		<div class="col-md-6 col-sm-8 col-xs-8 text-center">
+			<p style="font-size: 0.9rem;line-height: 1.2em; text-align:center; color:black">
+				*Las fotografías mostradas en este sitio web son reales y propiedad de Puffino. Copyright 2017
+				León,
+				Guanajuato. Derechos reservados ©, prohibida su reproducción o uso total o parcial por
+				cualquier medio.
+			</p>
+		</div>
+		<div class="col-md-3 col-sm-2 col-xs-2"></div>
+	</div>
+
+	<footer id="fh5co-footer" style="font-family: 'Roboto'; padding-top: 3em; padding-bottom: 0em;" role="contentinfo">
+		<div class="container">
+			<div class="row row-pb-md" style="padding-bottom: 0em !important;">
+				<div class="col-md-1 col-sm-1 col-xs-1 col-md-push-1">
+					<ul class="fh5co-footer-links">
+					</ul>
+				</div>
+				<div class="col-md-4 fh5co-widget">
+					<img src="images/puff_logo.png" style="" width="150" height="75">
+					<p>
+						<ul class="fh5co-social-icons">
+							<li><a href="https://www.facebook.com/puffino.mx/"><i style="background: #353a34;"
+										class="icon-facebook"></i></a></li>
+							<li><a href="https://www.youtube.com/channel/UC_IQX58WKgUAJiZfj9oy6wg/featured"><i
+										style="background: #353a34;" class="icon-youtube"></i></a></li>
+							<li><a href="https://www.instagram.com/puffinomx/"><i style="background: #353a34;"
+										class="icon-instagram"></i></a></li>
+							<li><a href="https://www.twitter.com/puffinomx/"><i style="background: #353a34;"
+										class="icon-twitter"></i></a></li>
+							<li><a href="https://www.pinterest.com/puffinomx/"><i style="background: #353a34;"
+										class="icon-pinterest"></i></a></li>
+						</ul>
+					</p>
+				</div>
+
+				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
+					<ul class="fh5co-footer-links">
+					</ul>
+				</div>
+
+				<div class="col-md-4 fh5co-widget text-sm-right">
+
+					<h3 style="font-size: 1.3rem; color:#FFF;">CONTÁCTANOS</h3>
+					<p>
+						477 854 11 12 <br>
+						ventas@oldravenfurniture.com <br>
+						León, Gto.
+					</p>
+				</div>
+
+				<div class="col-md-1 col-sm-1 col-xs-1 col-md-push-1">
+					<ul class="fh5co-footer-links">
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	</footer>
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up" style="background-color:#4DD7D3;"></i></a>
+	</div>
+	<!-- jQuery -->
+
+
+	<script src="js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap.min.js"></script>
+	<!-- Waypoints -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- Carousel -->
+	<script src="js/owl.carousel.min.js"></script>
+	<!-- countTo -->
+	<script src="js/jquery.countTo.js"></script>
+	<!-- Flexslider -->
+	<script src="js/jquery.flexslider-min.js"></script>
+	<!-- Main -->
+	<script src="js/main.js"></script>
+
+	<!--<script src="js/jquery-3.3.1.min.js"></script>-->
+	<!--<script src="js/jquery-3.3.1.min.js"></script>-->
+	<script src="js/hammer.js"></script>
+	<script src="js/babylon.custom.js"></script>
+	<script src="js/enTouchControl.js"></script>
+	<script src="js/mainMotor3D.js"></script>
+	<script type="text/javascript" src="js/texturas.json"></script>
+	<script type="text/javascript">
+		$(document).on('ready', function () {
+			$(".center").slick({
+				dots: true,
+				infinite: true,
+				centerMode: true,
+				slidesToShow: 4,
+				slidesToScroll: 1,
+				autoplay: true,
+				autoplaySpeed: 1000,
+
+				responsive: [
+					{
+						breakpoint: 992,
+						settings: {
+							arrows: false,
+							centerMode: true,
+							slidesToShow: 3,
+						}
+					},
+					{
+						breakpoint: 768,
+						settings: {
+							arrows: false,
+							centerMode: false,
+							slidesToShow: 2,
+						}
+					},
+					{
+						breakpoint: 480,
+						settings: {
+							arrows: false,
+							centerMode: true,
+							slidesToShow: 1,
+							itemMargin: 1
+						}
+					}
+				]
+			});
+
+		});
+
+
+	</script>
+
+
+
+
+
+	<script type="text/javascript">
+
+		var showYoko = true;
+		var showPuffino = true;
+		var showKids = true;
+
+		$(document).ready(function () {
+			$("#yokoDiv").hide(500);
+			$("#puffinoDiv").hide(500);
+			$("#kidsDiv").hide(500);
+
+
+
+			$("#yokoShow").click(function () {
+				showYokoDiv();
+			});
+
+			$("#puffinoShow").click(function () {
+				showPuffinoDiv();
+			});
+
+			$("#kidsShow").click(function () {
+				showKidsDiv();
+			});
+
+		});
+
+
+		//Funciones para mostrar u ocultar el div de los productos pertenecientes a una categoría
+		function showYokoDiv() {
+			if (showYoko) {
+				//Verificamos si alguna otra categoría se está mostrando y la ocultamos
+				if (!showPuffino) {
+					$("#puffinoDiv").hide(500);
+					showPuffino = true;
+				}
+
+				if (!showKids) {
+					$("#kidsDiv").hide(500);
+					showKids = true;
+				}
+
+				//Mostramos la categoría de Yoko Modular
+				$("#yokoDiv").show(500);
+				setTimeout(loadYokoSlider, 500);
+				showYoko = false;
+			}
+			else {
+				$("#yokoDiv").hide(500);
+				showYoko = true;
+			}
+		}
+
+		function showPuffinoDiv() {
+			if (showPuffino) {
+				//Verificamos si alguna otra categoría se está mostrando y la ocultamos
+				if (!showYoko) {
+					$("#yokoDiv").hide(500);
+					showYoko = true;
+				}
+
+				if (!showKids) {
+					$("#kidsDiv").hide(500);
+					showKids = true;
+				}
+
+				//Mostramos la categoría de Puffino
+				$("#puffinoDiv").show(500);
+				setTimeout(loadPuffinoSlider, 500);
+				showPuffino = false;
+			}
+			else {
+				$("#puffinoDiv").hide(500);
+				showPuffino = true;
+			}
+		}
+
+		function showKidsDiv() {
+			if (showKids) {
+				//Verificamos si alguna otra categoría se está mostrando y la ocultamos
+				if (!showYoko) {
+					$("#yokoDiv").hide(500);
+					showYoko = true;
+				}
+
+				if (!showPuffino) {
+					$("#puffinoDiv").hide(500);
+					showPuffino = true;
+				}
+
+				//Mostramos la categoría de Puffino
+				$("#kidsDiv").show(500);
+				setTimeout(loadKidsSlider, 500);
+				showKids = false;
+			}
+			else {
+				$("#kidsDiv").hide(500);
+				showKids = true;
+			}
+		}
+
+		//Funciones para cargar la vista del slider de las categorías de productos
+		function loadYokoSlider() {
+			$("#sliderYoko").flexisel({
+				visibleItems: 3,
+				itemsToScroll: 1,
+				autoPlay: {
+					enable: true,
+					interval: 7000,
+					pauseOnHover: true
+				}, responsiveBreakpoints: {
+					portrait: {
+						changePoint: 480,
+						visibleItems: 2,
+						itemsToScroll: 2
+					},
+					landscape: {
+						changePoint: 640,
+						visibleItems: 2,
+						itemsToScroll: 2
+					},
+					tablet: {
+						changePoint: 768,
+						visibleItems: 3,
+						itemsToScroll: 3
+					}
+				}
+			});
+		}
+
+		function loadPuffinoSlider() {
+			$("#sliderPuffino").flexisel({
+				visibleItems: 3,
+				itemsToScroll: 1,
+				autoPlay: {
+					enable: true,
+					interval: 7000,
+					pauseOnHover: true
+				}, responsiveBreakpoints: {
+					portrait: {
+						changePoint: 480,
+						visibleItems: 1,
+						itemsToScroll: 1
+					},
+					landscape: {
+						changePoint: 640,
+						visibleItems: 2,
+						itemsToScroll: 2
+					},
+					tablet: {
+						changePoint: 768,
+						visibleItems: 2,
+						itemsToScroll: 1
+					}
+				}
+			});
+		}
+		function loadKidsSlider() {
+			$("#sliderKids").flexisel({
+				visibleItems: 4,
+				itemsToScroll: 1,
+				autoPlay: {
+					enable: false,
+					interval: 7000,
+					pauseOnHover: true
+				}, responsiveBreakpoints: {
+					portrait: {
+						changePoint: 480,
+						visibleItems: 2,
+						itemsToScroll: 1
+					},
+					landscape: {
+						changePoint: 640,
+						visibleItems: 2,
+						itemsToScroll: 2
+					},
+					tablet: {
+						changePoint: 768,
+						visibleItems: 3,
+						itemsToScroll: 3
+					}
+				}
+			});
+		}
+		function loadSlider() {
+
+		}
+	</script>
+	<script src="https://www.paypalobjects.com/api/checkout.js"></script>
+	<script src="js/pantallaCarga.js"></script>
+	<script src="js/carrito.js"></script>
+	<script type="text/javascript">
+		document.body.style.width = "100%";
+    </script>
+ <script src="js/requestIndex.js"></script>
+
 </body>
 
 </html>
