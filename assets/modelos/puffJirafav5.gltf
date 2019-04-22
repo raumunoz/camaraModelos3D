@@ -1,0 +1,366 @@
+{
+    "asset" : {
+        "generator" : "Khronos Blender glTF 2.0 I/O",
+        "version" : "2.0"
+    },
+    "scene" : 0,
+    "scenes" : [
+        {
+            "name" : "Scene",
+            "nodes" : [
+                0,
+                1
+            ]
+        }
+    ],
+    "nodes" : [
+        {
+            "mesh" : 0,
+            "name" : "cuerpo",
+            "rotation" : [
+                0,
+                -0.9791561365127563,
+                0,
+                0.20310920476913452
+            ],
+            "translation" : [
+                -0.410148024559021,
+                -0.8736963272094727,
+                0.6357779502868652
+            ]
+        },
+        {
+            "mesh" : 1,
+            "name" : "cuernos_orejas",
+            "rotation" : [
+                0,
+                -0.9791561365127563,
+                0,
+                0.20310920476913452
+            ],
+            "translation" : [
+                -0.410148024559021,
+                -0.8736963272094727,
+                0.6357779502868652
+            ]
+        }
+    ],
+    "materials" : [
+        {
+            "name" : "Material",
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 0,
+                    "texCoord" : 0
+                },
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.800000011920929
+            }
+        },
+        {
+            "name" : "orejas_cuernos",
+            "pbrMetallicRoughness" : {
+                "baseColorTexture" : {
+                    "index" : 1,
+                    "texCoord" : 0
+                },
+                "metallicFactor" : 0,
+                "roughnessFactor" : 0.8714286088943481
+            }
+        }
+    ],
+    "meshes" : [
+        {
+            "name" : "Cube.000",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 0,
+                        "NORMAL" : 1,
+                        "TEXCOORD_0" : 2
+                    },
+                    "indices" : 3,
+                    "material" : 0
+                },
+                {
+                    "attributes" : {
+                        "POSITION" : 4,
+                        "NORMAL" : 5,
+                        "TEXCOORD_0" : 6
+                    },
+                    "indices" : 7,
+                    "material" : 0
+                },
+                {
+                    "attributes" : {
+                        "POSITION" : 8,
+                        "NORMAL" : 9,
+                        "TEXCOORD_0" : 10
+                    },
+                    "indices" : 11,
+                    "material" : 0
+                }
+            ]
+        },
+        {
+            "name" : "Cube.004",
+            "primitives" : [
+                {
+                    "attributes" : {
+                        "POSITION" : 12,
+                        "NORMAL" : 13,
+                        "TEXCOORD_0" : 14
+                    },
+                    "indices" : 15,
+                    "material" : 1
+                }
+            ]
+        }
+    ],
+    "textures" : [
+        {
+            "source" : 0
+        },
+        {
+            "source" : 1
+        }
+    ],
+    "images" : [
+        {
+            "mimeType" : "image/png",
+            "name" : "texturaJirafa",
+            "uri" : "texturaJirafa.png"
+        },
+        {
+            "mimeType" : "image/png",
+            "name" : "orejas_cuerons",
+            "uri" : "orejas_cuerons.png"
+        }
+    ],
+    "accessors" : [
+        {
+            "bufferView" : 0,
+            "componentType" : 5126,
+            "count" : 65535,
+            "max" : [
+                1.9251352548599243,
+                2.6383056640625,
+                2.9400062561035156
+            ],
+            "min" : [
+                -2.638235092163086,
+                -1.49664306640625,
+                -1.9531216621398926
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 1,
+            "componentType" : 5126,
+            "count" : 65535,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 2,
+            "componentType" : 5126,
+            "count" : 65535,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 3,
+            "componentType" : 5123,
+            "count" : 269883,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 4,
+            "componentType" : 5126,
+            "count" : 59273,
+            "max" : [
+                1.9044691324234009,
+                2.636168956756592,
+                2.9914395809173584
+            ],
+            "min" : [
+                -2.636286497116089,
+                -1.467306137084961,
+                -1.974711298942566
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 5,
+            "componentType" : 5126,
+            "count" : 59273,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 6,
+            "componentType" : 5126,
+            "count" : 59273,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 7,
+            "componentType" : 5123,
+            "count" : 203550,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 8,
+            "componentType" : 5126,
+            "count" : 14632,
+            "max" : [
+                1.9044691324234009,
+                2.6367335319519043,
+                2.939116954803467
+            ],
+            "min" : [
+                -2.606860399246216,
+                -1.4385986328125,
+                -1.9549891948699951
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 9,
+            "componentType" : 5126,
+            "count" : 14632,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 10,
+            "componentType" : 5126,
+            "count" : 14632,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 11,
+            "componentType" : 5123,
+            "count" : 38691,
+            "type" : "SCALAR"
+        },
+        {
+            "bufferView" : 12,
+            "componentType" : 5126,
+            "count" : 19700,
+            "max" : [
+                1.955216646194458,
+                3.0867087841033936,
+                1.1343052387237549
+            ],
+            "min" : [
+                -2.0061752796173096,
+                1.9007391929626465,
+                0.7894859313964844
+            ],
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 13,
+            "componentType" : 5126,
+            "count" : 19700,
+            "type" : "VEC3"
+        },
+        {
+            "bufferView" : 14,
+            "componentType" : 5126,
+            "count" : 19700,
+            "type" : "VEC2"
+        },
+        {
+            "bufferView" : 15,
+            "componentType" : 5123,
+            "count" : 100038,
+            "type" : "SCALAR"
+        }
+    ],
+    "bufferViews" : [
+        {
+            "buffer" : 0,
+            "byteLength" : 786420,
+            "byteOffset" : 0
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 786420,
+            "byteOffset" : 786420
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 524280,
+            "byteOffset" : 1572840
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 539766,
+            "byteOffset" : 2097120
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 711276,
+            "byteOffset" : 2636888
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 711276,
+            "byteOffset" : 3348164
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 474184,
+            "byteOffset" : 4059440
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 407100,
+            "byteOffset" : 4533624
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 175584,
+            "byteOffset" : 4940724
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 175584,
+            "byteOffset" : 5116308
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 117056,
+            "byteOffset" : 5291892
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 77382,
+            "byteOffset" : 5408948
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 236400,
+            "byteOffset" : 5486332
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 236400,
+            "byteOffset" : 5722732
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 157600,
+            "byteOffset" : 5959132
+        },
+        {
+            "buffer" : 0,
+            "byteLength" : 200076,
+            "byteOffset" : 6116732
+        }
+    ],
+    "buffers" : [
+        {
+            "byteLength" : 6316808,
+            "uri" : "puffJirafav5.bin"
+        }
+    ]
+}

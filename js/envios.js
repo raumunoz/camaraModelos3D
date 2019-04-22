@@ -7,21 +7,87 @@ var inputPais = elementoId("pais-shipping");
 var inputEstado = elementoId("estado-shipping");
 var inputTelefono = elementoId("telefono-shipping");
 var inputEstado = elementoId("estado-shipping");
+var correoValido;
+var direccionValido;
+var ciudadValido;
+var paisValido;
+var codigoValido;
+var apellidosValido;
+var nombreValido;
+var  telefonoValido;
+
+
 (function () {
     'use strict';
     window.addEventListener('load', function () {
         // Fetch all the forms we want to apply custom Bootstrap validation styles to
         //var forms = document.getElementsByClassName('needs-validation');
-        
-        bootstrapValidate('#correo-shipping', 'email|required:Ingresa un correo valido');
-        bootstrapValidate('#direccion-shipping', 'required|required:campo requerido');
-        bootstrapValidate('#ciudad-shipping', 'required|required:campo requerido');
-        bootstrapValidate('#pais-shipping', 'required:tiene que ser correo');
+
+        bootstrapValidate('#correo-shipping', 'email:Ingresa un correo valido', (valido) => {
+            if (valido) {
+                console.log("correo valido");
+                correoValido=valido;
+            } else {
+                console.log("correo no valido");
+            }
+        });
+        bootstrapValidate('#direccion-shipping', 'required:campo requerido', (valido) => {
+            if (valido) {
+                console.log("direccion valido");
+                direccionValido=valido;
+            } else {
+                console.log("direccion no valido");
+            }
+        });
+        bootstrapValidate('#ciudad-shipping', 'required|required:campo requerido', (valido) => {
+            if (valido) {
+                console.log("ciudad valido");
+                ciudadValido=valido;
+            } else {
+                console.log("ciudad no valido");
+            }
+        });
+        bootstrapValidate('#pais-shipping', 'required:tiene que ser correo', (valido) => {
+            if (valido) {
+                console.log("pais valido");
+                paisValido=valido;
+            } else {
+                console.log("pais no valido");
+            }
+        });
         //bootstrapValidate('#estado-shipping', 'email:tiene que ser correo');
-        bootstrapValidate('#codigo-postal-shipping', 'numeric|required:Ingresa solo numeros');
-        bootstrapValidate('#apellidos-shipping', 'required|required:campo requerido');
-        bootstrapValidate('#nombre-shipping', 'required|required:campo requerido');
-        bootstrapValidate('#telefono-shipping', 'numeric|required:Ingresa solo numeros');
+        bootstrapValidate('#codigo-postal-shipping', 'numeric|required:Ingresa solo numeros', (valido) => {
+            if (valido) {
+                console.log("codigo valido");
+                codigoValido=valido;
+            } else {
+                console.log("codigo no valido");
+            }
+        });
+        bootstrapValidate('#apellidos-shipping', 'required|required:campo requerido', (valido) => {
+            if (valido) {
+                console.log("apellidos valido");
+                apellidosValido=valido;
+            } else {
+                console.log("apellidos no valido");
+            }
+        });
+        bootstrapValidate('#nombre-shipping', 'required|required:campo requerido', (valido) => {
+            if (valido) {
+                console.log("correo valido");
+                nombreValido=valido;
+            } else {
+                console.log("correo no valido");
+            }
+        });
+        bootstrapValidate('#telefono-shipping', 'numeric|required:Ingresa solo numeros', (valido) => {
+            if (valido) {
+                console.log("telefono valido");
+                telefonoValido=valido;
+            } else {
+                console.log("telefono no valido");
+            }
+        });
         var forms = document.getElementById("form-envio");
         fetch("js/paisesEstados.json")
             .then(res => res.json())
@@ -30,22 +96,21 @@ var inputEstado = elementoId("estado-shipping");
                 generaOpcPaises();
                 cambioDePais()
             });
-        // Loop over them and prevent submission
-        /*var validation = Array.prototype.filter.call(forms, function (form) {
+        var forms = document.getElementsByClassName('needs-validation');
+        var validation = Array.prototype.filter.call(forms, function (form) {
             form.addEventListener('submit', function (event) {
-                if (form.checkValidity() === false) {
-                    alert("invalido");
-                    //event.preventDefault();
-                    //event.stopPropagation();
-                }else {
-                   // var nombre = "";
+                if (correoValido==true) {
+                    event.preventDefault();
+                    event.stopPropagation();
                     alert("validado");
-                    //event.preventDefault();
-                    //event.stopPropagation();
+                } else {
+                    event.preventDefault();
+                    event.stopPropagation();
+                    alert("invalido");
                 }
                 //form.classList.add('was-validated');
             }, false);
-        });*/
+        });
     }, false);
 })();
 
@@ -219,7 +284,7 @@ function cambiaPantallaResumen() {
     actualizarTablaCarrito();
 }
 
-function toSubmit(e){
+function toSubmit(e) {
     console.log(e);
     /*e.preventDefault();
     e.stopPropagation();*/
