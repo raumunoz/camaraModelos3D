@@ -226,10 +226,17 @@ function actualizarBotonPaypal(total, direccion) {
             // Set up a payment
             payment: function (data, actions) {
                 return actions.payment.create({
+                    payer: {
+                        payment_method: "paypal",
+                        payer_info: {
+                            email: "test@test.com"
+                        }
+                    },
                     transactions: [{
                         amount: {
                             total: total,
                             currency: 'MXN',
+
                             /*details: {
                               subtotal: '30.00',
                               tax: '0.07',
@@ -238,6 +245,7 @@ function actualizarBotonPaypal(total, direccion) {
                               shipping_discount: '-1.00',
                               insurance: '0.01'
                             }*/
+
                         },
                         description: 'transacción de puffino.',
                         custom: '90048630024435',
@@ -267,6 +275,9 @@ function actualizarBotonPaypal(total, direccion) {
                                 postal_code: '95131',
                                 country_code: 'MX'
                             }*/
+                            installment_option: {
+
+                            }
 
                         }
                     }],
@@ -284,7 +295,7 @@ function actualizarBotonPaypal(total, direccion) {
                 });
             }
         }, '#paypal-button');
-    }else{
+    } else {
         paypal.Button.render({
             // Configure environment
             env: 'sandbox',
@@ -311,10 +322,19 @@ function actualizarBotonPaypal(total, direccion) {
             // Set up a payment
             payment: function (data, actions) {
                 return actions.payment.create({
+                    payer: {
+                        payment_method: "paypal",
+                        payer_info: {
+                            email: direccion.correo,
+                            first_name: direccion.nombre,
+                            last_name: direccion.apellidos
+                        }
+                    },
                     transactions: [{
                         amount: {
                             total: total,
                             currency: 'MXN',
+
                             /*details: {
                               subtotal: '30.00',
                               tax: '0.07',
@@ -323,6 +343,8 @@ function actualizarBotonPaypal(total, direccion) {
                               shipping_discount: '-1.00',
                               insurance: '0.01'
                             }*/
+
+
                         },
                         description: 'transacción de puffino.',
                         custom: '90048630024435',
@@ -342,7 +364,7 @@ function actualizarBotonPaypal(total, direccion) {
                               sku: 'product34',
                               currency: 'MXN'
                             }*/
-                            
+
                             shipping_address: {
                                 recipient_name: `${direccion.nombre} ${direccion.apellidos}`,
                                 line1: direccion.direccion,
@@ -350,10 +372,12 @@ function actualizarBotonPaypal(total, direccion) {
                                 city: direccion.ciudad,
                                 state: direccion.estado,
                                 postal_code: direccion.codigoPostal,
-                                country_code: direccion.pais
-                            }
+                                country_code: direccion.pais,
+                                phone: "4921129753",
+                            },
 
-                        }
+
+                        },
                     }],
                     note_to_payer: 'Contactanos si tienes alguna duda sobre tu pedido.',
 
@@ -368,6 +392,7 @@ function actualizarBotonPaypal(total, direccion) {
                     window.alert('Gracias por su compra.');
                 });
             }
+
         }, '#paypal-button');
     }
 }
@@ -467,39 +492,57 @@ function actualizarTablaCarrito(sinBtnPaypal, direccion) {
     }
 }
 function getDescuento() {
-    var descuento = document.getElementById("input-descuento").value;
+    if (sessionStorage.getItem("dsc") == null) {
 
-    // alert(descuento);
-    var url = 'http://protoweb.zacsoft.com/campomarte/service/get/getCodigoPromocion.php';
-    var data = { codigo: descuento };
-    /*
-        fetch(url, {
-            method: 'POST', // or 'PUT'
-            body: descuento, // data can be `string` or {object}!
-            headers: {
-                'Content-Type': 'text/html'
+
+        var descuento = document.getElementById("input-descuento").value;
+
+        // alert(descuento);
+        var url = 'http://protoweb.zacsoft.com/campomarte/service/get/getCodigoPromocion.php';
+        var data = { codigo: descuento };
+        /*
+            fetch(url, {
+                method: 'POST', // or 'PUT'
+                body: descuento, // data can be `string` or {object}!
+                headers: {
+                    'Content-Type': 'text/html'
+                }
+            }).then(res => res.json())
+                .catch(error => console.error('Error:', error))
+                .then(response => console.log('Success:', response));*/
+
+        var parametros = {
+            "codigo": descuento
+        };
+        $.ajax({
+            data: parametros,
+            //url: '../service/update/updatePromociones.php',
+            url: 'http://protoweb.zacsoft.com/campomarte/service/get/getCodigoPromocion.php',
+            type: 'post',
+            beforeSend: function () {
+
+            },
+            success: function (response2) {
+               // console.log("respuesta " + response2);
+                condigoRespuesta = JSON.parse(response2);
+                alert(condigoRespuesta[0].mensaje);
+                if (condigoRespuesta[0].mensaje == "Codigo valido") {
+                    var descuento = 0;
+                    itemsCarrito.forEach((x) => {
+                        descuento = (x.price / 100) * (parseInt(condigoRespuesta[0].valor));
+                        x.price = x.price - descuento;
+
+                    });
+                    actualizarTablaCarrito(true);
+                    actualizarDivCarrito();
+                    getDescuento = function () { };
+                    sessionStorage.setItem("dsc", "usd");
+                }
             }
-        }).then(res => res.json())
-            .catch(error => console.error('Error:', error))
-            .then(response => console.log('Success:', response));*/
-
-    var parametros = {
-        "codigo": descuento
-    };
-    $.ajax({
-        data: parametros,
-        //url: '../service/update/updatePromociones.php',
-        url: 'http://protoweb.zacsoft.com/campomarte/service/get/getCodigoPromocion.php',
-        type: 'post',
-        beforeSend: function () {
-
-        },
-        success: function (response2) {
-            console.log("respuesta " + response2);
-            condigoRespuesta = JSON.parse(response2);
-            alert(condigoRespuesta[0].mensaje);
-        }
-    });
+        });
+    }else{
+        console.log("ya usastes el cupon");
+    }
 }
 
 
