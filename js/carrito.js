@@ -1,5 +1,7 @@
 let debbugCarrito;
 let itemsCarrito = [];
+var condigoRespuesta;
+var shipping = {};
 if (sessionStorage.getItem("carrito") == null) {
 
 } else {
@@ -175,9 +177,9 @@ function actualizarDivCarrito() {
 
     }
 }
-function actualizarBotonPaypal(total) {
+function actualizarBotonPaypal(total, direccion) {
     var itemsApagar = [];
-    console.log("total",total);
+    console.log("total", total);
     var detalles = "";
     document.getElementById("paypal-button-container").innerHTML = "";
     document.getElementById("paypal-button").innerHTML = "";
@@ -195,90 +197,179 @@ function actualizarBotonPaypal(total) {
     });
 
     console.log(itemsApagar);
-    paypal.Button.render({
-        // Configure environment
-        env: 'sandbox',
-        client: {
-            sandbox: 'Ab3CfXg7wt8RiCw6JkaSJ6TNF0SNKfMj9hJ5LiW2LjRGcGtoLKpFn3lGxDRizT5FHXsONUzWVgetL1jN',
-            production: 'demo_production_client_id'
-        },
-        // Customize button (optional)
-        //locale: 'es_XC',
-        style: {
-            size: 'responsive',
-            color: 'gold',
-            shape: 'rect',
-            fundingicons: 'true',
-        },
-        funding: {
-            allowed: [paypal.FUNDING.CARD],
-            disallowed: [paypal.FUNDING.CREDIT]
-        },
+    /*si no tiene direccion */
+    if (typeof direccion === "undefined") {
 
-        // Enable Pay Now checkout flow (optional)
-        commit: true,
+        paypal.Button.render({
+            // Configure environment
+            env: 'sandbox',
+            client: {
+                sandbox: 'Ab3CfXg7wt8RiCw6JkaSJ6TNF0SNKfMj9hJ5LiW2LjRGcGtoLKpFn3lGxDRizT5FHXsONUzWVgetL1jN',
+                production: 'demo_production_client_id'
+            },
+            // Customize button (optional)
+            //locale: 'es_XC',
+            style: {
+                size: 'responsive',
+                color: 'gold',
+                shape: 'rect',
+                fundingicons: 'true',
+            },
+            funding: {
+                allowed: [paypal.FUNDING.CARD],
+                disallowed: [paypal.FUNDING.CREDIT]
+            },
 
-        // Set up a payment
-        payment: function (data, actions) {
-            return actions.payment.create({
-                transactions: [{
-                    amount: {
-                        total: total,
-                        currency: 'MXN',
-                        /*details: {
-                          subtotal: '30.00',
-                          tax: '0.07',
-                          shipping: '0.03',
-                          handling_fee: '1.00',
-                          shipping_discount: '-1.00',
-                          insurance: '0.01'
-                        }*/
-                    },
-                    description: 'The payment transaction description.',
-                    custom: '90048630024435',
-                    //invoice_number: '12345', Insert a unique invoice number
-                    payment_options: {
-                        allowed_payment_method: 'INSTANT_FUNDING_SOURCE'
-                    },
-                    soft_descriptor: 'ECHI5786786',
-                    item_list: {
-                        items: itemsApagar,
-                        /* {
-                          name: 'bolso',
-                          description: 'Black handbag.',
-                          quantity: '1',
-                          price: '15',
-                          tax: '0.02',
-                          sku: 'product34',
-                          currency: 'MXN'
-                        }*/
-                        /*
-                        shipping_address: {
-                            recipient_name: 'John Maverick',
-                            line1: 'Random address 1',
-                            line2: "Unit #34",
-                            city: 'Zacatecas',
-                            state: 'ZAC',
-                            postal_code: '95131',
-                            country_code: 'MX'
-                        }*/
+            // Enable Pay Now checkout flow (optional)
+            commit: true,
 
-                    }
-                }],
-                note_to_payer: 'Contactanos si tienes alguna duda sobre tu pedido.',
+            // Set up a payment
+            payment: function (data, actions) {
+                return actions.payment.create({
+                    transactions: [{
+                        amount: {
+                            total: total,
+                            currency: 'MXN',
+                            /*details: {
+                              subtotal: '30.00',
+                              tax: '0.07',
+                              shipping: '0.03',
+                              handling_fee: '1.00',
+                              shipping_discount: '-1.00',
+                              insurance: '0.01'
+                            }*/
+                        },
+                        description: 'transacción de puffino.',
+                        custom: '90048630024435',
+                        //invoice_number: '12345', Insert a unique invoice number
+                        payment_options: {
+                            allowed_payment_method: 'INSTANT_FUNDING_SOURCE'
+                        },
+                        soft_descriptor: 'ECHI5786786',
+                        item_list: {
+                            items: itemsApagar,
+                            /* {
+                              name: 'bolso',
+                              description: 'Black handbag.',
+                              quantity: '1',
+                              price: '15',
+                              tax: '0.02',
+                              sku: 'product34',
+                              currency: 'MXN'
+                            }*/
+                            /*
+                            shipping_address: {
+                                recipient_name: 'John Maverick',
+                                line1: 'Random address 1',
+                                line2: "Unit #34",
+                                city: 'Zacatecas',
+                                state: 'ZAC',
+                                postal_code: '95131',
+                                country_code: 'MX'
+                            }*/
 
-            });
-        },
-        // Execute the payment
-        onAuthorize: function (data, actions) {
-            return actions.payment.execute().then(function () {
-                // Show a confirmation message to the buyer
-                itemsCarrito = [];
-                actualizarDivCarrito();
-                window.alert('Gracias por su compra.');
-            });
-        }
-    }, '#paypal-button');
+                        }
+                    }],
+                    note_to_payer: 'Contactanos si tienes alguna duda sobre tu pedido.',
+
+                });
+            },
+            // Execute the payment
+            onAuthorize: function (data, actions) {
+                return actions.payment.execute().then(function () {
+                    // Show a confirmation message to the buyer
+                    itemsCarrito = [];
+                    actualizarDivCarrito();
+                    window.alert('Gracias por su compra.');
+                });
+            }
+        }, '#paypal-button');
+    }else{
+        paypal.Button.render({
+            // Configure environment
+            env: 'sandbox',
+            client: {
+                sandbox: 'Ab3CfXg7wt8RiCw6JkaSJ6TNF0SNKfMj9hJ5LiW2LjRGcGtoLKpFn3lGxDRizT5FHXsONUzWVgetL1jN',
+                production: 'demo_production_client_id'
+            },
+            // Customize button (optional)
+            //locale: 'es_XC',
+            style: {
+                size: 'responsive',
+                color: 'gold',
+                shape: 'rect',
+                fundingicons: 'true',
+            },
+            funding: {
+                allowed: [paypal.FUNDING.CARD],
+                disallowed: [paypal.FUNDING.CREDIT]
+            },
+
+            // Enable Pay Now checkout flow (optional)
+            commit: true,
+
+            // Set up a payment
+            payment: function (data, actions) {
+                return actions.payment.create({
+                    transactions: [{
+                        amount: {
+                            total: total,
+                            currency: 'MXN',
+                            /*details: {
+                              subtotal: '30.00',
+                              tax: '0.07',
+                              shipping: '0.03',
+                              handling_fee: '1.00',
+                              shipping_discount: '-1.00',
+                              insurance: '0.01'
+                            }*/
+                        },
+                        description: 'transacción de puffino.',
+                        custom: '90048630024435',
+                        //invoice_number: '12345', Insert a unique invoice number
+                        payment_options: {
+                            allowed_payment_method: 'INSTANT_FUNDING_SOURCE'
+                        },
+                        soft_descriptor: 'ECHI5786786',
+                        item_list: {
+                            items: itemsApagar,
+                            /* {
+                              name: 'bolso',
+                              description: 'Black handbag.',
+                              quantity: '1',
+                              price: '15',
+                              tax: '0.02',
+                              sku: 'product34',
+                              currency: 'MXN'
+                            }*/
+                            
+                            shipping_address: {
+                                recipient_name: `${direccion.nombre} ${direccion.apellidos}`,
+                                line1: direccion.direccion,
+                                line2: "Unit #34",
+                                city: direccion.ciudad,
+                                state: direccion.estado,
+                                postal_code: direccion.codigoPostal,
+                                country_code: direccion.pais
+                            }
+
+                        }
+                    }],
+                    note_to_payer: 'Contactanos si tienes alguna duda sobre tu pedido.',
+
+                });
+            },
+            // Execute the payment
+            onAuthorize: function (data, actions) {
+                return actions.payment.execute().then(function () {
+                    // Show a confirmation message to the buyer
+                    itemsCarrito = [];
+                    actualizarDivCarrito();
+                    window.alert('Gracias por su compra.');
+                });
+            }
+        }, '#paypal-button');
+    }
 }
 function getNombreTextura() {
     var detalles;
@@ -295,7 +386,8 @@ function getNombreTextura() {
         return "Material normal";
     }
 }
-function actualizarTablaCarrito() {
+function actualizarTablaCarrito(sinBtnPaypal, direccion) {
+
     var precioAPagar = 0;
     var renglonesTabla = document.getElementById("tabla-carrito");
     var htmlTabla = "";
@@ -346,8 +438,20 @@ function actualizarTablaCarrito() {
         document.getElementById("total-pagina-cart").innerText = precioAPagar;
         document.getElementById("Subtotal-pagina-cart").innerText = precioAPagar;
         renglonesTabla.innerHTML = htmlTabla;
-        //document.getElementById("num-carrito").innerText = itemsCarrito.length;
-        actualizarBotonPaypal(precioAPagar);
+
+        /*Se pone la direccion si no esta definida al botton de paypal */
+        if (typeof sinBtnPaypal !== "undefined") {
+            if (sinBtnPaypal) {
+
+            } else {
+                if (typeof direccion !== "undefined") {
+                    shipping = direccion;
+                    actualizarBotonPaypal(precioAPagar, direccion);
+                    console.log("Direccion", direccion);
+                }
+            }
+
+        }
         //sessionStorage.setItem("carrito", JSON.stringify(itemsCarrito));
     } else {
         document.getElementById("total-carrito").innerText = 0;
@@ -362,3 +466,40 @@ function actualizarTablaCarrito() {
 
     }
 }
+function getDescuento() {
+    var descuento = document.getElementById("input-descuento").value;
+
+    // alert(descuento);
+    var url = 'http://protoweb.zacsoft.com/campomarte/service/get/getCodigoPromocion.php';
+    var data = { codigo: descuento };
+    /*
+        fetch(url, {
+            method: 'POST', // or 'PUT'
+            body: descuento, // data can be `string` or {object}!
+            headers: {
+                'Content-Type': 'text/html'
+            }
+        }).then(res => res.json())
+            .catch(error => console.error('Error:', error))
+            .then(response => console.log('Success:', response));*/
+
+    var parametros = {
+        "codigo": descuento
+    };
+    $.ajax({
+        data: parametros,
+        //url: '../service/update/updatePromociones.php',
+        url: 'http://protoweb.zacsoft.com/campomarte/service/get/getCodigoPromocion.php',
+        type: 'post',
+        beforeSend: function () {
+
+        },
+        success: function (response2) {
+            console.log("respuesta " + response2);
+            condigoRespuesta = JSON.parse(response2);
+            alert(condigoRespuesta[0].mensaje);
+        }
+    });
+}
+
+

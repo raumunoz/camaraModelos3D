@@ -155,9 +155,9 @@
                 <div class="carrito-footer ">
                     <div class="row">
                         <div class="promo col-12 col-sm-12 col-md-6  col-xs-6"><label for="promo">¿Tienes un cupón de
-                                descuento?</label><input class="input-descuento" type="text" name="promo"
+                                descuento?</label><input id="input-descuento" class="input-descuento" type="text" name="promo"
                                 placholder="Enter Code">
-                            <a href="#" class="btn"></a></div>
+                            <a class="btn" onclick="getDescuento()">Enviar</a></div>
 
                         <div class="totals col-12 col-sm-12 col-md-6 col-xs-6">
                             <div class="totals-item">
@@ -266,8 +266,10 @@
     <script>
         window.onload = function () {
             // Your code here
-            actualizarTablaCarrito();
+            actualizarTablaCarrito(true);
         };
+
+        
 
     </script>
     <script src="https://www.paypalobjects.com/api/checkout.js"></script>

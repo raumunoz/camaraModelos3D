@@ -1,21 +1,23 @@
 var inputEmail = elementoId("correo-shipping");
-var inputNombre = elementoId("nombre-shiping");
-var inputApellidos = elementoId("apellidos-shiping");
+var inputNombre = elementoId("nombre-shipping");
+var inputApellidos = elementoId("apellidos-shipping");
 var inputDireccion = elementoId("direccion-shipping");
 var inputCiudad = elementoId("ciudad-shipping");
 var inputPais = elementoId("pais-shipping");
 var inputEstado = elementoId("estado-shipping");
 var inputTelefono = elementoId("telefono-shipping");
 var inputEstado = elementoId("estado-shipping");
+var inputCodigoPostal = elementoId("codigo-postal-shipping");
 var correoValido;
 var direccionValido;
 var ciudadValido;
 var paisValido;
+var EstadoValido;
 var codigoValido;
 var apellidosValido;
 var nombreValido;
-var  telefonoValido;
-
+var telefonoValido;
+var datosDeEnvio = {};
 
 (function () {
     'use strict';
@@ -26,7 +28,7 @@ var  telefonoValido;
         bootstrapValidate('#correo-shipping', 'email:Ingresa un correo valido', (valido) => {
             if (valido) {
                 console.log("correo valido");
-                correoValido=valido;
+                correoValido = valido;
             } else {
                 console.log("correo no valido");
             }
@@ -34,23 +36,23 @@ var  telefonoValido;
         bootstrapValidate('#direccion-shipping', 'required:campo requerido', (valido) => {
             if (valido) {
                 console.log("direccion valido");
-                direccionValido=valido;
+                direccionValido = valido;
             } else {
                 console.log("direccion no valido");
             }
         });
-        bootstrapValidate('#ciudad-shipping', 'required|required:campo requerido', (valido) => {
+        bootstrapValidate('#ciudad-shipping', 'required:campo requerido', (valido) => {
             if (valido) {
                 console.log("ciudad valido");
-                ciudadValido=valido;
+                ciudadValido = valido;
             } else {
                 console.log("ciudad no valido");
             }
         });
-        bootstrapValidate('#pais-shipping', 'required:tiene que ser correo', (valido) => {
+        bootstrapValidate('#pais-shipping', 'required:Requerido', (valido) => {
             if (valido) {
                 console.log("pais valido");
-                paisValido=valido;
+                paisValido = valido;
             } else {
                 console.log("pais no valido");
             }
@@ -59,7 +61,7 @@ var  telefonoValido;
         bootstrapValidate('#codigo-postal-shipping', 'numeric|required:Ingresa solo numeros', (valido) => {
             if (valido) {
                 console.log("codigo valido");
-                codigoValido=valido;
+                codigoValido = valido;
             } else {
                 console.log("codigo no valido");
             }
@@ -67,23 +69,23 @@ var  telefonoValido;
         bootstrapValidate('#apellidos-shipping', 'required|required:campo requerido', (valido) => {
             if (valido) {
                 console.log("apellidos valido");
-                apellidosValido=valido;
+                apellidosValido = valido;
             } else {
                 console.log("apellidos no valido");
             }
         });
         bootstrapValidate('#nombre-shipping', 'required|required:campo requerido', (valido) => {
             if (valido) {
-                console.log("correo valido");
-                nombreValido=valido;
+                console.log("nombreValido valido");
+                nombreValido = valido;
             } else {
-                console.log("correo no valido");
+                console.log("nombreValido no valido");
             }
         });
-        bootstrapValidate('#telefono-shipping', 'numeric|required:Ingresa solo numeros', (valido) => {
+        bootstrapValidate('#telefono-shipping', 'numeric:Ingresa solo numeros', (valido) => {
             if (valido) {
                 console.log("telefono valido");
-                telefonoValido=valido;
+                telefonoValido = valido;
             } else {
                 console.log("telefono no valido");
             }
@@ -97,12 +99,24 @@ var  telefonoValido;
                 cambioDePais()
             });
         var forms = document.getElementsByClassName('needs-validation');
+        var forma=document.getElementById("forma");
+        forma.reset();
         var validation = Array.prototype.filter.call(forms, function (form) {
             form.addEventListener('submit', function (event) {
-                if (correoValido==true) {
+                if ((correoValido == true) && (direccionValido == true) && (ciudadValido == true) && (apellidosValido == true) && (nombreValido == true)) {
                     event.preventDefault();
                     event.stopPropagation();
-                    alert("validado");
+                    console.log("correoValido", "direccionValido", "ciudadValido", "apellidosValido", "nombreValido");
+                    datosDeEnvio.correo = inputEmail.value;
+                    datosDeEnvio.nombre = inputNombre.value;
+                    datosDeEnvio.apellidos = inputApellidos.value;
+                    datosDeEnvio.direccion = inputDireccion.value;
+                    datosDeEnvio.ciudad = inputCiudad.value;
+                    datosDeEnvio.pais = inputPais.value;
+                    datosDeEnvio.estado = inputEstado.value;
+                    datosDeEnvio.telefono = inputTelefono.value;
+                    datosDeEnvio.codigoPostal=inputCodigoPostal.value;
+                    cambiaPantallaResumen();
                 } else {
                     event.preventDefault();
                     event.stopPropagation();
@@ -125,11 +139,11 @@ function generaOpcPaises() {
     paises.forEach(pais => {
         if (pais.name == "Mexico") {
             opcPaises = opcPaises + `
-            <option value="${pais.name}" selected >${pais.name}</option>
+            <option value="${pais.code2}" selected >${pais.name}</option>
             `;
         } else {
             opcPaises = opcPaises + `
-            <option value="${pais.name}" >${pais.name}</option>
+            <option value="${pais.code2}" >${pais.name}</option>
             `;
         }
 
@@ -173,12 +187,13 @@ function cambiaPantallaResumen() {
         <div class="" style="font-family: 'Roboto';padding: 0;margin: 0;width: 100%; max-width: auto;">
         <div class="card card-body shadow-none info-shipping">Dirección del envio <br>
             <span id="resumen-direccion">
-
-                colonia las palmas numer 345, durango , zacatecas.
+                ${datosDeEnvio.direccion}, ${datosDeEnvio.pais}, ${datosDeEnvio.estado}.
             </span>
             <hr>
-            Correo <br>
-            <span id="resumen-correo">mail@mail.com</span>
+            Contacto <br>
+            <span id="resumen-correo">Nombre: ${datosDeEnvio.nombre}</span>
+            <span id="resumen-correo">Correo: ${datosDeEnvio.correo}</span>
+            <span id="resumen-correo">Teléfono: ${datosDeEnvio.telefono}</span>
         </div>
         <table class="table">
 
@@ -281,13 +296,5 @@ function cambiaPantallaResumen() {
         </div>
     </div>
         `;
-    actualizarTablaCarrito();
-}
-
-function toSubmit(e) {
-    console.log(e);
-    /*e.preventDefault();
-    e.stopPropagation();*/
-    alert("validado");
-    return false;
+    actualizarTablaCarrito(false,datosDeEnvio);
 }
