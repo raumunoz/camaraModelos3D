@@ -283,9 +283,9 @@
                 "grande": "GAMUZA FERRERO.jpg"
             },
             {
-                "chico": "GAMUZA DELFINchico.jpg",
-                "medio": "GAMUZA DELFINmedio.jpg",
-                "grande": "GAMUZA DELFIN.jpg"
+                "chico": "GAMUZA DELFÍNchico.jpg",
+                "medio": "GAMUZA DELFÍNmedio.jpg",
+                "grande": "GAMUZA DELFÍN.jpg"
             }
         ],
         "curri":[
@@ -300,9 +300,9 @@
                 "grande": "CURRI PASTO.jpg"
             },
             {
-                "chico": "CURRI GRIS CLAROchico.jpg",
-                "medio": "CURRI GRIS CLAROmedio.jpg",
-                "grande": "CURRI GRIS CLARO.jpg"
+                "chico": "CURRI DELFÍNchico.jpg",
+                "medio": "CURRI DELFÍNmedio.jpg",
+                "grande": "CURRI DELFÍN.jpg"
             },
             {
                 "chico": "CURRI CAPUCHINOchico.jpg",
@@ -315,9 +315,9 @@
                 "grande": "CURRI ROJO.jpg"
             },
             {
-                "chico": "CURRI MARRONchico.jpg",
-                "medio": "CURRI MARRONmedio.jpg",
-                "grande": "CURRI MARRON.jpg"
+                "chico": "CURRI CANELAchico.jpg",
+                "medio": "CURRI CANELAmedio.jpg",
+                "grande": "CURRI CANELA.jpg"
             },
             {
                 "chico": "CURRI ACEITUNAchico.jpg",
@@ -325,27 +325,27 @@
                 "grande": "CURRI ACEITUNA.jpg"
             },
             {
-                "chico": "CURRI NATURALchico.jpg",
-                "medio": "CURRI NATURALmedio.jpg",
-                "grande": "CURRI NATURAL.jpg"
-            },
-            {
                 "chico": "CURRI CAFÉchico.jpg",
                 "medio": "CURRI CAFÉmedio.jpg",
                 "grande": "CURRI CAFÉ.jpg"
+            },
+            {
+                "chico": "CURRI DELFÍNchico.jpg",
+                "medio": "CURRI DELFÍNmedio.jpg",
+                "grande": "CURRI DELFÍN.jpg"
             }
         ]
         ,
         "gamuzaClon":[
              {
-                "chico": "CURRI MOUSEchico.jpg",
-                "medio": "CURRI MOUSEmedio.jpg",
-                "grande": "CURRI MOUSE.jpg"
+                "chico": "CURRI ARENAchico.jpg",
+                "medio": "CURRI ARENAmedio.jpg",
+                "grande": "CURRI ARENA.jpg"
             },
             {
-                "chico": "CURRI GRIS CLAROchico.jpg",
-                "medio": "CURRI GRIS CLAROmedio.jpg",
-                "grande": "CURRI GRIS CLARO.jpg"
+                "chico": "CURRI DELFÍNchico.jpg",
+                "medio": "CURRI DELFÍNmedio.jpg",
+                "grande": "CURRI DELFÍN.jpg"
             },
             {
                 "chico": "CURRI CAPUCHINOchico.jpg",
@@ -353,19 +353,14 @@
                 "grande": "CURRI CAPUCHINO.jpg"
             },
             {
-                "chico": "CURRI MARRONchico.jpg",
-                "medio": "CURRI MARRONmedio.jpg",
-                "grande": "CURRI MARRON.jpg"
+                "chico": "CURRI CANELAchico.jpg",
+                "medio": "CURRI CANELAmedio.jpg",
+                "grande": "CURRI CANELA.jpg"
             },
             {
-                "chico": "CURRI ACEITUNAchico.jpg",
-                "medio": "CURRI ACEITUNAmedio.jpg",
-                "grande": "CURRI ACEITUNA.jpg"
-            },
-            {
-                "chico": "CURRI NATURALchico.jpg",
-                "medio": "CURRI NATURALmedio.jpg",
-                "grande": "CURRI NATURAL.jpg"
+                "chico": "CURRI CARBÓNchico.jpg",
+                "medio": "CURRI CARBÓNmedio.jpg",
+                "grande": "CURRI CARBÓN.jpg"
             },
             {
                 "chico": "CURRI CAFÉchico.jpg",

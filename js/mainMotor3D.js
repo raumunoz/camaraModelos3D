@@ -2239,10 +2239,11 @@ function cambiarVistaMotor(opc) {
     padres = [];
     switch (opc) {
         case 0:
+            var tabTexturas=document.getElementById("tab-texturas");
             document.getElementById("descripcionMaterial").style.visibility = "visible";
             document.getElementById("iconosPrearmado").style.visibility = "visible";
             document.getElementById("iconosPrearmado").style.visibility = "visible";
-            document.getElementById("grid-texturas").style.visibility = "hidden";
+            document.getElementById("grid-texturas").style.visibility = "visible";
             document.getElementById("iconosTexturas").style.visibility = "visible";
             document.getElementById("btn-agregar-3d-a-carrito").style.visibility = "visible";
             document.getElementById("slct-btn-color").style.display = "none";
@@ -2253,9 +2254,19 @@ function cambiarVistaMotor(opc) {
                 escena.removeMesh(escena.meshes[i]);
             }
             cargarModelo(padreCentro, modeloActual(texturaActual, moduloActual, true));
-
+            tabTexturas.innerHTML=
+            `
+            <li role="presentation">
+            <a id="tab-curri" class="tabLink" href="#tab-id-3" aria-controls="tab-id-3" role="tab"
+                data-toggle="tab">
+                <span>Curri</span>
+            </a>
+        </li>
+            `;
+            document.getElementById("tab-curri").click();
             break;
         case 1:
+        var tabTexturas=document.getElementById("tab-texturas");
             document.getElementById("descripcionMaterial").style.visibility = "visible";
             document.getElementById("iconosPrearmado").style.visibility = "hidden";
             document.getElementById("grid-texturas").style.visibility = "visible";
@@ -2264,6 +2275,28 @@ function cambiarVistaMotor(opc) {
             document.getElementById("slct-btn-preArmado").style.display = "none";
             document.getElementById("slct-btn-modelo").style.display = "none";
             cargarModeloCustom(modelos.puffino[10], undefined);
+            tabTexturas.innerHTML=
+            `
+            <li role="presentation">
+								<a id="tab-lona" class="tabLink" href="#tab-id-0" aria-controls="tab-id-0" role="tab"
+									data-toggle="tab">
+									<span>Lona</span>
+								</a>
+							</li>
+							<li class="active" role="presentation">
+								<a id="tab-gamuza" class="tabLink" href="#tab-id-1" aria-controls="tab-id-1" role="tab"
+									data-toggle="tab">
+									<span>Gamuza</span>
+								</a>
+							</li>
+							<li role="presentation">
+								<a id="tab-tacto-piel" class="tabLink" href="#tab-id-2" aria-controls="tab-id-2" role="tab"
+									data-toggle="tab">
+									<span>Tacto piel</span>
+								</a>
+							</li>
+            `;
+            document.getElementById("tab-lona").click();
             break;
         case 2:
             document.getElementById("descripcionMaterial").style.visibility = "hidden";

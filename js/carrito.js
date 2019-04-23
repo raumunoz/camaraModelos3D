@@ -399,7 +399,7 @@ function actualizarBotonPaypal(total, direccion) {
 function getNombreTextura() {
     var detalles;
     var descripcionTextura = document.getElementById("descripcionMaterial");
-    if (typeof descripcionTextura === "undefined") {
+    if (typeof descripcionTextura !== "undefined") {
 
         if ((descripcionTextura.innerHTML == "Material") || (descripcionTextura.innerHTML == "") || (typeof descripcionTextura.innerHTML === "undefined")) {
             detalles = "Material normal";
@@ -526,6 +526,7 @@ function getDescuento() {
                // console.log("respuesta " + response2);
                 condigoRespuesta = JSON.parse(response2);
                 alert(condigoRespuesta[0].mensaje);
+                console.log(response2);
                 if (condigoRespuesta[0].mensaje == "Codigo valido") {
                     var descuento = 0;
                     itemsCarrito.forEach((x) => {
@@ -535,13 +536,15 @@ function getDescuento() {
                     });
                     actualizarTablaCarrito(true);
                     actualizarDivCarrito();
-                    getDescuento = function () { };
+                    getDescuento = function () { 
+                        alert("ya usaste un cupón");
+                    };
                     sessionStorage.setItem("dsc", "usd");
                 }
             }
         });
     }else{
-        console.log("ya usastes el cupon");
+        alert("ya usaste ese cupón");
     }
 }
 

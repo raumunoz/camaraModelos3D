@@ -358,7 +358,7 @@ font-weight: bold;
 	height:auto;
 }
 .materiales{
-visibility: hidden;		
+visibility: visible;		
 }
 
 @media only screen and (min-width: 1224px) {
