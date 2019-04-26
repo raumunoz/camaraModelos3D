@@ -99,7 +99,7 @@ var datosDeEnvio = {};
                 cambioDePais()
             });
         var forms = document.getElementsByClassName('needs-validation');
-        var forma=document.getElementById("forma");
+        var forma = document.getElementById("forma");
         forma.reset();
         var validation = Array.prototype.filter.call(forms, function (form) {
             form.addEventListener('submit', function (event) {
@@ -115,7 +115,7 @@ var datosDeEnvio = {};
                     datosDeEnvio.pais = inputPais.value;
                     datosDeEnvio.estado = inputEstado.value;
                     datosDeEnvio.telefono = inputTelefono.value;
-                    datosDeEnvio.codigoPostal=inputCodigoPostal.value;
+                    datosDeEnvio.codigoPostal = inputCodigoPostal.value;
                     cambiaPantallaResumen();
                 } else {
                     event.preventDefault();
@@ -282,7 +282,22 @@ function cambiaPantallaResumen() {
                 </div>
 
             </div>
-            <h6 class="selecion-pago">Seleccione una forma de pago:</h6>
+<p>Seleccione una forma de pago:</p>
+<div>
+  <input type="radio" id="huey" name="drone" value="huey"
+         checked>
+  <label for="paypal">paypal</label>
+</div>
+
+<div>
+  <input type="radio" id="dewey" name="drone" value="dewey">
+  <label for="tarjeta">tarjeta de credito</label>
+</div>
+
+<div>
+  <input type="radio" id="louie" name="drone" value="louie">
+  <label for="louie">Louie</label>
+</div>
             <div class="row">
                 <div class="col-0 col-sm-5 col-md-7"></div>
                 <div class="col-12 col-sm-7 col-md-5">
@@ -296,5 +311,5 @@ function cambiaPantallaResumen() {
         </div>
     </div>
         `;
-    actualizarTablaCarrito(false,datosDeEnvio);
+    actualizarTablaCarrito(false, datosDeEnvio);
 }
