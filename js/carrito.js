@@ -399,16 +399,17 @@ function actualizarBotonPaypal(total, direccion) {
 function getNombreTextura() {
     var detalles;
     var descripcionTextura = document.getElementById("descripcionMaterial");
-    if (typeof descripcionTextura !== "undefined") {
-
+    if (descripcionTextura == null) {
+        console.log("A");
+        return "Material normal";
+    } else {
+        console.log("B");
         if ((descripcionTextura.innerHTML == "Material") || (descripcionTextura.innerHTML == "") || (typeof descripcionTextura.innerHTML === "undefined")) {
             detalles = "Material normal";
         } else {
             detalles = descripcionTextura.innerHTML;
         }
         return detalles;
-    } else {
-        return "Material normal";
     }
 }
 function actualizarTablaCarrito(sinBtnPaypal, direccion) {
@@ -532,7 +533,6 @@ function getDescuento() {
                     itemsCarrito.forEach((x) => {
                         descuento = (x.price / 100) * (parseInt(condigoRespuesta[0].valor));
                         x.price = x.price - descuento;
-
                     });
                     actualizarTablaCarrito(true);
                     actualizarDivCarrito();

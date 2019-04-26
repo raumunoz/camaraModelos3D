@@ -360,6 +360,9 @@ font-weight: bold;
 .materiales{
 visibility: visible;		
 }
+.col-md-2.col-4.nav-iconos-catalogo {
+	margin-top: 0;
+}
 
 @media only screen and (min-width: 1224px) {
 	/* Styles */
