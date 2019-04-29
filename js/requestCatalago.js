@@ -358,8 +358,8 @@ function cambiarVistaTexturas(opc) {
 }
 function cambiarTexturaCliente(nombreTextura) {
   var descripcionTextura = document.getElementById("descripcionMaterial");
-  var textura=document.getElementById("img-textura-catalago");
-  textura.src=`assets/texturas/medio/${nombreTextura}`;
+  var textura = document.getElementById("img-textura-catalago");
+  textura.src = `assets/texturas/medio/${nombreTextura}`;
   console.log(nombreTextura);
   descripcionTextura.innerHTML = nombreImagenTextura(nombreTextura);
 }
@@ -372,13 +372,18 @@ function nombreImagenTextura(nombreTextura) {
   transformada[1] = transformada[1].toLowerCase();
   return transformada[0] + " " + transformada[1];
 }
-function opMaterial(opc){
-  var selector=document.getElementById("selector-textura");
+function opMaterial(opc) {
+
+  var selector = document.getElementById("selector-textura");
+  var descripcionMaterial = document.getElementById("descripcionMaterial");
+  var imgaenTextura = document.getElementById("img-textura-catalago");
   switch (opc) {
     case 0:
+      descripcionMaterial.innerHTML = "Material";
+      imgaenTextura.src = "";
       selector.classList.add("esconder");
       break;
-      case 1:
+    case 1:
       selector.classList.remove("esconder");
       break;
     default:

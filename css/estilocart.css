@@ -236,6 +236,13 @@
 }
 
 @media all and (max-width: 575px) {
+    .tablaCarrito{
+        font-size: .6em;
+    }
+    
+    .rng-precio{
+        font-size: 1.4em;
+    }
     #btn-ir-al-shipping {
 
         margin-left: 0;
@@ -269,5 +276,12 @@
     }
     .input-descuento {
         width: 45%;
+    }
+    .total {
+        margin: 0px !important;
+        padding: 0 !important;
+    }
+    .rng-precio {
+        font-size: 1.5em !important;
     }
 }
