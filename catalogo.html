@@ -17,13 +17,11 @@
 	<meta name="twitter:card" content="" />
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<link rel="stylesheet" type="text/css" href="css/nuevoEstilo.css">
+
+	<link rel="stylesheet" href="css/style.css">
 	<script src="js/jquery-2.2.0.min.js">
 	</script>
 	<script src="js/slick.js"></script>
-
-	<script src="js/camara.js"></script>
-	
 	<!--
 				<script src="js/tienda2.js"></script>
 				-->
@@ -50,8 +48,6 @@
 	<link rel="stylesheet" href="css/owl.theme.default.min.css">
 
 	<!-- Theme style  -->
-	<link rel="stylesheet" href="css/style.css">
-
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
 
@@ -62,11 +58,9 @@
 				<![endif]-->
 	<link rel="stylesheet" type="text/css" href="css/slick.css">
 	<link rel="stylesheet" type="text/css" href="css/slick-theme.css">
-
-	<link rel="stylesheet" type="text/css" href="css/estiloMotor3D.css">
 	<script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
 	<link rel="stylesheet" href="css/font.css">
-	<link rel="stylesheet" href="css/main.css">
+
 
 	<style type="text/css">
 		#sliderYoko,
@@ -221,8 +215,9 @@
 		}
 	</style>
 	<link rel="stylesheet" type="text/css" href="css/estiloMotor3D.css">
-	<link rel="stylesheet" href="css/font.css">
+
 	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/catalogo.css">
 </head>
 
 <body>
@@ -316,6 +311,7 @@
 			<h1 class="tituloPagina" style="font-size: 2rem; color:#4E56DF; font-family: 'Roboto';"><strong
 					style="font-family: 'Roboto' !important;">Catálogo</strong></h1>
 		</header>
+
 
 		<div id="fh5co-product" style="font-family: 'Roboto';padding-bottom: 0px; padding-top: 3em;">
 			<div class="container">
@@ -1032,8 +1028,62 @@
 							<h2 style="margin-top: 1em;" id="nombreP"></h2>
 							<h5 id="medidasP"></h5>
 							<p id="descriptionP" style="font-family: 'Roboto';font-size: 0.9em;line-height: 2em;">
-
 							</p>
+							<h4>Material:</h4>
+							<input type="radio" name="tab" value="igotnone" onclick="opMaterial(0)" checked="checked" />
+							Normal
+							<input type="radio" name="tab" value="igottwo" onclick="opMaterial(1)" />
+							personalizado
+							
+							<div class="container esconder" id="selector-textura">
+								<div class="row">
+									<div class="materiales col-md-6 col-6" id="materiales">
+										<h4 id="descripcionMaterial" style="color: #4E56DF;">Material</h4>
+										<div class="grid-texturas" id="grid-texturas">
+											<ul class="nav nav-tabs tabTexturas" role="tablist" id="tab-texturas">
+												<li role="presentation">
+													<a class="tabLink" href="#tab-id-3" aria-controls="tab-id-3"
+														role="tab" data-toggle="tab">
+														<span>Curri</span>
+													</a>
+												</li>
+											</ul>
+											<div class="tab-content">
+												<div class="tab-pane" id="tab-id-0" role="tabpanel">
+													<div class="btn-grid  cont-txturas" id="btn-grid">
+														<input type="image" src="assets/texturas/chico/TP ROJOchico.jpg"
+															class="btn-imagen-grid " />
+													</div>
+												</div>
+												<div class="tab-pane" id="tab-id-1" role="tabpanel">
+													<div class="btn-grid1 cont-txturas-1" id="btn-grid1">
+														<input type="image" src="assets/texturas/chico/TP ROJOchico.jpg"
+															class="btn-imagen-grid" />
+													</div>
+												</div>
+												<div class="tab-pane" id="tab-id-2" role="tabpanel">
+													<div class="btn-grid2 cont-txturas-2" id="btn-grid2">
+														<input type="image" src="assets/texturas/chico/TP ROJOchico.jpg"
+															class="btn-imagen-grid" />
+													</div>
+												</div>
+												<div class="tab-pane active" id="tab-id-3" role="tabpanel">
+													<div class="btn-grid3 cont-txturas-3" id="btn-grid3">
+														<input type="image" src="assets/texturas/chico/TP ROJOchico.jpg"
+															class="btn-imagen-grid" />
+													</div>
+												</div>
+											</div>
+										</div>
+
+									</div>
+									<div class="col-md-6 col-6 img-textura-catalago">
+
+										<img id="img-textura-catalago" 
+											src="" width="100%" height="100%">
+									</div>
+								</div>
+							</div>
 							<h2 style="margin-top: 1.3em;" class="nomProducto" id="precioP"></h2>
 							<button type="button" onclick="" class="btn-agregar " id="btn-agregar blue btn">Añadir al
 								carrito</button>
