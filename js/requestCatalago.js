@@ -52,8 +52,8 @@ function inflarSlider(id, arreglo, encadenar) {
   arreglo.forEach(element => {
     htmlSlider = htmlSlider +
       `
-      <li>
-					<a style="cursor: pointer;" onclick="changeProduct(${parseInt(element.index, 10)})">
+      <li onclick="changeProduct(${parseInt(element.index, 10)})">
+					<a style="cursor: pointer;" >
 						<div class="text-center">
 							<div class="product" style="margin-top: 1em;">
 								<div class="product-grid"
