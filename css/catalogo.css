@@ -36,3 +36,8 @@
   .esconder{
       display: none;
   }
+  .col-md-9.col-xs-10.menu-1 {
+    margin: 0;
+        margin-top: 0px;
+    padding: 0;
+}

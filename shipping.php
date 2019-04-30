@@ -102,19 +102,18 @@
                                         class="logo-puffino"></a></div>
                         </div>
                         <div class="col-md-9 col-xs-10 menu-1" style="margin-top:4%;">
-                            <ul>
-                                <li style="margin-right: 1.1em;"><a href="index.html"
-                                        style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">Inicio</a></li>
-                                <li style="margin-right: 1.1em;"><a href="about.html"
-                                        style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">Nosotros</a></li>
-                                <li style="margin-right: 1.1em;"><a href="catalogo.html"
-                                        style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">Catálogo</a></li>
-                                <li style="margin-right: 1.1em;"><a href="envio.html"
-                                        style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">Envío y
-                                        Devoluciones</a></li>
-                                <li style="margin-right: 1.1em;"><a href="contact.html"
-                                        style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">Contacto</a></li>
-                            </ul>
+                        <ul>
+                          <li style="margin-right: 1.1em;"><a href="index.html"
+                              style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">INICIO.</a></li>
+                          <li style="margin-right: 1.1em;"><a href="about.html"
+                              style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">NOSOTROS.</a></li>
+                          <li style="margin-right: 1.1em;"><a href="catalogo.html"
+                              style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">CATÁLOGO.</a></li>
+                          <li style="margin-right: 1.1em;"><a href="envio.html"
+                              style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">ENVÍO Y DOVOLUCIONES.</a></li>
+                          <li style="margin-right: 1.1em;"><a href="contact.html"
+                              style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">CONTACTO.</a></li>
+                        </ul>
                         </div>
                     </div>
                 </div>
@@ -146,7 +145,7 @@
                     <div class="form-group">
                         <label for="direccion-shipping">Dirección</label>
                         <input type="text" name="direccion"class="form-control" id="direccion-shipping" placeholder="Direción"  >
-                        <input type="text" name="direccion"class="form-control" id="detalles-direccion-shipping" placeholder="calle, numero interior o exterior"  >
+                        <input type="text" name="detalles-direccion"class="form-control" id="detalles-direccion-shipping" placeholder="Número interior, departamento, etc.(opcional)"  >
                     </div>
 
                     <div class="form-group">
@@ -181,9 +180,7 @@
                         </div>
         
                         <input class="btn btn-primary" type="submit" value="Submit">
-                </form>
-                
-            
+                </form>       
 <!--
             <form class="needs-validation" novalidate>
                     <div class="form-row">

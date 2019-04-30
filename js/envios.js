@@ -2,6 +2,7 @@ var inputEmail = elementoId("correo-shipping");
 var inputNombre = elementoId("nombre-shipping");
 var inputApellidos = elementoId("apellidos-shipping");
 var inputDireccion = elementoId("direccion-shipping");
+var inputDetallesDireccion=elementoId("detalles-direccion-shipping");
 var inputCiudad = elementoId("ciudad-shipping");
 var inputPais = elementoId("pais-shipping");
 var inputEstado = elementoId("estado-shipping");
@@ -116,6 +117,7 @@ var datosDeEnvio = {};
                     datosDeEnvio.estado = inputEstado.value;
                     datosDeEnvio.telefono = inputTelefono.value;
                     datosDeEnvio.codigoPostal = inputCodigoPostal.value;
+                    datosDeEnvio.detallesDirecion=inputDetallesDireccion.value;
                     cambiaPantallaResumen();
                 } else {
                     event.preventDefault();
@@ -187,7 +189,7 @@ function cambiaPantallaResumen() {
         <div class="" style="font-family: 'Roboto';padding: 0;margin: 0;width: 100%; max-width: auto;">
         <div class="card card-body shadow-none info-shipping">Dirección del envio <br>
             <span id="resumen-direccion">
-                ${datosDeEnvio.direccion}, ${datosDeEnvio.pais}, ${datosDeEnvio.estado}.
+                ${datosDeEnvio.direccion},${datosDeEnvio.detallesDirecion==""?"" :  datosDeEnvio.detallesDirecion+","} ${datosDeEnvio.pais}, ${datosDeEnvio.estado}.
             </span>
             <hr>
             Contacto <br>

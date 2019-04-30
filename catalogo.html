@@ -285,21 +285,22 @@
 		<nav class="fh5co-nav" role="navigation" style="background-color:#4DD7D3;">
 			<div class="container" style="margin-left:0px;">
 				<div class="row">
-					<div class="col-md-3 col-xs-2">
+					<div class="col-md-3 col-xs-5">
 						<div id="fh5co-logo"><a href="index.html"><img src="images/puff_logo.png"
 									style="max-width:100%; height:auto;"></a></div>
 					</div>
 					<div class="col-md-9 col-xs-10 menu-1" style="margin-top:4%;">
 						<ul>
+							<li style="margin-right: 1.1em;"><a href="index.html"
+									style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">INICIO.</a></li>
 							<li style="margin-right: 1.1em;"><a href="about.html"
-									style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">Nosotros</a></li>
+									style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">NOSOTROS.</a></li>
 							<li style="margin-right: 1.1em;"><a href="catalogo.html"
-									style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">Catálogo</a></li>
+									style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">CATÁLOGO.</a></li>
 							<li style="margin-right: 1.1em;"><a href="envio.html"
-									style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">Envío y
-									Devoluciones</a></li>
+									style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">ENVÍO Y DOVOLUCIONES.</a></li>
 							<li style="margin-right: 1.1em;"><a href="contact.html"
-									style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">Contacto</a></li>
+									style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">CONTACTO.</a></li>
 						</ul>
 					</div>
 				</div>
@@ -364,6 +365,64 @@
 							</a>
 							<div class="desc">
 								<h3><a style="cursor: pointer; ; font-size: 1.1rem;">Puffino Niños</a></h3>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		<div id="showYookoSelecion" style="font-family: 'Roboto';padding-bottom: 0px; padding-top: 3em;">
+			<div class="container">
+				<div class="row">
+					<div class="col-xs-4 col-8 col-sm-2 col-md-4  text-center">
+						<div class="product">
+							<a id="yooko-trendy-show" style="cursor: pointer;">
+								<div class="product-grid"
+									style="background-image:url(images/catalogo/yoko/yooko_trendy.jpg);">
+									<div class="inner">
+										<!--<p>
+										<a id="holiShow" style="cursor: pointer;" class="icon"><i class="icon-eye"></i></a>
+									</p>-->
+									</div>
+								</div>
+							</a>
+							<div class="desc">
+								<h3><a id="" style="cursor: pointer; ; font-size: 1.1rem;">Yooko Trendy</a></h3>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-4 col-8 col-sm-2 col-md-4 text-center">
+						<div class="product">
+							<a id="yooko-casual-show" style="cursor: pointer;">
+								<div class="product-grid"
+								style="background-image:url(images/catalogo/yoko/yooko_casual.jpg);">
+									<div class="inner">
+										<!--<p>
+										<a id="holiShow" style="cursor: pointer;" class="icon"><i class="icon-eye"></i></a>
+									</p>-->
+									</div>
+								</div>
+							</a>
+							<div class="desc">
+								<h3><a style="cursor: pointer; ; font-size: 1.1rem;">Yooko Casual</a></h3>
+							</div>
+						</div>
+					</div>
+					<div class="col-xs-4 col-8 col-sm-2 col-md-4 col-xs-4 text-center">
+						<div class="product">
+							<a id="yooko-contemporaneo-show" style="cursor: pointer;">
+								<div class="product-grid"
+								style="background-image:url(images/catalogo/yoko/yooko_contempo.jpg);">
+									<div class="inner">
+										<!--<p>
+										<a id="holiShow" style="cursor: pointer;" class="icon"><i class="icon-eye"></i></a>
+									</p>-->
+									</div>
+								</div>
+							</a>
+							<div class="desc">
+								<h3><a style="cursor: pointer; ; font-size: 1.1rem;">Yooko contemporaneo</a></h3>
 							</div>
 						</div>
 					</div>
@@ -1192,7 +1251,7 @@
 			$("#yokoDiv").hide(500);
 			$("#puffinoDiv").hide(500);
 			$("#kidsDiv").hide(500);
-
+			$("#showYookoSelecion").hide(500);
 			//Dejar de mostrar el detalle
 			$("#detailP").hide(500);
 
@@ -1206,6 +1265,17 @@
 
 			$("#kidsShow").click(function () {
 				showKidsDiv();
+			});
+			$("#yooko-trendy-show").click(function () {
+				showYookoTrendy();
+			});
+			
+			$("#yooko-casual-show").click(function () {
+				showYookoCasual();
+			});
+			
+			$("#yooko-contemporaneo-show").click(function () {
+				showYookoContempo();
 			});
 
 		});
@@ -1226,12 +1296,15 @@
 				}
 
 				//Mostramos la categoría de Yoko Modular
-				$("#yokoDiv").show(250);
-				setTimeout(loadYokoSlider, 500);
+				//showYookoSelecion
+				//$("#yokoDiv").show(250);
+				$("#showYookoSelecion").show(250);
+				//setTimeout(loadYokoSlider, 500);
 				showYoko = false;
 			}
 			else {
-				$("#yokoDiv").hide(500);
+				//$("#yokoDiv").hide(500);
+				$("#showYookoSelecion").hide(500);
 				showYoko = true;
 			}
 		}
@@ -1240,7 +1313,8 @@
 			if (showPuffino) {
 				//Verificamos si alguna otra categoría se está mostrando y la ocultamos
 				if (!showYoko) {
-					$("#yokoDiv").hide(500);
+					//$("#yokoDiv").hide(500);
+					$("#showYookoSelecion").hide(500);
 					showYoko = true;
 				}
 
@@ -1264,7 +1338,8 @@
 			if (showKids) {
 				//Verificamos si alguna otra categoría se está mostrando y la ocultamos
 				if (!showYoko) {
-					$("#yokoDiv").hide(500);
+					//$("#yokoDiv").hide(500);
+					$("#showYookoSelecion").hide(500);
 					showYoko = true;
 				}
 
@@ -1284,6 +1359,88 @@
 			}
 		}
 
+		function showYookoTrendy(){
+			alert("tredny");
+			if (showYoko) {
+				//Verificamos si alguna otra categoría se está mostrando y la ocultamos
+				if (!showPuffino) {
+					$("#puffinoDiv").hide(500);
+					showPuffino = true;
+				}
+
+				if (!showKids) {
+					$("#kidsDiv").hide(500);
+					showKids = true;
+				}
+				inflarSliderTrendy();
+				//Mostramos la categoría de Yoko Modular
+				$("#yokoDiv").show(250);
+
+				//setTimeout(loadYokoSlider, 500);
+				showYoko = false;
+			}
+			else {
+				$("#yokoDiv").hide(500);
+				
+				
+				
+				showYoko = true;
+			}
+		}
+		function showYookoCasual(){
+			if (showYoko) {
+				//Verificamos si alguna otra categoría se está mostrando y la ocultamos
+				if (!showPuffino) {
+					$("#puffinoDiv").hide(500);
+					showPuffino = true;
+				}
+
+				if (!showKids) {
+					$("#kidsDiv").hide(500);
+					showKids = true;
+				}
+				inflarSliderCasual();
+				//Mostramos la categoría de Yoko Modular
+				$("#yokoDiv").show(250);
+
+				//setTimeout(loadYokoSlider, 500);
+				showYoko = false;
+			}
+			else {
+				$("#yokoDiv").hide(500);
+				
+				
+				
+				showYoko = true;
+			}
+		}
+		function showYookoContempo(){
+			if (showYoko) {
+				//Verificamos si alguna otra categoría se está mostrando y la ocultamos
+				if (!showPuffino) {
+					$("#puffinoDiv").hide(500);
+					showPuffino = true;
+				}
+
+				if (!showKids) {
+					$("#kidsDiv").hide(500);
+					showKids = true;
+				}
+				inflarSliderContempo();
+				//Mostramos la categoría de Yoko Modular
+				$("#yokoDiv").show(250);
+
+				//setTimeout(loadYokoSlider, 500);
+				showYoko = false;
+			}
+			else {
+				$("#yokoDiv").hide(500);
+				
+				
+				
+				showYoko = true;
+			}
+		}
 		//Funciones para cargar la vista del slider de las categorías de productos
 		function loadYokoSlider() {
 			$("#sliderYoko").flexisel({
@@ -1372,7 +1529,6 @@
 				}
 			});
 		}
-
 		function loadDetailSlider() {
 			$("#sliderDetail").flexisel({
 				visibleItems: 1,

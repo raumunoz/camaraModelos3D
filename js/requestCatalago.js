@@ -94,6 +94,45 @@ function inflarSliderYooko() {
   yookoHtml = yookoHtml + inflarSlider("sliderYoko", esquinas, true);
   document.getElementById("sliderYoko").innerHTML = yookoHtml;
 }
+function inflarSliderContempo() {
+  var arreglo=[];
+  var tabureteContempo;
+  var esquinaContempo;
+  var brazoContempo;
+  taburetes.forEach((x) => { if(x.apodo.includes("Contempo")){tabureteContempo=x;arreglo.push(tabureteContempo);} });
+  brazos.forEach((x) => { if(x.apodo.includes("Contempo")){brazoContempo=x;arreglo.push(brazoContempo);} });
+  esquinas.forEach((x) => { if(x.apodo.includes("Contempo")){esquinaContempo=x;arreglo.push(esquinaContempo);} });
+
+  var yookoHtml = "";
+  yookoHtml = inflarSlider("sliderYoko", arreglo, true);
+  document.getElementById("sliderYoko").innerHTML = yookoHtml;
+}
+function inflarSliderCasual() {
+  var arreglo=[];
+  var tabureteCasual;
+  var esquinaCasual;
+  var brazoCasual;
+  taburetes.forEach((x) => { if(x.apodo.includes("Casual")){tabureteCasual=x;arreglo.push(tabureteCasual);} });
+  brazos.forEach((x) => { if(x.apodo.includes("Casual")){brazoCasual=x;arreglo.push(brazoCasual);} });
+  esquinas.forEach((x) => { if(x.apodo.includes("Casual")){esquinaCasual=x;arreglo.push(esquinaCasual);} });
+
+  var yookoHtml = "";
+  yookoHtml = inflarSlider("sliderYoko", arreglo, true);
+  document.getElementById("sliderYoko").innerHTML = yookoHtml;
+}
+function inflarSliderTrendy() {
+  var arreglo=[];
+  var tabureteTrendy;
+  var esquinaTrendy;
+  var brazoTrendy;
+  taburetes.forEach((x) => { if(x.apodo.includes("Trendy")){tabureteTrendy=x;arreglo.push(tabureteTrendy);} });
+  brazos.forEach((x) => { if(x.apodo.includes("Trendy")){brazoTrendy=x;arreglo.push(brazoTrendy);} });
+  esquinas.forEach((x) => { if(x.apodo.includes("Trendy")){esquinaTrendy=x;arreglo.push(esquinaTrendy);} });
+
+  var yookoHtml = "";
+  yookoHtml = inflarSlider("sliderYoko", arreglo, true);
+  document.getElementById("sliderYoko").innerHTML = yookoHtml;
+}
 
 function mostrarDetalles(val) {
   console.log("pantalla dettalsses");
@@ -391,3 +430,6 @@ function opMaterial(opc) {
   }
 
 }
+//taburetes.find((x)=>{x.apodo.includes("Taburete")})
+//taburetes.forEach((x)=>{console.log(x.apodo.includes("Trendy"))});
+//taburetes.forEach((x) => { if(x.apodo.includes("Trendy")){tabureteTrendy=x} });
