@@ -128,7 +128,7 @@ function actualizarDivCarrito() {
                         </div>
                         <div class="col-xs-2 col-2 col-sm-2 rng-desc-carrito ">`+ x.name + `
                         </div>
-                        <div class="col-xs-2 col-5 col-sm-2 rng-desc-carrito ">`+ x.details + `
+                        <div class="col-xs-2 col-3 col-sm-2 rng-desc-carrito ">`+ x.details + `
                         </div>
                         <div class="col-xs-3 col-3 rng-div-precio">
                             <span class="rng-precio">

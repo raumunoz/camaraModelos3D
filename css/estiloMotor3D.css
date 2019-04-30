@@ -139,8 +139,11 @@ font-weight: bold;
 .rng-total-titulo {
 	text-align: left;
 	color: #B0B0B0;
+	margin-right: 2%;
 }
-
+#btn-agregar-ir-al-carrito {
+	margin-left: 13%;
+}
 .total-carrito {
 	text-align: center;
 }
@@ -934,11 +937,12 @@ div .materiales {
 	}
 	.rng-desc-carrito {
 		padding-top: 4%;
+		font-size: .6em !important;
 	}
 	.rng-div-precio{
 		margin: 0;
-
-padding: 0;
+		font-size: .6em !important;
+		padding: 0;
 	}
 	.rng-precio{
 		padding: 0;

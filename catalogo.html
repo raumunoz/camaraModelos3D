@@ -231,12 +231,12 @@
 	</div>
 -->
 	<div class="row div-nav" style="background-color:#fA675b;">
-		<div class="col-md-9 col-8" style="text-align: right; margin-top: 0.3em;margin-bottom: 0.3em; padding-top: 0;">
+		<div class="col-md-9 col-xs-7" style="text-align: right; margin-top: 0.3em;margin-bottom: 0.3em; padding-top: 0;">
 			<span style="font-size:13px; color:#FFF; font-family: 'Montserrat', Arial, sans-serif;">Servicio al cliente
 				Teléfono:
 				477 854 11 12&nbsp;&nbsp;</span>
 		</div>
-		<div class="col-md-2 col-4 nav-iconos-catalogo" style="text-align: right;">
+		<div class="col-md-2 col-xs-5 nav-iconos-catalogo" style="text-align: right;margin: 0;">
 			<a href="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2F1962138827348733&amp;tabs=messages&amp;width=302&amp;height=300&amp;small_header=true&amp;adapt_container_width=true&amp;hide_cover=true&amp;show_facepile=false&amp;appId"
 				target="_blank"><img src="images/messeng.png" style="max-width: 1.8em; padding-right:5px"></a>
 
@@ -268,8 +268,8 @@
 			</div>
 
 			<div class="row rng-total total-desactivo" id="rng-total">
-				<div class="col-xs-6 rng-total-titulo">Total</div>
-				<div class="col-xs-6">$<span id="total-carrito">0</span></div>
+				<div class="col-xs-3 rng-total-titulo">Total</div>
+				<div class="col-xs-3">$<span id="total-carrito">0</span></div>
 				<!--<div class="col-6"><button class="rng-btn-total btn btn-primary blue" onclick="">continuar</button></div>-->
 				<!--
 					<div id="paypal-button-container"></div>
@@ -317,7 +317,7 @@
 		<div id="fh5co-product" style="font-family: 'Roboto';padding-bottom: 0px; padding-top: 3em;">
 			<div class="container">
 				<div class="row">
-					<div class="col-xs-4 col-8 col-sm-2 col-md-4  text-center">
+					<div class="col-xs-12 col-8 col-sm-2 col-md-4  text-center">
 						<div class="product">
 							<a id="yokoShow" style="cursor: pointer;">
 								<div class="product-grid"
@@ -334,7 +334,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-xs-4 col-8 col-sm-2 col-md-4 text-center">
+					<div class="col-xs-12 col-8 col-sm-2 col-md-4 text-center">
 						<div class="product">
 							<a id="puffinoShow" style="cursor: pointer;">
 								<div class="product-grid"
@@ -351,7 +351,7 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-xs-4 col-8 col-sm-2 col-md-4 col-xs-4 text-center">
+					<div class="col-xs-12 col-8 col-sm-2 col-md-4 col-xs-4 text-center">
 						<div class="product">
 							<a id="kidsShow" style="cursor: pointer;">
 								<div class="product-grid"
@@ -1243,6 +1243,7 @@
 	<script type="text/javascript">
 
 		var showYoko = true;
+		var showYokoDetalles = true;
 		var showPuffino = true;
 		var showKids = true;
 
@@ -1294,7 +1295,10 @@
 					$("#kidsDiv").hide(500);
 					showKids = true;
 				}
-
+				if(!showYokoDetalles){
+					$("#yokoDiv").hide(250);
+					showYokoDetalles=true;
+				}
 				//Mostramos la categoría de Yoko Modular
 				//showYookoSelecion
 				//$("#yokoDiv").show(250);
@@ -1322,6 +1326,10 @@
 					$("#kidsDiv").hide(500);
 					showKids = true;
 				}
+				if(!showYokoDetalles){
+					$("#yokoDiv").hide(250);
+					showYokoDetalles=true;
+				}
 
 				//Mostramos la categoría de Puffino
 				$("#puffinoDiv").show(250);
@@ -1347,7 +1355,10 @@
 					$("#puffinoDiv").hide(500);
 					showPuffino = true;
 				}
-
+				if(!showYokoDetalles){
+					$("#yokoDiv").hide(250);
+					showYokoDetalles=true;
+				}
 				//Mostramos la categoría de Puffino
 				$("#kidsDiv").show(250);
 				setTimeout(loadKidsSlider, 500);
@@ -1360,7 +1371,7 @@
 		}
 
 		function showYookoTrendy(){
-			alert("tredny");
+		
 			if (showYoko) {
 				//Verificamos si alguna otra categoría se está mostrando y la ocultamos
 				if (!showPuffino) {
@@ -1373,18 +1384,12 @@
 					showKids = true;
 				}
 				inflarSliderTrendy();
-				//Mostramos la categoría de Yoko Modular
 				$("#yokoDiv").show(250);
-
-				//setTimeout(loadYokoSlider, 500);
-				showYoko = false;
+				showYokoDetalles=false;
 			}
 			else {
 				$("#yokoDiv").hide(500);
-				
-				
-				
-				showYoko = true;
+				showYokoDetalles=false;
 			}
 		}
 		function showYookoCasual(){
@@ -1402,16 +1407,11 @@
 				inflarSliderCasual();
 				//Mostramos la categoría de Yoko Modular
 				$("#yokoDiv").show(250);
-
-				//setTimeout(loadYokoSlider, 500);
-				showYoko = false;
+				showYokoDetalles=false;
 			}
 			else {
 				$("#yokoDiv").hide(500);
-				
-				
-				
-				showYoko = true;
+				showYokoDetalles=false;
 			}
 		}
 		function showYookoContempo(){
@@ -1429,16 +1429,11 @@
 				inflarSliderContempo();
 				//Mostramos la categoría de Yoko Modular
 				$("#yokoDiv").show(250);
-
-				//setTimeout(loadYokoSlider, 500);
-				showYoko = false;
+				showYokoDetalles=false;
 			}
 			else {
 				$("#yokoDiv").hide(500);
-				
-				
-				
-				showYoko = true;
+				showYokoDetalles=false;
 			}
 		}
 		//Funciones para cargar la vista del slider de las categorías de productos
@@ -1513,7 +1508,7 @@
 				}, responsiveBreakpoints: {
 					portrait: {
 						changePoint: 480,
-						visibleItems: 2,
+						visibleItems: 1,
 						itemsToScroll: 1
 					},
 					landscape: {
