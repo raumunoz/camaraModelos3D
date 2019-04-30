@@ -33,11 +33,6 @@
     <meta name="twitter:card" content="" />
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-    <script src="js/jquery-2.2.0.min.js"></script>
-
-
-
     <link href="https://fonts.googleapis.com/css?family=Roboto|Montserrat:400,700|Playfair+Display:400,400i"
         rel="stylesheet">
     <!-- Animate.css -->
@@ -50,11 +45,8 @@
 
     <!-- Theme style  -->
     <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/estilocart.css">
+
     <!-- Modernizr JS -->
-    <script src="js/modernizr-2.6.2.min.js"></script>
-
-
     <!-- FOR IE9 below -->
     <!--[if lt IE 9]>
 				<script src="js/respond.min.js"></script>
@@ -86,53 +78,47 @@
     </div>
 
     <div id="page">
-        <div class="carrito" id="carrito">
-            <div id="row-productos">
-                Todavía no agregas nada.
-            </div>
-
-            <div class="row rng-total total-desactivo" id="rng-total">
-                <div class="col-xs-6 rng-total-titulo">Total</div>
-                <div class="col-xs-6">$<span id="total-carrito">0</span></div>
-                <!--<div class="col-6"><button class="rng-btn-total btn btn-primary blue" onclick="">continuar</button></div>-->
-                <!--
-                        <div id="paypal-button-container"></div>
-                        <div id="paypal-button"></div>
-                        -->
-                <button type="button" class="btn btn-success btn-agregar-3d-a-carrito" id="btn-agregar-ir-al-carrito"
-                    onclick="location.href = 'cart.html';">Ir al carrito</button>
-            </div>
+    <div class="carrito" id="carrito">
+                <div id="row-productos">
+                    Todavía no agregas nada.
+                </div>
+    
+                <div class="row rng-total total-desactivo" id="rng-total">
+                    <div class="col-xs-6 rng-total-titulo">Total</div>
+                    <div class="col-xs-6">$<span id="total-carrito">0</span></div>
+                    <!--<div class="col-6"><button class="rng-btn-total btn btn-primary blue" onclick="">continuar</button></div>-->
+                    <!--
+                    <div id="paypal-button-container"></div>
+                    <div id="paypal-button"></div>
+                    -->
+                    <button type="button" class="btn btn-success btn-agregar-ir-al-carrito" id="btn-agregar-ir-al-carrito" onclick="location.href = 'cart.html';">IR AL CARRITO</button>
+                </div>
         </div>
         <nav class="fh5co-nav" role="navigation" style="background-color:#4DD7D3;">
-            <div class="container" style="margin-left:0px;">
-                <div class="row">
-                    <div class="col-md-3 col-xs-2">
-                        <div id="fh5co-logo"><a href="index.html"><img src="images/puff_logo.png"
-                                    style="max-width:100%; height:auto;"></a></div>
-                    </div>
-                    <div class="col-md-9 col-xs-10 menu-1" style="margin-top:4%;">
-                        <ul>
-                            <li style="margin-right: 1.1em;"><a href="about.html"
-                                    style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">NOSOTROS</a></li>
-                            <li style="margin-right: 1.1em;"><a href="catalogo.html"
-                                    style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">Catálogo</a></li>
-                            <li style="margin-right: 1.1em;"><a href="envio.html"
-                                    style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">Envío y
-                                    Devoluciones</a></li>
-                            <li style="margin-right: 1.1em;"><a href="contact.html"
-                                    style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">Contacto</a></li>
-                        </ul>
+                <div class="container" style="margin-left:0px;">
+                    <div class="row">
+                        <div class="col-md-3 col-xs-2">
+                            <div id="fh5co-logo"><a href="index.html"><img src="images/puff_logo.png"
+                                        class="logo-puffino"></a></div>
+                        </div>
+                        <div class="col-md-9 col-xs-10 menu-1" style="margin-top:4%;">
+                            <ul>
+                                <li style="margin-right: 1.1em;"><a href="index.html"
+                                        style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">Inicio</a></li>
+                                <li style="margin-right: 1.1em;"><a href="about.html"
+                                        style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">Nosotros</a></li>
+                                <li style="margin-right: 1.1em;"><a href="catalogo.html"
+                                        style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">Catálogo</a></li>
+                                <li style="margin-right: 1.1em;"><a href="envio.html"
+                                        style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">Envío y
+                                        Devoluciones</a></li>
+                                <li style="margin-right: 1.1em;"><a href="contact.html"
+                                        style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">Contacto</a></li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
-
-            </div>
         </nav>
-        <!--
-        <header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" style="height: 10%;">
-            <h1 class="tituloPagina" style="font-size: 2rem; color:#4E56DF; font-family: 'Roboto';">
-                <strong>Carrito</strong></h1>
-        </header>
--->
         <div id="contenido-cambiar" style="padding-top: 4em;">
 
             <div class="container">
@@ -159,7 +145,8 @@
                     </div>
                     <div class="form-group">
                         <label for="direccion-shipping">Dirección</label>
-                        <input type="text" name="direccion"class="form-control" id="direccion-shipping" placeholder="Dirección"  >
+                        <input type="text" name="direccion"class="form-control" id="direccion-shipping" placeholder="Direción"  >
+                        <input type="text" name="direccion"class="form-control" id="detalles-direccion-shipping" placeholder="calle, numero interior o exterior"  >
                     </div>
 
                     <div class="form-group">
@@ -362,8 +349,14 @@
     <!-- Bootstrap -->
     <script src="js/bootstrap.min.js"></script>
     <!-- Waypoints -->
-    <script src="js/jquery.flexslider-min.js"></script>
+    <script src="js/jquery.waypoints.min.js"></script>
+    <!-- Carousel -->
+    <script src="js/owl.carousel.min.js"></script>
+
+    <!-- Flexslider -->
+	<script src="js/jquery.flexslider-min.js"></script>
     <!-- Main -->
+    <script src="js/main.js"></script>
     <script
         src="https://www.paypal.com/sdk/js?client-id=Ab3CfXg7wt8RiCw6JkaSJ6TNF0SNKfMj9hJ5LiW2LjRGcGtoLKpFn3lGxDRizT5FHXsONUzWVgetL1jN&currency=MXN"></script>
 
@@ -372,8 +365,7 @@
     <script src="https://www.paypalobjects.com/api/checkout.js"></script>
     <script>
             // Example starter JavaScript for disabling form submissions if there are invalid fields
-            
-            </script>
+    </script>
 </body>
 
 </html>
