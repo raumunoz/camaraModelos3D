@@ -95,43 +95,43 @@ function inflarSliderYooko() {
   document.getElementById("sliderYoko").innerHTML = yookoHtml;
 }
 function inflarSliderContempo() {
-  var arreglo=[];
+  var arreglo = [];
   var tabureteContempo;
   var esquinaContempo;
   var brazoContempo;
-  taburetes.forEach((x) => { if(x.apodo.includes("Contempo")){tabureteContempo=x;arreglo.push(tabureteContempo);} });
-  brazos.forEach((x) => { if(x.apodo.includes("Contempo")){brazoContempo=x;arreglo.push(brazoContempo);} });
-  esquinas.forEach((x) => { if(x.apodo.includes("Contempo")){esquinaContempo=x;arreglo.push(esquinaContempo);} });
+  taburetes.forEach((x) => { if (x.apodo.includes("Contempo")) { tabureteContempo = x; arreglo.push(tabureteContempo); } });
+  brazos.forEach((x) => { if (x.apodo.includes("Contempo")) { brazoContempo = x; arreglo.push(brazoContempo); } });
+  esquinas.forEach((x) => { if (x.apodo.includes("Contempo")) { esquinaContempo = x; arreglo.push(esquinaContempo); } });
 
   var yookoHtml = "";
-  yookoHtml = inflarSlider("sliderYoko", arreglo, true);
-  document.getElementById("sliderYoko").innerHTML = yookoHtml;
+  yookoHtml = inflarSlider("sliderTipoYoko", arreglo, true);
+  document.getElementById("sliderTipoYoko").innerHTML = yookoHtml;
 }
 function inflarSliderCasual() {
-  var arreglo=[];
+  var arreglo = [];
   var tabureteCasual;
   var esquinaCasual;
   var brazoCasual;
-  taburetes.forEach((x) => { if(x.apodo.includes("Casual")){tabureteCasual=x;arreglo.push(tabureteCasual);} });
-  brazos.forEach((x) => { if(x.apodo.includes("Casual")){brazoCasual=x;arreglo.push(brazoCasual);} });
-  esquinas.forEach((x) => { if(x.apodo.includes("Casual")){esquinaCasual=x;arreglo.push(esquinaCasual);} });
+  taburetes.forEach((x) => { if (x.apodo.includes("Casual")) { tabureteCasual = x; arreglo.push(tabureteCasual); } });
+  brazos.forEach((x) => { if (x.apodo.includes("Casual")) { brazoCasual = x; arreglo.push(brazoCasual); } });
+  esquinas.forEach((x) => { if (x.apodo.includes("Casual")) { esquinaCasual = x; arreglo.push(esquinaCasual); } });
 
   var yookoHtml = "";
-  yookoHtml = inflarSlider("sliderYoko", arreglo, true);
-  document.getElementById("sliderYoko").innerHTML = yookoHtml;
+  yookoHtml = inflarSlider("sliderTipoYoko", arreglo, true);
+  document.getElementById("sliderTipoYoko").innerHTML = yookoHtml;
 }
 function inflarSliderTrendy() {
-  var arreglo=[];
+  var arreglo = [];
   var tabureteTrendy;
   var esquinaTrendy;
   var brazoTrendy;
-  taburetes.forEach((x) => { if(x.apodo.includes("Trendy")){tabureteTrendy=x;arreglo.push(tabureteTrendy);} });
-  brazos.forEach((x) => { if(x.apodo.includes("Trendy")){brazoTrendy=x;arreglo.push(brazoTrendy);} });
-  esquinas.forEach((x) => { if(x.apodo.includes("Trendy")){esquinaTrendy=x;arreglo.push(esquinaTrendy);} });
+  taburetes.forEach((x) => { if (x.apodo.includes("Trendy")) { tabureteTrendy = x; arreglo.push(tabureteTrendy); } });
+  brazos.forEach((x) => { if (x.apodo.includes("Trendy")) { brazoTrendy = x; arreglo.push(brazoTrendy); } });
+  esquinas.forEach((x) => { if (x.apodo.includes("Trendy")) { esquinaTrendy = x; arreglo.push(esquinaTrendy); } });
 
   var yookoHtml = "";
-  yookoHtml = inflarSlider("sliderYoko", arreglo, true);
-  document.getElementById("sliderYoko").innerHTML = yookoHtml;
+  yookoHtml = inflarSlider("sliderTipoYoko", arreglo, true);
+  document.getElementById("sliderTipoYoko").innerHTML = yookoHtml;
 }
 
 function mostrarDetalles(val) {
@@ -310,7 +310,6 @@ function cargarJsonTexturas() {
     generarBotonesTextura();
   });
 }
-
 function generarBotonesTextura() {
   var bandera = false;
   var gridTexturas = document.getElementById("btn-grid");
@@ -350,7 +349,6 @@ function generarBotonesTextura() {
   gridTexturas2.innerHTML = texturasHTML2;
   gridTexturas3.innerHTML = texturasHTML3;
 }
-
 function generarBotonImagen(srcImagenChico, srcImagenMedio) {
   var btnImagen = `<input type="image" src="assets/texturas/chico/` + srcImagenChico + `" class="btn-imagen-grid" id="` + srcImagenMedio + `"  onclick="cambiarTexturaCliente('` + srcImagenMedio + `');"/>`;
   return btnImagen;
@@ -396,9 +394,11 @@ function cambiarVistaTexturas(opc) {
   }
 }
 function cambiarTexturaCliente(nombreTextura) {
+
   var descripcionTextura = document.getElementById("descripcionMaterial");
-  var textura = document.getElementById("img-textura-catalago");
-  textura.src = `assets/texturas/medio/${nombreTextura}`;
+  var divTextura = document.getElementById("div-textura-catalago");
+  //textura.src = `assets/texturas/medio/${nombreTextura}`;
+  divTextura.innerHTML = `<img id="img-textura-catalago" src="assets/texturas/medio/${nombreTextura}" width="100%" height="100%">`;
   console.log(nombreTextura);
   descripcionTextura.innerHTML = nombreImagenTextura(nombreTextura);
 }
@@ -415,11 +415,12 @@ function opMaterial(opc) {
 
   var selector = document.getElementById("selector-textura");
   var descripcionMaterial = document.getElementById("descripcionMaterial");
-  var imgaenTextura = document.getElementById("img-textura-catalago");
+ // var imgaenTextura = document.getElementById("img-textura-catalago");
+  var divMateria= document.getElementById("div-textura-catalago")
   switch (opc) {
     case 0:
       descripcionMaterial.innerHTML = "Material";
-      imgaenTextura.src = "";
+      divMateria.innerHTML="";
       selector.classList.add("esconder");
       break;
     case 1:
@@ -429,6 +430,62 @@ function opMaterial(opc) {
       break;
   }
 
+}
+function mostrarRadioMateriales(opc) {
+  var radio = document.getElementById("radio-material");
+  if (!opc) {
+    radio.innerHTML = "";
+  } else {
+    radio.innerHTML = `<h4>Material:</h4>
+    <input type="radio" name="tab" value="igotnone" onclick="opMaterial(0)"
+      checked="checked" />
+    Normal
+    <input type="radio" name="tab" value="igottwo" onclick="opMaterial(1)" />
+    personalizado`;
+  }
+}
+function cambiarTabTexturas(opc) {
+  var tabTexturas = document.getElementById("tab-texturas");
+  switch (opc) {
+    case 0:
+      tabTexturas.innerHTML =
+        `
+            <li role="presentation">
+            <a id="tab-curri" class="tabLink" href="#tab-id-3" aria-controls="tab-id-3" role="tab"
+                data-toggle="tab">
+                <span>Curri</span>
+            </a>
+        </li>
+            `;
+      document.getElementById("tab-curri").click();
+      break;
+    case 1:
+      tabTexturas.innerHTML =
+        `
+    <li role="presentation">
+        <a id="tab-lona" class="tabLink" href="#tab-id-0" aria-controls="tab-id-0" role="tab"
+          data-toggle="tab">
+          <span>Lona</span>
+        </a>
+      </li>
+      <li class="active" role="presentation">
+        <a id="tab-gamuza" class="tabLink" href="#tab-id-1" aria-controls="tab-id-1" role="tab"
+          data-toggle="tab">
+          <span>Gamuza</span>
+        </a>
+      </li>
+      <li role="presentation">
+        <a id="tab-tacto-piel" class="tabLink" href="#tab-id-2" aria-controls="tab-id-2" role="tab"
+          data-toggle="tab">
+          <span>Tacto piel</span>
+        </a>
+      </li>
+    `;
+      document.getElementById("tab-lona").click();
+      break;
+    default:
+      break;
+  }
 }
 //taburetes.find((x)=>{x.apodo.includes("Taburete")})
 //taburetes.forEach((x)=>{console.log(x.apodo.includes("Trendy"))});
