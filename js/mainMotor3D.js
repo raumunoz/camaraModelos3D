@@ -50,19 +50,19 @@ let customMesh = true;
 
 let modelos = {
     taburetes: [
-        { apodo: "Yooko Contempo Taburete", nombre: "tabureteContempo.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 7099, imagenes: [{ imagen: "images/catalogo/yoko/yookocontempo_taburete.jpg" }] },
-        { apodo: "Yooko Casual Taburete", nombre: "tabureteCasual.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 7099, imagenes: [{ imagen: "images/catalogo/yoko/yookocasual_taburete.jpg" }] },
-        { apodo: "Yooko Trendy Taburete", nombre: "tabureteTrendy.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 7099, imagenes: [{ imagen: "images/catalogo/yoko/yookotrendy_taburete.jpg" }] }
+        { apodo: "Yooko Contempo Taburete", nombre: "tabureteContempo.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 777, imagenes: [{ imagen: "images/catalogo/yoko/yookocontempo_taburete.jpg" }] },
+        { apodo: "Yooko Casual Taburete", nombre: "tabureteCasual.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio:777 , imagenes: [{ imagen: "images/catalogo/yoko/yookocasual_taburete.jpg" }] },
+        { apodo: "Yooko Trendy Taburete", nombre: "tabureteTrendy.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 777, imagenes: [{ imagen: "images/catalogo/yoko/yookotrendy_taburete.jpg" }] }
     ],
     brazos: [
         { apodo: "Yooko Contempo Silla", nombre: "BrazoContempo.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 8599, imagenes: [{ imagen: "images/catalogo/yoko/yookocontempo_silla.jpg" }] },
-        { apodo: "Yooko Casual Silla", nombre: "brazoCasual.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 8599, imagenes: [{ imagen: "images/catalogo/yoko/yookocasual_silla.jpg" }] },
-        { apodo: "Yooko Trendy Silla", nombre: "brazoTrendy.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 8599, imagenes: [{ imagen: "images/catalogo/yoko/yookotrendy_silla.jpg" }] }
+        /*{ apodo: "Yooko Casual Silla", nombre: "brazoCasual.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 8599, imagenes: [{ imagen: "images/catalogo/yoko/yookocasual_silla.jpg" }] },
+        { apodo: "Yooko Trendy Silla", nombre: "brazoTrendy.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 8599, imagenes: [{ imagen: "images/catalogo/yoko/yookotrendy_silla.jpg" }] }*/
     ],
     esquinas: [
         { apodo: "Yooko Contempo Esquinero", nombre: "esquinaContempo.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 8799, imagenes: [{ imagen: "images/catalogo/yoko/yookocontempo_esquinero.jpg" }] },
-        { apodo: "Yooko Casual Esquinero", nombre: "esquinaCasual.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 8799, imagenes: [{ imagen: "images/catalogo/yoko/yookocasual_esquinero.jpg" }] },
-        { apodo: "Yooko Trendy Esquinero", nombre: "esquinaTrendy.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 8799, imagenes: [{ imagen: "images/catalogo/yoko/yookotrendy_esquinero.jpg" }] }
+        /*{ apodo: "Yooko Casual Esquinero", nombre: "esquinaCasual.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 8799, imagenes: [{ imagen: "images/catalogo/yoko/yookocasual_esquinero.jpg" }] },
+        { apodo: "Yooko Trendy Esquinero", nombre: "esquinaTrendy.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 8799, imagenes: [{ imagen: "images/catalogo/yoko/yookotrendy_esquinero.jpg" }] }*/
     ],
     completos: [
         { apodo: "", nombre: "completoContempo.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000, imagenes: [{ imagen: "" }] },
@@ -71,7 +71,7 @@ let modelos = {
     ],
     puffino: [
         { apodo: "Yumil", nombre: "Atlixco.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 2499, imagenes: [{ imagen: "images/productos/puffino/atlixco.jpg" }] },
-        { apodo: "Yumil Mediano", nombre: "Atlixco_chico.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 2499, imagenes: [{ imagen: "images/productos/puffino/atlixco_chico.jpg" }] },
+        /*{ apodo: "Yumil Mediano", nombre: "Atlixco_chico.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 2499, imagenes: [{ imagen: "images/productos/puffino/atlixco_chico.jpg" }] },
         { apodo: "Yeeb", nombre: "Bernal.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 2999, imagenes: [{ imagen: "images/productos/puffino/bernal.jpg" }] },
         { apodo: "Kauil", nombre: "conzumel.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 4999, imagenes: [{ imagen: "images/productos/puffino/cozumel.jpg" }] },
         { apodo: "Kauil Taburete", nombre: "Taburete_conzumel.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 2999, imagenes: [{ imagen: "images/productos/puffino/cozumel_taburete.jpg" }] },
@@ -94,15 +94,15 @@ let modelos = {
         { apodo: "Kimbo Chico", nombre: "ZacatecasChico.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 2399, imagenes: [{ imagen: "images/productos/puffino/zacatecas_chico.jpg" }] },
         { apodo: "Kimbo Grande", nombre: "Zacatecas_grande.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3199, imagenes: [{ imagen: "images/productos/puffino/zacatecas_grande.jpg" }] },
         { apodo: "Kimbo Mediano", nombre: "zacatecas_mediano.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 2699, imagenes: [{ imagen: "images/productos/puffino/zacatecas_mediano.jpg" }] },
-        { apodo: "Kuk", nombre: "zacatlán.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3399, imagenes: [{ imagen: "images/productos/puffino/zacatlan.jpg" }] }
+        { apodo: "Kuk", nombre: "zacatlán.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3399, imagenes: [{ imagen: "images/productos/puffino/zacatlan.jpg" }] }*/
     ],
     kids: [
         { apodo: "CONEJO", nombre: "puff_conejo .gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3499, imagenes: [{ imagen: "images/productos/kids/kids_conejo.jpg" }] },
-        { apodo: "DINOSAURIO", nombre: "puff_dinosaurio.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3699, imagenes: [{ imagen: "images/productos/kids/kids_dinosaurio.jpg" }] },
+        /*{ apodo: "DINOSAURIO", nombre: "puff_dinosaurio.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3699, imagenes: [{ imagen: "images/productos/kids/kids_dinosaurio.jpg" }] },
         { apodo: "DONA", nombre: "dona.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3399, imagenes: [{ imagen: "images/productos/kids/kids_dona.jpg" }] },
         { apodo: "JIRAFA", nombre: "puff_jirafa.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3799, imagenes: [{ imagen: "images/productos/kids/kids_jirafa.jpg" }] },
         { apodo: "PERRITO", nombre: "puffPerro.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3699, imagenes: [{ imagen: "images/productos/kids/kids_perrito.jpg" }] },
-        { apodo: "UNICORNIO", nombre: "unicornio.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3499, imagenes: [{ imagen: "images/productos/kids/kids_unicornio.jpg" }] },
+        { apodo: "UNICORNIO", nombre: "unicornio.gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3499, imagenes: [{ imagen: "images/productos/kids/kids_unicornio.jpg" }] },*/
     ],
     yokoModular: [
         { apodo: "", nombre: "puff_conejo .gltf", dimensiones: { largo: 1.5, ancho: 1, alto: 1 }, precio: 3000 },
@@ -209,6 +209,7 @@ let padres = [];
 let numPadre = 0;
 let mainCustomMesh;
 window.addEventListener('DOMContentLoaded', function () {
+    
     gridContainer = document.getElementById("grid-container");
     /*var currentPosition = { x: 0, y: 0 };
     var currentRotation = { x: 0, y: 0 };
@@ -598,7 +599,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
     //cargarModelo(padreCentro, modelos.puffs[0].nombre);
     pantallaCarga();
-    cargarModelo(padreCentro, modeloActual(texturaActual, moduloActual, true));
+    
     /*
         padreCentro.addBehavior(pointerDragBehavior);
         activarRotacion();*/
@@ -1086,7 +1087,10 @@ function activarBotonesAplicar(bool) {
 }
 function esconderMesh(mesh, bool) {
     // console.log("el mesh es", mesh);
-    mesh.isVisible = !bool;
+    if (typeof mesh !== 'undefined') {
+        mesh.isVisible = !bool;
+    }
+    
 }
 function resaltarMueble(padreActual, bool) {
     //console.log("padre actual", padreActual.name)
@@ -2235,7 +2239,9 @@ function cambiarGrid(opc) {
 }
 
 function cambiarVistaMotor(opc) {
-    aplicar();
+   if(typeof btnDerecho !== 'undefined'){
+        aplicar();
+    } 
     padres = [];
     switch (opc) {
         case 0:

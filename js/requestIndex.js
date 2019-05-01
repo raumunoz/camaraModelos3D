@@ -36,9 +36,19 @@ function requestModulosJSON(url) {
       inflarPuffinoIndex();
       inflarKidsIndex();
       inflarYookoIndex();
-    }).catch(function () {
+      
+    }).then(function(){
+      modelos.taburetes=actulizarArregloLocal(taburetes);
+      modelos.brazos=actulizarArregloLocal(brazos);
+      modelos.esquinas=actulizarArregloLocal(esquinas);
+      modelos.puffino=actulizarArregloLocal(puffino);
+      modelos.kids=actulizarArregloLocal(kids);
+      //cargarModelo(padreCentro, modeloActual(texturaActual, moduloActual, true));
+      cambiarVistaMotor(1);
+      document.getElementById("btn-agregar-3d-a-carrito").style.visibility="visible"
+    }).catch(function (error) {
       /*si hay errores hacer esto */
-      console.log("error");
+      console.log("error",error);
     });
 
 }
@@ -102,7 +112,7 @@ function inflarPuffinoIndex() {
   </li>
     `;
   for (let i = 0; i < puffino.length; i++) {
-    
+
     htmlSliderPuffino = htmlSliderPuffino +
       `
       <li>
@@ -241,7 +251,7 @@ function inflarYookoIndex() {
       class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
   </li>
     `;
-     var liTaburetes =
+  var liTaburetes =
     `
   <li>
     <a style="cursor: pointer;" onclick="cambioModulo(1,true)">
@@ -262,7 +272,7 @@ function inflarYookoIndex() {
       class="btn-agregar " id="btn-agregar blue btn">Añadir al carrito</button>
   </li>
     `;
-    var liEsquinas =
+  var liEsquinas =
     `
   <li>
     <a style="cursor: pointer;" onclick="cambioModulo(2,true)">
@@ -352,5 +362,30 @@ function inflarYookoIndex() {
     </li>
       `;
   }
-  sliderYooko.innerHTML=htmlSliderEsquinas+htmlSliderTaburetes+htmlSliderBrazos;
+  sliderYooko.innerHTML = htmlSliderEsquinas + htmlSliderTaburetes + htmlSliderBrazos;
+}
+function actulizarArregloLocal(arryNew) {
+  var arryLocal = [];
+  var dimensiones = {};
+  var precio;
+  var data = {};
+  for (let index = 0; index < arryNew.length; index++) {
+    dimensiones.largo = parseFloat(arryNew[index].dimensiones[0].largo);
+    dimensiones.ancho = parseFloat(arryNew[index].dimensiones[0].ancho);
+    dimensiones.alto = parseFloat(arryNew[index].dimensiones[0].alto);
+    precio = parseFloat(arryNew[index].precio);
+
+    data = {
+      "apodo": arryNew[index].apodo,
+      "nombre": arryNew[index].nombre,
+      "dimensiones": dimensiones,
+      "precio": precio,
+      "imagenes": arryNew[index].imagenes,
+      "index": arryNew[index].index,
+      "descripcion": arryNew[index].descripcion,
+    }
+
+    arryLocal.push(data);
+  }
+  return arryLocal;
 }

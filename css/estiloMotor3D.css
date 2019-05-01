@@ -156,9 +156,11 @@ font-weight: bold;
 	height: 60%;
 }
 .btn-agregar-3d-a-carrito{
-	visibility: visible;
+	visibility: hidden;
 }
-
+#iconosTexturas {
+	visibility: hidden;
+}
 .btn-agregar-ir-al-carrito{
 	visibility: hidden;
 }
