@@ -156,12 +156,12 @@ function mostrarDetalles(val) {
     if (brazoMatch.imagenes.length > 1) {
       var imgenesHtml = "";
       brazoMatch.imagenes.forEach((imagen) => {
-        imgenesHtml = imgenesHtml + `<li><img style="max-width: 80%; margin-bottom: 0px;" src="${imagen.imagen}"></li>`
+        imgenesHtml = imgenesHtml + `<li class="li-slider-detalles"><img class="img-slider-detalles" style="max-width: 80%; margin-bottom: 0px;" src="${imagen.imagen}"></li>`
       })
       document.getElementById('sliderDetail').innerHTML = imgenesHtml;
     } else {
       document.getElementById('sliderDetail').innerHTML = ''
-        + `<li><img style="max-width: 80%; margin-bottom: 0px;" src="${brazoMatch.imagenes[0].imagen}"></li>`;
+        + `<li class="li-slider-detalles"><img class="img-slider-detalles" style="max-width: 80%; margin-bottom: 0px;" src="${brazoMatch.imagenes[0].imagen}"></li>`;
     }
     setTimeout(loadDetailSlider, 500);
 
@@ -184,12 +184,12 @@ function mostrarDetalles(val) {
     if (esquinaMatch.imagenes.length > 1) {
       var imgenesHtml = "";
       esquinaMatch.imagenes.forEach((imagen) => {
-        imgenesHtml = imgenesHtml + `<li><img style="max-width: 80%; margin-bottom: 0px;" src="${imagen.imagen}"></li>`
+        imgenesHtml = imgenesHtml + `<li class="li-slider-detalles"><img class="img-slider-detalles" style="max-width: 80%; margin-bottom: 0px;" src="${imagen.imagen}"></li>`
       })
       document.getElementById('sliderDetail').innerHTML = imgenesHtml;
     } else {
       document.getElementById('sliderDetail').innerHTML = ''
-        + `<li><img style="max-width: 80%; margin-bottom: 0px;" src="${esquinaMatch.imagenes[0].imagen}"></li>`;
+        + `<li class="li-slider-detalles"><img class="img-slider-detalles" style="max-width: 80%; margin-bottom: 0px;" src="${esquinaMatch.imagenes[0].imagen}"></li>`;
     }
     setTimeout(loadDetailSlider, 500);
 
@@ -212,12 +212,12 @@ function mostrarDetalles(val) {
     if (tabureteMatch.imagenes.length > 1) {
       var imgenesHtml = "";
       tabureteMatch.imagenes.forEach((imagen) => {
-        imgenesHtml = imgenesHtml + `<li><img style="max-width: 80%; margin-bottom: 0px;" src="${imagen.imagen}"></li>`
+        imgenesHtml = imgenesHtml + `<li class="li-slider-detalles"><img class="img-slider-detalles" style="max-width: 80%; margin-bottom: 0px;" src="${imagen.imagen}"></li>`
       })
       document.getElementById('sliderDetail').innerHTML = imgenesHtml;
     } else {
       document.getElementById('sliderDetail').innerHTML = ''
-        + `<li><img style="max-width: 80%; margin-bottom: 0px;" src="${tabureteMatch.imagenes[0].imagen}"></li>`;
+        + `<li class="li-slider-detalles"><img class="img-slider-detalles" style="max-width: 80%; margin-bottom: 0px;" src="${tabureteMatch.imagenes[0].imagen}"></li>`;
     }
     setTimeout(loadDetailSlider, 500);
 
@@ -240,12 +240,12 @@ function mostrarDetalles(val) {
     if (kidMatch.imagenes.length > 1) {
       var imgenesHtml = "";
       kidMatch.imagenes.forEach((imagen) => {
-        imgenesHtml = imgenesHtml + `<li><img style="max-width: 80%; margin-bottom: 0px;" src="${imagen.imagen}"></li>`
+        imgenesHtml = imgenesHtml + `<li class="li-slider-detalles"><img class="img-slider-detalles" style="max-width: 80%; margin-bottom: 0px;" src="${imagen.imagen}"></li>`
       })
       document.getElementById('sliderDetail').innerHTML = imgenesHtml;
     } else {
       document.getElementById('sliderDetail').innerHTML = ''
-        + `<li><img style="max-width: 80%; margin-bottom: 0px;" src="${kidMatch.imagenes[0].imagen}"></li>`;
+        + `<li class="li-slider-detalles"><img class="img-slider-detalles" style="max-width: 80%; margin-bottom: 0px;" src="${kidMatch.imagenes[0].imagen}"></li>`;
     }
     setTimeout(loadDetailSlider, 500);
 
@@ -268,12 +268,12 @@ function mostrarDetalles(val) {
     if (puffinoMatch.imagenes.length > 1) {
       var imgenesHtml = "";
       puffinoMatch.imagenes.forEach((imagen) => {
-        imgenesHtml = imgenesHtml + `<li><img style="max-width: 80%; margin-bottom: 0px;" src="${imagen.imagen}"></li>`
+        imgenesHtml = imgenesHtml + `<li class="li-slider-detalles"><img class="img-slider-detalles" style="max-width: 80%; margin-bottom: 0px;" src="${imagen.imagen}"></li>`
       })
       document.getElementById('sliderDetail').innerHTML = imgenesHtml;
     } else {
       document.getElementById('sliderDetail').innerHTML = ''
-        + `<li><img style="max-width: 80%; margin-bottom: 0px;" src="${puffinoMatch.imagenes[0].imagen}"></li>`;
+        + `<li class="li-slider-detalles"><img class="img-slider-detalles" style="max-width: 80%; margin-bottom: 0px;" src="${puffinoMatch.imagenes[0].imagen}"></li>`;
     }
 
     setTimeout(loadDetailSlider, 500);

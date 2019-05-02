@@ -13,6 +13,7 @@ function mostrarCarro() {
 
     document.getElementById("carrito").classList.toggle("carrito-activo");
     document.getElementById("rng-total").classList.toggle("total-desactivo");
+    document.getElementById("btn-agregar-ir-al-carrito").classList.toggle("total-desactivo");
     if (itemsCarrito.length <= 0) {
         document.getElementById("btn-agregar-ir-al-carrito").style.visibility = "hidden";
     }
@@ -128,7 +129,7 @@ function actualizarDivCarrito() {
                         </div>
                         <div class="col-xs-2 col-2 col-sm-2 rng-desc-carrito ">`+ x.name + `
                         </div>
-                        <div class="col-xs-2 col-3 col-sm-2 rng-desc-carrito ">`+ x.details + `
+                        <div class="col-xs-2 col-3 col-sm-2 rng-desc-carrito rng-desc-material ">`+ x.details + `
                         </div>
                         <div class="col-xs-3 col-3 rng-div-precio">
                             <span class="rng-precio">
