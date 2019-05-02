@@ -65,6 +65,7 @@
 	<link rel="stylesheet" type="text/css" href="css/slick-theme.css">
 
 	<link rel="stylesheet" type="text/css" href="css/estiloMotor3D.css">
+	<link rel="stylesheet" type="text/css" href="css/estiloIndex.css">
 
 	<link rel="stylesheet" href="css/font.css">
 	<link rel="stylesheet" href="css/main.css">
@@ -408,7 +409,7 @@
 							<a id="yokoShow" style="cursor: pointer;" onclick="">
 								<div class="product-grid"
 									style="background-image:url(images/catalogo/yoko/yookocasual_silla.jpg);"
-									onclick="cambiarVistaMotor(0)">
+									onclick="mostrarSubmenu()">
 									<div class="inner">
 										<!--<p>
 											<a id="holiShow" style="cursor: pointer;" class="icon"><i class="icon-eye"></i></a>
@@ -462,6 +463,69 @@
 						</div>
 					</div>
 				</div>
+
+				<div id="showYookoSelecion" class="sub-menu-desactivo" style="font-family: 'Roboto';padding-bottom: 0px; padding-top: 3em;">
+					<div class="contenedor">
+						<div class="grid-yooko-sub">
+		
+							<div class="text-center slct-contempo" id="slct-contempo" onclick="cambioSubMenu(0)">
+								<div class="product" onclick="cambiarVistaMotor(0)">
+									<a id="yooko-contemporaneo-show" style="cursor: pointer;">
+										<div class="product-grid"
+											style="background-image:url(images/catalogo/yoko/yooko_contempo.jpg);">
+											<div class="inner">
+												<!--<p>
+														<a id="holiShow" style="cursor: pointer;" class="icon"><i class="icon-eye"></i></a>
+													</p>-->
+											</div>
+										</div>
+									</a>
+									<div class="desc">
+										<h3><a style="cursor: pointer; ; font-size: 1.1rem;">contemporaneo</a></h3>
+									</div>
+								</div>
+							</div>
+		
+							<div class="text-center slct-trendy" id="slct-trendy" onclick="cambioSubMenu(1)">
+								<div class="product">
+									<a id="yooko-trendy-show" style="cursor: pointer;">
+										<div class="product-grid"
+											style="background-image:url(images/catalogo/yoko/yooko_trendy.jpg);">
+											<div class="inner">
+												<!--<p>
+												<a id="holiShow" style="cursor: pointer;" class="icon"><i class="icon-eye"></i></a>
+											</p>-->
+											</div>
+										</div>
+									</a>
+									<div class="desc">
+										<h3><a id="" style="cursor: pointer; ; font-size: 1.1rem;">Yooko Trendy</a></h3>
+									</div>
+								</div>
+							</div>
+		
+							<div class=" text-center slct-casual" id="slct-casual" onclick="cambioSubMenu(2)">
+								<div class="product">
+									<a id="yooko-casual-show" style="cursor: pointer;">
+										<div class="product-grid"
+											style="background-image:url(images/catalogo/yoko/yooko_casual.jpg);">
+											<div class="inner">
+												<!--<p>
+												<a id="holiShow" style="cursor: pointer;" class="icon"><i class="icon-eye"></i></a>
+											</p>-->
+											</div>
+										</div>
+									</a>
+									<div class="desc">
+										<h3><a style="cursor: pointer; ; font-size: 1.1rem;">Yooko Casual</a></h3>
+									</div>
+								</div>
+							</div>
+		
+						</div>
+					</div>
+				</div>
+
 				<div id="slidersModelosPadre">
 
 					<!-- SLIDER DE MODELOS YOKO MODULAR -->
@@ -1365,10 +1429,11 @@
 			$("#kidsDiv").hide(500);
 
 
-
+			/*
 			$("#yokoShow").click(function () {
 				showYokoDiv();
 			});
+			*/
 
 			$("#puffinoShow").click(function () {
 				showPuffinoDiv();

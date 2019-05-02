@@ -36,19 +36,19 @@ function requestModulosJSON(url) {
       inflarPuffinoIndex();
       inflarKidsIndex();
       inflarYookoIndex();
-      
-    }).then(function(){
-      modelos.taburetes=actulizarArregloLocal(taburetes);
-      modelos.brazos=actulizarArregloLocal(brazos);
-      modelos.esquinas=actulizarArregloLocal(esquinas);
-      modelos.puffino=actulizarArregloLocal(puffino);
-      modelos.kids=actulizarArregloLocal(kids);
+
+    }).then(function () {
+      modelos.taburetes = actulizarArregloLocal(taburetes);
+      modelos.brazos = actulizarArregloLocal(brazos);
+      modelos.esquinas = actulizarArregloLocal(esquinas);
+      modelos.puffino = actulizarArregloLocal(puffino);
+      modelos.kids = actulizarArregloLocal(kids);
       //cargarModelo(padreCentro, modeloActual(texturaActual, moduloActual, true));
       cambiarVistaMotor(1);
-      document.getElementById("btn-agregar-3d-a-carrito").style.visibility="visible"
+      document.getElementById("btn-agregar-3d-a-carrito").style.visibility = "visible"
     }).catch(function (error) {
       /*si hay errores hacer esto */
-      console.log("error",error);
+      console.log("error", error);
     });
 
 }
@@ -388,4 +388,94 @@ function actulizarArregloLocal(arryNew) {
     arryLocal.push(data);
   }
   return arryLocal;
+}
+function mostrarSubmenu() {
+  document.getElementById("showYookoSelecion").classList.toggle("sub-menu-desactivo");
+}
+function cambioSubMenu(opc) {
+  switch (opc) {
+    case 0:
+    showYokoDiv();
+      break;
+    case 1:
+    showYokoDiv();
+      break;
+    case 2:
+    showYokoDiv();
+      break;
+    default:
+      break;
+  }
+}
+function inflarSlider(id, arreglo, encadenar) {
+  var slider = document.getElementById(id);
+  var htmlSlider = '';
+  arreglo.forEach(element => {
+    htmlSlider = htmlSlider +
+      `
+      <li onclick="changeProduct(${parseInt(element.index, 10)})">
+					<a style="cursor: pointer;" >
+						<div class="text-center">
+							<div class="product" style="margin-top: 1em;">
+								<div class="product-grid"
+									style="background-image:url(${element.imagenes[0].imagen}); margin: 0 auto;">
+								</div>
+								<div class="desc" style="margin-top: 1em;">
+									<h3><a class="nomProducto">${element.apodo}</a></h3>
+									<span class="priceProducto">$${parseInt(element.precio, 10)}</span>
+								</div>
+							</div>
+						</div>
+					</a>
+				</li>
+    `;
+  });
+  if (typeof encadenar !== "undefined") {
+    if (encadenar) {
+      return htmlSlider;
+    } else {
+      slider.innerHTML = htmlSlider;
+    }
+  }
+
+
+}
+function inflarSliderContempo() {
+  var arreglo = [];
+  var tabureteContempo;
+  var esquinaContempo;
+  var brazoContempo;
+  taburetes.forEach((x) => { if (x.apodo.includes("Contempo")) { tabureteContempo = x; arreglo.push(tabureteContempo); } });
+  brazos.forEach((x) => { if (x.apodo.includes("Contempo")) { brazoContempo = x; arreglo.push(brazoContempo); } });
+  esquinas.forEach((x) => { if (x.apodo.includes("Contempo")) { esquinaContempo = x; arreglo.push(esquinaContempo); } });
+
+  var yookoHtml = "";
+  yookoHtml = inflarSlider("sliderYoko", arreglo, true);
+  document.getElementById("sliderYoko").innerHTML = yookoHtml;
+}
+function inflarSliderCasual() {
+  var arreglo = [];
+  var tabureteCasual;
+  var esquinaCasual;
+  var brazoCasual;
+  taburetes.forEach((x) => { if (x.apodo.includes("Casual")) { tabureteCasual = x; arreglo.push(tabureteCasual); } });
+  brazos.forEach((x) => { if (x.apodo.includes("Casual")) { brazoCasual = x; arreglo.push(brazoCasual); } });
+  esquinas.forEach((x) => { if (x.apodo.includes("Casual")) { esquinaCasual = x; arreglo.push(esquinaCasual); } });
+
+  var yookoHtml = "";
+  yookoHtml = inflarSlider("sliderYoko", arreglo, true);
+  document.getElementById("sliderYoko").innerHTML = yookoHtml;
+}
+function inflarSliderTrendy() {
+  var arreglo = [];
+  var tabureteTrendy;
+  var esquinaTrendy;
+  var brazoTrendy;
+  taburetes.forEach((x) => { if (x.apodo.includes("Trendy")) { tabureteTrendy = x; arreglo.push(tabureteTrendy); } });
+  brazos.forEach((x) => { if (x.apodo.includes("Trendy")) { brazoTrendy = x; arreglo.push(brazoTrendy); } });
+  esquinas.forEach((x) => { if (x.apodo.includes("Trendy")) { esquinaTrendy = x; arreglo.push(esquinaTrendy); } });
+
+  var yookoHtml = "";
+  yookoHtml = inflarSlider("sliderYoko", arreglo, true);
+  document.getElementById("sliderYoko").innerHTML = yookoHtml;
 }
