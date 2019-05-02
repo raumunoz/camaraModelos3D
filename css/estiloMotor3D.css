@@ -839,6 +839,8 @@ div .materiales {
 	margin: 0;
 	margin-top: 0px;
 	margin-top: 3%;
+	padding-left: 15% !important;
+padding-right: 15% !important;
 }
 
 .testimonial {
@@ -909,6 +911,17 @@ div .materiales {
 	}
 }
 @media only screen and (max-width: 600px) {
+	.tituloPagina {
+		text-align: center;
+		color: #3454DA;
+		padding: 0;
+		margin: 0;
+		margin-top: 0px;
+		margin-top: 3%;
+		padding-left: 15% !important;
+		padding-right: 15% !important;
+		font-size: 1.5em !important;
+	}
 	.rng-item{
 		padding-top: 7%;
 		width: 100%;
