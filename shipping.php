@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
     <link rel="stylesheet" type="text/css" href="css/nuevoEstilo.css">
+    <link rel="stylesheet" type="text/css" href="css/estiloShipping.css">
 </head>
 
 <body>
@@ -59,12 +60,12 @@
 
 <body>
     <div class="row div-nav" style="background-color:#fA675b;">
-        <div class="col-md-10 col-7" style="text-align: right; margin-top: 0.3em;margin-bottom: 0.3em;">
+        <div class="col-md-10 col-8" style="text-align: right; margin-top: 0.3em;margin-bottom: 0.3em;">
             <span style="font-size:13px; color:#FFF; font-family: 'Montserrat', Arial, sans-serif;">Servicio al cliente
                 Teléfono:
                 477 854 11 12&nbsp;&nbsp;</span>
         </div>
-        <div class="col-md-2 col-5 " style="text-align: right;">
+        <div class="col-md-2 col-4 " style="text-align: right;">
             <a href="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2F1962138827348733&amp;tabs=messages&amp;width=302&amp;height=300&amp;small_header=true&amp;adapt_container_width=true&amp;hide_cover=true&amp;show_facepile=false&amp;appId"
                 target="_blank"><img src="images/messeng.png" style="max-width: 1.8em; padding-right:5px"></a>
 
@@ -102,18 +103,18 @@
                                         class="logo-puffino"></a></div>
                         </div>
                         <div class="col-md-9 col-xs-10 menu-1" style="margin-top:4%;">
-                        <ul>
-                          <li style="margin-right: 1.1em;"><a href="index.html"
-                              style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">INICIO.</a></li>
-                          <li style="margin-right: 1.1em;"><a href="about.html"
-                              style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">NOSOTROS.</a></li>
-                          <li style="margin-right: 1.1em;"><a href="catalogo.html"
-                              style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">CATÁLOGO.</a></li>
-                          <li style="margin-right: 1.1em;"><a href="envio.html"
-                              style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">ENVÍO Y DOVOLUCIONES.</a></li>
-                          <li style="margin-right: 1.1em;"><a href="contact.html"
-                              style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">CONTACTO.</a></li>
-                        </ul>
+                            <ul>
+                                <li style="margin-right: 1.1em;"><a href="index.html"
+                                        style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">INICIO</a></li>
+                                <li style="margin-right: 1.1em;"><a href="about.html"
+                                        style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">NOSOTROS</a></li>
+                                <li style="margin-right: 1.1em;"><a href="catalogo.html"
+                                        style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">CATÁLOGO</a></li>
+                                <li style="margin-right: 1.1em;"><a href="envio.html"
+                                        style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">ENVÍO Y DOVOLUCIONES</a></li>
+                                <li style="margin-right: 1.1em;"><a href="contact.html"
+                                        style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">CONTACTO</a></li>
+                            </ul>
                         </div>
                     </div>
                 </div>

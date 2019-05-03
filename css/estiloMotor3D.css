@@ -1257,6 +1257,30 @@ document.getElementById('grid-container').style.gridTemplateAreas=
 		height: 3em;
 	}
 }
+@media only screen and (min-width : 320px) {
+	.motor3D canvas {
+		background-color: #F5F2F0;
+		width: 100%;
+		height: 300px;
+		margin-right: 0px;
+		touch-action: pinch-zoom pan-up pan-down;
+	}
+	.grid-texturas {
+		margin: 0;
+		padding-left: 0;
+		padding-right: 0;
+		width: 75%;
+	}
+	#btn-agregar-3d-a-carrito {
+    font-size: 0.6em;
+    width: 100%;
+    margin-left: 0em;
+    margin-right: 3em;
+    margin-top: 5em;
+    background-color: green;
+    color: white;
+}
+}
 	html{
 		overflow-x: hidden !important;
 		width: 100%;

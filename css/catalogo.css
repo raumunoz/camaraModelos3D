@@ -116,6 +116,9 @@
 .img-textura-catalago{
     grid-area: imgT;
 }
+.fh5co-social-icons{
+    grid-area: icons;
+}
 .grid-yooko-sub {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
@@ -126,11 +129,7 @@
     grid-gap: 1fr; 
     grid-template-areas: "mtr mtr mtr imgT";
 }
-.row-pb-md{
-    display: grid;
-    grid-gap: 1fr; 
-    grid-template-areas: "ftrL ftrC";
-}
+
 .selector-tipo-mueble{
     display: grid;
     grid-gap: 1fr; 
@@ -143,7 +142,7 @@
 }
 .rng-total{
     display: grid;
-    grid-template-areas: "totalT  totalC  btnAC";
+    grid-template-areas: "totalT  totalC  ";
 }
 .rng-item{
     display: grid;
@@ -280,6 +279,7 @@ padding-right: 25%;
     }
 
 } 
+
 @media all and (max-width: 575px) {
     .selector-tipo-mueble{
         display: grid;
@@ -315,7 +315,7 @@ padding-right: 25%;
         height: 3em;
     }
     .materiales {
-        width: 100%;
+        width: 75%;
     }
     .img-textura-catalago {
         grid-area: imgT;
@@ -351,7 +351,97 @@ padding-right: 25%;
     #fh5co-offcanvas {
         width: 36% !important;
     }
-   
+    .ftr-links {
+
+        grid-area: ftrL;
+        padding-left: 0%;
     
+    }
+    .ftr-contacto {
+
+        grid-area: ftrC;
+        padding-right: 0%;
+    
+    }
+    #detailP {
+
+        margin-left: 1.2em;
+    
+    }
+    .materiales {
+
+        width: 51%;
+    
+    }
+    .img-textura-catalago {
+
+        grid-area: imgT;
+        height: 8em;
+        width: 30%;
+        margin-left: 17%;
+    
+    }
+    
+   
+}
+
+@media all and (max-width: 380px) {
+    .img-textura-catalago {
+
+        grid-area: imgT;
+        height: 8em;
+        width: 30%;
+        margin-left: 8%;
+    
+    }
+    #tab-id-1 {
+
+        width: 71em;
+    
+    }
+    #tab-id-2 {
+
+        width: 72em;
+    
+    }
+    #fh5co-offcanvas ul li {
+        margin-top: 1.2em;
+    
+    }
+    .img-carrito {
+
+        margin-top: 20%;
+        width: auto;
+        height: 1.5em;
+    
+    }
+    .rng-desc-carrito {
+        padding-top: 4%;
+        font-size: .6em !important;
+        padding: 0;
+    }
+    .rng-precio {
+        padding: 0;
+        font-size: 1em;
+    }
+    .rng-div-cantidad {
+        font-size: 0.9em;
+    }
+    .rng-btn-remover-carrito{
+
+        padding-top: 3%;
+        padding-left: 0px;
+        width: 1.5em;
+        margin-right: 4px;
+    
+    }
+    .rng-total {
+
+        display: grid;
+        grid-template-areas: "totalT totalC ";
+        margin: 1px;
+        padding: 0;
+    
+    }
 }
 
