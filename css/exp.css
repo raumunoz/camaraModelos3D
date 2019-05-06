@@ -1,0 +1,347 @@
+.btn-grid {
+    display: grid;
+    grid-template-columns: max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content max-content;
+    grid-template-rows: max-content max-content max-content max-content;
+    width: 100%;
+    overflow-x: auto;
+    overflow-y: auto;
+    white-space: nowrap;
+    height: auto;
+}
+
+.btn-grid1 {
+    width: 100%;
+}
+
+.btn-grid2 {
+    width: 100%;
+}
+.btn-grid3{
+    width: 100%;
+}
+
+#tab-texturas {
+    padding-left: 20%;
+}
+
+.img-textura-catalago {
+    overflow: hidden;
+    width: 50%;
+    margin-left: 5%;
+}
+
+.img-textura-catalago img {
+    max-width: 100%;
+    -moz-transition: all 0.9s;
+    -webkit-transition: all 0.9s;
+    transition: all 0.9s;
+}
+
+.img-textura-catalago:hover img {
+    -moz-transform: scale(2);
+    -webkit-transform: scale(2);
+    transform: scale(2);
+}
+
+.esconder {
+    display: none;
+}
+
+.col-md-9.col-xs-10.menu-1 {
+    margin: 0;
+    margin-top: 0px;
+    padding: 0;
+}
+.slctModular{
+    grid-area: slcY;
+}
+.slctPuff{
+    grid-area: slcP;
+}
+.slctKids{
+    grid-area: slcK;
+}
+
+
+
+
+
+
+.ftr-links{
+    grid-area: ftrL;
+    padding-left: 40%;
+}
+.ftr-contacto{
+    grid-area:ftrC;
+    padding-right: 40%;
+}
+.materiales{
+    grid-area: mtr;
+}
+.materiales{
+    grid-area: mtr;
+}
+.img-textura-catalago{
+    grid-area: imgT;
+}
+.fh5co-social-icons{
+    grid-area: icons;
+}
+.grid-yooko-sub {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-gap: 10%;
+}
+.color-personalisado{
+    display: grid;
+    grid-gap: 1fr; 
+    grid-template-areas: "mtr mtr mtr imgT";
+}
+
+.selector-tipo-mueble{
+    display: grid;
+    grid-gap: 1fr; 
+    grid-template-areas: "slcY slcP slcK";
+}
+
+.rng-total{
+    display: grid;
+    grid-template-areas: "totalT  totalC  ";
+}
+.rng-item{
+    display: grid;
+    grid-template-areas: "imgCr desCr desMCr prciCr btnRCr ";
+}
+
+
+
+
+
+
+
+
+.product .product-grid {
+    background-size: contain;
+    background-position: top center;
+    background-repeat: no-repeat;
+    position: relative;
+    margin-bottom: 5px;
+    -webkit-transition: 0.3s;
+    -o-transition: 0.3s;
+    transition: 0.3s;
+    height: 25em;
+
+}
+.grid-texturas {
+    margin: 0;
+    padding-left: 0%;
+    padding-right: 0;
+    padding-left: 25%;
+}
+.img-slider-detalles {
+    width: 30%;
+    height: auto;
+}
+@media all and (max-width: 1199px) {
+
+} 
+@media all and (max-width: 991px) {
+    
+} 
+@media all and (max-width: 768px) {
+    .product-grid {
+        height: 11em !important;
+    }
+    .nav-tabs > li > a:hover {
+        border-color: #fd0000 #fd0000 #ddd !important;
+    }
+    .nav > li > a:hover, .nav > li > a:focus {
+        text-decoration: none;
+        background-color: #ffbb00 !important;
+    }
+    .contenedor-logo-opc{
+        margin: 0px 10% 0 10% !important;
+            height: 4em;
+    }
+    .selector-tipo-mueble{
+        display: grid;
+        grid-gap: 1fr; 
+        grid-template-areas: "slcY" "slcP" "slcK";
+    }
+    .grid-yooko-sub {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 10%;
+    }
+    .color-personalisado {
+        display: grid;
+        grid-gap: 1fr;
+        grid-template-areas: 
+        "mtr mtr mtr mtr" 
+        "imgT imgT imgT imgT"
+        ;
+    }
+    .img-logo-Puffion{
+        height: 3em !important;
+    }
+    .nav-telefono{
+        text-align: left !important;
+        padding-left: 10%;
+    }
+    .nav-iconos-catalogo{
+        padding-right: 10%;
+    }
+    .img-carrito {
+        margin-top: 20%;
+        width: auto;
+        height: 3em;
+    }
+    .materiales {
+        width: 100%;
+    }
+    .img-textura-catalago {
+        grid-area: imgT;
+        height: 8em;
+        width: 30%;
+        margin-left: 17%;
+    }
+    .grid-texturas {
+        padding-left: 6%;
+
+padding-right: 25%;
+    }
+    .img-slider-detalles {
+        width: 65%;
+        height: auto;
+        margin-bottom: 2em !important;
+    }
+    #descripcionMaterial {
+        align-content: center;
+        width: 56%;
+    }
+    #fh5co-offcanvas {
+        width: 25% !important;
+    }
+
+} 
+
+@media all and (max-width: 575px) {
+    .selector-tipo-mueble{
+        display: grid;
+        grid-gap: 1fr; 
+        grid-template-areas: "slcY" "slcP" "slcK";
+    }
+    .grid-yooko-sub {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        grid-gap: 10%;
+    }
+    .color-personalisado {
+        display: grid;
+        grid-gap: 1fr;
+        grid-template-areas: 
+        "mtr mtr mtr mtr" 
+        "imgT imgT imgT imgT"
+        ;
+    }
+    .img-logo-Puffion{
+        height: 3em !important;
+    }
+    .nav-telefono{
+        text-align: left !important;
+        padding-left: 10%;
+    }
+    .nav-iconos-catalogo{
+        padding-right: 10%;
+    }
+    .img-carrito {
+        margin-top: 20%;
+        width: auto;
+        height: 3em;
+    }
+    .materiales {
+        width: 75%;
+    }
+    .img-textura-catalago {
+        grid-area: imgT;
+        height: 8em;
+        width: 30%;
+        margin-left: 17%;
+    }
+    .grid-texturas {
+        padding-left: 6%;
+
+padding-right: 25%;
+    }
+    .img-slider-detalles {
+        width: 65%;
+        height: auto;
+        margin-bottom: 2em !important;
+    }
+    #descripcionMaterial {
+        align-content: center;
+        width: 56%;
+    }
+    #fh5co-offcanvas {
+        width: 33% !important;
+    }
+}
+@media all and (max-width: 458px) {
+   
+    .grid-yooko-sub {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr ;
+        grid-gap: 10%;
+    }
+    #fh5co-offcanvas {
+        width: 36% !important;
+    }
+    .ftr-links {
+
+        grid-area: ftrL;
+        padding-left: 0%;
+    
+    }
+    .ftr-contacto {
+
+        grid-area: ftrC;
+        padding-right: 0%;
+    
+    }
+    #detailP {
+
+        margin-left: 1.2em;
+    
+    }
+    .materiales {
+
+        width: 51%;
+    
+    }
+   
+    
+   
+}
+
+@media all and (max-width: 380px) {
+    .img-textura-catalago {
+
+        grid-area: imgT;
+        height: 8em;
+        width: 30%;
+        margin-left: 8%;
+    
+    }
+    #tab-id-1 {
+
+        width: 71em;
+    
+    }
+    #tab-id-2 {
+
+        width: 72em;
+    
+    }
+   
+}
+

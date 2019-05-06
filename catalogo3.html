@@ -1,0 +1,1823 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<!-- Facebook and Twitter integration -->
+	<meta property="og:title" content="" />
+	<meta property="og:image" content="" />
+	<meta property="og:url" content="" />
+	<meta property="og:site_name" content="" />
+	<meta property="og:description" content="" />
+	<meta name="twitter:title" content="" />
+	<meta name="twitter:image" content="" />
+	<meta name="twitter:url" content="" />
+	<meta name="twitter:card" content="" />
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<link rel="stylesheet" href="css/style.css">
+	<script src="js/jquery-2.2.0.min.js">
+	</script>
+	<script src="js/slick.js"></script>
+	<!--
+				<script src="js/tienda2.js"></script>
+				-->
+	<script type="text/javascript" src="js/jquery.flexisel.js"></script>
+	<!--FUENTES-->
+	<!--
+				<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"> 
+				<link href="https://fonts.googleapis.com/css?family=Playfair+Display:400,400i" rel="stylesheet">-->
+	<link href="https://fonts.googleapis.com/css?family=Roboto|Montserrat:400,700|Playfair+Display:400,400i"
+		rel="stylesheet">
+	<!-- Animate.css -->
+	<link rel="stylesheet" href="css/animate.css">
+	<!-- Icomoon Icon Fonts-->
+	<link rel="stylesheet" href="css/icomoon.css">
+	<!-- Bootstrap  -->
+
+	<link rel="stylesheet" href="css/bootstrap2.3.2.css">
+
+	<!-- Flexslider  -->
+	<link rel="stylesheet" href="css/flexslider.css">
+
+	<!-- Owl Carousel  -->
+	<link rel="stylesheet" href="css/owl.carousel.min.css">
+	<link rel="stylesheet" href="css/owl.theme.default.min.css">
+
+	<!-- Theme style  -->
+	<!-- Modernizr JS -->
+	<script src="js/modernizr-2.6.2.min.js"></script>
+
+
+	<!-- FOR IE9 below -->
+	<!--[if lt IE 9]>
+				<script src="js/respond.min.js"></script>
+				<![endif]-->
+	<link rel="stylesheet" type="text/css" href="css/slick.css">
+	<link rel="stylesheet" type="text/css" href="css/slick-theme.css">
+	<script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
+	<link rel="stylesheet" href="css/font.css">
+
+
+	<style type="text/css">
+		#sliderYoko,
+		#sliderPuffino,
+		#sliderKids {
+			display: none;
+		}
+
+		.nbs-flexisel-contenedor {
+			position: relative;
+			max-width: 100%;
+		}
+
+		.nbs-flexisel-ul {
+			position: relative;
+			width: 99999px;
+			margin: 0px;
+			padding: 0px;
+			list-style-type: none;
+			text-align: center;
+			overflow: auto;
+		}
+
+		.nbs-flexisel-inner {
+			position: relative;
+			overflow: hidden;
+			float: left;
+			width: 100%;
+			background: #ffffff;
+			background: #ffffff -moz-linear-gradient(top, #ffffff 0%, #ffffff 100%);
+			/* FF3.6+ */
+			background: #ffffff -webkit-gradient(linear, left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #ffffff));
+			/* Chrome,Safari4+ */
+			background: #ffffff -webkit-linear-gradient(top, #ffffff 0%, #ffffff 100%);
+			/* Chrome10+,Safari5.1+ */
+			background: #ffffff -o-linear-gradient(top, #ffffff 0%, #ffffff 100%);
+			/* Opera11.10+ */
+			background: #ffffff -ms-linear-gradient(top, #ffffff 0%, #ffffff 100%);
+			/* IE10+ */
+			background: #ffffff linear-gradient(top, #ffffff 0%, #ffffff 100%);
+			/* W3C */
+		}
+
+		.nbs-flexisel-item {
+			float: left;
+			margin: 0px;
+			padding: 0px;
+			cursor: pointer;
+			position: relative;
+			line-height: 0px;
+		}
+
+		.nbs-flexisel-item img {
+			max-width: 100%;
+			cursor: pointer;
+			position: relative;
+			margin-top: 10px;
+			margin-bottom: 10px;
+		}
+
+		/*** Navigation ***/
+
+		.nbs-flexisel-nav-left,
+		.nbs-flexisel-nav-right {
+			padding: 5px 10px;
+			border-radius: 15px;
+			-moz-border-radius: 15px;
+			-webkit-border-radius: 15px;
+			position: absolute;
+			cursor: pointer;
+			z-index: 4;
+			top: 50%;
+			transform: translateY(-50%);
+			background: rgba(0, 0, 0, 0.5);
+			color: #fff;
+		}
+
+		.nbs-flexisel-nav-left {
+			left: 10px;
+		}
+
+		.nbs-flexisel-nav-left:before {
+			content: "<"
+		}
+
+		.nbs-flexisel-nav-left.disabled {
+			opacity: 0.4;
+		}
+
+		.nbs-flexisel-nav-right {
+			right: 5px;
+		}
+
+		.nbs-flexisel-nav-right:before {
+			content: ">"
+		}
+
+		.nbs-flexisel-nav-right.disabled {
+			opacity: 0.4;
+		}
+
+		.medidas {
+			font-family: 'Roboto';
+			font-size: 12px;
+		}
+
+		@media only screen and (max-width: 600px) {
+			.product .product-grid {
+				background-size: contain;
+				background-position: top center;
+				background-repeat: no-repeat;
+				position: relative;
+				margin-bottom: 5px;
+				-webkit-transition: 0.3s;
+				-o-transition: 0.3s;
+				transition: 0.3s;
+				height: 7em;
+
+			}
+
+			.nbs-flexisel-item {
+				float: left;
+				margin: 0px;
+				padding: 0px;
+				cursor: pointer;
+				position: relative;
+				line-height: 0px;
+			}
+
+			.nbs-flexisel-item img {
+				max-width: 100%;
+				cursor: pointer;
+				position: relative;
+				margin-top: 10px;
+				margin-bottom: 10px;
+			}
+		}
+
+
+		#owl-demo .item img {
+			display: block;
+			width: 100%;
+			height: auto;
+		}
+
+		.nomProducto {
+			color: #2ACA89 !important;
+		}
+
+		.priceProducto {
+			color: black !important;
+		}
+	</style>
+	<link rel="stylesheet" type="text/css" href="css/estiloMotor3D.css">
+
+	<link rel="stylesheet" href="css/main.css">
+	<link rel="stylesheet" type="text/css" href="css/catalogo.css">
+</head>
+
+<body>
+	<!--
+	<div class="social-bar">
+		<a href="https://www.facebook.com/puffino.mx/" class="icon2 icon-facebook" target="_blank"></a>
+		<a href="https://www.youtube.com/channel/UC_IQX58WKgUAJiZfj9oy6wg/featured" class="icon2 icon-youtube"
+			target="_blank"></a>
+		<a href="https://www.instagram.com/puffinomx/" class="icon2 icon-instagram" target="_blank"></a>
+		<a href="https://www.twitter.com/puffinomx/" class="icon2 icon-twitter" target="_blank"></a>
+	</div>
+-->
+	<div class="row div-nav" style="background-color:#fA675b;">
+		<div class="col-md-9 col-xs-7 nav-telefono"
+			style="text-align: right; margin-top: 0.3em;margin-bottom: 0.3em; padding-top: 0;">
+			<span style="font-size:13px; color:#FFF; font-family: 'Montserrat', Arial, sans-serif;">Servicio al cliente
+				Teléfono:
+				477 854 11 12&nbsp;&nbsp;</span>
+		</div>
+		<div class="col-md-2 col-xs-5 nav-iconos-catalogo" style="text-align: right;margin: 0;">
+			<a href="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2F1962138827348733&amp;tabs=messages&amp;width=302&amp;height=300&amp;small_header=true&amp;adapt_contenedor_width=true&amp;hide_cover=true&amp;show_facepile=false&amp;appId"
+				target="_blank"><img src="images/messeng.png" style="max-width: 1.8em; padding-right:5px"></a>
+
+			<a href="https://api.whatsapp.com/send?phone=5214778541112" target="_blank">
+				<img src="images/whats.png" style="max-width: 1.8em; padding-right:5px">
+			</a>
+
+			<img src="images/shopping_cart_white_24dp.png" style="max-width: 1.8em; padding-right:5px"
+				onclick="mostrarCarro()"><span id="num-carrito" class="num-carrito"></span>
+		</div>
+	</div>
+	<div id="page">
+		<!--	
+		<div class="social-bar" id="social-bar">
+					<a href="https://www.facebook.com/puffino.mx/" class="icon2 icon-facebook" target="_blank"></a>
+					<a href="https://www.youtube.com/channel/UC_IQX58WKgUAJiZfj9oy6wg/featured" class="icon2 icon-youtube"
+						target="_blank"></a>
+					<a href="https://www.instagram.com/puffinomx/" class="icon2 icon-instagram" target="_blank"></a>
+					<a href="https://www.twitter.com/puffinomx/" class="icon2 icon-twitter" target="_blank"></a>
+			
+			
+			
+				</div>
+			-->
+
+		<div class="carrito" id="carrito">
+			<div id="row-productos">
+				Todavía no agregas nada.
+			</div>
+
+			<div class="row rng-total total-desactivo" id="rng-total">
+				<div class="col-xs-3 rng-total-titulo">Total</div>
+				<div class="col-xs-3 rng-total-cantidad">$<span id="total-carrito">0</span></div>
+				<!--<div class="col-6"><button class="rng-btn-total btn btn-primary blue" onclick="">continuar</button></div>-->
+				<!--
+					<div id="paypal-button-contenedor"></div>
+					<div id="paypal-button"></div>
+					-->
+				<button type="button" class="btn btn-success btn-agregar-ir-al-carrito total-desactivo"
+					id="btn-agregar-ir-al-carrito" onclick="location.href = 'cart.html';">IR AL CARRITO</button>
+			</div>
+		</div>
+
+		<div class="fh5co-loader"></div>
+
+		<nav class="fh5co-nav" role="navigation" style="background-color:#4DD7D3;">
+			<div class="contenedor-logo-opc" style="margin-left:0px;">
+				<div class="row logo-router">
+					<div class="col-md-3 col-xs-5 div-icono">
+						<div id="fh5co-logo"><a href="index.html">
+								<img class="img-logo-Puffion" src="images/puff_logo.png"
+									style="max-width:100%; height:auto;"></a></div>
+					</div>
+					<div class="col-md-9 col-xs-10 menu-1 div-router" style="margin-top:4%;">
+						<ul>
+							<li style="margin-right: 1.1em;"><a href="index.html"
+									style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">INICIO.</a></li>
+							<li style="margin-right: 1.1em;"><a href="about.html"
+									style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">NOSOTROS.</a></li>
+							<li style="margin-right: 1.1em;"><a href="catalogo.html"
+									style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">CATÁLOGO.</a></li>
+							<li style="margin-right: 1.1em;"><a href="envio.html"
+									style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">ENVÍO Y
+									DEVOLUCIONES.</a></li>
+							<li style="margin-right: 1.1em;"><a href="contact.html"
+									style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">CONTACTO.</a></li>
+						</ul>
+					</div>
+				</div>
+
+			</div>
+		</nav>
+
+		<header id="fh5co-header" class="fh5co-cover fh5co-cover-sm" style="height: 10%;">
+			<h1 class="tituloPagina" style="font-size: 2rem; color:#4E56DF; font-family: 'Roboto';"><strong
+					style="font-family: 'Roboto' !important;">Catálogo</strong></h1>
+		</header>
+
+
+		<div id="fh5co-product" style="font-family: 'Roboto';padding-bottom: 0px; padding-top: 3em;">
+			<div class="contenedor">
+				<div class="row selector-tipo-mueble">
+					<div class="slctModular  text-center">
+						<div class="product">
+							<a id="yokoShow" style="cursor: pointer;">
+								<div class="product-grid"
+									style="background-image:url(images/catalogo/yoko/yookocasual_silla.jpg);">
+									<div class="inner">
+										<!--<p>
+										<a id="holiShow" style="cursor: pointer;" class="icon"><i class="icon-eye"></i></a>
+									</p>-->
+									</div>
+								</div>
+							</a>
+							<div class="desc">
+								<h3><a id="" style="cursor: pointer;  font-size: 1.1rem;">Yooko Modular</a></h3>
+							</div>
+						</div>
+					</div>
+
+					<div class="slctPuff text-center">
+						<div class="product">
+							<a id="puffinoShow" style="cursor: pointer;">
+								<div class="product-grid"
+									style="background-image:url(images/catalogo/puffino_catalogo.png);">
+									<div class="inner">
+										<!--<p>
+										<a id="holiShow" style="cursor: pointer;" class="icon"><i class="icon-eye"></i></a>
+									</p>-->
+									</div>
+								</div>
+							</a>
+							<div class="desc">
+								<h3><a style="cursor: pointer; ; font-size: 1.1rem;">Puffino </a></h3>
+							</div>
+						</div>
+					</div>
+
+					<div class="slctKids text-center">
+						<div class="product">
+							<a id="kidsShow" style="cursor: pointer;">
+								<div class="product-grid"
+									style="background-image:url(images/catalogo/ninos_catalogo.jpg);">
+									<div class="inner">
+										<!--<p>
+										<a id="holiShow" style="cursor: pointer;" class="icon"><i class="icon-eye"></i></a>
+									</p>-->
+									</div>
+								</div>
+							</a>
+							<div class="desc">
+								<h3><a style="cursor: pointer; ; font-size: 1.1rem;">Puffino Niños</a></h3>
+							</div>
+						</div>
+					</div>
+				</div>
+
+			</div>
+		</div>
+		
+		<div id="showYookoSelecion" style="font-family: 'Roboto';padding-bottom: 0px; padding-top: 3em;">
+			<div class="contenedor">
+				<div class="grid-yooko-sub">
+
+					<div class="text-center slct-contempo">
+						<div class="product">
+							<a id="yooko-contemporaneo-show" style="cursor: pointer;">
+								<div class="product-grid"
+									style="background-image:url(images/catalogo/yoko/yooko_contempo.jpg);">
+									<div class="inner">
+										<!--<p>
+												<a id="holiShow" style="cursor: pointer;" class="icon"><i class="icon-eye"></i></a>
+											</p>-->
+									</div>
+								</div>
+							</a>
+							<div class="desc">
+								<h3><a style="cursor: pointer; ; font-size: 1.1rem;">contemporaneo</a></h3>
+							</div>
+						</div>
+					</div>
+
+					<div class="text-center slct-trendy">
+						<div class="product">
+							<a id="yooko-trendy-show" style="cursor: pointer;">
+								<div class="product-grid"
+									style="background-image:url(images/catalogo/yoko/yooko_trendy.jpg);">
+									<div class="inner">
+										<!--<p>
+										<a id="holiShow" style="cursor: pointer;" class="icon"><i class="icon-eye"></i></a>
+									</p>-->
+									</div>
+								</div>
+							</a>
+							<div class="desc">
+								<h3><a id="" style="cursor: pointer; ; font-size: 1.1rem;">Yooko Trendy</a></h3>
+							</div>
+						</div>
+					</div>
+
+					<div class=" text-center slct-casual">
+						<div class="product">
+							<a id="yooko-casual-show" style="cursor: pointer;">
+								<div class="product-grid"
+									style="background-image:url(images/catalogo/yoko/yooko_casual.jpg);">
+									<div class="inner">
+										<!--<p>
+										<a id="holiShow" style="cursor: pointer;" class="icon"><i class="icon-eye"></i></a>
+									</p>-->
+									</div>
+								</div>
+							</a>
+							<div class="desc">
+								<h3><a style="cursor: pointer; ; font-size: 1.1rem;">Yooko Casual</a></h3>
+							</div>
+						</div>
+					</div>
+
+				</div>
+			</div>
+		</div>
+		<!---->
+
+		<!-- SLIDER DE MODELOS YOKO MODULAR -->
+		<div id="yokoDiv">
+			<ul id="sliderYoko">
+				<li>
+					<a style="cursor: pointer;" onclick="changeProduct(33)">
+						<div class="text-center">
+							<div class="product" style="margin-top: 1em;">
+								<div class="product-grid"
+									style="background-image:url(images/catalogo/yoko/yookocasual_esquinero.jpg); margin: 0 auto;">
+								</div>
+								<div class="desc" style="margin-top: 1em;">
+									<h3><a class="nomProducto">Yooko Casual Esquinero</a></h3>
+									<span class="priceProducto">$8799</span>
+								</div>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a style="cursor: pointer;" onclick="changeProduct(34)">
+						<div class="text-center">
+							<div class="product" style="margin-top: 1em;">
+								<div class="product-grid"
+									style="background-image:url(images/catalogo/yoko/yookocasual_silla.jpg); margin: 0 auto;">
+								</div>
+								<div class="desc" style="margin-top: 1em;">
+									<h3><a class="nomProducto">Yooko Casual Silla</a></h3>
+									<span class="priceProducto">$8599</span>
+								</div>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a style="cursor: pointer;" onclick="changeProduct(35)">
+						<div class="text-center">
+							<div class="product" style="margin-top: 1em;">
+								<div class="product-grid"
+									style="background-image:url(images/catalogo/yoko/yookocasual_taburete.jpg); margin: 0 auto;">
+								</div>
+								<div class="desc" style="margin-top: 1em;">
+									<h3><a class="nomProducto">Yooko Casual Taburete</a></h3>
+									<span class="priceProducto">$7099</span>
+								</div>
+							</div>
+						</div>
+					</a>
+				</li>
+				<!---->
+				<li>
+					<a style="cursor: pointer;" onclick="changeProduct(36)">
+						<div class="text-center">
+							<div class="product" style="margin-top: 1em;">
+								<div class="product-grid"
+									style="background-image:url(images/catalogo/yoko/yookocontempo_esquinero.jpg); margin: 0 auto;">
+								</div>
+								<div class="desc" style="margin-top: 1em;">
+									<h3><a class="nomProducto">Yooko Contempo Esquinero</a></h3>
+									<span class="priceProducto">$8799</span>
+								</div>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a style="cursor: pointer;" onclick="changeProduct(37)">
+						<div class="text-center">
+							<div class="product" style="margin-top: 1em;">
+								<div class="product-grid"
+									style="background-image:url(images/catalogo/yoko/yookocontempo_silla.jpg); margin: 0 auto;">
+								</div>
+								<div class="desc" style="margin-top: 1em;">
+									<h3><a class="nomProducto">Yooko Contempo Silla</a></h3>
+									<span class="priceProducto">$8599</span>
+								</div>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a style="cursor: pointer;" onclick="changeProduct(38)">
+						<div class="text-center">
+							<div class="product" style="margin-top: 1em;">
+								<div class="product-grid"
+									style="background-image:url(images/catalogo/yoko/yookocontempo_taburete.jpg); margin: 0 auto;">
+								</div>
+								<div class="desc" style="margin-top: 1em;">
+									<h3><a class="nomProducto">Yooko Contempo Taburete</a></h3>
+									<span class="priceProducto">$7099</span>
+								</div>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a style="cursor: pointer;" onclick="changeProduct(39)">
+						<div class="text-center">
+							<div class="product" style="margin-top: 1em;">
+								<div class="product-grid"
+									style="background-image:url(images/catalogo/yoko/yookotrendy_esquinero.jpg); margin: 0 auto;">
+								</div>
+								<div class="desc" style="margin-top: 1em;">
+									<h3><a class="nomProducto">Yooko Trendy Esquinero</a></h3>
+									<span class="priceProducto">$8799</span>
+								</div>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a style="cursor: pointer;" onclick="changeProduct(40)">
+						<div class="text-center">
+							<div class="product" style="margin-top: 1em;">
+								<div class="product-grid"
+									style="background-image:url(images/catalogo/yoko/yookotrendy_silla.jpg); margin: 0 auto;">
+								</div>
+								<div class="desc" style="margin-top: 1em;">
+									<h3><a class="nomProducto">Yooko Trendy Silla</a></h3>
+									<span class="priceProducto">$8599</span>
+								</div>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a style="cursor: pointer;" onclick="changeProduct(41)">
+						<div class="text-center">
+							<div class="product" style="margin-top: 1em;">
+								<div class="product-grid"
+									style="background-image:url(images/catalogo/yoko/yookotrendy_taburete.jpg); margin: 0 auto;">
+								</div>
+								<div class="desc" style="margin-top: 1em;">
+									<h3><a class="nomProducto">Yooko Trendy Taburete</a></h3>
+									<span class="priceProducto">$7099</span>
+								</div>
+							</div>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<!-- FIN SLIDER DE MODELOS YOKO MODULAR -->
+		<!-- SLIDER DE MODELOS yokoo tipo -->
+		<div id="yokoTipoDiv">
+			<ul id="sliderTipoYoko">
+				<li>
+					<a style="cursor: pointer;" onclick="changeProduct(33)">
+						<div class="text-center">
+							<div class="product" style="margin-top: 1em;">
+								<div class="product-grid"
+									style="background-image:url(images/catalogo/yoko/yookocasual_esquinero.jpg); margin: 0 auto;">
+								</div>
+								<div class="desc" style="margin-top: 1em;">
+									<h3><a class="nomProducto">Yooko Casual Esquinero</a></h3>
+									<span class="priceProducto">$8799</span>
+								</div>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a style="cursor: pointer;" onclick="changeProduct(34)">
+						<div class="text-center">
+							<div class="product" style="margin-top: 1em;">
+								<div class="product-grid"
+									style="background-image:url(images/catalogo/yoko/yookocasual_silla.jpg); margin: 0 auto;">
+								</div>
+								<div class="desc" style="margin-top: 1em;">
+									<h3><a class="nomProducto">Yooko Casual Silla</a></h3>
+									<span class="priceProducto">$8599</span>
+								</div>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a style="cursor: pointer;" onclick="changeProduct(35)">
+						<div class="text-center">
+							<div class="product" style="margin-top: 1em;">
+								<div class="product-grid"
+									style="background-image:url(images/catalogo/yoko/yookocasual_taburete.jpg); margin: 0 auto;">
+								</div>
+								<div class="desc" style="margin-top: 1em;">
+									<h3><a class="nomProducto">Yooko Casual Taburete</a></h3>
+									<span class="priceProducto">$7099</span>
+								</div>
+							</div>
+						</div>
+					</a>
+				</li>
+				<!---->
+				<li>
+					<a style="cursor: pointer;" onclick="changeProduct(36)">
+						<div class="text-center">
+							<div class="product" style="margin-top: 1em;">
+								<div class="product-grid"
+									style="background-image:url(images/catalogo/yoko/yookocontempo_esquinero.jpg); margin: 0 auto;">
+								</div>
+								<div class="desc" style="margin-top: 1em;">
+									<h3><a class="nomProducto">Yooko Contempo Esquinero</a></h3>
+									<span class="priceProducto">$8799</span>
+								</div>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a style="cursor: pointer;" onclick="changeProduct(37)">
+						<div class="text-center">
+							<div class="product" style="margin-top: 1em;">
+								<div class="product-grid"
+									style="background-image:url(images/catalogo/yoko/yookocontempo_silla.jpg); margin: 0 auto;">
+								</div>
+								<div class="desc" style="margin-top: 1em;">
+									<h3><a class="nomProducto">Yooko Contempo Silla</a></h3>
+									<span class="priceProducto">$8599</span>
+								</div>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a style="cursor: pointer;" onclick="changeProduct(38)">
+						<div class="text-center">
+							<div class="product" style="margin-top: 1em;">
+								<div class="product-grid"
+									style="background-image:url(images/catalogo/yoko/yookocontempo_taburete.jpg); margin: 0 auto;">
+								</div>
+								<div class="desc" style="margin-top: 1em;">
+									<h3><a class="nomProducto">Yooko Contempo Taburete</a></h3>
+									<span class="priceProducto">$7099</span>
+								</div>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a style="cursor: pointer;" onclick="changeProduct(39)">
+						<div class="text-center">
+							<div class="product" style="margin-top: 1em;">
+								<div class="product-grid"
+									style="background-image:url(images/catalogo/yoko/yookotrendy_esquinero.jpg); margin: 0 auto;">
+								</div>
+								<div class="desc" style="margin-top: 1em;">
+									<h3><a class="nomProducto">Yooko Trendy Esquinero</a></h3>
+									<span class="priceProducto">$8799</span>
+								</div>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a style="cursor: pointer;" onclick="changeProduct(40)">
+						<div class="text-center">
+							<div class="product" style="margin-top: 1em;">
+								<div class="product-grid"
+									style="background-image:url(images/catalogo/yoko/yookotrendy_silla.jpg); margin: 0 auto;">
+								</div>
+								<div class="desc" style="margin-top: 1em;">
+									<h3><a class="nomProducto">Yooko Trendy Silla</a></h3>
+									<span class="priceProducto">$8599</span>
+								</div>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a style="cursor: pointer;" onclick="changeProduct(41)">
+						<div class="text-center">
+							<div class="product" style="margin-top: 1em;">
+								<div class="product-grid"
+									style="background-image:url(images/catalogo/yoko/yookotrendy_taburete.jpg); margin: 0 auto;">
+								</div>
+								<div class="desc" style="margin-top: 1em;">
+									<h3><a class="nomProducto">Yooko Trendy Taburete</a></h3>
+									<span class="priceProducto">$7099</span>
+								</div>
+							</div>
+						</div>
+					</a>
+				</li>
+			</ul>
+		</div>
+		<!-- SLIDER DE MODELOS PUFFINO -->
+		<div id="puffinoDiv">
+			<ul id="sliderPuffino">
+				<li>
+					<a style="cursor: pointer;" onclick="changeProduct(30)">
+						<div class="text-center">
+							<div class="product" style="margin-top: 1em;">
+								<div class="product-grid"
+									style="background-image:url(images/productos/puffino/atlixco.jpg); margin: 0 auto;">
+								</div>
+								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+									<h3 style="line-height: 30px;"><a class="nomProducto">Yumil</a></h3>
+									<span class="priceProducto">$2599</span>
+								</div>
+							</div>
+						</div>
+					</a>
+				</li>
+				<li>
+					<a style="cursor: pointer;" onclick="changeProduct(31)">
+						<div class="text-center">
+							<div class="product" style="margin-top: 1em;">
+								<div class="product-grid"
+									style="background-image:url(images/productos/puffino/atlixco_chico.jpg); margin: 0 auto;">
+								</div>
+								<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+									<h3 style="line-height: 30px;">
+										<aclass="nomProducto">Yumil Mediano
+					</a></h3>
+					<span class="priceProducto">$2499</span>
+		</div>
+
+		<!-- FIN SLIDER DE MODELOS YOKO tipo -->
+	</div>
+	</div>
+	</a>
+	</li>
+	<li>
+		<a style="cursor: pointer;" onclick="changeProduct(29)">
+			<div class="text-center">
+				<div class="product" style="margin-top: 1em;">
+					<div class="product-grid"
+						style="background-image:url(images/productos/puffino/bernal.jpg); margin: 0 auto;">
+					</div>
+					<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+						<h3 style="line-height: 30px;"><a class="nomProducto">Yeeb</a></h3>
+						<span class="priceProducto">$2999</span>
+					</div>
+				</div>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a style="cursor: pointer;" onclick="changeProduct(13)">
+			<div class="text-center">
+				<div class="product" style="margin-top: 1em;">
+					<div class="product-grid"
+						style="background-image:url(images/productos/puffino/cozumel.jpg); margin: 0 auto;">
+					</div>
+					<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+						<h3 style="line-height: 30px;"><a class="nomProducto">Kauil</a></h3>
+						<span class="priceProducto">$4999</span>
+					</div>
+				</div>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a style="cursor: pointer;" onclick="changeProduct(14)">
+			<div class="text-center">
+				<div class="product" style="margin-top: 1em;">
+					<div class="product-grid"
+						style="background-image:url(images/productos/puffino/cozumel_sillon.jpg); margin: 0 auto;">
+					</div>
+					<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+						<h3 style="line-height: 30px;"><a class="nomProducto">Kauil Sillón</a></h3>
+						<span class="priceProducto">$4199</span>
+					</div>
+				</div>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a style="cursor: pointer;" onclick="changeProduct(15)">
+			<div class="text-center">
+				<div class="product" style="margin-top: 1em;">
+					<div class="product-grid"
+						style="background-image:url(images/productos/puffino/cozumel_taburete.jpg); margin: 0 auto;">
+					</div>
+					<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+						<h3 style="line-height: 30px;"><a class="nomProducto">Kauil Taburete</a></h3>
+						<span class="priceProducto">$2999</span>
+					</div>
+				</div>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a style="cursor: pointer;" onclick="changeProduct(9)">
+			<div class="text-center">
+				<div class="product" style="margin-top: 1em;">
+					<div class="product-grid"
+						style="background-image:url(images/productos/puffino/guadalajara.jpg); margin: 0 auto;">
+					</div>
+					<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+						<h3 style="line-height: 30px;"><a class="nomProducto">Balam</a></h3>
+						<span class="priceProducto">$5199</span>
+					</div>
+				</div>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a style="cursor: pointer;" onclick="changeProduct(12)">
+			<div class="text-center">
+				<div class="product" style="margin-top: 1em;">
+					<div class="product-grid"
+						style="background-image:url(images/productos/puffino/guanajuato.jpg); margin: 0 auto;">
+					</div>
+					<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+						<h3 style="line-height: 30px;"><a class="nomProducto">Ikal</a></h3>
+						<span class="priceProducto">$4699</span>
+					</div>
+				</div>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a style="cursor: pointer;" onclick="changeProduct(21)">
+			<div class="text-center">
+				<div class="product" style="margin-top: 1em;">
+					<div class="product-grid"
+						style="background-image:url(images/productos/puffino/lapaz.jpg); margin: 0 auto;">
+					</div>
+					<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+						<h3 style="line-height: 30px;"><a class="nomProducto">Nima</a></h3>
+						<span class="priceProducto">$3499</span>
+					</div>
+				</div>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a style="cursor: pointer;" onclick="changeProduct(22)">
+			<div class="text-center">
+				<div class="product" style="margin-top: 1em;">
+					<div class="product-grid"
+						style="background-image:url(images/productos/puffino/lapaz_chico.jpg); margin: 0 auto;">
+					</div>
+					<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+						<h3 style="line-height: 30px;"><a class="nomProducto">Nima mediano</a></h3>
+						<span class="priceProducto">$3099</span>
+					</div>
+				</div>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a style="cursor: pointer;" onclick="changeProduct(32)">
+			<div class="text-center">
+				<div class="product" style="margin-top: 1em;">
+					<div class="product-grid"
+						style="background-image:url(images/productos/puffino/merida.jpg); margin: 0 auto;">
+					</div>
+					<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+						<h3 style="line-height: 30px;"><a class="nomProducto">Zazil</a></h3>
+						<span class="priceProducto">$3999</span>
+					</div>
+				</div>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a style="cursor: pointer;" onclick="changeProduct(26)">
+			<div class="text-center">
+				<div class="product" style="margin-top: 1em;">
+					<div class="product-grid"
+						style="background-image:url(images/productos/puffino/oaxaca.jpg); margin: 0 auto;">
+					</div>
+					<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+						<h3 style="line-height: 30px;"><a class="nomProducto">Toot</a></h3>
+						<span class="priceProducto">$3899</span>
+					</div>
+				</div>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a style="cursor: pointer;" onclick="changeProduct(27)">
+			<div class="text-center">
+				<div class="product" style="margin-top: 1em;">
+					<div class="product-grid"
+						style="background-image:url(images/productos/puffino/oaxaca_matrimonial.jpg); margin: 0 auto;">
+					</div>
+					<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+						<h3 style="line-height: 30px;"><a class="nomProducto">Toot Matrimonial</a></h3>
+						<span class="priceProducto">$4599</span>
+					</div>
+				</div>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a style="cursor: pointer;" onclick="changeProduct(28)">
+			<div class="text-center">
+				<div class="product" style="margin-top: 1em;">
+					<div class="product-grid"
+						style="background-image:url(images/productos/puffino/oaxaca_queen.jpg); margin: 0 auto;">
+					</div>
+					<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+						<h3 style="line-height: 30px;"><a class="nomProducto">Toot Queen</a></h3>
+						<span class="priceProducto">$4799</span>
+					</div>
+				</div>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a style="cursor: pointer;" onclick="changeProduct(24)">
+			<div class="text-center">
+				<div class="product" style="margin-top: 1em;">
+					<div class="product-grid"
+						style="background-image:url(images/productos/puffino/patzcuaro.jpg); margin: 0 auto;">
+					</div>
+					<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+						<h3 style="line-height: 30px;"><a class="nomProducto">Tanak</a></h3>
+						<span class="priceProducto">$4499</span>
+					</div>
+				</div>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a style="cursor: pointer;" onclick="changeProduct(25)">
+			<div class="text-center">
+				<div class="product" style="margin-top: 1em;">
+					<div class="product-grid"
+						style="background-image:url(images/productos/puffino/patzcuaro_kids.jpg); margin: 0 auto;">
+					</div>
+					<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+						<h3 style="line-height: 30px;"><a class="nomProducto">Tanak Niños</a></h3>
+						<span class="priceProducto">$3199</span>
+					</div>
+				</div>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a style="cursor: pointer;" onclick="changeProduct(7)">
+			<div class="text-center">
+				<div class="product" style="margin-top: 1em;">
+					<div class="product-grid"
+						style="background-image:url(images/productos/puffino/puebla.jpg); margin: 0 auto;">
+					</div>
+					<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+						<h3 style="line-height: 30px;"><a class="nomProducto">Alom</a></h3>
+						<span class="priceProducto">$3099</span>
+					</div>
+				</div>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a style="cursor: pointer;" onclick="changeProduct(8)">
+			<div class="text-center">
+				<div class="product" style="margin-top: 1em;">
+					<div class="product-grid"
+						style="background-image:url(images/productos/puffino/pruebla_chico.jpg); margin: 0 auto;">
+					</div>
+					<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+						<h3 style="line-height: 30px;"><a class="nomProducto">Alom Mediano</a></h3>
+						<span class="priceProducto">$2299</span>
+					</div>
+				</div>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a style="cursor: pointer;" onclick="changeProduct(23)">
+			<div class="text-center">
+				<div class="product" style="margin-top: 1em;">
+					<div class="product-grid"
+						style="background-image:url(images/productos/puffino/puertovallarta.jpg); margin: 0 auto;">
+					</div>
+					<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+						<h3 style="line-height: 30px;"><a class="nomProducto">Seti</a></h3>
+						<span class="priceProducto">$3999</span>
+					</div>
+				</div>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a style="cursor: pointer;" onclick="changeProduct(10)">
+			<div class="text-center">
+				<div class="product" style="margin-top: 1em;">
+					<div class="product-grid"
+						style="background-image:url(images/productos/puffino/veracruz.jpg); margin: 0 auto;">
+					</div>
+					<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+						<h3 style="line-height: 30px;"><a class="nomProducto">Canek</a></h3>
+						<span class="priceProducto">$4199</span>
+					</div>
+				</div>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a style="cursor: pointer;" onclick="changeProduct(11)">
+			<div class="text-center">
+				<div class="product" style="margin-top: 1em;">
+					<div class="product-grid"
+						style="background-image:url(images/productos/puffino/veracruz_ninos.jpg); margin: 0 auto;">
+					</div>
+					<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+						<h3 style="line-height: 30px;"><a class="nomProducto">Canek Niños</a></h3>
+						<span class="priceProducto">$3399</span>
+					</div>
+				</div>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a style="cursor: pointer;" onclick="changeProduct(17)">
+			<div class="text-center">
+				<div class="product" style="margin-top: 1em;">
+					<div class="product-grid"
+						style="background-image:url(images/productos/puffino/zacatecas_chico.jpg); margin: 0 auto;">
+					</div>
+					<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+						<h3 style="line-height: 30px;"><a class="nomProducto">Kimbo Chico</a></h3>
+						<span class="priceProducto">$2399</span>
+					</div>
+				</div>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a style="cursor: pointer;" onclick="changeProduct(18)">
+			<div class="text-center">
+				<div class="product" style="margin-top: 1em;">
+					<div class="product-grid"
+						style="background-image:url(images/productos/puffino/zacatecas_mediano.jpg); margin: 0 auto;">
+					</div>
+					<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+						<h3 style="line-height: 30px;"><a class="nomProducto">Kimbo Mediano</a></h3>
+						<span class="priceProducto">$2699</span>
+					</div>
+				</div>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a style="cursor: pointer;" onclick="changeProduct(16)">
+			<div class="text-center">
+				<div class="product" style="margin-top: 1em;">
+					<div class="product-grid"
+						style="background-image:url(images/productos/puffino/zacatecas_grande.jpg); margin: 0 auto;">
+					</div>
+					<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+						<h3 style="line-height: 30px;"><a class="nomProducto">Kimbo Grande</a></h3>
+						<span class="priceProducto">$3199</span>
+					</div>
+				</div>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a style="cursor: pointer;" onclick="changeProduct(19)">
+			<div class="text-center">
+				<div class="product" style="margin-top: 1em;">
+					<div class="product-grid"
+						style="background-image:url(images/productos/puffino/zacatlan.jpg); margin: 0 auto;">
+					</div>
+					<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+						<h3 style="line-height: 30px;"><a class="nomProducto">Kuk</a></h3>
+						<span class="priceProducto">$3399</span>
+					</div>
+				</div>
+			</div>
+		</a>
+	</li>
+	<li>
+		<a style="cursor: pointer;" onclick="changeProduct(20)">
+			<div class="text-center">
+				<div class="product" style="margin-top: 1em;">
+					<div class="product-grid"
+						style="background-image:url(images/productos/puffino/zacatlan_mediano.jpg); margin: 0 auto;">
+					</div>
+					<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+						<h3 style="line-height: 30px;"><a class="nomProducto">Kuk Mediano</a></h3>
+						<span class="priceProducto">$2899</span>
+					</div>
+				</div>
+			</div>
+		</a>
+	</li>
+	</ul>
+	</div>
+	<!-- FIN SLIDER DE MODELOS PUFFINO -->
+
+
+	<!-- SLIDER DE MODELOS KIDS -->
+	<div id="kidsDiv">
+		<ul id="sliderKids">
+			<li>
+				<a style="cursor: pointer;" onclick="changeProduct(1)">
+					<div class="text-center">
+						<div class="product" style="margin-top: 1em;">
+							<div class="product-grid"
+								style="background-image:url(images/productos/kids/kids_conejo.jpg); margin: 0 auto;">
+							</div>
+							<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+								<h3 style="line-height: 30px;"><a class="nomProducto">CONEJO</a></h3>
+								<span class="priceProducto">$3499</span>
+							</div>
+						</div>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a style="cursor: pointer;" onclick="changeProduct(2)">
+					<div class="text-center">
+						<div class="product" style="margin-top: 1em;">
+							<div class="product-grid"
+								style="background-image:url(images/productos/kids/kids_dinosaurio.jpg); margin: 0 auto;">
+							</div>
+							<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+								<h3 style="line-height: 30px;"><a class="nomProducto">DINOSAURIO</a></h3>
+								<span class="priceProducto">$3699</span>
+							</div>
+						</div>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a style="cursor: pointer;" onclick="changeProduct(3)">
+					<div class="text-center">
+						<div class="product" style="margin-top: 1em;">
+							<div class="product-grid"
+								style="background-image:url(images/productos/kids/kids_dona.jpg); margin: 0 auto;">
+							</div>
+							<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+								<h3 style="line-height: 30px;"><a class="nomProducto">DONA</a></h3>
+								<span class="priceProducto">$3399</span>
+							</div>
+						</div>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a style="cursor: pointer;" onclick="changeProduct(4)">
+					<div class="text-center">
+						<div class="product" style="margin-top: 1em;">
+							<div class="product-grid"
+								style="background-image:url(images/productos/kids/kids_jirafa.jpg); margin: 0 auto;">
+							</div>
+							<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+								<h3 style="line-height: 30px;"><a class="nomProducto">JIRAFA</a></h3>
+								<span class="priceProducto">$3799</span>
+							</div>
+						</div>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a style="cursor: pointer;" onclick="changeProduct(5)">
+					<div class="text-center">
+						<div class="product" style="margin-top: 1em;">
+							<div class="product-grid"
+								style="background-image:url(images/productos/kids/kids_perrito.jpg); margin: 0 auto;">
+							</div>
+							<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+								<h3 style="line-height: 30px;"><a class="nomProducto">PERRITO</a></h3>
+								<span class="priceProducto">$3699</span>
+							</div>
+						</div>
+					</div>
+				</a>
+			</li>
+			<li>
+				<a style="cursor: pointer;" onclick="changeProduct(6)">
+					<div class="text-center">
+						<div class="product" style="margin-top: 1em;">
+							<div class="product-grid"
+								style="background-image:url(images/productos/kids/kids_unicornio.jpg); margin: 0 auto;">
+							</div>
+							<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
+								<h3 style="line-height: 30px;"><a class="nomProducto">UNICORNIO</a></h3>
+								<span class="priceProducto">$3499</span>
+							</div>
+						</div>
+					</div>
+				</a>
+			</li>
+		</ul>
+	</div>
+	<!-- FIN SLIDER DE MODELOS KIDS-->
+
+
+	<!--SECCION DE DETALLE DE PRODUCTOS-->
+	<div id="detailP">
+		<div class="contenedor">
+			<div class="row">
+				<div class="col-md-8 col-md-offset-2">
+					<div id="holi">
+						<ul id="sliderDetail" style="margin-bottom: -5.5em;">
+						</ul>
+					</div>
+					<div class="row">
+						<div class="col-md-12 col-md-offset-0 text-center fh5co-heading">
+							<h2 style="margin-top: 1em;" id="nombreP"></h2>
+							<h5 id="medidasP"></h5>
+							<p id="descriptionP" style="font-family: 'Roboto';font-size: 0.9em;line-height: 2em;">
+							</p>
+							<div id="radio-material">
+								<h4>Material:</h4>
+
+								Normal
+								<input type="radio" name="tab" value="igotnone" onclick="opMaterial(0)"
+									checked="checked" />
+								personalizado
+								<input type="radio" name="tab" value="igottwo" onclick="opMaterial(1)" />
+							</div>
+							<div class="contenedor esconder" id="selector-textura">
+								<div class="row color-personalisado">
+									<div class="materiales col-md-6 col-6" id="materiales">
+										<h4 id="descripcionMaterial" style="color: #4E56DF;">Material</h4>
+										<div class="grid-texturas" id="grid-texturas">
+											<ul class="nav nav-tabs tabTexturas" role="tablist" id="tab-texturas">
+												<li role="presentation">
+													<a class="tabLink" href="#tab-id-3" aria-controls="tab-id-3"
+														role="tab" data-toggle="tab">
+														<span>Curri</span>
+													</a>
+												</li>
+											</ul>
+											<div class="tab-content">
+												<div class="tab-pane" id="tab-id-0" role="tabpanel">
+													<div class="btn-grid  cont-txturas" id="btn-grid">
+														<input type="image" src="assets/texturas/chico/TP ROJOchico.jpg"
+															class="btn-imagen-grid " />
+													</div>
+												</div>
+												<div class="tab-pane" id="tab-id-1" role="tabpanel">
+													<div class="btn-grid1 cont-txturas-1" id="btn-grid1">
+														<input type="image" src="assets/texturas/chico/TP ROJOchico.jpg"
+															class="btn-imagen-grid" />
+													</div>
+												</div>
+												<div class="tab-pane" id="tab-id-2" role="tabpanel">
+													<div class="btn-grid2 cont-txturas-2" id="btn-grid2">
+														<input type="image" src="assets/texturas/chico/TP ROJOchico.jpg"
+															class="btn-imagen-grid" />
+													</div>
+												</div>
+												<div class="tab-pane active" id="tab-id-3" role="tabpanel">
+													<div class="btn-grid3 cont-txturas-3" id="btn-grid3">
+														<input type="image" src="assets/texturas/chico/TP ROJOchico.jpg"
+															class="btn-imagen-grid" />
+													</div>
+												</div>
+											</div>
+										</div>
+
+									</div>
+									<div class="col-md-6 col-6 img-textura-catalago" id="div-textura-catalago">
+										<!--
+										<img id="img-textura-catalago" src="" width="100%" height="100%">
+										-->
+									</div>
+								</div>
+							</div>
+
+							<h2 style="margin-top: 1.3em;" class="nomProducto" id="precioP"></h2>
+							<button type="button" onclick="" class="btn-agregar " id="btn-agregar blue btn">Añadir al
+								carrito</button>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<br>
+	<div class="row copyright" style="font-family: 'Roboto';">
+		<div class="col-md-3 col-sm-2 col-xs-2"></div>
+		<div class="col-md-6 col-sm-8 col-xs-8 text-center">
+			<p style="font-size: 0.9rem;line-height: 1.2em; text-align:center; color:black">
+				*Las fotografías mostradas en este sitio web son reales y propiedad de Puffino. Copyright 2017
+				León,
+				Guanajuato. Derechos reservados ©, prohibida su reproducción o uso total o parcial por
+				cualquier medio.
+			</p>
+		</div>
+		<div class="col-md-3 col-sm-2 col-xs-2"></div>
+	</div>
+
+	<footer id="fh5co-footer" style="font-family: 'Roboto'; padding-top: 3em; padding-bottom: 0em;" role="contentinfo">
+		<div class="contenedor">
+			<div class="row row-pb-md" style="padding-bottom: 0em !important;">
+				<div class="col-md-1 col-sm-1 col-xs-1 col-md-push-1">
+					<ul class="fh5co-footer-links">
+					</ul>
+				</div>
+				<div class="col-md-4 fh5co-widget ftr-links">
+					<img src="images/puff_logo.png" width="150" height="75">
+					<p>
+						<ul class="fh5co-social-icons">
+							<li><a href="https://www.facebook.com/puffino.mx/"><i style="background: #353a34;"
+										class="icon-facebook"></i></a></li>
+							<li><a href="https://www.youtube.com/channel/UC_IQX58WKgUAJiZfj9oy6wg/featured"><i
+										style="background: #353a34;" class="icon-youtube"></i></a></li>
+							<li><a href="https://www.instagram.com/puffinomx/"><i style="background: #353a34;"
+										class="icon-instagram"></i></a></li>
+							<li><a href="https://www.twitter.com/puffinomx/"><i style="background: #353a34;"
+										class="icon-twitter"></i></a></li>
+							<li><a href="https://www.pinterest.com/puffinomx/"><i style="background: #353a34;"
+										class="icon-pinterest"></i></a></li>
+						</ul>
+					</p>
+				</div>
+
+				<div class="col-md-2 col-sm-4 col-xs-6 col-md-push-1">
+					<ul class="fh5co-footer-links">
+					</ul>
+				</div>
+
+				<div class="col-md-4 fh5co-widget text-right ftr-contacto">
+
+					<h3 style="font-size: 1.3rem; color:#FFF;">CONTÁCTANOS</h3>
+					<p>
+						477 854 11 12 <br>
+						ventas@oldravenfurniture.com <br>
+						León, Gto.
+					</p>
+				</div>
+
+				<div class="col-md-1 col-sm-1 col-xs-1 col-md-push-1">
+					<ul class="fh5co-footer-links">
+					</ul>
+				</div>
+			</div>
+		</div>
+
+	</footer>
+	</div>
+
+	<div class="gototop js-top">
+		<a href="#" class="js-gotop"><i class="icon-arrow-up" style="background-color:#4DD7D3;"></i></a>
+	</div>
+
+	<!-- jQuery -->
+	<script src="js/jquery.min.js"></script>
+	<!-- jQuery Easing -->
+	<script src="js/jquery.easing.1.3.js"></script>
+	<!-- Bootstrap -->
+	<script src="js/bootstrap3.3.7.js"></script>
+	<!-- Waypoints -->
+	<script src="js/jquery.waypoints.min.js"></script>
+	<!-- Carousel -->
+	<script src="js/owl.carousel.min.js"></script>
+	<!-- countTo -->
+	<script src="js/jquery.countTo.js"></script>
+	<!-- Flexslider -->
+	<script src="js/jquery.flexslider-min.js"></script>
+	<!-- Main -->
+	<script src="js/main.js"></script>
+	<script type="text/javascript" src="js/jquery.flexisel2.js"></script>
+
+
+	<script type="text/javascript">
+
+		var showYoko = true;
+		var showYokoDetalles = true;
+		var showPuffino = true;
+		var showKids = true;
+		function showYokoTipoDetalles(opc) {
+
+			if (showYokoDetalles) {
+				//Verificamos si alguna otra categoría se está mostrando y la ocultamos
+				if (!showKids) {
+					$("#kidsDiv").hide(500);
+					showKids = true;
+				}
+
+				if (!showPuffino) {
+					$("#puffinoDiv").hide(500);
+					showPuffino = true;
+				}
+
+				if (!showYokoDetalles) {
+					$("#yokoDiv").hide(500);
+					showYokoDetalles = true;
+				}
+
+				//Mostramos la categoría de Puffino
+				switch (opc) {
+					case 0:
+						setTimeout(loadYokoTipoSlider, 100);
+						inflarSliderTrendy();
+						$("#yokoTipoDiv").show(500);
+						mostrarRadioMateriales(true);
+						document.getElementById("div-textura-catalago").innerHTML = "";
+						cambiarTabTexturas(0);
+						break;
+					case 1:
+						setTimeout(loadYokoTipoSlider, 100);
+						inflarSliderCasual();
+						$("#yokoTipoDiv").show(500);
+						document.getElementById("div-textura-catalago").innerHTML = "";
+						cambiarTabTexturas(0);
+						mostrarRadioMateriales(true);
+						break;
+					case 2:
+						setTimeout(loadYokoTipoSlider, 100);
+						inflarSliderContempo();
+						$("#yokoTipoDiv").show(500);
+						document.getElementById("div-textura-catalago").innerHTML = "";
+						cambiarTabTexturas(0);
+						mostrarRadioMateriales(true);
+						break;
+					default:
+						break;
+				}
+
+
+				//setTimeout(loadPuffinoSlider, 500);
+				showYokoDetalles = false;
+			}
+			else {
+				$("#yokoTipoDiv").hide(500);
+				showYokoDetalles = true;
+			}
+		}
+		function showYokoDiv() {
+			if (showYoko) {
+				//Verificamos si alguna otra categoría se está mostrando y la ocultamos
+				if (!showKids) {
+					$("#kidsDiv").hide(500);
+					showKids = true;
+				}
+
+				if (!showPuffino) {
+					$("#puffinoDiv").hide(500);
+					showPuffino = true;
+				}
+
+				if (!showYokoDetalles) {
+					$("#yokoDiv").hide(500);
+					showYokoDetalles = true;
+				}
+
+				//Mostramos la categoría de Puffino
+				$("#showYookoSelecion").show(500);
+				//setTimeout(loadPuffinoSlider, 500);
+				showYoko = false;
+			}
+			else {
+				$("#showYookoSelecion").hide(500);
+				showYoko = true;
+			}
+
+
+		}
+		function showPuffinoDiv() {
+			if (showPuffino) {
+				//Verificamos si alguna otra categoría se está mostrando y la ocultamos
+				if (!showYoko) {
+
+					$("#showYookoSelecion").hide(500);
+					showYoko = true;
+				}
+
+				if (!showKids) {
+					$("#kidsDiv").hide(500);
+					showKids = true;
+				}
+				if (!showYokoDetalles) {
+					$("#yokoTipoDiv").hide(500);
+					showYokoDetalles = true;
+				}
+
+				//Mostramos la categoría de Puffino
+				$("#puffinoDiv").show(500);
+				setTimeout(loadPuffinoSlider, 100);
+				mostrarRadioMateriales(true);
+				cambiarTabTexturas(1);
+				document.getElementById("div-textura-catalago").innerHTML = "";
+				showPuffino = false;
+			}
+			else {
+				$("#puffinoDiv").hide(500);
+				showPuffino = true;
+			}
+		}
+		function showKidsDiv() {
+			if (showKids) {
+				//Verificamos si alguna otra categoría se está mostrando y la ocultamos
+				if (!showYoko) {
+					$("#showYookoSelecion").hide(500);
+					showYoko = true;
+				}
+
+				if (!showPuffino) {
+					$("#puffinoDiv").hide(500);
+					showPuffino = true;
+				}
+				if (!showYokoDetalles) {
+					$("#yokoTipoDiv").hide(500);
+					showYokoDetalles = true;
+				}
+				//Mostramos la categoría de Puffino
+				$("#kidsDiv").show(500);
+				setTimeout(loadKidsSlider, 100);
+				mostrarRadioMateriales(false);
+				showKids = false;
+			}
+			else {
+				$("#kidsDiv").hide(500);
+				showKids = true;
+			}
+		}
+		function showYookoTrendy() {
+
+			if (showYoko) {
+				//Verificamos si alguna otra categoría se está mostrando y la ocultamos
+				if (!showPuffino) {
+					$("#puffinoDiv").hide(500);
+					showPuffino = true;
+				}
+
+				if (!showKids) {
+					$("#kidsDiv").hide(500);
+					showKids = true;
+				}
+				inflarSliderTrendy();
+				$("#yokoDiv").show(250);
+				showYokoDetalles = false;
+			}
+			else {
+				$("#yokoDiv").hide(500);
+				showYokoDetalles = false;
+			}
+		}
+		function showYookoCasual() {
+			if (showYoko) {
+				//Verificamos si alguna otra categoría se está mostrando y la ocultamos
+				if (!showPuffino) {
+					$("#puffinoDiv").hide(500);
+					showPuffino = true;
+				}
+
+				if (!showKids) {
+					$("#kidsDiv").hide(500);
+					showKids = true;
+				}
+				inflarSliderCasual();
+				//Mostramos la categoría de Yoko Modular
+				$("#yokoDiv").show(250);
+				showYokoDetalles = false;
+			}
+			else {
+				$("#yokoDiv").hide(500);
+				showYokoDetalles = false;
+			}
+		}
+		function showYookoContempo() {
+			if (showYoko) {
+				//Verificamos si alguna otra categoría se está mostrando y la ocultamos
+				if (!showPuffino) {
+					$("#puffinoDiv").hide(500);
+					showPuffino = true;
+				}
+
+				if (!showKids) {
+					$("#kidsDiv").hide(500);
+					showKids = true;
+				}
+				inflarSliderContempo();
+				//Mostramos la categoría de Yoko Modular
+				$("#yokoDiv").show(250);
+				showYokoDetalles = false;
+			}
+			else {
+				$("#yokoDiv").hide(500);
+				showYokoDetalles = false;
+			}
+		}
+
+		//Funciones para cargar la vista del slider de las categorías de productos
+		function loadYokoSlider() {
+			$("#sliderYoko").flexisel({
+				visibleItems: 4,
+				itemsToScroll: 1,
+				mobileFirst: false,
+				infinite: true,
+				loaded: function (object) {
+					console.log('Slider loaded...');
+				},
+				autoPlay: {
+					enable: true,
+					interval: 7000,
+					pauseOnHover: true
+				}, responsiveBreakpoints: {
+					portrait: {
+						changePoint: 480,
+						visibleItems: 1,
+						itemsToScroll: 1
+					},
+					landscape: {
+						changePoint: 640,
+						visibleItems: 1,
+						itemsToScroll: 2
+					},
+					tablet: {
+						changePoint: 768,
+						visibleItems: 1,
+						itemsToScroll: 3
+					}
+				}
+			});
+		}
+		function loadYokoTipoSlider() {
+			$("#sliderTipoYoko").flexisel({
+				visibleItems: 3,
+				itemsToScroll: 1,
+				mobileFirst: false,
+				infinite: true,
+				loaded: function (object) {
+					console.log('Slider loaded...');
+				},
+				autoPlay: {
+					enable: true,
+					interval: 7000,
+					pauseOnHover: true
+				}, responsiveBreakpoints: {
+					portrait: {
+						changePoint: 480,
+						visibleItems: 1,
+						itemsToScroll: 1
+					},
+					landscape: {
+						changePoint: 640,
+						visibleItems: 1,
+						itemsToScroll: 1
+					},
+					tablet: {
+						changePoint: 768,
+						visibleItems: 1,
+						itemsToScroll: 1
+					}
+				}
+			});
+		}
+		function loadPuffinoSlider() {
+			$("#sliderPuffino").flexisel({
+				visibleItems: 4,
+				itemsToScroll: 2,
+				autoPlay: {
+					enable: true,
+					interval: 7000,
+					pauseOnHover: true
+				}, responsiveBreakpoints: {
+					portrait: {
+						changePoint: 480,
+						visibleItems: 1,
+						itemsToScroll: 1
+					},
+					landscape: {
+						changePoint: 640,
+						visibleItems: 2,
+						itemsToScroll: 2
+					},
+					tablet: {
+						changePoint: 768,
+						visibleItems: 3,
+						itemsToScroll: 1
+					}
+				}
+			});
+		}
+		function loadKidsSlider() {
+			$("#sliderKids").flexisel({
+				visibleItems: 4,
+				itemsToScroll: 1,
+				infinite: true,
+				autoPlay: {
+					enable: true,
+					interval: 7000,
+					pauseOnHover: true
+				}, responsiveBreakpoints: {
+					portrait: {
+						changePoint: 480,
+						visibleItems: 1,
+						itemsToScroll: 1
+					},
+					landscape: {
+						changePoint: 640,
+						visibleItems: 2,
+						itemsToScroll: 2
+					},
+					tablet: {
+						changePoint: 768,
+						visibleItems: 3,
+						itemsToScroll: 3
+					}
+				}
+			});
+		}
+		function loadDetailSlider() {
+			$("#sliderDetail").flexisel({
+				visibleItems: 1,
+				itemsToScroll: 1,
+				autoPlay: {
+					enable: true,
+					interval: 7000,
+					pauseOnHover: true
+				}, responsiveBreakpoints: {
+					portrait: {
+						changePoint: 480,
+						visibleItems: 1,
+						itemsToScroll: 1
+					},
+					landscape: {
+						changePoint: 640,
+						visibleItems: 1,
+						itemsToScroll: 1
+					},
+					tablet: {
+						changePoint: 768,
+						visibleItems: 1,
+						itemsToScroll: 1
+					}
+				}
+			});
+		}
+
+		$(document).ready(function () {
+
+			$("#yokoDiv").hide(500);
+			$("#yokoTipoDiv").hide(500);
+			$("#puffinoDiv").hide(500);
+			$("#kidsDiv").hide(500);
+			$("#showYookoSelecion").hide(500);
+			//Dejar de mostrar el detalle
+			$("#detailP").hide(500);
+
+			$("#yokoShow").click(function () {
+				showYokoDiv();
+			});
+
+			$("#puffinoShow").click(function () {
+				showPuffinoDiv();
+			});
+
+			$("#kidsShow").click(function () {
+				showKidsDiv();
+			});
+			$("#yooko-trendy-show").click(function () {
+				showYokoTipoDetalles(0);
+			});
+
+			$("#yooko-casual-show").click(function () {
+				showYokoTipoDetalles(1);
+			});
+
+			$("#yooko-contemporaneo-show").click(function () {
+				showYokoTipoDetalles(2);
+			});
+
+		});
+
+	</script>
+
+	<script>
+		function changeProduct(value) {
+			$("#detailP").hide(100);
+			mostrarDetalles(value);
+		}
+
+
+		function hideDesc() {
+			document.getElementById('medidasP').style.display = "none";
+			document.getElementById('descriptionP').style.display = "none";
+		}
+		function showDesc() {
+			document.getElementById('medidasP').style.display = "block";
+			document.getElementById('descriptionP').style.display = "block";
+		}
+	</script>
+	<script src="js/carrito.js"></script>
+	<script src="js/requestCatalago.js"></script>
+
+</body>
+
+</html>
