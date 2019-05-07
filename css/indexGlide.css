@@ -1,0 +1,38 @@
+/*estilo del slider*/
+.wrap {
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .glide__slide {
+    text-align: center;
+  }
+  
+  #glide1 .glide__slide,
+  #glide2 .glide__slide {
+    height: 100px;
+    line-height: 100px;
+  }
+  
+  
+  button.glide__arrow {
+    border: none;
+    font-size: 11px;
+  }
+ 
+  .controles{
+    position: absolute;
+    top: 50%;
+  
+    -webkit-transform: translateY(-50%);
+        -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+            width: 100%;
+  }
+  .fas.fa-chevron-right {
+    position: relative;
+    left: 100%;
+}
+.contendor-glide{
+    position: relative;
+}

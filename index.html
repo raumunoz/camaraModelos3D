@@ -28,7 +28,7 @@
 	<!--
 	<script src="js/tienda2.js"></script>
 	-->
-	<script type="text/javascript" src="js/jquery.flexisel.js"></script>
+
 	<!--FUENTES-->
 	<!--
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"> 
@@ -52,9 +52,17 @@
 
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="css/style.css">
+	<!-- estilos para el slider-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+		integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/glide.core.css">
+	<link rel="stylesheet" href="css/glide.theme.css">
+	<link rel="stylesheet" href="css/indexGlide.css">
 
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
+
+
 
 
 	<!-- FOR IE9 below -->
@@ -325,7 +333,8 @@
 				<div id="paypal-button-container"></div>
 				<div id="paypal-button"></div>
 				-->
-				<button type="button" class="btn btn-success btn-agregar-ir-al-carrito" id="btn-agregar-ir-al-carrito" onclick="location.href = 'cart.html';">IR AL CARRITO</button>
+				<button type="button" class="btn btn-success btn-agregar-ir-al-carrito" id="btn-agregar-ir-al-carrito"
+					onclick="location.href = 'cart.html';">IR AL CARRITO</button>
 			</div>
 		</div>
 
@@ -346,7 +355,8 @@
 							<li style="margin-right: 1.1em;"><a href="catalogo.html"
 									style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">CATÁLOGO.</a></li>
 							<li style="margin-right: 1.1em;"><a href="envio.html"
-									style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">ENVÍO Y DEVOLUCIONES.</a></li>
+									style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">ENVÍO Y
+									DEVOLUCIONES.</a></li>
 							<li style="margin-right: 1.1em;"><a href="contact.html"
 									style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">CONTACTO.</a></li>
 						</ul>
@@ -409,7 +419,7 @@
 							<a id="yokoShow" style="cursor: pointer;" onclick="">
 								<div class="product-grid"
 									style="background-image:url(images/catalogo/yoko/yookocasual_silla.jpg);"
-									onclick="mostrarSubmenu()">
+									onclick="opMostrarSlider(0)">
 									<div class="inner">
 										<!--<p>
 											<a id="holiShow" style="cursor: pointer;" class="icon"><i class="icon-eye"></i></a>
@@ -427,7 +437,7 @@
 							<a id="puffinoShow" style="cursor: pointer;">
 								<div class="product-grid"
 									style="background-image:url(images/catalogo/puffino_catalogo.png);"
-									onclick="cambiarVistaMotor(1)">
+									onclick="opMostrarSlider(1)">
 									<div class="inner">
 										<!--
 										<p>
@@ -447,7 +457,7 @@
 							<a id="kidsShow" style="cursor: pointer;">
 								<div class="product-grid"
 									style="background-image:url(images/catalogo/ninos_catalogo.jpg);"
-									onclick="cambiarVistaMotor(2)">
+									onclick="opMostrarSlider(2);">
 									<div class="inner">
 										<!--
 										<p>
@@ -464,67 +474,56 @@
 					</div>
 				</div>
 
-				<div id="showYookoSelecion" class="sub-menu-desactivo" style="font-family: 'Roboto';padding-bottom: 0px; padding-top: 3em;">
-					<div class="contenedor">
-						<div class="grid-yooko-sub">
-		
-							<div class="text-center slct-contempo" id="slct-contempo" onclick="cambioSubMenu(0)">
-								<div class="product" onclick="cambiarVistaMotor(0)">
-									<a id="yooko-contemporaneo-show" style="cursor: pointer;">
-										<div class="product-grid"
-											style="background-image:url(images/catalogo/yoko/yooko_contempo.jpg);">
-											<div class="inner">
-												<!--<p>
-														<a id="holiShow" style="cursor: pointer;" class="icon"><i class="icon-eye"></i></a>
-													</p>-->
+				
+				<div id="showYookoSelecion" style="font-family: 'Roboto';padding-bottom: 0px; padding-top: 3em;" class="sub-menu-desactivo" >
+						<div class="contenedor">
+							<div class="row">
+			
+								<div class="text-center slct-contempo col-12 col-md-4" onclick="mostrarSliderContempo()">
+									<div class="product">
+										<a id="yooko-contemporaneo-show" style="cursor: pointer;" >
+											<div class="product-grid"
+												style="background-image:url(images/catalogo/yoko/yooko_contempo.jpg);">
+												
 											</div>
+										</a>
+										<div class="desc">
+											<h3><a style="cursor: pointer; ; font-size: 1.1rem;">contempo</a></h3>
 										</div>
-									</a>
-									<div class="desc">
-										<h3><a style="cursor: pointer; ; font-size: 1.1rem;">contemporaneo</a></h3>
 									</div>
 								</div>
-							</div>
-		
-							<div class="text-center slct-trendy" id="slct-trendy" onclick="cambioSubMenu(1)">
-								<div class="product">
-									<a id="yooko-trendy-show" style="cursor: pointer;">
-										<div class="product-grid"
-											style="background-image:url(images/catalogo/yoko/yooko_trendy.jpg);">
-											<div class="inner">
-												<!--<p>
-												<a id="holiShow" style="cursor: pointer;" class="icon"><i class="icon-eye"></i></a>
-											</p>-->
+			
+								<div class="text-center slct-trendy col-12 col-md-4" name="subMenu" onclick="mostrarSliderTrendy()">
+									<div class="product">
+										<a id="yooko-trendy-show" style="cursor: pointer;" >
+											<div class="product-grid"
+												style="background-image:url(images/catalogo/yoko/yooko_trendy.jpg);">
+												
 											</div>
+										</a>
+										<div class="desc">
+											<h3><a id="" style="cursor: pointer; ; font-size: 1.1rem;">Yooko Trendy</a></h3>
 										</div>
-									</a>
-									<div class="desc">
-										<h3><a id="" style="cursor: pointer; ; font-size: 1.1rem;">Yooko Trendy</a></h3>
 									</div>
 								</div>
-							</div>
-		
-							<div class=" text-center slct-casual" id="slct-casual" onclick="cambioSubMenu(2)">
-								<div class="product">
-									<a id="yooko-casual-show" style="cursor: pointer;">
-										<div class="product-grid"
-											style="background-image:url(images/catalogo/yoko/yooko_casual.jpg);">
-											<div class="inner">
-												<!--<p>
-												<a id="holiShow" style="cursor: pointer;" class="icon"><i class="icon-eye"></i></a>
-											</p>-->
+			
+								<div class=" text-center slct-casual col-12 col-md-4" onclick="mostrarSliderCasual()">
+									<div class="product">
+										<a id="yooko-casual-show" style="cursor: pointer;" >
+											<div class="product-grid"
+												style="background-image:url(images/catalogo/yoko/yooko_casual.jpg);">
+												
 											</div>
+										</a>
+										<div class="desc">
+											<h3><a style="cursor: pointer; ; font-size: 1.1rem;">Yooko Casual</a></h3>
 										</div>
-									</a>
-									<div class="desc">
-										<h3><a style="cursor: pointer; ; font-size: 1.1rem;">Yooko Casual</a></h3>
 									</div>
 								</div>
+			
 							</div>
-		
 						</div>
 					</div>
-				</div>
 
 				<div id="slidersModelosPadre">
 
@@ -698,6 +697,37 @@
 							</li>
 						</ul>
 					</div>
+
+					<div class="glide-yooko contendor-glide oculto" id="yooko">
+
+						<div class="glide__track" data-glide-el="track">
+							<ul class="glide__slides" id="ul-yooko">
+								<li class="glide__slide">
+
+									<a style="cursor: pointer;" onclick="cambioModulo(0,true)">
+										<div class="text-center">
+											<div class="product" style="margin-top: 1em;">
+												<div class="product-grid"
+													style="background-image:url(images/catalogo/yoko/yookocasual_esquinero.jpg); margin: 0 auto;">
+												</div>
+												<div class="desc" style="margin-top: 1em;">
+													<h3><a class="nomProducto">Yooko Casual Esquinero</a></h3>
+													<span class="priceProducto">$8799</span>
+												</div>
+											</div>
+										</div>
+									</a>
+									<button type="button"
+										onclick="agregarAlCarrito('Yoko sillón',7999,'images/catalogo/yoko/yookocasual_esquinero.jpg',this)"
+										class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
+								</li>
+							</ul>
+						</div>
+						<div data-glide-el="controls" class="controles row">
+							<a data-glide-dir="<" class="flecha-izquerda col-6"><i class="fas fa-chevron-left"></i></a>
+							<a data-glide-dir=">" class="flecha-derecha col-6"><i class="fas fa-chevron-right"></i></a>
+						</div>
+					</div>
 					<!-- FIN SLIDER DE MODELOS YOKO MODULAR -->
 
 					<!-- SLIDER DE MODELOS PUFFINO -->
@@ -724,8 +754,38 @@
 									onclick="agregarAlCarrito('Yumil',2599,'images/productos/puffino/atlixco.jpg',this)"
 									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
-						
+
 						</ul>
+					</div>
+
+					<div class="glide-puffino contendor-glide oculto" id="puffino">
+						<div class="glide__track" data-glide-el="track">
+							<ul class="glide__slides" id="ul-puffino">
+								<li class="glide__slide">
+
+									<a style="cursor: pointer;" onclick="cambioModulo(0,true)">
+										<div class="text-center">
+											<div class="product" style="margin-top: 1em;">
+												<div class="product-grid"
+													style="background-image:url(images/catalogo/yoko/yookocasual_esquinero.jpg); margin: 0 auto;">
+												</div>
+												<div class="desc" style="margin-top: 1em;">
+													<h3><a class="nomProducto">Yooko Casual Esquinero</a></h3>
+													<span class="priceProducto">$8799</span>
+												</div>
+											</div>
+										</div>
+									</a>
+									<button type="button"
+										onclick="agregarAlCarrito('Yoko sillón',7999,'images/catalogo/yoko/yookocasual_esquinero.jpg',this)"
+										class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
+								</li>
+							</ul>
+						</div>
+						<div data-glide-el="controls" class="controles row">
+							<a data-glide-dir="<" class="flecha-izquerda col-6"><i class="fas fa-chevron-left"></i></a>
+							<a data-glide-dir=">" class="flecha-derecha col-6"><i class="fas fa-chevron-right"></i></a>
+						</div>
 					</div>
 					<!-- FIN SLIDER DE MODELOS PUFFINO -->
 
@@ -862,7 +922,134 @@
 							</li>
 						</ul>
 					</div>
+					<div class="glide-kids contendor-glide oculto" id="kids">
+						<div class="glide__track" data-glide-el="track">
+							<ul class="glide__slides" id="ul-kids">
+								<li class="glide__slide">
 
+									<a style="cursor: pointer;" onclick="cambioModulo(0,true)">
+										<div class="text-center">
+											<div class="product" style="margin-top: 1em;">
+												<div class="product-grid"
+													style="background-image:url(images/catalogo/yoko/yookocasual_esquinero.jpg); margin: 0 auto;">
+												</div>
+												<div class="desc" style="margin-top: 1em;">
+													<h3><a class="nomProducto">Yooko Casual Esquinero</a></h3>
+													<span class="priceProducto">$8799</span>
+												</div>
+											</div>
+										</div>
+									</a>
+									<button type="button"
+										onclick="agregarAlCarrito('Yoko sillón',7999,'images/catalogo/yoko/yookocasual_esquinero.jpg',this)"
+										class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
+								</li>
+								<li class="glide__slide">
+
+									<a style="cursor: pointer;" onclick="cambioModulo(0,true)">
+										<div class="text-center">
+											<div class="product" style="margin-top: 1em;">
+												<div class="product-grid"
+													style="background-image:url(images/catalogo/yoko/yookocasual_esquinero.jpg); margin: 0 auto;">
+												</div>
+												<div class="desc" style="margin-top: 1em;">
+													<h3><a class="nomProducto">Yooko Casual Esquinero</a></h3>
+													<span class="priceProducto">$8799</span>
+												</div>
+											</div>
+										</div>
+									</a>
+									<button type="button"
+										onclick="agregarAlCarrito('Yoko sillón',7999,'images/catalogo/yoko/yookocasual_esquinero.jpg',this)"
+										class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
+								</li>
+								<li class="glide__slide">
+
+									<a style="cursor: pointer;" onclick="cambioModulo(0,true)">
+										<div class="text-center">
+											<div class="product" style="margin-top: 1em;">
+												<div class="product-grid"
+													style="background-image:url(images/catalogo/yoko/yookocasual_esquinero.jpg); margin: 0 auto;">
+												</div>
+												<div class="desc" style="margin-top: 1em;">
+													<h3><a class="nomProducto">Yooko Casual Esquinero</a></h3>
+													<span class="priceProducto">$8799</span>
+												</div>
+											</div>
+										</div>
+									</a>
+									<button type="button"
+										onclick="agregarAlCarrito('Yoko sillón',7999,'images/catalogo/yoko/yookocasual_esquinero.jpg',this)"
+										class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
+								</li>
+								<li class="glide__slide">
+
+									<a style="cursor: pointer;" onclick="cambioModulo(0,true)">
+										<div class="text-center">
+											<div class="product" style="margin-top: 1em;">
+												<div class="product-grid"
+													style="background-image:url(images/catalogo/yoko/yookocasual_esquinero.jpg); margin: 0 auto;">
+												</div>
+												<div class="desc" style="margin-top: 1em;">
+													<h3><a class="nomProducto">Yooko Casual Esquinero</a></h3>
+													<span class="priceProducto">$8799</span>
+												</div>
+											</div>
+										</div>
+									</a>
+									<button type="button"
+										onclick="agregarAlCarrito('Yoko sillón',7999,'images/catalogo/yoko/yookocasual_esquinero.jpg',this)"
+										class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
+								</li>
+							</ul>
+						</div>
+						<div data-glide-el="controls" class="controles row">
+							<a data-glide-dir="<" class="flecha-izquerda col-6"><i class="fas fa-chevron-left"></i></a>
+							<a data-glide-dir=">" class="flecha-derecha col-6"><i class="fas fa-chevron-right"></i></a>
+						</div>
+					</div>
+					<!--SLIDERS CUSTOM-->
+					<div class="glide-contempo contendor-glide oculto" id="contempo">
+						<div class="glide__track" data-glide-el="track">
+							<ul class="glide__slides" id="ul-contempo">
+								<li class="glide__slide"></li>
+								<li class="glide__slide"></li>
+								<li class="glide__slide"></li>
+							</ul>
+						</div>
+						<div data-glide-el="controls" class="controles row">
+							<a data-glide-dir="<" class="flecha-izquerda col-6"><i class="fas fa-chevron-left"></i></a>
+							<a data-glide-dir=">" class="flecha-derecha col-6"><i class="fas fa-chevron-right"></i></a>
+						</div>
+					</div>
+					<!--Trendy-->
+					<div class="glide-trendy contendor-glide oculto" id="trendy">
+						<div class="glide__track" data-glide-el="track">
+							<ul class="glide__slides" id="ul-trendy">
+								<li class="glide__slide"></li>
+								<li class="glide__slide"></li>
+								<li class="glide__slide"></li>
+							</ul>
+						</div>
+						<div data-glide-el="controls" class="controles row">
+							<a data-glide-dir="<" class="flecha-izquerda col-6"><i class="fas fa-chevron-left"></i></a>
+							<a data-glide-dir=">" class="flecha-derecha col-6"><i class="fas fa-chevron-right"></i></a>
+						</div>
+					</div>
+					<!--Casual-->
+					<div class="glide-casual contendor-glide oculto" id="casual">
+						<div class="glide__track" data-glide-el="track">
+							<ul class="glide__slides" id="ul-casual">
+								<li class="glide__slide">0</li>
+								<li class="glide__slide"></li>
+								<li class="glide__slide"></li>
+							</ul>
+						</div>
+						<div data-glide-el="controls" class="controles row">
+							<a data-glide-dir="<" class="flecha-izquerda col-6"><i class="fas fa-chevron-left"></i></a>
+							<a data-glide-dir=">" class="flecha-derecha col-6"><i class="fas fa-chevron-right"></i></a>
+						</div>
+					</div>
 					<!-- FIN SLIDER DE MODELOS KIDS-->
 					<hr>
 				</div>
@@ -1022,7 +1209,7 @@
 						<ul class="opc-herramienta">
 							<li>
 								<span class="img-fondo img-menu btn-imagen-grid" class="">
-									<label for="file-input">
+									<label for="file-input" class="file-input-fodo">
 										<img src="assets/iconos/upload_image.png" alt="fondo" id="fondo" height="25"
 											width="25" class="img-menu btn-imagen-grid">
 									</label>
@@ -1072,21 +1259,22 @@
 				</div>
 				<div class="item3" id="main">
 					<div id="datGUI" class="datGUI">
-						<canvas id="renderCanvas" class="renderCanvas" touch-action="pan-up pan-down pinch-zoom">
+						<canvas id="renderCanvas" class="renderCanvas" touch-action="pan-up pan-down pinch-zoom"
+							>
 						</canvas>
 						<!--
 										<button id="btnPrueba" class="btnPrueba">comida</button>
 										-->
-						<div class="selecionMenu">
-							<button type="button" onclick="cambiarMenuMovil(1)" class="btn"
-								id="slct-btn-foto">Herramientas</button>
-							<button type="button" onclick="cambiarMenuMovil(2)" class="btn slct-btn-color"
-								id="slct-btn-color">Color</button>
-							<button type="button" onclick="cambiarMenuMovil(3)" class="btn" id="slct-btn-preArmado">Pre
-								armado</button>
-							<button type="button" onclick="cambiarMenuMovil(4)" class="btn"
-								id="slct-btn-modelo">Modelo</button>
-						</div>
+					</div>
+					<div class="selecionMenu">
+						<button type="button" onclick="cambiarMenuMovil(1)" class="btn"
+							id="slct-btn-foto">Herramientas</button>
+						<button type="button" onclick="cambiarMenuMovil(2)" class="btn slct-btn-color"
+							id="slct-btn-color">Color</button>
+						<button type="button" onclick="cambiarMenuMovil(3)" class="btn" id="slct-btn-preArmado">Pre
+							armado</button>
+						<button type="button" onclick="cambiarMenuMovil(4)" class="btn"
+							id="slct-btn-modelo">Modelo</button>
 					</div>
 				</div>
 
@@ -1349,7 +1537,7 @@
 
 	<script src="js/jquery.easing.1.3.js"></script>
 	<!-- Bootstrap -->
-	<script src="js/bootstrap.min.js"></script>
+	<script src="js/bootstrap3.3.7.js"></script>
 	<!-- Waypoints -->
 	<script src="js/jquery.waypoints.min.js"></script>
 	<!-- Carousel -->
@@ -1361,8 +1549,7 @@
 	<!-- Main -->
 	<script src="js/main.js"></script>
 
-	<!--<script src="js/jquery-3.3.1.min.js"></script>-->
-	<!--<script src="js/jquery-3.3.1.min.js"></script>-->
+
 	<script src="js/hammer.js"></script>
 	<script src="js/babylon.custom.js"></script>
 	<script src="js/enTouchControl.js"></script>
@@ -1416,7 +1603,7 @@
 
 
 
-
+	<!--
 	<script type="text/javascript">
 
 		var showYoko = true;
@@ -1606,13 +1793,16 @@
 
 		}
 	</script>
+	-->
 	<script src="https://www.paypalobjects.com/api/checkout.js"></script>
+
 	<script src="js/pantallaCarga.js"></script>
 	<script src="js/carrito.js"></script>
 	<script type="text/javascript">
 		document.body.style.width = "100%";
-    </script>
- <script src="js/requestIndex.js"></script>
+	</script>
+	<script type="text/javascript" src="js/glide.min.js"></script>
+	<script src="js/requestIndex.js"></script>
 
 </body>
 

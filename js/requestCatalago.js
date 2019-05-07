@@ -7,7 +7,22 @@ let esquinas;
 let kids;
 let puffino;
 let taburetes;
-
+var opCa = {
+  startAt: 0, type: 'carousel', autoplay: 4000, focusAt: 'center', perView: 2, hoverpause: true, breakpoints: {
+    2000: {
+      perView: 3
+    },
+    1000: {
+      perView: 2
+    },
+    800: {
+      perView: 1
+    },
+    500: {
+      perView: 1
+    }
+  }
+};
 
 
 window.addEventListener('load', function () {
@@ -415,12 +430,12 @@ function opMaterial(opc) {
 
   var selector = document.getElementById("selector-textura");
   var descripcionMaterial = document.getElementById("descripcionMaterial");
- // var imgaenTextura = document.getElementById("img-textura-catalago");
-  var divMateria= document.getElementById("div-textura-catalago")
+  // var imgaenTextura = document.getElementById("img-textura-catalago");
+  var divMateria = document.getElementById("div-textura-catalago")
   switch (opc) {
     case 0:
       descripcionMaterial.innerHTML = "Material";
-      divMateria.innerHTML="";
+      divMateria.innerHTML = "";
       selector.classList.add("esconder");
       break;
     case 1:

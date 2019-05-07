@@ -23,9 +23,9 @@ let trendyEspera = false;
 let trendyprimera = false;
 let casualEspera = false;
 let casualprimera = false;
-var contempoDiv
-var trendyDiv
-var casualDiv
+var contempoDiv;
+var trendyDiv;
+var casualDiv;
 window.addEventListener('load', function () {
     requestModulosJSON(catalogo);
     cargarJsonTexturas();
@@ -931,7 +931,6 @@ function inflarSliderContempo() {
     yookoHtml = inflarSlider("ul-contempo", arreglo, true);
     document.getElementById("ul-contempo").innerHTML = yookoHtml;
 }
-
 function inflarSliderTrendy() {
     var arreglo = [];
     var tabureteContempo;

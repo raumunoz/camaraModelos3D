@@ -171,11 +171,15 @@ font-weight: bold;
 .motor3D .modulos {
 	grid-area: modu;
 	background: #d30808;
+	overflow: hidden;  /* NEW */
+  min-width: 0;
 }
 
 .motor3D .pre-armado {
 	grid-area: preA;
 	background: #d30808;
+	overflow: hidden;  /* NEW */
+  min-width: 0;
 }
 
 .motor3D .modulos {
@@ -219,6 +223,9 @@ font-weight: bold;
 	width: 100%;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
+	min-height: 0;  /* NEW */
+	min-width: 0;
+	 
 }
 
 .opc-PreArmado ul {
@@ -246,6 +253,10 @@ font-weight: bold;
 	grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 	margin: 0;
 	padding: 0;
+	min-height: 0;  /* NEW */
+	min-width: 0; 
+	overflow: hidden;  /* NEW */
+  min-width: 0;
 }
 
 .opc-herramienta ul {
@@ -276,6 +287,8 @@ font-weight: bold;
 	overflow-y: auto;
 	white-space: nowrap;
 	height: 5.3em;
+	min-height: 0;  /* NEW */
+  min-width: 0; 
 }
 
 .btn-grid1 {
@@ -292,6 +305,8 @@ font-weight: bold;
 	overflow-x: auto;
 	overflow-y: hidden;
 	white-space: nowrap;
+	min-height: 0;  /* NEW */
+  min-width: 0; 
 }
 
 .btn-grid2 {
@@ -302,6 +317,8 @@ font-weight: bold;
 	overflow-x: auto;
 	overflow-y: auto;
 	white-space: nowrap;
+	min-height: 0;  /* NEW */
+  min-width: 0; 
 }
 .btn-grid3 {
 	display: grid;
@@ -311,6 +328,8 @@ font-weight: bold;
 	overflow-x: auto;
 	overflow-y: auto;
 	white-space: nowrap;
+	min-height: 0;  /* NEW */
+  min-width: 0; 
 }
 
 .btn-item-grid {
@@ -368,6 +387,7 @@ visibility: visible;
 	margin-top: 0;
 }
 
+
 @media only screen and (min-width: 1224px) {
 	/* Styles */
 	.motor3D canvas {
@@ -382,9 +402,15 @@ visibility: visible;
 		height: auto;
 		width: 100%;
 	}
+	.motor3D canvas {
+		background-color: #F5F2F0;
+		width: 100%;
+		margin-right: 0px;
+		touch-action: pinch-zoom pan-up pan-down;
+	}
 }
 
-@media only screen and (min-width: 700px) {
+@media only screen and (max-width: 700px) {
 	/* Styles */
 	.motor3D canvas {
 		background-color: #F5F2F0;
@@ -412,12 +438,16 @@ visibility: visible;
 .motor3D .materiales {
 	grid-area: mate;
 	background: #d30808;
+	overflow: hidden;  /* NEW */
+  min-width: 0;
 }
 
 .item3 {
 	grid-area: main;
 	width: 100%;
 	height: 100%;
+	overflow: hidden;  /* NEW */
+  min-width: 0;
 }
 
 .motor3D .item4 {
@@ -427,24 +457,34 @@ visibility: visible;
 	background: red;
 	width: 100%;
 	height: 100%;
+	overflow: hidden;  /* NEW */
+  min-width: 0;
 }
 
 .motor3D .acciones {
 	grid-area: accion;
+	overflow: hidden;  /* NEW */
+  min-width: 0;
 }
 
 .motor3D .botones-confimarcion {
 	grid-area: comf;
+	overflow: hidden;  /* NEW */
+  min-width: 0;
 }
 
 .motor3D .botones-herramientas {
 	grid-area: erra;
+	overflow: hidden;  /* NEW */
+  min-width: 0;
 }
 
 .motor3D .selecionMenu {
 	grid-area: sclm;
 	background-color: #efefef;
 	display: none;
+	overflow: hidden;  /* NEW */
+  min-width: 0;
 }
 
 .selecionMenu button {
@@ -458,6 +498,8 @@ visibility: visible;
 	'preA preA main main main main' 'preA preA main main main main' 'mate mate main main main main' 'mate mate main main main main' 'modu modu main main main main' 'accion accion accion erra erra erra' 'footer footer footer footer footer footer';
 	grid-gap: 10px;
 	padding: 10px;
+	min-height: 0;  /* NEW */
+  min-width: 0; 
 }
 
 .motor3D .grid-container>div {
@@ -599,6 +641,8 @@ visibility: visible;
 	list-style: none;
 	display: grid;
 	float: left;
+	min-height: 0;  /* NEW */
+  min-width: 0; 
 }
 
 .motor3D footer h3 {
@@ -647,6 +691,8 @@ visibility: visible;
 
 .motor3D .dg ul {
 	display: grid;
+	min-height: 0;  /* NEW */
+  min-width: 0; 
 }
 
 #item4 {
@@ -734,22 +780,32 @@ div .materiales {
 
 .img-fondo {
 	grid-area: imgF;
+	overflow: hidden;  /* NEW */
+  min-width: 0;
 }
 
 .img-camara {
 	grid-area: imgC;
+	overflow: hidden;  /* NEW */
+  min-width: 0;
 }
 
 .img-save {
 	grid-area: imgS;
+	overflow: hidden;  /* NEW */
+  min-width: 0;
 }
 
 .img-rotate {
 	grid-area: imgR;
+	overflow: hidden;  /* NEW */
+  min-width: 0;
 }
 
 .img-cancelar {
 	grid-area: imgX;
+	overflow: hidden;  /* NEW */
+  min-width: 0;
 }
 
 .div-img-fotos {
@@ -982,6 +1038,8 @@ document.getElementById('grid-container').style.gridTemplateAreas=
 		'main main main main main main' 'sclm sclm sclm sclm sclm sclm' 'erra erra erra erra erra erra' 'preA preA preA preA preA preA' 'mate mate mate modu modu modu' 'accion accion accion accion accion accion' 'footer footer footer footer footer footer';
 		grid-gap: 0px;
 		padding: 0px;
+		min-height: 0;  /* NEW */
+		min-width: 0; 
 	}
 	.motor3D .modulos {
 		background: #d30808;
@@ -1037,6 +1095,8 @@ document.getElementById('grid-container').style.gridTemplateAreas=
 		overflow-y: auto;
 		white-space: nowrap;
 		padding-left: 0%;
+		min-height: 0;  /* NEW */
+		min-width: 0; 
 	}
 	.btn-grid1 {
 		display: grid;
@@ -1048,6 +1108,8 @@ document.getElementById('grid-container').style.gridTemplateAreas=
 		overflow-y: auto;
 		white-space: nowrap;
 		padding: 0%;
+		min-height: 0;  /* NEW */
+		min-width: 0; 
 	}
 	.btn-grid2 {
 		display: grid;
@@ -1059,6 +1121,8 @@ document.getElementById('grid-container').style.gridTemplateAreas=
 		overflow-y: auto;
 		white-space: nowrap;
 		padding-left: 0%;
+		min-height: 0;  /* NEW */
+		min-width: 0; 
 	}
 	.btn-imagen-grid {
 		font-size: 8px;
@@ -1129,6 +1193,8 @@ document.getElementById('grid-container').style.gridTemplateAreas=
 		display: grid;
 		grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
 		grid-template-rows: 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
+		min-height: 0;  /* NEW */
+		min-width: 0; 
 	}
 	.opc-herramienta li img {
 		padding: 0px;
@@ -1149,6 +1215,9 @@ document.getElementById('grid-container').style.gridTemplateAreas=
 		grid-area: sclm;
 		background-color: #efefef;
 		display: block;
+		overflow: hidden;  /* NEW */
+		min-width: 0;
+		
 	}
 	#iconosTexturas {
 		display: none;
@@ -1241,7 +1310,6 @@ document.getElementById('grid-container').style.gridTemplateAreas=
 		padding: 0 0 5px 5px;
 	}
 	.motor3D #btnRotar {
-		width: auto;
 		margin-right: 1px;
 		margin-left: 1px;
 	}
@@ -1257,7 +1325,17 @@ document.getElementById('grid-container').style.gridTemplateAreas=
 		height: 3em;
 	}
 }
-@media only screen and (min-width : 320px) {
+
+@media all and (max-width: 575px) {
+
+}
+@media all and (max-width: 458px) {
+   
+	
+	
+ 
+}
+@media only screen and (max-width:  355) {
 	.motor3D canvas {
 		background-color: #F5F2F0;
 		width: 100%;
@@ -1269,7 +1347,7 @@ document.getElementById('grid-container').style.gridTemplateAreas=
 		margin: 0;
 		padding-left: 0;
 		padding-right: 0;
-		width: 75%;
+		width: 100%;
 	}
 	#btn-agregar-3d-a-carrito {
     font-size: 0.6em;
@@ -1280,6 +1358,51 @@ document.getElementById('grid-container').style.gridTemplateAreas=
     background-color: green;
     color: white;
 }
+.item3 {
+	grid-area: main;
+	width: 100%;
+	height: 100%;
+	overflow: hidden;  /* NEW */
+  min-width: 0;
+}
+.tabTexturas {
+	padding-left: 0%;
+	margin-top: 10px;
+	font-size: .9em;
+}
+
+herramientas * {
+	height: 12;
+	width: 12;
+	height: 60px;
+	padding: 0 0 5px 5px;
+	width: 100%;
+}
+.img-menu {
+	height: auto !important;
+	width: 45px;
+}
+.motor3D .botones-herramientas * {
+	height: 12;
+	width: 12;
+	height: 60px;
+	/* padding: 0 0 5px 5px; */
+}
+#fondo {
+
+	margin: 0;
+	padding: 0;
+	width: 100%;
+	height: auto;
+
+}
+.img-fondo{
+	padding: 0;
+}
+.img-fondo.img-menu.btn-imagen-grid {
+	padding: 0;
+}
+
 }
 	html{
 		overflow-x: hidden !important;
@@ -1287,4 +1410,7 @@ document.getElementById('grid-container').style.gridTemplateAreas=
 		height: 100%;
 		margin: 0;
 		padding: 0;
+	}
+	.oculto{
+		display: none;    
 	}

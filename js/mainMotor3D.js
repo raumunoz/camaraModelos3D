@@ -547,9 +547,11 @@ window.addEventListener('DOMContentLoaded', function () {
             }
 
         };*/
+
         canvas.addEventListener('touchmove', e => e.preventDefault());
         return scene;
 
+    
     }
 
 
@@ -557,6 +559,7 @@ window.addEventListener('DOMContentLoaded', function () {
     /*escena.onNewMeshAddedObservable.add(function(){
             
     });*/
+   
     camera.inputs.attached.mousewheel.detachControl(canvas);
     hl = new BABYLON.HighlightLayer("hl1", escena);
     hl.innerGlow = false;
@@ -1439,6 +1442,7 @@ function desactivarScroll(bool) {
         document.body.noScroll.overflow = "auto";
     }
 }
+/*
 function crearInterfaceDatGUI() {
     var gui = new dat.GUI({ autoPlace: false });
     //gui.parent=scene;
@@ -1488,7 +1492,7 @@ function crearInterfaceDatGUI() {
     var customContainer = document.getElementById('main');
     customContainer.appendChild(gui.domElement);
     f2.open();
-}
+}*/
 
 //function crearInterfaceTexto() {
 //    dimensionesText = new BABYLON.GUI.TextBlock();
@@ -2255,11 +2259,12 @@ function cambiarVistaMotor(opc) {
             document.getElementById("slct-btn-color").style.display = "none";
             document.getElementById("slct-btn-preArmado").style.display = "initial";
             document.getElementById("slct-btn-modelo").style.display = "initial";
+            
             for (let i = escena.meshes.length - 1; i >= 0; i--) {
 
                 escena.removeMesh(escena.meshes[i]);
             }
-            cargarModelo(padreCentro, modeloActual(texturaActual, moduloActual, true));
+            //cargarModelo(padreCentro, modeloActual(texturaActual, moduloActual, true));
             tabTexturas.innerHTML=
             `
             <li role="presentation">
@@ -2270,6 +2275,7 @@ function cambiarVistaMotor(opc) {
         </li>
             `;
             document.getElementById("tab-curri").click();
+            //opMostrarSlider(0);
             break;
         case 1:
         var tabTexturas=document.getElementById("tab-texturas");
@@ -2280,7 +2286,7 @@ function cambiarVistaMotor(opc) {
             document.getElementById("slct-btn-color").style.display = "initial";
             document.getElementById("slct-btn-preArmado").style.display = "none";
             document.getElementById("slct-btn-modelo").style.display = "none";
-            cargarModeloCustom(modelos.puffino[10], undefined);
+           // cargarModeloCustom(modelos.puffino[10], undefined);
             tabTexturas.innerHTML=
             `
             <li role="presentation">
@@ -2303,6 +2309,7 @@ function cambiarVistaMotor(opc) {
 							</li>
             `;
             document.getElementById("tab-lona").click();
+           // opMostrarSlider(1);
             break;
         case 2:
             document.getElementById("descripcionMaterial").style.visibility = "hidden";
@@ -2313,13 +2320,16 @@ function cambiarVistaMotor(opc) {
             document.getElementById("slct-btn-color").style.display = "none";
             document.getElementById("slct-btn-preArmado").style.display = "none";
             document.getElementById("slct-btn-modelo").style.display = "none";
-            cargarModeloCustom(modelos.kids[0], undefined);
+            //cargarModeloCustom(modelos.kids[0], undefined);
+           // opMostrarSlider(2);
             break;
 
         default:
             break;
     }
 }
+
+
 function acomodarCamara() {
     camera.zoomOn();
     camera.maxZ = 1000;
