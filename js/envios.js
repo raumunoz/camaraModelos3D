@@ -2,7 +2,7 @@ var inputEmail = elementoId("correo-shipping");
 var inputNombre = elementoId("nombre-shipping");
 var inputApellidos = elementoId("apellidos-shipping");
 var inputDireccion = elementoId("direccion-shipping");
-var inputDetallesDireccion=elementoId("detalles-direccion-shipping");
+var inputDetallesDireccion = elementoId("detalles-direccion-shipping");
 var inputCiudad = elementoId("ciudad-shipping");
 var inputPais = elementoId("pais-shipping");
 var inputEstado = elementoId("estado-shipping");
@@ -117,7 +117,7 @@ var datosDeEnvio = {};
                     datosDeEnvio.estado = inputEstado.value;
                     datosDeEnvio.telefono = inputTelefono.value;
                     datosDeEnvio.codigoPostal = inputCodigoPostal.value;
-                    datosDeEnvio.detallesDirecion=inputDetallesDireccion.value;
+                    datosDeEnvio.detallesDirecion = inputDetallesDireccion.value;
                     cambiaPantallaResumen();
                 } else {
                     event.preventDefault();
@@ -186,10 +186,11 @@ function cambiaPantallaResumen() {
     var contenido = elementoId("contenido-cambiar");
     contenido.innerHTML =
         `
+        <?php echo "saludo"; ?>
         <div class="" style="font-family: 'Roboto';padding: 0;margin: 0;width: 100%; max-width: auto;">
         <div class="card card-body shadow-none info-shipping">Dirección del envio <br>
             <span id="resumen-direccion">
-                ${datosDeEnvio.direccion},${datosDeEnvio.detallesDirecion==""?"" :  datosDeEnvio.detallesDirecion+","} ${datosDeEnvio.pais}, ${datosDeEnvio.estado}.
+                ${datosDeEnvio.direccion},${datosDeEnvio.detallesDirecion == "" ? "" : datosDeEnvio.detallesDirecion + ","} ${datosDeEnvio.pais}, ${datosDeEnvio.estado}.
             </span>
             <hr>
             Contacto <br>
@@ -287,19 +288,15 @@ function cambiaPantallaResumen() {
 <p>Seleccione una forma de pago:</p>
 <div>
   <input type="radio" id="huey" name="drone" value="huey"
-         checked>
+         checked  onchange="handleChange1();">
   <label for="paypal">paypal</label>
 </div>
 
 <div>
-  <input type="radio" id="dewey" name="drone" value="dewey">
+  <input type="radio" id="dewey" name="drone" value="dewey" onchange="handleChange2();">
   <label for="tarjeta">tarjeta de credito</label>
 </div>
 
-<div>
-  <input type="radio" id="louie" name="drone" value="louie">
-  <label for="louie">Louie</label>
-</div>
             <div class="row">
                 <div class="col-0 col-sm-5 col-md-7"></div>
                 <div class="col-12 col-sm-7 col-md-5">

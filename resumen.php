@@ -1,4 +1,7 @@
- 
+<?php
+$nombre=$_REQUEST["nombre"];
+$texto="texto";
+?> 
 <!DOCTYPE html>
 <html>
 
@@ -122,69 +125,129 @@
                 </div>
         </nav>
         <div id="contenido-cambiar" style="padding-top: 4em;">
+        <?php echo "saludo"; ?>
+        <div class="" style="font-family: 'Roboto';padding: 0;margin: 0;width: 100%; max-width: auto;">
+        <div class="card card-body shadow-none info-shipping">Dirección del envio <br>
+            <span id="resumen-direccion">
+                ${datosDeEnvio.direccion},${datosDeEnvio.detallesDirecion == "" ? "" : datosDeEnvio.detallesDirecion + ","} ${datosDeEnvio.pais}, ${datosDeEnvio.estado}.
+            </span>
+            <hr>
+            Contacto <br>
+            <span id="resumen-correo">Nombre: ${datosDeEnvio.nombre}</span>
+            <span id="resumen-correo">Correo: ${datosDeEnvio.correo}</span>
+            <span id="resumen-correo">Teléfono: ${datosDeEnvio.telefono}</span>
+        </div>
+        <table class="table">
 
-            <div class="container">
-                <!--
-                    onsubmit="return toSubmit(event);"
-                -->
-              
-                <form class="needs-validation" id="forma" >
-                    <h3>Información de contacto</h3>
-                    <div class="form-row">
-                        <div class="form-group col-md-12">
-                            <label for="correo-shipping">Email</label>
-                            <input type="email" name="email" class="form-control" id="correo-shipping" placeholder="Email" >
-                        </div>
-                    </div>
-                    <div class="form-row">
+            <thead>
+                <tr class="table-header">
+                    <th class="first wrap-texto">Producto</th>
+                    <th class="wrap-texto">Material</th>
+                    <th class="wrap-texto">Precio</th>
+                    <th class="wrap-texto">Cantidad</th>
+                    <th class="wrap-texto last">Total</th>
+                </tr>
+            </thead>
 
-                        <div class="col-12 col-md-6">
-                            <input type="text" class="form-control" name="nombre" placeholder="Nombre" id="nombre-shipping" >
-                        </div>
-                        <div class="col-12 col-md-6">
-                            <input type="text" class="form-control" name="apellidos" placeholder="Apellidos" id="apellidos-shipping" >
-                        </div>
-                    </div>
-                    <div class="form-group">
-                        <label for="direccion-shipping">Dirección</label>
-                        <input type="text" name="direccion"class="form-control" id="direccion-shipping" placeholder="Direción"  >
-                        <input type="text" name="detalles-direccion"class="form-control" id="detalles-direccion-shipping" placeholder="Número interior, departamento, etc.(opcional)"  >
-                    </div>
+            <tbody id="tabla-carrito" class="tbody-carrito">
 
-                    <div class="form-group">
-                        <input type="text" class="form-control" name="ciudad" id="ciudad-shipping" placeholder="Ciudad" > 
-                    </div>
-                    <div class="form-row">
+                <tr class="table-row first last" data-cart-item="">
+                    <td class="product-item first">
+                        <div class="image-wrap">
+                            <a class="image" href="/products/merida?variant=12424089862240">
+                                <img src="//cdn.shopify.com/s/files/1/1832/7035/products/DakotaWide01_1024x1024_f904b784-a574-4a94-8de2-cdd15c0e9569_compact.jpg?v=1535944817"
+                                    alt="">
 
-                        <div class="form-group col-md-4">
-                            <label for="pais-shipping">País</label>
-                            <select id="pais-shipping" class="form-control" onchange="cambioDePais()" >
-                                <option selected>Choose...</option>
-                                <option>...</option>
-                            </select>
+                            </a>
                         </div>
-                        <div class="form-group col-md-4" >
-                            <label for="estado-shipping">Estado</label>
-                            <select id="estado-shipping" class="form-control" >
-                                <option selected>Choose...</option>
-                                <option>...</option>
-                            </select>
+                        <div class="wrap">
+
+                            <span class="label title"><a href="/products/merida?variant=12424089862240"
+                                    title="">Zazil</a></span>
+                            <span class="label variant">Selecciona el material / Ahora escoge el
+                                color</span>
+
+
+
                         </div>
-                        <div class="form-group col-md-2">
-                            <label for="codigo-postal-shipping">Código postal</label>
-                            <input type="text" class="form-control" id="codigo-postal-shipping" >
+                    </td>
+
+                    <td class="price"><span class="money" data-currency-mxn="$ 3,299.00" data-currency="MXN">$
+                            3,299.00</span></td>
+                    <td class="quantity">
+                        <span class="spinner">
+                            <a href="/cart/change/12424089862240?line=1&amp;quantity=0"><span class="sub"><i
+                                        class="material-icons"
+                                        style="line-height: 33px; font-size:14px">remove</i></span></a>
+                            <input type="number" value="1" data-id="12424089862240" min="1" max="100">
+                            <a href="/cart/change/12424089862240?line=1&amp;quantity=2"><span class="add"><i
+                                        class="material-icons"
+                                        style="line-height: 33px; font-size:14px">add</i></span></a>
+                        </span>
+                    </td>
+                    <td class="total"><span class="money" data-currency-mxn="$ 3,299.00" data-currency="MXN">$
+                            3,299.00</span></td>
+                    <td class="remove last"><a href="/cart/change/12424089862240?line=1&amp;quantity=0"><i
+                                class="material-icons"
+                                style="color:#ce1600; line-height: 10px;">delete_forever</i></a></td>
+                </tr>
+
+            </tbody>
+
+        </table>
+        <br>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-*-*"></div>
+            <div class="col-*-*"></div>
+        </div>
+        <div class="carrito-footer ">
+            <div class="row">
+                <div class="totals col-12 col-sm-12 col-md-12 col-xs-12">
+                    <div class="totals-item">
+                        <label>Subtotal</label>
+                        <div class="totals-value" id="cart-subtotal">$<spa id="Subtotal-pagina-cart">45</spa>
                         </div>
                     </div>
-                    <div class="form-row">
-                            <div class="form-group col-md-12">
-                                <label for="telefono-shipping">Teléfono</label>
-                                <input type="tel" class="form-control" id="telefono-shipping" placeholder="Teléfono">
-                            </div>
+                    <div class="totals-item">
+                        <label>Envio</label>
+                        <div class="totals-value" id="cart-shipping">$<spa id="envio-pagina-cart">0</spa>
                         </div>
-        
-                        <input class="btn btn-primary" type="submit" value="Submit">
-                </form>                 
+                    </div>
+                    <div class="totals-item totals-item-total">
+                        <label style="font-weight: bold;">Total</label>
+                        <div class="totals-value" id="cart-total" style="font-weight: 620;">$<spa
+                                id="total-pagina-cart">45</spa>
+                        </div>
+                    </div>
+                </div>
+
             </div>
+<p>Seleccione una forma de pago:</p>
+<div>
+  <input type="radio" id="huey" name="drone" value="huey"
+         checked  onchange="handleChange1();">
+  <label for="paypal">paypal</label>
+</div>
+
+<div>
+  <input type="radio" id="dewey" name="drone" value="dewey" onchange="handleChange2();">
+  <label for="tarjeta">tarjeta de credito</label>
+</div>
+
+            <div class="row">
+                <div class="col-0 col-sm-5 col-md-7"></div>
+                <div class="col-12 col-sm-7 col-md-5">
+                    <div id="paypal-button-container"></div>
+                    <div id="paypal-button"></div>
+                </div>
+            </div>
+
+        </div>
+        <div class="total">
+        </div>
+    </div>
         </div>
     </div>
     </div>
@@ -265,12 +328,15 @@
     <script src="js/main.js"></script>
     <script
         src="https://www.paypal.com/sdk/js?client-id=Ab3CfXg7wt8RiCw6JkaSJ6TNF0SNKfMj9hJ5LiW2LjRGcGtoLKpFn3lGxDRizT5FHXsONUzWVgetL1jN&currency=MXN"></script>
-
+<!--
     <script src="js/carrito.js"></script>
     <script src="js/envios.js"></script>
+ -->   
     <script src="https://www.paypalobjects.com/api/checkout.js"></script>
+    
     <script>
-            // Example starter JavaScript for disabling form submissions if there are invalid fields
+    var foo = "<?php echo $texto; ?>";
+            alert(foo);
     </script>
 </body>
 

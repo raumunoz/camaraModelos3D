@@ -548,5 +548,11 @@ function getDescuento() {
         alert("ya usaste ese cupón");
     }
 }
+function handleChange2(){
+    console.log("cambio");
+}
+function handleChange1(){
+    console.log("cambio");
+}
 
 
