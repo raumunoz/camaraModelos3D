@@ -17,7 +17,7 @@ $approval_url="https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checko
 </div> 
 <script type="application/javascript">
 var ppp = PAYPAL.apps.PPP({ 
-"approvalUrl": "<?php echo$approval_url?>",
+"approvalUrl": "",
     "placeholder": "ppplus",
     "mode": "sandbox",});
 </script>
