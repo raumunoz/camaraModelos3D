@@ -19,13 +19,16 @@ var apellidosValido;
 var nombreValido;
 var telefonoValido;
 var datosDeEnvio = {};
+let inputJson;
 
 (function () {
     'use strict';
     window.addEventListener('load', function () {
         // Fetch all the forms we want to apply custom Bootstrap validation styles to
         //var forms = document.getElementsByClassName('needs-validation');
-        //const formPrueba= document.getElementById("id-submit-prueba");
+        const formPrueba= document.getElementById("id-submit-prueba");
+        inputJson=document.getElementById("jsonInput");
+        inputJson.value="texto de valor";
         /*formPrueba.addEventListener('submit',function(e){
             e.preventDefault();
             const formData=new FormData(this);
@@ -112,17 +115,22 @@ var datosDeEnvio = {};
             .then(data => paises = data)
             .then(() => {
                 generaOpcPaises();
-                cambioDePais()
+                cambioDePais();
+                forma.reset();
             });
         var forms = document.getElementsByClassName('needs-validation');
         var forma = document.getElementById("forma");
-        forma.reset();
+
+       
         var validation = Array.prototype.filter.call(forms, function (form) {
             form.addEventListener('submit', function (event) {
                 if ((correoValido == true) && (direccionValido == true) && (ciudadValido == true) && (apellidosValido == true) && (nombreValido == true)) {
-                    event.preventDefault();
-                    event.stopPropagation();
-                    //event.returnValue = true;
+                    //event.preventDefault();
+                    //event.stopPropagation();
+                    var persona={
+                        edad:23,
+                        nombre:"pepe"
+                    }
                     console.log("correoValido", "direccionValido", "ciudadValido", "apellidosValido", "nombreValido");
                     datosDeEnvio.correo = inputEmail.value;
                     datosDeEnvio.nombre = inputNombre.value;
@@ -134,11 +142,15 @@ var datosDeEnvio = {};
                     datosDeEnvio.telefono = inputTelefono.value;
                     datosDeEnvio.codigoPostal = inputCodigoPostal.value;
                     datosDeEnvio.detallesDirecion = inputDetallesDireccion.value;
-                    cambiaPantallaResumen();
+                    
+                    inputJson.value=JSON.stringify(datosDeEnvio);
+                    
+                    event.returnValue = true;
+                    //cambiaPantallaResumen();
                 } else {
                     event.preventDefault();
                     event.stopPropagation();
-                    alert("invalido");
+                    alert("ingresa todos los datos correctamente");
                 }
                 //form.classList.add('was-validated');
             }, false);

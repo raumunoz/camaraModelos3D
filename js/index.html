@@ -2,6 +2,7 @@
 <html>
 
 <head>
+	<meta name="format-detection" content="telephone=no">
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -17,6 +18,7 @@
 	<meta name="twitter:card" content="" />
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="msapplication-tap-highlight" content="no" />
 
 	<script src="js/jquery-2.2.0.min.js">
 	</script>
@@ -27,7 +29,7 @@
 	<!--
 	<script src="js/tienda2.js"></script>
 	-->
-	<script type="text/javascript" src="js/jquery.flexisel.js"></script>
+
 	<!--FUENTES-->
 	<!--
 	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet"> 
@@ -51,9 +53,17 @@
 
 	<!-- Theme style  -->
 	<link rel="stylesheet" href="css/style.css">
+	<!-- estilos para el slider-->
+	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css"
+		integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+	<link rel="stylesheet" href="css/glide.core.css">
+	<link rel="stylesheet" href="css/glide.theme.css">
+	<link rel="stylesheet" href="css/indexGlide.css">
 
 	<!-- Modernizr JS -->
 	<script src="js/modernizr-2.6.2.min.js"></script>
+
+
 
 
 	<!-- FOR IE9 below -->
@@ -64,7 +74,8 @@
 	<link rel="stylesheet" type="text/css" href="css/slick-theme.css">
 
 	<link rel="stylesheet" type="text/css" href="css/estiloMotor3D.css">
-	<script src="https://code.jquery.com/pep/0.4.3/pep.js"></script>
+	<link rel="stylesheet" type="text/css" href="css/estiloIndex.css">
+
 	<link rel="stylesheet" href="css/font.css">
 	<link rel="stylesheet" href="css/main.css">
 
@@ -72,7 +83,7 @@
 	<style type="text/css">
 		.slider2 {
 			width: 100%;
-			margin: 100px auto;
+			margin: 10% auto;
 		}
 
 		.slick-slide {
@@ -81,6 +92,30 @@
 
 		.slick-slide img {
 			width: 100%;
+
+		}
+
+		@media only screen and (max-width: 600px) {
+			.slick-slide {
+				margin: 0px 1.3%;
+			}
+
+			.slick-slide img {
+				width: 140%;
+
+			}
+
+		}
+
+		@media only screen and (max-width: 448px) {
+			.slick-slide {
+				margin: 0px .8%;
+			}
+
+			.slick-slide img {
+				width: 120%;
+
+			}
 
 		}
 
@@ -241,77 +276,89 @@
 			}
 		}
 
-		.nomProducto{
-			color: #2ACA89 !important; 
+		.nomProducto {
+			color: #2ACA89 !important;
 		}
 
-		.priceProducto{
-			color: black !important; 
+		.priceProducto {
+			color: black !important;
 		}
 	</style>
 
 </head>
 
 <body>
-	<!--
-	<div class="social-bar">
-		<a href="https://www.facebook.com/puffino.mx/" class="icon2 icon-facebook" target="_blank"></a>
-		<a href="https://www.youtube.com/channel/UC_IQX58WKgUAJiZfj9oy6wg/featured" class="icon2 icon-youtube"
-			target="_blank"></a>
-		<a href="https://www.instagram.com/puffinomx/" class="icon2 icon-instagram" target="_blank"></a>
-		<a href="https://www.twitter.com/puffinomx/" class="icon2 icon-twitter" target="_blank"></a>
-
-
-
-	</div>
-	-->
 
 	<div class="row div-nav" style="background-color:#fA675b;">
-		<div class="col-md-10" style="text-align: right; margin-top: 0.3em;margin-bottom: 0.3em;">
-        <span style="font-size:15px; color:#FFF; font-family: 'Montserrat', Arial, sans-serif;">Servicio al cliente
+		<div class="col-md-10 col-8" style="text-align: right; margin-top: 0.3em;margin-bottom: 0.3em;">
+			<span style="font-size:13px; color:#FFF; font-family: 'Montserrat', Arial, sans-serif;">Servicio al cliente
 				Teléfono:
 				477 854 11 12&nbsp;&nbsp;</span>
-                </div>
-                <div class="col-md-2 " style="text-align: right;">
-                <a href="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2F1962138827348733&amp;tabs=messages&amp;width=302&amp;height=300&amp;small_header=true&amp;adapt_container_width=true&amp;hide_cover=true&amp;show_facepile=false&amp;appId"
+		</div>
+		<div class="col-md-2 col-4" style="text-align: right;">
+			<a href="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2F1962138827348733&amp;tabs=messages&amp;width=302&amp;height=300&amp;small_header=true&amp;adapt_container_width=true&amp;hide_cover=true&amp;show_facepile=false&amp;appId"
 				target="_blank"><img src="images/messeng.png" style="max-width: 1.8em; padding-right:5px"></a>
-               
+
 			<a href="https://api.whatsapp.com/send?phone=5214778541112" target="_blank">
 				<img src="images/whats.png" style="max-width: 1.8em; padding-right:5px">
 			</a>
-        
-			<img src="images/shopping_cart_white_24dp.png" style="max-width: 1.8em; padding-right:5px" onclick="mostrarCarro()"><span id="num-carrito" class="num-carrito"></span>
-           </div>
-	</div>
-	<div class="carrito" id="carrito">
-			<div id="row-productos">
-				Todavía no agregas nada.	
-			</div>
-			
-		<div class="row rng-total total-desactivo" id="rng-total">
-			<div class="col-6 rng-total-titulo">Total</div>
-			<div class="col-6">$<span id="total-carrito">0</span></div>
-			<!--<div class="col-6"><button class="rng-btn-total btn btn-primary blue" onclick="">continuar</button></div>-->
-			<!--<div id="paypal-button-container"></div>-->
-			<!--<div id="paypal-button"></div>-->
+
+			<img src="images/shopping_cart_white_24dp.png" style="max-width: 1.8em; padding-right:5px"
+				onclick="mostrarCarro()"><span id="num-carrito" class="num-carrito"></span>
 		</div>
 	</div>
-	<div class="fh5co-loader"></div>
-
 	<div id="page">
+		<!--	
+		<div class="social-bar" id="social-bar">
+					<a href="https://www.facebook.com/puffino.mx/" class="icon2 icon-facebook" target="_blank"></a>
+					<a href="https://www.youtube.com/channel/UC_IQX58WKgUAJiZfj9oy6wg/featured" class="icon2 icon-youtube"
+						target="_blank"></a>
+					<a href="https://www.instagram.com/puffinomx/" class="icon2 icon-instagram" target="_blank"></a>
+					<a href="https://www.twitter.com/puffinomx/" class="icon2 icon-twitter" target="_blank"></a>
+			
+			
+			
+				</div>
+			-->
+
+		<div class="carrito" id="carrito">
+			<div id="row-productos">
+				Todavía no agregas nada.
+			</div>
+
+			<div class="row rng-total total-desactivo" id="rng-total">
+				<div class="col-xs-6 rng-total-titulo">Total</div>
+				<div class="col-xs-6">$<span id="total-carrito">0</span></div>
+				<!--<div class="col-6"><button class="rng-btn-total btn btn-primary blue" onclick="">continuar</button></div>-->
+				<!--
+				<div id="paypal-button-container"></div>
+				<div id="paypal-button"></div>
+				-->
+				<button type="button" class="btn btn-success btn-agregar-ir-al-carrito" id="btn-agregar-ir-al-carrito"
+					onclick="location.href = 'cart.html';">IR AL CARRITO</button>
+			</div>
+		</div>
+
+		<div class="fh5co-loader"></div>
 		<nav class="fh5co-nav" role="navigation" style="background-color:#4DD7D3;">
 			<div class="container" style="margin-left:0px;">
 				<div class="row">
 					<div class="col-md-3 col-xs-2">
 						<div id="fh5co-logo"><a href="index.html"><img src="images/puff_logo.png"
-									style="max-width:100%; height:auto;"></a></div>
+									class="logo-puffino"></a></div>
 					</div>
-					<div class="col-md-9 col-xs-10 menu-1" style="margin-top:4%;">
+					<div class="col-md-9 col-xs-10 menu-1" style="margin-top:4%; left:5%">
 						<ul>
-							<li style="margin-right: 1.1em;"><a href="about.html" style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">NOSOTROS</a></li>
-							<li style="margin-right: 1.1em;"><a href="catalogo.html" style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">Catálogo</a></li>
-							<li style="margin-right: 1.1em;"><a href="envio.html" style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">Envío y Devoluciones</a></li>
-							<li style="margin-right: 1.1em;"><a href="contact.html" style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">Contacto</a></li>
+							<li style="margin-right: 1.1em;"><a href="index.html"
+									style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">INICIO</a></li>
+							<li style="margin-right: 1.1em;"><a href="about.html"
+									style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">NOSOTROS</a></li>
+							<li style="margin-right: 1.1em;"><a href="catalogo.html"
+									style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">CATÁLOGO</a></li>
+							<li><a href="envio.html"
+									style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">ENVÍO Y DEVOLUCIÓN</a></li>
+							<li style="margin-right: 1.1em;"><a href="contact.html"
+									style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">CONTACTO</a></li>
 						</ul>
 					</div>
 				</div>
@@ -319,49 +366,43 @@
 			</div>
 		</nav>
 
-		<section id="fh5co-hero" >
+		<section id="fh5co-hero">
 			<div class="flexslider">
-				<ul class="slides"  style="background:#4DD7D3">
-                <li><img src="images/puffinoslider1.jpg" style="width:100%;"></li>
-				<li><img src="images/puffinoslider2.jpg" style="width:100%;"></li>	
-				<li><img src="images/puffinoslider3.jpg" style="width:100%;"></li>	
-				<li><img src="images/puffinoslider4.jpg" style="width:100%;"></li>	
+				<ul class="slides" style="background:#4DD7D3">
+					<li><img src="images/puffinoslider1.jpg" style="width:100%;"></li>
+					<li><img src="images/puffinoslider2.jpg" style="width:100%;"></li>
+					<li><img src="images/puffinoslider3.jpg" style="width:100%;"></li>
+					<li><img src="images/puffinoslider4.jpg" style="width:100%;"></li>
 				</ul>
 			</div>
 		</section>
 		<section id="fh5co-services" style="background-color:#f5f5f5;">
 			<div class="col-md-12 col-md-offset-2 text-center fh5co-heading" style="margin-bottom: 10px;">
-						<h2 style="color:#4E56DF">Inspírate</h2>
-					</div>
-		<div class="row center slider2">
-			<div>
-				<img src="images/pff_inspirate2.jpg">
+				<h2 style="color:#4E56DF">Inspírate</h2>
 			</div>
-			<div>
-				<img src="images/pff_inspirate4.jpg">
+			<div class="row center slider2">
+				<div>
+					<img src="images/puffino_1web_840x840.jpg">
+				</div>
+				<div>
+					<img src="images/puffino_2web_840x840.jpg">
+				</div>
+				<div>
+					<img src="images/puffino_3web_840x840.jpg">
+				</div>
+				<div>
+					<img src="images/puffino_4web_840x840.jpg">
+				</div>
+				<div>
+					<img src="images/puffino_5web_840x840.jpg">
+				</div>
+				<div>
+					<img src="images/puffino_6web_840x840.jpg">
+				</div>
+				<div>
+					<img src="images/puffino_7web_840x840.jpg">
+				</div>
 			</div>
-			<div>
-				<img src="images/pff_inspirate5.jpg">
-			</div>
-			<div>
-				<img src="images/pff_inspirate6.jpg">
-			</div>
-			<div>
-				<img src="images/pff_inspirate7.jpg">
-			</div>
-			<div>
-				<img src="images/pff_inspirate8.jpg">
-			</div>
-			<div>
-				<img src="images/pff_inspirate9.jpg">
-			</div>
-			<div>
-				<img src="images/pff_inspirate10.jpg">
-			</div>
-			<div>
-				<img src="images/pff_inspirate11.jpg">
-			</div>
-         </div>
 		</section>
 
 		<div id="fh5co-product" style="padding-bottom: 0px;">
@@ -373,11 +414,12 @@
 					</div>
 				</div>
 				<div class="row" style="justify-content: center">
-					<div class="col-xs-4 col-sm-4 col-md-4  col-4 text-center">
+					<div class="col-xs-4 col-4 col-sm-4 col-md-4  text-center">
 						<div class="product">
 							<a id="yokoShow" style="cursor: pointer;" onclick="">
 								<div class="product-grid"
-									style="background-image:url(images/catalogo/yoko/yookocasual_silla.jpg);" onclick="cambiarVistaMotor(0)">
+									style="background-image:url(images/catalogo/yoko/yookocasual_silla.jpg);"
+									onclick="opMostrarSlider(0)">
 									<div class="inner">
 										<!--<p>
 											<a id="holiShow" style="cursor: pointer;" class="icon"><i class="icon-eye"></i></a>
@@ -386,15 +428,16 @@
 								</div>
 							</a>
 							<div class="desc">
-									<h3><a id="" style="cursor: pointer; ; font-size: 1.1rem;">Yooko Modular</a></h3>
+								<h3><a id="" style="cursor: pointer; ; font-size: 1.1rem;">Yooko Modular</a></h3>
 							</div>
 						</div>
 					</div>
-					<div class="col-xs-4 col-sm-4 col-md-4 col-4 text-center">
+					<div class="col-xs-4 col-4 col-sm-4 col-md-4 text-center">
 						<div class="product">
 							<a id="puffinoShow" style="cursor: pointer;">
 								<div class="product-grid"
-								style="background-image:url(images/catalogo/puffino_catalogo.png);" onclick="cambiarVistaMotor(1)">
+									style="background-image:url(images/catalogo/puffino_catalogo.png);"
+									onclick="opMostrarSlider(1)">
 									<div class="inner">
 										<!--
 										<p>
@@ -409,12 +452,13 @@
 							</div>
 						</div>
 					</div>
-					<div class="col-xs-4 col-sm-4 col-md-4 col-xs-4 col-4 text-center">
+					<div class="col-xs-4 col-4 col-sm-4 col-md-4 col-xs-4 text-center">
 						<div class="product">
 							<a id="kidsShow" style="cursor: pointer;">
 								<div class="product-grid"
-									style="background-image:url(images/catalogo/ninos_catalogo.jpg);" onclick="cambiarVistaMotor(2)">
-									<div class="inner" >
+									style="background-image:url(images/catalogo/ninos_catalogo.jpg);"
+									onclick="opMostrarSlider(2);">
+									<div class="inner">
 										<!--
 										<p>
 											<a id="holiShow" style="cursor: pointer;" class="icon"><i class="icon-eye"></i></a>
@@ -424,11 +468,63 @@
 								</div>
 							</a>
 							<div class="desc">
-								<h3><a  style="cursor: pointer; ; font-size: 1.1rem;">Puffino Niños</a></h3>
+								<h3><a style="cursor: pointer; ; font-size: 1.1rem;">Puffino Niños</a></h3>
 							</div>
 						</div>
 					</div>
 				</div>
+
+				
+				<div id="showYookoSelecion" style="font-family: 'Roboto';padding-bottom: 0px; padding-top: 3em;" class="sub-menu-desactivo" >
+						<div class="contenedor">
+							<div class="row">
+			
+								<div class="text-center slct-contempo col-12 col-md-4" onclick="mostrarSliderContempo()">
+									<div class="product">
+										<a id="yooko-contemporaneo-show" style="cursor: pointer;" >
+											<div class="product-grid"
+												style="background-image:url(images/catalogo/yoko/yooko_contempo.jpg);">
+												
+											</div>
+										</a>
+										<div class="desc">
+											<h3><a style="cursor: pointer; ; font-size: 1.1rem;">contempo</a></h3>
+										</div>
+									</div>
+								</div>
+			
+								<div class="text-center slct-trendy col-12 col-md-4" name="subMenu" onclick="mostrarSliderTrendy()">
+									<div class="product">
+										<a id="yooko-trendy-show" style="cursor: pointer;" >
+											<div class="product-grid"
+												style="background-image:url(images/catalogo/yoko/yooko_trendy.jpg);">
+												
+											</div>
+										</a>
+										<div class="desc">
+											<h3><a id="" style="cursor: pointer; ; font-size: 1.1rem;">Yooko Trendy</a></h3>
+										</div>
+									</div>
+								</div>
+			
+								<div class=" text-center slct-casual col-12 col-md-4" onclick="mostrarSliderCasual()">
+									<div class="product">
+										<a id="yooko-casual-show" style="cursor: pointer;" >
+											<div class="product-grid"
+												style="background-image:url(images/catalogo/yoko/yooko_casual.jpg);">
+												
+											</div>
+										</a>
+										<div class="desc">
+											<h3><a style="cursor: pointer; ; font-size: 1.1rem;">Yooko Casual</a></h3>
+										</div>
+									</div>
+								</div>
+			
+							</div>
+						</div>
+					</div>
+
 				<div id="slidersModelosPadre">
 
 					<!-- SLIDER DE MODELOS YOKO MODULAR -->
@@ -440,7 +536,7 @@
 									<div class="text-center">
 										<div class="product" style="margin-top: 1em;">
 											<div class="product-grid"
-												style="background-image:url(images/catalogo/yoko/yookocasual_esquinero.jpg); margin: 0 auto;" >
+												style="background-image:url(images/catalogo/yoko/yookocasual_esquinero.jpg); margin: 0 auto;">
 											</div>
 											<div class="desc" style="margin-top: 1em;">
 												<h3><a class="nomProducto">Yooko Casual Esquinero</a></h3>
@@ -449,8 +545,9 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito('Yoko sillón',7999,'images/catalogo/yoko/yookocasual_esquinero.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
+								<button type="button"
+									onclick="agregarAlCarrito('Yoko sillón',7999,'images/catalogo/yoko/yookocasual_esquinero.jpg',this)"
+									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
 								<a style="cursor: pointer;" onclick="cambioModulo(1,true)">
@@ -466,8 +563,9 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito('Yoko sillón',7999,'images/catalogo/yoko/yookocasual_silla.jpg')" class="btn-agregar "
-									id="btn-agregar blue btn">Añadir al carrito</button>
+								<button type="button"
+									onclick="agregarAlCarrito('Yoko sillón',7999,'images/catalogo/yoko/yookocasual_silla.jpg',this)"
+									class="btn-agregar " id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
 								<a style="cursor: pointer;" onclick="cambioModulo(2,true)">
@@ -483,8 +581,9 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito('Yoko esquinero',8999,'images/catalogo/yoko/yookocasual_taburete.jpg')" class="btn-agregar "
-									id="btn-agregar blue btn">Añadir al carrito</button>
+								<button type="button"
+									onclick="agregarAlCarrito('Yoko esquinero',8999,'images/catalogo/yoko/yookocasual_taburete.jpg')"
+									class="btn-agregar " id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<!--Yooko Contempo-->
 							<li>
@@ -492,7 +591,7 @@
 									<div class="text-center">
 										<div class="product" style="margin-top: 1em;">
 											<div class="product-grid"
-												style="background-image:url(images/catalogo/yoko/yookocontempo_esquinero.jpg); margin: 0 auto;" >
+												style="background-image:url(images/catalogo/yoko/yookocontempo_esquinero.jpg); margin: 0 auto;">
 											</div>
 											<div class="desc" style="margin-top: 1em;">
 												<h3><a class="nomProducto">Yooko Contempo Esquinero</a></h3>
@@ -501,8 +600,9 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito('Yoko sillón',7999,'images/catalogo/yoko/yookocontempo_esquinero.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
+								<button type="button"
+									onclick="agregarAlCarrito('Yoko sillón',7999,'images/catalogo/yoko/yookocontempo_esquinero.jpg',this)"
+									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
 								<a style="cursor: pointer;" onclick="cambioModulo(1,true)">
@@ -518,8 +618,9 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito('Yoko sillón',7999,'images/catalogo/yoko/yookocontempo_silla.jpg')" class="btn-agregar "
-									id="btn-agregar blue btn">Añadir al carrito</button>
+								<button type="button"
+									onclick="agregarAlCarrito('Yoko sillón',7999,'images/catalogo/yoko/yookocontempo_silla.jpg',this)"
+									class="btn-agregar " id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
 								<a style="cursor: pointer;" onclick="cambioModulo(2,true)">
@@ -535,8 +636,9 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito('Yoko esquinero',8999,'images/catalogo/yoko/yookocontempo_taburete.jpg')" class="btn-agregar "
-									id="btn-agregar blue btn">Añadir al carrito</button>
+								<button type="button"
+									onclick="agregarAlCarrito('Yoko esquinero',8999,'images/catalogo/yoko/yookocontempo_taburete.jpg',this)"
+									class="btn-agregar " id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<!--Yooko Trendy-->
 							<li>
@@ -544,7 +646,7 @@
 									<div class="text-center">
 										<div class="product" style="margin-top: 1em;">
 											<div class="product-grid"
-												style="background-image:url(images/catalogo/yoko/yookotrendy_esquinero.jpg); margin: 0 auto;" >
+												style="background-image:url(images/catalogo/yoko/yookotrendy_esquinero.jpg); margin: 0 auto;">
 											</div>
 											<div class="desc" style="margin-top: 1em;">
 												<h3><a class="nomProducto">Yooko Trendy Esquinero</a></h3>
@@ -553,8 +655,9 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito('Yoko sillón',7999,'images/catalogo/yoko/yookotrendy_esquinero.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
+								<button type="button"
+									onclick="agregarAlCarrito('Yoko sillón',7999,'images/catalogo/yoko/yookotrendy_esquinero.jpg',this)"
+									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
 								<a style="cursor: pointer;" onclick="cambioModulo(1,true)">
@@ -570,8 +673,9 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito('Yoko sillón',7999,'images/catalogo/yoko/yookotrendy_silla.jpg')" class="btn-agregar "
-									id="btn-agregar blue btn">Añadir al carrito</button>
+								<button type="button"
+									onclick="agregarAlCarrito('Yoko sillón',7999,'images/catalogo/yoko/yookotrendy_silla.jpg',this)"
+									class="btn-agregar " id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
 								<a style="cursor: pointer;" onclick="cambioModulo(2,true)">
@@ -587,10 +691,42 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito('Yoko esquinero',8999,'images/catalogo/yoko/yookotrendy_taburete.jpg')" class="btn-agregar "
-									id="btn-agregar blue btn">Añadir al carrito</button>
+								<button type="button"
+									onclick="agregarAlCarrito('Yoko esquinero',8999,'images/catalogo/yoko/yookotrendy_taburete.jpg',this)"
+									class="btn-agregar " id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 						</ul>
+					</div>
+
+					<div class="glide-yooko contendor-glide oculto" id="yooko">
+
+						<div class="glide__track" data-glide-el="track">
+							<ul class="glide__slides" id="ul-yooko">
+								<li class="glide__slide">
+
+									<a style="cursor: pointer;" onclick="cambioModulo(0,true)">
+										<div class="text-center">
+											<div class="product" style="margin-top: 1em;">
+												<div class="product-grid"
+													style="background-image:url(images/catalogo/yoko/yookocasual_esquinero.jpg); margin: 0 auto;">
+												</div>
+												<div class="desc" style="margin-top: 1em;">
+													<h3><a class="nomProducto">Yooko Casual Esquinero</a></h3>
+													<span class="priceProducto">$8799</span>
+												</div>
+											</div>
+										</div>
+									</a>
+									<button type="button"
+										onclick="agregarAlCarrito('Yoko sillón',7999,'images/catalogo/yoko/yookocasual_esquinero.jpg',this)"
+										class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
+								</li>
+							</ul>
+						</div>
+						<div data-glide-el="controls" class="controles row">
+							<a data-glide-dir="<" class="flecha-izquerda col-6"><i class="fas fa-chevron-left"></i></a>
+							<a data-glide-dir=">" class="flecha-derecha col-6"><i class="fas fa-chevron-right"></i></a>
+						</div>
 					</div>
 					<!-- FIN SLIDER DE MODELOS YOKO MODULAR -->
 
@@ -598,7 +734,7 @@
 					<div id="puffinoDiv">
 						<ul id="sliderPuffino">
 							<li>
-								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[0])">
+								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[0],this)">
 									<div class="text-center">
 										<div class="product" style="margin-top: 1em;">
 											<div class="product-grid"
@@ -614,510 +750,42 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito('Yumil',2599,'images/productos/puffino/atlixco.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
+								<button type="button"
+									onclick="agregarAlCarrito('Yumil',2599,'images/productos/puffino/atlixco.jpg',this)"
+									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
-							<li>
-								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[1])">
-									<div class="text-center">
-										<div class="product" style="margin-top: 1em;">
-											<div class="product-grid"
-												style="background-image:url(images/productos/puffino/atlixco_chico.jpg); margin: 0 auto;">
-											</div>
-											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">Yumil Mediano</a></h3>
-													<span class="priceProducto">$2499</span>
-											</div>
-											<div class="medidas">
-												<span>(40cm x 40cm x 40cm)</span>
-											</div>
-										</div>
-									</div>
-								</a>
-								<button type="button" onclick="agregarAlCarrito('Yumil MEDIANO',2499,'images/productos/puffino/atlixco_chico.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
-							</li>
-							<li>
-								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[2])">
-									<div class="text-center">
-										<div class="product" style="margin-top: 1em;">
-											<div class="product-grid"
-												style="background-image:url(images/productos/puffino/bernal.jpg); margin: 0 auto;">
-											</div>
-											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">Yeeb</a></h3>
-													<span class="priceProducto">$2999</span>
-											</div>
-											<div class="medidas">
-												<span>(50cm x 70cm x 75cm)</span>
-											</div>
-										</div>
-									</div>
-								</a>
-								<button type="button" onclick="agregarAlCarrito('Yeeb',2999,'images/productos/puffino/bernal.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
-							</li>
-							<li>
-								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[3])">
-									<div class="text-center">
-										<div class="product" style="margin-top: 1em;">
-											<div class="product-grid"
-												style="background-image:url(images/productos/puffino/cozumel.jpg); margin: 0 auto;">
-											</div>
-											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">Kauil</a></h3>
-													<span class="priceProducto">$4999</span>
-											</div>
-											<div class="medidas">
-												<span>Sillón (100cm x 85cm x 80cm) Taburete (100cm x 50cm x 35cm)</span>
-											</div>
-										</div>
-									</div>
-								</a>
-								<button type="button" onclick="agregarAlCarrito('Kauil',4999,'images/productos/puffino/cozumel.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
-							</li>
-							<li>
-								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[18])">
-									<div class="text-center">
-										<div class="product" style="margin-top: 1em;">
-											<div class="product-grid"
-												style="background-image:url(images/productos/puffino/cozumel_sillon.jpg); margin: 0 auto;">
-											</div>
-											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">Kauil Sillón</a></h3>
-													<span class="priceProducto">$4199</span>
-											</div>
-											<div class="medidas">
-												<span>(100cm x 85cm x 80cm)</span>
-											</div>
-										</div>
-									</div>
-								</a>
-								<button type="button" onclick="agregarAlCarrito('Kauil SILLÓN',4199,'images/productos/puffino/cozumel_sillon.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
-							</li>
-							<li>
-								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[4])">
-									<div class="text-center">
-										<div class="product" style="margin-top: 1em;">
-											<div class="product-grid"
-												style="background-image:url(images/productos/puffino/cozumel_taburete.jpg); margin: 0 auto;">
-											</div>
-											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">Kauil Taburete</a></h3>
-													<span class="priceProducto">$2999</span>
-											</div>
-											<div class="medidas">
-												<span>(100cm x 50cm x 35cm)</span>
-											</div>
-										</div>
-									</div>
-								</a>
-								<button type="button" onclick="agregarAlCarrito('Kaul TABURETE',2999,'images/productos/puffino/cozumel_taburete.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
-							</li>
-							<li>
-								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[5])">
-									<div class="text-center">
-										<div class="product" style="margin-top: 1em;">
-											<div class="product-grid"
-												style="background-image:url(images/productos/puffino/guadalajara.jpg); margin: 0 auto;">
-											</div>
-											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">Balam</a></h3>
-													<span class="priceProducto">$5199</span>
-											</div>
-											<div class="medidas">
-												<span>(165cm x 85cm x 85cm)</span>
-											</div>
-										</div>
-									</div>
-								</a>
-								<button type="button" onclick="agregarAlCarrito('Balam',5199,'images/productos/puffino/guadalajara.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
-							</li>
-							<li>
-								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[6])">
-									<div class="text-center">
-										<div class="product" style="margin-top: 1em;">
-											<div class="product-grid"
-												style="background-image:url(images/productos/puffino/guanajuato.jpg); margin: 0 auto;">
-											</div>
-											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">Ikal</a></h3>
-													<span class="priceProducto">$4699</span>
-											</div>
-											<div class="medidas">
-												<span>(100cm x 75cm x 180cm)</span>
-											</div>
-										</div>
-									</div>
-								</a>
-								<button type="button" onclick="agregarAlCarrito('Ikal',4699,'images/productos/puffino/guanajuato.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
-							</li>
-							<li>
-								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[7])">
-									<div class="text-center">
-										<div class="product" style="margin-top: 1em;">
-											<div class="product-grid"
-												style="background-image:url(images/productos/puffino/lapaz.jpg); margin: 0 auto;">
-											</div>
-											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">Nima</a></h3>
-													<span class="priceProducto">$3499</span>
-											</div>
-											<div class="medidas">
-												<span>(95cm x 80cm x 200cm)</span>
-											</div>
-										</div>
-									</div>
-								</a>
-								<button type="button" onclick="agregarAlCarrito('Nima',3499,'images/productos/puffino/lapaz.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
-							</li>
-							<li>
-								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[8])">
-									<div class="text-center">
-										<div class="product" style="margin-top: 1em;">
-											<div class="product-grid"
-												style="background-image:url(images/productos/puffino/lapaz_chico.jpg); margin: 0 auto;">
-											</div>
-											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">Nima mediano</a></h3>
-													<span class="priceProducto">$3099</span>
-											</div>
-											<div class="medidas">
-												<span>(84cm x 70cm x 115cm)</span>
-											</div>
-										</div>
-									</div>
-								</a>
-								<button type="button" onclick="agregarAlCarrito('Nima MEDIANO',3099,'images/productos/puffino/lapaz_chico.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
-							</li>
-							<li>
-								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[9])">
-									<div class="text-center">
-										<div class="product" style="margin-top: 1em;">
-											<div class="product-grid"
-												style="background-image:url(images/productos/puffino/merida.jpg); margin: 0 auto;">
-											</div>
-											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">Zazil</a></h3>
-													<span class="priceProducto">$3999</span>
-											</div>
-											<div class="medidas">
-												<span>(84cm x 70cm x 115cm)</span>
-											</div>
-										</div>
-									</div>
-								</a>
-								<button type="button" onclick="agregarAlCarrito('Zazil',3999,'images/productos/puffino/merida.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
-							</li>
-							<li>
-								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[10])">
-									<div class="text-center">
-										<div class="product" style="margin-top: 1em;">
-											<div class="product-grid"
-												style="background-image:url(images/productos/puffino/oaxaca.jpg); margin: 0 auto;">
-											</div>
-											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">Toot</a></h3>
-													<span class="priceProducto">$3899</span>
-											</div>
-											<div class="medidas">
-												<span>(90cm x 40cm x 90cm)</span>
-											</div>
-										</div>
-									</div>
-								</a>
-								<button type="button" onclick="agregarAlCarrito('Toot',3899,'images/productos/puffino/oaxaca.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
-							</li>
-							<li>
-								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[11])">
-									<div class="text-center">
-										<div class="product" style="margin-top: 1em;">
-											<div class="product-grid"
-												style="background-image:url(images/productos/puffino/oaxaca_matrimonial.jpg); margin: 0 auto;">
-											</div>
-											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">Toot Matrimonial</a></h3>
-													<span class="priceProducto">$4599</span>
-											</div>
-											<div class="medidas">
-												<span>(120cm x 65cm x 120cm)</span>
-											</div>
-										</div>
-									</div>
-								</a>
-								<button type="button" onclick="agregarAlCarrito('Toot Matrimonial',4599,'images/productos/puffino/oaxaca_matrimonial.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
-							</li>
-							<li>
-								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[11])">
-									<div class="text-center">
-										<div class="product" style="margin-top: 1em;">
-											<div class="product-grid"
-												style="background-image:url(images/productos/puffino/oaxaca_queen.jpg); margin: 0 auto;">
-											</div>
-											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">Toot Queen</a></h3>
-													<span class="priceProducto">$4799</span>
-											</div>
-											<div class="medidas">
-												<span>(150cm x 65cm x 150cm)</span>
-											</div>
-										</div>
-									</div>
-								</a>
-								<button type="button" onclick="agregarAlCarrito('Toot QUEEN',4799,'images/productos/puffino/oaxaca_queen.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
-							</li>
-							<li>
-								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[13])">
-									<div class="text-center">
-										<div class="product" style="margin-top: 1em;">
-											<div class="product-grid"
-												style="background-image:url(images/productos/puffino/patzcuaro.jpg); margin: 0 auto;">
-											</div>
-											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">Tanak</a></h3>
-													<span class="priceProducto">$4499</span>
-											</div>
-											<div class="medidas">
-												<span>(100cm x 80cm x 85cm)</span>
-											</div>
-										</div>
-									</div>
-								</a>
-								<button type="button" onclick="agregarAlCarrito('Tanak',4499,'images/productos/puffino/patzcuaro.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
-							</li>
-							<li>
-								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[14])">
-									<div class="text-center">
-										<div class="product" style="margin-top: 1em;">
-											<div class="product-grid"
-												style="background-image:url(images/productos/puffino/patzcuaro_kids.jpg); margin: 0 auto;">
-											</div>
-											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">Tanak Niños</a></h3>
-													<span class="priceProducto">$3199</span>
-											</div>
-											<div class="medidas">
-												<span>(80cm x 63cm x 70cm)</span>
-											</div>
-										</div>
-									</div>
-								</a>
-								<button type="button" onclick="agregarAlCarrito('Tanak NIÑOS',3199,'images/productos/puffino/patzcuaro_kids.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
-							</li>
-							<li>
-								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[15])">
-									<div class="text-center">
-										<div class="product" style="margin-top: 1em;">
-											<div class="product-grid"
-												style="background-image:url(images/productos/puffino/puebla.jpg); margin: 0 auto;">
-											</div>
-											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">Alom</a></h3>
-													<span class="priceProducto">$3099</span>
-											</div>
-											<div class="medidas">
-												<span>(120cm x 25cm x 170cm)</span>
-											</div>
-										</div>
-									</div>
-								</a>
-								<button type="button" onclick="agregarAlCarrito('Alom',3099,'images/productos/puffino/puebla.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
-							</li>
-							<li>
-								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[16])">
-									<div class="text-center">
-										<div class="product" style="margin-top: 1em;">
-											<div class="product-grid"
-												style="background-image:url(images/productos/puffino/pruebla_chico.jpg); margin: 0 auto;">
-											</div>
-											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">Alom Mediano</a></h3>
-													<span class="priceProducto">$2299</span>
-											</div>
-											<div class="medidas">
-												<span>(900cm x 25cm x 130cm)</span>
-											</div>
-										</div>
-									</div>
-								</a>
-								<button type="button" onclick="agregarAlCarrito('Alom MEDIANO',2699,'images/productos/puffino/pruebla_chico.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
-							</li>
-							<li>
-								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[17])">
-									<div class="text-center">
-										<div class="product" style="margin-top: 1em;">
-											<div class="product-grid"
-												style="background-image:url(images/productos/puffino/puertovallarta.jpg); margin: 0 auto;">
-											</div>
-											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">Seti</a></h3>
-													<span class="priceProducto">$3999</span>
-											</div>
-											<div class="medidas">
-												<span>(46cm x 75cm x 125cm)</span>
-											</div>
-										</div>
-									</div>
-								</a>
-								<button type="button" onclick="agregarAlCarrito('Seti',3999,'images/productos/puffino/puertovallarta.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
-							</li>
-							<li>
-								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[19])">
-									<div class="text-center">
-										<div class="product" style="margin-top: 1em;">
-											<div class="product-grid"
-												style="background-image:url(images/productos/puffino/veracruz.jpg); margin: 0 auto;">
-											</div>
-											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">Canek</a></h3>
-													<span class="priceProducto">$4199</span>
-											</div>
-											<div class="medidas">
-												<span>(80cm x 87cm x 80cm)</span>
-											</div>
-										</div>
-									</div>
-								</a>
-								<button type="button" onclick="agregarAlCarrito('Canek',4199,'images/productos/puffino/veracruz.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
-							</li>
-							<li>
-								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[20])">
-									<div class="text-center">
-										<div class="product" style="margin-top: 1em;">
-											<div class="product-grid"
-												style="background-image:url(images/productos/puffino/veracruz_ninos.jpg); margin: 0 auto;">
-											</div>
-											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">Canek Niños</a></h3>
-													<span class="priceProducto">$3399</span>
-											</div>
-											<div class="medidas">
-												<span>(69cm x 65cm x 65cm)</span>
-											</div>
-										</div>
-									</div>
-								</a>
-								<button type="button" onclick="agregarAlCarrito('Canek NIÑOS',3399,'images/productos/puffino/veracruz_ninos.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
-							</li>
-							<li>
-								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[21])">
-									<div class="text-center">
-										<div class="product" style="margin-top: 1em;">
-											<div class="product-grid"
-												style="background-image:url(images/productos/puffino/zacatecas_chico.jpg); margin: 0 auto;">
-											</div>
-											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">Kimbo Chico</a></h3>
-													<span class="priceProducto">$2399</span>
-											</div>
-											<div class="medidas">
-												<span>(45cm x 33cm x 55cm)</span>
-											</div>
-										</div>
-									</div>
-								</a>
-								<button type="button" onclick="agregarAlCarrito('Kimbo CHICO',2399,'images/productos/puffino/zacatecas_chico.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
-							</li>
-							<li>
-								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[23])">
-									<div class="text-center">
-										<div class="product" style="margin-top: 1em;">
-											<div class="product-grid"
-												style="background-image:url(images/productos/puffino/zacatecas_mediano.jpg); margin: 0 auto;">
-											</div>
-											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">Kimbo Mediano</a></h3>
-													<span class="priceProducto">$2699</span>
-											</div>
-											<div class="medidas">
-												<span>(60cm x 33cm x 60cm)</span>
-											</div>
-										</div>
-									</div>
-								</a>
-								<button type="button" onclick="agregarAlCarrito('Kimbo MEDIANO',2699,'images/productos/puffino/zacatecas_mediano.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
-							</li>
-							<li>
-								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[22])">
-									<div class="text-center">
-										<div class="product" style="margin-top: 1em;">
-											<div class="product-grid"
-												style="background-image:url(images/productos/puffino/zacatecas_grande.jpg); margin: 0 auto;">
-											</div>
-											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">Kimbo Grande</a></h3>
-													<span class="priceProducto">$3199</span>
-											</div>
-											<div class="medidas">
-												<span>(90cm x 33cm x 90cm)</span>
-											</div>
-										</div>
-									</div>
-								</a>
-								<button type="button" onclick="agregarAlCarrito('Kimbo GRANDE',3199,'images/productos/puffino/zacatecas_grande.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
-							</li>
-							<li>
-								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[24])">
-									<div class="text-center">
-										<div class="product" style="margin-top: 1em;">
-											<div class="product-grid"
-												style="background-image:url(images/productos/puffino/zacatlan.jpg); margin: 0 auto;">
-											</div>
-											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">Kuk</a></h3>
-													<span class="priceProducto">$3399</span>
-											</div>
-											<div class="medidas">
-												<span>(64cm x 125cm x 64cm)</span>
-											</div>
-										</div>
-									</div>
-								</a>
-								<button type="button" onclick="agregarAlCarrito('Kuk',3399,'images/productos/puffino/zacatlan.jpg')" class="btn-agregar "
-									id="btn-agregar blue btn">Añadir al carrito</button>
-							</li>
-							<li>
-								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.puffino[23])">
-									<div class="text-center">
-										<div class="product" style="margin-top: 1em;">
-											<div class="product-grid"
-												style="background-image:url(images/productos/puffino/zacatlan_mediano.jpg); margin: 0 auto;">
-											</div>
-											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">Kuk Mediano</a></h3>
-													<span class="priceProducto">$2899</span>
-											</div>
-											<div class="medidas">
-												<span>(50cm x 95cm x 50cm)</span>
-											</div>
-										</div>
-									</div>
-								</a>
-								<button type="button" onclick="agregarAlCarrito('Kuk MEDIANO',2899,'images/productos/puffino/zacatlan_mediano.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
-							</li>
+
 						</ul>
+					</div>
+
+					<div class="glide-puffino contendor-glide oculto" id="puffino">
+						<div class="glide__track" data-glide-el="track">
+							<ul class="glide__slides" id="ul-puffino">
+								<li class="glide__slide">
+
+									<a style="cursor: pointer;" onclick="cambioModulo(0,true)">
+										<div class="text-center">
+											<div class="product" style="margin-top: 1em;">
+												<div class="product-grid"
+													style="background-image:url(images/catalogo/yoko/yookocasual_esquinero.jpg); margin: 0 auto;">
+												</div>
+												<div class="desc" style="margin-top: 1em;">
+													<h3><a class="nomProducto">Yooko Casual Esquinero</a></h3>
+													<span class="priceProducto">$8799</span>
+												</div>
+											</div>
+										</div>
+									</a>
+									<button type="button"
+										onclick="agregarAlCarrito('Yoko sillón',7999,'images/catalogo/yoko/yookocasual_esquinero.jpg',this)"
+										class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
+								</li>
+							</ul>
+						</div>
+						<div data-glide-el="controls" class="controles row">
+							<a data-glide-dir="<" class="flecha-izquerda col-6"><i class="fas fa-chevron-left"></i></a>
+							<a data-glide-dir=">" class="flecha-derecha col-6"><i class="fas fa-chevron-right"></i></a>
+						</div>
 					</div>
 					<!-- FIN SLIDER DE MODELOS PUFFINO -->
 
@@ -1126,15 +794,15 @@
 					<div id="kidsDiv">
 						<ul id="sliderKids">
 							<li>
-								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.kids[0])">
+								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.kids[0],this)">
 									<div class="text-center">
 										<div class="product" style="margin-top: 1em;">
 											<div class="product-grid"
 												style="background-image:url(images/productos/kids/kids_conejo.jpg); margin: 0 auto;">
 											</div>
 											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">CONEJO</a></h3>
-													<span class="priceProducto">$3499</span>
+												<h3 style="line-height: 30px;"><a class="nomProducto">CONEJO</a></h3>
+												<span class="priceProducto">$3499</span>
 											</div>
 											<div class="medidas">
 												<span>(76cm x 90cm x 76cm)</span>
@@ -1142,19 +810,21 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito('CONEJO',3499,'images/productos/kids/kids_conejo.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
+								<button type="button"
+									onclick="agregarAlCarrito('CONEJO',3499,'images/productos/kids/kids_conejo.jpg')"
+									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
-								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.kids[1])">
+								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.kids[1],this)">
 									<div class="text-center">
 										<div class="product" style="margin-top: 1em;">
 											<div class="product-grid"
 												style="background-image:url(images/productos/kids/kids_dinosaurio.jpg); margin: 0 auto;">
 											</div>
 											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">DINOSAURIO</a></h3>
-													<span class="priceProducto">$3699</span>
+												<h3 style="line-height: 30px;"><a class="nomProducto">DINOSAURIO</a>
+												</h3>
+												<span class="priceProducto">$3699</span>
 											</div>
 											<div class="medidas">
 												<span>(72cm x 90cm x 76cm)</span>
@@ -1162,19 +832,20 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito('DINOSAURIO',3699,'images/productos/kids/kids_dinosaurio.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
+								<button type="button"
+									onclick="agregarAlCarrito('DINOSAURIO',3699,'images/productos/kids/kids_dinosaurio.jpg')"
+									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
-								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.kids[2])">
+								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.kids[2],this)">
 									<div class="text-center">
 										<div class="product" style="margin-top: 1em;">
 											<div class="product-grid"
 												style="background-image:url(images/productos/kids/kids_dona.jpg); margin: 0 auto;">
 											</div>
 											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">DONA</a></h3>
-													<span class="priceProducto">$3399</span>
+												<h3 style="line-height: 30px;"><a class="nomProducto">DONA</a></h3>
+												<span class="priceProducto">$3399</span>
 											</div>
 											<div class="medidas">
 												<span>(96cm diametro x 32cm)</span>
@@ -1182,19 +853,20 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito('DONA',3399,'images/productos/kids/kids_dona.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
+								<button type="button"
+									onclick="agregarAlCarrito('DONA',3399,'images/productos/kids/kids_dona.jpg')"
+									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
-								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.kids[3])">
+								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.kids[3],this)">
 									<div class="text-center">
 										<div class="product" style="margin-top: 1em;">
 											<div class="product-grid"
 												style="background-image:url(images/productos/kids/kids_jirafa.jpg); margin: 0 auto;">
 											</div>
 											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">JIRAFA</a></h3>
-													<span class="priceProducto">$3799</span>
+												<h3 style="line-height: 30px;"><a class="nomProducto">JIRAFA</a></h3>
+												<span class="priceProducto">$3799</span>
 											</div>
 											<div class="medidas">
 												<span>(72cm x 90cm x 76cm)</span>
@@ -1202,19 +874,20 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito('JIRAFA',3799,'images/productos/kids/kids_jirafa.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
+								<button type="button"
+									onclick="agregarAlCarrito('JIRAFA',3799,'images/productos/kids/kids_jirafa.jpg')"
+									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
-								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.kids[4])">
+								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.kids[4],this)">
 									<div class="text-center">
 										<div class="product" style="margin-top: 1em;">
 											<div class="product-grid"
 												style="background-image:url(images/productos/kids/kids_perrito.jpg); margin: 0 auto;">
 											</div>
 											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">PERRITO</a></h3>
-													<span class="priceProducto">$3699</span>
+												<h3 style="line-height: 30px;"><a class="nomProducto">PERRITO</a></h3>
+												<span class="priceProducto">$3699</span>
 											</div>
 											<div class="medidas">
 												<span>(72cm x 90cm x 76cm)</span>
@@ -1222,19 +895,20 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito('PERRITO',3699,'images/productos/kids/kids_perrito.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
+								<button type="button"
+									onclick="agregarAlCarrito('PERRITO',3699,'images/productos/kids/kids_perrito.jpg')"
+									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 							<li>
-								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.kids[5])">
+								<a style="cursor: pointer;" onclick="cargarModeloCustom(modelos.kids[5],this)">
 									<div class="text-center">
 										<div class="product" style="margin-top: 1em;">
 											<div class="product-grid"
 												style="background-image:url(images/productos/kids/kids_unicornio.jpg); margin: 0 auto;">
 											</div>
 											<div class="desc" style="margin-top: 1em; margin-bottom: 1.2em;">
-													<h3 style="line-height: 30px;"><a class="nomProducto">UNICORNIO</a></h3>
-													<span class="priceProducto">$3499</span>
+												<h3 style="line-height: 30px;"><a class="nomProducto">UNICORNIO</a></h3>
+												<span class="priceProducto">$3499</span>
 											</div>
 											<div class="medidas">
 												<span>(72cm x 90cm x 76cm)</span>
@@ -1242,12 +916,140 @@
 										</div>
 									</div>
 								</a>
-								<button type="button" onclick="agregarAlCarrito('UNICORNIO',3499,'images/productos/kids/kids_unicornio.jpg')" class="btn-agregar"
-									id="btn-agregar blue btn">Añadir al carrito</button>
+								<button type="button"
+									onclick="agregarAlCarrito('UNICORNIO',3499,'images/productos/kids/kids_unicornio.jpg')"
+									class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
 							</li>
 						</ul>
 					</div>
+					<div class="glide-kids contendor-glide oculto" id="kids">
+						<div class="glide__track" data-glide-el="track">
+							<ul class="glide__slides" id="ul-kids">
+								<li class="glide__slide">
 
+									<a style="cursor: pointer;" onclick="cambioModulo(0,true)">
+										<div class="text-center">
+											<div class="product" style="margin-top: 1em;">
+												<div class="product-grid"
+													style="background-image:url(images/catalogo/yoko/yookocasual_esquinero.jpg); margin: 0 auto;">
+												</div>
+												<div class="desc" style="margin-top: 1em;">
+													<h3><a class="nomProducto">Yooko Casual Esquinero</a></h3>
+													<span class="priceProducto">$8799</span>
+												</div>
+											</div>
+										</div>
+									</a>
+									<button type="button"
+										onclick="agregarAlCarrito('Yoko sillón',7999,'images/catalogo/yoko/yookocasual_esquinero.jpg',this)"
+										class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
+								</li>
+								<li class="glide__slide">
+
+									<a style="cursor: pointer;" onclick="cambioModulo(0,true)">
+										<div class="text-center">
+											<div class="product" style="margin-top: 1em;">
+												<div class="product-grid"
+													style="background-image:url(images/catalogo/yoko/yookocasual_esquinero.jpg); margin: 0 auto;">
+												</div>
+												<div class="desc" style="margin-top: 1em;">
+													<h3><a class="nomProducto">Yooko Casual Esquinero</a></h3>
+													<span class="priceProducto">$8799</span>
+												</div>
+											</div>
+										</div>
+									</a>
+									<button type="button"
+										onclick="agregarAlCarrito('Yoko sillón',7999,'images/catalogo/yoko/yookocasual_esquinero.jpg',this)"
+										class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
+								</li>
+								<li class="glide__slide">
+
+									<a style="cursor: pointer;" onclick="cambioModulo(0,true)">
+										<div class="text-center">
+											<div class="product" style="margin-top: 1em;">
+												<div class="product-grid"
+													style="background-image:url(images/catalogo/yoko/yookocasual_esquinero.jpg); margin: 0 auto;">
+												</div>
+												<div class="desc" style="margin-top: 1em;">
+													<h3><a class="nomProducto">Yooko Casual Esquinero</a></h3>
+													<span class="priceProducto">$8799</span>
+												</div>
+											</div>
+										</div>
+									</a>
+									<button type="button"
+										onclick="agregarAlCarrito('Yoko sillón',7999,'images/catalogo/yoko/yookocasual_esquinero.jpg',this)"
+										class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
+								</li>
+								<li class="glide__slide">
+
+									<a style="cursor: pointer;" onclick="cambioModulo(0,true)">
+										<div class="text-center">
+											<div class="product" style="margin-top: 1em;">
+												<div class="product-grid"
+													style="background-image:url(images/catalogo/yoko/yookocasual_esquinero.jpg); margin: 0 auto;">
+												</div>
+												<div class="desc" style="margin-top: 1em;">
+													<h3><a class="nomProducto">Yooko Casual Esquinero</a></h3>
+													<span class="priceProducto">$8799</span>
+												</div>
+											</div>
+										</div>
+									</a>
+									<button type="button"
+										onclick="agregarAlCarrito('Yoko sillón',7999,'images/catalogo/yoko/yookocasual_esquinero.jpg',this)"
+										class="btn-agregar" id="btn-agregar blue btn">Añadir al carrito</button>
+								</li>
+							</ul>
+						</div>
+						<div data-glide-el="controls" class="controles row">
+							<a data-glide-dir="<" class="flecha-izquerda col-6"><i class="fas fa-chevron-left"></i></a>
+							<a data-glide-dir=">" class="flecha-derecha col-6"><i class="fas fa-chevron-right"></i></a>
+						</div>
+					</div>
+					<!--SLIDERS CUSTOM-->
+					<div class="glide-contempo contendor-glide oculto" id="contempo">
+						<div class="glide__track" data-glide-el="track">
+							<ul class="glide__slides" id="ul-contempo">
+								<li class="glide__slide"></li>
+								<li class="glide__slide"></li>
+								<li class="glide__slide"></li>
+							</ul>
+						</div>
+						<div data-glide-el="controls" class="controles row">
+							<a data-glide-dir="<" class="flecha-izquerda col-6"><i class="fas fa-chevron-left"></i></a>
+							<a data-glide-dir=">" class="flecha-derecha col-6"><i class="fas fa-chevron-right"></i></a>
+						</div>
+					</div>
+					<!--Trendy-->
+					<div class="glide-trendy contendor-glide oculto" id="trendy">
+						<div class="glide__track" data-glide-el="track">
+							<ul class="glide__slides" id="ul-trendy">
+								<li class="glide__slide"></li>
+								<li class="glide__slide"></li>
+								<li class="glide__slide"></li>
+							</ul>
+						</div>
+						<div data-glide-el="controls" class="controles row">
+							<a data-glide-dir="<" class="flecha-izquerda col-6"><i class="fas fa-chevron-left"></i></a>
+							<a data-glide-dir=">" class="flecha-derecha col-6"><i class="fas fa-chevron-right"></i></a>
+						</div>
+					</div>
+					<!--Casual-->
+					<div class="glide-casual contendor-glide oculto" id="casual">
+						<div class="glide__track" data-glide-el="track">
+							<ul class="glide__slides" id="ul-casual">
+								<li class="glide__slide">0</li>
+								<li class="glide__slide"></li>
+								<li class="glide__slide"></li>
+							</ul>
+						</div>
+						<div data-glide-el="controls" class="controles row">
+							<a data-glide-dir="<" class="flecha-izquerda col-6"><i class="fas fa-chevron-left"></i></a>
+							<a data-glide-dir=">" class="flecha-derecha col-6"><i class="fas fa-chevron-right"></i></a>
+						</div>
+					</div>
 					<!-- FIN SLIDER DE MODELOS KIDS-->
 					<hr>
 				</div>
@@ -1288,7 +1090,7 @@
 							<img src="assets/imagenes/IcongrisBotones.jpg" id="textuTrendy" onclick="cambioTextura(2)">
 						</li>
 					</ul>-->
-					<h6 id="descripcionMaterial">Material</h6>
+					<h4 id="descripcionMaterial" style="color: #4E56DF;">Material</h4>
 					<!--	
 						<div class="btn-group" role="group" aria-label="Basic example">
 						<button type="button" class="btn btn-secondary">Left</button>
@@ -1298,41 +1100,35 @@
 					-->
 					<!-- usage example-->
 					<div class="grid-texturas" id="grid-texturas">
-						<ul class="nav nav-tabs tabTexturas" role="tablist">
+						<ul class="nav nav-tabs tabTexturas" role="tablist" id="tab-texturas">
 							<li role="presentation">
-								<a class="tabLink" href="#tab-id-0" aria-controls="tab-id-0" role="tab"
+								<a class="tabLink" href="#tab-id-3" aria-controls="tab-id-3" role="tab"
 									data-toggle="tab">
-									<span>Lona</span>
-								</a>
-							</li>
-							<li class="active" role="presentation">
-								<a class="tabLink" href="#tab-id-1" aria-controls="tab-id-1" role="tab"
-									data-toggle="tab">
-									<span>Gamuza</span>
-								</a>
-							</li>
-							<li role="presentation">
-								<a class="tabLink" href="#tab-id-2" aria-controls="tab-id-2" role="tab"
-									data-toggle="tab">
-									<span>Tacto piel</span>
+									<span>Curri</span>
 								</a>
 							</li>
 						</ul>
 						<div class="tab-content">
 							<div class="tab-pane" id="tab-id-0" role="tabpanel">
-								<div class="btn-grid" id="btn-grid">
+								<div class="btn-grid  cont-txturas" id="btn-grid">
 									<input type="image" src="assets/texturas/chico/TP ROJOchico.jpg"
-										class="btn-imagen-grid" />
+										class="btn-imagen-grid " />
 								</div>
 							</div>
-							<div class="tab-pane active" id="tab-id-1" role="tabpanel">
-								<div class="btn-grid1" id="btn-grid1">
+							<div class="tab-pane" id="tab-id-1" role="tabpanel">
+								<div class="btn-grid1 cont-txturas-1" id="btn-grid1">
 									<input type="image" src="assets/texturas/chico/TP ROJOchico.jpg"
 										class="btn-imagen-grid" />
 								</div>
 							</div>
 							<div class="tab-pane" id="tab-id-2" role="tabpanel">
-								<div class="btn-grid2" id="btn-grid2">
+								<div class="btn-grid2 cont-txturas-2" id="btn-grid2">
+									<input type="image" src="assets/texturas/chico/TP ROJOchico.jpg"
+										class="btn-imagen-grid" />
+								</div>
+							</div>
+							<div class="tab-pane active" id="tab-id-3" role="tabpanel">
+								<div class="btn-grid3 cont-txturas-3" id="btn-grid3">
 									<input type="image" src="assets/texturas/chico/TP ROJOchico.jpg"
 										class="btn-imagen-grid" />
 								</div>
@@ -1413,7 +1209,7 @@
 						<ul class="opc-herramienta">
 							<li>
 								<span class="img-fondo img-menu btn-imagen-grid" class="">
-									<label for="file-input">
+									<label for="file-input" class="file-input-fodo">
 										<img src="assets/iconos/upload_image.png" alt="fondo" id="fondo" height="25"
 											width="25" class="img-menu btn-imagen-grid">
 									</label>
@@ -1452,7 +1248,8 @@
 
 				</div>
 				<div class="acciones">
-					<button type="button" class="btn btn-success">Agregar al carrito</button>
+					<button type="button" class="btn btn-success btn-agregar-3d-a-carrito" id="btn-agregar-3d-a-carrito"
+						onclick="agregarModelo3DaCArrito()">Agregar al carrito</button>
 					<div class="precios">
 						<div class="div-precio">
 							<span>Total</span>
@@ -1462,21 +1259,22 @@
 				</div>
 				<div class="item3" id="main">
 					<div id="datGUI" class="datGUI">
-						<canvas id="render">
+						<canvas id="renderCanvas" class="renderCanvas" touch-action="pan-up pan-down pinch-zoom"
+							>
 						</canvas>
 						<!--
 										<button id="btnPrueba" class="btnPrueba">comida</button>
 										-->
-						<div class="selecionMenu">
-							<button type="button" onclick="cambiarMenuMovil(1)" class="btn"
-								id="slct-btn-foto">Foto</button>
-							<button type="button" onclick="cambiarMenuMovil(2)" class="btn slct-btn-color"
-								id="slct-btn-color">Color</button>
-							<button type="button" onclick="cambiarMenuMovil(3)" class="btn" id="slct-btn-preArmado">Pre
-								armado</button>
-							<button type="button" onclick="cambiarMenuMovil(4)" class="btn"
-								id="slct-btn-modelo">Modelo</button>
-						</div>
+					</div>
+					<div class="selecionMenu">
+						<button type="button" onclick="cambiarMenuMovil(1)" class="btn"
+							id="slct-btn-foto">Herramientas</button>
+						<button type="button" onclick="cambiarMenuMovil(2)" class="btn slct-btn-color"
+							id="slct-btn-color">Color</button>
+						<button type="button" onclick="cambiarMenuMovil(3)" class="btn" id="slct-btn-preArmado">Pre
+							armado</button>
+						<button type="button" onclick="cambiarMenuMovil(4)" class="btn"
+							id="slct-btn-modelo">Modelo</button>
 					</div>
 				</div>
 
@@ -1513,7 +1311,8 @@
 					<div class="col-md-8 col-sm-6 text-center">
 						<div class="feature-center animate-box">
 							<span class="icon">
-									<center style="width: 12em;height: 12em;"><img  style="width: 12em;height: 12em;" src="images/logo_certi_pur_medium.png"></center>
+								<center style="width: 12em;height: 12em;"><img style="width: 12em;height: 12em;"
+										src="images/logo_certi_pur_medium.png"></center>
 							</span>
 							<h3 style="color: white;">Materia prima </h3>
 							<p style="color: white;text-align : center;">
@@ -1588,23 +1387,28 @@
 									<p>
 										Muy recomendable!
 										Súper buen servicio.
-										El envío y entrega fue en tiempo y forma sin ningún contratiempo , de hecho me lo mandaron mucho antes de lo previsto.
+										El envío y entrega fue en tiempo y forma sin ningún contratiempo , de hecho me
+										lo mandaron mucho antes de lo previsto.
 										El Puffino , precioso, y súper cómodo!
 									</p>
 								</div>
 								<div class="item testimonial">
-										<h3>Nancy Lizeth Estrada Hernandez </h3>
-										<p>
-					Estoy super encantada con mi puff el color el tamaño ...como lo esperaba cubrió mis expectativas llego en el tiempo esperado y la atención de Dennise excelente super atenta la chica claro que volvería a comprarme otro,muchos mas recomiendo ampliamente GRACIAS puffino
-										</p>
+									<h3>Nancy Lizeth Estrada Hernandez </h3>
+									<p>
+										Estoy super encantada con mi puff el color el tamaño ...como lo esperaba cubrió
+										mis expectativas llego en el tiempo esperado y la atención de Dennise excelente
+										super atenta la chica claro que volvería a comprarme otro,muchos mas recomiendo
+										ampliamente GRACIAS puffino
+									</p>
 								</div>
 
 								<div class="item testimonial">
-										<h3>Leslie Naj</h3>
-										<p>
-												me encantó, super cómodos y muy lindos
-												ya quiero comprar otro y sobre todo excelente servicio de atención a clientes, me atendio Leslie Olvera y muy amable la señorita, se los recomiendo al 100 
-										</p>
+									<h3>Leslie Naj</h3>
+									<p>
+										me encantó, super cómodos y muy lindos
+										ya quiero comprar otro y sobre todo excelente servicio de atención a clientes,
+										me atendio Leslie Olvera y muy amable la señorita, se los recomiendo al 100
+									</p>
 								</div>
 							</div>
 						</div>
@@ -1614,7 +1418,7 @@
 			</div>
 		</div>
 
-		<div id="fh5co-services"class="fh5co-bg-section" style="font-family: 'Roboto';background:white;padding: 0;">
+		<div id="fh5co-services" class="fh5co-bg-section" style="font-family: 'Roboto';background:white;padding: 0;">
 			<div class="container">
 				<div class="desc"><br><br>
 					<center>
@@ -1624,7 +1428,7 @@
 					<p style=" text-align:center; margin-left:5%; margin-right:5%;">En Puffino fabricamos muebles
 						materializando tus ideas, <br />
 						armonizamos y diseñamos tu espacio exclusivo basándonos en la innovación,<br>
-						sustentabilidad, comodidad, diseñoy vanguardia.<br />
+						sustentabilidad, comodidad, diseño y vanguardia.<br />
 					</p>
 				</div>
 				<div class="row">
@@ -1664,14 +1468,12 @@
 
 
 	<br>
-	<div class="row copyright" style="font-family: 'Roboto';">
+	<div class=" row copyright" style="font-family: 'Roboto';">
 		<div class="col-md-3 col-sm-2 col-xs-2"></div>
 		<div class="col-md-6 col-sm-8 col-xs-8 text-center">
-				<p
-				style="font-size: 0.9rem;line-height: 1.2em; text-align:center; color:black">
+			<p style="font-size: 0.9rem;line-height: 1.2em; text-align:center; color:black">
 				*Las fotografías mostradas en este sitio web son reales y propiedad de Puffino. Copyright 2017
-				León,
-				Guanajuato. Derechos reservados ©, prohibida su reproducción o uso total o parcial por
+				León, Guanajuato. Derechos reservados ©, prohibida su reproducción o uso total o parcial por
 				cualquier medio.
 			</p>
 		</div>
@@ -1709,7 +1511,7 @@
 				</div>
 
 				<div class="col-md-4 fh5co-widget text-sm-right">
-					
+
 					<h3 style="font-size: 1.3rem; color:#FFF;">CONTÁCTANOS</h3>
 					<p>
 						477 854 11 12 <br>
@@ -1724,7 +1526,7 @@
 				</div>
 			</div>
 		</div>
-		
+
 	</footer>
 	<div class="gototop js-top">
 		<a href="#" class="js-gotop"><i class="icon-arrow-up" style="background-color:#4DD7D3;"></i></a>
@@ -1734,7 +1536,7 @@
 
 	<script src="js/jquery.easing.1.3.js"></script>
 	<!-- Bootstrap -->
-	<script src="js/bootstrap.min.js"></script>
+	<script src="js/bootstrap3.3.7.js"></script>
 	<!-- Waypoints -->
 	<script src="js/jquery.waypoints.min.js"></script>
 	<!-- Carousel -->
@@ -1746,9 +1548,10 @@
 	<!-- Main -->
 	<script src="js/main.js"></script>
 
-	<script src="js/dat.gui.min.js"></script>
-	<!--<script src="js/jquery-3.3.1.min.js"></script>-->
+
+	<script src="js/hammer.js"></script>
 	<script src="js/babylon.custom.js"></script>
+	<script src="js/enTouchControl.js"></script>
 	<script src="js/mainMotor3D.js"></script>
 	<script type="text/javascript" src="js/texturas.json"></script>
 	<script type="text/javascript">
@@ -1757,16 +1560,49 @@
 				dots: true,
 				infinite: true,
 				centerMode: true,
-				slidesToShow: 5,
-				slidesToScroll: 3,
+				slidesToShow: 4,
+				slidesToScroll: 1,
 				autoplay: true,
-				autoplaySpeed: 1000
+				autoplaySpeed: 1000,
+
+				responsive: [
+					{
+						breakpoint: 992,
+						settings: {
+							arrows: false,
+							centerMode: true,
+							slidesToShow: 3,
+						}
+					},
+					{
+						breakpoint: 768,
+						settings: {
+							arrows: false,
+							centerMode: false,
+							slidesToShow: 2,
+						}
+					},
+					{
+						breakpoint: 480,
+						settings: {
+							arrows: false,
+							centerMode: true,
+							slidesToShow: 1,
+							itemMargin: 1
+						}
+					}
+				]
 			});
 
 		});
+
+
 	</script>
 
 
+
+
+	<!--
 	<script type="text/javascript">
 
 		var showYoko = true;
@@ -1779,10 +1615,11 @@
 			$("#kidsDiv").hide(500);
 
 
-
+			/*
 			$("#yokoShow").click(function () {
 				showYokoDiv();
 			});
+			*/
 
 			$("#puffinoShow").click(function () {
 				showPuffinoDiv();
@@ -1880,8 +1717,8 @@
 				}, responsiveBreakpoints: {
 					portrait: {
 						changePoint: 480,
-						visibleItems: 3,
-						itemsToScroll: 3
+						visibleItems: 2,
+						itemsToScroll: 2
 					},
 					landscape: {
 						changePoint: 640,
@@ -1918,8 +1755,8 @@
 					},
 					tablet: {
 						changePoint: 768,
-						visibleItems: 3,
-						itemsToScroll: 3
+						visibleItems: 2,
+						itemsToScroll: 1
 					}
 				}
 			});
@@ -1955,12 +1792,17 @@
 
 		}
 	</script>
-	<!--
-	<script src="https://www.paypal.com/sdk/js?client-id=Ab3CfXg7wt8RiCw6JkaSJ6TNF0SNKfMj9hJ5LiW2LjRGcGtoLKpFn3lGxDRizT5FHXsONUzWVgetL1jN&currency=MXN"></script>
 	-->
 	<script src="https://www.paypalobjects.com/api/checkout.js"></script>
+
 	<script src="js/pantallaCarga.js"></script>
 	<script src="js/carrito.js"></script>
+	<script type="text/javascript">
+		document.body.style.width = "100%";
+	</script>
+	<script type="text/javascript" src="js/glide.min.js"></script>
+	<script src="js/requestIndex.js"></script>
+
 </body>
 
 </html>

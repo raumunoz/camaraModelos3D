@@ -175,17 +175,27 @@
                             <input type="text" class="form-control" id="codigo-postal-shipping" >
                         </div>
                     </div>
+                    <input name="json-data" type="text" id="jsonInput" style=" visibility: hidden">
                     <div class="form-row">
                             <div class="form-group col-md-12">
                                 <label for="telefono-shipping">Teléfono</label>
                                 <input type="tel" class="form-control" id="telefono-shipping" placeholder="Teléfono">
                             </div>
                         </div>
-        
+                       
                         <input class="btn btn-primary" type="submit" value="Submit">
                         
                 </form> 
-
+              
+                <!--
+                <form  id="form-manda-datos">
+                  <div class="form-group col-md-2">
+                  <input name="json-data" type="text" id="jsonInput" style=" visibility: hidden">
+                  <input id="prodId" name="prodId" type="hidden" value="xm234jq">
+                        </div>
+                    <input   type="submit" value="Submit" id="id-submit-prueba">
+                </form>   
+                -->
             </div>
         </div>
     </div>
@@ -269,11 +279,9 @@
         src="https://www.paypal.com/sdk/js?client-id=Ab3CfXg7wt8RiCw6JkaSJ6TNF0SNKfMj9hJ5LiW2LjRGcGtoLKpFn3lGxDRizT5FHXsONUzWVgetL1jN&currency=MXN"></script>
 
     <script src="js/carrito.js"></script>
-    <script src="js/envios.js"></script>
+    <script src="js/envios2.js"></script>
     <script src="https://www.paypalobjects.com/api/checkout.js"></script>
-    <script>
-            // Example starter JavaScript for disabling form submissions if there are invalid fields
-    </script>
+    
 </body>
 
 </html>

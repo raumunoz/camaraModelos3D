@@ -1,6 +1,7 @@
 <?php
-$nombre=$_REQUEST["nombre"];
-$texto="texto";
+//$nombre=$_POST["nombre"];
+
+var_dump($_POST);
 ?> 
 <!DOCTYPE html>
 <html>
@@ -328,15 +329,159 @@ $texto="texto";
     <script src="js/main.js"></script>
     <script
         src="https://www.paypal.com/sdk/js?client-id=Ab3CfXg7wt8RiCw6JkaSJ6TNF0SNKfMj9hJ5LiW2LjRGcGtoLKpFn3lGxDRizT5FHXsONUzWVgetL1jN&currency=MXN"></script>
-<!--
+
     <script src="js/carrito.js"></script>
-    <script src="js/envios.js"></script>
- -->   
+    
+  
     <script src="https://www.paypalobjects.com/api/checkout.js"></script>
     
     <script>
     var foo = "<?php echo $texto; ?>";
             alert(foo);
+            let datosDeEnvio={};
+        datosDeEnvio.correo = "mail";
+        datosDeEnvio.nombre = "pepe";
+        datosDeEnvio.apellidos = "apeeli";
+        datosDeEnvio.direccion = "pepe";
+        datosDeEnvio.ciudad = "zac";
+        datosDeEnvio.pais = "pais";
+        datosDeEnvio.estado = "estadio";
+        datosDeEnvio.telefono = "4656812";
+        datosDeEnvio.codigoPostal = "456321";
+        datosDeEnvio.detallesDirecion = "numero 123";
+        function cambiaPantallaResumen() {
+         var contenido = elementoId("contenido-cambiar");
+    contenido.innerHTML =
+        `
+        <?php echo "saludo"; ?>
+        <div class="" style="font-family: 'Roboto';padding: 0;margin: 0;width: 100%; max-width: auto;">
+        <div class="card card-body shadow-none info-shipping">Dirección del envio <br>
+            <span id="resumen-direccion">
+                ${datosDeEnvio.direccion},${datosDeEnvio.detallesDirecion == "" ? "" : datosDeEnvio.detallesDirecion + ","} ${datosDeEnvio.pais}, ${datosDeEnvio.estado}.
+            </span>
+            <hr>
+            Contacto <br>
+            <span id="resumen-correo">Nombre: ${datosDeEnvio.nombre}</span>
+            <span id="resumen-correo">Correo: ${datosDeEnvio.correo}</span>
+            <span id="resumen-correo">Teléfono: ${datosDeEnvio.telefono}</span>
+        </div>
+        <table class="table">
+
+            <thead>
+                <tr class="table-header">
+                    <th class="first wrap-texto">Producto</th>
+                    <th class="wrap-texto">Material</th>
+                    <th class="wrap-texto">Precio</th>
+                    <th class="wrap-texto">Cantidad</th>
+                    <th class="wrap-texto last">Total</th>
+                </tr>
+            </thead>
+
+            <tbody id="tabla-carrito" class="tbody-carrito">
+
+                <tr class="table-row first last" data-cart-item="">
+                    <td class="product-item first">
+                        <div class="image-wrap">
+                            <a class="image" href="/products/merida?variant=12424089862240">
+                                <img src="//cdn.shopify.com/s/files/1/1832/7035/products/DakotaWide01_1024x1024_f904b784-a574-4a94-8de2-cdd15c0e9569_compact.jpg?v=1535944817"
+                                    alt="">
+
+                            </a>
+                        </div>
+                        <div class="wrap">
+
+                            <span class="label title"><a href="/products/merida?variant=12424089862240"
+                                    title="">Zazil</a></span>
+                            <span class="label variant">Selecciona el material / Ahora escoge el
+                                color</span>
+
+
+
+                        </div>
+                    </td>
+
+                    <td class="price"><span class="money" data-currency-mxn="$ 3,299.00" data-currency="MXN">$
+                            3,299.00</span></td>
+                    <td class="quantity">
+                        <span class="spinner">
+                            <a href="/cart/change/12424089862240?line=1&amp;quantity=0"><span class="sub"><i
+                                        class="material-icons"
+                                        style="line-height: 33px; font-size:14px">remove</i></span></a>
+                            <input type="number" value="1" data-id="12424089862240" min="1" max="100">
+                            <a href="/cart/change/12424089862240?line=1&amp;quantity=2"><span class="add"><i
+                                        class="material-icons"
+                                        style="line-height: 33px; font-size:14px">add</i></span></a>
+                        </span>
+                    </td>
+                    <td class="total"><span class="money" data-currency-mxn="$ 3,299.00" data-currency="MXN">$
+                            3,299.00</span></td>
+                    <td class="remove last"><a href="/cart/change/12424089862240?line=1&amp;quantity=0"><i
+                                class="material-icons"
+                                style="color:#ce1600; line-height: 10px;">delete_forever</i></a></td>
+                </tr>
+
+            </tbody>
+
+        </table>
+        <br>
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-*-*"></div>
+            <div class="col-*-*"></div>
+        </div>
+        <div class="carrito-footer ">
+            <div class="row">
+                <div class="totals col-12 col-sm-12 col-md-12 col-xs-12">
+                    <div class="totals-item">
+                        <label>Subtotal</label>
+                        <div class="totals-value" id="cart-subtotal">$<spa id="Subtotal-pagina-cart">45</spa>
+                        </div>
+                    </div>
+                    <div class="totals-item">
+                        <label>Envio</label>
+                        <div class="totals-value" id="cart-shipping">$<spa id="envio-pagina-cart">0</spa>
+                        </div>
+                    </div>
+                    <div class="totals-item totals-item-total">
+                        <label style="font-weight: bold;">Total</label>
+                        <div class="totals-value" id="cart-total" style="font-weight: 620;">$<spa
+                                id="total-pagina-cart">45</spa>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+<p>Seleccione una forma de pago:</p>
+<div>
+  <input type="radio" id="huey" name="drone" value="huey"
+         checked  onchange="handleChange1();">
+  <label for="paypal">paypal</label>
+</div>
+
+<div>
+  <input type="radio" id="dewey" name="drone" value="dewey" onchange="handleChange2();">
+  <label for="tarjeta">tarjeta de credito</label>
+</div>
+
+            <div class="row">
+                <div class="col-0 col-sm-5 col-md-7"></div>
+                <div class="col-12 col-sm-7 col-md-5">
+                    <div id="paypal-button-container"></div>
+                    <div id="paypal-button"></div>
+                </div>
+            </div>
+
+        </div>
+        <div class="total">
+        </div>
+    </div>
+        `;
+    actualizarTablaCarrito(false, datosDeEnvio);
+}
+function elementoId(id) {
+    return document.getElementById(id);
+}
     </script>
 </body>
 
