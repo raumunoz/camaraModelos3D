@@ -183,7 +183,9 @@
                         </div>
         
                         <input class="btn btn-primary" type="submit" value="Submit">
-                </form>                 
+                        
+                </form> 
+                <button type="button">Click Me!</button>                 
             </div>
         </div>
     </div>
