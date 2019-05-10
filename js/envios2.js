@@ -20,7 +20,7 @@ var nombreValido;
 var telefonoValido;
 var datosDeEnvio = {};
 let inputJson;
-
+let inputJson2;
 (function () {
     'use strict';
     window.addEventListener('load', function () {
@@ -28,6 +28,9 @@ let inputJson;
         //var forms = document.getElementsByClassName('needs-validation');
         const formPrueba= document.getElementById("id-submit-prueba");
         inputJson=document.getElementById("jsonInput");
+        inputJson2=document.getElementById("jsnCar");
+        
+        //actualizarCarrito
         inputJson.value="texto de valor";
         /*formPrueba.addEventListener('submit',function(e){
             e.preventDefault();
@@ -142,11 +145,12 @@ let inputJson;
                     datosDeEnvio.telefono = inputTelefono.value;
                     datosDeEnvio.codigoPostal = inputCodigoPostal.value;
                     datosDeEnvio.detallesDirecion = inputDetallesDireccion.value;
-                    
+                
                     inputJson.value=JSON.stringify(datosDeEnvio);
-                    
+                    inputJson2.value=JSON.stringify(rtnCrrt());
                     event.returnValue = true;
                     //cambiaPantallaResumen();
+                    //inputJso2.value=JSON.stringify(rtnCrrt());
                 } else {
                     event.preventDefault();
                     event.stopPropagation();

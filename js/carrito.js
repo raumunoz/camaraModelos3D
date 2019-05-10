@@ -525,7 +525,7 @@ function getDescuento() {
 
             },
             success: function (response2) {
-               // console.log("respuesta " + response2);
+                // console.log("respuesta " + response2);
                 condigoRespuesta = JSON.parse(response2);
                 alert(condigoRespuesta[0].mensaje);
                 console.log(response2);
@@ -537,22 +537,55 @@ function getDescuento() {
                     });
                     actualizarTablaCarrito(true);
                     actualizarDivCarrito();
-                    getDescuento = function () { 
+                    getDescuento = function () {
                         alert("ya usaste un cupón");
                     };
                     sessionStorage.setItem("dsc", "usd");
                 }
             }
         });
-    }else{
+    } else {
         alert("ya usaste ese cupón");
     }
 }
-function handleChange2(){
+function handleChange2() {
     console.log("cambio");
 }
-function handleChange1(){
+function handleChange1() {
     console.log("cambio");
 }
+
+function rtnCrrt() {
+    var precioAPagar = 0;
+    var itemsApagar = [];
+    
+    if (itemsCarrito.length >= 0) {
+
+        itemsCarrito.forEach((x) => {
+            if (typeof x !== "undefined") {
+                itemsApagar.push(
+                    {
+                        name: x.name,
+                        description: x.name,
+                        quantity: x.quantity,
+                        price: x.price,
+                        currency: 'MXN'
+                    }
+                );
+                if (x.quantity > 1) {
+                    precioAPagar = precioAPagar + (x.quantity * x.price);
+                } else {
+                    precioAPagar = precioAPagar + x.price;
+                }
+            }
+        });
+    }
+    if (itemsCarrito.length == 0) {
+
+    }
+
+    return itemsApagar;
+}
+
 
 

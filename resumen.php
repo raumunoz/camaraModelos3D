@@ -1,8 +1,29 @@
+<?php include 'getWebExperience.php'?>;
+
 <?php
 //$nombre=$_POST["nombre"];
+$email=$_POST["email"];
+$nombre=$_POST["nombre"];
+$apellidos=$_POST["apellidos"];
+$direccion=$_POST["direccion"];
+$detalles=$_POST["detalles-direccion"];
+$ciudad=$_POST["ciudad"];
+$nombre=$_POST["nombre"];
+$estado=$_POST["estado"];
+$pais=$_POST["pais"];
+$telefono= $_POST["telefono"];
+$codigoPostal= $_POST["codigo-postal"];
+//$items=$_POST["carr"];
 
-var_dump($_POST);
+/*"details": {
+    "shipping": "11",
+    "subtotal": "30",
+    "tax": "0.15"
+  }*/
+
+
 ?> 
+<?php include 'postPago.php'?>;
 <!DOCTYPE html>
 <html>
 
@@ -336,19 +357,18 @@ var_dump($_POST);
     <script src="https://www.paypalobjects.com/api/checkout.js"></script>
     
     <script>
-    var foo = "<?php echo $texto; ?>";
-            alert(foo);
-            let datosDeEnvio={};
-        datosDeEnvio.correo = "mail";
-        datosDeEnvio.nombre = "pepe";
-        datosDeEnvio.apellidos = "apeeli";
-        datosDeEnvio.direccion = "pepe";
-        datosDeEnvio.ciudad = "zac";
-        datosDeEnvio.pais = "pais";
-        datosDeEnvio.estado = "estadio";
-        datosDeEnvio.telefono = "4656812";
-        datosDeEnvio.codigoPostal = "456321";
-        datosDeEnvio.detallesDirecion = "numero 123";
+    
+        let datosDeEnvio={};
+        datosDeEnvio.correo = "<?php echo $email ?>";
+        datosDeEnvio.nombre = "<?php echo $nombre ?>";
+        datosDeEnvio.apellidos ="<?php echo $apellidos ?>";
+        datosDeEnvio.direccion ="<?php echo $direccion ?>";
+        datosDeEnvio.ciudad ="<?php echo $ciudad ?>";
+        datosDeEnvio.pais = "<?php echo $pais ?>";
+        datosDeEnvio.estado = "<?php echo $estado ?>";
+        datosDeEnvio.telefono = <?php echo $telefono ?>; 
+        datosDeEnvio.codigoPostal = <?php echo $codigoPostal ?>;
+        datosDeEnvio.detallesDirecion ="<?php echo $detalles ?>";
         function cambiaPantallaResumen() {
          var contenido = elementoId("contenido-cambiar");
     contenido.innerHTML =
