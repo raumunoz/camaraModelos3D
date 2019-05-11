@@ -1826,7 +1826,7 @@ function cambiarTexturaCliente(nombreTextura) {
 
 
 function nombreImagenTextura(nombreTextura) {
-    var transformada = nombreTextura.split(" ");
+    var transformada = nombreTextura.split("medio");
     transformada[0] = transformada[0].toLowerCase();
     transformada[1] = transformada[1].charAt(0).toUpperCase() + transformada[1].slice(1);
     transformada[1] = transformada[1].replace(".jpg", "");
