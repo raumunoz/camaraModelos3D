@@ -2,6 +2,10 @@ let debbugCarrito;
 let itemsCarrito = [];
 var condigoRespuesta;
 var shipping = {};
+let btnAgregar= document.getElementById("btn-agregar-ir-al-carrito");
+btnAgregar.onclick = function() {
+    location.href = 'cart.php';
+};
 if (sessionStorage.getItem("carrito") == null) {
 
 } else {
@@ -122,7 +126,7 @@ function actualizarDivCarrito() {
             if (typeof x !== "undefined") {
                 carritoTotal = carritoTotal + `
                 <div class="row rng-item">
-                        <div class="col-xs-1 col-1 col-sm-0"></div>
+                        <div class="col-xs-1 col-0 col-sm-0"></div>
                         <div class="col-xs-2 col-2 col-sm-3 div-imgaen-carrito" >
                             <img src="`+ x.image + `" alt="brazo" id="imgProducto" class="img-carrito"
                                 height="90">
@@ -156,13 +160,14 @@ function actualizarDivCarrito() {
             }
 
         });
-        document.getElementById("btn-agregar-ir-al-carrito").style.visibility = "visible";
+       document.getElementById("btn-agregar-ir-al-carrito").style.visibility = "visible";
         document.getElementById("total-carrito").innerText = precioAPagar;
         renglonesCarrito.innerHTML = carritoTotal;
         document.getElementById("num-carrito").innerText = itemsCarrito.length;
         //actualizarBotonPaypal(precioAPagar);
         sessionStorage.setItem("carrito", JSON.stringify(itemsCarrito));
-
+        
+        
     } else {
         document.getElementById("btn-agregar-ir-al-carrito").style.visibility = "hidden";
         document.getElementById("total-carrito").innerText = 0;

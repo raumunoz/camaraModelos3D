@@ -1,7 +1,5 @@
-<?php include 'getWebExperience.php'?>;
+<?php $nombre=$_POST["nombre"];
 
-<?php
-//$nombre=$_POST["nombre"];
 $email=$_POST["email"];
 $nombre=$_POST["nombre"];
 $apellidos=$_POST["apellidos"];
@@ -13,82 +11,76 @@ $estado=$_POST["estado"];
 $pais=$_POST["pais"];
 $telefono= $_POST["telefono"];
 $codigoPostal= $_POST["codigo-postal"];
-//$items=$_POST["carr"];
 
+//echo "pais".$pais;
+//echo "estado".$estado;
+//$items=$_POST["carr"];
+$items=$_POST["carr"];
+$tot =$_POST["tot"];
+//echoecho "total".$tot."totla";
 /*"details": {
     "shipping": "11",
     "subtotal": "30",
     "tax": "0.15"
   }*/
-
-
-?> 
-<?php include 'postPago.php'?>;
+  include 'postPago.php';
+$encabezado='
 <!DOCTYPE html>
 <html>
-
 <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <title>Envio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<title>Envio</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <link rel="stylesheet" type="text/css" href="css/nuevoEstilo.css">
-    <link rel="stylesheet" type="text/css" href="css/estiloShipping.css">
+<link rel="stylesheet" type="text/css" href="css/nuevoEstilo.css">
+<link rel="stylesheet" type="text/css" href="css/estiloShipping.css">
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<!-- Facebook and Twitter integration -->
+<meta property="og:title" content="" />
+<meta property="og:image" content="" />
+<meta property="og:url" content="" />
+<meta property="og:site_name" content="" />
+<meta property="og:description" content="" />
+<meta name="twitter:title" content="" />
+<meta name="twitter:image" content="" />
+<meta name="twitter:url" content="" />
+<meta name="twitter:card" content="" />
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<link href="https://fonts.googleapis.com/css?family=Roboto|Montserrat:400,700|Playfair+Display:400,400i"
+    rel="stylesheet">
+<!-- Animate.css -->
+<link rel="stylesheet" href="css/animate.css">
+<!-- Icomoon Icon Fonts-->
+<link rel="stylesheet" href="css/icomoon.css">
+<!-- Bootstrap  -->
+
+<link rel="stylesheet" href="css/bootstrap.css">
+
+<!-- Theme style  -->
+<link rel="stylesheet" href="css/style.css">
+
+<!-- Modernizr JS -->
+<!-- FOR IE9 below -->
+<!--[if lt IE 9]>
+            <script src="js/respond.min.js"></script>
+            <![endif]-->
+<link rel="stylesheet" type="text/css" href="css/estiloMotor3D.css">
+<link rel="stylesheet" href="css/font.css">
+<link rel="stylesheet" href="css/main.css">
 </head>
-
-<body>
-</body>
-
-</html>
-<!DOCTYPE HTML>
-<html>
-
-<head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
-    <!-- Facebook and Twitter integration -->
-    <meta property="og:title" content="" />
-    <meta property="og:image" content="" />
-    <meta property="og:url" content="" />
-    <meta property="og:site_name" content="" />
-    <meta property="og:description" content="" />
-    <meta name="twitter:title" content="" />
-    <meta name="twitter:image" content="" />
-    <meta name="twitter:url" content="" />
-    <meta name="twitter:card" content="" />
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link href="https://fonts.googleapis.com/css?family=Roboto|Montserrat:400,700|Playfair+Display:400,400i"
-        rel="stylesheet">
-    <!-- Animate.css -->
-    <link rel="stylesheet" href="css/animate.css">
-    <!-- Icomoon Icon Fonts-->
-    <link rel="stylesheet" href="css/icomoon.css">
-    <!-- Bootstrap  -->
-
-    <link rel="stylesheet" href="css/bootstrap.css">
-
-    <!-- Theme style  -->
-    <link rel="stylesheet" href="css/style.css">
-
-    <!-- Modernizr JS -->
-    <!-- FOR IE9 below -->
-    <!--[if lt IE 9]>
-				<script src="js/respond.min.js"></script>
-				<![endif]-->
-    <link rel="stylesheet" type="text/css" href="css/estiloMotor3D.css">
-    <link rel="stylesheet" href="css/font.css">
-    <link rel="stylesheet" href="css/main.css">
-
-
-
+';
+$body='
 <body>
 
+</span>
     <div class="row div-nav" style="background-color:#fA675b;">
         <div class="col-md-10 col-8" style="text-align: right; margin-top: 0.3em;margin-bottom: 0.3em;">
-            <span style="font-size:13px; color:#FFF; font-family: 'Montserrat', Arial, sans-serif;">Servicio al cliente
+            <span style="font-size:13px; color:#FFF; font-family: "Montserrat", Arial, sans-serif;">Servicio al cliente
                 Teléfono:
                 477 854 11 12&nbsp;&nbsp;</span>
         </div>
@@ -119,7 +111,7 @@ $codigoPostal= $_POST["codigo-postal"];
                     <div id="paypal-button-container"></div>
                     <div id="paypal-button"></div>
                     -->
-                    <button type="button" class="btn btn-success btn-agregar-ir-al-carrito" id="btn-agregar-ir-al-carrito" onclick="location.href = 'cart.html';">IR AL CARRITO</button>
+                    <button type="button" class="btn btn-success btn-agregar-ir-al-carrito" id="btn-agregar-ir-al-carrito" onclick="location.href = "cart.html";">IR AL CARRITO</button>
                 </div>
         </div>
         <nav class="fh5co-nav" role="navigation" style="background-color:#4DD7D3;">
@@ -132,15 +124,15 @@ $codigoPostal= $_POST["codigo-postal"];
                         <div class="col-md-9 col-xs-10 menu-1" style="margin-top:4%;">
                             <ul>
                                 <li style="margin-right: 1.1em;"><a href="index.html"
-                                        style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">INICIO</a></li>
+                                        style="font-family: "Roboto", sans-serif; font-size: 1.15rem;">INICIO</a></li>
                                 <li style="margin-right: 1.1em;"><a href="about.html"
-                                        style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">NOSOTROS</a></li>
+                                        style="font-family: "Roboto", sans-serif; font-size: 1.15rem;">NOSOTROS</a></li>
                                 <li style="margin-right: 1.1em;"><a href="catalogo.html"
-                                        style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">CATÁLOGO</a></li>
+                                        style="font-family: "Roboto", sans-serif; font-size: 1.15rem;">CATÁLOGO</a></li>
                                 <li style="margin-right: 1.1em;"><a href="envio.html"
-                                        style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">ENVÍO Y DOVOLUCIONES</a></li>
+                                        style="font-family: "Roboto", sans-serif; font-size: 1.15rem;">ENVÍO Y DOVOLUCIONES</a></li>
                                 <li style="margin-right: 1.1em;"><a href="contact.html"
-                                        style="font-family: 'Roboto', sans-serif; font-size: 1.15rem;">CONTACTO</a></li>
+                                        style="font-family: "Roboto", sans-serif; font-size: 1.15rem;">CONTACTO</a></li>
                             </ul>
                         </div>
                     </div>
@@ -148,7 +140,7 @@ $codigoPostal= $_POST["codigo-postal"];
         </nav>
         <div id="contenido-cambiar" style="padding-top: 4em;">
         <?php echo "saludo"; ?>
-        <div class="" style="font-family: 'Roboto';padding: 0;margin: 0;width: 100%; max-width: auto;">
+        <div class="" style="font-family: "Roboto";padding: 0;margin: 0;width: 100%; max-width: auto;">
         <div class="card card-body shadow-none info-shipping">Dirección del envio <br>
             <span id="resumen-direccion">
                 ${datosDeEnvio.direccion},${datosDeEnvio.detallesDirecion == "" ? "" : datosDeEnvio.detallesDirecion + ","} ${datosDeEnvio.pais}, ${datosDeEnvio.estado}.
@@ -258,8 +250,10 @@ $codigoPostal= $_POST["codigo-postal"];
   <label for="tarjeta">tarjeta de credito</label>
 </div>
 
-            <div class="row">
-                <div class="col-0 col-sm-5 col-md-7"></div>
+            <div class="row" id="botones-paypal">
+                <div class="col-0 col-sm-5 col-md-7">
+                <a href="'.$aprovalUrl.'">paypalEnlace</a>
+                </div>
                 <div class="col-12 col-sm-7 col-md-5">
                     <div id="paypal-button-container"></div>
                     <div id="paypal-button"></div>
@@ -275,7 +269,7 @@ $codigoPostal= $_POST["codigo-postal"];
     </div>
 
     <br>
-    <div class="row copyright" style="font-family: 'Roboto';">
+    <div class="row copyright" style="font-family: "Roboto";">
         <div class="col-md-3 col-sm-2 col-xs-2"></div>
         <div class="col-md-6 col-sm-8 col-xs-8 text-center">
             <p style="font-size: 0.9rem;line-height: 1.2em; text-align:center; color:black">
@@ -288,7 +282,7 @@ $codigoPostal= $_POST["codigo-postal"];
         <div class="col-md-3 col-sm-2 col-xs-2"></div>
     </div>
 
-    <footer id="fh5co-footer" style="font-family: 'Roboto'; padding-top: 3em; padding-bottom: 0em;" role="contentinfo">
+    <footer id="fh5co-footer" style="font-family: "Roboto"; padding-top: 3em; padding-bottom: 0em;" role="contentinfo">
         <center>
             <div class="container">
 
@@ -359,22 +353,21 @@ $codigoPostal= $_POST["codigo-postal"];
     <script>
     
         let datosDeEnvio={};
-        datosDeEnvio.correo = "<?php echo $email ?>";
-        datosDeEnvio.nombre = "<?php echo $nombre ?>";
-        datosDeEnvio.apellidos ="<?php echo $apellidos ?>";
-        datosDeEnvio.direccion ="<?php echo $direccion ?>";
-        datosDeEnvio.ciudad ="<?php echo $ciudad ?>";
-        datosDeEnvio.pais = "<?php echo $pais ?>";
-        datosDeEnvio.estado = "<?php echo $estado ?>";
-        datosDeEnvio.telefono = <?php echo $telefono ?>; 
-        datosDeEnvio.codigoPostal = <?php echo $codigoPostal ?>;
-        datosDeEnvio.detallesDirecion ="<?php echo $detalles ?>";
+        datosDeEnvio.correo = "'.$email.'";
+        datosDeEnvio.nombre = "'.$nombre .'";
+        datosDeEnvio.apellidos ="'.$apellidos.'";
+        datosDeEnvio.direccion ="'.$direccion.'";
+        datosDeEnvio.ciudad ="'.$ciudad.'";
+        datosDeEnvio.pais = "'.$pais.'";
+        datosDeEnvio.estado = "'.$estado.'";
+        datosDeEnvio.telefono = "'.$telefono.'"; 
+        datosDeEnvio.codigoPostal = "'.$codigoPostal.'";
+        datosDeEnvio.detallesDirecion ="'.$detalles.'";
         function cambiaPantallaResumen() {
          var contenido = elementoId("contenido-cambiar");
     contenido.innerHTML =
         `
-        <?php echo "saludo"; ?>
-        <div class="" style="font-family: 'Roboto';padding: 0;margin: 0;width: 100%; max-width: auto;">
+        <div class="" style="font-family: "Roboto";padding: 0;margin: 0;width: 100%; max-width: auto;">
         <div class="card card-body shadow-none info-shipping">Dirección del envio <br>
             <span id="resumen-direccion">
                 ${datosDeEnvio.direccion},${datosDeEnvio.detallesDirecion == "" ? "" : datosDeEnvio.detallesDirecion + ","} ${datosDeEnvio.pais}, ${datosDeEnvio.estado}.
@@ -484,25 +477,43 @@ $codigoPostal= $_POST["codigo-postal"];
   <label for="tarjeta">tarjeta de credito</label>
 </div>
 
-            <div class="row">
-                <div class="col-0 col-sm-5 col-md-7"></div>
-                <div class="col-12 col-sm-7 col-md-5">
-                    <div id="paypal-button-container"></div>
-                    <div id="paypal-button"></div>
-                </div>
-            </div>
+<div class="row" id="botones-paypal">
+<div class="col-0 col-sm-5 col-md-7">
+<a href="'.$aprovalUrl.'" >paypalEnlace</a>
+</div>
+<div class="col-12 col-sm-7 col-md-5">
+    <div id="paypal-button-container"></div>
+    <div id="paypal-button"></div>
+</div>
+</div>
+
 
         </div>
         <div class="total">
         </div>
     </div>
         `;
-    actualizarTablaCarrito(false, datosDeEnvio);
+
+       // cambiaPantallaResumen();
+        //actualizarTablaCarrito(false, datosDeEnvio);
+    
 }
 function elementoId(id) {
     return document.getElementById(id);
 }
+
+setTimeout(function(){
+     cambiaPantallaResumen();
+    actualizarTablaCarrito(false, datosDeEnvio);}, 3000);
     </script>
 </body>
 
 </html>
+';
+echo $encabezado;
+echo $body;
+
+
+?> 
+
+
