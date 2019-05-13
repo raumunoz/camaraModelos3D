@@ -1773,10 +1773,12 @@ function generarBotonesTextura() {
     var gridTexturas1 = document.getElementById("btn-grid1");
     var gridTexturas2 = document.getElementById("btn-grid2");
     var gridTexturas3 = document.getElementById("btn-grid3");
+    var gridTexturas4 = document.getElementById("btn-grid4");
     var texturasHTML = "";
     var texturasHTML1 = "";
     var texturasHTML2 = "";
     var texturasHTML3 = "";
+    var texturasHTML4 = "";
     /*archivosTexturas.forEach((x) => {
         texturasHTML = texturasHTML + generarBotonImagen(x.chico, x.medio);
         if (bandera == false) {
@@ -1796,8 +1798,11 @@ function generarBotonesTextura() {
     archivosTexturas[0].tactoPiel.forEach((x) => {
         texturasHTML2 = texturasHTML2 + generarBotonImagen(x.chico, x.medio);
     });
-    archivosTexturas[0].gamuzaClon.forEach((x) => {
+    archivosTexturas[0].curri.forEach((x) => {
         texturasHTML3 = texturasHTML3 + generarBotonImagen(x.chico, x.medio);
+    });
+    archivosTexturas[0].gamuzayooko.forEach((x) => {
+        texturasHTML4 = texturasHTML4 + generarBotonImagen(x.chico, x.medio);
     });
     
     //console.log(texturasHTML);
@@ -1805,6 +1810,7 @@ function generarBotonesTextura() {
     gridTexturas1.innerHTML = texturasHTML1;
     gridTexturas2.innerHTML = texturasHTML2;
     gridTexturas3.innerHTML = texturasHTML3;
+    gridTexturas4.innerHTML = texturasHTML4;
 }
 
 function generarBotonImagen(srcImagenChico, srcImagenMedio) {
@@ -1813,6 +1819,7 @@ function generarBotonImagen(srcImagenChico, srcImagenMedio) {
 }
 
 function cambiarTexturaCliente(nombreTextura) {
+    
     var descripcionTextura = document.getElementById("descripcionMaterial");
     console.log(nombreTextura);
     descripcionTextura.innerHTML = nombreImagenTextura(nombreTextura);
@@ -1826,6 +1833,9 @@ function cambiarTexturaCliente(nombreTextura) {
 
 
 function nombreImagenTextura(nombreTextura) {
+    if(nombreTextura.includes('GAMUZAYO')){        
+        nombreTextura= nombreTextura.split("GAMUZAYO ")[1]
+    } 
     var transformada = nombreTextura.split("medio");
     transformada[0] = transformada[0].toLowerCase();
     transformada[1] = transformada[1].charAt(0).toUpperCase() + transformada[1].slice(1);
@@ -2273,6 +2283,12 @@ function cambiarVistaMotor(opc) {
                 <span>Curri</span>
             </a>
         </li>
+        <li role="presentation">
+		<a class="tabLink" href="#tab-id-4" aria-controls="tab-id-4" role="tab"
+		data-toggle="tab">
+		<span>Gamuza</span>
+		</a>
+		</li>
             `;
             document.getElementById("tab-curri").click();
             //opMostrarSlider(0);
