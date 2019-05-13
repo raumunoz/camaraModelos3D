@@ -563,7 +563,7 @@ window.addEventListener('DOMContentLoaded', function () {
     camera.inputs.attached.mousewheel.detachControl(canvas);
     hl = new BABYLON.HighlightLayer("hl1", escena);
     hl.innerGlow = false;
-    background = new BABYLON.Layer("back", "assets/imagenes/fondos/sala3.jpg", escena);
+    background = new BABYLON.Layer("back", "assets/imagenes/fondos/sala2.jpg", escena);
     background.isBackground = true;
     background.texture.level = 0;
     //container = new BABYLON.AssetContainer(escena);

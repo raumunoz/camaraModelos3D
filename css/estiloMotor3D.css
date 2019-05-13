@@ -61,7 +61,7 @@ body {
 	overflow: auto;
 }
 #row-productos:nth-child(2) {
-	background: red;
+	
 }
 #total-carrito {
 	color: #7D7D7D;
@@ -131,7 +131,7 @@ font-weight: bold;
 	margin: 0;
 	padding: 0;
 	padding-left: 25%;
-	font-size: 2em;
+	/*font-size: 2em;*/
 	border-top: solid gray 1px;
 }
 
@@ -170,14 +170,14 @@ font-weight: bold;
 
 .motor3D .modulos {
 	grid-area: modu;
-	background: #d30808;
+	
 	overflow: hidden;  /* NEW */
   min-width: 0;
 }
 
 .motor3D .pre-armado {
 	grid-area: preA;
-	background: #d30808;
+	
 	overflow: hidden;  /* NEW */
   min-width: 0;
 }
@@ -229,12 +229,12 @@ font-weight: bold;
 }
 
 .opc-PreArmado ul {
-	background-color: green;
+	
 	padding: 10px;
 }
 
 .opc-PreArmado ul li {
-	background-color: red;
+
 	padding: 10px;
 }
 
@@ -260,12 +260,12 @@ font-weight: bold;
 }
 
 .opc-herramienta ul {
-	background-color: green;
+
 	padding: 10px;
 }
 
 .opc-herramienta ul li {
-	background-color: red;
+	
 	padding: 10px;
 }
 
@@ -363,7 +363,7 @@ font-weight: bold;
 }
 
 .btn-imagen-grid:hover {
-	background-color: #6FC6FF;
+
 	box-shadow: 0 10px 15px rgba(0, 0, 0, 0.3);
 	-webkit-transform: translate3d(-1px, -2px, 0);
 	transform: translate3d(-1px, -2px, 0);
@@ -387,7 +387,11 @@ visibility: visible;
 	margin-top: 0;
 }
 
-
+@media only screen and (max-width: 1223px){
+	.btn-success {
+		font-size: 10px;
+	}
+}
 @media only screen and (min-width: 1224px) {
 	/* Styles */
 	.motor3D canvas {
@@ -408,6 +412,10 @@ visibility: visible;
 		margin-right: 0px;
 		touch-action: pinch-zoom pan-up pan-down;
 	}
+	.rng-total {
+		font-size: 2em;
+
+	}
 }
 
 @media only screen and (max-width: 700px) {
@@ -422,9 +430,9 @@ visibility: visible;
 	}
 	.logo-puffino {
 		height: auto;
-		width: 100%;
+		/*width: 100%;*/
 	}
-	
+		
 }
 
 /*
@@ -437,7 +445,7 @@ visibility: visible;
 
 .motor3D .materiales {
 	grid-area: mate;
-	background: #d30808;
+	
 	overflow: hidden;  /* NEW */
   min-width: 0;
 }
@@ -453,8 +461,7 @@ visibility: visible;
 .motor3D .item4 {
 	grid-area: footer;
 	height: 25%;
-	background-color: red;
-	background: red;
+
 	width: 100%;
 	height: 100%;
 	overflow: hidden;  /* NEW */
@@ -503,7 +510,7 @@ visibility: visible;
 }
 
 .motor3D .grid-container>div {
-	background-color: rgba(255, 255, 255, 0.8);
+	/*background-color: rgba(255, 255, 255, 0.8);*/
 	text-align: center;
 	padding: 0;
 	font-size: 23px;
@@ -519,7 +526,7 @@ visibility: visible;
 }
 
 .motor3D .pago {
-	background-color: brown;
+	
 }
 
 .motor3D #topNav ul {
@@ -696,7 +703,7 @@ visibility: visible;
 }
 
 #item4 {
-	background-color: white;
+	background: #f5f5f5;
 	font-size: medium;
 	border-style: none none solid none;
 	border-width: thin;
@@ -716,11 +723,11 @@ div .materiales {
 */
 
 .acciones:nth-child(2) {
-	background: green;
+	/*background: green;*/
 }
 
 .acciones:nth-child(1) {
-	background: red;
+	/*background: red;*/
 }
 
 .precios {
@@ -1042,7 +1049,7 @@ document.getElementById('grid-container').style.gridTemplateAreas=
 		min-width: 0; 
 	}
 	.motor3D .modulos {
-		background: #d30808;
+		/*background: #d30808;*/
 		/*
 		margin-right: 34px;
 		padding-top: 38px;
@@ -1050,7 +1057,7 @@ document.getElementById('grid-container').style.gridTemplateAreas=
 	}
 	.motor3D .item4 {
 		height: 25%;
-		background: red;
+		/*background: red;*/
 		width: 160px;
 		height: 100%;
 	}

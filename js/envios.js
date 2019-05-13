@@ -27,7 +27,7 @@ var datosDeEnvio = {};
         //var forms = document.getElementsByClassName('needs-validation');
         //const formPrueba= document.getElementById("id-submit-prueba");
         /*formPrueba.addEventListener('submit',function(e){
-            e.preventDefault();
+            e.preventDefault();9
             const formData=new FormData(this);
 
             fetch('login.php',{

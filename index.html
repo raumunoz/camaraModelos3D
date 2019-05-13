@@ -1061,7 +1061,7 @@
 		<div style="color:#FFF;" class="topDivPush">
 		</div>
 		<br>
-		<div class="motor3D">
+		<div class="motor3D" style=" background:#f5f5f5;">
 			<div class="grid-container" id="grid-container">
 				<!--	
 				<div class="item1" href="#" id="head">
@@ -1206,8 +1206,9 @@
 															onclick="aplicar()">
 															-->
 
-						<ul class="opc-herramienta">
+						<ul class="opc-herramienta" style="font-size:16px;">
 							<li>
+								<div class="container">
 								<span class="img-fondo img-menu btn-imagen-grid" class="">
 									<label for="file-input" class="file-input-fodo">
 										<img src="assets/iconos/upload_image.png" alt="fondo" id="fondo" height="25"
@@ -1215,33 +1216,46 @@
 									</label>
 									<input id="file-input" type="file" />
 								</span>
-								<span class="lbl-herra-Fondo">Cambiar fondo</span>
+								<span class="lbl-herra-Fondo span-desc">Cambiar fondo</span>
+								</div>
 							</li>
 							<li>
+									<div class="container">
 								<img src="assets/iconos/take_picture.png" id="btnCamara" disabled="true" alt="camara"
 									id="fondo" class="img-menu btn-imagen-grid " height="25" width="25"
 									onclick="activarCamara()">
-									<span class="lbl-herra-Fondo">Tomar Foto</span>
+									<span class="lbl-herra-foto span-desc">Tomar Foto</span>
+								</div>
 							</li>
 							<li>
+									<div class="container">
 								<img src="assets/iconos/download_image.png" id="btnCamara" disabled="true" alt="camara"
 									id="fondo" height="25" width="25" onclick="captura()"
 									class="img-menu btn-imagen-grid ">
-									<span class="lbl-herra-Fondo">Captura imagen</span>
+									<span class="lbl-herra-captura span-desc">Captura imagen</span>
+								</div>
 							</li>
 							<li>
+								<div class="container">
 								<img src="assets/iconos/girar_model.png" disabled="true" alt="girar" id="btnRotar"
 									height="25" width="25" onclick="rotarSelecionado()"
 									class="img-menu btn-imagen-grid ">
-									<span class="lbl-herra-Fondo">Rotar</span>
+									<span class="lbl-herra-rotar span-desc">Rotar</span>
+								</div>
 							</li>
 							<li>
+									<div class="container">
 								<img src="assets/iconos/zoom_model.png" alt="zoomOut" id="btnC" height="25" width="25"
 									onclick="zoomear('in')" class="img-menu btn-imagen-grid ">
+									<span class="lbl-herra-zoomOUt span-desc">Zoom out</span>
+								</div>
 							</li>
 							<li>
+									<div class="container">
 								<img src="assets/iconos/zoom_out_model.png" alt="zoomIn" id="btnC" height="25"
 									width="25" onclick="zoomear('out')" class="img-menu btn-imagen-grid ">
+									<span class="lbl-herra-zoomIn span-desc">Zoom in</span>
+								</div>
 							</li>
 							<li>
 								<img src="assets/iconos/remove_black_18dp.png" alt="cancelar" id="btnCancelar"

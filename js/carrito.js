@@ -189,7 +189,7 @@ function actualizarBotonPaypal(total, direccion) {
         itemsApagar.push(
             {
                 name: x.name,
-                description: x.name,
+                description: x.details,
                 quantity: x.quantity,
                 price: x.price,
                 currency: 'MXN'
@@ -566,7 +566,7 @@ function rtnCrrt() {
                 itemsApagar.push(
                     {
                         name: x.name,
-                        description: x.name,
+                        description: x.details,
                         quantity: x.quantity,
                         price: x.price,
                         currency: 'MXN'
@@ -585,6 +585,28 @@ function rtnCrrt() {
     }
 
     return itemsApagar;
+}
+function rtnTot(){
+    var precioAPagar = 0;
+    
+    if (itemsCarrito.length >= 0) {
+
+        itemsCarrito.forEach((x) => {
+            if (typeof x !== "undefined") {
+                
+                if (x.quantity > 1) {
+                    precioAPagar = precioAPagar + (x.quantity * x.price);
+                } else {
+                    precioAPagar = precioAPagar + x.price;
+                }
+            }
+        });
+    }
+    if (itemsCarrito.length == 0) {
+
+    }
+
+    return precioAPagar;
 }
 
 

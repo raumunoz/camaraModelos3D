@@ -133,26 +133,26 @@
                     <div class="form-row">
                         <div class="form-group col-md-12">
                             <label for="correo-shipping">Email</label>
-                            <input type="email" name="email" class="form-control" id="correo-shipping" placeholder="Email" value="correo@mail.com">
+                            <input type="email" name="email" class="form-control" id="correo-shipping" placeholder="Email">
                         </div>
                     </div>
                     <div class="form-row">
 
                         <div class="col-12 col-md-6">
-                            <input type="text" class="form-control" name="nombre" placeholder="Nombre" id="nombre-shipping" value="nombre" >
+                            <input type="text" class="form-control" name="nombre" placeholder="Nombre" id="nombre-shipping">
                         </div>
                         <div class="col-12 col-md-6">
-                            <input type="text" class="form-control" name="apellidos" placeholder="Apellidos" id="apellidos-shipping" value="rivera" >
+                            <input type="text" class="form-control" name="apellidos" placeholder="Apellidos" id="apellidos-shipping">
                         </div>
                     </div>
                     <div class="form-group">
                         <label for="direccion-shipping">Dirección</label>
-                        <input type="text" name="direccion"class="form-control" id="direccion-shipping" placeholder="Direción"  value="erique Segobiano">
-                        <input type="text" name="detalles-direccion"class="form-control" id="detalles-direccion-shipping" placeholder="Número interior, departamento, etc.(opcional)" value="interior b" >
+                        <input type="text" name="direccion"class="form-control" id="direccion-shipping" placeholder="Direción" >
+                        <input type="text" name="detalles-direccion"class="form-control" id="detalles-direccion-shipping" placeholder="Número interior, departamento, etc.(opcional)">
                     </div>
 
                     <div class="form-group">
-                        <input type="text" class="form-control" name="ciudad" id="ciudad-shipping" placeholder="Ciudad" value="a" > 
+                        <input type="text" class="form-control" name="ciudad" id="ciudad-shipping" placeholder="Ciudad" > 
                     </div>
                     <div class="form-row">
 
@@ -172,15 +172,16 @@
                         </div>
                         <div class="form-group col-md-2">
                             <label for="codigo-postal-shipping">Código postal</label>
-                            <input type="text" class="form-control" name="codigo-postal" id="codigo-postal-shipping" value="491231" >
+                            <input type="text" class="form-control" name="codigo-postal" id="codigo-postal-shipping" >
                         </div>
                     </div>
                     <input name="json-data" type="text" id="jsonInput" style=" visibility: hidden">
                     <input name="carr" type="text" id="jsnCar" style=" visibility: hidden">
+                    <input name="tot" type="text" id="tot" style=" visibility: hidden">
                     <div class="form-row">
                             <div class="form-group col-md-12">
                                 <label for="telefono-shipping">Teléfono</label>
-                                <input type="tel" class="form-control" id="telefono-shipping" name="telefono" placeholder="Teléfono" value="456132">
+                                <input type="tel" class="form-control" id="telefono-shipping" name="telefono" placeholder="Teléfono" >
                             </div>
                         </div> 
                         <input class="btn btn-primary" type="submit" value="Submit">

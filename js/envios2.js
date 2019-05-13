@@ -21,6 +21,7 @@ var telefonoValido;
 var datosDeEnvio = {};
 let inputJson;
 let inputJson2;
+let inputJson3;
 (function () {
     'use strict';
     window.addEventListener('load', function () {
@@ -29,6 +30,7 @@ let inputJson2;
         const formPrueba= document.getElementById("id-submit-prueba");
         inputJson=document.getElementById("jsonInput");
         inputJson2=document.getElementById("jsnCar");
+        inputJson3=document.getElementById("tot");
         
         //actualizarCarrito
         inputJson.value="texto de valor";
@@ -148,6 +150,7 @@ let inputJson2;
                 
                     inputJson.value=JSON.stringify(datosDeEnvio);
                     inputJson2.value=JSON.stringify(rtnCrrt());
+                    inputJson3.value=JSON.stringify(rtnTot());
                     event.returnValue = true;
                     //cambiaPantallaResumen();
                     //inputJso2.value=JSON.stringify(rtnCrrt());
@@ -193,7 +196,7 @@ function generaOpcEstados(pais) {
     if (typeof estados !== "undefined") {
         estados.forEach((estado) => {
             opcEstados = opcEstados + `
-            <option value="${estado.name}">${estado.name}</option>
+            <option value="${estado.code}">${estado.name}</option>
             `;
         })
     }
