@@ -28,15 +28,28 @@ function cargarCamara(escena, camera) {
 */
     btnCamara.style.visibility = "hidden";
     var cmaTrasera;
+    let arregloCameras=[];
+    arregloCameras.push("saludo");
+    //MediaDevices.getUserMedia
     navigator.mediaDevices.enumerateDevices().then(function (dispositivos) {
         dispositivos.forEach(device => {
+
             console.log(device.kind + ": " + device.label +" id = " + device.deviceId);
             if (device.kind == "videoinput") {
-                //alert(device.label);videoinput
+                
+                arregloCameras.push(device.label);
+                if (device.kind == "videoinput" && device.label.indexOf('back') >= 0) {
+                    cmaTrasera=device.deviceId;
+                    alert("camera",cmaTrasera);
+                }
+                
+                /*
                 if(device.label=="camera 0, facing back"){
                     cmaTrasera=device.deviceId;
-                }	
+                }*/
+
             }
+            
         });
         /*dispositivos.forEach(dispositivo => {
             console.log(" " + dispositivo.label);
@@ -48,6 +61,7 @@ function cargarCamara(escena, camera) {
             }
           
         });*/
+        /*
         if (/Android|webOS|iPhone|iPad|iPod|BlackBerry|BB|PlayBook|IEMobile|Windows Phone|Kindle|Silk|Opera Mini/i.test(navigator.userAgent)) {
             // Take the user to a different screen here.
             idCamara = cmaTrasera;
@@ -61,8 +75,8 @@ function cargarCamara(escena, camera) {
             }else{
                 idCamara = dispositivos[0].deviceId;
             }
-        }
-        encenderCamara(idCamara);
+        }*/
+        encenderCamara(cmaTrasera);
     });
     videoMaterial = new BABYLON.StandardMaterial("texture1", scenaCamara);
     videoMaterial.emissiveColor = new BABYLON.Color3(1, 1, 1);
