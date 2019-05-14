@@ -2266,7 +2266,7 @@ function cambiarVistaMotor(opc) {
             document.getElementById("grid-texturas").style.visibility = "visible";
             document.getElementById("iconosTexturas").style.visibility = "visible";
             document.getElementById("btn-agregar-3d-a-carrito").style.visibility = "visible";
-            document.getElementById("slct-btn-color").style.display = "none";
+            document.getElementById("slct-btn-color").style.display = "visible";
             document.getElementById("slct-btn-preArmado").style.display = "initial";
             document.getElementById("slct-btn-modelo").style.display = "initial";
             
