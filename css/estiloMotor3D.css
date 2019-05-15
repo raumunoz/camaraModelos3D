@@ -1430,6 +1430,12 @@ document.getElementById('grid-container').style.gridTemplateAreas=
     margin-top: 7px;
     font-size: .9em;
 }
+.span-desc {
+	font-size: .6em;
+	/* bac
+	kground-color: red; */
+}
+
 }
 @media only screen and (max-width:  355px) {
 	.motor3D canvas {
@@ -1504,6 +1510,20 @@ herramientas * {
 	height: auto !important;
 	margin: 0 !important;
 	padding: 0 !important;
+}
+#btn-agregar-3d-a-carrito {
+	font-size: 0.6em;
+	width: 58%;
+	margin-left: 0em;
+	margin-right: 0em;
+	margin-top: 5em;
+	background-color: green;
+	color: white;
+}
+.tabTexturas {
+	padding-left: 10%;
+	margin-top: 10px;
+	font-size: .9em;
 }
 }
 	html{

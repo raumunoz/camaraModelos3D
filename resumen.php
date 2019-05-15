@@ -504,7 +504,7 @@ function elementoId(id) {
 
 setTimeout(function(){
      cambiaPantallaResumen();
-    actualizarTablaCarrito(false, datosDeEnvio);}, 3000);
+    actualizarTablaCarrito(false, datosDeEnvio);}, 1000);
     </script>
 </body>
 
