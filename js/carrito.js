@@ -57,7 +57,7 @@ function agregarAlCarrito(nombre, precio, imagen, element) {
         }
     }
     actualizarDivCarrito();
-    window.location.href = "cart.html";
+    window.location.href = "cart.php";
 }
 function agregarItemsCarrito(tmpCarrito) {
     tmpCarrito.forEach((item) => {

@@ -1,9 +1,11 @@
+/*
 var canvasToutch = document.getElementById('renderCanvas');
 var mc = new Hammer(canvasToutch);
 
 mc.on("panleft panright tap press panup pandown ", function(event) {
     console.log(event.type +" gesture detected.");
 });
+*/
 /*
 function hammerTime(ev) {
     switch(ev.type) {

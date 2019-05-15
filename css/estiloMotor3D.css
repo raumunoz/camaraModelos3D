@@ -14,7 +14,9 @@ body {
 
 }
 .renderCanvas{
+	/*
 	touch-action: pan-up pan-down pinch-zoom;
+	*/
 }
 .carrito li a {
 	text-decoration: none;
@@ -401,7 +403,9 @@ visibility: visible;
 		background-color: #F5F2F0;
 		width: 55em;
 		height: 25em;
+		/*
 		touch-action: pan-up pan-down pinch-zoom;
+		*/
 		/*CANVA margin Rigth*/
 		/*margin-right: 1046px;*/
 	}
@@ -412,8 +416,11 @@ visibility: visible;
 	.motor3D canvas {
 		background-color: #F5F2F0;
 		width: 100%;
+		height: auto;
 		margin-right: 0px;
+		/*
 		touch-action: pinch-zoom pan-up pan-down;
+		*/
 	}
 	.rng-total {
 		font-size: 2em;
@@ -447,7 +454,16 @@ visibility: visible;
 		min-height: 0;
 		min-width: 0;
 	}
-	
+	.motor3D canvas {
+		background-color: #F5F2F0;
+		width: 80%;
+		height: auto;
+		/*
+		touch-action: pan-up pan-down pinch-zoom;
+		*/
+		/*CANVA margin Rigth*/
+		/*margin-right: 1046px;*/
+	}
 }
 
 @media only screen and (min-width: 700px) {
@@ -456,7 +472,9 @@ visibility: visible;
 		background-color: #F5F2F0;
 		width: 40em;
 		height: 22em;
+		/*
 		touch-action: pan-up pan-down pinch-zoom;
+		*/
 		/*CANVA margin Rigth*/
 		/*margin-right: 1046px;*/
 	}
@@ -1011,7 +1029,9 @@ padding-right: 15% !important;
 		width: 100%;
 		height: 300px;
 		margin-right: 0px;
+		/*
 		touch-action: pinch-zoom pan-up pan-down;
+		*/
 	}
 }
 @media only screen and (max-width: 600px) {
@@ -1107,7 +1127,9 @@ document.getElementById('grid-container').style.gridTemplateAreas=
 		width: 100%;
 		height: 400px;
 		margin-right: 0px;
+		/*
 		touch-action: pinch-zoom pan-up pan-down;
+		*/
 	}
 	.motor3D .botones-herramientas * {
 		height: 12;
@@ -1409,13 +1431,15 @@ document.getElementById('grid-container').style.gridTemplateAreas=
     font-size: .9em;
 }
 }
-@media only screen and (max-width:  355) {
+@media only screen and (max-width:  355px) {
 	.motor3D canvas {
 		background-color: #F5F2F0;
 		width: 100%;
 		height: 300px;
 		margin-right: 0px;
+		/*
 		touch-action: pinch-zoom pan-up pan-down;
+		*/
 	}
 	.grid-texturas {
 		margin: 0;
@@ -1476,7 +1500,11 @@ herramientas * {
 .img-fondo.img-menu.btn-imagen-grid {
 	padding: 0;
 }
-
+.opc-herramienta {
+	height: auto !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}
 }
 	html{
 		overflow-x: hidden !important;

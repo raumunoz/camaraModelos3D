@@ -42,7 +42,9 @@ function cargarCamara(escena, camera) {
                     cmaTrasera=device.deviceId;
                     alert("camera",cmaTrasera);
                 }
-                
+                if(device.kind == "videoinput"){
+                    alert("device video");
+                }
                 /*
                 if(device.label=="camera 0, facing back"){
                     cmaTrasera=device.deviceId;

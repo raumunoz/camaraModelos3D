@@ -2,6 +2,7 @@
 <html>
 
 <head>
+	<meta name="format-detection" content="telephone=no">
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <title>carrito</title>
