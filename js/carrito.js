@@ -498,6 +498,85 @@ function actualizarTablaCarrito(sinBtnPaypal, direccion) {
 
     }
 }
+function actualizarTablaCarritoResumen(sinBtnPaypal, direccion,carrito) {
+    var precioAPagar = 0;
+    var renglonesTabla = document.getElementById("tabla-carrito");
+    var htmlTabla = "";
+    if (carrito.length >= 0) {
+        carrito.forEach((prducto) => {
+            if (typeof prducto !== "undefined") {
+                htmlTabla = htmlTabla + `
+                <tr class="table-row first last" data-cart-item="">
+                <td class="product-item first">
+                  <div class="image-wrap">
+                    <a class="image ">
+                      <img  class="item-imgagen" src="${prducto.image}" alt="">
+                    </a>
+                  </div>
+                  <div class="wrap wrap-texto">
+                    <span class="label title ">${prducto.name}</a></span>
+                  </div>
+                </td>
+                <td class="product-item ">
+                  <div class="wrap wrap-texto">
+                    <span class="label variant rng-desc-carrito">${prducto.details}</span>
+                  </div>
+                </td>
+                <td class="price"><span class="money" data-currency-mxn="$ ${prducto.price}" data-currency="MXN">$ ${prducto.price}</span></td>
+                <td class="quantity rng-div-cantidad">
+                  <span>
+                  ${prducto.quantity}
+                  </span>
+                </td>
+                <td class="total"><span class="money rng-precio" data-currency-mxn="$ ${prducto.price * prducto.quantity}" data-currency="MXN">$ ${prducto.price * prducto.quantity}</span></td>
+                <td class="remove last">
+                <span class="icon">
+                <i class="icon-cross" onclick="removerArticulo(this,'${prducto.name}')" id="rnd()"></i>
+            </span>
+                </td>
+              </tr>                    `
+                    ;
+                if (prducto.quantity > 1) {
+                    precioAPagar = precioAPagar + (prducto.price * prducto.quantity);
+                } else {
+                    precioAPagar = precioAPagar + prducto.price;
+                }
+
+            }
+
+        });
+        //Subtotal-pagina-cart
+        document.getElementById("total-pagina-cart").innerText = precioAPagar;
+        document.getElementById("Subtotal-pagina-cart").innerText = precioAPagar;
+        renglonesTabla.innerHTML = htmlTabla;
+
+        /*Se pone la direccion si no esta definida al botton de paypal */
+        if (typeof sinBtnPaypal !== "undefined") {
+            if (sinBtnPaypal) {
+
+            } else {
+                if (typeof direccion !== "undefined") {
+                    shipping = direccion;
+                    actualizarBotonPaypal(precioAPagar, direccion);
+                    console.log("Direccion", direccion);
+                }
+            }
+
+        }
+        //sessionStorage.setItem("carrito", JSON.stringify(itemsCarrito));
+    } else {
+        document.getElementById("total-carrito").innerText = 0;
+        document.getElementById("carrito").classList.toggle("carrito-activo");
+        document.getElementById("rng-total").classList.toggle("total-desactivo");
+        document.getElementById("paypal-button-container").innerHTML = "";
+        document.getElementById("num-carrito").innerText = "";
+        document.getElementById("row-productos").style.height = "2em";
+        document.getElementById("row-productos").innerText = "No has agregado nada al carrito";
+    }
+    if (carrito.length == 0) {
+
+    }
+}
 function getDescuento() {
     if (sessionStorage.getItem("dsc") == null) {
 
@@ -574,7 +653,8 @@ function rtnCrrt() {
                         description: x.details,
                         quantity: x.quantity,
                         price: x.price,
-                        currency: 'MXN'
+                        currency: 'MXN',
+                        
                     }
                 );
                 if (x.quantity > 1) {

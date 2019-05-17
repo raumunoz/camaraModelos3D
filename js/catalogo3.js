@@ -448,7 +448,7 @@ function cambiarSlider(opc) {
 }
 function cambiarDetalle(val) {
     document.getElementById("detailP").classList.remove("oculto");
-    document.getElementById("radio-opc-normal").checked = true;
+    //document.getElementById("radio-opc-normal").checked = true;
     opMaterial(0);
     detallesSlider.destroy();
     detallesSlider = new Glide('.glide-detalles', {
