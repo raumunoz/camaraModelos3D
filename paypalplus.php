@@ -1,6 +1,5 @@
 <?php
 $comida;
-$approval_url="direcion";
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,7 +14,7 @@ $approval_url="direcion";
 <body>
 paypal plus
 <script language="JavaScript">
-    var url='<?php echo $approval_url ?>';
+var url="https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-7PV72699UP2503153";
 function initiateCheckout() {
 var ppp = PAYPAL.apps.PPP({ 
     "approvalUrl": url,

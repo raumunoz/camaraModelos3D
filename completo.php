@@ -1,4 +1,17 @@
-<?php ?>
+
+<?php
+
+$paymentId=$_GET['paymentId'];
+$PayerID=$_GET['PayerID'];
+echo "<pre>";
+echo $paymentId;
+echo "<br>";
+echo $PayerID;
+echo "HOLA";
+echo "</pre>";
+
+?>
+
 <!DOCTYPE HTML>
 <html>
 <head>
@@ -282,7 +295,8 @@
 	<div class="gototop js-top">
 		<a href="#" class="js-gotop"><i class="icon-arrow-up"></i></a>
 	</div>
-
+	
+		
 	<!-- jQuery -->
 	<script src="js/jquery.min.js"></script>
 	<!-- jQuery Easing -->
@@ -299,6 +313,51 @@
 	<!-- Main -->
 <script src="js/main.js"></script>
 <script src="js/carrito.js"></script>
+<script type="text/javascript">
+		function ingresar(){
+			var parametros={  
+								"correo": "rau@mail.com",
+                                "nombre": "rau",
+                                "apellidos": "hernandez",
+                                "direccion": "enrique segobiano",
+                                "numInt": 3,
+                                "colonia": "lazaro",
+                                "referencias": "arbol grande",
+                                "ciudad": "zacatecas",
+                                "pais": "mexico",
+                                "estado": "zac",
+								"codigoPostal": 34132,
+								"telefono":4565132,
+								"paymentId":"asdas1321",
+								"PayerID":"payp23423"
+                };
+                $.ajax({
+                        data: parametros,
+                        url:   '../service/set/setCliente.php',
+                        type:  'post',
+                        beforeSend: function () {
+                        },
+                        success:  function (response2) {  //  Una vez insertados los datos actualiza la tabla
+							console.log(response2);			
+							/*
+                                        $.ajax({
+                                                url:   'php/productos/productos.php',
+                                                type:  'post',
+                                                beforeSend: function () {
+                                                        
+                                                },
+                                                success:  function (response1) {
+                                                        $("#contenido").html(response1);
+                                                        $('#myModal').modal('toggle');
+                                                }
+                                        });*/
+                                        //$('#myModal').modal('hide');
+                        }
+                });
+
+		}
+		
+	</script>	
 </body>
 
 </html>

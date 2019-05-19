@@ -385,6 +385,7 @@ window.addEventListener('DOMContentLoaded', function () {
 
         var scene = new BABYLON.Scene(engine);
         scene.preventDefaultOnPointerDown = true;
+        scene.preventDefaultOnPointerDown = true;
         utilLayer = new BABYLON.UtilityLayerRenderer(scene);
         utilLayer.utilityLayerScene.autoClearDepthAndStencil = false;
         utilLayer.DefaultKeepDepthUtilityLayer;
@@ -2268,7 +2269,7 @@ function cambiarVistaMotor(opc) {
             document.getElementById("btn-agregar-3d-a-carrito").style.visibility = "visible";
             document.getElementById("slct-btn-color").style.display = "visible";
             document.getElementById("slct-btn-preArmado").style.display = "initial";
-            document.getElementById("slct-btn-modelo").style.display = "initial";
+            document.getElementById("slct-btn-modelo").style.display = "hidden";
             
             for (let i = escena.meshes.length - 1; i >= 0; i--) {
 

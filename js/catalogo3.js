@@ -674,18 +674,18 @@ function opMaterial(opc) {
     var descripcionMaterial = document.getElementById("descripcionMaterial");
     // var imgaenTextura = document.getElementById("img-textura-catalago");
     var divMateria = document.getElementById("div-textura-catalago")
-    switch (opc) {
-        case 0:
+
+
+        var checkBox = document.getElementById("cbox1");
+        if (checkBox.checked == true){
+            selector.classList.remove("esconder");
+        } else {
             descripcionMaterial.innerHTML = "Material";
             divMateria.innerHTML = "";
             selector.classList.add("esconder");
-            break;
-        case 1:
-            selector.classList.remove("esconder");
-            break;
-        default:
-            break;
-    }
+            
+        }
+   
 
 }
 function generarBotonesTextura() {

@@ -1,372 +1,444 @@
-[
+﻿[
     {
         "gamuzas": [
             {
+                "grande": "GAMUZA ACUÁTICO.jpg",
+                "chico": "GAMUZA ACUÁTICOchico.jpg",
+                "medio": "GAMUZA ACUÁTICOmedio.jpg"
+            },
+            {
+                "grande": "GAMUZA AMARILLO NEÓN.jpg",
+                "chico": "GAMUZA AMARILLO NEÓNchico.jpg",
+                "medio": "GAMUZA AMARILLO NEÓNmedio.jpg"
+            },
+            {
+                "grande": "GAMUZA AZUL CIELO.jpg",
+                "chico": "GAMUZA AZUL CIELOchico.jpg",
+                "medio": "GAMUZA AZUL CIELOmedio.jpg"
+            },
+            {
+                "grande": "GAMUZA AZUL HIELO.jpg",
+                "chico": "GAMUZA AZUL HIELOchico.jpg",
+                "medio": "GAMUZA AZUL HIELOmedio.jpg"
+            },
+            {
+                "grande": "GAMUZA CAMEL.jpg",
+                "chico": "GAMUZA CAMELchico.jpg",
+                "medio": "GAMUZA CAMELmedio.jpg"
+            },
+            {
+                "grande": "GAMUZA CARBÓN.jpg",
+                "chico": "GAMUZA CARBÓNchico.jpg",
+                "medio": "GAMUZA CARBÓNmedio.jpg"
+            },
+            {
+                "grande": "GAMUZA DELFÍN.jpg",
+                "chico": "GAMUZA DELFÍNchico.jpg",
+                "medio": "GAMUZA DELFÍNmedio.jpg"
+            },
+            {
+                "grande": "GAMUZA DURAZNO.jpg",
+                "chico": "GAMUZA DURAZNOchico.jpg",
+                "medio": "GAMUZA DURAZNOmedio.jpg"
+            },
+            {
+                "grande": "GAMUZA FERRERO.jpg",
+                "chico": "GAMUZA FERREROchico.jpg",
+                "medio": "GAMUZA FERREROmedio.jpg"
+            },
+            {
+                "grande": "GAMUZA LADRILLO.jpg",
                 "chico": "GAMUZA LADRILLOchico.jpg",
-                "medio": "GAMUZA LADRILLOmedio.jpg",
-                "grande": "GAMUZA LADRILLO.jpg"
+                "medio": "GAMUZA LADRILLOmedio.jpg"
             },
             {
+                "grande": "GAMUZA LECHE.jpg",
+                "chico": "GAMUZA LECHEchico.jpg",
+                "medio": "GAMUZA LECHEmedio.jpg"
+            },
+            {
+                "grande": "GAMUZA MADERA.jpg",
                 "chico": "GAMUZA MADERAchico.jpg",
-                "medio": "GAMUZA MADERAmedio.jpg",
-                "grande": "GAMUZA MADERA.jpg"
+                "medio": "GAMUZA MADERAmedio.jpg"
             },
             {
+                "grande": "GAMUZA MARINO.jpg",
+                "chico": "GAMUZA MARINOchico.jpg",
+                "medio": "GAMUZA MARINOmedio.jpg"
+            },
+            {
+                "grande": "GAMUZA MIMOSA.jpg",
                 "chico": "GAMUZA MIMOSAchico.jpg",
-                "medio": "GAMUZA MIMOSAmedio.jpg",
-                "grande": "GAMUZA MIMOSA.jpg"
+                "medio": "GAMUZA MIMOSAmedio.jpg"
             },
             {
+                "grande": "GAMUZA MINT.jpg",
                 "chico": "GAMUZA MINTchico.jpg",
-                "medio": "GAMUZA MINTmedio.jpg",
-                "grande": "GAMUZA MINT.jpg"
+                "medio": "GAMUZA MINTmedio.jpg"
             },
             {
+                "grande": "GAMUZA NARANJA NEÓN.jpg",
                 "chico": "GAMUZA NARANJA NEÓNchico.jpg",
-                "medio": "GAMUZA NARANJA NEÓNmedio.jpg",
-                "grande": "GAMUZA NARANJA NEÓN.jpg"
+                "medio": "GAMUZA NARANJA NEÓNmedio.jpg"
             },
             {
+                "grande": "GAMUZA NEGRO .jpg",
                 "chico": "GAMUZA NEGRO chico.jpg",
-                "medio": "GAMUZA NEGRO medio.jpg",
-                "grande": "GAMUZA NEGRO .jpg"
+                "medio": "GAMUZA NEGRO medio.jpg"
             },
             {
+                "grande": "GAMUZA OCRE.jpg",
                 "chico": "GAMUZA OCREchico.jpg",
-                "medio": "GAMUZA OCREmedio.jpg",
-                "grande": "GAMUZA OCRE.jpg"
+                "medio": "GAMUZA OCREmedio.jpg"
             },
             {
-                "chico": "GAMUZA PETÁLOchico.jpg",
-                "medio": "GAMUZA PETÁLOmedio.jpg",
-                "grande": "GAMUZA PETÁLO.jpg"
+                "grande": "GAMUZA PÉTALO.jpg",
+                "chico": "GAMUZA PÉTALOchico.jpg",
+                "medio": "GAMUZA PÉTALOmedio.jpg"
             },
             {
+                "grande": "GAMUZA ROJO QUEMADO.jpg",
                 "chico": "GAMUZA ROJO QUEMADOchico.jpg",
-                "medio": "GAMUZA ROJO QUEMADOmedio.jpg",
-                "grande": "GAMUZA ROJO QUEMADO.jpg"
+                "medio": "GAMUZA ROJO QUEMADOmedio.jpg"
             },
             {
+                "grande": "GAMUZA ROJO.jpg",
                 "chico": "GAMUZA ROJOchico.jpg",
-                "medio": "GAMUZA ROJOmedio.jpg",
-                "grande": "GAMUZA ROJO.jpg"
+                "medio": "GAMUZA ROJOmedio.jpg"
             },
             {
+                "grande": "GAMUZA ROSA CHICLE.jpg",
                 "chico": "GAMUZA ROSA CHICLEchico.jpg",
-                "medio": "GAMUZA ROSA CHICLEmedio.jpg",
-                "grande": "GAMUZA ROSA CHICLE.jpg"
+                "medio": "GAMUZA ROSA CHICLEmedio.jpg"
             },
             {
+                "grande": "GAMUZA ROSA FLAMINGO.jpg",
                 "chico": "GAMUZA ROSA FLAMINGOchico.jpg",
-                "medio": "GAMUZA ROSA FLAMINGOmedio.jpg",
-                "grande": "GAMUZA ROSA FLAMINGO.jpg"
+                "medio": "GAMUZA ROSA FLAMINGOmedio.jpg"
             },
             {
+                "grande": "GAMUZA ROSA MAGENTA .jpg",
                 "chico": "GAMUZA ROSA MAGENTA chico.jpg",
-                "medio": "GAMUZA ROSA MAGENTA medio.jpg",
-                "grande": "GAMUZA ROSA MAGENTA .jpg"
+                "medio": "GAMUZA ROSA MAGENTA medio.jpg"
             },
             {
+                "grande": "GAMUZA ROSA PARAÍSO.jpg",
                 "chico": "GAMUZA ROSA PARAÍSOchico.jpg",
-                "medio": "GAMUZA ROSA PARAÍSOmedio.jpg",
-                "grande": "GAMUZA ROSA PARAÍSO.jpg"
+                "medio": "GAMUZA ROSA PARAÍSOmedio.jpg"
             },
             {
+                "grande": "GAMUZA ROYAL BLUE.jpg",
                 "chico": "GAMUZA ROYAL BLUEchico.jpg",
-                "medio": "GAMUZA ROYAL BLUEmedio.jpg",
-                "grande": "GAMUZA ROYAL BLUE.jpg"
+                "medio": "GAMUZA ROYAL BLUEmedio.jpg"
             },
             {
+                "grande": "GAMUZA TOPACIO.jpg",
                 "chico": "GAMUZA TOPACIOchico.jpg",
-                "medio": "GAMUZA TOPACIOmedio.jpg",
-                "grande": "GAMUZA TOPACIO.jpg"
+                "medio": "GAMUZA TOPACIOmedio.jpg"
+            },
+            {
+                "grande": "GAMUZA ÍNDIGO.jpg",
+                "chico": "GAMUZA ÍNDIGOchico.jpg",
+                "medio": "GAMUZA ÍNDIGOmedio.jpg"
             }
         ],
         "lonas": [
             {
+                "grande": "LONA AMARILLO INTENSO.jpg",
                 "chico": "LONA AMARILLO INTENSOchico.jpg",
-                "medio": "LONA AMARILLO INTENSOmedio.jpg",
-                "grande": "LONA AMARILLO INTENSO.jpg"
+                "medio": "LONA AMARILLO INTENSOmedio.jpg"
             },
             {
+                "grande": "LONA AMARILLO SAT.jpg",
                 "chico": "LONA AMARILLO SATchico.jpg",
-                "medio": "LONA AMARILLO SATmedio.jpg",
-                "grande": "LONA AMARILLO SAT.jpg"
+                "medio": "LONA AMARILLO SATmedio.jpg"
             },
             {
+                "grande": "LONA AMARILLO.jpg",
                 "chico": "LONA AMARILLOchico.jpg",
-                "medio": "LONA AMARILLOmedio.jpg",
-                "grande": "LONA AMARILLO.jpg"
+                "medio": "LONA AMARILLOmedio.jpg"
             },
             {
+                "grande": "LONA AZUL MARINO.jpg",
                 "chico": "LONA AZUL MARINOchico.jpg",
-                "medio": "LONA AZUL MARINOmedio.jpg",
-                "grande": "LONA AZUL MARINO.jpg"
+                "medio": "LONA AZUL MARINOmedio.jpg"
             },
             {
+                "grande": "LONA AZUL REY.jpg",
                 "chico": "LONA AZUL REYchico.jpg",
-                "medio": "LONA AZUL REYmedio.jpg",
-                "grande": "LONA AZUL REY.jpg"
+                "medio": "LONA AZUL REYmedio.jpg"
             },
             {
+                "grande": "LONA BEIGE.jpg",
                 "chico": "LONA BEIGEchico.jpg",
-                "medio": "LONA BEIGEmedio.jpg",
-                "grande": "LONA BEIGE.jpg"
+                "medio": "LONA BEIGEmedio.jpg"
             },
             {
-                "chico": "LONA BLANCOchico.jpg",
-                "medio": "LONA BLANCOmedio.jpg",
-                "grande": "LONA BLANCO.jpg"
-            },
-            {
+                "grande": "LONA CAFÉ.jpg",
                 "chico": "LONA CAFÉchico.jpg",
-                "medio": "LONA CAFÉmedio.jpg",
-                "grande": "LONA CAFÉ.jpg"
+                "medio": "LONA CAFÉmedio.jpg"
             },
             {
+                "grande": "LONA GRIS.jpg",
                 "chico": "LONA GRISchico.jpg",
-                "medio": "LONA GRISmedio.jpg",
-                "grande": "LONA GRIS.jpg"
+                "medio": "LONA GRISmedio.jpg"
             },
             {
+                "grande": "LONA LILA.jpg",
                 "chico": "LONA LILAchico.jpg",
-                "medio": "LONA LILAmedio.jpg",
-                "grande": "LONA LILA.jpg"
+                "medio": "LONA LILAmedio.jpg"
             },
             {
+                "grande": "LONA MARINO GAR.jpg",
                 "chico": "LONA MARINO GARchico.jpg",
-                "medio": "LONA MARINO GARmedio.jpg",
-                "grande": "LONA MARINO GAR.jpg"
+                "medio": "LONA MARINO GARmedio.jpg"
             },
             {
+                "grande": "LONA MIEL.jpg",
                 "chico": "LONA MIELchico.jpg",
-                "medio": "LONA MIELmedio.jpg",
-                "grande": "LONA MIEL.jpg"
+                "medio": "LONA MIELmedio.jpg"
             },
             {
+                "grande": "LONA MORADO.jpg",
                 "chico": "LONA MORADOchico.jpg",
-                "medio": "LONA MORADOmedio.jpg",
-                "grande": "LONA MORADO.jpg"
+                "medio": "LONA MORADOmedio.jpg"
             },
             {
+                "grande": "LONA NARANJA.jpg",
                 "chico": "LONA NARANJAchico.jpg",
-                "medio": "LONA NARANJAmedio.jpg",
-                "grande": "LONA NARANJA.jpg"
+                "medio": "LONA NARANJAmedio.jpg"
             },
             {
+                "grande": "LONA NEGRO AZABACHE.jpg",
                 "chico": "LONA NEGRO AZABACHEchico.jpg",
-                "medio": "LONA NEGRO AZABACHEmedio.jpg",
-                "grande": "LONA NEGRO AZABACHE.jpg"
+                "medio": "LONA NEGRO AZABACHEmedio.jpg"
             },
             {
-                "chico": "LONA ROJOchico.jpg",
-                "medio": "LONA ROJOmedio.jpg",
-                "grande": "LONA ROJO.jpg"
+                "grande": "LONA ROJO LONA.jpg",
+                "chico": "LONA ROJO LONAchico.jpg",
+                "medio": "LONA ROJO LONAmedio.jpg"
             },
             {
+                "grande": "LONA ROSA FUERTE.jpg",
                 "chico": "LONA ROSA FUERTEchico.jpg",
-                "medio": "LONA ROSA FUERTEmedio.jpg",
-                "grande": "LONA ROSA FUERTE.jpg"
+                "medio": "LONA ROSA FUERTEmedio.jpg"
             },
             {
+                "grande": "LONA SHEDRON.jpg",
                 "chico": "LONA SHEDRONchico.jpg",
-                "medio": "LONA SHEDRONmedio.jpg",
-                "grande": "LONA SHEDRON.jpg"
+                "medio": "LONA SHEDRONmedio.jpg"
             },
             {
-                "chico": "LONA TIRQUESAchico.jpg",
-                "medio": "LONA TIRQUESAmedio.jpg",
-                "grande": "LONA TIRQUESA.jpg"
+                "grande": "LONA TURQUESA.jpg",
+                "chico": "LONA TURQUESAchico.jpg",
+                "medio": "LONA TURQUESAmedio.jpg"
             },
             {
-                "chico": "LONA VERDE ACUÁTICOchico.jpg",
-                "medio": "LONA VERDE ACUÁTICOmedio.jpg",
-                "grande": "LONA VERDE ACUÁTICO.jpg"
+                "grande": "LONA VERDE ACUA.jpg",
+                "chico": "LONA VERDE ACUAchico.jpg",
+                "medio": "LONA VERDE ACUAmedio.jpg"
             },
             {
+                "grande": "LONA VERDE ELÉCTRICO.jpg",
                 "chico": "LONA VERDE ELÉCTRICOchico.jpg",
-                "medio": "LONA VERDE ELÉCTRICOmedio.jpg",
-                "grande": "LONA VERDE ELÉCTRICO.jpg"
+                "medio": "LONA VERDE ELÉCTRICOmedio.jpg"
             },
             {
+                "grande": "LONA VERDE ESMERALDA.jpg",
                 "chico": "LONA VERDE ESMERALDAchico.jpg",
-                "medio": "LONA VERDE ESMERALDAmedio.jpg",
-                "grande": "LONA VERDE ESMERALDA.jpg"
+                "medio": "LONA VERDE ESMERALDAmedio.jpg"
             },
             {
+                "grande": "LONA VERDE HOJA.jpg",
                 "chico": "LONA VERDE HOJAchico.jpg",
-                "medio": "LONA VERDE HOJAmedio.jpg",
-                "grande": "LONA VERDE HOJA.jpg"
+                "medio": "LONA VERDE HOJAmedio.jpg"
             },
             {
+                "grande": "LONA VERDE MILITAR.jpg",
                 "chico": "LONA VERDE MILITARchico.jpg",
-                "medio": "LONA VERDE MILITARmedio.jpg",
-                "grande": "LONA VERDE MILITAR.jpg"
+                "medio": "LONA VERDE MILITARmedio.jpg"
             },
             {
-                "chico": "LONA VINOchico.jpg",
-                "medio": "LONA VINOmedio.jpg",
-                "grande": "LONA VINO.jpg"
+                "grande": "LONA VINO TINTO.jpg",
+                "chico": "LONA VINO TINTOchico.jpg",
+                "medio": "LONA VINO TINTOmedio.jpg"
             }
         ],
         "tactoPiel": [
             {
+                "grande": "TP AZUL MARINO.jpg",
                 "chico": "TP AZUL MARINOchico.jpg",
-                "medio": "TP AZUL MARINOmedio.jpg",
-                "grande": "TP AZUL MARINO.jpg"
+                "medio": "TP AZUL MARINOmedio.jpg"
             },
+            
             {
+                "grande": "TP BEIGE.jpg",
                 "chico": "TP BEIGEchico.jpg",
-                "medio": "TP BEIGEmedio.jpg",
-                "grande": "TP BEIGE.jpg"
+                "medio": "TP BEIGEmedio.jpg"
             },
+            
             {
+                "grande": "TP BLANCO.jpg",
                 "chico": "TP BLANCOchico.jpg",
-                "medio": "TP BLANCOmedio.jpg",
-                "grande": "TP BLANCO.jpg"
+                "medio": "TP BLANCOmedio.jpg"
             },
+           
             {
+                "grande": "TP CAFÉ OBSCURO.jpg",
                 "chico": "TP CAFÉ OBSCUROchico.jpg",
-                "medio": "TP CAFÉ OBSCUROmedio.jpg",
-                "grande": "TP CAFÉ OBSCURO.jpg"
+                "medio": "TP CAFÉ OBSCUROmedio.jpg"
             },
+            
             {
+                "grande": "TP CAMEL.jpg",
                 "chico": "TP CAMELchico.jpg",
-                "medio": "TP CAMELmedio.jpg",
-                "grande": "TP CAMEL.jpg"
+                "medio": "TP CAMELmedio.jpg"
             },
+            
+            
             {
+                "grande": "TP NEGRO .jpg",
                 "chico": "TP NEGRO chico.jpg",
-                "medio": "TP NEGRO medio.jpg",
-                "grande": "TP NEGRO .jpg"
+                "medio": "TP NEGRO medio.jpg"
             },
             {
+                "grande": "TP ROJO.jpg",
                 "chico": "TP ROJOchico.jpg",
-                "medio": "TP ROJOmedio.jpg",
-                "grande": "TP ROJO.jpg"
+                "medio": "TP ROJOmedio.jpg"
             },
+            
             {
+                "grande": "TP TAN.jpg",
                 "chico": "TP TANchico.jpg",
-                "medio": "TP TANmedio.jpg",
-                "grande": "TP TAN.jpg"
+                "medio": "TP TANmedio.jpg"
+            }
+            
+        ],
+        "gamuzayooko": [
+            {
+                "grande": "GAMUZAYO CAMEL.jpg",
+                "chico": "GAMUZAYO CAMELchico.jpg",
+                "medio": "GAMUZAYO CAMELmedio.jpg"
+            },
+            {
+                "grande": "GAMUZAYO CARBÓN.jpg",
+                "chico": "GAMUZAYO CARBÓNchico.jpg",
+                "medio": "GAMUZAYO CARBÓNmedio.jpg"
+            },
+            {
+                "grande": "GAMUZAYO DELFÍN.jpg",
+                "chico": "GAMUZAYO DELFÍNchico.jpg",
+                "medio": "GAMUZAYO DELFÍNmedio.jpg"
+            },
+            {
+                "grande": "GAMUZAYO FERRERO.jpg",
+                "chico": "GAMUZAYO FERREROchico.jpg",
+                "medio": "GAMUZAYO FERREROmedio.jpg"
+            },
+            {
+                "grande": "GAMUZAYO LECHE.jpg",
+                "chico": "GAMUZAYO LECHEchico.jpg",
+                "medio": "GAMUZAYO LECHEmedio.jpg"
+            },
+            {
+                "grande": "GAMUZAYO MADERA.jpg",
+                "chico": "GAMUZAYO MADERAchico.jpg",
+                "medio": "GAMUZAYO MADERAmedio.jpg"
+            },
+            {
+                "grande": "GAMUZAYO MARINO.jpg",
+                "chico": "GAMUZAYO MARINOchico.jpg",
+                "medio": "GAMUZAYO MARINOmedio.jpg"
+            },
+            {
+                "grande": "GAMUZAYO ROJO QUEMADO.jpg",
+                "chico": "GAMUZAYO ROJO QUEMADOchico.jpg",
+                "medio": "GAMUZAYO ROJO QUEMADOmedio.jpg"
+            },
+            {
+                "grande": "GAMUZAYO ÍNDIGO.jpg",
+                "chico": "GAMUZAYO ÍNDIGOchico.jpg",
+                "medio": "GAMUZAYO ÍNDIGOmedio.jpg"
             }
         ],
-        "gamuza-yooko":[
+        "curri": [
             {
-                "chico": "GAMUZA MARINOchico.jpg",
-                "medio": "GAMUZA MARINOmedio.jpg",
-                "grande": "GAMUZA MARINO.jpg"
-            },
-            {
-                "chico": "GAMUZA MADERAchico.jpg",
-                "medio": "GAMUZA MADERAmedio.jpg",
-                "grande": "GAMUZA MADERA.jpg"
-            },
-            {
-                "chico": "GAMUZA CAMELchico.jpg",
-                "medio": "GAMUZA CAMELmedio.jpg",
-                "grande": "GAMUZA CAMEL.jpg"
-            },
-            {
-                "chico": "GAMUZA CARBONchico.jpg",
-                "medio": "GAMUZA CARBONmedio.jpg",
-                "grande": "GAMUZA CARBON.jpg"
-            },
-            {
-                "chico": "GAMUZA ROJO QUEMADOchico.jpg",
-                "medio": "GAMUZA ROJO QUEMADOmedio.jpg",
-                "grande": "GAMUZA ROJO QUEMADO.jpg"
-            },
-            {
-                "chico": "GAMUZA FERREROchico.jpg",
-                "medio": "GAMUZA FERREROmedio.jpg",
-                "grande": "GAMUZA FERRERO.jpg"
-            },
-            {
-                "chico": "GAMUZA DELFÍNchico.jpg",
-                "medio": "GAMUZA DELFÍNmedio.jpg",
-                "grande": "GAMUZA DELFÍN.jpg"
-            }
-        ],
-        "curri":[
-             {
-                "chico": "CURRI MOUSEchico.jpg",
-                "medio": "CURRI MOUSEmedio.jpg",
-                "grande": "CURRI MOUSE.jpg"
-            },
-            {
-                "chico": "CURRI PASTOchico.jpg",
-                "medio": "CURRI PASTOmedio.jpg",
-                "grande": "CURRI PASTO.jpg"
-            },
-            {
-                "chico": "CURRI DELFÍNchico.jpg",
-                "medio": "CURRI DELFÍNmedio.jpg",
-                "grande": "CURRI DELFÍN.jpg"
-            },
-            {
-                "chico": "CURRI CAPUCHINOchico.jpg",
-                "medio": "CURRI CAPUCHINOmedio.jpg",
-                "grande": "CURRI CAPUCHINO.jpg"
-            },
-            {
-                "chico": "CURRI ROJOchico.jpg",
-                "medio": "CURRI ROJOmedio.jpg",
-                "grande": "CURRI ROJO.jpg"
-            },
-            {
-                "chico": "CURRI CANELAchico.jpg",
-                "medio": "CURRI CANELAmedio.jpg",
-                "grande": "CURRI CANELA.jpg"
-            },
-            {
-                "chico": "CURRI ACEITUNAchico.jpg",
-                "medio": "CURRI ACEITUNAmedio.jpg",
-                "grande": "CURRI ACEITUNA.jpg"
-            },
-            {
-                "chico": "CURRI CAFÉchico.jpg",
-                "medio": "CURRI CAFÉmedio.jpg",
-                "grande": "CURRI CAFÉ.jpg"
-            },
-            {
-                "chico": "CURRI DELFÍNchico.jpg",
-                "medio": "CURRI DELFÍNmedio.jpg",
-                "grande": "CURRI DELFÍN.jpg"
-            }
-        ]
-        ,
-        "gamuzaClon":[
-             {
+                "grande": "CURRI ARENA.jpg",
                 "chico": "CURRI ARENAchico.jpg",
-                "medio": "CURRI ARENAmedio.jpg",
-                "grande": "CURRI ARENA.jpg"
+                "medio": "CURRI ARENAmedio.jpg"
             },
             {
-                "chico": "CURRI DELFÍNchico.jpg",
-                "medio": "CURRI DELFÍNmedio.jpg",
-                "grande": "CURRI DELFÍN.jpg"
-            },
-            {
-                "chico": "CURRI CAPUCHINOchico.jpg",
-                "medio": "CURRI CAPUCHINOmedio.jpg",
-                "grande": "CURRI CAPUCHINO.jpg"
-            },
-            {
-                "chico": "CURRI CANELAchico.jpg",
-                "medio": "CURRI CANELAmedio.jpg",
-                "grande": "CURRI CANELA.jpg"
-            },
-            {
-                "chico": "CURRI CARBÓNchico.jpg",
-                "medio": "CURRI CARBÓNmedio.jpg",
-                "grande": "CURRI CARBÓN.jpg"
-            },
-            {
+                "grande": "CURRI CAFÉ.jpg",
                 "chico": "CURRI CAFÉchico.jpg",
-                "medio": "CURRI CAFÉmedio.jpg",
-                "grande": "CURRI CAFÉ.jpg"
+                "medio": "CURRI CAFÉmedio.jpg"
+            },
+            {
+                "grande": "CURRI CAMEL.jpg",
+                "chico": "CURRI CAMELchico.jpg",
+                "medio": "CURRI CAMELmedio.jpg"
+            },
+            {
+                "grande": "CURRI CANELA.jpg",
+                "chico": "CURRI CANELAchico.jpg",
+                "medio": "CURRI CANELAmedio.jpg"
+            },
+            {
+                "grande": "CURRI CAPUCHINO.jpg",
+                "chico": "CURRI CAPUCHINOchico.jpg",
+                "medio": "CURRI CAPUCHINOmedio.jpg"
+            },
+            {
+                "grande": "CURRI CARBÓN.jpg",
+                "chico": "CURRI CARBÓNchico.jpg",
+                "medio": "CURRI CARBÓNmedio.jpg"
+            },
+            {
+                "grande": "CURRI DELFÍN.jpg",
+                "chico": "CURRI DELFÍNchico.jpg",
+                "medio": "CURRI DELFÍNmedio.jpg"
+            },
+            {
+                "grande": "CURRI LADRILLO.jpg",
+                "chico": "CURRI LADRILLOchico.jpg",
+                "medio": "CURRI LADRILLOmedio.jpg"
+            },
+            {
+                "grande": "CURRI ROJO.jpg",
+                "chico": "CURRI ROJOchico.jpg",
+                "medio": "CURRI ROJOmedio.jpg"
             }
-        ]
+        ],
+        "gamuzaClon":[
+            {
+               "chico": "CURRI ARENAchico.jpg",
+               "medio": "CURRI ARENAmedio.jpg",
+               "grande": "CURRI ARENA.jpg"
+           },
+           {
+               "chico": "CURRI DELFÍNchico.jpg",
+               "medio": "CURRI DELFÍNmedio.jpg",
+               "grande": "CURRI DELFÍN.jpg"
+           },
+           {
+               "chico": "CURRI CAPUCHINOchico.jpg",
+               "medio": "CURRI CAPUCHINOmedio.jpg",
+               "grande": "CURRI CAPUCHINO.jpg"
+           },
+           {
+               "chico": "CURRI CANELAchico.jpg",
+               "medio": "CURRI CANELAmedio.jpg",
+               "grande": "CURRI CANELA.jpg"
+           },
+           {
+               "chico": "CURRI CARBÓNchico.jpg",
+               "medio": "CURRI CARBÓNmedio.jpg",
+               "grande": "CURRI CARBÓN.jpg"
+           },
+           {
+               "chico": "CURRI CAFÉchico.jpg",
+               "medio": "CURRI CAFÉmedio.jpg",
+               "grande": "CURRI CAFÉ.jpg"
+           }
+       ]
     }
 ]

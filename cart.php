@@ -45,23 +45,23 @@
 
 <body>
     <div class="row div-nav" style="background-color:#fA675b;">
-        <div class="col-md-10 col-7" style="text-align: right; margin-top: 0.3em;margin-bottom: 0.3em;">
-            <span style="font-size:13px; color:#FFF; font-family: 'Montserrat', Arial, sans-serif;">Servicio al cliente
-                Teléfono:
-                477 854 11 12&nbsp;&nbsp;</span>
-        </div>
-        <div class="col-md-2 col-5 " style="text-align: right;">
-            <a href="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2F1962138827348733&amp;tabs=messages&amp;width=302&amp;height=300&amp;small_header=true&amp;adapt_container_width=true&amp;hide_cover=true&amp;show_facepile=false&amp;appId"
-                target="_blank"><img src="images/messeng.png" style="max-width: 1.8em; padding-right:5px"></a>
+		<div class=" col-lg-10 col-md-10  col-12" style="text-align: right; margin-top: 0.3em;margin-bottom: 0.3em;">
+			<span style="font-size:13px; color:#FFF; font-family: 'Montserrat', Arial, sans-serif;">Servicio al cliente
+				Teléfono:
+				477 854 11 12&nbsp;&nbsp;</span>
+		</div>
+		<div class="col-lg-2 col-md-2  col-12" style="text-align: right;">
+			<a href="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2F1962138827348733&amp;tabs=messages&amp;width=302&amp;height=300&amp;small_header=true&amp;adapt_container_width=true&amp;hide_cover=true&amp;show_facepile=false&amp;appId"
+				target="_blank"><img src="images/messeng.png" style="max-width: 1.8em; padding-right:5px"></a>
 
-            <a href="https://api.whatsapp.com/send?phone=5214778541112" target="_blank">
-                <img src="images/whats.png" style="max-width: 1.8em; padding-right:5px">
-            </a>
+			<a href="https://api.whatsapp.com/send?phone=5214778541112" target="_blank">
+				<img src="images/whats.png" style="max-width: 1.8em; padding-right:5px">
+			</a>
 
-            <img src="images/shopping_cart_white_24dp.png" style="max-width: 1.8em; padding-right:5px"
-                onclick="mostrarCarro()"><span id="num-carrito" class="num-carrito"></span>
-        </div>
-    </div>
+			<img src="images/shopping_cart_white_24dp.png" style="max-width: 1.8em; padding-right:5px"
+				onclick="mostrarCarro()"><span id="num-carrito" class="num-carrito"></span>
+		</div>
+	</div>
 
     <div id="page">
         <div class="social-bar" id="social-bar">
