@@ -3,7 +3,7 @@
 <?php
 //echo "POSTAL".$codigoPostal."numero";
 $aprovalUrl;
-
+$paymentID;
 
 $data1 = '
 {
@@ -154,7 +154,10 @@ $data2=
 '{
     "intent": "sale",
     "payer": {
-      "payment_method": "paypal"
+      "payment_method": "paypal",
+      "payer_info": {
+        "email": "'.$email.'"
+      }
     },
     "transactions": [{
       "amount": {
@@ -169,9 +172,7 @@ $data2=
           "insurance": "0"
         }
       },
-      "description": "pago paypal plus",
-      "custom": "numero custom",
-      "invoice_number": "3656123",
+      "description": "PAGO PUFFINO",
       "payment_options": {
         "allowed_payment_method": "IMMEDIATE_PAY"
       },
@@ -179,21 +180,21 @@ $data2=
       "item_list": {
         "items": '.$items.',
         "shipping_address": {
-          "recipient_name": "Jaime hernadez",
-          "line1": "4thFloor",
-          "line2": "unit#34",
-          "city": "SAn Jose",
-          "country_code": "US",
-          "postal_code": "95131",
-          "phone": "011862212345678",
-          "state": "CA"
+          "recipient_name": "'.$nombre.' '.$apellidos.'",
+          "line1": "'.$direccion.'",
+          "line2": "'.$colonia.'",
+          "city": "'.$ciudad.'",
+          "country_code": "'.$pais.'",
+          "postal_code": "'.$codigoPostal.'",
+          "phone": "'.$telefono.'",
+          "state": "'.$estado.'"
         }
       }
     }],
     "note_to_payer": "Contactanos para cualqueir duda sobre el pedido",
     "redirect_urls": {
-      "return_url": "https://ventas.puffino.mx/completo.php",
-      "cancel_url": "https://ventas.puffino.mx/"
+      "return_url": "http://protoweb.zacsoft.com/campomarte/completo2.php",
+      "cancel_url": "http://protoweb.zacsoft.com/campomarte/"
     }
   }';
 $ch = curl_init();
@@ -221,9 +222,11 @@ if($err){
   $obj = json_decode($resul);
     //print_r($json->access_token);
     $links=$obj->links;
-    //echo "<pre>";
-    //print_r($obj);
-    //echo "</pre>";
+    $paymentID=$obj->id;
+   
+    echo "<pre>";
+    print_r($obj);
+    echo "</pre>";
 }
 if(empty($resul))die("Error: No response.");
 else

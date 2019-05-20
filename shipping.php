@@ -1,11 +1,10 @@
+
+
+
 <!DOCTYPE HTML>
 <html>
 
-<head>	
-    <title>Envio</title>
-    <link rel="stylesheet" type="text/css" href="css/nuevoEstilo.css">
-    <link rel="stylesheet" type="text/css" href="css/estiloShipping.css">
-	<meta name="format-detection" content="telephone=no">
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -19,6 +18,7 @@
     <meta name="twitter:image" content="" />
     <meta name="twitter:url" content="" />
     <meta name="twitter:card" content="" />
+    <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link href="https://fonts.googleapis.com/css?family=Roboto|Montserrat:400,700|Playfair+Display:400,400i"
         rel="stylesheet">
@@ -41,30 +41,29 @@
     <link rel="stylesheet" type="text/css" href="css/estiloMotor3D.css">
     <link rel="stylesheet" href="css/font.css">
     <link rel="stylesheet" href="css/main.css">
-    
 
 
 
 <body>
 
     <div class="row div-nav" style="background-color:#fA675b;">
-		<div class=" col-lg-10 col-md-10  col-12" style="text-align: right; margin-top: 0.3em;margin-bottom: 0.3em;">
-			<span style="font-size:13px; color:#FFF; font-family: 'Montserrat', Arial, sans-serif;">Servicio al cliente
-				Teléfono:
-				477 854 11 12&nbsp;&nbsp;</span>
-		</div>
-		<div class="col-lg-2 col-md-2  col-12" style="text-align: right;">
-			<a href="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2F1962138827348733&amp;tabs=messages&amp;width=302&amp;height=300&amp;small_header=true&amp;adapt_container_width=true&amp;hide_cover=true&amp;show_facepile=false&amp;appId"
-				target="_blank"><img src="images/messeng.png" style="max-width: 1.8em; padding-right:5px"></a>
+        <div class="col-md-10 col-8" style="text-align: right; margin-top: 0.3em;margin-bottom: 0.3em;">
+            <span style="font-size:13px; color:#FFF; font-family: 'Montserrat', Arial, sans-serif;">Servicio al cliente
+                Teléfono:
+                477 854 11 12&nbsp;&nbsp;</span>
+        </div>
+        <div class="col-md-2 col-4 " style="text-align: right;">
+            <a href="https://www.facebook.com/plugins/page.php?href=https%3A%2F%2Fwww.facebook.com%2F1962138827348733&amp;tabs=messages&amp;width=302&amp;height=300&amp;small_header=true&amp;adapt_container_width=true&amp;hide_cover=true&amp;show_facepile=false&amp;appId"
+                target="_blank"><img src="images/messeng.png" style="max-width: 1.8em; padding-right:5px"></a>
 
-			<a href="https://api.whatsapp.com/send?phone=5214778541112" target="_blank">
-				<img src="images/whats.png" style="max-width: 1.8em; padding-right:5px">
-			</a>
+            <a href="https://api.whatsapp.com/send?phone=5214778541112" target="_blank">
+                <img src="images/whats.png" style="max-width: 1.8em; padding-right:5px">
+            </a>
 
-			<img src="images/shopping_cart_white_24dp.png" style="max-width: 1.8em; padding-right:5px"
-				onclick="mostrarCarro()"><span id="num-carrito" class="num-carrito"></span>
-		</div>
-	</div>
+            <img src="images/shopping_cart_white_24dp.png" style="max-width: 1.8em; padding-right:5px"
+                onclick="mostrarCarro()"><span id="num-carrito" class="num-carrito"></span>
+        </div>
+    </div>
 
     <div id="page">
     <div class="carrito" id="carrito">
@@ -114,7 +113,7 @@
                     onsubmit="return toSubmit(event);"
                 -->
               
-                <form class="needs-validation" id="forma" action="resumen.php" method="post" >
+                <form class="needs-validation" id="forma" action="resumen3.php" method="post" >
                     <h3>Información de contacto</h3>
                     <div class="form-row">
                         <div class="form-group col-md-12">
@@ -133,17 +132,16 @@
                     </div>
                     <div class="form-group">
                         <label for="direccion-shipping">Dirección</label>
-                        <input type="text" name="direccion"class="form-control" id="direccion-shipping" placeholder="Direción" > 
+                        <input type="text" name="direccion"class="form-control" id="direccion-shipping" placeholder="calle #numero" > 
                     </div>
                     <div class="form-group">
-                        <input type="text" name="detalles-direccion"class="form-control" id="detalles-direccion-shipping" placeholder="Número interior, departamento, etc.(opcional)">
+                        <input type="text" name="numInt"class="form-control" id="numInt-direccion-shipping" placeholder="Número interior, departamento, etc.(opcional)">
                    </div>
-
-                    <div class="form-group">
-                        <input type="text" class="form-control" name="colonia" id="colonia-shipping" placeholder="Colonia" > 
+                   <div class="form-group">
+                        <input type="text" class="form-control" name="colonia" id="colonia-shipping" placeholder="colonia" > 
                     </div>
                     <div class="form-group">
-                        <input type="text" class="form-control" name="referencias" id="referencias-shipping" placeholder="Referencias" > 
+                        <input type="text" class="form-control" name="referencias" id="referencias-shipping" placeholder="Referencias (opcional)" > 
                     </div>
                     <div class="form-group">
                         <input type="text" class="form-control" name="ciudad" id="ciudad-shipping" placeholder="Ciudad" > 

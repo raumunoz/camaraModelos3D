@@ -1,22 +1,36 @@
 <?php
 
-$email=$_POST["email"];
-$nombre=$_POST["nombre"];
-$apellidos=$_POST["apellidos"];
-$direccion=$_POST["direccion"];
-$detalles=$_POST["detalles-direccion"];
-$ciudad=$_POST["ciudad"];
-$nombre=$_POST["nombre"];
-$estado=$_POST["estado"];
-$pais=$_POST["pais"];
-$telefono= $_POST["telefono"];
-$codigoPostal= $_POST["codigo-postal"];
+$email = $_POST["email"];
+$nombre = $_POST["nombre"];
+$apellidos = $_POST["apellidos"];
+$direccion = $_POST["direccion"];
+$numInt ="";
+$colonia = $_POST["colonia"];
+$referencias = "";
+$ciudad = $_POST["ciudad"];
+$nombre = $_POST["nombre"];
+$estado = $_POST["estado"];
+$pais = $_POST["pais"];
+$telefono = $_POST["telefono"];
+$codigoPostal = $_POST["codigo-postal"];
+
+
+if( isset( $_POST["referencias"] ))
+{
+    $referencias = $_POST["referencias"];
+}
+if( isset( $_POST["numInt"] ))
+{
+    $numInt = "interior ".$_POST["numInt"];
+}
+
+
 
 //echo "pais".$pais;
 //echo "estado".$estado;
 //$items=$_POST["carr"];
-$items=$_POST["carr"];
-$tot =$_POST["tot"];
+$items = $_POST["carr"];
+$tot = $_POST["tot"];
 
 include 'pagoPP.php';
 //echo "el total es ".$tot;
@@ -104,7 +118,7 @@ include 'pagoPP.php';
                 <div id="row-productos">
                     Todavía no agregas nada.
                 </div>
-    
+
                 <div class="row rng-total total-desactivo" id="rng-total">
                     <div class="col-xs-6 rng-total-titulo">Total</div>
                     <div class="col-xs-6">$<span id="total-carrito">0</span></div>
@@ -144,7 +158,7 @@ include 'pagoPP.php';
         <div class="" style="font-family: "Roboto";padding: 0;margin: 0;width: 100%; max-width: auto;">
         <div class="card card-body shadow-none info-shipping">Dirección del envio <br>
             <span id="resumen-direccion">
-                
+
             </span>
             <hr>
             Contacto <br>
@@ -152,120 +166,38 @@ include 'pagoPP.php';
             <span id="resumen-correo">Correo: </span>
             <span id="resumen-correo">Teléfono: </span>
         </div>
-        <table class="table">
 
-            <thead>
-                <tr class="table-header">
-                    <th class="first wrap-texto">Producto</th>
-                    <th class="wrap-texto">Material</th>
-                    <th class="wrap-texto">Precio</th>
-                    <th class="wrap-texto">Cantidad</th>
-                    <th class="wrap-texto last">Total</th>
-                </tr>
-            </thead>
-
-            <tbody id="tabla-carrito" class="tbody-carrito">
-
-                <tr class="table-row first last" data-cart-item="">
-                    <td class="product-item first">
-                        <div class="image-wrap">
-                            <a class="image" href="/products/merida?variant=12424089862240">
-                                <img src="//cdn.shopify.com/s/files/1/1832/7035/products/DakotaWide01_1024x1024_f904b784-a574-4a94-8de2-cdd15c0e9569_compact.jpg?v=1535944817"
-                                    alt="">
-
-                            </a>
-                        </div>
-                        <div class="wrap">
-
-                            <span class="label title"><a href="/products/merida?variant=12424089862240"
-                                    title="">Zazil</a></span>
-                            <span class="label variant">Selecciona el material / Ahora escoge el
-                                color</span>
-
-
-
-                        </div>
-                    </td>
-
-                    <td class="price"><span class="money" data-currency-mxn="$ 3,299.00" data-currency="MXN">$
-                            3,299.00</span></td>
-                    <td class="quantity">
-                        <span class="spinner">
-                            <a href="/cart/change/12424089862240?line=1&amp;quantity=0"><span class="sub"><i
-                                        class="material-icons"
-                                        style="line-height: 33px; font-size:14px">remove</i></span></a>
-                            <input type="number" value="1" data-id="12424089862240" min="1" max="100">
-                            <a href="/cart/change/12424089862240?line=1&amp;quantity=2"><span class="add"><i
-                                        class="material-icons"
-                                        style="line-height: 33px; font-size:14px">add</i></span></a>
-                        </span>
-                    </td>
-                    <td class="total"><span class="money" data-currency-mxn="$ 3,299.00" data-currency="MXN">$
-                            3,299.00</span></td>
-                    <td class="remove last"><a href="/cart/change/12424089862240?line=1&amp;quantity=0"><i
-                                class="material-icons"
-                                style="color:#ce1600; line-height: 10px;">delete_forever</i></a></td>
-                </tr>
-
-            </tbody>
-
-        </table>
-        <br>
     </div>
     <div class="container">
         <div class="row">
             <div class="col-*-*"></div>
             <div class="col-*-*"></div>
         </div>
-        <div class="carrito-footer ">
-            <div class="row">
-                <div class="totals col-12 col-sm-12 col-md-12 col-xs-12">
-                    <div class="totals-item">
-                        <label>Subtotal</label>
-                        <div class="totals-value" id="cart-subtotal">$<spa id="Subtotal-pagina-cart">45</spa>
-                        </div>
-                    </div>
-                    <div class="totals-item">
-                        <label>Envio</label>
-                        <div class="totals-value" id="cart-shipping">$<spa id="envio-pagina-cart">0</spa>
-                        </div>
-                    </div>
-                    <div class="totals-item totals-item-total">
-                        <label style="font-weight: bold;">Total</label>
-                        <div class="totals-value" id="cart-total" style="font-weight: 620;">$<spa
-                                id="total-pagina-cart">45</spa>
-                        </div>
-                    </div>
-                </div>
-
-            </div>
 <p>Seleccione una forma de pago:</p>
-<div>
-  <input type="radio" id="huey" name="drone" value="huey"
+<div class="container">
+<h2>Pago</h2>
+<hr>
+  <input type="radio" id="huey" name="drone" value="huey" class=""
          checked  onchange="handleChange1();">
-  <label for="paypal">paypal</label>
-  <a href="<?php echo $aprovalUrl?>">
+  <label for="paypal" class="label-selecion">paypal</label>
+  <a href="<?php echo $aprovalUrl ?>" class="boton-Paypal" id="btn-paypal">
   <img src="https://www.paypalobjects.com/webstatic/en_US/i/buttons/checkout-logo-medium.png" alt="Check out with PayPal" />
   </a>
-</div>
-
-<div>
+  <br>
   <input type="radio" id="dewey" name="drone" value="dewey" onchange="handleChange2();">
-  <label for="tarjeta">tarjeta de credito</label>
-  <div id="ppplus">
-</div> 
-<button type="submit" id="continueButton" onclick="ppp.doContinue(); return false;"> Checkout </button> 
+  <label for="tarjeta" class="label-selecion">tarjeta de credito</label>
+  <img src="./assets/iconos/BannerbancossinlogoPP200px-MX.png" alt="Check out with PayPal" />
+  </a>
+
+<div id="pago-tarjeta"  class="ocultar">
+<div id="ppplus">
+</div>
+<button type="submit" id="continueButton" onclick="ppp.doContinue(); return false;"> Continuar </button>
 </div>
 
-            <div class="row" id="botones-paypal">
-                <div class="col-0 col-sm-5 col-md-7">
-                <a href="<?php echo $aprovalUrl?>">paypalEnlace</a>
-                </div>
-                <div class="col-12 col-sm-7 col-md-5">
-                    <div id="paypal-button-container"></div>
-                    <div id="paypal-button"></div>
-                </div>
-            </div>
+</div>
+
+
 
         </div>
         <div class="total">
@@ -353,21 +285,22 @@ include 'pagoPP.php';
         src="https://www.paypal.com/sdk/js?client-id=Ab3CfXg7wt8RiCw6JkaSJ6TNF0SNKfMj9hJ5LiW2LjRGcGtoLKpFn3lGxDRizT5FHXsONUzWVgetL1jN&currency=MXN"></script>
 
     <script src="js/carrito.js"></script>
-    
-  
+
+
     <script src="https://www.paypalobjects.com/api/checkout.js"></script>
     <script type="text/javascript">
+
         let carrito=<?php echo $items ?>;
         let datosDeEnvio={};
-        let approval_url= "<?php echo $aprovalUrl?>";
-        datosDeEnvio.correo = "<?php echo $email?>";
-        datosDeEnvio.nombre = "<?php echo $nombre?>";
-        datosDeEnvio.apellidos ="<?php echo $apellidos?>";
-        datosDeEnvio.direccion ="<?php echo $direccion?>";
+        let approval_url= "<?php echo $aprovalUrl ?>";
+        datosDeEnvio.correo = "<?php echo $email ?>";
+        datosDeEnvio.nombre = "<?php echo $nombre ?>";
+        datosDeEnvio.apellidos ="<?php echo $apellidos ?>";
+        datosDeEnvio.direccion ="<?php echo $direccion ?>";
         datosDeEnvio.ciudad ="<?php echo $ciudad ?>";
         datosDeEnvio.pais = "<?php echo $pais ?>";
 //https://www.sandbox.paypal.com/cgi-bin/webscr?cmd=_express-checkout&token=EC-8X318124UM774424D
-    
+
 var ppp = PAYPAL.apps.PPP({
     "approvalUrl": approval_url,
     "placeholder": "ppplus",
@@ -379,19 +312,64 @@ var ppp = PAYPAL.apps.PPP({
     "payerTaxId":"",
     "language":"es_MX",
     });
+function Nueva(){
+    alert("nueva");
+}
+function ingresar(){
+			var parametros={  
+								"correo": "<?php echo $email ?>",
+                                "nombre": "<?php echo $nombre ?>",
+                                "apellidos":"<?php echo $apellidos ?>",
+                                "direccion": "<?php echo $direccion ?>",
+                                "numInt": "",
+                                "colonia":"",
+                                "referencias": "",
+                                "ciudad": "<?php echo $ciudad  ?>",
+                                "pais": "<?php echo $pais ?>",
+                                "estado": "<?php echo $estado ?>",
+								"codigoPostal": "<?php echo $codigoPostal ?>",
+								"telefono":"<?php echo $telefono ?>",
+								"paymentId":"<?php echo $paymentID ?>",
+								"PayerID":""
+                };
+                $.ajax({
+                        data: parametros,
+                        url:   './service/set/setCliente.php',
+                        type:  'post',
+                        beforeSend: function () {
+                        },
+                        success:  function (response2) {  //  Una vez insertados los datos actualiza la tabla
+							console.log(response2);			
+							/*
+                                        $.ajax({
+                                                url:   'php/productos/productos.php',
+                                                type:  'post',
+                                                beforeSend: function () {
+                                                        
+                                                },
+                                                success:  function (response1) {
+                                                        $("#contenido").html(response1);
+                                                        $('#myModal').modal('toggle');
+                                                }
+                                        });*/
+                                        //$('#myModal').modal('hide');
+                        }
+                });
 
+		}
 </script>
 <script type="application/javascript">
-// Register postMessage Listener for the iframe. 
-if (window.addEventListener) { 
-window.addEventListener("message", messageListener, false); 
-log("addEventListener successful", "debug"); 
-} else if (window.attachEvent) { 
-window.attachEvent("onmessage", messageListener); 
-log("attachEvent successful", "debug"); 
+
+// Register postMessage Listener for the iframe.
+if (window.addEventListener) {
+window.addEventListener("message", messageListener, false);
+log("addEventListener successful", "debug");
+} else if (window.attachEvent) {
+window.attachEvent("onmessage", messageListener);
+log("attachEvent successful", "debug");
 } else {
-log("Could not attach message listener", "debug"); 
-throw new Error("Can't attach message listener"); 
+log("Could not attach message listener", "debug");
+throw new Error("Can't attach message listener");
 }
 
 function messageListener(event) {
@@ -399,7 +377,10 @@ function messageListener(event) {
         //this is how we extract the message from the incoming events, data format should look like {"action":"inlineCheckout","checkoutSession":"error","result":"missing data in the credit card form"}
         var data = JSON.parse(event.data);
         //insert logic here to handle success events or errors, if any
+        console.log("data",data);
     }
-    } catch (exc) {}
+    } catch (exc) {
+        console.log("error",exc);
+    }
 }
 </script>

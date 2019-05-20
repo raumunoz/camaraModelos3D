@@ -3,11 +3,19 @@
     .item-imgagen {
         height: 2em;
     }
+    .boton-Paypal {
+        margin-left: 5em;
+    }
+}
+.ocultar{
+    visibility: hidden;
 }
 
 /* Extra Small Devices, Phones */ 
 @media only screen and (min-width : 480px) {
-
+    .boton-Paypal {
+        margin-left: 1em;
+    }
 }
 
 /* Small Devices, Tablets */

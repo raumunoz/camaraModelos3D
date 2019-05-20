@@ -9,8 +9,10 @@ var inputEstado = elementoId("estado-shipping");
 var inputTelefono = elementoId("telefono-shipping");
 var inputEstado = elementoId("estado-shipping");
 var inputCodigoPostal = elementoId("codigo-postal-shipping");
+var inputcolonia = elementoId("colonia-shipping");
 var correoValido;
 var direccionValido;
+var coloniaValido;
 var ciudadValido;
 var paisValido;
 var EstadoValido;
@@ -65,6 +67,15 @@ let inputJson3;
                 console.log("direccion no valido");
             }
         });
+        bootstrapValidate('#colonia-shipping', 'required:campo requerido', (valido) => {
+            if (valido) {
+                console.log("colonia valido");
+                coloniaValido = valido;
+            } else {
+                console.log("colonia no valido");
+            }
+        })
+        
         bootstrapValidate('#ciudad-shipping', 'required:campo requerido', (valido) => {
             if (valido) {
                 console.log("ciudad valido");
@@ -129,7 +140,7 @@ let inputJson3;
        
         var validation = Array.prototype.filter.call(forms, function (form) {
             form.addEventListener('submit', function (event) {
-                if ((correoValido == true) && (direccionValido == true) && (ciudadValido == true) && (apellidosValido == true) && (nombreValido == true)) {
+                if ((correoValido == true) && (direccionValido == true) && (ciudadValido == true) && (apellidosValido == true) && (nombreValido == true)&& (coloniaValido == true)) {
                     //event.preventDefault();
                     //event.stopPropagation();
                     var persona={
@@ -147,7 +158,7 @@ let inputJson3;
                     datosDeEnvio.telefono = inputTelefono.value;
                     datosDeEnvio.codigoPostal = inputCodigoPostal.value;
                     datosDeEnvio.detallesDirecion = inputDetallesDireccion.value;
-                
+                    datosDeEnvio.detallesColonia=inputcolonia;
                     inputJson.value=JSON.stringify(datosDeEnvio);
                     inputJson2.value=JSON.stringify(rtnCrrt());
                     inputJson3.value=JSON.stringify(rtnTot());

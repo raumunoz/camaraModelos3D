@@ -554,10 +554,12 @@ function getDescuento() {
     }
 }
 function handleChange2() {
-    console.log("cambio");
+    document.getElementById("btn-paypal").classList.add("ocultar");
+    document.getElementById("pago-tarjeta").classList.toggle("ocultar");
 }
 function handleChange1() {
-    console.log("cambio");
+document.getElementById("btn-paypal").classList.toggle("ocultar");
+document.getElementById("pago-tarjeta").classList.add("ocultar");
 }
 
 function rtnCrrt() {
